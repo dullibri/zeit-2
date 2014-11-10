@@ -1,7 +1,7 @@
 
 # Setting directory and settings -------------------------------------------------------
 
-mainfile="C:/Users/Dirk/zeit"
+mainfile="C:/Users/Dirk/Documents/GitHub/"
 year=2014
 issue=1
 
@@ -95,8 +95,8 @@ tfile=paste(mainfile,'/',year,'-',issue,sep='')
 if (sum(dir()==paste(year,'-',issue,sep=''))==0){
   dir.create(file.path(tfile))
 }
-# for (i in 1:1){
-for (i in 1:narticle){
+for (i in 1:1){
+# for (i in 1:narticle){
   fgettext(input=register$link[i],year=year,issue=issue,title=register$description[i],outfile=tfile)
 }
 write.csv(register,paste(tfile,'/register.csv',sep=''))
