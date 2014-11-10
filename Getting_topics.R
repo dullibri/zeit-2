@@ -1,32 +1,34 @@
 
 # getting complete register -----------------------------------------------
-fnextpages<-function(plainhtml,index){
-  plainhtml_index=plainhtml[index]
-  plainhtml_index_split=unlist(strsplit(plainhtml_index,'"'))
-  links=plainhtml_index_split[grep('http',plainhtml_index_split)]
-  unique(links) 
-}
+
 year=2013
 input<-paste('http://www.zeit.de/',year,'/index/seite-3',sep='')
-# input<-'http://www.zeit.de/2013/index/seite-3'
 plainhtml=readLines(input,encoding='UTF-8')
 unlink(input)
 
-index=grep(paste('http://www.zeit.de/',year,sep=''),plainhtml)
-plainhtml[index]
-page=fnextpages(plainhtml,index)
-index_page=page[grep('index',page)]
-write.csv(plainhtml,'test.txt')
+fnissue<-function(year,webpage){
+  all_issue=matrix(NA,nrow=10,ncol=2)
+for (i in 45:54){
+  index=grep(paste('http://www.zeit.de/',year,'/',i,'/index',sep=''),plainhtml)
+  all_issue[i-45+1,]=c(i,length(plainhtml[index]))
+}
+min(all_issue[all_issue[,2]==0,1])-1
+}
+Nissue=fnissue(year,plainhtml)
+
 registry<-function(year,issue){
-  issue_formated=c(paste(rep(0,9),1:9,sep=''),paste(10:12,sep=''))
-  input <-paste('http://www.zeit.de/',year,'/',issue_formated[issue],'/index',sep='')
+  issue_formated=as.character(issue)
+  if (issue<10){
+    issue_formated=paste(0,issue,sep='')
+  }
+  
+  input <-paste('http://www.zeit.de/',year,'/',issue_formated,'/index',sep='')
   plainhtml=readLines(input,encoding='UTF-8')
   unlink(input)
-  index=grep(paste('http://www.zeit.de/',year,'/',issue_formated[issue],sep=''),plainhtml)
+  index=grep(paste('http://www.zeit.de/',year,'/',issue_formated,sep=''),plainhtml)
   register_raw=unique(plainhtml[index])
   register_raw=register_raw[-grep(input,register_raw)]
-  t1=register_raw[1]
-  
+
   plainhtml_index_split=unlist(strsplit(register_raw,'"'))
   links=plainhtml_index_split[grep('http',plainhtml_index_split)]
   titles=plainhtml_index_split[grep('title=',plainhtml_index_split)+1]
@@ -34,15 +36,22 @@ registry<-function(year,issue){
     y=unlist(strsplit(x,'/'))
     y[length(y)]
   }))
+#   sapply(list(links,titles,descriptions),duplicated)
   
-  register=data.frame(link=unique(links)
+  register=data.frame(link=links
                       ,title=titles
                       ,description=descriptions
                       ,year=year
                       ,issue=issue) 
   return(register)
 }
-register=registry(year,issue)
+for (issue in 1:Nissue){
+  if (!'register'%in%ls()){
+    register=registry(year,issue)
+  }
+  register=rbind(register
+                 ,registry(year,issue))
+}
 
 
 # deriving topics from title ----------------------------------------------
