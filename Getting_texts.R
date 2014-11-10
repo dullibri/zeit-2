@@ -12,6 +12,7 @@ library(SnowballC)
 library(tm)
 library(RCurl)
 library(XML)
+library(kernlab)
 
 # Getting links -----------------------------------------------------------
 
@@ -100,7 +101,7 @@ for (i in 1:narticle){
   fgettext(input=register$link[i],year=year,issue=issue,title=register$description[i],outfile=tfile)
 }
 write.csv(register,paste(tfile,'/register.csv',sep=''))
-rm(i,register,issue,narticle,year)
+rm(i)
 
 
 # Creating Corpus ---------------------------------------------------------
@@ -122,5 +123,15 @@ zeitcorp <- tm_map(zeitcorp,function(x){stemDocument(x,language = "german")})
 Tdmzeit <- TermDocumentMatrix(zeitcorp)
 Mtdmzeit<- as.matrix(Tdmzeit)
 
+# save document term matrix and raw text corpus ---------------------------
+
 save(Tdmzeit,rohtext, file = paste(tfile,'/dtm-rawtext-',year,'-',issue,".RData",sep=''))
-write.csv(zeitcorp[[1]],'test.txt')
+
+
+# Reduktion auf die Wörter, die mehr als 600 mal vorkommen 
+kurz<-Mtdmzeit[which(rownames(Mtdmzeit)%in%findFreqTerms(Tdmzeit,100,Inf)),]
+
+
+
+# identify topics automatically using kernlab -----------------------------
+test.class<-DMetaData(zeitcorp)
