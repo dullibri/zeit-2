@@ -108,6 +108,9 @@ Dir<-DirSource(directory=tfile,encoding='UTF-8',recursive = TRUE)
 zeitcorp <- Corpus(x=Dir, 
                         readerControl = list(reader = readPlain,
                                              language="de"))
+rohtext <- Corpus(x=Dir, 
+                   readerControl = list(reader = readPlain,
+                                        language="de"))
 
 zeitcorp <- tm_map(zeitcorp, stripWhitespace)
 zeitcorp <- tm_map(zeitcorp, removeNumbers)
@@ -117,4 +120,7 @@ zeitcorp <- tm_map(zeitcorp, function(x){removeWords(x,
                                                    c("dass",stopwords("german")))})
 zeitcorp <- tm_map(zeitcorp,function(x){stemDocument(x,language = "german")})
 Tdmzeit <- TermDocumentMatrix(zeitcorp)
+Mtdmzeit<- as.matrix(Tdmzeit)
+
+save(Tdmzeit,rohtext, file = paste(tfile,'/dtm-rawtext-',year,'-',issue,".RData",sep=''))
 write.csv(zeitcorp[[1]],'test.txt')
