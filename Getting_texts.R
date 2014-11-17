@@ -1,7 +1,7 @@
 
 # Setting directory and settings -------------------------------------------------------
-
-mainfile="C:/Users/Dirk/zeit"
+mainfile="H:/git/zeit-2"
+# mainfile="C:/Users/Dirk/zeit"
 year=2014
 issue=2
 
