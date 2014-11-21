@@ -1,7 +1,7 @@
 
 # getting complete register -----------------------------------------------
 
-for (year in 1990:2012){
+for (year in 2005:2014){
 # year=2014
 input<-paste('http://www.zeit.de/',year,'/index/seite-3',sep='')
 plainhtml=readLines(input,encoding='UTF-8')
@@ -18,20 +18,6 @@ fnissue<-function(year,webpage){
         min(all_issue[all_issue[,2]==0,1])-1
 }
 Nissue=fnissue(year,plainhtml)
-
-fnissue<-function(year,webpage){
-        index=
-        for (i in 1:3)
-                webpage<-paste('http://www.zeit.de/',year,'/index/seite-',i,sep='')
-        # looks up the number of issues of one 'year' (mostly taking the value of 52 or 53)
-        # 'webpage' is the third page of the index page of the respective year (plaintext)
-        all_issue=matrix(NA,nrow=10,ncol=2)
-        for (i in 45:54){
-                index=grep(paste('http://www.zeit.de/',year,'/',i,'/index',sep=''),webpage)
-                all_issue[i-45+1,]=c(i,length(webpage[index]))
-        }
-        min(all_issue[all_issue[,2]==0,1])-1
-}
 
 registry<-function(year,issue){
         # makes a register of an issue in a year.
@@ -50,37 +36,55 @@ registry<-function(year,issue){
         ressort_index=grep('<li class="archiveressort">',plainhtml_all)
         plainhtml=plainhtml_all[-c(1:(ressort_index[1]-1))]
         ressort_start=ressort_index-(ressort_index[1]-1)
-        ressort_end=c(ressort_index[-1],length(plainhtml))-1
-        ressorts=plainhtml[ressort_index]
+        ressort_end=c(ressort_start[-1],length(plainhtml))-1
+        ressorts=plainhtml[ressort_start]
         ressorts=gsub('<li class=\"archiveressort\">|</li>','',ressorts)
-        dfressorts=data.frame(ressorts,ressort_start,ressort_end)
-        plainhtml=plainhtml[-c(dfressorts[4,3]:length(plainhtml))]
+        dfressorts=data.frame(ressorts,ressort_start,ressort_end,length=ressort_end-ressort_start+1)
+        mainressorts=paste('[Ww]irtschaft','[Pp]olitik','[Dd]ossier',sep='|')
+        fmainind <- function(dfressorts,mainressorts){
+                mdfressorts<-dfressorts[grep(mainressorts,dfressorts$ressorts),]
+                Nmressorts<-nrow(mdfressorts)
+                ind=matrix(NA,nrow=sum(mdfressorts[,'length']),ncol=1)
+                j=1
+                for (i in 1:Nmressorts){
+                        
+                        ind[j:(j-1+mdfressorts[i,4])]=mdfressorts[i,2]:mdfressorts[i,3]
+                        j=(j-1+mdfressorts[i,4])+1
+                }        
+                return(ind)
+        }
+        ind=fmainind(dfressorts,mainressorts)
+        plainhtml=plainhtml[ind]
         
-        links_index=regexpr(paste('http://www.zeit.de/','(.*)','/',issue_formated,'(.*)" tit',sep=''),plainhtml)
+        links_index=regexpr(paste('http://www.zeit.de/','(.*)','/','(.*)" tit',sep=''),plainhtml)
         links_raw=regmatches(plainhtml,links_index)
         links=gsub('" tit','',links_raw)
-        links_last=sapply(strsplit(links,'/'),function(x)x[6])
-        links_int=as.integer(links_last)
-        links=links[is.na(links_int)==T]
-        links=links[-grep('.xml',links)]
+#         links_last=sapply(strsplit(links,'/'),function(x)x[6])
+#         links_int=as.integer(links_last)
+#         links=links[is.na(links_int)==T]
+#         links=links[-grep('.xml',links)]
         if (length(links)==0){return(NULL)}
         
-        links_redux_index=matrix(NA,nrow=length(links),ncol=1)
-        for(i in 1:length(links)){links_redux_index[i,1]=grep(paste(links[i],'"',sep=''),plainhtml)}
-        plainhtml_redux=plainhtml[links_redux_index]
+        plainhtml_redux=plainhtml[links_index!=-1]
         
-        titles_index=regexpr('h4 class="title\"(.*)</h4',plainhtml_redux)
-        titles_raw=regmatches(plainhtml_redux,titles_index)
-        titles=gsub('h4 class=\"title\">|</h4','',titles_raw)
-        titles=titles[titles!='']
+        titles=matrix(NA,nrow=length(links),ncol=1)
+        titles_index=regexpr('<h4 class="title\"(.*)</h4',plainhtml)
+        titles_raw=regmatches(plainhtml,titles_index)
+        titles_exist=gsub('<h4 class=\"title\">|</h4','',titles_raw)
+        titles=titles_exist
 
         
-
-
-        register=data.frame(link=links
-                            ,title=titles
-                            ,year=year
-                            ,issue=issue) 
+        if (length(links)!=length(titles)){
+                register=data.frame(link=links
+                                    ,title=NA
+                                    ,year=year
+                                    ,issue=issue)   
+        }else{
+                register=data.frame(link=links
+                                    ,title=titles
+                                    ,year=year
+                                    ,issue=issue) 
+        }
         return(register)
 }
 for (issue in 1:Nissue){
