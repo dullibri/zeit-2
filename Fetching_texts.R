@@ -40,25 +40,49 @@ fgettext<-function(input,number,year,issue){
         if (length(grep('data-pn-end',plainhtml)+1)!=0){
                 #                 plainhtml=apply(plainhtml,2,as.character)
                 plainhtml<-paste(plainhtml,sep="",collapse="")
-                Np_index=regexec('data-pn-end="([0-9]|[0-9][0-9])"',plainhtml)
+                Np_index=regexec('data-pn-end="([0-9]|[0-9][0-9]|[0-9][0-9][0-9])"',plainhtml)
                 Np=regmatches(plainhtml,Np_index)[[1]][2]
-                for (a in 1:Np){
-                        write.csv(readLines(paste(input,'/seite-',a,sep=''),encoding='UTF-8')
-                                  ,paste(DirRawTexts,'/',year,'.',issue,'/',number,'-',a,'.txt',sep='')
-                        )
+                if (as.numeric(Np)>20){
+                        return(Np)     
+                }else{
+                        for (a in 1:Np){
+                                write.csv(readLines(paste(input,'/seite-',a,sep=''),encoding='UTF-8')
+                                          ,paste(DirRawTexts,'/',year,'.',issue,'/',number,'-',a,'.txt',sep='')
+                                )
+                        }
                 }
         }
         return(Np)
 }
 
-for (i in 1:nrow(register)){#
-  register$Npages=fgettext(input=as.character(register$link[i])
-           ,number=i
-           ,year=register$year[i]
-           ,issue=register$issue[i]
-           )
+for (i in 41771:nrow(register)){#
+        
+        if (grep('><',register$link[i])){
+                link=regexec('href=(.*)',register$link[i])
+                link==regmatches(link,register$link[i])[[1]][2]
+                tttt=gsub('"\\',"",tttt)
+                link=strsplit(link,'"')[[1]][2]
+                register$link[i]=link
+        }
+        register$Npages=fgettext(input=as.character(register$link[i])
+                                 ,number=i
+                                 ,year=register$year[i]
+                                 ,issue=register$issue[i]
+        )
 }
 rm(i)
 
+tt=register$link[i]
+ttt=regexec('href=(.*)',register$link[i])
+tttt=regmatches(tt,ttt)[[1]][2]
+tttt=gsub('"\\',"",tttt)
+strsplit(tttt,'"')[[1]][2]
 
 
+ttt=regexec('http://(.*)',register$link[i])
+tttt=regmatches(tt,ttt)[[1]][2]
+# tttt=gsub('\',"",tttt)
+gsub("([\\])","", tttt) 
+
+itle_index=regexec(paste('<title>','(.*)',' DIE ZEIT Archiv',sep=''),plainhtml)
+register$title_in_text[i]=regmatches(plainhtml,title_index)[[1]][2]

@@ -18,7 +18,7 @@ register$title_in_text=NA
 register$date=NA
 register$keywords=NA
 # looping over the directories --------------------------------------------
-for (i in 1:nrow(register)){
+for (i in 13349:nrow(register)){
         plainhtml <- read.csv(paste(DirRawTexts,'/',register$year[i],'.',register$issue[i],'/',i,'.txt',sep=''))[-1]
         # plainhtml <-c(plainhtml)
         plainhtml=apply(plainhtml,2,as.character)

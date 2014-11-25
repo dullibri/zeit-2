@@ -42,8 +42,14 @@ library(XML)
 
 listsubdirs=list.files(DirRawTexts)
 
-for (subd in listsubdirs[1]){
-        listfiles=list.files(paste(DirRawTexts,'/',subd,sep=''))        
+for (subd in listsubdirs[791:1281]){
+        listfiles=list.files(paste(DirRawTexts,'/',subd,sep='')) 
+        if (length(grep('article',listfiles))!=0){
+                listfiles=listfiles[-grep('article',listfiles)]       
+        }
+        if (length(grep('plaintxt',listfiles))!=0){
+                listfiles=listfiles[-grep('plaintxt',listfiles)]       
+        }
         for (file in listfiles){
                 write.csv(as.matrix(gettext(paste(DirRawTexts
                                                   ,'/',subd
