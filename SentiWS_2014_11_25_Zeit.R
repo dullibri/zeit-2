@@ -103,7 +103,7 @@ begin_test=proc.time()
 
 # Texte eines Jahres laden -----------------------------------------------
 
-for (jj in 1990:1990){#jj=1990
+for (jj in 2007:2014){#jj=1990
         
         liste_jahr=listsubdirs[grep(as.character(1990),listsubdirs)]
         for (k in 1:length(liste_jahr)){#k=1

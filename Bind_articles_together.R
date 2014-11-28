@@ -15,7 +15,7 @@ listsubdirs=list.files(DirRawTexts)
 
 
 
-for (subd in listsubdirs[981:1281]){
+for (subd in listsubdirs[1:1281]){
         
         # List of documents in plaintext ------------------------------------------
         listfiles=dir(paste(DirRawTexts,'/',subd,sep=''))
@@ -24,9 +24,22 @@ for (subd in listsubdirs[981:1281]){
         ids=gsub('.txt','',ids)
         ids=gsub('^-','',ids)
         
+        
+        
+        # Texts with multiple pages -----------------------------------------------
+        mtext=ids[grep('-',ids)]
+        
+        mtext=strsplit(mtext,'-')
+        mtext=t(sapply(mtext,function(x){as.numeric(x[1:2])}))
+        if (!length(mtext)==0){
+                idsm=unique(mtext[,1])
+                idsm=sort(idsm)
+        }
         # Files with just one page ------------------------------------------------
-        stext=as.numeric(ids[-grep('-',ids)])
-        stext=stext[(stext%in%idsm)==0]
+        if (!length(mtext)==0){stext=as.numeric(ids[-grep('-',ids)])}else{
+                stext=ids
+        }
+        if (!length(mtext)==0){stext=stext[(stext%in%idsm)==0]} # wenn es texte mit mehreren seiten gibt
         stext=sort(stext)
         # onepager: copy plaintexts into articles  --------------------------------
         for (i in 1:length(stext)){
@@ -35,36 +48,29 @@ for (subd in listsubdirs[981:1281]){
         }
         rm(i)
         
-        # Texts with multiple pages -----------------------------------------------
-        mtext=ids[grep('-',ids)]
-        if (length(mtext)==0){skip}
-        mtext=strsplit(mtext,'-')
-        mtext=t(sapply(mtext,function(x){as.numeric(x[1:2])}))
-        
-        idsm=unique(mtext[,1])
-        idsm=sort(idsm)
-        
-        
         
         # m-pager: aggregate and save them as articles -------------------------------------------------
-        
-        for (i in 1:length(idsm)){
-                nidsm=nrow(mtext[mtext[,1]==idsm[i],])
-                article=character(nidsm)
-                for (page in 1:nidsm){
-                        
-                        article[page]=readLines(paste(DirRawTexts,'/',subd,'/','plaintxt-',idsm[i],'-',page,'.txt',sep=''),encoding='UTF-8')
+        if (!length(mtext)==0){
+                for (i in 1:length(idsm)){
+                        nidsm=nrow(mtext[mtext[,1]==idsm[i],])
+                        article=character(nidsm)
+                        for (page in 1:nidsm){
+                                
+                                article[page]=readLines(paste(DirRawTexts,'/',subd,'/','plaintxt-',idsm[i],'-',page,'.txt',sep=''),encoding='UTF-8')
+                        }
+                        article=paste(article,sep="",collapse="")
+                        if (nchar(as.character(register$title[idsm[i]]))<120){
+                                article=gsub(register$title[idsm[i]],'',article)
+                        }
+                        write.csv(article,
+                                  paste(DirRawTexts,'/',subd,'/','article-',idsm[i],'.txt',sep=''),
+                                  ,fileEncoding='UTF-8'
+                                  ,quote=F                                
+                        )
                 }
-                article=paste(article,sep="",collapse="")
-                if (nchar(as.character(register$title[idsm[i]]))<120){
-                        article=gsub(register$title[idsm[i]],'',article)
-                }
-                write.csv(article,
-                          paste(DirRawTexts,'/',subd,'/','article-',idsm[i],'.txt',sep='')
-                )
         }
 }
-rm(i,j)
+
 # sapply(mtext,strsplit,'-')
 
 
