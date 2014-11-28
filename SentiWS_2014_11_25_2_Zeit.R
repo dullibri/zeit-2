@@ -39,6 +39,13 @@ neg.words <- read.delim(paste(DirCode,sDirS,"SentiWS_v1.8c_Negative_without_pipe
                         , encoding="UTF-8"
                         , header=F)
 
+pos.words[,1]=tolower(pos.words[,1])
+pos.words[,4]=tolower(pos.words[,4])
+
+
+neg.words[,1]=tolower(neg.words[,1])
+neg.words[,4]=tolower(neg.words[,4])
+posneg.words=rbind(pos.words,neg.words)
 # Aufbereiten der Lexica --------------------------------------------------
 
 # Wortgruppen zusammenführen (Abbau[,1], abbauen, Abbaus, ...[,4] ---------
@@ -63,49 +70,71 @@ pppp=sapply(pppp,function(x) x)
 pppp=pppp[pppp[,1]!='',drop=F]
 # tt=paste(ppp,',')
 
-uneindeutig=intersect(nnnn,pppp)
-
 POS <- sub("\\|[A-Z]+\t[0-9.-]+\t?", ",", POS)
 POS=unlist(strsplit(POS,','))
 
+
 # NICHT EINDEUTIGE WORTE RAUS ---------------------------------------------
-POS=tolower(POS)
-NEG=tolower(NEG)
-doppel_pos=match(POS,NEG)
-doppel_pos=doppel_pos[is.na(doppel_pos)==F]
-doppel_neg=match(NEG,POS)
-doppel_neg=doppel_neg[is.na(doppel_neg)==F]
 
-POS=POS[-doppel_pos]
-pos.words=pos.words[-doppel_pos,]
 
-NEG=NEG[-doppel_neg]
-neg.words=neg.words[-doppel_neg,]
 
-# Eine Gesamtliste positiver und negativer Worte und bewertungen -----------------
-POSNEG=c(POS,NEG)
+ndoppelte=nnnn[duplicated(nnnn)]
 
-posneg.words=rbind(pos.words,neg.words)
-posneg.words[1,1]<-gsub('<U+FEFF>','',posneg.words[1,1])
-posneg.words[,1]=tolower(posneg.words[,1])
-posneg.words[,4]=tolower(posneg.words[,4])
-# posneg=Corpus(VectorSource(as.character(posneg.words[,1])),readerControl = list(language = "de"))
-# posneg=tm_map(posneg,stemDocument)
-# 
-# pn <- DocumentTermMatrix(posneg)
-# mpn=as.matrix(pn)
-# 
-# ipn=colnames(mpn)
-# cols=colSums(mpn)
-# doppelte=ipn[which(cols>1)]
+tfind=sapply(ndoppelte,function(x)if(length(x)>2){return(1)}else{return(0)})
+ndoppelte=ndoppelte[tfind==1]
+
+# grep('klagen',NEG) um das zu testen.
+for (i in ndoppelte){
+        NEG=gsub(i,'',NEG)
+        posneg.words[,1]=gsub(i,'',posneg.words[,1])
+        posneg.words[,4]=gsub(i,'',posneg.words[,4])
+}
+
+
+# positive ----------------------------------------------------------------
+
+pdoppelte=pppp[duplicated(pppp)]
+
+tfind=sapply(pdoppelte,function(x)if(length(x)>2){return(1)}else{return(0)})
+pdoppelte=pdoppelte[tfind==1]
+
+# grep('klagen',NEG) um das zu testen.
+for (i in pdoppelte){
+        POS=gsub(i,'',POS)
+        posneg.words[,1]=gsub(i,'',posneg.words[,1])
+        posneg.words[,4]=gsub(i,'',posneg.words[,4])
+}
+
+
+
+uneindeutig=intersect(nnnn,pppp)
+for (i in uneindeutig){
+        POS=gsub(i,'',POS)
+        NEG=gsub(i,'',NEG)
+        posneg.words[,1]=gsub(i,'',posneg.words[,1])
+        posneg.words[,4]=gsub(i,'',posneg.words[,4])
+}
+
+POSNEG=matrix(NA,nrow=nrow(posneg.words),ncol=1)
+for (i in 1:nrow(posneg.words)){POSNEG[i,]=paste(posneg.words[i,1],posneg.words[i,4],sep=',')}
+
+
+
+POSNEG <- sub("\\|[A-Z]+\t[0-9.-]+\t?", ",", POSNEG)
+# POSNEG=unlist(strsplit(POSNEG,','))
+POSNEG=strsplit(POSNEG,',')
+
+
+
+
 # zeit nehmen -------------------------------------------------------------
 begin_test=proc.time()
 
 # Texte eines Jahres laden -----------------------------------------------
 
-for (jj in 1990:1990){#jj=1990
+for (jj in 2007:2014){#jj=1990
         
-        liste_jahr=listsubdirs[grep(as.character(1990),listsubdirs)]
+        liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
         for (k in 1:length(liste_jahr)){#k=1
                 sFolderTexte=paste(DirRawTexts,'/',liste_jahr[k],'/',sep='')
                 svFile=list.files(sFolderTexte)
@@ -114,7 +143,10 @@ for (jj in 1990:1990){#jj=1990
                 rohtext=character(Narticle_issue)
                 for (i in 1:Narticle_issue){#)
                         aux<-readLines(paste(sFolderTexte,svFile[i],sep=''), encoding="UTF-8")#, header=T,stringsAsFactors =F)
-                        if (length(aux)==1){rohtext[i]=aux}else{rohtext[i]=aux[2]}                        
+                        if (length(aux)==1){rohtext[i]=aux}
+                        else{
+                                rohtext[i]=aux[2]
+                        }                        
                 }
                 rm(i) 
                 rohtext=gsub('""',' ',rohtext) # This is to avoid unvoluntarily adding two words when replacing punctuation.
@@ -161,17 +193,17 @@ for (jj in 1990:1990){#jj=1990
                 dtm <- DocumentTermMatrix(docs)
                 Mdtm=as.matrix(dtm)
                 
-                
                 # Welche reihennummer haben in POSNEG haben die relevanten spalten in der dtm ---------------------------------
                 t9=match(colnames(dtm),POSNEG)
-                
+#                 test=paste(POSNEG,sep='',collapse='')
+#                 t9=match(colnames(dtm),test)
                 # dtm auf relevante verkleinern -------------------------------------------
-                Mdtm_rel=Mdtm[,is.na(t9)==F]
+                Mdtm_rel=Mdtm[,is.na(t9)==F,drop=F]
                 rel_words=as.matrix(colnames(Mdtm_rel))
                 
                 # spalten-worte den POSNEG zuordnen ---------------------------------------
                 test=match(POSNEG,rel_words) # die existierenden werte sind die zeilennummern von rel_words
-                tt=test[is.na(test)==F]
+#                 tt=test[is.na(test)==F]
                 t1=c(1:length(POSNEG))[is.na(test)==F] #  das sind die dazugehörigen spaltennumern von POSNEG
                 t2=data.frame(zeile_von_Mdtm_rel_in_POSNEG=test[t1],zeile_posneg=t1) # die beiden zu einem dataframe
                 t2=t2[with(t2,order(zeile_von_Mdtm_rel_in_POSNEG)),] # nach spaltennummern er Mdtm_rel, d.h. rel_words zeilennummern sortieren
@@ -183,18 +215,20 @@ for (jj in 1990:1990){#jj=1990
                 
                 # wieviele positive, wieviele negative ------------------------------------
                 t2$pos=t2$zeile_posneg<(nrow(pos.words)+1)
-                Ergebnis$Anzahl_pos_worte=as.matrix(rowSums(Mdtm_rel[,t2$pos]))
-                Ergebnis$Anzahl_neg_worte=as.matrix(rowSums(Mdtm_rel[,t2$pos==F]))
+                Ergebnis$Anzahl_pos_worte=as.matrix(rowSums(Mdtm_rel[,t2$pos,drop=F]))
+
+
+                Ergebnis$Anzahl_neg_worte=as.matrix(rowSums(Mdtm_rel[,t2$pos==F,drop=F]))
                 
                 # Nur positive, nur negative bewertung ------------------------------------
                 
                 # positive bewertung: anzahl mal bewertung -----------------------------------------------------
-                t3=apply(Mdtm_rel[,t2$pos],1,function(x,y){x*y},y=posneg.words[t2[t2$pos,2],3]) # anzahl rel_words X anzahl artikel
+                t3=apply(Mdtm_rel[,t2$pos,drop=F],1,function(x,y){x*y},y=posneg.words[t2[t2$pos,2],3]) # anzahl rel_words X anzahl artikel
                 t4=as.matrix(colSums(t3))
                 Ergebnis$Nur_positive_Bewertung=t4
                 
                 # negative bewertung: anzahl mal bewertung -----------------------------------------------------
-                t3=apply(Mdtm_rel[,t2$pos==F],1,function(x,y){x*y},y=posneg.words[t2[t2$pos==F,2],3]) # anzahl rel_words X anzahl artikel
+                t3=apply(Mdtm_rel[,t2$pos==F,drop=F],1,function(x,y){x*y},y=posneg.words[t2[t2$pos==F,2],3]) # anzahl rel_words X anzahl artikel
                 t4=as.matrix(colSums(t3))
                 Ergebnis$Nur_negative_Bewertung=t4
                 

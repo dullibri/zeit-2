@@ -57,14 +57,13 @@ fgettext<-function(input,number,year,issue){
 
 for (i in 41771:nrow(register)){#
         
-        if (grep('><',register$link[i])){
+        if (length(grep('><',register$link[i]))!=0){
                 link=regexec('href=(.*)',register$link[i])
-                link==regmatches(link,register$link[i])[[1]][2]
-                tttt=gsub('"\\',"",tttt)
+                link=regmatches(register$link[i],link)[[1]][2]
                 link=strsplit(link,'"')[[1]][2]
                 register$link[i]=link
         }
-        register$Npages=fgettext(input=as.character(register$link[i])
+        register$Npages[i]=fgettext(input=as.character(register$link[i])
                                  ,number=i
                                  ,year=register$year[i]
                                  ,issue=register$issue[i]
@@ -72,17 +71,4 @@ for (i in 41771:nrow(register)){#
 }
 rm(i)
 
-tt=register$link[i]
-ttt=regexec('href=(.*)',register$link[i])
-tttt=regmatches(tt,ttt)[[1]][2]
-tttt=gsub('"\\',"",tttt)
-strsplit(tttt,'"')[[1]][2]
 
-
-ttt=regexec('http://(.*)',register$link[i])
-tttt=regmatches(tt,ttt)[[1]][2]
-# tttt=gsub('\',"",tttt)
-gsub("([\\])","", tttt) 
-
-itle_index=regexec(paste('<title>','(.*)',' DIE ZEIT Archiv',sep=''),plainhtml)
-register$title_in_text[i]=regmatches(plainhtml,title_index)[[1]][2]
