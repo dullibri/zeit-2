@@ -15,8 +15,8 @@ listsubdirs=list.files(DirRawTexts)
 
 
 
-for (subd in listsubdirs[1:1281]){
-        
+for (subd in listsubdirs[767]){
+        # subd='2004.6'
         # List of documents in plaintext ------------------------------------------
         listfiles=dir(paste(DirRawTexts,'/',subd,sep=''))
         listplaintexts=listfiles[grep('plaintxt',listfiles)]
@@ -44,7 +44,8 @@ for (subd in listsubdirs[1:1281]){
         # onepager: copy plaintexts into articles  --------------------------------
         for (i in 1:length(stext)){
                 file.copy(paste(DirRawTexts,'/',subd,'/','plaintxt-',stext[i],'.txt',sep=''),
-                          paste(DirRawTexts,'/',subd,'/','article-',stext[i],'.txt',sep=''))
+                          paste(DirRawTexts,'/',subd,'/','article-',stext[i],'.txt',sep='')
+                          ,overwrite=T)
         }
         rm(i)
         
@@ -52,16 +53,16 @@ for (subd in listsubdirs[1:1281]){
         # m-pager: aggregate and save them as articles -------------------------------------------------
         if (!length(mtext)==0){
                 for (i in 1:length(idsm)){
-                        nidsm=nrow(mtext[mtext[,1]==idsm[i],])
-                        article=character(nidsm)
+                        nidsm=nrow(mtext[mtext[,1]==idsm[i],]) # number of pages
+                        article=character(nidsm) 
                         for (page in 1:nidsm){
                                 
                                 article[page]=readLines(paste(DirRawTexts,'/',subd,'/','plaintxt-',idsm[i],'-',page,'.txt',sep=''),encoding='UTF-8')
                         }
                         article=paste(article,sep="",collapse="")
-                        if (nchar(as.character(register$title[idsm[i]]))<120){
-                                article=gsub(register$title[idsm[i]],'',article)
-                        }
+#                         if (nchar(as.character(register$title[idsm[i]]))<120){
+#                                 article=gsub(register$title[idsm[i]],'',article)
+#                         }
                         write.csv(article,
                                   paste(DirRawTexts,'/',subd,'/','article-',idsm[i],'.txt',sep=''),
                                   ,fileEncoding='UTF-8'

@@ -52,7 +52,7 @@ library(XML)
 listsubdirs=list.files(DirRawTexts)
 
 for (subd in listsubdirs[1:1281]){
-        # subd="1990.1"       
+        # subd="2008.49"       
         listfiles=list.files(paste(DirRawTexts,'/',subd,sep='')) 
         if (length(grep('article',listfiles))!=0){
                 listfiles=listfiles[-grep('article',listfiles)]       
