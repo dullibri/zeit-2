@@ -1,0 +1,181 @@
+\documentclass[]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+% Set line spacing
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+  \title{}
+  \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+
+\begin{longtable}[c]{@{}lrrr@{}}
+\toprule\addlinespace
+& RMSE h:1 & hit h:1 & rank h:1
+\\\addlinespace
+\midrule\endhead
+R5 & 0.04 & 0.60 & 4
+\\\addlinespace
+zew & 0.07 & 0.62 & 9
+\\\addlinespace
+AR & 0.03 & 0.62 & 1
+\\\addlinespace
+var\_perc\_nword.zeit.economic & 0.04 & 0.66 & 2
+\\\addlinespace
+var\_rpvalue.zeit & 0.04 & 0.61 & 3
+\\\addlinespace
+var\_perc\_nword.zeit3.economic & 0.04 & 0.69 & 5
+\\\addlinespace
+MTI\_DE\_all & 0.04 & 0.61 & 6
+\\\addlinespace
+MTI\_DE\_Zukunft & 0.05 & 0.64 & 7
+\\\addlinespace
+idio.MTI\_all\_Zukunft & 0.05 & 0.61 & 8
+\\\addlinespace
+\bottomrule
+\addlinespace
+\caption{Forecasted variable: ip, horizon: 1}
+\end{longtable}
+
+\begin{longtable}[c]{@{}lrrr@{}}
+\toprule\addlinespace
+& RMSE h:3 & hit h:3 & rank h:3
+\\\addlinespace
+\midrule\endhead
+R2 & 0.10 & 0.52 & 8
+\\\addlinespace
+zew & 0.18 & 0.55 & 9
+\\\addlinespace
+AR & 0.06 & 0.61 & 1
+\\\addlinespace
+var\_perc\_nword.zeit.economic & 0.07 & 0.61 & 2
+\\\addlinespace
+perc\_pword.zeit.economic & 0.08 & 0.56 & 3
+\\\addlinespace
+var\_perc\_pnword.zeit.economic & 0.08 & 0.59 & 4
+\\\addlinespace
+MTI\_DE\_all & 0.09 & 0.45 & 5
+\\\addlinespace
+idio.MTI\_DE\_Gegenwart & 0.10 & 0.61 & 6
+\\\addlinespace
+idio.MTI\_all\_Zukunft & 0.10 & 0.59 & 7
+\\\addlinespace
+\bottomrule
+\addlinespace
+\caption{Forecasted variable: ip, horizon: 3}
+\end{longtable}
+
+\begin{longtable}[c]{@{}lrrr@{}}
+\toprule\addlinespace
+& RMSE h:6 & hit h:6 & rank h:6
+\\\addlinespace
+\midrule\endhead
+R3 & 0.23 & 0.62 & 7
+\\\addlinespace
+zew & 0.44 & 0.65 & 9
+\\\addlinespace
+AR & 0.09 & 0.65 & 1
+\\\addlinespace
+rvalue.zeit.economic & 0.15 & 0.56 & 2
+\\\addlinespace
+perc\_pword.zeit3.economic & 0.21 & 0.56 & 3
+\\\addlinespace
+var\_perc\_pnword.zeit.economic & 0.21 & 0.59 & 4
+\\\addlinespace
+MTI\_DE\_all & 0.23 & 0.57 & 5
+\\\addlinespace
+idio.MTI\_DE\_Gegenwart & 0.23 & 0.62 & 6
+\\\addlinespace
+idio.MTI\_all\_Waehrungspolitik.EURO.Geldpolitik & 0.24 & 0.59 & 8
+\\\addlinespace
+\bottomrule
+\addlinespace
+\caption{Forecasted variable: ip, horizon: 6}
+\end{longtable}
+
+\begin{longtable}[c]{@{}lrrr@{}}
+\toprule\addlinespace
+& RMSE h:12 & hit h:12 & rank h:12
+\\\addlinespace
+\midrule\endhead
+R5 & 1.50 & 0.63 & 8
+\\\addlinespace
+zew & 1.75 & 0.55 & 9
+\\\addlinespace
+AR & 0.10 & 0.66 & 1
+\\\addlinespace
+rvalue.zeit.economic & 0.38 & 0.56 & 2
+\\\addlinespace
+rvalue.zeit3.economic & 0.60 & 0.58 & 3
+\\\addlinespace
+nnword.zeit3 & 0.74 & 0.42 & 4
+\\\addlinespace
+idio.MTI\_DE\_Gegenwart & 0.80 & 0.73 & 5
+\\\addlinespace
+idio.MTI\_all\_Arbeitsmarkt & 0.88 & 0.50 & 6
+\\\addlinespace
+idio.MTI\_all\_Waehrungspolitik.EURO.Geldpolitik & 1.08 & 0.67 & 7
+\\\addlinespace
+\bottomrule
+\addlinespace
+\caption{Forecasted variable: ip, horizon: 12}
+\end{longtable}
+
+mean(abs(df{[}is.na(df{[},`ip'{]})==F,`ip'{]}))
+
+\end{document}

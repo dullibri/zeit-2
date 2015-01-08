@@ -21,6 +21,7 @@ fnissue<-function(year,webpage){
 }
 fmainind <- function(dfressorts,mainressorts){
         mdfressorts<-dfressorts[grep(mainressorts,dfressorts$ressorts),]
+        if (nrow(mdfressorts)==0){return(-999)}
         Nmressorts<-nrow(mdfressorts)
         ind=matrix(NA,nrow=sum(mdfressorts[,'length']),ncol=1)
         j=1
@@ -52,9 +53,10 @@ registry<-function(year,issue){
         ressorts=plainhtml[ressort_start]
         ressorts=gsub('<li class=\"archiveressort\">|</li>','',ressorts)
         dfressorts=data.frame(ressorts,ressort_start,ressort_end,length=ressort_end-ressort_start+1)
-        mainressorts=paste('[Ww]irtschaft','[Pp]olitik','[Dd]ossier',sep='|')
+        mainressorts=c('[Ww]irtschaft')
 
         ind=fmainind(dfressorts,mainressorts)
+        if (ind==-999){return(-999)}
         plainhtml=plainhtml[ind]
         
         links_index=regexpr(paste('http://www.zeit.de/','(.*)','/','(.*)" tit',sep=''),plainhtml)
@@ -89,7 +91,7 @@ registry<-function(year,issue){
         return(register)
 }
 
-for (year in 1990:1990){
+for (year in 1990:2014){
         # year=2003
         input<-paste('http://www.zeit.de/',year,'/index/seite-3',sep='')
         plainhtml=readLines(input,encoding='UTF-8')
@@ -103,8 +105,12 @@ for (year in 1990:1990){
                 if (!'register'%in%ls()){
                         register=registry(year,issue)
                 }
+                registry_res=registry(year,issue)
+                if (length(registry_res)==1){next}
                 register=rbind(register
-                               ,registry(year,issue))
+                               ,registry_res)
         }
 }
+e_register=register
+save(list='e_register',file='e_register.RData')
         

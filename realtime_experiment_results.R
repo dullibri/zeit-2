@@ -1,0 +1,102 @@
+DirCode='H:/git/zeit-2'
+DirRes=paste(DirCode,'/Results',sep='')
+target='ip'
+horizon=1
+rolling_window=0
+result.focus=function(target,horizon,rolling_window){
+        if (rolling_window==1){RW='rolling_window'}else{RW=''}
+        # getting forecast errors -------------------------------------------------
+        forecasts=read.csv(paste(DirRes,'/',target,'/',target,'_Horizon_',horizon,'_VAR',RW,'_forecasts.csv',sep=''),row.names=1)
+        colnames(forecasts)[grep('ip',colnames(forecasts))]='AR'
+        # reading vintages from row.names
+        rownames=row.names(forecasts)
+        vintages=gsub(paste(' h: ',horizon,sep=''),'',rownames)
+        vintages.n=length(vintages)
+        
+        # getting raw database
+        df=read.csv(paste(DirCode,'/Data/data.csv',sep=''),row.names=1)
+        target.df=df[,target,drop=F]
+        
+        # making naive forecasts
+        forecasts[,'naive']=NA
+        forecasts[,'naive']=target.df[vintages,1]
+        
+        # constructing realized values
+        target.first.predicted=grep(vintages[1],row.names(target.df))+horizon
+        target.rows=target.first.predicted:(target.first.predicted+vintages.n-1)
+        target.month=row.names(df)[target.rows]
+        # skipping to those forecasts, where the realized values are not available
+        # which target obsverations needed are not available
+        target.eval.possible=is.na(df[target.month,target])==F
+        target.month=target.month[target.eval.possible]
+        if(sum(target.eval.possible)!=0){
+                warning('Not enough realized values, not all forecasts evaluated.
+                        Sample will be reduced accordingly')
+        }
+        # finding last vintage that can be evaluated and adjusting the set of forecasts
+        vintage.last.evaluated=target.month[length(target.month)-horizon]
+        forecasts=forecasts[1:grep(vintage.last.evaluated,vintages),]
+        # getting realized values and computing forecast errors
+        realized=target.df[target.month,1,drop=F]
+        forecast.errors=forecasts-matrix(rep(realized[,1],ncol(forecasts)),ncol=ncol(forecasts))
+        
+        # calculating squared forecast errors and rmse
+        forecast.squared.errors=forecast.errors^2
+        results=data.frame(RMSE=(colSums(forecast.squared.errors)/nrow(forecast.squared.errors))^.5)
+        colnames(results)[grep('RMSE',colnames(results))]=paste('RMSE h:',horizon,sep='')
+        
+        # calculating directional forecast accuracy 
+        # comparing forecasted and value at start (which is equivalent to naive forecast)
+        forecast.dir.chg=forecast.errors=forecasts-matrix(rep(forecasts[,'naive'],ncol(forecasts)),ncol=ncol(forecasts))
+        forecast.dir.chg[forecast.dir.chg>0]=1
+        forecast.dir.chg[forecast.dir.chg<0]=-1
+        # comparing realized and value at start
+        realized.dir.chg=realized-forecasts[,'naive']
+        realized.dir.chg[realized.dir.chg>0]=1
+        realized.dir.chg[realized.dir.chg<0]=-1
+        # computing differences, calculating percentage of times these are zero
+        forecast.dir.chg.error=forecast.dir.chg-matrix(rep(realized.dir.chg,ncol(forecasts)),ncol=ncol(forecasts))
+        results[,paste('hit h:',horizon,sep='')]=colSums(forecast.dir.chg.error==0)/nrow(forecast.dir.chg.error)
+        
+        # ordering results, best RMSE first and writing to disk
+        ind.RMSE=grep('RMSE',colnames(results))
+        results=results[order(results[,ind.RMSE]),]
+        write.csv(results,paste(DirRes,'/',target,'/RMSE_hit_',target,'_',horizon,'.csv',sep=''))
+        
+        # best models Zeit
+        results.zeit=results[grep('zeit',row.names(results)),]
+        results.best.zeit=results.zeit[order(results.zeit[,ind.RMSE]),]
+        results.best.zeit=head(results.best.zeit,3)
+        
+        # best model MTI
+        results.MTI=results[grep('MTI',row.names(results)),]
+        ind.RMSE=grep('RMSE',colnames(results))
+        results.best.MTI=results.MTI[order(results.MTI[,ind.RMSE]),]
+        results.best.MTI=head(results.best.MTI,3)
+        
+        # best ifo
+        results.best.ifo=results[paste('R',1:6,sep=''),]
+        results.best.ifo=results.best.ifo[which.min(results.best.ifo[,ind.RMSE]),]
+        # results focusing on the important models
+        
+        results.focus=rbind(results.best.ifo
+                            ,results[c('zew','AR'),]
+                            ,results.best.zeit
+                            ,results.best.MTI
+        )
+        results.focus[,paste('rank h:',horizon,sep='')]=rank(results.focus[,1])
+        
+        # rounding to 2 digits
+        results.focus=round(results.focus,2)
+#         results.focus=cbind(row.names(results.focus),results.focus)
+#         colnames(results.focus)[1]=paste('Model h:',horizon,sep='')
+#         row.names(results.focus)=NULL
+        return(results.focus)
+}
+
+for (horizon in c(1,3,6,12)){
+       out=xtable(result.focus(target,horizon,rolling_window))
+       print(out, file=paste(DirRes,'/',target,'/RMSE_hit_',target,'_',horizon,'.tex',sep=''))
+
+}
+

@@ -1,0 +1,217 @@
+#LyX file created by tex2lyx 2.0.7
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+
+\usepackage{ifxetex}\usepackage{ifluatex}\usepackage{fixltx2e}% provides \textsubscript
+% Set line spacing
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}\usepackage{xltxtra}\usepackage{xunicode}\else
+    \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\ifxetex
+  \else
+  \fi
+
+\urlstyle{same}  % don't use monospace font for urls
+
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+
+%%% Change title format to be more compact
+\usepackage{titling}\setlength{\droptitle}{-2em}
+  \title{}
+  \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+  \author{}
+  \preauthor{}\postauthor{}
+  
+  \predate{}\postdate{}
+
+
+
+
+
+\end_preamble
+\use_default_options false
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding T1
+\font_roman lmodern
+\font_sans default
+\font_typewriter lmodern
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\paperfontsize default
+\spacing single
+\use_hyperref 1
+\pdf_bookmarks 1
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 1
+\pdf_pdfborder 1
+\pdf_colorlinks 1
+\pdf_backref section
+\pdf_pdfusetitle 1
+\pdf_quoted_options "setpagesize=false,unicode=false,xetex,citecolor=blue,urlcolor=blue,linkcolor=magenta"
+\papersize default
+\use_geometry true
+\use_amsmath 2
+\use_esint 1
+\use_mhchem 0
+\use_mathdots 0
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 0
+\secnumdepth 0
+\tocdepth 3
+\paragraph_separation skip
+\defskip 6pt plus 2pt minus 1pt
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+Please cite as:
+\end_layout
+
+\begin_layout Standard
+
+Hlavac, Marek (2014). stargazer: 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+LaTeX
+\end_layout
+
+\end_inset
+
+ code and ASCII text for well-formatted regression and summary statistics tables. R package version 5.0. http://CRAN.R-project.org/package=stargazer 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\end_inset
+
+ RMSE h:1 hit h:1 rank h:1 R3 0.02 0.64 4 zew 0.03 0.58 9 naive 0.03 0.00 5 varpercdif.zeit3 0.02 0.62 1 varpercpword.zeit3 0.02 0.68 2 varpercdif.zeit 0.02 0.62 3 idio.MTIallKonjunktur 0.03 0.60 6 MTIallArbeitsmarkt 0.03 0.65 7 MTIallGegenwart 0.03 0.59 8 RMSE h:3 hit h:3 rank h:3 R3 0.04 0.69 1 zew 0.05 0.65 9 naive 0.05 0.00 8 varpercnword.zeit 0.04 0.55 2 varpercpword.zeit 0.04 0.53 3 varpercdif.zeit 0.04 0.50 4 idio.MTIDEHaushaltspolitik 0.05 0.58 5 MTIallGegenwart 0.05 0.62 6 idio.MTIallKonjunktur 0.05 0.64 7 RMSE h:6 hit h:6 rank h:6 R3 0.06 0.74 1 zew 0.08 0.70 7 naive 0.08 0.00 9 varpercnword.zeit 0.06 0.60 2 varpercpword.zeit 0.07 0.60 3 varpercpnword.zeit 0.07 0.62 4 idio.MTIDEHaushaltspolitik 0.07 0.64 5 MTIallGegenwart 0.07 0.66 6 idio.MTIallHaushaltspolitik 0.08 0.56 8 RMSE h:12 hit h:12 rank h:12 R3 0.09 0.72 1 zew 0.11 0.68 5 naive 0.13 0.00 9 varpercpnword.zeit3.economic 0.09 0.70 2 varpercpword.zeit 0.10 0.65 3 varpercpword.zeit3 0.10 0.60 4 idio.MTIDEHaushaltspolitik 0.12 0.69 6 idio.MTIDEGegenwart 0.12 0.67 7 MTIallKonjunktur 0.13 0.65 8 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+In the following we describe the forecast experiment results for 
+\family typewriter
+target
+\family default
+
+\end_layout
+
+\end_body
+\end_document

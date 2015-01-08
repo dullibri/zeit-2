@@ -1,0 +1,109 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.14)  8 JAN 2015 10:15
+entering extended mode
+**realtime_experiment_results.tex
+(H:\git\zeit-2\realtime_experiment_results.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
+, bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
+ian, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, icelandic, indonesian, interlingua, irish, italian,
+ kannada, kurmanji, latin, latvian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, ngerman
+-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, sloven
+ian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishmax, w
+elsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \begin{verbatim}
+                    
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (206.2452pt too wide) in paragraph at lines 70--70
+[]\OT1/cmtt/m/n/10 % Table created by stargazer v.5.0 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard
+.edu[] 
+ []
+
+
+Overfull \hbox (421.49332pt too wide) in paragraph at lines 70--70
+[]\OT1/cmtt/m/n/10 Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multic
+olumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\[] 
+ []
+
+
+Overfull \hbox (206.2452pt too wide) in paragraph at lines 70--70
+[]\OT1/cmtt/m/n/10 % Table created by stargazer v.5.0 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard
+.edu[] 
+ []
+
+
+Overfull \hbox (421.49332pt too wide) in paragraph at lines 70--70
+[]\OT1/cmtt/m/n/10 Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multic
+olumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\[] 
+ []
+
+
+Overfull \hbox (206.2452pt too wide) in paragraph at lines 70--70
+[]\OT1/cmtt/m/n/10 % Table created by stargazer v.5.0 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard
+.edu[] 
+ []
+
+
+Overfull \hbox (421.49332pt too wide) in paragraph at lines 70--70
+[]\OT1/cmtt/m/n/10 Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multic
+olumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\[] 
+ []
+
+
+Overfull \hbox (206.2452pt too wide) in paragraph at lines 70--70
+[]\OT1/cmtt/m/n/10 % Table created by stargazer v.5.0 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard
+.edu[] 
+ []
+
+
+Overfull \hbox (421.49332pt too wide) in paragraph at lines 70--70
+[]\OT1/cmtt/m/n/10 Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multic
+olumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\[] 
+ []
+
+[1
+
+{C:/Users/dulbricht/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (H:\git\zeit-2\realtime_experiment_results.aux) 
+) 
+Here is how much of TeX's memory you used:
+ 212 strings out of 493921
+ 2472 string characters out of 3147270
+ 58341 words of memory out of 3000000
+ 3592 multiletter control sequences out of 15000+200000
+ 3808 words of font info for 15 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 23i,4n,17p,182b,149s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmtt10.pfb>
+Output written on realtime_experiment_results.pdf (1 page, 34479 bytes).
+PDF statistics:
+ 14 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

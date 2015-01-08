@@ -25,16 +25,17 @@ DirCode='H:/git/zeit-2' # main directory
 setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------
-load(paste(DirCode,"/register.RData",sep=''))
+# load(paste(DirCode,"/register.RData",sep=''))
 
 # Getting subdirectories --------------------------------------------------
-listsubdirs=list.files(DirRawTexts)
+# listsubdirs=list.files(DirRawTexts)
 
 #  SentiWS: ------------------------------------------------------------------------
 #       getting the list of positive and negative words and their values -----------------------------------------------------------------
 #       posneg (lowercase) POSNEG (uppercase)
 # source('Preparing SentiWs.R')
 load(paste(DirCode,"/SentiWS.RData",sep=''))
+# source(paste(DirCode,"/Preparing SentiWs.R",sep='')) # to make SentiWS.RData
 source(paste(DirCode,"/valueword_capital_letters.R",sep=''))
 source(paste(DirCode,"/valueword.R",sep=''))
 
@@ -45,11 +46,12 @@ vposneg=paste(posneg[,2],collapse='',sep='')
 vposneg=sapply(strsplit(vposneg,','),function(x) x)
 
 vPOSNEG=paste(POSNEG[,2],collapse='',sep='')
-vPOSNEG=sapply(strsplit(vPOSNEG,','),function(x) x)
 vPOSNEG=tolower(vPOSNEG)
+vPOSNEG=sapply(strsplit(vPOSNEG,','),function(x) x)
+vPOSNEG[1]='abmachung'
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 1990:2014){#jj=1990
+for (jj in 2003){#jj=1990
         
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
         for (k in 1:length(liste_jahr)){#k=1

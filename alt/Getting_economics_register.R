@@ -17,11 +17,12 @@ fnissue<-function(year,webpage){
                 if (all_issue[i,2]!=0){
                         return(all_issue[i,1])}
         }
-#         min(all_issue[all_issue[,2]==0,1])-1
+        #         min(all_issue[all_issue[,2]==0,1])-1
 }
 fmainind <- function(dfressorts,mainressorts){
         mdfressorts<-dfressorts[grep(mainressorts,dfressorts$ressorts),]
         Nmressorts<-nrow(mdfressorts)
+        if (Nmressorts==0){return(0)}
         ind=matrix(NA,nrow=sum(mdfressorts[,'length']),ncol=1)
         j=1
         for (i in 1:Nmressorts){
@@ -52,9 +53,10 @@ registry<-function(year,issue){
         ressorts=plainhtml[ressort_start]
         ressorts=gsub('<li class=\"archiveressort\">|</li>','',ressorts)
         dfressorts=data.frame(ressorts,ressort_start,ressort_end,length=ressort_end-ressort_start+1)
-        mainressorts=paste('[Ww]irtschaft','[Pp]olitik','[Dd]ossier',sep='|')
+        mainressorts=paste('[Ww]irtschaft',sep='|')#,'[Pp]olitik','[Dd]ossier'
 
         ind=fmainind(dfressorts,mainressorts)
+        if (length(ind)==0){return(-999)}
         plainhtml=plainhtml[ind]
         
         links_index=regexpr(paste('http://www.zeit.de/','(.*)','/','(.*)" tit',sep=''),plainhtml)
@@ -89,8 +91,8 @@ registry<-function(year,issue){
         return(register)
 }
 
-for (year in 1990:1990){
-        # year=2003
+for (year in 1993:2014){
+        # year=2014
         input<-paste('http://www.zeit.de/',year,'/index/seite-3',sep='')
         plainhtml=readLines(input,encoding='UTF-8')
         unlink(input)
@@ -103,8 +105,12 @@ for (year in 1990:1990){
                 if (!'register'%in%ls()){
                         register=registry(year,issue)
                 }
+                if (year==1993&issue==1){next}
+                register_aux=registry(year,issue)
+                if (register_aux==-999){next}else{
                 register=rbind(register
-                               ,registry(year,issue))
+                               ,register_aux)
+                }
         }
 }
         
