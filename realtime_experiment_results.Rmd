@@ -1,11 +1,12 @@
 
 ---
+fontsize: 11pt
 output:
   pdf_document:
     keep_tex: yes
   word_document: default
 ---
-
+##Industrial Production
 ```{r,echo=FALSE,warning=FALSE,comment=NA,results='asis',error=F}
 library(knitr)
 # library(stargazer)
@@ -13,12 +14,12 @@ DirCode='H:/git/zeit-2'
 DirRes=paste(DirCode,'/Results',sep='')
 target='ip'
 horizon=1
-rolling_window=1
+rolling_window=0
 result.focus=function(target,horizon,rolling_window){
         if (rolling_window==1){RW='_rolling_window'}else{RW=''}
         # getting forecast errors -------------------------------------------------
         forecasts=read.csv(paste(DirRes,'/',target,'/',target,'_Horizon_',horizon,'_VAR',RW,'_forecasts.csv',sep=''),row.names=1)
-#         forecasts=forecasts[1:110,,drop=F]
+
         colnames(forecasts)[grep('ip',colnames(forecasts))]='AR'
         # reading vintages from row.names
         rownames=row.names(forecasts)
@@ -92,7 +93,7 @@ result.focus=function(target,horizon,rolling_window){
         # results focusing on the important models
         
         results.focus=rbind(results.best.ifo
-                            ,results[c('zew','AR'),]
+                            ,results[c('zew','naive'),]
                             ,results.best.zeit
                             ,results.best.MTI
                             )
@@ -107,10 +108,10 @@ result.focus=function(target,horizon,rolling_window){
         }
 
 for (horizon in c(1,3,6,12)){
-# print(paste('Horizon: ',horizon,sep=''))
-#         paste('Horizon: ',horizon,sep='')
-        kable(result.focus(target,horizon,rolling_window), format = "pandoc",caption=paste('Forecasted variable: ',target,', horizon: ',horizon,sep=''))
+        kable(result.focus(target,horizon,rolling_window), format = "pandoc"
+              ,caption=paste('Forecasted variable: ',target,', horizon: ',horizon,sep='')
+              )
         }
 ```
 
-mean(abs(df[is.na(df[,'ip'])==F,'ip']))
+

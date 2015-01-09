@@ -1,10 +1,10 @@
 # Bearbeitungsschritte ----------------------------------------------------
 
 
-# targets=c('ip')
+
 max=1 # maximum number of variables additional to endogenous
 frec=42 # minium number of observations.
-rolling_window=1 # if "0" no rolling window implemented ("1" else)
+rolling_window=0 # if "0" no rolling window implemented ("1" else)
 nlag=12 # number of lags to be tested.
 
 library(corrgram)
@@ -88,5 +88,7 @@ experiment=function(target){
                 
         }
 }
-
-experiment('ip')
+targets=c('oil','eur.stox','usd','CA')
+for (target in targets){
+        dir.create(paste(DirCode,'/Results/',target,sep=''))
+        experiment(target)}

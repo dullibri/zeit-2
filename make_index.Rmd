@@ -1,7 +1,7 @@
 ---
 title: "Zeit Index "
 author: "Dirk Ulbricht"
-date: "Monday, January 05, 2015"
+date: "Thursday, January 08, 2015"
 output: pdf_document
 ---
 
@@ -13,10 +13,14 @@ opts_chunk$set(fig.width=12, fig.height=8, fig.path='Figs/',
 
 
 # Description 
+The German weekly journal "Die Zeit" from January 1990 to Dezember 2014 has been downloaded from its publicly accessible online archive. As the indeces to be constructed are intended to be informative of the business cycle, only the economics, politics and opion sections that are supposed to be relevant to this end are analysed. Additional to the construction of indeces based on all three sections, a corresponding set of indeces is constructed based on the economics section only (the corresponding indicators are labeled "economics").
 
-This file creates the Zeit indeces. This will be based either on the complete set of articles evaluated (politics, economics and opinion) or on the economics section only. In the latter case, economic_only should be given the value 'Yes' (the output csv will then be 'zeit economic.csv'). It is based on the evaluations of each article in "Ergebnis.csv"-Files containing the results of sentiment analysis. 
 
-```{r}
+
+```{r,eval=F,echo=FALSE}
+
+# Zeit indeces will either be based on the complete set of articles evaluated  or on the economics section only. In the latter case, economic_only should be given the value 'Yes' (the output csv will then be 'zeit economic.csv'). It is based on the evaluations of each article in "Ergebnis.csv"-Files containing the results of sentiment analysis. 
+
 economic_only='Yes'
 
 # Load the necessary libraries and defining functions
@@ -30,11 +34,10 @@ setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------
 load(paste(DirCode,"/register.RData",sep=''))
-```
-## Connecting sentiment evaluation and registry
-This is currently commented out, as it takes some time to compute.
 
-```{r}
+## Connecting sentiment evaluation and registry
+# This is currently commented out, as it takes some time to compute.
+
 # Getting "Ergebnis.csv" Files and integrate them into register -----------
 
 # register$id=NA
@@ -147,16 +150,84 @@ if (economic_only=='Yes'){
 # Getting subdirectories --------------------------------------------------
 listsubdirs=list.files(DirRawTexts)
 
-# calculating relative values ---------------------------------------------
+
+```
+```{r,echo=FALSE}
+# loading SentiWS
+load("H:/git/zeit-2/SentiWS.RData")
+```
+
+The calculation of the indeces is based on the results of a preceding sentiment analysis. Each word is matched to the terms comprised in SentiWS, a dictionary of positive and negative words, that attributes numerical values to each term indicating the degree of sentiment they convey. SentiWS attaches different valus to the same word when it represents a noun or a verb. In German, many words have the same spelling when representing nouns and verbs. However, nouns start with capital letters. For the evaluation,
+
+```{r,echo=FALSE,warning=FALSE,comment=NA,results='asis',error=F}
+kable(head(POSNEG[-1,]), format = "pandoc"
+      ,caption='Example SentiWS'
+      )
+```
+
+
+In a first step the number of positive and negative words and the sum of positive and negative sentiment values as well as the total number of words are collected on an article basis. In turn, two groups of indicators are computed.
+
+Number of words indicators: The first set of indicators is only based on the counts of positive and negative words and ignores sentiment values. As the article size varies, they are calculated as ratios of the total number of words of each article. The ratio of the difference and the sum of the number of positive and negative words (perc_dif and perc_sum) to the total number of words and the number of positive and negative words to the total number of words (perc_pword and perc_nword) are calculated.   
+
+Sentiment value indicators: The second set of indicators is based on the sentiment values of each article. The variables rpvalue and rnvalue label indicators based on averages of positive and negative values, respectively. The ratio of the balance of positive and negative values as a ratio of the sum of positive and negative words is labeled rvalue.
+
+For each of the two groups, the monthly averages are calculated. As a measure of uncertainty, the variances (labeled "var") and as a measure of risk the kurtosis (labeled "kurt"), both on a monthly basis, are computed for both sets of indicators. 
+
+For all of the above indicators, a three month moving average (labeled "3") is calculated. 
+
+```{r,echo=FALSE,warning=FALSE,comment=NA,results='asis',error=F}
+variable_description=matrix(c('perc_dif'
+                              
+                              ,'perc_sum'
+                              ,'perc_pword'
+                              ,'perc_nword'
+                              ,'pvalue'
+                              ,'nvalue'
+                              ,'rvalue'
+                              ,'var'
+                              ,'kurt'
+                              ,'3'
+                              ,'economic'
+                              ,'average balance of the number of positive and negative words'
+                              ,'average of the number of positive and negative words'
+                                                        
+                              ,'number of positive words divided by the total number of words'
+                              
+                              ,'number of negative words divided by the total number of words'
+                              
+                              ,'average positive value'
+                              
+                              ,'average negative value'
+                              
+                              ,'average balance of positive and negative values'
+                              ,'variance based on values of all articles each month'
+                              ,'kurtosis based on values of all articles each month'
+                              ,'three month moving average'
+                              ,'values based on articles in the economics section only'
+                              )
+                            ,ncol=2
+#                             ,byrow=F
+                            )
+colnames(variable_description)=c('label','description')
+kable(variable_description, format = "pandoc"
+      ,caption='label description'
+      )
+```
+
+
+
+```{r,eval=FALSE,cache=FALSE,echo=F}
 register$perc_dif=(register$npword-register$nnword)/register$nword
 register$perc_pword=register$npword/register$nword
 register$perc_nword=register$nnword/register$nword
 register$perc_pnword=(register$npword+register$nnword)/register$nword
+
 register$rpvalue=register$pvalue/register$npword
 register$rpvalue[register$npword==0]=0
 register$rnvalue=register$nvalue/register$nnword
 register$rnvalue[register$nnword==0]=0
-register$rvalue=(register$pvalue+register$nvalue)/(register$npword+register$nnword)
+register$rvalue=(register$pvalue+register$nvalue)/(register$nword+register$nnword)
 register$yearissue=paste(register$year,register$issue,sep='.')
 register$yearmonth=paste(register$year,register$month,sep='.')
 register=register[-which(register$link=='http://www.zeit.de/1993/36/ein-ganz-legaler-nepp'),] # has not been evaluated needs to be checked
@@ -230,7 +301,7 @@ row.names(zeit_df)=paste(Index_m$year,Index_m$Month,sep='/')
 zeit_df=zeit_df[order(row.names(zeit_df)),]
 # write.csv(zeit_df_window,'zeit.csv')
 if (economic_only=='Yes'){write.csv(zeit_df,'zeit_economic.csv')}else{
-    write.csv(zeit_df,'zeit.csv')    
-}
+        write.csv(zeit_df,'zeit.csv')    
+        }
 
 ```

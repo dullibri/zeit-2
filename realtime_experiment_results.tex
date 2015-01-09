@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[11pt,]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -64,28 +64,30 @@
 \maketitle
 
 
+\subsection{Industrial Production}\label{industrial-production}
+
 \begin{longtable}[c]{@{}lrrr@{}}
 \toprule\addlinespace
 & RMSE h:1 & hit h:1 & rank h:1
 \\\addlinespace
 \midrule\endhead
-R5 & 0.04 & 0.60 & 4
+R3 & 0.02 & 0.64 & 4
 \\\addlinespace
-zew & 0.07 & 0.62 & 9
+zew & 0.03 & 0.58 & 9
 \\\addlinespace
-AR & 0.03 & 0.62 & 1
+naive & 0.03 & 0.00 & 5
 \\\addlinespace
-var\_perc\_nword.zeit.economic & 0.04 & 0.66 & 2
+var\_perc\_dif.zeit3 & 0.02 & 0.62 & 1
 \\\addlinespace
-var\_rpvalue.zeit & 0.04 & 0.61 & 3
+var\_perc\_pword.zeit3 & 0.02 & 0.68 & 2
 \\\addlinespace
-var\_perc\_nword.zeit3.economic & 0.04 & 0.69 & 5
+var\_perc\_dif.zeit & 0.02 & 0.62 & 3
 \\\addlinespace
-MTI\_DE\_all & 0.04 & 0.61 & 6
+idio.MTI\_all\_Konjunktur & 0.03 & 0.60 & 6
 \\\addlinespace
-MTI\_DE\_Zukunft & 0.05 & 0.64 & 7
+MTI\_all\_Arbeitsmarkt & 0.03 & 0.65 & 7
 \\\addlinespace
-idio.MTI\_all\_Zukunft & 0.05 & 0.61 & 8
+MTI\_all\_Gegenwart & 0.03 & 0.59 & 8
 \\\addlinespace
 \bottomrule
 \addlinespace
@@ -97,23 +99,23 @@ idio.MTI\_all\_Zukunft & 0.05 & 0.61 & 8
 & RMSE h:3 & hit h:3 & rank h:3
 \\\addlinespace
 \midrule\endhead
-R2 & 0.10 & 0.52 & 8
+R3 & 0.04 & 0.69 & 1
 \\\addlinespace
-zew & 0.18 & 0.55 & 9
+zew & 0.05 & 0.65 & 9
 \\\addlinespace
-AR & 0.06 & 0.61 & 1
+naive & 0.05 & 0.00 & 8
 \\\addlinespace
-var\_perc\_nword.zeit.economic & 0.07 & 0.61 & 2
+var\_perc\_nword.zeit & 0.04 & 0.55 & 2
 \\\addlinespace
-perc\_pword.zeit.economic & 0.08 & 0.56 & 3
+var\_perc\_pword.zeit & 0.04 & 0.53 & 3
 \\\addlinespace
-var\_perc\_pnword.zeit.economic & 0.08 & 0.59 & 4
+var\_perc\_dif.zeit & 0.04 & 0.50 & 4
 \\\addlinespace
-MTI\_DE\_all & 0.09 & 0.45 & 5
+idio.MTI\_DE\_Haushaltspolitik & 0.05 & 0.58 & 5
 \\\addlinespace
-idio.MTI\_DE\_Gegenwart & 0.10 & 0.61 & 6
+MTI\_all\_Gegenwart & 0.05 & 0.62 & 6
 \\\addlinespace
-idio.MTI\_all\_Zukunft & 0.10 & 0.59 & 7
+idio.MTI\_all\_Konjunktur & 0.05 & 0.64 & 7
 \\\addlinespace
 \bottomrule
 \addlinespace
@@ -125,23 +127,23 @@ idio.MTI\_all\_Zukunft & 0.10 & 0.59 & 7
 & RMSE h:6 & hit h:6 & rank h:6
 \\\addlinespace
 \midrule\endhead
-R3 & 0.23 & 0.62 & 7
+R3 & 0.06 & 0.74 & 1
 \\\addlinespace
-zew & 0.44 & 0.65 & 9
+zew & 0.08 & 0.70 & 7
 \\\addlinespace
-AR & 0.09 & 0.65 & 1
+naive & 0.08 & 0.00 & 9
 \\\addlinespace
-rvalue.zeit.economic & 0.15 & 0.56 & 2
+var\_perc\_nword.zeit & 0.06 & 0.60 & 2
 \\\addlinespace
-perc\_pword.zeit3.economic & 0.21 & 0.56 & 3
+var\_perc\_pword.zeit & 0.07 & 0.60 & 3
 \\\addlinespace
-var\_perc\_pnword.zeit.economic & 0.21 & 0.59 & 4
+var\_perc\_pnword.zeit & 0.07 & 0.62 & 4
 \\\addlinespace
-MTI\_DE\_all & 0.23 & 0.57 & 5
+idio.MTI\_DE\_Haushaltspolitik & 0.07 & 0.64 & 5
 \\\addlinespace
-idio.MTI\_DE\_Gegenwart & 0.23 & 0.62 & 6
+MTI\_all\_Gegenwart & 0.07 & 0.66 & 6
 \\\addlinespace
-idio.MTI\_all\_Waehrungspolitik.EURO.Geldpolitik & 0.24 & 0.59 & 8
+idio.MTI\_all\_Haushaltspolitik & 0.08 & 0.56 & 8
 \\\addlinespace
 \bottomrule
 \addlinespace
@@ -153,29 +155,27 @@ idio.MTI\_all\_Waehrungspolitik.EURO.Geldpolitik & 0.24 & 0.59 & 8
 & RMSE h:12 & hit h:12 & rank h:12
 \\\addlinespace
 \midrule\endhead
-R5 & 1.50 & 0.63 & 8
+R3 & 0.09 & 0.72 & 1
 \\\addlinespace
-zew & 1.75 & 0.55 & 9
+zew & 0.11 & 0.68 & 5
 \\\addlinespace
-AR & 0.10 & 0.66 & 1
+naive & 0.13 & 0.00 & 9
 \\\addlinespace
-rvalue.zeit.economic & 0.38 & 0.56 & 2
+var\_perc\_pnword.zeit3.economic & 0.09 & 0.70 & 2
 \\\addlinespace
-rvalue.zeit3.economic & 0.60 & 0.58 & 3
+var\_perc\_pword.zeit & 0.10 & 0.65 & 3
 \\\addlinespace
-nnword.zeit3 & 0.74 & 0.42 & 4
+var\_perc\_pword.zeit3 & 0.10 & 0.60 & 4
 \\\addlinespace
-idio.MTI\_DE\_Gegenwart & 0.80 & 0.73 & 5
+idio.MTI\_DE\_Haushaltspolitik & 0.12 & 0.69 & 6
 \\\addlinespace
-idio.MTI\_all\_Arbeitsmarkt & 0.88 & 0.50 & 6
+idio.MTI\_DE\_Gegenwart & 0.12 & 0.67 & 7
 \\\addlinespace
-idio.MTI\_all\_Waehrungspolitik.EURO.Geldpolitik & 1.08 & 0.67 & 7
+MTI\_all\_Konjunktur & 0.13 & 0.65 & 8
 \\\addlinespace
 \bottomrule
 \addlinespace
 \caption{Forecasted variable: ip, horizon: 12}
 \end{longtable}
-
-mean(abs(df{[}is.na(df{[},`ip'{]})==F,`ip'{]}))
 
 \end{document}
