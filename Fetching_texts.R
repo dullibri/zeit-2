@@ -4,10 +4,12 @@
 
 # Load register created by 'Getting_register.R' ---------------------------
 DirCode='H:/git/zeit-2'
-load(paste(DirCode,"/register.RData",sep=''))
+DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
+
+# load(paste(DirCode,"/register.RData",sep=''))
 
 # Setting directory for storing files -------------------------------------------------------
-DirRawTexts="H:/Zeit"
+DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
 
 # Creating subdirectories where texts are stored ----------------------------------------------------------
 register=cbind(register,yearissue=interaction(register$year,register$issue))
@@ -48,14 +50,14 @@ fgettext<-function(input,number,year,issue){
                         for (a in 1:Np){
                                 write.csv(readLines(paste(input,'/seite-',a,sep=''),encoding='UTF-8')
                                           ,paste(DirRawTexts,'/',year,'.',issue,'/',number,'-',a,'.txt',sep='')
-                                )
+                                row.names=F)
                         }
                 }
         }
         return(Np)
 }
 
-for (i in 41771:nrow(register)){#
+for (i in 1:nrow(register)){#
         
         if (length(grep('><',register$link[i]))!=0){
                 link=regexec('href=(.*)',register$link[i])

@@ -3,11 +3,12 @@
 #  ------------------------------------------------------------------------
 
 # Load register created by 'Getting_register.R' ---------------------------
-DirCode='H:/git/zeit-2'
-load(paste(DirCode,"/register.RData",sep=''))
+# DirCode='H:/git/zeit-2'
+# load(paste(DirCode,"/register.RData",sep=''))
 
 # Setting directory for storing files -------------------------------------------------------
 DirRawTexts="H:/Zeit"
+DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
 
 convert_html_to_text <- function(html) {
         # extracted from: convert_html_to_text <- function(html) {
@@ -51,7 +52,7 @@ library(XML)
 
 listsubdirs=list.files(DirRawTexts)
 
-for (subd in listsubdirs[1:1281]){
+for (subd in listsubdirs){
         # subd="2008.49"       
         listfiles=list.files(paste(DirRawTexts,'/',subd,sep='')) 
         if (length(grep('article',listfiles))!=0){

@@ -3,11 +3,13 @@
 #  ------------------------------------------------------------------------
 
 # Load register created by 'Getting_register.R' ---------------------------
-DirCode='H:/git/zeit-2'
-load(paste(DirCode,"/register.RData",sep=''))
+# DirCode='H:/git/zeit-2'
+# load(paste(DirCode,"/register.RData",sep=''))
 
 # Setting directory for storing files -------------------------------------------------------
 DirRawTexts="H:/Zeit"
+DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
+
 
 
 # Getting subdirectories --------------------------------------------------
@@ -15,7 +17,7 @@ listsubdirs=list.files(DirRawTexts)
 
 
 
-for (subd in listsubdirs[767]){
+for (subd in listsubdirs){
         # subd='2004.6'
         # List of documents in plaintext ------------------------------------------
         listfiles=dir(paste(DirRawTexts,'/',subd,sep=''))

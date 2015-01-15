@@ -3,6 +3,7 @@
 #  ------------------------------------------------------------------------
 # This file searches the index files of Die Zeit for each year and issue for links to 
 # articles of the 'books': Wirtschaft, Dossier, and Politik.
+DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 
 library(RCurl)
 fnissue<-function(year,webpage){
@@ -53,7 +54,8 @@ registry<-function(year,issue){
         ressorts=gsub('<li class=\"archiveressort\">|</li>','',ressorts)
         dfressorts=data.frame(ressorts,ressort_start,ressort_end,length=ressort_end-ressort_start+1)
         mainressorts=paste('[Ww]irtschaft','[Pp]olitik','[Dd]ossier',sep='|')
-
+        mainressorts='[Ww]irtschaft'
+        
         ind=fmainind(dfressorts,mainressorts)
         plainhtml=plainhtml[ind]
         
@@ -89,15 +91,22 @@ registry<-function(year,issue){
         return(register)
 }
 
-for (year in 1990:1990){
+for (year in 2015:2015){
         # year=2003
+        year=2015
         input<-paste('http://www.zeit.de/',year,'/index/seite-3',sep='')
+        
+#         year has just started: 
+        input<-paste('http://www.zeit.de/',year,'/index',sep='')
+        
         plainhtml=readLines(input,encoding='UTF-8')
         unlink(input)
         
 
         Nissue=fnissue(year,plainhtml)
         
+#         year has just started: 
+        Nissue=length(grep('Ausgabe 2015/[0-9]{2}',plainhtml))
         
         for (issue in 1:Nissue){
                 if (!'register'%in%ls()){
@@ -107,4 +116,6 @@ for (year in 1990:1990){
                                ,registry(year,issue))
         }
 }
+
+# save(register,file=paste(DirCode,'/e_register_update.RData',sep=''))
         

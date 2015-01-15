@@ -14,18 +14,31 @@ library(zoo)
 library(fBasics)
 # Setting directories for storing files -------------------------------------------------------
 DirRawTexts="H:/Zeit" # text files are stored here
-DirCode='H:/git/zeit-2' # main directory
+# DirCode='H:/git/zeit-2' # main directory
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------
 load(paste(DirCode,"/register.RData",sep=''))
 
+# Getting NAs and eliminating them
+test=register[is.na(register$pvalue)==T,]
+register=register[-which(is.na(register$pvalue)==T),]
 
 # restriction to economic section -----------------------------------------
-
+# (comment out if not wanted and change output-file below)
 load('e_register.RData')
+
+
+
 e_register=unique(e_register)
 e_index=match(e_register$link,register$link)
+
+# some articles, that are not in complete register? (here, due to 
+# different download of registers)
+e_not_existing=which(is.na(e_index)==T)
+e_register_not_existing=e_register[e_not_existing,]
+e_index=e_index[is.na(e_index)==F]
 register=register[e_index,]
 
 # Getting subdirectories --------------------------------------------------
@@ -229,5 +242,5 @@ row.names(zeit_df)=paste(Index_m$year,Index_m$Month,sep='/')
 zeit_df=zeit_df[order(row.names(zeit_df)),]
 # write.csv(zeit_df_window,'zeit.csv')
 # write.csv(zeit_df,'zeit_economic.csv')
-write.csv(zeit_df,'zeit.csv')
+# write.csv(zeit_df,'zeit.csv')
 
