@@ -14,32 +14,19 @@ library(zoo)
 library(fBasics)
 # Setting directories for storing files -------------------------------------------------------
 DirRawTexts="H:/Zeit" # text files are stored here
-# DirCode='H:/git/zeit-2' # main directory
-DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+DirCode='H:/git/zeit-2' # main directory
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------
+load("/register_update.RData",sep=''))
 load(paste(DirCode,"/register.RData",sep=''))
-
-# Getting NAs and eliminating them
-test=register[is.na(register$pvalue)==T,]
-register=register[-which(is.na(register$pvalue)==T),]
-
-# restriction to economic section -----------------------------------------
-# (comment out if not wanted and change output-file below)
-load('e_register.RData')
+register.alt=register
+load(paste(DirCode,"/register_update.RData",sep=''))
+register.neu=register
+register=rbind(register.alt[,c("link","title","year","issue")],register.neu[,c("link","title","year","issue")])
 
 
-
-e_register=unique(e_register)
-e_index=match(e_register$link,register$link)
-
-# some articles, that are not in complete register? (here, due to 
-# different download of registers)
-e_not_existing=which(is.na(e_index)==T)
-e_register_not_existing=e_register[e_not_existing,]
-e_index=e_index[is.na(e_index)==F]
-register=register[e_index,]
 
 # Getting subdirectories --------------------------------------------------
 listsubdirs=list.files(DirRawTexts)
@@ -58,24 +45,23 @@ listsubdirs=list.files(DirRawTexts)
 
 
 # Getting "Ergebnis.csv" Files and integrate them into register -----------
+register$id=NA
+register$npword=NA
+register$nnword=NA
+register$nword=NA
+register$pvalue=NA
+register$nvalue=NA
 
-
-# register$id=NA
-# register$npword=NA
-# register$nnword=NA
-# register$nword=NA
-# register$pvalue=NA
-# register$nvalue=NA
-# for (subd in listsubdirs){
-#         if (subd=='1993.36'){next}
-#         Ergebnis=read.csv(paste(DirRawTexts,'/',subd,'/','Ergebnis.csv',sep=''),row.names=1)
-#         narticle=nrow(Ergebnis)
-#         for (article in 1:narticle){
-#                 register[Ergebnis$id[article],5:10]=Ergebnis[article,]
-#         }
-#         
-# }
-# rm(Ergenbis)
+for (subd in listsubdirs){
+        if (subd=='1993.36'){next}
+        Ergebnis=read.csv(paste(DirRawTexts,'/',subd,'/','Ergebnis.csv',sep=''),row.names=1)
+        narticle=nrow(Ergebnis)
+        for (article in 1:narticle){
+                register[Ergebnis$id[article],5:10]=Ergebnis[article,]
+        }
+        
+}
+rm(Ergebnis)
 
 # Adding dates ------------------------------------------------------------
 # 
@@ -157,6 +143,26 @@ listsubdirs=list.files(DirRawTexts)
 #         keywords_index=regexec(paste('keywords" content="','(.*)','\"><(meta property)=\"og:site_name\"',sep=''),plainhtml)
 #         register$keywords[i]=regmatches(plainhtml,keywords_index)[[1]][2]
 # }
+
+
+#  section was moved from top to here -------------------------------------
+# Getting NAs and eliminating them 
+test=register[is.na(register$pvalue)==T,]
+register=register[-which(is.na(register$pvalue)==T),]
+
+# restriction to economic section -----------------------------------------
+# (comment out if not wanted and change output-file below)
+# load('e_register_update.RData')
+e_register=unique(e_register)
+e_index=match(e_register$link,register$link)
+
+# some articles, that are not in complete register? (here, due to 
+# different download of registers)
+e_not_existing=which(is.na(e_index)==T)
+e_register_not_existing=e_register[e_not_existing,]
+e_index=e_index[is.na(e_index)==F]
+register=register[e_index,]
+#  ------------------------------------------------------------------------
 
 
 # calculating relative values ---------------------------------------------

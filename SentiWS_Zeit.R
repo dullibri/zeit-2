@@ -22,10 +22,10 @@ gross=function(x){x=grep('([A-ZÖÄÜ][a-zäüöß]+)',x)} # returns a vector of the up
 
 # Setting directories for storing files -------------------------------------------------------
 DirRawTexts="H:/Zeit" # text files are stored here
-DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
+# DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
 
 DirCode='H:/git/zeit-2' # main directory
-DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
+# DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------
@@ -36,31 +36,17 @@ listsubdirs=list.files(DirRawTexts)
 
 #  SentiWS: ------------------------------------------------------------------------
 #       getting the list of positive and negative words and their values -----------------------------------------------------------------
-#       posneg (lowercase) POSNEG (uppercase)
-# source('Preparing SentiWs.R')
-load(paste(DirCode,"/SentiWS.RData",sep=''))
+#       valueword (lowercase) VALUEWORD (uppercase), created with valueword.R
 
-# dropping words that have abs(values) <0.004
-POSNEG=POSNEG[-which(abs(POSNEG$value)<=0.004),]
-posneg=posneg[-which(abs(posneg$value)<=0.004),]
 
-# source(paste(DirCode,"/Preparing SentiWs.R",sep='')) # to make SentiWS.RData
-source(paste(DirCode,"/valueword_capital_letters.R",sep=''))
-source(paste(DirCode,"/valueword.R",sep=''))
-
+valueword=read.csv(paste(DirCode,"/valueword.csv",sep=''))
+VALUEWORD=read.csv(paste(DirCode,"/valueword_capital.csv",sep=''))
 # taking time -------------------------------------------------------------
 begin_test=proc.time()
 
-vposneg=paste(posneg[,2],collapse='',sep='')
-vposneg=sapply(strsplit(vposneg,','),function(x) x)
-
-vPOSNEG=paste(POSNEG[,2],collapse='',sep='')
-vPOSNEG=tolower(vPOSNEG)
-vPOSNEG=sapply(strsplit(vPOSNEG,','),function(x) x)
-vPOSNEG[1]='abmachung'
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 2015){#jj=1990
+for (jj in 1990:2015){#jj=1990
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
         for (k in 1:length(liste_jahr)){#k=1
@@ -153,25 +139,26 @@ for (jj in 2015){#jj=1990
                 #  ------------------------------------------------------------------------               
                 
                 # Document Term Matrix erstellen ------------------------------------------
-                
                 dtm <- DocumentTermMatrix(docs)
                 Mdtm=as.matrix(dtm)
                 
-                
                 # Welche reihennummer haben in vposneg haben die relevanten spalten in der dtm ---------------------------------
-                t9=match(colnames(dtm),vposneg)
+#                 t9=match(colnames(dtm),vposneg)
                 
-                
-                
-                # dtm auf relevante verkleinern -------------------------------------------
-                Mdtm_rel=Mdtm[,is.na(t9)==F]
-                rel_words=as.matrix(colnames(Mdtm_rel))    
+                vworddtm.ind=valueword[,'wort']%in%colnames(dtm)
+                vworddtm=valueword[vworddtm.ind,'wert',drop=F]
+                dtm.ind=colnames(dtm)%in%valueword[,'wort']
+                rel_words=as.character(valueword[vworddtm.ind,'wort'])
+                rel_words_2=colnames(dtm)[dtm.ind]
+                rel_words.freq=Mdtm[,dtm.ind]
+   
                 
                 # spalten-worte den POSNEG zuordnen ---------------------------------------
                 #                 test=match(valueword[,2],rel_words) # die existierenden werte sind die zeilennummern von rel_words
                 #                 test=test[is.na(test)!=T]
                 ind_valueword=lapply(rel_words,function(x) which(x==valueword[,1]))
                 ind_valueword=sapply(ind_valueword,function(x) x[[1]])
+#                 ind_valueword=sapply(ind_valueword,function(x) x[1])
                 value=valueword[ind_valueword,2]
                 ind_pos=value>0
                 ind_neg=value<0
