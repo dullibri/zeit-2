@@ -1,4 +1,4 @@
-function (text, valueword) 
+sentiment<-function (text, valueword) 
 {
     if (length(text) == 2 & text[1] == ",x") {
         text = text[2]
