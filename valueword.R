@@ -6,6 +6,8 @@
 
 
 DirCode='H:/git/zeit-2'
+DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
+
 # load(paste(DirCode,"/SentiWS.RData",sep=''))
 
 # Preparing SentiWs -------------------------------------------------------
@@ -25,52 +27,46 @@ neg.words <- read.delim(paste(DirCode,sDirS,"SentiWS_v1.8c_Negative_without_pipe
                         , header=F
                         ,stringsAsFactors=F
                         )
+senti=rbind(pos.words,neg.words)
+# merge stem and transformation of words
+words=paste(senti[,1],senti[,4],sep=',')
+# getting lists containing all words of individual stems
+words.list=sapply(words,function(x) strsplit(x,','))
+# number of words each stem
+stem.n=sapply(words.list,length)
 
-# separating Nouns ('NN') and others
-Pos=pos.words[pos.words[,2]=='NN',]
-pos=pos.words[pos.words[,2]!='NN',]
+# getting single vector containing all words
+words.v=character(0)
+for (i in 1:length(words.list)){words.v=c(words.v,words.list[[i]])}
+test=sapply(words.v,function(x) x[[1]])
 
-NEG=matrix(NA,nrow=nrow(neg.words),ncol=1)
-for (i in 1:nrow(neg.words)){NEG[i,]=paste(neg.words[i,1],neg.words[i,4],sep=',')}
-NEG=data.frame(value=neg.words[,3],words=as.character(NEG),stringsAsFactors=F)
-Neg=NEG[neg.words[,2]=='NN',]
-neg=NEG[neg.words[,2]!='NN',]
+valueword=data.frame(wort=words.v
+        ,wert=rep(senti[,3],stem.n)
+        ,stem=rep(senti[,1],stem.n)
+        ,form=rep(senti[,2],stem.n)
+        )
 
-POS=matrix(NA,nrow=nrow(pos.words),ncol=1)
-for (i in 1:nrow(pos.words)){POS[i,]=paste(pos.words[i,1],pos.words[i,4],sep=',')}
-POS=data.frame(value=pos.words[,3],words=as.character(POS),stringsAsFactors=F)
-Pos=POS[pos.words[,2]=='NN',]
-pos=POS[pos.words[,2]!='NN',]
-
-# grouping in capital and lowercase words
-posneg=rbind(pos,neg)
-POSNEG=rbind(Pos,Neg)
-
-# creating valueword: dataframe with each word having a single entry with a value
-# attached ------------------------------------------------------
-# first lowercase words
-for (i in 1:nrow(posneg)){
-        if (i==1){
-        valueword=data.frame(wort=sapply(strsplit(posneg[i,2],','),function(x) x),stringsAsFactors=F)
-        valueword$wert=posneg[i,1]
-        }
-        uu=data.frame(wort=sapply(strsplit(posneg[i,2],','),function(x) x),stringsAsFactors=F)
-        uu$wert=posneg[i,1]
-        valueword=rbind(valueword,uu)
-}
+# getting duplicated words
 duplo.ind=duplicated(valueword[,1])
+duplo.n=sum(duplo.ind)
 duplo.words=valueword[duplo.ind,]
+
+# how many words are affected?
 duplo.vw.ind=as.character(valueword[,1])%in%duplo.words[,1]
 valueword.duplo=valueword[duplo.vw.ind,]
+# ordering to get duplicates together
 valueword.duplo=valueword.duplo[order(valueword.duplo[,1]),]
+# each duplicates occurs only twice, as duplo.n*2=
+duplo.n.affected=nrow(valueword.duplo)
 
+# which duplicates have the same value?
 for (i in 2:nrow(valueword.duplo)){
         if (valueword.duplo[i,1]==valueword.duplo[i-1,1]&valueword.duplo[i,2]==valueword.duplo[i-1,2]){
-                valueword.duplo[i,3]=row.names(valueword.duplo)[i]
+                valueword.duplo[i,'double']=row.names(valueword.duplo)[i]
         }
 }
 # rows to be deleted in valueword.duplo
-duplo.el=which(is.na(valueword.duplo[,3])==F)
+duplo.el=which(is.na(valueword.duplo[,5])==F)
 # eliminated from valueword.duplo and thus not eliminated subsequently from 
 # valueword
 valueword.duplo=valueword.duplo[-c(duplo.el),]
