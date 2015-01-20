@@ -199,10 +199,16 @@ for (i in 1:lo.pos){
 # upper=range[which.max(cor.up)]
 # plot(cor.up)
 # max(cor.up)
-plot(rowSums(pos))
-lines(pos[,1],col='red')
-lines(pos[,2],col='green')
 
+plot(pos[,1],col=1,lty=1,ylim=range(pos,na.rm=T))
+lines(pos[,2],col=2,lty=2)
+upper=range[20]
+abline(v=20)
+legend('topleft'
+       ,col=c(1,2)
+       ,lty=c(1,2)
+       ,legend=colnames(pos)
+        )
 # next, optimizing alpha.negative
 auto.neg=com.art$auto.rvalue[com.art$auto.rvalue<0]
 lo.neg=length(auto.neg)
@@ -213,7 +219,7 @@ colnames(neg)=c('precision','pos precision','recall','pos recall','wrong sign pr
 range=seq(0,quantile(auto.neg,0.1),length.out=lo.neg)
 for (i in 1:lo.neg){
         t=matrix(c(com.art$unambiguous,
-                      recoder(com.art$auto.rvalue,upper=0.02,lower=range[i])
+                      recoder(com.art$auto.rvalue,upper=upper,lower=range[i])
                    )
                  ,ncol=2)
          neg[i,1]=(diag(table(t[,1],t[,2]))/colSums(table(t[,1],t[,2])))['-1']
@@ -230,14 +236,16 @@ for (i in 1:lo.neg){
 plot(neg[,1],col=1,lty=1,ylim=range(neg[,c(1,3,5)]))
 # lines(neg[,2],col=2,lty=2)
 lines(neg[,3],col=3,lty=3)
-lines(neg[,5],col=5,lty=5)
-legend('topright'
-#         c(1,1),c(.5,0.7)
-       ,col=c(1,3,5)
-       ,lty=c(1,3,5)
-       ,legend=colnames(neg)[c(1,3,5)]
-       ,bty=0
-       )
+# lines(neg[,5],col=5,lty=5)
+lower=range[40]
+abline(v=40)
+# legend('topright'
+# #         c(1,1),c(.5,0.7)
+#        ,col=c(1,3,5)
+#        ,lty=c(1,3,5)
+#        ,legend=colnames(neg)[c(1,3,5)]
+#        ,bty=0
+#        )
 barplot(table(com$unambiguous)/sum(table(com$unambiguous)))
 hist(com$auto.rvalues)
 
@@ -246,12 +254,13 @@ negative=sum(com$auto.rvalues<0)/length(com$auto.rvalues)
 positive=sum(com$auto.rvalues>0)/length(com$auto.rvalues)
 barplot(c(negative,neutral,positive))
 t=matrix(c(com.art$unambiguous,
-                      recoder(com.art$auto.rvalue,upper=0,lower=range[i])
+                      recoder(com.art$auto.rvalue,upper=upper,lower=lower)
                    )
                  ,ncol=2)
 tab=table(t[,1],t[,2])
 colnames(tab)=paste('predicted \"',colnames(tab),'\"',sep='')
-tab
+tab/sum(tab)
+barplot(table(t[,2]))
 # cor.down=sapply(cor.down,function(x) x)
 # lower=range[which.max(cor.down)]
 # test=sapply(cor.down,function(x) x)
