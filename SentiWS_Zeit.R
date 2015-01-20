@@ -27,8 +27,10 @@ setwd(DirCode)
 # Load register created by 'Getting_register.R' ---------------------------
 # load(paste(DirCode,"/register.RData",sep=''))
 
-sentiment<-function (text, valueword) 
-{
+sentiment<-function (text, valueword){
+        # returns the word, value, stem, form and frequency of each sentiment word in text
+        # in the data.frame valdf. And, it returns the total number of words in text
+        # as integer nword.
         if (length(text) == 2 & text[1] == ",x") {
                 text = text[2]
         }
@@ -37,7 +39,8 @@ sentiment<-function (text, valueword)
         valdf = valueword[ind, , drop = F]
         valdf$h = sapply(valueword[ind, 1], function(x) sum(text.split %in% 
                                                                     x))
-        return(valdf)
+        nwords = length(text.split)
+        return(list(valdf,nwords))
 }
 
 # Getting subdirectories --------------------------------------------------
@@ -71,13 +74,15 @@ for (jj in 2014:2015){#jj=2015
                 
                 for (i in 1:Narticle_issue){# i=1
                         text<-readLines(paste(sFolderTexte,svFile[i],sep=''), encoding="UTF-8")#, header=T,stringsAsFactors =F)
-                        sent.df<-sentiment(text,valueword)
+                        sent<-sentiment(text,valueword)
+                        nwords<-sent[[2]]
+                        sent.df<-sent[[1]]
                         pos.id=which(sent.df[,'wert']>0)
                         
                         Ergebnis[i,]=c(id=gsub('article-|\\.txt','',svFile[i])
                                 ,npword=sum(sent.df[pos.id,'h'])
                                 ,nnword=sum(sent.df[-pos.id,'h'])
-                                ,nword=sum(sent.df[,'h'])
+                                ,nword=nwords
                                 ,pvalue=sum(sent.df[pos.id,'wert']*sent.df[pos.id,'h'])
                                 ,nvalue=sum(sent.df[-pos.id,'wert']*sent.df[-pos.id,'h'])
                         )

@@ -1,0 +1,289 @@
+---
+title: "Zeit classification of neutral evaluations"
+author: "Dirk Ulbricht"
+fontsize: 11pt
+fig_caption: yes
+output:
+pdf_document:
+keep_tex: yes
+
+word_document: default
+---
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+DirGold=paste(DirCode,'/data/goldstandard/',sep='')
+files=list.files(DirGold)
+library('irr')
+
+# load the evaluations of the 3 annotators (dmitry, steffen and jakob, paragraph 13 'strom aus der welle' deleted, due to error in counting paragraphs, article 'Die Hintermänner' actually had 56 not 55 paragraphs, the  number given in the annotation form, article 'Willkommen in Deutschland' has not been evaluated by either of the annotators.)
+
+df=read.csv(paste(DirGold,'Zeit_Artikel_Abschnitte_Bewertung_3_HAnnotatoren.csv',sep=''),sep=';')
+
+# rearanging columns for convenience
+text.col=grep('Text',colnames(df))
+df=cbind(df[,-4],df[,4,drop=F])
+compl=complete.cases(df)
+
+# dropping incomplete observations
+df=df[compl,]
+
+# getting automated sentiment
+
+# load valueword (a vector of SentiWS words in the first column, values in the second, ambigous duplicates are eliminated, capitalizations are preserved)
+valueword=read.csv(paste(DirCode,'/valueword.csv',sep=''))
+
+# ignoring small positive and negative value-words
+# big.ind=(valueword$wert)<0
+# valueword=valueword[big.ind,]
+
+# creating function to evaluate texts:
+sentiment<-function (text, valueword){
+        # returns the word, value, stem, 
+        # form and frequency of each sentiment word in text
+        # in the data.frame valdf. And, it returns the total 
+        # number of words in text
+        # as integer nword.
+        if (length(text) == 2 & text[1] == ",x") {
+                text = text[2]
+                }
+        text.split = sapply(strsplit(text, " "), function(x) x)
+        ind = valueword[, 1] %in% text.split
+        valdf = valueword[ind, , drop = F]
+        valdf$h = sapply(valueword[ind, 1], function(x) sum(text.split%in%x))
+        nwords = length(text.split)
+        return(list(valdf,nwords))
+        }
+# auto: getting values, the number of observations each paragraph and the 
+# values relative to the number of words
+auto.sent=sapply(as.character(df[,'Text']),sentiment,valueword)
+colnames(auto.sent)=NULL
+auto=data.frame(auto.values=sapply(auto.sent[1,],function(x) sum(x$wert))
+                ,nwords=sapply(auto.sent[2,],function(x) x))
+auto$auto.rvalues=auto$auto.values/auto$nwords
+df=cbind(auto,df)
+```
+
+
+```{r aggregating to articles-recoding-unambigous,echo=F}
+# aggregating to articles
+df.art=data.frame(nword=aggregate(df$nwords,list(df$Artikeln_Nr),sum))
+df.art$JM=aggregate(df$nwords*df$JM,list(df$Artikeln_Nr),sum)[,2]/
+        df.art$nword.x
+df.art$SN=aggregate(df$nwords*df$SN,list(df$Artikeln_Nr),sum)[,2]/
+        df.art$nword.x
+df.art$DC=aggregate(df$nwords*df$DC,list(df$Artikeln_Nr),sum)[,2]/
+        df.art$nword.x
+df.art$auto.rvalues=aggregate(df$auto.rvalues,list(df$Artikeln_Nr),mean)[,2]
+
+# recoding values to eliminate influence of irrelevant nearly neutral
+# and getting more unambigous values
+recoder<-function(com,upper=1,lower=-1){
+        # recodes a vector of values (com) into three classes (-1,0,1) 
+        # using upper=upper bound (value itself not included in 
+        # "1") and lower= lower bound (value itself not included in "-1")
+        # ------
+        comr=com
+        id=data.frame(pos=com>upper
+                      ,neg=com<lower
+                      ,neutral=com<=upper&com>=lower
+                      )
+        comr[id$pos]=1
+        comr[id$neg]=-1
+        comr[id$neutral]=0
+        return(comr)
+        }
+
+df=cbind(JMr=recoder(df$JM)
+         ,SNr=recoder(df$SN)
+         ,DCr=recoder(df$DC)
+         ,df
+         )
+df.art=cbind(JMr=recoder(df.art$JM)
+         ,SNr=recoder(df.art$SN)
+         ,DCr=recoder(df.art$DC)
+         ,df.art
+         )
+
+# getting a vector of unambiguous classifications
+unambiguous<-function(df.annotator){
+        # This function returns a vector(N) of unambiguous 
+        # ratings out of a data.frame(N,3) of 3 annotators. A 
+        # rating is considered unambiguous, if at least 2
+        # of the annotators give the same rating. Possible
+        # values are automatically identified.
+        #-----------
+        # vectorizing data.frame and getting possible 
+        # values excluding "NAs"
+        df.annotator.v=c(as.matrix(df.annotator))
+        values=unique(df.annotator.v)
+        values=values[is.na(values)==F]
+        values.freq=sapply(values,function(x) rowSums(df.annotator==x))
+        values.id=values.freq>1
+        unambiguous=matrix(NA,nrow=nrow(values.id),ncol=1)
+        for (i in 1:nrow(unambiguous)){
+                val=values[values.id[i,]] 
+                if (length(val)==0){unambiguous[i,1]=NA}
+                else{unambiguous[i,1]=val}                
+                }
+        return(unambiguous)
+        }
+df=cbind(unambiguous=unambiguous(df[,c('SNr','JMr','DCr')])
+         ,df
+         )
+df.art=cbind(unambiguous=unambiguous(df.art[,c('SNr','JMr','DCr')])
+         ,df.art
+         )
+
+par(mfrow=c(1,2))
+barplot(table(df$unambiguous)
+        ,main='Unambiguous\nparagraph')
+barplot(table(df.art$unambiguous)
+        ,main='Unambiguous\narticle')
+par(mfrow=c(1,1))
+```
+
+
+
+```{r comparing goldstandard and automatic procedure and optimizing,echo=F}
+
+com.art=df.art[,c('unambiguous','auto.rvalues')]
+com.art.compl=complete.cases(com.art)
+com.art=com.art[com.art.compl,]
+
+correlation=round(cor(com.art[,'unambiguous'],com.art['auto.rvalues']),3)
+```
+
+```{r paragraph comparison,echo=FALSE,cache=F,eval=T}
+com=df[,c('unambiguous','auto.rvalues')]
+com.compl=complete.cases(com)
+com=com[com.compl,]
+
+correlation=round(cor(com[,'unambiguous'],com['auto.rvalues']),3)
+
+```
+
+The correlation between unambigous ratings of the annotators and the automatic sentiment indicator is rather low, giving a value of `$correlation$`. 
+
+Taking a look at the border between neutral and positive.
+
+```{r article optimization,echo=FALSE}
+com.art.s=com.art # back-up
+com.art=com
+
+# first, optimizing alpha.positive
+# getting vector of positive values
+auto.pos=com.art$auto.rvalue[com.art$auto.rvalue>0]
+# how many intervalls make sense
+lo.pos=length(auto.pos)
+lo.pos=100
+pos=matrix(NA,nrow=lo.pos,ncol=2) 
+colnames(pos)=c('precision','recall')
+# cor.up=matrix(NA,nrow=lo.pos,ncol=1) 
+
+range=seq(0,quantile(auto.pos,1),length.out=lo.pos)
+for (i in 1:lo.pos){
+        t=matrix(c(
+                com.art$unambiguous
+                ,recoder(com.art$auto.rvalue,lower=0,upper=range[i])
+                )
+                ,ncol=2
+                )
+        pos[i,1]=(diag(table(t[,1],t[,2]))/colSums(table(t[,1],t[,2])))['1']
+        pos[i,2]=(diag(table(t[,1],t[,2]))/rowSums(table(t[,1],t[,2])))['1']
+        
+#         cor.up[i]=kripp.alpha(t,method='ordinal')[5]
+        
+}
+# cor.up=sapply(cor.up,function(x) x)
+# upper=range[which.max(cor.up)]
+# plot(cor.up)
+# max(cor.up)
+plot(rowSums(pos))
+lines(pos[,1],col='red')
+lines(pos[,2],col='green')
+
+# next, optimizing alpha.negative
+auto.neg=com.art$auto.rvalue[com.art$auto.rvalue<0]
+lo.neg=length(auto.neg)
+lo.neg=100
+# cor.down=matrix(NA,nrow=lo.neg,ncol=1)
+neg=matrix(NA,nrow=lo.neg,ncol=5) 
+colnames(neg)=c('precision','pos precision','recall','pos recall','wrong sign prediction')
+range=seq(0,quantile(auto.neg,0.1),length.out=lo.neg)
+for (i in 1:lo.neg){
+        t=matrix(c(com.art$unambiguous,
+                      recoder(com.art$auto.rvalue,upper=0.02,lower=range[i])
+                   )
+                 ,ncol=2)
+         neg[i,1]=(diag(table(t[,1],t[,2]))/colSums(table(t[,1],t[,2])))['-1']
+        neg[i,2]=(diag(table(t[,1],t[,2]))/colSums(table(t[,1],t[,2])))['1']
+        neg[i,3]=(diag(table(t[,1],t[,2]))/rowSums(table(t[,1],t[,2])))['-1']
+        neg[i,4]=(diag(table(t[,1],t[,2]))/rowSums(table(t[,1],t[,2])))['1']
+        neg[i,5]=(table(t[,1],t[,2])[1,3]/rowSums(table(t[,1],t[,2])))['-1']
+#         cor.down[i]=kripp.alpha(t,method='ordinal')[[5]]
+        
+}
+
+# plot(rowSums(neg))
+
+plot(neg[,1],col=1,lty=1,ylim=range(neg[,c(1,3,5)]))
+# lines(neg[,2],col=2,lty=2)
+lines(neg[,3],col=3,lty=3)
+lines(neg[,5],col=5,lty=5)
+legend('topright'
+#         c(1,1),c(.5,0.7)
+       ,col=c(1,3,5)
+       ,lty=c(1,3,5)
+       ,legend=colnames(neg)[c(1,3,5)]
+       ,bty=0
+       )
+barplot(table(com$unambiguous)/sum(table(com$unambiguous)))
+hist(com$auto.rvalues)
+
+neutral=sum(com$auto.rvalues==0)/length(com$auto.rvalues)
+negative=sum(com$auto.rvalues<0)/length(com$auto.rvalues)
+positive=sum(com$auto.rvalues>0)/length(com$auto.rvalues)
+barplot(c(negative,neutral,positive))
+t=matrix(c(com.art$unambiguous,
+                      recoder(com.art$auto.rvalue,upper=0,lower=range[i])
+                   )
+                 ,ncol=2)
+tab=table(t[,1],t[,2])
+colnames(tab)=paste('predicted \"',colnames(tab),'\"',sep='')
+tab
+# cor.down=sapply(cor.down,function(x) x)
+# lower=range[which.max(cor.down)]
+# test=sapply(cor.down,function(x) x)
+# plot(test)
+# plot(cor.down)  
+# max.cor=round(max(cor.down),2)
+# print(max.cor)
+```
+
+
+
+```{r krippendorf's alpha analyse}
+t=matrix(c(com$unambiguous,
+#                       recoder(com.art$auto.rvalue,upper=upper,lower=lower)
+                      recoder(com$auto.rvalue,upper=0.009,lower=-0.005)
+
+                   )
+                 ,ncol=2)
+table(t[,1],t[,2]) # links der goldstandard
+sum(diag(table(t[,1],t[,2])))/535 # % richtig erkannt
+diag(table(t[,1],t[,2]))/rowSums(table(t[,1],t[,2])) # recall
+diag(table(t[,1],t[,2]))/colSums(table(t[,1],t[,2])) # precision
+rowSums(table(t[,1],t[,2]))
+# treffer
+        kalpha=kripp.alpha(t,method='ordinal')
+
+tab=kalpha$cm/kalpha$nmatchval
+colnames(tab)=kalpha$data.values
+row.names(tab)=kalpha$data.values
+tab
+# correct of all predictions
+
+
+```
+
