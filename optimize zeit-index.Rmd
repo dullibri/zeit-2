@@ -23,9 +23,7 @@ df=df[complete.cases(df),]
 # ambigous duplicates are eliminated, capitalizations are preserved)
 valueword=read.csv(paste(DirCode,'/valueword.csv',sep=''))
 
-# ignoring small positive and negative value-words
-big.ind=(valueword$wert)>0#.005
-valueword=valueword[big.ind,]
+
 
 # creating function to evaluate texts and applying it:
 sentiment<-function (text, valueword){
@@ -92,263 +90,86 @@ sd.ann=sd(sapply(df.art[,c('SN','DC','JM')],function(x) x))
 # rescaling value to optimize visual comparison
 df.art$value.rs=(df.art$value-mean(df.art$value))/
         sd(df.art$value)*sd.ann+mean.ann
+
+
+df.art$ann=rowSums(df.art[,c('SN','DC','JM')])/3
+
+
+plot(df.art$value.rs,type='line',col='blue')
+lines(df.art$ann)
+cor(df.art$ann,df.art$value.rs)
+
+# df.art=df.art[df.art$value<-0.05|df.art$value>0.05,]
+
+steps=df.art$nword[order(df.art$nword)]
+corl=matrix(NA,nrow=length(steps),3)
+for (i in 1:(length(steps)-2)){
+        long.art=df.art$nword>=steps[i]
+        corl[i]=cor(df.art$ann[long.art],df.art$value.rs[long.art])
+        corl[i,2]=cor.test(df.art$ann[long.art],df.art$value.rs[long.art])$p.value
+        corl[i,3]=sum(long.art)
+}
+```
+
+```{r correlation and # of words,cache=FALSE}
+plot(corl[,1],xaxt='n'
+     ,main='Correlation and # of words'
+     ,xlab='Number of words'
+,ylab='Correlation')
+xind=1:(length(steps)-1)
+ind=corl[,2]<0.05
+points(xind[which(ind)],corl[which(ind),1],col='red')
+axis(1, at=1:length(steps), labels=steps)
+legend('topleft'
+       ,pch=1
+       ,col=c('black','red')
+       ,legend=c('correlation coefficients','significance at 5% level')
+        )
+# corl1=corl
+
+```
+
+```{r plotting significant and high correlation,eval=FALSE}
 # plotting the results
-plot(df.art$value.rs)
-lines(df.art$JM)
-lines(df.art$DC,col='blue')
-lines(df.art$SN,col='red')
+long.art=df.art$nword>=steps[30]
+
+plot(df.art$value[long.art],df.art$ann[long.art])
+lines(df.art$JM[long.art])
+lines(df.art$DC[long.art],col='blue')
+lines(df.art$SN[long.art],col='red')
 abline(h=0)
 abline(h=-1,lty=2)
 abline(h=1,lty=2)
 
-df.art$ann=rowSums(df.art[,c('SN','DC','JM')])/3
-plot(df.art$value.rs,type='line',col='blue')
-lines(df.art$ann)
-cor(df.art$ann,df.art$value.rs)
-steps=df.art$nword[order(df.art$nword)]
-corl=matrix(NA,nrow=length(steps),1)
-for (i in 1:(length(steps)-1)){
-        long.art=df.art$nword>=steps[i]
-        corl[i]=cor(df.art$ann[long.art],df.art$value.rs[long.art])
-}
-plot(corl,xaxt='n')
-axis(1, at=1:length(steps), labels=steps)
 
-t=data.frame(steps,corl)
-
-df$ann=rowSums(df[,c('SN','DC','JM')])/3
-steps=df$nword[order(df$nword)]
-corl=matrix(NA,nrow=length(steps),2)
-for (i in 1:(length(steps)-1)){
-        long.art=df$nword>=steps[i]
-        corl[i,1]=cor(df$ann[long.art],df$value[long.art])
-        corl[i,2]=cor.test(df$ann[long.art],df$value[long.art])$p.value
-}
-plot(corl[,1],xaxt='n')
-axis(1, at=1:length(steps), labels=steps)
-tt=data.frame(steps,corl)
-        
-cor(df$ann[long.art],df$value.rs[long.art])
-plot(df$ann,df$value.rs)
-abline(h=0,lty=2)
-t=data.frame(steps,corl)
-# recoding values to eliminate influence of irrelevant nearly neutral
-# and getting more unambigous values
-recoder<-function(com,upper=1,lower=-1){
-        # recodes a vector of values (com) into three classes (-1,0,1) 
-        # using upper=upper bound (value itself not included in 
-        # "1") and lower= lower bound (value itself not included in "-1")
-        # ------
-        comr=com
-        id=data.frame(pos=com>upper
-                      ,neg=com<lower
-                      ,neutral=com<=upper&com>=lower
-                      )
-        comr[id$pos]=1
-        comr[id$neg]=-1
-        comr[id$neutral]=0
-        return(comr)
-        }
-
-df=cbind(JMr=recoder(df$JM)
-         ,SNr=recoder(df$SN)
-         ,DCr=recoder(df$DC)
-         ,df
-         )
-df.art=cbind(JMr=recoder(df.art$JM)
-         ,SNr=recoder(df.art$SN)
-         ,DCr=recoder(df.art$DC)
-         ,df.art
-         )
-
-# getting a vector of unambiguous classifications
-unambiguous<-function(df.annotator){
-        # This function returns a vector(N) of unambiguous 
-        # ratings out of a data.frame(N,3) of 3 annotators. A 
-        # rating is considered unambiguous, if at least 2
-        # of the annotators give the same rating. Possible
-        # values are automatically identified.
-        #-----------
-        # vectorizing data.frame and getting possible 
-        # values excluding "NAs"
-        df.annotator.v=c(as.matrix(df.annotator))
-        values=unique(df.annotator.v)
-        values=values[is.na(values)==F]
-        values.freq=sapply(values,function(x) rowSums(df.annotator==x))
-        values.id=values.freq>1
-        unambiguous=matrix(NA,nrow=nrow(values.id),ncol=1)
-        for (i in 1:nrow(unambiguous)){
-                val=values[values.id[i,]] 
-                if (length(val)==0){unambiguous[i,1]=NA}
-                else{unambiguous[i,1]=val}                
-                }
-        return(unambiguous)
-        }
-df=cbind(unambiguous=unambiguous(df[,c('SNr','JMr','DCr')])
-         ,df
-         )
-df.art=cbind(unambiguous=unambiguous(df.art[,c('SNr','JMr','DCr')])
-         ,df.art
-         )
-
-par(mfrow=c(1,2))
-barplot(table(df$unambiguous)
-        ,main='Unambiguous\nparagraph')
-barplot(table(df.art$unambiguous)
-        ,main='Unambiguous\narticle')
-par(mfrow=c(1,1))
-```
-
-
-
-```{r comparing goldstandard and automatic procedure and optimizing,echo=F}
-
-com.art=df.art[,c('unambiguous','auto.rvalues')]
-com.art.compl=complete.cases(com.art)
-com.art=com.art[com.art.compl,]
-
-correlation=round(cor(com.art[,'unambiguous'],com.art['auto.rvalues']),3)
-```
-
-```{r paragraph comparison,echo=FALSE,cache=F,eval=T}
-com=df[,c('unambiguous','auto.rvalues')]
-com.compl=complete.cases(com)
-com=com[com.compl,]
-
-correlation=round(cor(com[,'unambiguous'],com['auto.rvalues']),3)
 
 ```
 
-The correlation between unambigous ratings of the annotators and the automatic sentiment indicator is rather low, giving a value of `$correlation$`. 
+```{r are there any nearly neutral words that can be dropped?}
+# ignoring small positive and negative value-words
 
-Taking a look at the border between neutral and positive.
 
-```{r article optimization,echo=FALSE}
-com.art.s=com.art # back-up
-com.art=com
+testrange=valueword[]
+t(combn(x, 2))
+border=data.frame(lower=c(0,0,-0.0048,-0.0048)
+                  ,upper=c(0,0.004,0,0.004))
+I=nrow(border)
+corI=data.frame(matrix(NA,I,1))
 
-# first, optimizing alpha.positive
-# getting vector of positive values
-auto.pos=com.art$auto.rvalue[com.art$auto.rvalue>0]
-# how many intervalls make sense
-lo.pos=length(auto.pos)
-lo.pos=100
-pos=matrix(NA,nrow=lo.pos,ncol=2) 
-colnames(pos)=c('precision','recall')
-# cor.up=matrix(NA,nrow=lo.pos,ncol=1) 
-
-range=seq(0,quantile(auto.pos,1),length.out=lo.pos)
-for (i in 1:lo.pos){
-        t=matrix(c(
-                com.art$unambiguous
-                ,recoder(com.art$auto.rvalue,lower=0,upper=range[i])
-                )
-                ,ncol=2
-                )
-        pos[i,1]=(diag(table(t[,1],t[,2]))/colSums(table(t[,1],t[,2])))['1']
-        pos[i,2]=(diag(table(t[,1],t[,2]))/rowSums(table(t[,1],t[,2])))['1']
+for (i in 1:I){
         
-#         cor.up[i]=kripp.alpha(t,method='ordinal')[5]
-        
-}
-# cor.up=sapply(cor.up,function(x) x)
-# upper=range[which.max(cor.up)]
-# plot(cor.up)
-# max(cor.up)
+valueword=read.csv(paste(DirCode,'/valueword.csv',sep=''))
+big.ind=valueword$wert<border$lower[i]|border$upper[i]<valueword$wert
+valueword=valueword[big.ind,]
 
-plot(pos[,1],col=1,lty=1,ylim=range(pos,na.rm=T))
-lines(pos[,2],col=2,lty=2)
-upper=range[20]
-abline(v=20)
-legend('topleft'
-       ,col=c(1,2)
-       ,lty=c(1,2)
-       ,legend=colnames(pos)
-        )
-# next, optimizing alpha.negative
-auto.neg=com.art$auto.rvalue[com.art$auto.rvalue<0]
-lo.neg=length(auto.neg)
-lo.neg=100
-# cor.down=matrix(NA,nrow=lo.neg,ncol=1)
-neg=matrix(NA,nrow=lo.neg,ncol=5) 
-colnames(neg)=c('precision','pos precision','recall','pos recall','wrong sign prediction')
-range=seq(0,quantile(auto.neg,0.1),length.out=lo.neg)
-for (i in 1:lo.neg){
-        t=matrix(c(com.art$unambiguous,
-                      recoder(com.art$auto.rvalue,upper=upper,lower=range[i])
-                   )
-                 ,ncol=2)
-         neg[i,1]=(diag(table(t[,1],t[,2]))/colSums(table(t[,1],t[,2])))['-1']
-        neg[i,2]=(diag(table(t[,1],t[,2]))/colSums(table(t[,1],t[,2])))['1']
-        neg[i,3]=(diag(table(t[,1],t[,2]))/rowSums(table(t[,1],t[,2])))['-1']
-        neg[i,4]=(diag(table(t[,1],t[,2]))/rowSums(table(t[,1],t[,2])))['1']
-        neg[i,5]=(table(t[,1],t[,2])[1,3]/rowSums(table(t[,1],t[,2])))['-1']
-#         cor.down[i]=kripp.alpha(t,method='ordinal')[[5]]
-        
+auto.sent=lapply(as.character(df[,'Text']),sentiment,valueword)
+auto=t(sapply(auto.sent,function(x) sentproc(x)))
+df.art[,paste(border$lower[i],border$upper[i],sep=':')]=aggregate(auto[,'value'],list(df$Artikeln_Nr)
+                       ,mean)[,2]
+corI[i,1]=cor(df.art$ann,df.art[,paste(border$lower[i],border$upper[i],sep=':')])
 }
 
-# plot(rowSums(neg))
-
-plot(neg[,1],col=1,lty=1,ylim=range(neg[,c(1,3,5)]))
-# lines(neg[,2],col=2,lty=2)
-lines(neg[,3],col=3,lty=3)
-# lines(neg[,5],col=5,lty=5)
-lower=range[40]
-abline(v=40)
-# legend('topright'
-# #         c(1,1),c(.5,0.7)
-#        ,col=c(1,3,5)
-#        ,lty=c(1,3,5)
-#        ,legend=colnames(neg)[c(1,3,5)]
-#        ,bty=0
-#        )
-barplot(table(com$unambiguous)/sum(table(com$unambiguous)))
-hist(com$auto.rvalues)
-
-neutral=sum(com$auto.rvalues==0)/length(com$auto.rvalues)
-negative=sum(com$auto.rvalues<0)/length(com$auto.rvalues)
-positive=sum(com$auto.rvalues>0)/length(com$auto.rvalues)
-barplot(c(negative,neutral,positive))
-t=matrix(c(com.art$unambiguous,
-                      recoder(com.art$auto.rvalue,upper=upper,lower=lower)
-                   )
-                 ,ncol=2)
-tab=table(t[,1],t[,2])
-colnames(tab)=paste('predicted \"',colnames(tab),'\"',sep='')
-tab/sum(tab)
-barplot(table(t[,2]))
-# cor.down=sapply(cor.down,function(x) x)
-# lower=range[which.max(cor.down)]
-# test=sapply(cor.down,function(x) x)
-# plot(test)
-# plot(cor.down)  
-# max.cor=round(max(cor.down),2)
-# print(max.cor)
 ```
 
 
-
-```{r krippendorf's alpha analyse}
-t=matrix(c(com$unambiguous,
-#                       recoder(com.art$auto.rvalue,upper=upper,lower=lower)
-                      recoder(com$auto.rvalue,upper=0.009,lower=-0.005)
-
-                   )
-                 ,ncol=2)
-table(t[,1],t[,2]) # links der goldstandard
-sum(diag(table(t[,1],t[,2])))/535 # % richtig erkannt
-diag(table(t[,1],t[,2]))/rowSums(table(t[,1],t[,2])) # recall
-diag(table(t[,1],t[,2]))/colSums(table(t[,1],t[,2])) # precision
-rowSums(table(t[,1],t[,2]))
-# treffer
-        kalpha=kripp.alpha(t,method='ordinal')
-
-tab=kalpha$cm/kalpha$nmatchval
-colnames(tab)=kalpha$data.values
-row.names(tab)=kalpha$data.values
-tab
-# correct of all predictions
-
-
-```
 
