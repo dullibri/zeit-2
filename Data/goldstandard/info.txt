@@ -1,0 +1,4 @@
+3 annotators (dmitry, steffen and jakob)
+paragraph 13 'strom aus der welle' deleted, due to error in counting paragraphs
+article 'Die Hintermänner' actually had 56 not 55 paragraphs
+the  number given in the annotation form, article 'Willkommen in Deutschland' has not been evaluated by either of the annotator
