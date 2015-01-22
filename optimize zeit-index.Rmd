@@ -250,7 +250,8 @@ vg=vg[nostopwords]
 
 
 ```{r tm package for categorizing time,echo=FALSE}
-
+docs <- as.character(df$Text)
+docs <- Corpus(VectorSource(docs), readerControl = list(language = "De"))
 docs <- tm_map(docs, removeNumbers)
 docs <- tm_map(docs, removePunctuation,preserve_intra_word_dashes = T)
 docs <- tm_map(docs, removeWords, stopwords("german"))
@@ -262,6 +263,8 @@ docs.s=docs
 tdm<-DocumentTermMatrix(docs,control=list(
         weighting=function(x) weightTfIdf(x,normalize=FALSE)
         ))
+inspect(tdm[1:10,1:10])
+tdm <- as.data.frame(inspect(tdm))
 
 ```
 
