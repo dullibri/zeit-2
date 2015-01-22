@@ -12,7 +12,7 @@ word_document: default
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
-DirCode='h://Git/zeit-2'
+# DirCode='h://Git/zeit-2'
 
 
 library('irr')
@@ -262,9 +262,42 @@ docs <- tm_map(docs,tolower)
 docs.s=docs
 tdm<-DocumentTermMatrix(docs,control=list(
         weighting=function(x) weightTfIdf(x,normalize=FALSE)
+        ,minDocFreq=10
         ))
 inspect(tdm[1:10,1:10])
 tdm <- as.data.frame(inspect(tdm))
 
+
+
+```
+```{r training set and evaluation,echo=FALSE}
+# getting paragraph numbers and splitting up into training and evaluation
+# future related paragraphs
+para.fut=which(zz==T)
+para.fut.train=para.fut[1:46]
+para.fut.eval=para.fut[47:length(para.fut)]
+# past and present related paragraphs
+para.oth=which(zz==F)
+train.quota=length(para.fut.train)/length(para.fut)
+train.oth.n=round(train.quota*length(para.oth),0)
+para.oth.train=para.oth[1:train.oth.n]
+para.oth.eval=para.oth[(train.oth.n+1):length(para.oth)]
+
+# putting indices together, create a dependent variable (1 if future, 0 if not)
+para.train=c(para.fut.train,para.oth.train)
+para.train.ind=c(rep(1,length(para.fut.train)),rep(0,length(para.oth.train)))
+
+para.eval=c(para.fut.eval,para.oth.eval)
+para.eval.ind=c(rep(1,length(para.fut.eval)),rep(0,length(para.oth.eval)))
+
+library("e1071")
+data.train=tdm[para.train,]
+empty=colSums(data.train)==0
+data.train=data.train[,!empty]
+data.train=data.frame(time=as.factor(para.train.ind),data.train)
+clsf=naiveBayes(time~ .,data=data.train)
+data.eval=tdm[para.eval,!empty]
+pred=predict(clsf,data.eval)
+table(predict(clsf,data.eval), ,com$unambiguous[1:300])
 ```
 
