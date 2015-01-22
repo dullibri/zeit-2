@@ -35,6 +35,7 @@ sentiment<-function (text, valueword){
         if (length(text) == 2 & text[1] == ",x") {
                 text = text[2]
                 }
+        text=gsub("[[:punct:]]", "", text)
         text.split = sapply(strsplit(text, " "), function(x) x)
         ind = valueword[, 1] %in% text.split
         valdf = valueword[ind, , drop = F]
@@ -67,7 +68,7 @@ sentproc<-function(x){
 ```
 
 
-```{r aggregating to articles-recoding-unambigous,echo=F}
+```{r aggregating to articles recoding unambigous,echo=F,eval=TRUE}
 # aggregating to articles
 auto.sent=lapply(as.character(df[,'Text']),sentiment,valueword)
 df=cbind(t(sapply(auto.sent,function(x) sentproc(x))),df)
@@ -84,23 +85,22 @@ df.art$DC=aggregate(df$nword*df$DC,list(df$Artikeln_Nr)
 df.art$value=aggregate(df$value,list(df$Artikeln_Nr)
                        ,mean)[,2]
 
-mean.ann=mean(sapply(df.art[,c('SN','DC','JM')],function(x) x))
-sd.ann=sd(sapply(df.art[,c('SN','DC','JM')],function(x) x))
+# creating a  gold standard out of the three annotations
+# df.art$ann=rowSums(df.art[,c('SN','DC','JM')])/3 mean version
+df.art$ann=apply(df.art[,c('SN','DC','JM')],1,median)
 
 # rescaling value to optimize visual comparison
+mean.ann=mean(df.art$ann)
+sd.ann=sd(df.art$ann)
 df.art$value.rs=(df.art$value-mean(df.art$value))/
         sd(df.art$value)*sd.ann+mean.ann
 
-
-df.art$ann=rowSums(df.art[,c('SN','DC','JM')])/3
-
-
-plot(df.art$value.rs,type='line',col='blue')
+# visual comparison of goldstandard and automatic indicator
+plot(df.art$value.rs,col='blue')
 lines(df.art$ann)
 cor(df.art$ann,df.art$value.rs)
 
-# df.art=df.art[df.art$value<-0.05|df.art$value>0.05,]
-
+# correlation(goldstandard,automatic) and # of words
 steps=df.art$nword[order(df.art$nword)]
 corl=matrix(NA,nrow=length(steps),3)
 for (i in 1:(length(steps)-2)){
@@ -111,7 +111,7 @@ for (i in 1:(length(steps)-2)){
 }
 ```
 
-```{r correlation and # of words,cache=FALSE}
+```{r pic correlation and number of words,echo=FALSE}
 plot(corl[,1],xaxt='n'
      ,main='Correlation and # of words'
      ,xlab='Number of words'
@@ -129,7 +129,7 @@ legend('topleft'
 
 ```
 
-```{r plotting significant and high correlation,eval=FALSE}
+```{r plotting significant and high correlation,eval=FALSE,echo=FALSE}
 # plotting the results
 long.art=df.art$nword>=steps[30]
 
@@ -145,14 +145,29 @@ abline(h=1,lty=2)
 
 ```
 
-```{r are there any nearly neutral words that can be dropped?}
-# ignoring small positive and negative value-words
+# Checking for the relevance of nearly neutral words
+
+Most of the words in SentiWS only have a low absolute sentiment value. The values range from -1 to 1. Two values are by far the most frequent: 0.004 occuring `r sum(valueword$wert==0.004)`next to zero, both positive and negative, art the most frequent. Two values stick out:   
+
+```{r histogram valueword,echo=FALSE}
+hist(valueword$wert,main='Histogram of word values\nSentiWS',xlab='value')
+
+```
 
 
-testrange=valueword[]
-t(combn(x, 2))
-border=data.frame(lower=c(0,0,-0.0048,-0.0048)
-                  ,upper=c(0,0.004,0,0.004))
+
+```{r are there any nearly neutral words that can be dropped?,cache=FALSE,eval=FALSE,echo=FALSE}
+# ignoring small positive and negative value-words in different combinations
+ext=round(0.05*1185/2)
+
+testrange=valueword$wert[order(valueword$wert)]
+testrange=unique(testrange)
+nullp=which(testrange==0.004)
+testrange=testrange[(nullp-ext):(nullp+(ext-1))]
+border=t(combn(testrange, 2))
+border=data.frame(border[border[,1]<border[,2],])
+colnames(border)=c('lower','upper')
+border$char=paste(border$lower,border$upper,sep=':')
 I=nrow(border)
 corI=data.frame(matrix(NA,I,1))
 
@@ -164,12 +179,42 @@ valueword=valueword[big.ind,]
 
 auto.sent=lapply(as.character(df[,'Text']),sentiment,valueword)
 auto=t(sapply(auto.sent,function(x) sentproc(x)))
-df.art[,paste(border$lower[i],border$upper[i],sep=':')]=aggregate(auto[,'value'],list(df$Artikeln_Nr)
+df.art[,border$char[i]]=aggregate(auto[,'value'],list(df$Artikeln_Nr)
                        ,mean)[,2]
-corI[i,1]=cor(df.art$ann,df.art[,paste(border$lower[i],border$upper[i],sep=':')])
+}
+
+# results are stored in "tdf.csv", the columns indicate the range left out
+
+# correlation when small articles are excluded
+window=10:45
+differences=data.frame(matrix(NA,nrow=length(window),ncol=3))
+row.names(differences)=steps[window]
+colnames(differences)=c('difference','max','min')
+for (i in window){
+        long.art=df.art$nword>=steps[i]
+
+test=apply(df.art[long.art,border$char],2,function(x) cor(x,df.art$ann[long.art]))
+differences[as.character(steps[i]),1]=max(test)-min(test)
+differences[as.character(steps[i]),2]=max(test)
+differences[as.character(steps[i]),3]=min(test)
 }
 
 ```
 
+```{r time reference}
+ind.future.cols=grep('Zeitbezug',colnames(df))
+zdf=df[,ind.future.cols]
+zdfind=zdf
+zdfind=zdfind*0
+zdfind[grep('Zukunft',zdf[,1]),1]=1
+zdfind[grep('Zukunft',zdf[,2]),2]=1
+zdfind[grep('Zukunft',zdf[,3]),3]=1
+zdfind$ind=rowSums(zdfind[,1:3])
+zz=is.na(zdfind$ind)==F
+sum(zz)
+vg=paste(df$Text[zz==F],collapse=' ')
+vg=strsplit(vg,' ')
+vg=vg[vg]
+```
 
 
