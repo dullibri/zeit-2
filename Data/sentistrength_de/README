@@ -1,0 +1,152 @@
+-------------------------------------------------------------
+SentiStrength_DE: German version of lexica for SentiStrength 
+-------------------------------------------------------------
+
+VERSION
+-------
+
+SentiStrength_DE Version: v5 (Oct.2011)
+
+SUMMARY
+-------
+
+SentiStrength_DE is a collection of German lexicon files to be used
+for sentiment classification with the SentiStrength classifier
+(Cf. http://sentistrength.wlv.ac.uk/ ) from the University of Wolverhampton.
+
+The SentiStrength_DE lexica have been produced by Hannes Pirker at the
+Austrian Research Institute for AI (OFAI, http://www.ofai.at). 
+
+This work was performed within the FP7 EU-ICT Project Cyberemotions
+(http://www.cyberemotions.eu/).
+
+LICENCE
+-------
+
+This dataset is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 License (CC BY-NC-SA): 
+
+You are thus allowed to use the data free of charge for non-commercial
+purposes. You may modify and redistribute the data as long as you keep
+the attribution to the original in all the files, and publish your
+work under the same licence.  Detailed license conditions can be
+found at:
+
+http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+
+VERSION HISTORY
+---------------
+
+The "special" lexical files like Booster, Negator etc. were compiled
+manually, using the English original as a first source.
+
+The main dictionary file, i.e. the EmotionLookupTable, is based on an 
+EmotionDictionary for English (released approx. February 2011) which
+was supplied by G.Paltoglou from the University of Wolverhampton.
+
+The English basis mainly comprised entries from LIWC. This lexicon
+then was first translated into German using GoogleTranslate. The
+results subsequently underwent manual checking, correcting, editing
+and significant amount of adding of new words. 
+
+The emotional weights for the German words where usually just copied
+from the English original, or manually set using the author's
+'intuition'. I.e. no automatic adaptation/correction of emotion
+weights has been performed on this lexicon so far!
+
+
+TECHNICAL DETAILS
+-----------------
+
+File Format
+===========
+
+The files come as TAB-separated csv files with Unicode(UTF-8) used for
+character encoding.
+
+SentiStrength is making use of the first 2 columns in the lexica
+only. The rest of the fields is kept for documentation purposes.
+
+SOURCE vs. fullforms version
+----------------------------
+
+The main lexical ressource supplied with SentiStrength_DE is: 
+_EmotionLookupTable_v5_SOURCE.csv
+
+This is the version recommended to use for editing.
+
+From this file the following was created:
+EmotionLookupTable_v5_fullforms.txt
+
+The rational for using a SOURCE file from which fullforms are created
+is explained in the following:
+
+Wildcards vs. full-forms
+=======================
+
+One of the specific features of the SentiStrength classifier is its
+lack of any linguistic processing, i.e. it does neither use
+part-of-speech information nor any kind of stemming or morphological
+analysis. All SentiStrength does, is to match words found in a text
+against words in a list of dictionaries.
+
+The original English version of the dictionary makes massive use of
+wildcards in its lexica.  This is a very simple and powerful mechanism
+which comes with a price though. Here we want to point out three major
+problems. First, overgeneration: An entry such as "admir*" would
+(correctly) match admire, admiring, admiration, admirable etc. but at
+the same time (wrongly) matches with admirals and admirality. Second,
+problems for the maintainability and transferability. An entry like
+"admir*" or "exsta*" is not easily matched with entries in other
+dictionaries (e.g. for searching for synonyms) and automatic
+translation into other languages is made difficult if not
+impossible. Third, for languages with a richer inflectional morphology
+than English the wildcard mechanism loses some of its appeal. If
+inflection does not only make use of suffixes but also of pre- or
+infixes additional lexical entries have to be added to the lexicon. In
+German, e.g., a regular verbs already (like "sagen") would need two
+entries: one for the stem (sag*) and one for the past participle (
+gesagt* ).
+
+One alternative to the usage of wildcards is to use each word's basic
+form in the lexicon and then use a morphology program to derive all
+inflectional forms from this basis, thus generating a fullform lexicon. 
+
+
+Upper/lowercase
+===============
+
+SentiStrength is owecasing all the texts prior to classification, but
+does not do so with the lexicon files. Therefore all entries in the
+working-copy of the lexica must be lowercase only, otherwise they will
+not be matched.
+
+On the other hand, our tools for generating the whole inflectional
+paradigm from a base form are case-sensitive though: German
+orthography requires nouns and proper names to be written with
+uppercase-initials, and our morphology tools make use of this
+property. Therefore we keep proper casing in the manually edited
+lexical SOURCE file, and produce all-lowercased copies for actual use
+with SentiStrength from this source.
+
+
+Umlaut/ß/Orthography
+====================
+
+In German texts (especially in those to be found in the Internet)
+umlauts (ä, ö, ü) are frequently written in ASCII letters only,
+i.e. transcribed as ae, oe, ue respectively.  The letter ß can be
+transcribed as ss or sz. In addition, due to an orthografic reform
+many words formerly spelled with ß ('old orthography') are now
+correctly spelled with ss ('new orthography').
+
+In the lexical source the words are entered using proper Umlauts in
+UTF8 encoding and the 'old orthography' for ß.
+
+Variants which substitute umlauts and ß with their ASCII versions are
+then automatically generated. I.e. from an entry like "süß" also the
+variant "suess" will be generated.
+
+
+

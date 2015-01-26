@@ -10,198 +10,11 @@ keep_tex: yes
 word_document: default
 ---
 
-```{r,echo=FALSE,warning=FALSE,message=FALSE}
-# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
-DirCode='h://Git/zeit-2'
-
-
-library('irr')
-df=read.csv(paste(DirCode,'/data/goldstandard/Annotatoren.csv',sep=''))
-df=df[complete.cases(df),]
-# getting automated sentiment
-# load valueword (a vector of SentiWS words in the first column, values in the second, 
-# ambigous duplicates are eliminated, capitalizations are preserved)
-valueword=read.csv(paste(DirCode,'/valueword.csv',sep=''))
 
 
 
-# creating function to evaluate texts and applying it:
-sentiment<-function (text, valueword){
-        # returns the word, value, stem, 
-        # form and frequency of each sentiment word in text
-        # in the data.frame valdf. And, it returns the total 
-        # number of words in text
-        # as integer nword.
-        if (length(text) == 2 & text[1] == ",x") {
-                text = text[2]
-                }
-        text=gsub("[[:punct:]]", "", text)
-        text.split = sapply(strsplit(text, " "), function(x) x)
-        ind = valueword[, 1] %in% text.split
-        valdf = valueword[ind, , drop = F]
-        valdf$h = sapply(valueword[ind, 1], function(x) sum(text.split%in%x))
-        nwords = length(text.split)
-        return(list(valdf,nwords))
-        }
 
-
-# function to process the data
-sentproc<-function(x){
-        # processes the information returned by stentiment.R and returns 
-        # a vector comprising number of positive words (npword)
-        # number of negative words (nnword), total number of words (nword)
-        # sum of positive values (pvalue), and sum of negative values (nvalue)
-        valdf=x[[1]]
-        pos.ind=valdf$wert>0
-        neg.ind=valdf$wert<0
-        result=c(
-                npword=sum(pos.ind)
-                ,nnword=sum(neg.ind)
-                ,nword=x[[2]]
-                ,pvalue=sum(valdf$wert[pos.ind])
-                ,nvalue=sum(valdf$wert[neg.ind])
-                ,value=sum(valdf$wert)
-                )
-        }
-
-
-```
-
-
-```{r aggregating to articles recoding unambigous,echo=F,eval=TRUE}
-# aggregating to articles
-auto.sent=lapply(as.character(df[,'Text']),sentiment,valueword)
-df=cbind(t(sapply(auto.sent,function(x) sentproc(x))),df)
-
-# aggregate to article level
-df.art=data.frame(aggregate(df$nword,list(df$Artikeln_Nr),sum))
-colnames(df.art)=c('Article','nword')
-df.art$JM=aggregate(df$nword*df$JM,list(df$Artikeln_Nr)
-                    ,sum)[,2]/df.art$nword
-df.art$SN=aggregate(df$nword*df$SN,list(df$Artikeln_Nr)
-                    ,sum)[,2]/df.art$nword
-df.art$DC=aggregate(df$nword*df$DC,list(df$Artikeln_Nr)
-                    ,sum)[,2]/df.art$nword
-df.art$value=aggregate(df$value,list(df$Artikeln_Nr)
-                       ,mean)[,2]
-
-# creating a  gold standard out of the three annotations
-# df.art$ann=rowSums(df.art[,c('SN','DC','JM')])/3 mean version
-df.art$ann=apply(df.art[,c('SN','DC','JM')],1,median)
-
-# rescaling value to optimize visual comparison
-mean.ann=mean(df.art$ann)
-sd.ann=sd(df.art$ann)
-df.art$value.rs=(df.art$value-mean(df.art$value))/
-        sd(df.art$value)*sd.ann+mean.ann
-
-# visual comparison of goldstandard and automatic indicator
-plot(df.art$value.rs,col='blue')
-lines(df.art$ann)
-cor(df.art$ann,df.art$value.rs)
-
-# correlation(goldstandard,automatic) and # of words
-steps=df.art$nword[order(df.art$nword)]
-corl=matrix(NA,nrow=length(steps),3)
-for (i in 1:(length(steps)-2)){
-        long.art=df.art$nword>=steps[i]
-        corl[i]=cor(df.art$ann[long.art],df.art$value.rs[long.art])
-        corl[i,2]=cor.test(df.art$ann[long.art],df.art$value.rs[long.art])$p.value
-        corl[i,3]=sum(long.art)
-        }
-```
-
-```{r pic correlation and number of words,echo=FALSE}
-plot(corl[,1],xaxt='n'
-     ,main='Correlation and # of words'
-     ,xlab='Number of words'
-     ,ylab='Correlation')
-xind=1:(length(steps)-1)
-ind=corl[,2]<0.05
-points(xind[which(ind)],corl[which(ind),1],col='red')
-axis(1, at=1:length(steps), labels=steps)
-legend('topleft'
-       ,pch=1
-       ,col=c('black','red')
-       ,legend=c('correlation coefficients','significance at 5% level')
-       )
-# corl1=corl
-
-```
-
-```{r plotting significant and high correlation,eval=FALSE,echo=FALSE}
-# plotting the results
-long.art=df.art$nword>=steps[30]
-
-plot(df.art$value[long.art],df.art$ann[long.art])
-lines(df.art$JM[long.art])
-lines(df.art$DC[long.art],col='blue')
-lines(df.art$SN[long.art],col='red')
-abline(h=0)
-abline(h=-1,lty=2)
-abline(h=1,lty=2)
-
-
-
-```
-
-# Checking for the relevance of nearly neutral words
-
-Most of the words in SentiWS only have a low absolute sentiment value. The values range from -1 to 1. Two values are by far the most frequent: 0.004 occuring `r sum(valueword$wert==0.004)`next to zero, both positive and negative, art the most frequent. Two values stick out:   
-
-```{r histogram valueword,echo=FALSE}
-hist(valueword$wert,main='Histogram of word values\nSentiWS',xlab='value')
-
-```
-
-
-
-```{r are there any nearly neutral words that can be dropped?,cache=FALSE,eval=FALSE,echo=FALSE}
-# ignoring small positive and negative value-words in different combinations
-ext=round(0.05*1185/2)
-
-testrange=valueword$wert[order(valueword$wert)]
-testrange=unique(testrange)
-nullp=which(testrange==0.004)
-testrange=testrange[(nullp-ext):(nullp+(ext-1))]
-border=t(combn(testrange, 2))
-border=data.frame(border[border[,1]<border[,2],])
-colnames(border)=c('lower','upper')
-border$char=paste(border$lower,border$upper,sep=':')
-I=nrow(border)
-corI=data.frame(matrix(NA,I,1))
-
-for (i in 1:I){
-        
-        valueword=read.csv(paste(DirCode,'/valueword.csv',sep=''))
-        big.ind=valueword$wert<border$lower[i]|border$upper[i]<valueword$wert
-        valueword=valueword[big.ind,]
-        
-        auto.sent=lapply(as.character(df[,'Text']),sentiment,valueword)
-        auto=t(sapply(auto.sent,function(x) sentproc(x)))
-        df.art[,border$char[i]]=aggregate(auto[,'value'],list(df$Artikeln_Nr)
-                                          ,mean)[,2]
-        }
-
-# results are stored in "tdf.csv", the columns indicate the range left out
-
-# correlation when small articles are excluded
-window=10:45
-differences=data.frame(matrix(NA,nrow=length(window),ncol=3))
-row.names(differences)=steps[window]
-colnames(differences)=c('difference','max','min')
-for (i in window){
-        long.art=df.art$nword>=steps[i]
-        
-        test=apply(df.art[long.art,border$char],2,function(x) cor(x,df.art$ann[long.art]))
-        differences[as.character(steps[i]),1]=max(test)-min(test)
-        differences[as.character(steps[i]),2]=max(test)
-        differences[as.character(steps[i]),3]=min(test)
-        }
-
-```
-
-```{r time reference}
+```{r time reference,eval=FALSE}
 # identifying columns containing time reference of the three annotators
 ind.future.cols=grep('Zeitbezug',colnames(df))
 zdf=df[,ind.future.cols]
@@ -249,7 +62,7 @@ vg=vg[nostopwords]
 ```
 
 
-```{r tm package for categorizing time,echo=FALSE}
+```{r tm package for categorizing time,echo=FALSE,eval=FALSE}
 docs <- as.character(df$Text)
 docs <- Corpus(VectorSource(docs), readerControl = list(language = "De"))
 docs <- tm_map(docs, removeNumbers)
@@ -270,7 +83,7 @@ tdm <- as.data.frame(inspect(tdm))
 
 
 ```
-```{r training set and evaluation,echo=FALSE}
+```{r training set and evaluation,echo=FALSE,eval=FALSE}
 # getting paragraph numbers and splitting up into training and evaluation
 # future related paragraphs
 para.fut=which(zz==T)
@@ -300,7 +113,7 @@ data.eval=tdm[para.eval,!empty]
 pred=predict(clsf,data.eval)
 
 ```
-```{r applying qdap to find differences, echo=FALSE}
+```{r applying qdap to find differences, echo=FALSE,eval=FALSE}
 df$fut=zz # zz indicates, which paragraphs are future related
 library(qdap)
 # creating wfm

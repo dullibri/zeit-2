@@ -1,0 +1,31 @@
+German version of Lexica for SentiStrength 
+----
+compiled by Hannes Pirker (OFAI) Sep. 2011
+
+The "special" files like Booster, Negator etc. were carefully compiled
+manually.
+
+The EmotionLookupTable is based on the EmotionDictionary for English
+which was supplied with G.Paltoglou's (University of Wolverhampton)
+Lexicon-Based-Classifier approx. February 2011.  The English basis
+mainly comprised entries derived from LIWC. This lexicon was then
+translated using GoogleTranslate. The results underwent manual
+checking, correcting, editing and adding of new words 'on the fly'.
+
+The emotional weights for the German words where in the majority of
+cases copied from their English counterparts, or manually set using
+the author's 'intuition'. I.e. no automatic adaptation/correction of
+emotion weights has been performed on this lexicon so far!
+
+====
+v5 specific information
+====
+
+* Some manual additions at the end of the file -> look for _v5 (most
+  of them are 'motorsport-specific')
+
+* Still chaotic: the majority of entries is using wildcards (hopefully
+  placed with care) - for newer entries now lemmata are used ->
+  usually these are marked as V_lemma, N_lemma, A_lemma for verbs,
+  nouns and adjectives respectively.
+

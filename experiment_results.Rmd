@@ -22,7 +22,7 @@ result.focus=function(target,horizon,rolling_window){
         # getting forecast errors -------------------------------------------------
         forecasts=read.csv(paste(DirRes,'/',target,'/',target,'_Horizon_',horizon,'_VAR',RW,'_forecasts.csv',sep=''),row.names=1)
 
-        colnames(forecasts)[grep('ip',colnames(forecasts))]='AR'
+        colnames(forecasts)[grep(target,colnames(forecasts))]='AR'
         # reading vintages from row.names
         rownames=row.names(forecasts)
         vintages=gsub(paste(' h: ',horizon,sep=''),'',rownames)
