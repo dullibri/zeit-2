@@ -1,0 +1,134 @@
+---
+title: "Zeit classification of neutral evaluations"
+author: "Dirk Ulbricht"
+fontsize: 11pt
+fig_caption: yes
+output:
+pdf_document:
+keep_tex: yes
+
+word_document: default
+---
+
+
+
+
+
+```{r time reference,eval=FALSE}
+# identifying columns containing time reference of the three annotators
+ind.future.cols=grep('Zeitbezug',colnames(df))
+zdf=df[,ind.future.cols]
+# preparing an dataframe that indicates where 'Zukunft' = Future appears
+zdfind=zdf
+zdfind=zdfind*0
+zdfind[grep('Zukunft',zdf[,1]),1]=1
+zdfind[grep('Zukunft',zdf[,2]),2]=1
+zdfind[grep('Zukunft',zdf[,3]),3]=1
+# which of the paragraphs are unanimuously identified
+zdfind$ind=rowSums(zdfind[,1:3])
+zz=is.na(zdfind$ind)==F
+sum(zz)
+# throwing all past and present related texts in one basket (text), same with future
+# first preparing texts
+library("tm")
+
+prepare.para<-function(text){
+        text=strsplit(text,' ')
+        text=sapply(text,function(x) x)
+        text=gsub("[[:punct:]]", "", text)
+        text=gsub("\\n", " ", text)
+        # eliminating all nouns (capitals at the beginning)
+        text=text[-grep('[A-Z]',text)]
+        nostopwords=!text%in%stopwords('German')
+        text=text[nostopwords]  
+        return(text)
+        }
+vg=paste(df$Text[zz==F],collapse=' ')
+vg=prepare.para(vg)
+zk=paste(df$Text[zz==T],collapse=' ')
+zk=prepare.para(zk)
+not=!zk%in%vg
+uni.zk=zk[not]
+vg=strsplit(vg,' ')
+vg=sapply(vg,function(x) x)
+vg=gsub("[[:punct:]]", "", vg)
+vg=gsub("\\n", " ", vg)
+# eliminating all nouns (capitals at the beginning)
+vg=vg[-grep('[A-Z]',vg)]
+nostopwords=!vg%in%stopwords('German')
+vg=vg[nostopwords]
+
+
+```
+
+
+```{r tm package for categorizing time,echo=FALSE,eval=FALSE}
+docs <- as.character(df$Text)
+docs <- Corpus(VectorSource(docs), readerControl = list(language = "De"))
+docs <- tm_map(docs, removeNumbers)
+docs <- tm_map(docs, removePunctuation,preserve_intra_word_dashes = T)
+docs <- tm_map(docs, removeWords, stopwords("german"))
+docs <- tm_map(docs, stripWhitespace)
+docs <- tm_map(docs,stemDocument,language='german')
+docs <- tm_map(docs,tolower)
+
+docs.s=docs
+tdm<-DocumentTermMatrix(docs,control=list(
+        weighting=function(x) weightTfIdf(x,normalize=FALSE)
+        ,minDocFreq=10
+        ))
+inspect(tdm[1:10,1:10])
+tdm <- as.data.frame(inspect(tdm))
+
+
+
+```
+```{r training set and evaluation,echo=FALSE,eval=FALSE}
+# getting paragraph numbers and splitting up into training and evaluation
+# future related paragraphs
+para.fut=which(zz==T)
+para.fut.train=para.fut[1:46]
+para.fut.eval=para.fut[47:length(para.fut)]
+# past and present related paragraphs
+para.oth=which(zz==F)
+train.quota=length(para.fut.train)/length(para.fut)
+train.oth.n=round(train.quota*length(para.oth),0)
+para.oth.train=para.oth[1:train.oth.n]
+para.oth.eval=para.oth[(train.oth.n+1):length(para.oth)]
+
+# putting indices together, create a dependent variable (1 if future, 0 if not)
+para.train=c(para.fut.train,para.oth.train)
+para.train.ind=c(rep(1,length(para.fut.train)),rep(0,length(para.oth.train)))
+
+para.eval=c(para.fut.eval,para.oth.eval)
+para.eval.ind=c(rep(1,length(para.fut.eval)),rep(0,length(para.oth.eval)))
+
+library("e1071")
+data.train=tdm[para.train,]
+empty=colSums(data.train)==0
+data.train=data.train[,!empty]
+data.train=data.frame(time=as.factor(para.train.ind),data.train)
+clsf=naiveBayes(time~ .,data=data.train)
+data.eval=tdm[para.eval,!empty]
+pred=predict(clsf,data.eval)
+
+```
+```{r applying qdap to find differences, echo=FALSE,eval=FALSE}
+df$fut=zz # zz indicates, which paragraphs are future related
+library(qdap)
+# creating wfm
+docs.q=with(df,wfm(Text,fut))
+docs.fre=as.data.frame(qdocs)
+# getting relative terms and rank them, most frequent of future related
+# paragraphs first
+docs.fre=docs.fre/colSums(docs.fre)*100
+docs.fre=docs.fre[order(docs.fre$'TRUE',decreasing=T),]
+# getting terms that exclusively appear in future related paragraphs
+fut.diff=with(df,word_diff_list(Text,fut))
+unique.fut=fut.diff[[1]][[2]]
+# # how often are some words
+# with(df, termco(Text, list(fut), words=c('wird','könnte')))
+t=adjmat(docs.q)
+
+```
+

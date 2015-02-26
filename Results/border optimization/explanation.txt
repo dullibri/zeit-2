@@ -1,0 +1,2 @@
+"x"
+"differences give differences of correlations between human indicator and automatic indicator using the 26.1.2015 version of sentiment to evaluate the texts dropping several of the valuewords contained in borders around zero, in relation to the same thing of the full range of value words. The raw indices are given in tdf.csv"

@@ -12,7 +12,7 @@ word_document: default
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
-# DirCode='h://Git/zeit-2'
+DirCode='h://Git/zeit-2'
 
 
 library('irr')
@@ -24,6 +24,7 @@ df=df[complete.cases(df),]
 # ambigous duplicates are eliminated, capitalizations are preserved)
 valueword=read.csv(paste(DirCode,'/valueword.csv',sep=''))
 
+<<<<<<< HEAD
 valueword$wort=tolower(valueword$wort)
 vw.tl=as.character(valueword$wort)
 vw.tl=tolower(vw.tl)
@@ -46,6 +47,31 @@ pfmaker=function(valueword){
         pf=polarity_frame(pos,neg,pos.w,neg.w,env=F)  
         }
 pf=pfmaker(valueword)
+=======
+# valueword$wort=tolower(valueword$wort)
+# vw.tl=as.character(valueword$wort)
+# vw.tl=tolower(vw.tl)
+# du=duplicated(valueword$wort)
+# dup=vw.tl[du]
+# tt=vw.tl%in%dup
+# # sum(tt)
+# # which(tt)
+# valueword=valueword[-which(tt),]
+
+
+# library(qdap)
+# pfmaker=function(valueword){
+#         # preparing valueword for qdap. valueword is already tolowered, 
+#         # if wanted - before being processed here. Returns a polarity frame.
+#         pos=as.character(valueword['wert'>0,'wort',drop=T])
+#         pos.w=valueword['wert'>0,'wert']
+#         neg=as.character(valueword[valueword$wert<0,'wort',drop=T])
+#         neg.w=valueword[valueword$wert<0,'wert']
+#         #         pf=polarity_frame(pos,neg,pos.w,neg.w,env=F)  
+#         pf=polarity_frame(pos,neg,pos.w,neg.w)
+#         }
+# pf=pfmaker(valueword)
+>>>>>>> 8e041f60150014cdea184b243283451685b834dd
 
 
 # creating function to evaluate texts and applying it:
@@ -78,6 +104,7 @@ sentproc<-function(x){
         # negative values divided by the square root of the total number 
         # of words.
         valdf=x[[1]]
+<<<<<<< HEAD
         pos.ind=valdf$wert>0
         neg.ind=valdf$wert<0
         result=c(
@@ -88,6 +115,31 @@ sentproc<-function(x){
                 ,nvalue=sum(valdf$wert[neg.ind])
                 ,value=sum(valdf$wert)/x[[2]]#^.5
                 )
+=======
+        if (nrow(valdf)==0){
+                result=c(
+                        npword=0
+                        ,nnword=0
+                        ,nword=x[[2]]
+                        ,pvalue=0
+                        ,nvalue=0
+                        ,value=0
+                        )
+                }else{
+                        werth=valdf$wert*valdf$h    
+                        pos.ind=valdf$wert>0
+                        neg.ind=valdf$wert<0
+                        result=c(
+                                npword=sum(pos.ind*valdf$h)
+                                ,nnword=sum(neg.ind*valdf$h)
+                                ,nword=x[[2]]
+                                ,pvalue=sum(werth[pos.ind])
+                                ,nvalue=sum(werth[neg.ind])
+                                ,value=sum(werth)/x[[2]]#^.5
+                                )
+                        }
+        return(result)
+>>>>>>> 8e041f60150014cdea184b243283451685b834dd
         }
 
 
@@ -96,8 +148,17 @@ sentproc<-function(x){
 
 ```{r aggregating to articles recoding unambigous,echo=F,eval=TRUE}
 # aggregating to articles
+
+# df=data.frame(matrix(NA,565,6))
+# for (i in 1:565){df[i,]=sentproc(auto.sent[[i]])}
+source(paste(DirCode,'/qdaptesting.R',sep=''))
 auto.sent=lapply(as.character(df[,'Text']),sentiment,valueword)
-df=cbind(t(sapply(auto.sent,function(x) sentproc(x))),df)
+df=cbind(t(sapply(auto.sent,function(x) sentproc(x)))
+         ,data.frame(qdap=tpa$polarity # qdap sentiment as is with /n^.5
+                     ,qdap2=tpa$polarity/tpa$wc^.5) # qdap with /n in denominator
+         ,df)
+
+
 
 # aggregate to article level
 df.art=data.frame(aggregate(df$nword,list(df$Artikeln_Nr),sum))
@@ -113,8 +174,13 @@ df.art$SN=aggregate(df$nword*df$SN,list(df$Artikeln_Nr)
                     ,sum)[,2]/df.art$nword
 df.art$DC=aggregate(df$nword*df$DC,list(df$Artikeln_Nr)
                     ,sum)[,2]/df.art$nword
+<<<<<<< HEAD
 df.art$value=aggregate(df$nword*df$value,list(df$Artikeln_Nr)
                         ,sum)[,2]/df.art$nword
+=======
+# df.art$value=aggregate(df$nword*df$qdap2,list(df$Artikeln_Nr)
+#                         ,sum)[,2]/df.art$nword
+>>>>>>> 8e041f60150014cdea184b243283451685b834dd
 
 
 # creating a  gold standard out of the three annotations
@@ -169,6 +235,16 @@ axis(1, at=1:length(df.art$nword), labels=df.art$nword)
 ```{r plotting significant and high correlation,eval=FALSE,echo=FALSE}
 # plotting the results
 long.art=df.art$nword>=df.art$nword[30]
+<<<<<<< HEAD
+
+plot(df.art$value.rs[long.art],df.art$ann[long.art])
+# lines(df.art$JM[long.art])
+# lines(df.art$DC[long.art],col='blue')
+# lines(df.art$SN[long.art],col='red')
+# abline(h=0)
+# abline(h=-1,lty=2)
+# abline(h=1,lty=2)
+=======
 
 plot(df.art$value.rs[long.art],df.art$ann[long.art])
 # lines(df.art$JM[long.art])
@@ -180,6 +256,68 @@ plot(df.art$value.rs[long.art],df.art$ann[long.art])
 
 
 
+```
+
+```{r artificially creating more big articles,echo=FALSE}
+aggart=function(df.art,ntarget=1000){
+        # aggregate articles in df.art until the desired size 
+        # (ntarget) is reached. df.art must contain articles ordered
+        # in descending order by their number of words in 
+        # df.art$nword returns new article ids of new articicial
+        # articles as factors.
+        Narticle=nrow(df.art)
+        ind=matrix(NA,nrow=Narticle,ncol=1)
+        new.iart=1
+        nword=df.art$nword
+        for (iart in 1:Narticle){
+                nart=sum(nword[1:iart])
+                if (nart<=ntarget){
+                        ind[iart]=new.iart
+                        }
+                if(nart>=ntarget){
+                        ind[iart]=new.iart
+                        new.iart=new.iart+1
+                        nword[1:iart]=0
+                        }
+                }
+        return(as.factor(ind))
+        }
+>>>>>>> 8e041f60150014cdea184b243283451685b834dd
+
+df.art$agg.article=aggart(df.art)
+df.nart=data.frame(aggregate(df.art$nword,list(df.art$agg.article),sum))
+colnames(df.nart)=c('Article','nword')
+
+df.nart$value=aggregate(df.art$nword*df.art$value,list(df.art$agg.article)
+                        ,sum)[,2]/df.nart$nword
+df.nart$ann=aggregate(df.art$nword*df.art$ann,list(df.art$agg.article)
+                      ,sum)[,2]/df.nart$nword
+
+df.nart$value.rs=rescaler(df.nart$ann,df.nart$value)
+df.nart$Text=aggregate(df.art$Text,list(df.art$agg.article)
+                       ,paste,collapse=' ')[,2]
+df.nart$Text=sapply(unique(df.art$agg.article),function(x) paste(df.art$Text[x==df.art$agg.article],collapse=' '))
+
+cor(df.nart$value,df.nart$ann)
+plot(df.nart$value.rs,df.nart$ann)
+# correlation(goldstandard,automatic) and # of words
+df.nart=df.nart[order(df.nart$nword),]
+corl.nart=matrix(NA,nrow=length(df.nart$nword),3)
+for (i in 1:(length(df.nart$nword)-2)){
+        long.nart=df.nart$nword>=df.nart$nword[i]
+        corl.nart[i,1]=cor(df.nart$ann[long.nart],df.nart$value[long.nart])
+        corl.nart[i,2]=cor.test(df.nart$ann[long.nart],df.nart$value[long.nart])$p.value
+        corl.nart[i,3]=sum(long.nart)
+        }
+
+plot(corl.nart[,1],xaxt='n'
+     ,main='Correlation and # of words'
+     ,xlab='Number of words'
+     ,ylab='Correlation')
+xind=1:(length(df.nart$nword)-1)
+ind=corl.nart[,2]<0.05
+points(xind[which(ind)],corl.nart[which(ind),1],col='red')
+axis(1, at=1:length(df.nart$nword), labels=df.nart$nword)
 ```
 
 ```{r artificially creating more big articles,echo=FALSE}
@@ -254,9 +392,15 @@ hist(valueword$wert,main='Histogram of word values\nSentiWS',xlab='value')
 
 
 
+<<<<<<< HEAD
 ```{r are there any nearly neutral words that can be dropped?,cache=FALSE,eval=FALSE,echo=FALSE}
 
 
+=======
+```{r are there any nearly neutral words that can be dropped?,cache=FALSE,eval=TRUE,echo=FALSE}
+
+
+>>>>>>> 8e041f60150014cdea184b243283451685b834dd
 # first getting the full range of values (ordered)
 testrange=valueword$wert[order(valueword$wert)]
 testrange=unique(testrange)
@@ -290,9 +434,11 @@ for (i in 1:I){
         df.nart.border[,border$char[i]]=auto[,'value']
         }
 
-# results are stored in "tdf.csv", the columns indicate the range left out
+# results are stored in "tdf.csv", the column-names indicate the range left out
+write.csv(df.nart.border,paste(DirCode,'/results/border optimization/tdf.csv',sep=''))
 
 # correlation when small articles are excluded
+<<<<<<< HEAD
 window=1:26
 differences=data.frame(matrix(NA,nrow=length(window),ncol=3))
 row.names(differences)=df.nart$nword[window]
@@ -304,8 +450,26 @@ for (i in window){
         differences[as.character(df.art$df.art$nword[i]),1]=max(test)-min(test)
         differences[as.character(df.art$nword[i]),2]=max(test)
         differences[as.character(df.art$nword[i]),3]=min(test)
-        }
+=======
 
+window=1:20
+differences=data.frame(matrix(NA,nrow=length(window),ncol=5))
+row.names(differences)=as.character(df.nart$nword[window])
+colnames(differences)=c('difference','max','min','max borders','number of obs.')
+for (i in window){
+        long.art=df.nart$nword>=df.nart$nword[i]
+        comparison=cor(df.nart$value[long.art],df.nart$ann[long.art])
+        test=apply(df.nart.border[long.art,border$char],2,function(x) cor(x,df.nart$ann[long.art]))
+        differences[i,1]=max(test)-comparison
+        differences[i,2]=max(test)
+        differences[i,3]=min(test)
+        differences[i,4]=names(which.max(test))
+        differences[i,5]=sum(long.art)
+>>>>>>> 8e041f60150014cdea184b243283451685b834dd
+        }
+write.csv(differences,paste(DirCode,'/results/border optimization/differences.csv',sep=''))
+
+write.csv('differences give differences of correlations between human indicator and automatic indicator using the 26.1.2015 version of sentiment to evaluate the texts dropping several of the valuewords contained in borders around zero, in relation to the same thing of the full range of value words. The raw indices are given in tdf.csv',paste(DirCode,'/results/border optimization/explanation.txt',sep=''),row.names=F)
 ```
 
 ```{r time reference, eval=FALSE}
