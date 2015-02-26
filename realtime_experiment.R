@@ -3,7 +3,7 @@
 
 
 max=1 # maximum number of variables additional to endogenous
-frec=42 # minium number of observations.
+frec=42 # minimum number of observations.
 rolling_window=0 # if "0" no rolling window implemented ("1" else)
 nlag=12 # number of lags to be tested.
 
@@ -72,7 +72,7 @@ experiment=function(target){
                                 forecasts[rn,id_mod]=predict(VAR(y=df_ss[,sl[id_mod,]],ic='AIC',lag.max=nlag),n.ahead=hlauf)$fcst[[1]][hlauf,1]
                                 #                                 modloop(sl[id_mod,],df_ss=df_ss,h=hlauf,maxx=nlag)        
                         }
-                        
+                        # ar-process
                         forecasts[rn,1]=predict(ar(x=df_ss[,1],order.max=nlag),n.ahead=hlauf)$pred[hlauf]
                         print(rn)
                         #                   Rprof(NULL)

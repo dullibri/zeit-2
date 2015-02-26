@@ -6,6 +6,7 @@ info$Sfile='I:/Personal_Folders/employees/KX/A_MTI/'
 info$SfileCode='I:/Personal_Folders/employees/KX/A_MTI/Code/'
 info$SfileData='I:/Personal_Folders/employees/KX/A_MTI/Daten/MF/'
 DirCode='H:/git/zeit-2'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 
 # Alternative Indikatoren laden -------------------------------------------------------------
 
