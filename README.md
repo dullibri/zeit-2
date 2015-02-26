@@ -12,3 +12,7 @@ news analysis:
 pseudo-out-of sample experiment:
 
 - realtime_experiment.R collects the data and implents the experiment.
+
+goldstandard testing
+
+- optimize zeit-index.Rmd contains the sentiment analysis used and compares an index created on its basis to a goldstandard.
