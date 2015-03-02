@@ -48,6 +48,7 @@ hours worked per employed person ,BEA,5
 employees ,BF1,5
 hours worked by employees ,BF2,5
 hours worked per employee ,BFA,5
+Employees subject to social security contributions,BG1,5
 in constant prices ,C,7
 overall economy (domestic concept) ,CA010,6
 overall economy (residents) ,CA020,6

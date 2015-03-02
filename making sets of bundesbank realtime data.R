@@ -5,8 +5,11 @@ dir.rt=paste(wd,'/data',sep='')
 keys=read.csv(paste(dir.rt,'/bundesbank_keys.csv',sep=''),stringsAsFactors=F)
 variable.file=list.files(paste(wd,'/data/bundesbankrealtime',sep=''))
 nvar=length(variable.file)
-
+variable=gsub('.csv','',variable.file)
+variable=data.frame(variable,stringsAsFactors=F)
 # loading data
+
+
 for (i in 1:nvar){
         var=read.csv(paste(wd,'/data/bundesbankrealtime/',variable.file[i],sep=''),row.names=1)
         nobsx=nrow(var)
@@ -18,16 +21,18 @@ for (i in 1:nvar){
         eval(parse(text=paste(variable[i,1],'=var',sep='')))
 }
 
-variable=gsub('.csv','',variable.file)
-variable=data.frame(variable,stringsAsFactors=F)
+
+
 variable$fst_obs=NA
 variable$lst_obs=NA
 variable$fst_vint=NA
 variable$lst_vint=NA
 variable[,paste('key',1:8)]=NA
+# columnnumber of keys
 keycol=grep('key',colnames(variable))
+nvar=nrow(variable)
 for (i in 1:nvar){
-        var=eval(parse(text=variable[i,1]))
+        var=eval(parse(text=variable[i,'variable']))
         variable$fst_obs[i]=row.names(var)[1]
         variable$lst_obs[i]=row.names(var)[nrow(var)]
         variable$fst_vint[i]=colnames(var)[1]
@@ -44,21 +49,41 @@ labelcol=grep('label',colnames(variable))
 for (i in 1:8){
         keylist=keys[keys$position==i,c(1,2)]
         for (j in 1:nvar){
+                # what is the key
                 key=variable[j,keycol[i]]
+                # look up what it means
                 pos=grep(key,keylist[,2])
                 label=keylist[pos,1]
                 variable[j,labelcol[i]]=label
         }
 }
+tu=strsplit(variable$fst_vint,'\\.')
+tu=sapply(tu,function(x) x)
+tu=gsub('X','',tu)
+tu=matrix(as.integer(tu),nrow=3)
+for (i in 1:nrow(variable)){
+        if (tu[1,i]<1000){
+                variable$fstvint.year[i]=as.integer(t(tu[3,i]))   
+                variable$fstvint.month[i]=as.integer(t(tu[2,i])) 
+        }
+        if (tu[1,i]>1000){
+                variable$fstvint.year[i]=as.integer(t(tu[1,i]))   
+                variable$fstvint.month[i]=as.integer(t(tu[2,i])) 
+        }
+
+}
+vint.late=variable$fstvint.year<=2005
+variable.sel=variable[vint.late,]
 
 # downsizing of data
-variable.sel=variable[variable$'key 1'=='M',]
-
+variable.sel=variable.sel[variable.sel$'key 1'=='M',]
+variable.sel=variable.sel[-grep('current prices',variable.sel$'label7'),]
+variable.sel=variable.sel[-grep('neither seasonally nor calendar adjusted',variable.sel$'label3'),]
+variable.sel=variable.sel[-grep('domestic|abroad',variable.sel$'label5'),]
 ## Real economy
 # orders
 order.sel=grep('order',variable.sel$'label5')
 var.order=variable.sel[order.sel,]
-var.order=var.order[-grep('in current prices, flows',var.order$'label7'),]
 var.order=var.order[-grep('unadjusted',var.order$'label3'),]
 var.order=var.order[-grep('domestic|abroad',var.order$'label5'),]
 # manufacturing is available until vintage 2005 something, industry is better
@@ -136,7 +161,7 @@ vint.survey=function(variable.name,day=15){
 }
 tt=sapply(var.used$variable,function(x) vint.survey(x)$vintage)
 # create a list of vintages per variable used 
-vintage.employ=cbind(dates[,c(1,2,3)],tt)
+vintage.employ=cbind(dates[,c(1,2)],tt)
 
 
 
