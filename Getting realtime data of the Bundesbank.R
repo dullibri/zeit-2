@@ -3,7 +3,7 @@
 #  ------------------------------------------------------------------------
 
 
-wd="I:/Personal_Folders/students/Jan/R"
+wd="h:/git/zeit-2"
 setwd(wd)
 dir.rt=paste(wd,'/data',sep='')
 
@@ -14,7 +14,8 @@ dir.rt=paste(wd,'/data',sep='')
 library("XLConnect")
 library("xlsx")
 
-dir.create(dir.rt)
+# dir.create(dir.rt)
+
 # getting nodes
 nodeaddress='http://www.bundesbank.de/Navigation/EN/Statistics/Time_series_databases/Real_Time_Data/realtime_zeitreihen_node.html'
 nodehtml=readLines(nodeaddress)
@@ -66,11 +67,11 @@ variable.names <- unlist(variable_vector)
 
 
 #  ------------------------------------------------------------------------
-
+# missing!! variable.names[637]='M.DE.S.P.PC1.PC200'
 # downloading files
-# for (i in 421:length(variable.names)){
-#   download.file(paste("http://www.bundesbank.de/cae/servlet/StatisticDownload?tsId=",variable.names[i],"&rtd_csvFormat=en&rtd_fileFormat=csv&mode=rtd&downloadType=matrix", sep=""), paste(dir.rt,'/',variable.names[i],".csv",sep=''),mode='wb')
-# }
+for (i in 637:length(variable.names)){
+  download.file(paste("http://www.bundesbank.de/cae/servlet/StatisticDownload?tsId=",variable.names[i],"&rtd_csvFormat=en&rtd_fileFormat=csv&mode=rtd&downloadType=matrix", sep=""), paste(dir.rt,'/BundesbankRealtime/',variable.names[i],".csv",sep=''),mode='wb')
+}
 
 labels[grep(c('quarterly|annual|monthly'),labels[,1]),'group']=1
 labels[grep(c('unadjusted figure|calendar and seasonally adjusted|unadjusted figure (neither seasonally nor calendar adjusted)

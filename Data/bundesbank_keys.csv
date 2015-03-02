@@ -1,0 +1,131 @@
+name,key,position
+national accounts ,A,4
+chain index/in currency units using chain index for calculation ,A,7
+annual ,A,1
+in absolute terms ,A,8
+"agriculture, hunting, forestry and fishing ",AA010,6
+production sector excluding construction ,AA020,6
+production sector including construction ,AA021,6
+"manufacturing, mining and quarrying ",AA022,6
+construction ,AA030,6
+main construction industry ,AA031,6
+finishing trades ,AA032,6
+"trade, transport, accommodation and food services ",AA040,6
+"financial, real estate, renting and business services ",AA050,6
+information and communication ,AA051,6
+financial and insurance services ,AA052,6
+public and private services ,AA060,6
+real estate activities ,AA061,6
+business services ,AA062,6
+"public services, education, health ",AA063,6
+other services ,AA064,6
+business sector ,AAA10,6
+manufacturing sector ,ABA20,6
+industry ,ACM01,6
+intermediate goods ,ACM02,6
+capital goods ,ACM03,6
+consumer goods ,ACM04,6
+durable consumer goods ,ACM05,6
+non-durable consumer goods ,ACM06,6
+energy ,ACM07,6
+structural engineering ,AFC11,6
+civil engineering ,AFC12,6
+housing construction ,AFC15,6
+main construction industry - industrial clients ,AFC21,6
+main construction industry - public sector construction and road construction ,AFC22,6
+gross domestic product ,AG1,5
+retail trade (excluding retail trade of motor vehicles) ,AGA01,6
+retail including sales and repairs of motor vehicles and motorcycles ,AGC02,6
+sales and repair of motor vehicles and motorcycles ,AGD01,6
+gross value added adjusted ,AU1,5
+private households including non-profit institutions serving households ,BA100,6
+private households including non-profit institutions serving households ,BA110,6
+general government ,BA200,6
+private sector (total economy excluding government) ,BAA00,6
+employed persons ,BE1,5
+hours worked by employed persons ,BE2,5
+hours worked per employed person ,BEA,5
+employees ,BF1,5
+hours worked by employees ,BF2,5
+hours worked per employee ,BFA,5
+in constant prices ,C,7
+overall economy (domestic concept) ,CA010,6
+overall economy (residents) ,CA020,6
+consumption ,CA1,5
+consumption (domestic market) ,CB1,5
+gross capital formation ,CC1,5
+gross fixed capital formation ,CD1,5
+non-residential investment ,CDA,5
+investment in machinery and equipment ,CE1,5
+investment in machinery and equipment excluding vehicles ,CE2,5
+investment in vehicles ,CE3,5
+construction investments ,CF1,5
+residential building investments ,CH1,5
+construction investments excluding residential buildings ,CH2,5
+other investment ,CI1,5
+changes in inventories (including acquisitions less disposals of valuables) ,CJ1,5
+imports of goods and services ,CM1,5
+imports of goods ,CM2,5
+exports of goods and services ,CX1,5
+exports of goods ,CX2,5
+capital consumption ,DA1,5
+gross national income (formerly known as: gross national product) ,DB1,5
+national income ,DB2,5
+disposable income ,DD1,5
+Germany,DE,2
+compensation of employees ,DE1,5
+gross wages and salaries ,DE2,5
+net wages and salaries ,DE3,5
+mass income ,DM1,5
+negotiated wages and salaries per employee per month ,DN1,5
+negotiated wages and salaries (excluding one-off payments) per month ,DN3,5
+negotiated wages and salaries (excluding one-off and ancillary payments) per month ,DN5,5
+negotiated wages and salaries per hour ,DNA,5
+negotiated wages and salaries (excluding one-off payments) per hour ,DNC,5
+negotiated wages and salaries (excluding one-off and ancillary payments) per hour ,DNE,5
+entrepreneurial and property income ,DP1,5
+net savings ,DS1,5
+contribution to growth ,G,8
+hours ,H,7
+index ,I,8
+short term business indicators ,I,4
+orders received ,IO1,5
+orders received (domestic) ,IO2,5
+orders received (from abroad) ,IO3,5
+"orders received (from abroad, euro-area-countries only) ",IO4,5
+"orders received (from abroad, non-euro-area-countries) ",IO5,5
+production ,IP1,5
+order-capacity-index ,IQ1,5
+turnover ,IT1,5
+turnover (domestic) ,IT2,5
+turnover (from abroad) ,IT3,5
+"turnover (from abroad, euro-area-countries only) ",IT4,5
+"turnover (from abroad, non-euro-area-countries) ",IT5,5
+short term labour market indicators ,L,4
+monthly ,M,1
+cost index ,M,7
+others or not applicable ,N,7
+unadjusted figure (neither seasonally nor calendar adjusted) ,N,3
+persons ,P,7
+prices ,P,4
+consumer prices ,PC1,5
+all categories ,PC100,6
+"total, excluding energy ",PC150,6
+food products ,PC200,6
+other durable and non-durable goods excluding food and energy ,PC300,6
+energy ,PC400,6
+services excluding housing rents ,PC510,6
+housing rents including ancillary costs ,PC600,6
+housing rents (not including ancillary costs) ,PC610,6
+all products ,PP000,6
+producer prices ,PP1,5
+industrial products ,PP100,6
+industrial products excluding energy ,PP200,6
+construction price index ,PP300,6
+farm products ,PP400,6
+quarterly ,Q,1
+prices ,R,7
+seasonally adjusted only ,S,3
+"in current prices, flows ",V,7
+deviation in % of the long term average level ,V,8
+calendar and seasonally adjusted ,Y,3
