@@ -1,3 +1,15 @@
+# this file collects the csv files containing the Bundesbank realtime data base.
+# it loads the dictionary of keys of bundesbank
+# it creates an overview of all variables and connects it to the keys and labels
+# in "variable"
+# it selects the variables employed in "should we trust in leading indicators..." by
+# drechsel and scheufele 2010 in var.used
+# based on this, it enumerates all the vintages that have been available until the
+# "cutoffday" of a month for each month. using vintage.survey (function) resulting in
+# "vintage.employed.
+# this is used to construct sets of vintages of the variables used at a given point
+# in time. They are named after their cutoffday, month and year.
+
 wd="h:/git/zeit-2"
 library(zoo)
 setwd(wd)
@@ -72,6 +84,7 @@ for (i in 1:nrow(variable)){
         }
 
 }
+# dropping those variables that have vintages that start later than 2005
 vint.late=variable$fstvint.year<=2005
 variable.sel=variable[vint.late,]
 
@@ -80,28 +93,51 @@ variable.sel=variable.sel[variable.sel$'key 1'=='M',]
 variable.sel=variable.sel[-grep('current prices',variable.sel$'label7'),]
 variable.sel=variable.sel[-grep('neither seasonally nor calendar adjusted',variable.sel$'label3'),]
 variable.sel=variable.sel[-grep('domestic|abroad',variable.sel$'label5'),]
+
 ## Real economy
 # orders
-order.sel=grep('order',variable.sel$'label5')
-var.order=variable.sel[order.sel,]
-var.order=var.order[-grep('unadjusted',var.order$'label3'),]
-var.order=var.order[-grep('domestic|abroad',var.order$'label5'),]
-# manufacturing is available until vintage 2005 something, industry is better
-# industry and constructions starts only at about this vintage
-var.order=var.order[grep('intermediate|consumer|capital',var.order$'label6'),]
+sel=grep('order',variable.sel$'label5')
+var.order=variable.sel[sel,]
+var.order=var.order[grep('manufacturing|consumer|capital',var.order$'label6'),]
+var.used=var.order
+
+# prices
+sel=grep('price',variable.sel$'label4')
+var.cpi=variable.sel[sel,]
+var.cpi=var.cpi[grep('all categories|total, excluding energy',var.cpi$'label6'),]
+var.used=rbind(var.used,var.cpi)
+# hours
+sel=grep('hours worked by employed persons',variable.sel$'label5')
+var.hours=variable.sel[sel,]
+var.hours=var.hours[grep('in absolute terms',var.hours$'label8'),]
+var.used=rbind(var.used,var.hours)
+# hours
+sel=grep('employed persons',variable.sel$'label5')
+var.employ=variable.sel[sel,]
+var.employ=var.employ[grep('overall economy',var.employ$'label6'),]
+var.used=rbind(var.used,employ)
+# wage
+var.wage=variable[grep('wage',variable$'label5'),]
+var.wage=var.wage[grep('negotiated wages and salaries',var.wage$'label5'),]
+var.wage=var.wage[grep('overall',var.wage$'label6'),]
+var.wage=var.wage[grep('negotiated wages and salaries per hour',var.wage$'label5'),]
+var.used=rbind(var.used,var.wage)
+
+# intermediate goods
+var.interm=variable.sel[grep('intermediate goods',variable.sel$'label6'),]
+var.interm=var.interm[grep('production',var.interm$'label5'),] 
+var.used=rbind(var.used,var.interm)
 
 # industrial production
-var.ip=variable.sel[-order.sel,]
-var.ip=var.ip[grep('calendar and seasonally adjusted',var.ip$'label3'),]
-var.ip=var.ip[-grep('in current prices, flows',var.ip$'label7'),]
+var.ip=variable.sel[-sel,]
 var.ip=var.ip[grep('including construction|excluding construction',var.ip$'label6'),]
+var.used=rbind(var.used,var.ip)
 
+var.used$label=c('ORD','ORD-I','ORD-C','CPI-EX','CPI','WHOUR','TARIF','IP-VORL','IP-CONST','IP')
+var.used$transformation=c('D ln','D ln','D ln','D ln, DD ln','D ln, DD ln','L, D','D ln, DD ln','D ln','D ln','D ln')
 # variables used
-var.used=rbind(var.ip,var.order)
 nvar=nrow(var.used)
 eval(parse(text=paste('var=',var.used$variable[1],sep='')))
-# number of vintages is equal across variables
-nvint=ncol(var)
 
 
 # settings for vintage publication survey
@@ -112,8 +148,8 @@ dates$vintage=NA
 dates$before=NA # latest before cut-off "day"
 dates$last=NA # last obs of month
 dates[,paste(1:31)]=NA
-
-vint.survey=function(variable.name,day=15){
+cutoffday=15
+vint.survey=function(variable.name,cutoffday){
         # day: if 15 all the closest publication date including 15 will be returned
         
         # creates a dataframe containing year and month and each publication each month
@@ -134,7 +170,7 @@ vint.survey=function(variable.name,day=15){
                 dates$number[i]=sum(is.na(dates[i,paste(1:31)])==F)
                 pubdays=which(is.na(dates[i,paste(1:31)])==F)
                 if (length(pubdays)>0){
-                        before=pubdays[(pubdays-day)<=0]
+                        before=pubdays[(pubdays-cutoffday)<=0]
                         last=max(pubdays)
                         if (length(before)>=1){
                                 dates$before[i]=dates[i,paste(min(before))]  
@@ -159,30 +195,43 @@ vint.survey=function(variable.name,day=15){
         dates$vintage=gsub('-','\\.',dates$vintage)
         return(dates)
 }
-tt=sapply(var.used$variable,function(x) vint.survey(x)$vintage)
+tt=sapply(var.used$variable,function(x) vint.survey(x,cutoffday)$vintage)
 # create a list of vintages per variable used 
 vintage.employ=cbind(dates[,c(1,2)],tt)
+start=vintage.employ$year==2005&vintage.employ$month==12
+start=which(start)
+end=vintage.employ$year==2015&vintage.employ$month==2
+end=which(end)
+vintage.employ=vintage.employ[start:end,]
+nvint=nrow(vintage.employ)
+nvar=ncol(vintage.employ)-2
+dates=data.frame(year=rep(1990:2015,each=12))
+mth=c(paste(0,1:9,sep=''),paste(10:12,sep=''))
+m=rep(mth,length(1990:2015))
+y=as.character(rep(1990:2015,each=12))
+ym=paste(y,m,sep='-')
 
 
+specimen=data.frame(matrix(NA,nrow=length(ym),ncol=nvar))
+row.names(specimen)=ym
+colnames(specimen)=colnames(vintage.employ)[3:(nvar+2)]
 
-t2=as.Date(vintu[[2]],'%Y.%m.%d')
-t3=as.Date(vintu[[3]],'%Y.%m.%d')
-t11=zoo(1:240,t1)
-t21=zoo(1:240,t2)
-t31=zoo(1:240,t3)
-tt=cbind(t11,t21,t31)
-t1=zoo(1,vintu[1])
-t3=zoo(1,vintu[3])
-t3=rbind(t1,t2)
-View(test)
+specimen_s=specimen
 # making sets
-sets=vector(nvint,mode='list')
+sets=list()
 for (vint in 1:nvint){
-        sets[[vint]]=data.frame(matrix(NA,nrow=nrow(var),ncol=nvar))
-        for (var.i in 1:nvar){
-                text=paste('sets[[',vint,']][,',var.i,']=',var.used$variable[var.i],'[,',vint,']',sep='')
+        
+        for (var.i in colnames(specimen_s)){
+                vintage=as.character(vintage.employ[vint,var.i])
+                text=paste('var=',var.i,sep='')
                 eval(parse(text=text))
+                rnames=row.names(var)
+                specimen[rnames,var.i]=var[,vintage]
         }
+        # cutoff is the date <= the observations are included
+        cutoff=paste(vintage.employ$year[vint],vintage.employ$month[vint],cutoffday,sep='-')
+        sets[[cutoff]]=specimen
+        specimen=specimen_s
 }
-M.DE.Y.I.IP1.AA020.C.I[, 1]
-sets[[1]]
+save.image("C:/Users/dulbricht/Desktop/t.RData")
+save(sets,var.used, file = paste(wd,'/data/realtime_sets_cutoffday_',cutoffday,".RData",sep=''))
