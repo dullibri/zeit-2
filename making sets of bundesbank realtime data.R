@@ -148,7 +148,7 @@ dates$vintage=NA
 dates$before=NA # latest before cut-off "day"
 dates$last=NA # last obs of month
 dates[,paste(1:31)]=NA
-cutoffday=15
+cutoffday=14
 vint.survey=function(variable.name,cutoffday){
         # day: if 15 all the closest publication date including 15 will be returned
         

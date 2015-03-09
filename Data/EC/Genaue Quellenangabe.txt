@@ -1,0 +1,15 @@
+"EC collection.xlsx" bringt alle zusammen.
+http://ec.europa.eu/economy_finance/db_indicators/surveys/time_series/index_en.htm
+
+Diese Reihe hier bringt die ESI Indikatoren. 
+All surveys	Seasonally
+Adjusted Data	Non-Seasonally
+Adjusted Data
+EU member states and candidate countries	English textzip(5 MB)	English textzip(5 MB)
+
+ECBS: Business industry_total_sa_nace2.xlsxx
+
+ESI:	esi_nace2.xlsx 
+
+ECCS: consumer total für eccs1-eccs12 consumer_total_sa_nace2.xlsx
+
