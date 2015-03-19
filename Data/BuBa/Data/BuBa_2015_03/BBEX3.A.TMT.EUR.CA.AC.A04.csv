@@ -1,0 +1,15 @@
+"",BBEX3.A.TMT.EUR.CA.AC.A04,BBEX3.A.TMT.EUR.CA.AC.A04_FLAGS
+"",Exchange rates for the euro in Turkmenistan / EUR 1 = TMT ... (middle),
+unit,TMT (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:16:48,
+2009,3.9720,comment
+2010,3.7792,
+2011,3.9699,
+2012,3.6628,
+2013,3.7896,
+2014,3.7828,
+"","General: Currency conversion with effect from 1 January 2009 at the rate of TMM 5,000 = TMT 1; for exchange rates until 2008, see BBEX3:A:TMM:EUR:CA:AC:A04.",
+"","Source: Central Bank of Turkmenistan, Ashgabat.",
+"",Methodology: Calculated on the basis of mid-month and month-end rates.,
+"","Comment on 2009: Currency conversion with effect from 1 January 2009 at the rate of TMM 5,000 = TMT 1.",

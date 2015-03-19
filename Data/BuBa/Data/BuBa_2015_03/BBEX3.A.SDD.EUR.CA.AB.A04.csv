@@ -1,0 +1,17 @@
+"",BBEX3.A.SDD.EUR.CA.AB.A04,BBEX3.A.SDD.EUR.CA.AB.A04_FLAGS
+"",Exchange rates for the euro in Sudan / EUR 1 = SDD ... (selling),
+unit,SDD (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:16:16,
+1999,269.3848,
+2000,238.6108,
+2001,231.3875,
+2002,251.1183,
+2003,297.6133,
+2004,321.3742,
+2005,302.0875,
+2006,272.7392,comment
+"","General: The Sudanese pound (SDG) has been in circulation since 10 January 2007, when it was introduced at a rate of SDD 100 = SDG 1. The SDD remained legal tender alongside the SDG until 30 June 2007. For exchange rates from 2007, see BBEX2:A:SDG:EUR:CA:AB:A04.",
+"","Source: Bank of Sudan, Khartoum",
+"",Methodology: Calculated on the basis of month-end rates.,
+"","Comment on 2006: For exchange rates from 2007, see BBEX2:A:SDG:EUR:CA:AB:A04.",

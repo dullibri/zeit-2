@@ -1,0 +1,32 @@
+"",BBEX3.A.TOP.USD.CM.AB.A04,BBEX3.A.TOP.USD.CM.AB.A04_FLAGS
+"",Exchange rates for the US dollar in Tonga / TOP 1 = USD ... (selling),
+unit,USD (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:16:52,
+1991,0.7587,
+1992,0.7297,
+1993,0.7126,
+1994,0.7468,
+1995,0.7777,
+1996,0.8033,
+1997,0.7781,
+1998,0.6573,
+1999,.,No value available
+2000,.,No value available
+2001,.,No value available
+2002,.,No value available
+2003,.,No value available
+2004,.,No value available
+2005,.,No value available
+2006,0.4817,
+2007,0.4922,
+2008,0.5000,
+2009,0.4798,
+2010,0.5126,
+2011,0.5705,
+2012,0.5698,
+2013,0.5492,
+2014,0.5293,
+"","General: From 1999 to 2005, we only have data for the middle rates; see BBEX3:A:TOP:USD:CM:AC:A04.",
+"","Source: Since August 2006 Westpac Bank of Tonga, Nuku'alofa January 2006 - July 2006 Australia and New Zealand Banking Group (ANZ), Nuku'alofa 1991 - 1998 Bank of Tonga, Nuku'alofa",
+"",Methodology: Calculated on the basis of month-end rates.,

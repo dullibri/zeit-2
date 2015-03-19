@@ -1,0 +1,18 @@
+"",BBEX3.A.RSD.EUR.CA.AA.A04,BBEX3.A.RSD.EUR.CA.AA.A04_FLAGS
+"",Exchange rates for the euro in Serbia  / EUR 1 = RSD ... (buying),
+unit,RSD (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:15:59,
+2006,83.8825,comment
+2007,79.7711,
+2008,81.4676,
+2009,93.7705,
+2010,102.7409,
+2011,101.6215,
+2012,112.8400,
+2013,112.7559,
+2014,117.0353,
+"","General: * Independent since 3 June 2006; formerly ""Serbia and Montenegro"". The euro has been the sole legal tender in Montenegro since 1 April 2002. On 25 October 2006, the ISO code was changed from CSD to RSD.",
+"","Source: National Bank of Serbia, Belgrade",
+"",Methodology: Calculated on the basis of mid-month and month-end rates.,
+"",Comment on 2006: The exchange rates set in CSD until mid-October 2006 were included in the calculation.,

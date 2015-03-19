@@ -1,0 +1,29 @@
+"",BBEX3.A.CDF.USD.CA.AC.A04,BBEX3.A.CDF.USD.CA.AC.A04_FLAGS
+"",Exchange rates for the US dollar in the Democratic Republic of the Congo * / USD 1 = CDF ... (middle),
+unit,CDF (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:13:29,
+1998,1.66391,comment
+1999,4.15333,comment
+2000,24.18641,comment
+2001,220.64336,comment
+2002,348.81375,
+2003,400.33678,
+2004,398.76139,
+2005,470.47484,
+2006,465.94068,
+2007,510.16667,
+2008,563.26527,
+2009,818.53927,
+2010,906.42473,
+2011,917.83239,
+2012,918.91402,
+2013,919.67899,
+2014,925.61282,
+"","General: * Referred to as indicative rates until December 2008. On 30 June 1998, the Congo franc was introduced as legal tender at a rate of 100,000 new zaires (ZRN) = 1 Congo franc (CDF).",
+"","Source: Since 2009 Banque Centrale du Congo, Kinshasa September 2006 - December 2008 Fortis Bank, Brüssel January 1999 - August 2006 Banque Commerciale du Congo, Kinshasa, and Banque Belgolaise, Brüssel",
+"","Methodology: Until 2008 calculated on the basis of month-end rates, from 2009 on the basis of month-end buying and selling rates.",
+"","Comment on 1998: On 30 June 1998, the Congo franc was introduced as legal tender at a rate of 100,000 new zaires (ZRN) = 1 Congo franc (CDF);  to calculate the annual average, the rates set in ZRN were converted at a rate of 100,000:1 and included in the calculation.",
+"","Comment on 1999: On 6 April 1999, the Congo franc was devalued by 36.0%.",
+"","Comment on 2000: On 22 January 2000, the Congo franc was devalued by 48.8%, on 10 June 2000 by 61.7% and on 24 October 2000 by 53.0%.",
+"","Comment on 2001: On 28 May 2001, the Congo franc was devalued sharply and the exchange rates were allowed to float freely. Calculated using the exchange rates from 25 May (USD 1 = CDF 50.00) and 28 May (USD 1 = CDF 310.00), the Congo franc was devalued by 83.9%",

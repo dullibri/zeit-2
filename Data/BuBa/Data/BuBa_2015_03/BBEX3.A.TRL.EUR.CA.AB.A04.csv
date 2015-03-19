@@ -1,0 +1,15 @@
+"",BBEX3.A.TRL.EUR.CA.AB.A04,BBEX3.A.TRL.EUR.CA.AB.A04_FLAGS
+"",Exchange rates for the euro in Turkey / EUR 1 = TRL ... (selling),
+unit,TRL (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:16:53,
+1999,447529.17,
+2000,576990.14,
+2001,1106342.96,comment
+2002,1442652.79,
+2003,1694909.08,
+2004,1777745.88,
+"","General: In addition to the official exchange rates published by the central bank, from 1994, the commercial banks set their own rates for a time. These rates could deviate significantly from the central bank rate over the course of a day. Currency conversion effective from 1 January 2005: 1,000,000 Turkish lira (TRL) = 1 New Turkish lira (TRL), designatedas Turkish lira (TRL) since 1 January 2009.",
+"","Source: Central Bank of Turkey, Ankara.",
+"","Methodology: Until 2000, calculated on the basis of daily exchange rates, from 2012 on the basis of  mid-month and month-end rates.",
+"","Comment on 2001: On 22 February 2001, the exchange rate arrangements for the Turkish lira were changed; since this date, Turkey has used an independent floating exchange rate system. This measure led to sharp exchange rate fluctuations. The following exchange rates (buying/selling rate) were reported to us by the Turkish central bank at the start of trading:  22 February 2001: EUR 1 = TRL 626,858 / 629,881  23 February 2001: EUR 1 = TRL 867,168 / 871,350  26 February 2001: EUR 1 = TRL 972,449 / 977,139  27 February 2001: EUR 1 = TRL 860,192 / 864,341",

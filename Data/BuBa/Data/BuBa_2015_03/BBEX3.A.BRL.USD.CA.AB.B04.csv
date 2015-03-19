@@ -1,0 +1,14 @@
+"",BBEX3.A.BRL.USD.CA.AB.B04,BBEX3.A.BRL.USD.CA.AB.B04_FLAGS
+"",Exchange rates (free market rates) for the US dollar in Brazil / USD 1 = BRL ... (selling) / up to 1998,
+unit,BRL (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:13:10,
+1994,0.8930,comment
+1995,0.9244,
+1996,1.0196,
+1997,1.0963,
+1998,1.1984,
+"","General: Currency conversion on 1 July 1994 at the rate of 2,750 cruzeiro real (BRR) = 1 real (BRL).  Multiple exchange rate system; for commercial banks' rates, see BBEX2:A:BRL:USD:CA:AB:A04. Exchange rate used until 31 January 1999:  Commercial banks' rate (taxa comercial): for all foreign exchange transactions not settled at the free market rate.  Free market rate (taxa flutuante): for all unrequited transfers (including pension and remittance payments), for certain services (including the provision of foreign exchange for travel purposes and currency exchange for foreign tourists, also via international credit cards), as well as for certain overdue loan redemptions; also for certain capital transfers by Brazilians based abroad.  The multiple exchange rate system was standardised on 1 February 1999.",
+"","Source: Dresdner Bank Lateinamerika AG, Hamburg (formerly: Deutsch-Südamerikanische Bank AG).",
+"",Methodology: Calculated on the basis of daily exchange rates.,
+"",Comment on 1994: Average from July to December 1994.,

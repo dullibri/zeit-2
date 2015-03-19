@@ -1,0 +1,18 @@
+"",BBEX3.A.SDD.USD.CA.AA.A04,BBEX3.A.SDD.USD.CA.AA.A04_FLAGS
+"",Exchange rates for the US dollar in Sudan / USD 1 = SDD ... (buying),
+unit,SDD (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:16:17,
+1998,202.1667,
+1999,252.4917,
+2000,256.5583,
+2001,257.8442,
+2002,262.1967,
+2003,260.2675,
+2004,256.8642,
+2005,242.2683,
+2006,215.3675,comment
+"","General: According to the IMF, a legal parallel market existed alongside the official published exchange rates until 20 October 1998. On 21 October 1998, the exchange rate system was reportedly de facto unified.   The Sudanese pound (SDG) has been in circulation since 10 January 2007, when it was introduced at a rate of SDD 100 = SDG 1. The SDD remained legal tender alongside the SDG until 30 June 2007. For exchange rates from 2007, see BBEX2:A:SDG:USD:CA:AA:A04.",
+"","Source: Bank of Sudan, Khartoum",
+"",Methodology: Calculated on the basis of month-end rates.,
+"","Comment on 2006: For exchange rates from 2007, see BBEX2:A:SDG:USD:CA:AA:A04.",

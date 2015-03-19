@@ -1,0 +1,28 @@
+"",BBEX3.A.ERN.USD.CA.AA.A04,BBEX3.A.ERN.USD.CA.AA.A04_FLAGS
+"",Exchange rates for the US dollar in Eritrea / USD 1 = ERN ... (buying),
+unit,ERN (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:13:53,
+1998,7.3270,
+1999,.,"No value available, comment"
+2000,.,"No value available, comment"
+2001,11.3262,comment
+2002,13.7980,
+2003,13.6387,
+2004,13.5500,
+2005,15.0000,
+2006,15.0000,
+2007,15.0000,
+2008,15.0000,
+2009,15.0000,
+2010,15.0000,
+2011,15.0000,
+2012,15.0000,
+2013,15.0000,
+2014,15.0000,
+"","General: On 8 November 1997, Eritrea ended its currency union with Ethiopia and adopted the nakfa as its own currency.  From April 1999 to November 2000, only mid-market rates were reported; see BBEX2:A:ERN:USD:CA:AC:A04.",
+"","Source: Bank of Eritrea, Asmara.",
+"",Methodology: Calculated on the basis of month-end rates.,
+"","Comment on 1999: From April 1999 to November 2000, only mid-market rates were reported; see BBEX2:A:ERN:USD:CA:AC:A04.",
+"","Comment on 2000: From April 1999 to November 2000, only mid-market rates were reported; see BBEX2:A:ERN:USD:CA:AC:A04.",
+"","Comment on 2001: On 10 September 2001, the nakfa was devalued. We recorded the following exchange rates (buying/selling rate).  7 September 2001: USD 1 = ERN 10.20 / 10.30  10 September 2001: USD 1 = ERN 13,55 / 13,80.  Calculated devaluation: 25.0% (middle rate).",

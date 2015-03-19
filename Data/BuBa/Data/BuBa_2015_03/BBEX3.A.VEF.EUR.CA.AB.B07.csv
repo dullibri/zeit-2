@@ -1,0 +1,10 @@
+"",BBEX3.A.VEF.EUR.CA.AB.B07,BBEX3.A.VEF.EUR.CA.AB.B07_FLAGS
+"",Exchange rates for the euro in the Bolivarian Republic of Venezuela / SICAD II * / EUR 1 = VEF ... (selling),
+unit,VEF (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-10 12:59:53,
+2014,65.58806752,comment
+"","General: * Multiple exchange rate system. In addition to the official market and the auction procedure SICAD (Sistema Complementario de Administración de Divisas) the alternative forex trading system SICAD II (Sistema Cambiario Alternativo de Divisas) was introduced with effect from 24 March 2014.  Exchange rate application  Official exchange rate (BBEX3:A:VEF:EUR:CA:AB:B04): For debt service payments by public-sector entities and for authorised transactions.  SICAD (BBEX3:A:VEF:EUR:CA:AC:B08): For the purchase of foreign currency by registered importers and registered domestic households (inter alia for studying abroad and for health, sport and cultural purposes).  SICAD II: For the purchase of foreign exchange by natural and legal persons, eg in the form of foreign notes and coins and currency cheques (including traveller's cheques) and for the sale of foreign currency to domestic households and importers in the form of foreign notes and coins as well as traveller's cheques or for credit transfers.",
+"","Source: Banco Central de Venezuela, Caracas",
+"",Methodology: Calculated on the basis of month-end rates.,
+"",Comment on 2014: Average from March to December 2014.,

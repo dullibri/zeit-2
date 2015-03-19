@@ -1,0 +1,785 @@
+"",BBDA1.M.DE.Y.EX.S.A.W1.A.V.ABA.L,BBDA1.M.DE.Y.EX.S.A.W1.A.V.ABA.L_FLAGS
+"","Germany / Exports / At current prices, flows / Aggregate / all goods / Rest of the World / At current prices, flows / Calendar and seasonally adjusted",
+unit,DM/Euro (hypothetically euro-based),
+unit multiplier,billion,
+last update,2015-02-20 11:00:56,
+1950-01,0.26,
+1950-02,0.27,
+1950-03,0.29,
+1950-04,0.29,
+1950-05,0.31,
+1950-06,0.33,
+1950-07,0.36,
+1950-08,0.38,
+1950-09,0.36,
+1950-10,0.45,
+1950-11,0.50,
+1950-12,0.44,
+1951-01,0.53,
+1951-02,0.56,
+1951-03,0.56,
+1951-04,0.59,
+1951-05,0.59,
+1951-06,0.63,
+1951-07,0.66,
+1951-08,0.66,
+1951-09,0.74,
+1951-10,0.61,
+1951-11,0.59,
+1951-12,0.70,
+1952-01,0.75,
+1952-02,0.71,
+1952-03,0.69,
+1952-04,0.69,
+1952-05,0.71,
+1952-06,0.74,
+1952-07,0.72,
+1952-08,0.71,
+1952-09,0.75,
+1952-10,0.71,
+1952-11,0.71,
+1952-12,0.76,
+1953-01,0.72,
+1953-02,0.70,
+1953-03,0.74,
+1953-04,0.81,
+1953-05,0.76,
+1953-06,0.78,
+1953-07,0.76,
+1953-08,0.79,
+1953-09,0.78,
+1953-10,0.83,
+1953-11,0.85,
+1953-12,0.92,
+1954-01,0.88,
+1954-02,0.85,
+1954-03,0.93,
+1954-04,0.88,
+1954-05,0.93,
+1954-06,0.88,
+1954-07,0.94,
+1954-08,0.98,
+1954-09,0.96,
+1954-10,0.98,
+1954-11,1.01,
+1954-12,0.98,
+1955-01,1.05,
+1955-02,1.07,
+1955-03,1.07,
+1955-04,1.06,
+1955-05,1.09,
+1955-06,1.00,
+1955-07,1.09,
+1955-08,1.04,
+1955-09,1.09,
+1955-10,1.15,
+1955-11,1.15,
+1955-12,1.17,
+1956-01,1.23,
+1956-02,1.10,
+1956-03,1.16,
+1956-04,1.42,
+1956-05,1.26,
+1956-06,1.38,
+1956-07,1.32,
+1956-08,1.28,
+1956-09,1.40,
+1956-10,1.39,
+1956-11,1.40,
+1956-12,1.39,
+1957-01,1.40,
+1957-02,1.50,
+1957-03,1.59,
+1957-04,1.47,
+1957-05,1.56,
+1957-06,1.55,
+1957-07,1.52,
+1957-08,1.64,
+1957-09,1.52,
+1957-10,1.57,
+1957-11,1.57,
+1957-12,1.51,
+1958-01,1.49,
+1958-02,1.62,
+1958-03,1.51,
+1958-04,1.56,
+1958-05,1.51,
+1958-06,1.56,
+1958-07,1.59,
+1958-08,1.61,
+1958-09,1.67,
+1958-10,1.62,
+1958-11,1.64,
+1958-12,1.56,
+1959-01,1.59,
+1959-02,1.69,
+1959-03,1.58,
+1959-04,1.63,
+1959-05,1.75,
+1959-06,1.73,
+1959-07,1.70,
+1959-08,1.85,
+1959-09,1.84,
+1959-10,1.84,
+1959-11,1.93,
+1959-12,1.95,
+1960-01,1.99,
+1960-02,1.94,
+1960-03,2.06,
+1960-04,1.94,
+1960-05,1.93,
+1960-06,2.00,
+1960-07,2.12,
+1960-08,1.93,
+1960-09,2.00,
+1960-10,2.07,
+1960-11,2.10,
+1960-12,2.24,
+1961-01,2.21,
+1961-02,2.20,
+1961-03,2.08,
+1961-04,2.27,
+1961-05,2.01,
+1961-06,2.27,
+1961-07,2.19,
+1961-08,2.21,
+1961-09,2.21,
+1961-10,2.16,
+1961-11,2.10,
+1961-12,2.23,
+1962-01,.,No value available
+1962-02,.,No value available
+1962-03,.,No value available
+1962-04,.,No value available
+1962-05,.,No value available
+1962-06,.,No value available
+1962-07,.,No value available
+1962-08,.,No value available
+1962-09,.,No value available
+1962-10,.,No value available
+1962-11,.,No value available
+1962-12,.,No value available
+1963-01,.,No value available
+1963-02,.,No value available
+1963-03,.,No value available
+1963-04,.,No value available
+1963-05,.,No value available
+1963-06,.,No value available
+1963-07,.,No value available
+1963-08,.,No value available
+1963-09,.,No value available
+1963-10,.,No value available
+1963-11,.,No value available
+1963-12,.,No value available
+1964-01,.,No value available
+1964-02,.,No value available
+1964-03,.,No value available
+1964-04,.,No value available
+1964-05,.,No value available
+1964-06,.,No value available
+1964-07,.,No value available
+1964-08,.,No value available
+1964-09,.,No value available
+1964-10,.,No value available
+1964-11,.,No value available
+1964-12,.,No value available
+1965-01,.,No value available
+1965-02,.,No value available
+1965-03,.,No value available
+1965-04,.,No value available
+1965-05,.,No value available
+1965-06,.,No value available
+1965-07,.,No value available
+1965-08,.,No value available
+1965-09,.,No value available
+1965-10,.,No value available
+1965-11,.,No value available
+1965-12,.,No value available
+1966-01,.,No value available
+1966-02,.,No value available
+1966-03,.,No value available
+1966-04,.,No value available
+1966-05,.,No value available
+1966-06,.,No value available
+1966-07,.,No value available
+1966-08,.,No value available
+1966-09,.,No value available
+1966-10,.,No value available
+1966-11,.,No value available
+1966-12,.,No value available
+1967-01,.,No value available
+1967-02,.,No value available
+1967-03,.,No value available
+1967-04,.,No value available
+1967-05,.,No value available
+1967-06,.,No value available
+1967-07,.,No value available
+1967-08,.,No value available
+1967-09,.,No value available
+1967-10,.,No value available
+1967-11,.,No value available
+1967-12,.,No value available
+1968-01,.,No value available
+1968-02,.,No value available
+1968-03,.,No value available
+1968-04,.,No value available
+1968-05,.,No value available
+1968-06,.,No value available
+1968-07,.,No value available
+1968-08,.,No value available
+1968-09,.,No value available
+1968-10,.,No value available
+1968-11,.,No value available
+1968-12,.,No value available
+1969-01,.,No value available
+1969-02,.,No value available
+1969-03,.,No value available
+1969-04,.,No value available
+1969-05,.,No value available
+1969-06,.,No value available
+1969-07,.,No value available
+1969-08,.,No value available
+1969-09,.,No value available
+1969-10,.,No value available
+1969-11,.,No value available
+1969-12,.,No value available
+1970-01,.,No value available
+1970-02,.,No value available
+1970-03,.,No value available
+1970-04,.,No value available
+1970-05,.,No value available
+1970-06,.,No value available
+1970-07,.,No value available
+1970-08,.,No value available
+1970-09,.,No value available
+1970-10,.,No value available
+1970-11,.,No value available
+1970-12,.,No value available
+1971-01,.,No value available
+1971-02,.,No value available
+1971-03,.,No value available
+1971-04,.,No value available
+1971-05,.,No value available
+1971-06,.,No value available
+1971-07,.,No value available
+1971-08,.,No value available
+1971-09,.,No value available
+1971-10,.,No value available
+1971-11,.,No value available
+1971-12,.,No value available
+1972-01,.,No value available
+1972-02,.,No value available
+1972-03,.,No value available
+1972-04,.,No value available
+1972-05,.,No value available
+1972-06,.,No value available
+1972-07,.,No value available
+1972-08,.,No value available
+1972-09,.,No value available
+1972-10,.,No value available
+1972-11,.,No value available
+1972-12,.,No value available
+1973-01,.,No value available
+1973-02,.,No value available
+1973-03,.,No value available
+1973-04,.,No value available
+1973-05,.,No value available
+1973-06,.,No value available
+1973-07,.,No value available
+1973-08,.,No value available
+1973-09,.,No value available
+1973-10,.,No value available
+1973-11,.,No value available
+1973-12,.,No value available
+1974-01,.,No value available
+1974-02,.,No value available
+1974-03,.,No value available
+1974-04,.,No value available
+1974-05,.,No value available
+1974-06,.,No value available
+1974-07,.,No value available
+1974-08,.,No value available
+1974-09,.,No value available
+1974-10,.,No value available
+1974-11,.,No value available
+1974-12,.,No value available
+1975-01,.,No value available
+1975-02,.,No value available
+1975-03,.,No value available
+1975-04,.,No value available
+1975-05,.,No value available
+1975-06,.,No value available
+1975-07,.,No value available
+1975-08,.,No value available
+1975-09,.,No value available
+1975-10,.,No value available
+1975-11,.,No value available
+1975-12,.,No value available
+1976-01,.,No value available
+1976-02,.,No value available
+1976-03,.,No value available
+1976-04,.,No value available
+1976-05,.,No value available
+1976-06,.,No value available
+1976-07,.,No value available
+1976-08,.,No value available
+1976-09,.,No value available
+1976-10,.,No value available
+1976-11,.,No value available
+1976-12,.,No value available
+1977-01,.,No value available
+1977-02,.,No value available
+1977-03,.,No value available
+1977-04,.,No value available
+1977-05,.,No value available
+1977-06,.,No value available
+1977-07,.,No value available
+1977-08,.,No value available
+1977-09,.,No value available
+1977-10,.,No value available
+1977-11,.,No value available
+1977-12,.,No value available
+1978-01,.,No value available
+1978-02,.,No value available
+1978-03,.,No value available
+1978-04,.,No value available
+1978-05,.,No value available
+1978-06,.,No value available
+1978-07,.,No value available
+1978-08,.,No value available
+1978-09,.,No value available
+1978-10,.,No value available
+1978-11,.,No value available
+1978-12,.,No value available
+1979-01,.,No value available
+1979-02,.,No value available
+1979-03,.,No value available
+1979-04,.,No value available
+1979-05,.,No value available
+1979-06,.,No value available
+1979-07,.,No value available
+1979-08,.,No value available
+1979-09,.,No value available
+1979-10,.,No value available
+1979-11,.,No value available
+1979-12,.,No value available
+1980-01,.,No value available
+1980-02,.,No value available
+1980-03,.,No value available
+1980-04,.,No value available
+1980-05,.,No value available
+1980-06,.,No value available
+1980-07,.,No value available
+1980-08,.,No value available
+1980-09,.,No value available
+1980-10,.,No value available
+1980-11,.,No value available
+1980-12,.,No value available
+1981-01,.,No value available
+1981-02,.,No value available
+1981-03,.,No value available
+1981-04,.,No value available
+1981-05,.,No value available
+1981-06,.,No value available
+1981-07,.,No value available
+1981-08,.,No value available
+1981-09,.,No value available
+1981-10,.,No value available
+1981-11,.,No value available
+1981-12,.,No value available
+1982-01,.,No value available
+1982-02,.,No value available
+1982-03,.,No value available
+1982-04,.,No value available
+1982-05,.,No value available
+1982-06,.,No value available
+1982-07,.,No value available
+1982-08,.,No value available
+1982-09,.,No value available
+1982-10,.,No value available
+1982-11,.,No value available
+1982-12,.,No value available
+1983-01,.,No value available
+1983-02,.,No value available
+1983-03,.,No value available
+1983-04,.,No value available
+1983-05,.,No value available
+1983-06,.,No value available
+1983-07,.,No value available
+1983-08,.,No value available
+1983-09,.,No value available
+1983-10,.,No value available
+1983-11,.,No value available
+1983-12,.,No value available
+1984-01,.,No value available
+1984-02,.,No value available
+1984-03,.,No value available
+1984-04,.,No value available
+1984-05,.,No value available
+1984-06,.,No value available
+1984-07,.,No value available
+1984-08,.,No value available
+1984-09,.,No value available
+1984-10,.,No value available
+1984-11,.,No value available
+1984-12,.,No value available
+1985-01,.,No value available
+1985-02,.,No value available
+1985-03,.,No value available
+1985-04,.,No value available
+1985-05,.,No value available
+1985-06,.,No value available
+1985-07,.,No value available
+1985-08,.,No value available
+1985-09,.,No value available
+1985-10,.,No value available
+1985-11,.,No value available
+1985-12,.,No value available
+1986-01,.,No value available
+1986-02,.,No value available
+1986-03,.,No value available
+1986-04,.,No value available
+1986-05,.,No value available
+1986-06,.,No value available
+1986-07,.,No value available
+1986-08,.,No value available
+1986-09,.,No value available
+1986-10,.,No value available
+1986-11,.,No value available
+1986-12,.,No value available
+1987-01,.,No value available
+1987-02,.,No value available
+1987-03,.,No value available
+1987-04,.,No value available
+1987-05,.,No value available
+1987-06,.,No value available
+1987-07,.,No value available
+1987-08,.,No value available
+1987-09,.,No value available
+1987-10,.,No value available
+1987-11,.,No value available
+1987-12,.,No value available
+1988-01,.,No value available
+1988-02,.,No value available
+1988-03,.,No value available
+1988-04,.,No value available
+1988-05,.,No value available
+1988-06,.,No value available
+1988-07,.,No value available
+1988-08,.,No value available
+1988-09,.,No value available
+1988-10,.,No value available
+1988-11,.,No value available
+1988-12,.,No value available
+1989-01,.,No value available
+1989-02,.,No value available
+1989-03,.,No value available
+1989-04,.,No value available
+1989-05,.,No value available
+1989-06,.,No value available
+1989-07,.,No value available
+1989-08,.,No value available
+1989-09,.,No value available
+1989-10,.,No value available
+1989-11,.,No value available
+1989-12,.,No value available
+1990-01,.,No value available
+1990-02,.,No value available
+1990-03,.,No value available
+1990-04,.,No value available
+1990-05,.,No value available
+1990-06,.,No value available
+1990-07,28.83,
+1990-08,28.80,
+1990-09,29.12,
+1990-10,29.25,
+1990-11,28.73,
+1990-12,29.12,
+1991-01,30.18,
+1991-02,28.54,
+1991-03,28.43,
+1991-04,26.08,
+1991-05,28.63,
+1991-06,27.40,
+1991-07,28.72,
+1991-08,29.80,
+1991-09,28.26,
+1991-10,28.31,
+1991-11,29.86,
+1991-12,29.92,
+1992-01,29.09,
+1992-02,29.35,
+1992-03,29.81,
+1992-04,30.44,
+1992-05,27.69,
+1992-06,26.19,
+1992-07,29.21,
+1992-08,28.98,
+1992-09,28.43,
+1992-10,28.60,
+1992-11,26.81,
+1992-12,27.35,
+1993-01,25.84,
+1993-02,28.52,
+1993-03,26.22,
+1993-04,26.30,
+1993-05,26.37,
+1993-06,26.13,
+1993-07,26.10,
+1993-08,26.82,
+1993-09,27.14,
+1993-10,27.24,
+1993-11,27.20,
+1993-12,28.01,
+1994-01,27.61,
+1994-02,27.95,
+1994-03,28.62,
+1994-04,28.96,
+1994-05,30.08,
+1994-06,30.08,
+1994-07,28.73,
+1994-08,30.67,
+1994-09,30.20,
+1994-10,30.13,
+1994-11,30.05,
+1994-12,31.07,
+1995-01,31.45,
+1995-02,31.64,
+1995-03,31.01,
+1995-04,31.50,
+1995-05,31.72,
+1995-06,32.51,
+1995-07,31.13,
+1995-08,31.29,
+1995-09,33.88,
+1995-10,32.18,
+1995-11,31.92,
+1995-12,33.00,
+1996-01,33.33,
+1996-02,32.53,
+1996-03,32.26,
+1996-04,33.01,
+1996-05,32.99,
+1996-06,32.38,
+1996-07,34.43,
+1996-08,33.19,
+1996-09,34.23,
+1996-10,35.52,
+1996-11,34.63,
+1996-12,35.60,
+1997-01,35.06,
+1997-02,36.04,
+1997-03,36.84,
+1997-04,35.10,
+1997-05,37.91,
+1997-06,37.73,
+1997-07,38.84,
+1997-08,38.38,
+1997-09,40.75,
+1997-10,38.97,
+1997-11,39.39,
+1997-12,40.83,
+1998-01,41.14,
+1998-02,40.78,
+1998-03,39.95,
+1998-04,42.33,
+1998-05,40.82,
+1998-06,41.16,
+1998-07,42.12,
+1998-08,40.03,
+1998-09,39.82,
+1998-10,40.08,
+1998-11,39.97,
+1998-12,39.05,
+1999-01,40.02,
+1999-02,40.53,
+1999-03,39.63,
+1999-04,41.27,
+1999-05,41.13,
+1999-06,42.37,
+1999-07,43.87,
+1999-08,42.23,
+1999-09,43.12,
+1999-10,42.78,
+1999-11,45.87,
+1999-12,43.79,
+2000-01,45.47,
+2000-02,46.09,
+2000-03,47.80,
+2000-04,47.40,
+2000-05,49.30,
+2000-06,49.84,
+2000-07,50.47,
+2000-08,49.85,
+2000-09,50.50,
+2000-10,54.64,
+2000-11,53.25,
+2000-12,52.31,
+2001-01,53.62,
+2001-02,54.02,
+2001-03,52.37,
+2001-04,53.93,
+2001-05,53.13,
+2001-06,54.03,
+2001-07,54.37,
+2001-08,54.38,
+2001-09,52.53,
+2001-10,53.53,
+2001-11,51.49,
+2001-12,53.76,
+2002-01,51.51,
+2002-02,53.98,
+2002-03,54.07,
+2002-04,54.08,
+2002-05,51.60,
+2002-06,55.93,
+2002-07,53.21,
+2002-08,56.08,
+2002-09,56.46,
+2002-10,55.16,
+2002-11,57.05,
+2002-12,55.34,
+2003-01,54.69,
+2003-02,55.39,
+2003-03,54.22,
+2003-04,53.40,
+2003-05,54.62,
+2003-06,54.69,
+2003-07,55.65,
+2003-08,55.97,
+2003-09,57.94,
+2003-10,54.72,
+2003-11,57.50,
+2003-12,58.22,
+2004-01,57.99,
+2004-02,58.67,
+2004-03,58.75,
+2004-04,61.11,
+2004-05,62.99,
+2004-06,60.15,
+2004-07,61.40,
+2004-08,60.64,
+2004-09,60.42,
+2004-10,61.62,
+2004-11,62.61,
+2004-12,60.46,
+2005-01,63.33,
+2005-02,61.57,
+2005-03,62.71,
+2005-04,62.14,
+2005-05,65.71,
+2005-06,64.83,
+2005-07,65.37,
+2005-08,67.09,
+2005-09,67.76,
+2005-10,67.77,
+2005-11,67.50,
+2005-12,67.58,
+2006-01,69.86,
+2006-02,71.98,
+2006-03,70.03,
+2006-04,72.34,
+2006-05,71.53,
+2006-06,71.95,
+2006-07,73.80,
+2006-08,73.40,
+2006-09,78.84,
+2006-10,80.59,
+2006-11,80.50,
+2006-12,78.56,
+2007-01,78.27,
+2007-02,79.34,
+2007-03,78.07,
+2007-04,79.74,
+2007-05,79.53,
+2007-06,80.10,
+2007-07,80.39,
+2007-08,82.12,
+2007-09,82.86,
+2007-10,82.97,
+2007-11,82.85,
+2007-12,82.56,
+2008-01,84.77,
+2008-02,83.59,
+2008-03,83.29,
+2008-04,83.94,
+2008-05,82.07,
+2008-06,84.26,
+2008-07,83.27,
+2008-08,83.35,
+2008-09,83.10,
+2008-10,83.08,
+2008-11,74.80,
+2008-12,72.01,
+2009-01,67.04,
+2009-02,65.46,
+2009-03,65.34,
+2009-04,64.09,
+2009-05,62.94,
+2009-06,65.60,
+2009-07,68.24,
+2009-08,66.42,
+2009-09,68.09,
+2009-10,67.62,
+2009-11,69.55,
+2009-12,71.33,
+2010-01,68.74,
+2010-02,71.77,
+2010-03,77.45,
+2010-04,74.93,
+2010-05,79.15,
+2010-06,81.49,
+2010-07,80.72,
+2010-08,79.93,
+2010-09,82.27,
+2010-10,82.37,
+2010-11,83.85,
+2010-12,83.68,
+2011-01,84.27,
+2011-02,85.68,
+2011-03,89.91,
+2011-04,86.44,
+2011-05,88.90,
+2011-06,88.45,
+2011-07,87.14,
+2011-08,89.63,
+2011-09,90.73,
+2011-10,87.79,
+2011-11,90.21,
+2011-12,87.51,
+2012-01,89.63,
+2012-02,90.90,
+2012-03,91.13,
+2012-04,89.47,
+2012-05,93.76,
+2012-06,92.32,
+2012-07,92.57,
+2012-08,94.46,
+2012-09,91.74,
+2012-10,92.28,
+2012-11,89.89,
+2012-12,90.05,
+2013-01,91.27,
+2013-02,90.13,
+2013-03,91.50,
+2013-04,91.66,
+2013-05,90.72,
+2013-06,90.98,
+2013-07,89.98,
+2013-08,91.28,
+2013-09,92.27,
+2013-10,92.85,
+2013-11,93.12,
+2013-12,91.81,
+2014-01,94.10,
+2014-02,92.99,
+2014-03,91.23,
+2014-04,93.67,
+2014-05,92.58,
+2014-06,93.53,
+2014-07,97.68,
+2014-08,92.58,
+2014-09,97.34,
+2014-10,97.51,
+2014-11,95.38,
+2014-12,98.64,

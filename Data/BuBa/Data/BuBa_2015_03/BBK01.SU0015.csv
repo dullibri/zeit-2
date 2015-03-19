@@ -1,0 +1,177 @@
+"",BBK01.SU0015,BBK01.SU0015_FLAGS
+"","Lending rates of banks / Instalment credits with maturities between 12 and 24 months, DM 2,000 and more but less than DM 5,000, monthly rate / Highest rate of spread",
+unit,% p.M. (hypothetically euro-based),
+unit multiplier,one,
+last update,2013-04-03 10:28:55,
+1968-03,0.65,
+1968-04,.,No value available
+1968-05,.,No value available
+1968-06,0.65,
+1968-07,.,No value available
+1968-08,.,No value available
+1968-09,0.65,
+1968-10,.,No value available
+1968-11,0.65,
+1968-12,.,No value available
+1969-01,.,No value available
+1969-02,0.65,
+1969-03,.,No value available
+1969-04,.,No value available
+1969-05,0.65,
+1969-06,.,No value available
+1969-07,.,No value available
+1969-08,0.70,
+1969-09,.,No value available
+1969-10,.,No value available
+1969-11,0.70,
+1969-12,.,No value available
+1970-01,.,No value available
+1970-02,0.71,
+1970-03,.,No value available
+1970-04,.,No value available
+1970-05,0.75,
+1970-06,.,No value available
+1970-07,.,No value available
+1970-08,0.80,
+1970-09,.,No value available
+1970-10,.,No value available
+1970-11,0.80,
+1970-12,.,No value available
+1971-01,0.78,
+1971-02,0.77,
+1971-03,.,No value available
+1971-04,.,No value available
+1971-05,0.75,
+1971-06,.,No value available
+1971-07,.,No value available
+1971-08,0.80,
+1971-09,.,No value available
+1971-10,.,No value available
+1971-11,0.73,
+1971-12,.,No value available
+1972-01,.,No value available
+1972-02,0.70,
+1972-03,.,No value available
+1972-04,.,No value available
+1972-05,0.70,
+1972-06,.,No value available
+1972-07,.,No value available
+1972-08,0.70,
+1972-09,.,No value available
+1972-10,.,No value available
+1972-11,0.70,
+1972-12,.,No value available
+1973-01,.,No value available
+1973-02,0.70,
+1973-03,.,No value available
+1973-04,.,No value available
+1973-05,0.80,
+1973-06,.,No value available
+1973-07,0.90,
+1973-08,0.90,
+1973-09,.,No value available
+1973-10,.,No value available
+1973-11,0.90,
+1973-12,.,No value available
+1974-01,.,No value available
+1974-02,0.90,
+1974-03,.,No value available
+1974-04,.,No value available
+1974-05,0.90,
+1974-06,.,No value available
+1974-07,.,No value available
+1974-08,0.90,
+1974-09,.,No value available
+1974-10,.,No value available
+1974-11,0.85,
+1974-12,.,No value available
+1975-01,.,No value available
+1975-02,0.80,
+1975-03,0.80,
+1975-04,0.80,
+1975-05,0.75,
+1975-06,0.75,
+1975-07,0.75,
+1975-08,0.65,
+1975-09,0.65,
+1975-10,0.65,
+1975-11,0.65,
+1975-12,0.65,
+1976-01,0.65,
+1976-02,0.65,
+1976-03,0.65,
+1976-04,0.65,
+1976-05,0.65,
+1976-06,0.65,
+1976-07,0.63,
+1976-08,0.63,
+1976-09,0.63,
+1976-10,0.60,
+1976-11,0.60,
+1976-12,0.60,
+1977-01,0.60,
+1977-02,0.60,
+1977-03,0.60,
+1977-04,0.60,
+1977-05,0.60,
+1977-06,0.60,
+1977-07,0.60,
+1977-08,0.60,
+1977-09,0.60,
+1977-10,0.60,
+1977-11,0.60,
+1977-12,0.60,
+1978-01,0.60,
+1978-02,0.60,
+1978-03,0.60,
+1978-04,0.60,
+1978-05,0.60,
+1978-06,0.60,
+1978-07,0.60,
+1978-08,0.60,
+1978-09,0.60,
+1978-10,0.60,
+1978-11,0.60,
+1978-12,0.60,
+1979-01,0.60,
+1979-02,0.57,
+1979-03,0.57,
+1979-04,0.57,
+1979-05,0.56,
+1979-06,0.60,
+1979-07,0.60,
+1979-08,0.60,
+1979-09,0.61,
+1979-10,0.61,
+1979-11,0.65,
+1979-12,0.65,
+1980-01,0.65,
+1980-02,0.65,
+1980-03,0.70,
+1980-04,0.70,
+1980-05,0.70,
+1980-06,0.72,
+1980-07,0.72,
+1980-08,0.72,
+1980-09,0.72,
+1980-10,0.72,
+1980-11,0.72,
+1980-12,0.72,
+1981-01,0.72,
+1981-02,0.72,
+1981-03,0.80,
+1981-04,0.80,
+1981-05,0.84,
+1981-06,0.84,
+1981-07,0.84,
+1981-08,0.84,
+1981-09,0.84,
+1981-10,0.84,
+1981-11,0.84,
+1981-12,0.84,
+1982-01,0.84,
+1982-02,0.82,
+1982-03,0.84,
+1982-04,0.79,
+1982-05,0.79,
+"","General: Interest rates as % per month of original amount of credit taken up. Besides interest, most banks charge a one-off processing fee (generally 2%, in some cases 3%, of the credit amount). The spread is ascertained by eliminating the reports in the top 5% and the bottom 5% of the interest rate range.",

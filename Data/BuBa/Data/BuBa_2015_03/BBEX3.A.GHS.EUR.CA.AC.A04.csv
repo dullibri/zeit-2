@@ -1,0 +1,17 @@
+"",BBEX3.A.GHS.EUR.CA.AC.A04,BBEX3.A.GHS.EUR.CA.AC.A04_FLAGS
+"",Exchange rates for the euro in Ghana / EUR 1 = GHS ... (middle),
+unit,GHS (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:14:05,
+2007,1.28617,comment
+2008,1.56380,
+2009,1.97607,
+2010,1.88852,
+2011,2.13331,
+2012,2.37156,
+2013,2.65826,
+2014,3.87074,
+"","General: With effect from 1 July 2007, a currency conversion took place at the rate of 10,000 cedi (GHC) = 1 Ghana cedi (GHS). The currency conversion did not entail any appreciation or depreciation against other currencies.",
+"","Source: Bank of Ghana, Accra.",
+"",Methodology: Calculated on the basis of month-end buying and selling rates.,
+"","Comment on 2007: With effect from 1 July 2007, a currency conversion took place at the rate of 10,000 cedi (GHC) = 1 Ghana cedi (GHS); the exchange rates calculated between January and June 2007 were included in the calculation at the rate of GHC 10,000 = GHS 1.",

@@ -1,0 +1,13 @@
+"",BBK01.WJ5011,BBK01.WJ5011_FLAGS
+"",Exchange rates on the Frankfurt exchange / ffrs 100 = DM .../ up to 1959 / France,
+unit,DEM (hypothetically euro-based),
+unit multiplier,one,
+last update,2012-04-18 09:19:07,
+1953,1.1947,
+1954,1.1956,
+1955,1.2003,
+1956,1.1913,
+1957,1.1144,
+1958,0.9936,
+1959,0.8522,
+"","General: Average calculated from daily quotations. From 4 May 1953 to 31 December 1959 official quotation on the Frankfurt exchange. Currency conversion with effect from 1 January 1960: ffrs 100 = NF 1 (french New Franc). Rates from 1960, see wj5012.",

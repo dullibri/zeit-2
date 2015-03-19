@@ -1,0 +1,52 @@
+"",BBEX3.A.ZMK.USD.CA.AC.A04,BBEX3.A.ZMK.USD.CA.AC.A04_FLAGS
+"",Exchange rates for the US dollar in Zambia  / USD 1 = ZMK ... (middle),
+unit,ZMK (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:17:38,
+1978,0.803215,comment
+1979,0.792808,
+1980,0.788513,
+1981,0.873061,
+1982,0.930529,
+1983,1.284390,comment
+1984,1.856915,
+1985,3.311005,comment
+1986,8.282038,
+1987,8.815791,comment
+1988,8.360347,comment
+1989,14.167216,comment
+1990,31.633855,comment
+1991,66.657903,comment
+1992,182.390164,comment
+1993,472.840209,
+1994,678.154167,
+1995,886.927500,
+1996,1222.069583,
+1997,1320.839583,
+1998,1893.911250,
+1999,2408.819583,
+2000,3178.471667,
+2001,3573.315833,
+2002,4310.487083,
+2003,4761.642500,
+2004,4778.767500,
+2005,4417.252500,
+2006,3678.541667,
+2007,3996.713333,
+2008,3844.036667,
+2009,5061.268750,
+2010,4831.415833,
+2011,4860.211667,
+2012,5173.728608,
+"","General: For more detailed information, see BBEX3:M:ZMK:USD:CA:AC:A01. With effect from 1 January 2013, a currency conversion took place at the rate of 1,000 (old) kwacha = 1 (new) kwacha; the new ISO currency code is ZMW. The currency conversion did not entail any appreciation or depreciation against other currencies.",
+"","Source: Bank of Zambia, Lusaka; IWF",
+"",Methodology: Calculated on the basis of month-end buying and selling rates.,
+"","Comment on 1978: On 17 March 1978, the kwacha was devalued by 10% against the SDR.",
+"","Comment on 1983: On 7 January 1983, the kwacha was devalued by 20% against the SDR.  From 6 July 1983 on pegged to a currency basket.",
+"","Comment on 1985: On  4 October 1985, the kwacha ceased to be pegged to the currency basket that had been used as a reference since 6 July 1983. Since then, the exchange rates have been set once a week in an auction process. We recorded the following exchange rates (buying/selling):  3 October 1985: ZMK 1 = USD 0.45660 / 0.44760  11 October 1985: ZMK 1 = USD 0.20060 / 0.19665 (first auction)  On the basis of these exchange rates, the kwacha depreciated by 56.1%.",
+"","Comment on 1987: At the end of January 1987, the foreign exchange auctions introduced in October 1985 were suspended and the kwacha was pegged to a currency basket at the beginning of February 1987.  On 28 March 1987, a multiple exchange rate system was introduced when foreign exchange auctions were resumed.  On 1 May 1987, the termination of the foreign exchange auctions was announced and the kwacha was pegged to the US dollar on 4 May 1987.",
+"","Comment on 1988: On 9 November 1988, the kwacha ceased to be pegged to the US dollar and was pegged to the SDR instead. We recorded the following middle rates:  8 November 1988: USD 1 = ZMK 8.000 9 November 1988: USD 1 = ZMK 9.99978  On the basis of these exchange rates, the kwacha depreciated by 20.0%.",
+"","Comment on 1989: At the beginning of July 1989, the kwacha was devalued. We recorded the following exchange rates for 3 July 1989:  USD 1 = ZMK 15.92053 / 16.24054 (buying/selling).  On the basis of the exchange rates at the end of June and on 3 July 1989, the kwacha was devalued by 32.9%.",
+"","Comment on 1990: On 19 February 1990, a multiple exchange rate system was established with the introduction of the market rate. See also additional series attributes.",
+"",Comment on 1991: The multiple exchange rate system was unified on 23 April 1991.,
+"","Comment on 1992: After the foreign exchange markets closed on 31 January 1992, a devaluation of the kwacha was announced. We recorded the following exchange rates for 3 February 1992:  USD 1 = ZMK 124.37500 / 126.87500 (buying/selling) On the basis of the exchange rates on 31 January and on 3 February 1992, the kwacha depreciated by 23.4%.  On 7 December 1992, the exchange rates were adjusted more sharply. We recorded the following exchange rates (buying/selling): before the adjustment: USD 1 = ZMK 241.28774 / 246.13774 after the adjustment: USD 1 = ZMK 316.05750 / 325.63500 On the basis of these exchange rates, the kwacha depreciated by 24.0% (middle rate).",

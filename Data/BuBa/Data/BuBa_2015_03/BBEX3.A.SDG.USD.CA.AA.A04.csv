@@ -1,0 +1,19 @@
+"",BBEX3.A.SDG.USD.CA.AA.A04,BBEX3.A.SDG.USD.CA.AA.A04_FLAGS
+"",Exchange rates for the US dollar in Sudan / USD 1 = SDG ... (buying),
+unit,SDG (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:16:19,
+2007,2.0120,comment
+2008,2.0877,
+2009,2.3152,
+2010,2.3259,
+2011,2.6678,
+2012,3.6799,comment
+2013,4.8242,comment
+2014,5.7264,
+"","General: The Sudanese pound (SDG) has been in circulation since 10 January 2007, when it was introduced at a rate of SDD 100 = SDG 1. The SDD remained legal tender alongside the SDG until 30 June 2007. Exchange rates until 2006, see BBEX2:A:SDD:USD:CA:AA:A04.",
+"","Source: Central Bank of Sudan (Bank of Sudan), Khartoum",
+"",Methodology: Calculated on the basis of month-end rates.,
+"","Comment on 2007: The Sudanese pound (SDG) has been in circulation since 10 January 2007, when it was introduced at a rate of SDD 100 = SDG 1. Until 30 June 2007, exchange rates were listed in SDD (Sudanese dinar); these exchange rates were included in the calculation at the rate of the currency conversion.",
+"",Comment on 2012: The Sudanese pound was devalued on 25 June 2012. We recorded the following exchange rates (buying/selling): 24 June 2012: USD 1 = SDG 2.6702 / 2.6836 25 June 2012: USD 1 = SDG 4.4200 / 4.4421 Calculated devaluation: 39.6%.,
+"",Comment on 2013: The Sudanese pound was devalued on 24 September 2013. We recorded the following exchange rates (buying/selling): 23 September 2013: USD 1 = SDG 4.3980 / 4.4200 24 September 2013: USD 1 = SDG 5.6716 / 5.7000 Calculated devaluation: 22.5%.,

@@ -1,0 +1,19 @@
+"",BBEX3.A.SDG.EUR.CA.AA.A04,BBEX3.A.SDG.EUR.CA.AA.A04_FLAGS
+"",Exchange rates for the euro in Sudan / EUR 1 = SDG ... (buying),
+unit,SDG (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-02-19 15:16:18,
+2007,2.7752,comment
+2008,3.1028,
+2009,3.2362,
+2010,3.0681,
+2011,3.7372,
+2012,4.7317,comment
+2013,6.4382,comment
+2014,7.5582,
+"","General: The Sudanese pound (SDG) has been in circulation since 10 January 2007, when it was introduced at a rate of SDD 100 = SDG 1. The SDD remained legal tender alongside the SDG until 30 June 2007. Exchange rates until 2006, see BBEX2:A:SDD:EUR:CA:AA:A04.",
+"","Source: Central Bank of Sudan (Bank of Sudan), Khartoum",
+"",Methodology: Calculated on the basis of month-end rates.,
+"","Comment on 2007: The Sudanese pound (SDG) has been in circulation since 10 January 2007, when it was introduced at a rate of SDD 100 = SDG 1. Until 30 June 2007, exchange rates were listed in SDD (Sudanese dinar); these exchange rates were included in the calculation at the rate of the currency conversion.",
+"",Comment on 2012: The Sudanese pound was devalued on 25 June 2012. We recorded the following exchange rates (buying/selling): 24 June 2012: EUR 1 = SDG 3.3570 / 3.3738 25 June 2012: EUR 1 = SDG 5.5414 / 5.5691 Calculated devaluation: 39.4%.,
+"",Comment on 2013: The Sudanese pound was devalued on 24 September 2013. We recorded the following exchange rates (buying/selling): 23 September 2013: EUR 1 = SDG 5.9487 / 5.9785 24 September 2013: EUR 1 = SDG 7.6533 / 7.6916 Calculated devaluation: 22.3%.,

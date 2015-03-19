@@ -1,0 +1,12 @@
+"",BBQFS.A.DE.BANK.HOUS_LTV_100_120._X.PRIV,BBQFS.A.DE.BANK.HOUS_LTV_100_120._X.PRIV_FLAGS
+"",Beleihungsauslauf between 100 - 120% for new private housing business of selected German banks (FSR 2014),
+unit,% (hypothetically euro-based),
+unit multiplier,one,
+last update,2015-01-07 17:10:03,
+2009,18.0,
+2010,18.0,
+2011,17.6,
+2012,18.0,
+2013,18.7,
+"",Source: Bundesbank special survey among 116 banks in 24 towns and cities,
+"","Methodology: Beleihungsauslauf is the German term used to express the ratio of a loan to the mortgage lending value of an asset purchased, where the mortgage lending value is generally calculated by means of a haircut on the market value and is intended to reflect the sustainable value of a property. Given that the concept used in Germany differs from other concepts widely used internationally, a comparison of the average Beleihungsauslauf with average loan-to-value ratios from other countries is very difficult.",
