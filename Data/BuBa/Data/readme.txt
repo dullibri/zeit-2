@@ -1,2 +1,2 @@
-in buba_selecting_data.R werden die variablencodes nach den im drechsel/scheufel genannten reihen durchsucht. rauskommt collection_specimen.csv mit den reihen, die man in der buba tatsächlich finden kann und ein codesselected.csv mit den codenamen die man braucht. darüber hinaus werden die selektierten reihen aus der gesamtsammlung rausgenommen und in selection gespeichert.
-collection.xlsx sammelt die reihen dann aufbauend auf collection_specimen.csv.
+in buba_selecting_data.R werden die variablencodes nach den im drechsel/scheufel genannten reihen durchsucht. 
+rauskommt buba.csv mit den reihen, die man in der buba tatsächlich finden kann.
