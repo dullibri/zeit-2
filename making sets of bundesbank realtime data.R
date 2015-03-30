@@ -82,7 +82,7 @@ for (i in 1:nrow(variable)){
                 variable$fstvint.year[i]=as.integer(t(tu[1,i]))   
                 variable$fstvint.month[i]=as.integer(t(tu[2,i])) 
         }
-
+        
 }
 # dropping those variables that have vintages that start later than 2005
 vint.late=variable$fstvint.year<=2005
@@ -134,7 +134,7 @@ var.ip=var.ip[grep('including construction|excluding construction',var.ip$'label
 var.used=rbind(var.used,var.ip)
 
 var.used$label=c('ORD','ORD-I','ORD-C','CPI-EX','CPI','WHOUR','TARIF','IP-VORL','IP-CONST','IP')
-var.used$transformation=c('D ln','D ln','D ln','D ln, DD ln','D ln, DD ln','L, D','D ln, DD ln','D ln','D ln','D ln')
+var.used$transformation=c('Dln','Dln','Dln','D ln, DD ln','D ln, DD ln','L, D','D ln, DD ln','Dln','Dln','Dln')
 # variables used
 nvar=nrow(var.used)
 eval(parse(text=paste('var=',var.used$variable[1],sep='')))
@@ -148,7 +148,7 @@ dates$vintage=NA
 dates$before=NA # latest before cut-off "day"
 dates$last=NA # last obs of month
 dates[,paste(1:31)]=NA
-cutoffday=14
+cutoffday=31
 vint.survey=function(variable.name,cutoffday){
         # day: if 15 all the closest publication date including 15 will be returned
         
@@ -188,7 +188,7 @@ vint.survey=function(variable.name,cutoffday){
                                 dates$last[i]=dates$last[i-1]
                         }      
                 }
-                         
+                
                 
         }
         dates$vintage=paste('X',dates$vintage,sep='')
@@ -233,5 +233,51 @@ for (vint in 1:nvint){
         sets[[cutoff]]=specimen
         specimen=specimen_s
 }
+var.used[var.used$label=='WHOUR','L']=1
+var.used[var.used$label=='WHOUR','D']=1
+var.used[var.used$label%in%c('ORD','ORD-C','ORD-I','CPI','CPI-EX','IP','IP-VORL','IP-CONST','TARIF'),'Dln']=1
+var.used[var.used$label%in%c('CPI','CPI-EX','TARIF'),'D2ln']=1
+var.used$Source='Buba RTDB'
+colnames(var.used)[which(colnames(var.used)=='variable')]='code'
+var.used$name[which(var.used$label=='ORD')]='Manufacturing orders'
+var.used$name[which(var.used$label=='ORD-C')]='Manufacturing orders - consumer goods'
+var.used$name[which(var.used$label=='ORD-I')]='Manufacturing orders - capital goods'
+var.used$name[which(var.used$label=='CPI')]='CPI'
+var.used$name[which(var.used$label=='CPI-EX')]='Core CPI'
+var.used$name[which(var.used$label=='TARIF')]='Negotiated wage and salary level'
+var.used$name[which(var.used$label=='IP')]='Industrial production'
+var.used$name[which(var.used$label=='IP-CONST')]='Industrial production excluding construction'
+var.used$name[which(var.used$label=='IP-VORL')]='Intermediate goods production'
+var.used$name[which(var.used$label=='WHOUR')]='Hours worked'
+
+var.used$id[which(var.used$label=='ORD')]=83
+var.used$id[which(var.used$label=='ORD-C')]=84
+var.used$id[which(var.used$label=='ORD-I')]=85
+var.used$id[which(var.used$label=='CPI')]=78
+var.used$id[which(var.used$label=='CPI-EX')]=79
+var.used$id[which(var.used$label=='TARIF')]=80
+var.used$id[which(var.used$label=='IP')]=0
+var.used$id[which(var.used$label=='IP-CONST')]=-1
+var.used$id[which(var.used$label=='IP-VORL')]=82
+var.used$id[which(var.used$label=='WHOUR')]=90
+
+var.used$lag=NA
+var.used$lag[which(var.used$label=='ORD')]=1
+var.used$lag[which(var.used$label=='ORD-C')]=1
+var.used$lag[which(var.used$label=='ORD-I')]=1
+var.used$lag[which(var.used$label=='CPI')]=0
+var.used$lag[which(var.used$label=='CPI-EX')]=1
+var.used$lag[which(var.used$label=='TARIF')]=1
+var.used$lag[which(var.used$label=='IP')]=1
+var.used$lag[which(var.used$label=='IP-CONST')]=1
+var.used$lag[which(var.used$label=='IP-VORL')]=1
+var.used$lag[which(var.used$label=='WHOUR')]=1
+
+var.used.s=var.used
+
+var.used=var.used[,c("name","id","L","D","Dln","D2ln",'lag',"code")]  
+row.names(var.used)=var.used.s$label     
+var.used$Source='Buba RTDB'
+write.csv(var.used,'h:/Git/zeit-2/data/bubaRTDmeta.csv')
 save.image("C:/Users/dulbricht/Desktop/t.RData")
 save(sets,var.used, file = paste(wd,'/data/realtime_sets_cutoffday_',cutoffday,".RData",sep=''))

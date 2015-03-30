@@ -1,5 +1,5 @@
 DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2/data/buba/data'
-# DirCode='h:/Git/zeit-2/data/buba/data'
+DirCode='h:/Git/zeit-2/data/buba/data'
 # DirCode='f:'
 df=read.csv(paste(DirCode,'/Buba_Detailed_Variables_List_EN.csv'
                             ,sep='')
@@ -22,10 +22,10 @@ buba$ym=paste(buba$year,buba$month,sep='-')
 
 bubameta=data.frame('name'=character(0)
                     ,'id'=numeric(0)
-                    ,'level'=numeric(0)
-                    ,'d'=numeric(0)
-                    ,'dln'=numeric(0)
-                    ,'d2ln'=numeric(0)
+                    ,'L'=numeric(0)
+                    ,'D'=numeric(0)
+                    ,'Dln'=numeric(0)
+                    ,'D2ln'=numeric(0)
                     ,'lag'=numeric(0)
                     ,'code'=character(0)
                     ,stringsAsFactors=F
@@ -34,11 +34,12 @@ bubameta=data.frame('name'=character(0)
 # money market 
 tt=grep('BBK01.SU0101|BBK01.SU0304',df$Code)
 tt=df[tt,]
-bubameta['IS-M',c('level','d')]=1
+bubameta['IS-M',c('L','D')]=1
 bubameta['IS-M',c('code')]=paste(tt$Code,collapse=',')
 bubameta['IS-M','name']=c('Money market rate (mth.avg.)')
 bubameta['IS-M','lag']=0
 bubameta['IS-M','id']=1
+bubameta['IS-M','Source']='Buba'
 
 file2=paste(DirCode,'/BuBa_2015_03/',tt$Code[2],'.csv',sep='')
 t2=read.csv(file2,stringsAsFactors=F)
@@ -79,11 +80,12 @@ t4=t4[grep('2002-01',t4$X):grep('2015-01',t4$X),1:2]
 t4[,2]=as.numeric(t4[,2])
 buba[which(buba$ym%in%t4[,1]),'IS-D']=t4[,2]
 
-bubameta['IS-D',c('level','d')]=1
+bubameta['IS-D',c('L','D')]=1
 bubameta['IS-D',c('code')]=paste(tt$Code[c(1,3,4)],collapse=',')
 bubameta['IS-D','name']=c('Discount rate/short term repo rate (mth.avg.)')
 bubameta['IS-D','lag']=0
 bubameta['IS-D','id']=2
+bubameta['IS-D','Source']='Buba'
 rm('file1','file2','file3','file4','t1','t2','t3','t4')
 
 
@@ -116,11 +118,12 @@ colnames(t1)[2]='IS-3M'
 buba[buba$ym%in%t1$X,'IS-3M']=t1[,2]
 
 
-bubameta['IS-3M',c('level','d')]=1
+bubameta['IS-3M',c('L','D')]=1
 bubameta['IS-3M',c('code')]=paste(tt$Code[c(1,2,3)],collapse=',')
 bubameta['IS-3M','name']=c('3m-money market rate (mth.avg.)')
 bubameta['IS-3M','lag']=0
 bubameta['IS-3M','id']=3
+bubameta['IS-3M','Source']='Buba'
 
 # yields on debt security outstanding 3-5 years and 5-8
 tt=grep('Yields on debt securities outstanding',t)
@@ -138,11 +141,12 @@ colnames(t1)[2]='IL-3'
 buba[buba$ym%in%t1$X,'IL-3']=t1[,2]
 
 
-bubameta['IS-3',c('level','d')]=1
+bubameta['IS-3',c('L','D')]=1
 bubameta['IS-3',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['IS-3','name']=c('Yields on debt securities outstanding (mat.3-5 years)')
 bubameta['IS-3','lag']=0
 bubameta['IS-3','id']=4
+bubameta['IS-3','Source']='Buba'
 
 file1=paste(DirCode,'/BuBa_2015_03/',tt$Code[2],'.csv',sep='')
 t1=read.csv(file1,stringsAsFactors=F)
@@ -151,11 +155,12 @@ t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='IL-5'
 buba[buba$ym%in%t1$X,'IL-5']=t1[,2]
 
-bubameta['IS-5',c('level','d')]=1
+bubameta['IS-5',c('L','D')]=1
 bubameta['IS-5',c('code')]=paste(tt$Code[c(2)],collapse=',')
 bubameta['IS-5','name']=c('Yields on debt securities outstanding (mat.5-8 years)')
 bubameta['IS-5','lag']=0
 bubameta['IS-5','id']=5
+bubameta['IS-5','Source']='Buba'
 
 # yields on debt security outstanding 9-10 years
 tt=grep('Yields',t)
@@ -170,11 +175,12 @@ t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='IL-10'
 buba[buba$ym%in%t1$X,'IL-10']=t1[,2]
 
-bubameta['IL-10',c('level','d')]=1
+bubameta['IL-10',c('L','D')]=1
 bubameta['IL-10',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['IL-10','name']=c('Long term government bond yield-9-10 years')
 bubameta['IL-10','lag']=0
 bubameta['IL-10','id']=6
+bubameta['IL-10','Source']='Buba'
 
 # corporate 
 tt=df[grep('BBK01.WU0022',df$Code),]
@@ -186,11 +192,13 @@ colnames(t1)[2]='C'
 buba[buba$ym%in%t1$X,'C']=t1[,2]
 buba[,'SPR-C-G']=buba[,'C']-buba[,'IL-3']
 buba=buba[,-grep('C',colnames(buba))[1]]
-bubameta['SPR-C-G',c('level')]=1
+bubameta['SPR-C-G',c('L')]=1
 bubameta['SPR-C-G',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['SPR-C-G','name']=c('Corporate bond-government bonds')
 bubameta['SPR-C-G','lag']=0
 bubameta['SPR-C-G','id']=11
+bubameta['SPR-C-G','Source']='Buba'
+
 # BBQFS.M.W0.CORP.RSK_HY_EUR._X.0000 Risikoaufschläge von Euro-Unternehmensanleihen im Non-Investment-Grade-Segment (FSB 2014)
 
 # spreads
@@ -199,8 +207,9 @@ buba[,'SPR-10Y-D']=buba[,'IL-10']-buba[,'IS-D']
 buba[,'SPR-10Y-3M']=buba[,'IL-10']-buba[,'IS-3M']
 buba[,'SPR-1D-M']=buba[,'IS-D']-buba[,'IS-M']
 
+
 termsprnames=c('SPR-10-M','SPR-10Y-D','SPR-10Y-3M','SPR-1D-M')
-bubameta[termsprnames,c('level')]=1
+bubameta[termsprnames,c('L')]=1
 bubameta[termsprnames,'name']=c('Term spread (10y money market rate)'
                                 ,'Term spread (10y discount rate)'
                                 ,'Term spread (10y 3 month-money market rate)'
@@ -209,6 +218,7 @@ bubameta[termsprnames,'name']=c('Term spread (10y money market rate)'
 bubameta[termsprnames,'lag']=0
 bubameta[termsprnames,'code']='see constituent series'
 bubameta[termsprnames,'id']=7:10
+bubameta[termsprnames,'Source']='Buba'
 
 # nominal effective exchange rate
 tt=grep('[nN]ominal effective exchange rate',t)
@@ -222,11 +232,12 @@ t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='EX'
 buba[buba$ym%in%t1$X,'EX']=t1[,2]
 
-bubameta['EX',c('dln')]=1
+bubameta['EX',c('Dln')]=1
 bubameta['EX',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['EX','name']=c('Nominal effective exchange rate')
 bubameta['EX','lag']=1
 bubameta['EX','id']=18
+bubameta['EX','Source']='Buba'
 
 # real effective exchange rate
 tt=grep('[Rr]eal effective exchange rate',t)
@@ -239,14 +250,55 @@ t1=t1[which(t1$X%in%buba$ym),1:2]
 t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='EXR'
 buba[buba$ym%in%t1$X,'EXR']=t1[,2]
+bubameta['EXR','Source']='Buba'
 
-bubameta['EXR',c('dln')]=1
+bubameta['EXR',c('Dln')]=1
 bubameta['EXR',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['EXR','name']=c('Real effective exchange rate')
 bubameta['EXR','lag']=1
 bubameta['EXR','id']=19
-# m1 
 
+# DAX
+file1=paste(DirCode,'/BuBa_2015_03/','BBQFS.M.DE.CORP.PRICE_DAX._X.0000','.csv',sep='')
+t1=read.csv(file1,stringsAsFactors=F)
+t1=t1[which(t1$X%in%buba$ym),1:2]
+t1[,2]=as.numeric(t1[,2])
+colnames(t1)[2]='DAX'
+buba[buba$ym%in%t1$X,'DAX']=t1[,2]
+
+bubameta['DAX',c('Dln')]=1
+bubameta['DAX',c('code')]='BBQFS.M.DE.CORP.PRICE_DAX._X.0000'
+bubameta['DAX','name']=c('DAX')
+bubameta['DAX','lag']=0
+bubameta['DAX','id']=20
+
+file1=paste(DirCode,'/BuBa_2015_03/','BBQFS.M.DE.0000.VOL_IMP_DAX._X.0000','.csv',sep='')
+t1=read.csv(file1,stringsAsFactors=F)
+t1=t1[which(t1$X%in%buba$ym),1:2]
+t1[,2]=as.numeric(t1[,2])
+colnames(t1)[2]='VOLA1'
+buba[buba$ym%in%t1$X,'VOLA1']=t1[,2]
+
+bubameta['VOLA1',c('L','D')]=1
+bubameta['VOLA1',c('code')]='BBQFS.M.DE.0000.VOL_IMP_DAX._X.0000'
+bubameta['VOLA1','name']=c('DAX vola new')
+bubameta['VOLA1','lag']=0
+bubameta['VOLA1','id']=21
+
+file1=paste(DirCode,'/BuBa_2015_03/','BBQFS.M.DE.0000.VOL_HIS_DAX._X.0000','.csv',sep='')
+t1=read.csv(file1,stringsAsFactors=F)
+t1=t1[which(t1$X%in%buba$ym),1:2]
+t1[,2]=as.numeric(t1[,2])
+colnames(t1)[2]='VOLA2'
+buba[buba$ym%in%t1$X,'VOLA2']=t1[,2]
+
+bubameta['VOLA2',c('L','D')]=1
+bubameta['VOLA2',c('code')]='BBQFS.M.DE.0000.VOL_HIS_DAX._X.0000 '
+bubameta['VOLA2','name']=c('DAX vola old')
+bubameta['VOLA2','lag']=0
+bubameta['VOLA2','id']=22
+
+bubameta[c('DAX','VOLA1','VOLA2'),'Source']='Buba'
 # Details on the bundesbank page about the series reveal, that m1-m3 are not useful:
 # Allgemein:         Die deutschen Beiträge zu den monetären Aggregaten des Eurosystems sind keinesfalls als eigene nationale Geldmengenaggregate zu interpretieren und damit auch nicht mit den früheren deutschen Geldbeständen M1, M2 oder M3 vergleichbar. M2 zuzüglich Repogeschäfte, Geldmarktfondsanteile und Geldmarktpapiere sowie Schuldverschreibungen bis zu 2 Jahren.
 # Methodik: 	Die Angaben sind mit den bis Ende 1998 für Deutschland veröffentlichten Zahlen wegen unterschiedlicher Positionsinhalte und abweichender Berichtskreise nicht vergleichbar. Ab 01.2002 ohne Bargeldumla
@@ -286,7 +338,7 @@ t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='HWWA-E'
 buba[buba$ym%in%t1$X,'HWWA-E']=t1[,2]
 
-bubameta['HWWA-E',c('dln','d2ln')]=1
+bubameta['HWWA-E',c('Dln','D2ln')]=1
 bubameta['HWWA-E',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['HWWA-E','name']=c('Hwwa index ~,energy')
 bubameta['HWWA-E','lag']=1
@@ -299,12 +351,12 @@ t1=t1[which(t1$X%in%buba$ym),1:2]
 t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='HWWA-EX'
 buba[buba$ym%in%t1$X,'HWWA-EX']=t1[,2]
-bubameta['HWWA-EX',c('dln','d2ln')]=1
+bubameta['HWWA-EX',c('Dln','D2ln')]=1
 bubameta['HWWA-EX',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['HWWA-EX','name']=c('Hwwa index ~,excl. energy')
 bubameta['HWWA-EX','lag']=1
 bubameta['HWWA-EX','id']=33
-
+bubameta[c('HWWA-E','HWWA-EX'),'Source']='Buba'
 # # spread 10years discount corporate 
 # tt=grep('BBK01.WX0032',df$Code)
 # tt=df[tt,]
