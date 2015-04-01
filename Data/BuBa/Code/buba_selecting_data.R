@@ -24,7 +24,7 @@ bubameta=data.frame('name'=character(0)
                     ,'id'=numeric(0)
                     ,'L'=numeric(0)
                     ,'D'=numeric(0)
-                    ,'Dln'=numeric(0)
+                    ,'D.ln'=numeric(0)
                     ,'D2ln'=numeric(0)
                     ,'lag'=numeric(0)
                     ,'code'=character(0)
@@ -141,12 +141,12 @@ colnames(t1)[2]='IL-3'
 buba[buba$ym%in%t1$X,'IL-3']=t1[,2]
 
 
-bubameta['IS-3',c('L','D')]=1
-bubameta['IS-3',c('code')]=paste(tt$Code[c(1)],collapse=',')
-bubameta['IS-3','name']=c('Yields on debt securities outstanding (mat.3-5 years)')
-bubameta['IS-3','lag']=0
-bubameta['IS-3','id']=4
-bubameta['IS-3','Source']='Buba'
+bubameta['IL-3',c('L','D')]=1
+bubameta['IL-3',c('code')]=paste(tt$Code[c(1)],collapse=',')
+bubameta['IL-3','name']=c('Yields on debt securities outstanding (mat.3-5 years)')
+bubameta['IL-3','lag']=0
+bubameta['IL-3','id']=4
+bubameta['IL-3','Source']='Buba'
 
 file1=paste(DirCode,'/BuBa_2015_03/',tt$Code[2],'.csv',sep='')
 t1=read.csv(file1,stringsAsFactors=F)
@@ -155,12 +155,12 @@ t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='IL-5'
 buba[buba$ym%in%t1$X,'IL-5']=t1[,2]
 
-bubameta['IS-5',c('L','D')]=1
-bubameta['IS-5',c('code')]=paste(tt$Code[c(2)],collapse=',')
-bubameta['IS-5','name']=c('Yields on debt securities outstanding (mat.5-8 years)')
-bubameta['IS-5','lag']=0
-bubameta['IS-5','id']=5
-bubameta['IS-5','Source']='Buba'
+bubameta['IL-5',c('L','D')]=1
+bubameta['IL-5',c('code')]=paste(tt$Code[c(2)],collapse=',')
+bubameta['IL-5','name']=c('Yields on debt securities outstanding (mat.5-8 years)')
+bubameta['IL-5','lag']=0
+bubameta['IL-5','id']=5
+bubameta['IL-5','Source']='Buba'
 
 # yields on debt security outstanding 9-10 years
 tt=grep('Yields',t)
@@ -208,12 +208,12 @@ buba[,'SPR-10Y-3M']=buba[,'IL-10']-buba[,'IS-3M']
 buba[,'SPR-1D-M']=buba[,'IS-D']-buba[,'IS-M']
 
 
-termsprnames=c('SPR-10-M','SPR-10Y-D','SPR-10Y-3M','SPR-1D-M')
+termsprnames=c('SPR-10Y-M','SPR-10Y-D','SPR-10Y-3M','SPR-1D-M')
 bubameta[termsprnames,c('L')]=1
-bubameta[termsprnames,'name']=c('Term spread (10y money market rate)'
-                                ,'Term spread (10y discount rate)'
-                                ,'Term spread (10y 3 month-money market rate)'
-                                ,'Term spread (discount rate-money market rate)'
+bubameta[termsprnames,'name']=c('Term spread (10y - money market rate)'
+                                ,'Term spread (10y - discount rate)'
+                                ,'Term spread (10y - 3 month-money market rate)'
+                                ,'Term spread (discount rate - money market rate)'
                                 )
 bubameta[termsprnames,'lag']=0
 bubameta[termsprnames,'code']='see constituent series'
@@ -232,7 +232,7 @@ t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='EX'
 buba[buba$ym%in%t1$X,'EX']=t1[,2]
 
-bubameta['EX',c('Dln')]=1
+bubameta['EX',c('D.ln')]=1
 bubameta['EX',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['EX','name']=c('Nominal effective exchange rate')
 bubameta['EX','lag']=1
@@ -252,7 +252,7 @@ colnames(t1)[2]='EXR'
 buba[buba$ym%in%t1$X,'EXR']=t1[,2]
 bubameta['EXR','Source']='Buba'
 
-bubameta['EXR',c('Dln')]=1
+bubameta['EXR',c('D.ln')]=1
 bubameta['EXR',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['EXR','name']=c('Real effective exchange rate')
 bubameta['EXR','lag']=1
@@ -266,7 +266,7 @@ t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='DAX'
 buba[buba$ym%in%t1$X,'DAX']=t1[,2]
 
-bubameta['DAX',c('Dln')]=1
+bubameta['DAX',c('D.ln')]=1
 bubameta['DAX',c('code')]='BBQFS.M.DE.CORP.PRICE_DAX._X.0000'
 bubameta['DAX','name']=c('DAX')
 bubameta['DAX','lag']=0
@@ -338,7 +338,7 @@ t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='HWWA-E'
 buba[buba$ym%in%t1$X,'HWWA-E']=t1[,2]
 
-bubameta['HWWA-E',c('Dln','D2ln')]=1
+bubameta['HWWA-E',c('D.ln','D2ln')]=1
 bubameta['HWWA-E',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['HWWA-E','name']=c('Hwwa index ~,energy')
 bubameta['HWWA-E','lag']=1
@@ -351,7 +351,7 @@ t1=t1[which(t1$X%in%buba$ym),1:2]
 t1[,2]=as.numeric(t1[,2])
 colnames(t1)[2]='HWWA-EX'
 buba[buba$ym%in%t1$X,'HWWA-EX']=t1[,2]
-bubameta['HWWA-EX',c('Dln','D2ln')]=1
+bubameta['HWWA-EX',c('D.ln','D2ln')]=1
 bubameta['HWWA-EX',c('code')]=paste(tt$Code[c(1)],collapse=',')
 bubameta['HWWA-EX','name']=c('Hwwa index ~,excl. energy')
 bubameta['HWWA-EX','lag']=1

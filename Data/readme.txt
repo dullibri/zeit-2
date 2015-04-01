@@ -1,1 +1,3 @@
-collectall.csv contains all data of different sources in one file. Each source is contained in a specific folder. If necessary, readme.txt files explain, how the data were obtained.
+metadata file and finaldata contain the description and actual data. The other files contain the sources and more details in the readme files.
+
+bundesbank: making sets of bundesbank realtime data.R

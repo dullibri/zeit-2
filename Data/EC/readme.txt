@@ -13,3 +13,4 @@ ESI:	esi_nace2.xlsx
 
 ECCS: consumer total für eccs1-eccs12 consumer_total_sa_nace2.xlsx
 
+Die Aufbereitung ist bei survey mit drin

@@ -41,7 +41,7 @@ df3=df[df[,1]==variables[3],]
 oecd[oecd$ym%in%df1[,'TIME'],variables[1]]=df1[,'Value']
 oecd[oecd$ym%in%df2[,'TIME'],variables[2]]=df2[,'Value']
 oecd[oecd$ym%in%df3[,'TIME'],variables[3]]=df3[,'Value']
-
+colnames(oecd)[(ncol(oecd)-2):ncol(oecd)]=c('OECDL1','OECDL3','OECDL2')
 oecdmeta[1:3,'lag']=2
 oecdmeta[,'code']=c(df1$SUBJECT[1],df2$SUBJECT[1],df3$SUBJECT[1])
 

@@ -1,8 +1,9 @@
-,name,id,L,D,dln,d2ln,lag,code,Source
+,name,id,L,D,D.ln,D2ln,lag,code,Source
 HWWA,Hwwa index of world market prices of raw mats.,29,NA,NA,1,1,1,SWHWWAR$F,datastream
 GFK-EXP,GFK consumer climate survey - business cycle expectations,50,1,1,NA,NA,0,BDGFKCCIQ,datastream
-ZEW ,ZEW economic sentiment,51,1,1,NA,NA,0,BDZEWECSR,datastream
+ZEW,ZEW economic sentiment,51,1,1,NA,NA,0,BDZEWECSR,datastream
 ALQ,1+unemployment (% civilian labour),87,NA,1,NA,NA,1,BDUN%TOTQ,datastream
 VAC,Vacancies,88,NA,NA,1,NA,1,BDUUCA80P,datastream
 CAPA,Capacity utilisation,89,1,1,NA,NA,0,BDIFDCENQ,datastream
 FAZ,FAZ indicator,91,NA,NA,1,NA,1,FAZINDX,datastream
+EW,Employed persons (work-place concept),86,NA,NA,1,NA,1,BDEMPTOTO,datastream

@@ -1,0 +1,11 @@
+,name,id,L,D,D.ln,D2ln,lag,code,Source
+ORD,Manufacturing orders,83,NA,NA,1,NA,1,M.DE.Y.I.IO1.ABA20.C.I,Buba RTDB
+ORD-I,Manufacturing orders - capital goods,85,NA,NA,1,NA,1,M.DE.Y.I.IO1.ACM03.C.I,Buba RTDB
+ORD-C,Manufacturing orders - consumer goods,84,NA,NA,1,NA,1,M.DE.Y.I.IO1.ACM04.C.I,Buba RTDB
+CPI-EX,Core CPI,79,NA,NA,1,1,1,M.DE.S.P.PC1.PC150.R.I,Buba RTDB
+CPI,CPI,78,NA,NA,1,1,0,M.DE.Y.P.PC1.PC100.R.I,Buba RTDB
+WHOUR,Hours worked,90,1,1,NA,NA,1,M.DE.Y.L.BE2.AA031.H.A,Buba RTDB
+TARIF,Negotiated wage and salary level,80,NA,NA,1,1,1,M.DE.N.L.DNA.CA010.M.I,Buba RTDB
+IP-VORL,Intermediate goods production,82,NA,NA,1,NA,1,M.DE.Y.I.IP1.ACM02.C.I,Buba RTDB
+IP-CONST,Industrial production excluding construction,-1,NA,NA,1,NA,1,M.DE.Y.I.IP1.AA020.C.I,Buba RTDB
+IP,Industrial production,0,NA,NA,1,NA,1,M.DE.Y.I.IP1.AA021.C.I,Buba RTDB

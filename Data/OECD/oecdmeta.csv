@@ -1,4 +1,0 @@
-"","name","id","L","D","dln","d2ln","lag","code","Source"
-"OECDL1","Composite leading indicator (amplitude restored)",93,1,1,NA,NA,2,"LOLITOAA","OECD"
-"OECDL3","Composite leading indicator (normalized)",95,1,1,NA,NA,2,"LOLITONO","OECD"
-"OECDL2","Composite leading indicator (trend restored)",94,NA,1,NA,NA,2,"LOLITOTR_STSA","OECD"
