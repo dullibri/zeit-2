@@ -95,3 +95,20 @@ COM,NA,92,NA,NA,NA,NA,NA,no access to Commerzbank indicator,Com,0,0
 OECDL1,Composite leading indicator (amplitude restored),93,1,1,NA,NA,2,LOLITOAA,OECD,0,1
 OECDL2,Composite leading indicator (trend restored),94,NA,1,NA,NA,2,LOLITOTR_STSA,OECD,0,1
 OECDL3,Composite leading indicator (normalized),95,1,1,NA,NA,2,LOLITONO,OECD,0,1
+MT.all,all observations,96,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.future,all observations Germany,97,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.presence,all observations present,98,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.climate,all observations future,99,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.de,all observations climate,100,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.de.future,NA,101,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.de.present,NA,102,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.de.climate,NA,103,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.budget,NA,104,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.currency,NA,105,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.labor,NA,106,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.cycle,NA,107,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.taxation,NA,108,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.de.budget,NA,109,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.de.labor,NA,110,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.de.cycle,NA,111,1,1,NA,NA,0,NA,Mediatenor International,0,1
+MT.de.taxation,NA,112,1,1,NA,NA,0,NA,Mediatenor International,0,1

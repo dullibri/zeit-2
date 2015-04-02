@@ -1,0 +1,18 @@
+,name,id,L,D,D.ln,D2ln,lag,code,Source
+MT.all,all observations,96,1,1,NA,NA,0,NA,Mediatenor International
+MT.future,all observations Germany,97,1,1,NA,NA,0,NA,Mediatenor International
+MT.presence,all observations present,98,1,1,NA,NA,0,NA,Mediatenor International
+MT.climate,all observations future,99,1,1,NA,NA,0,NA,Mediatenor International
+MT.de,all observations climate,100,1,1,NA,NA,0,NA,Mediatenor International
+MT.de.future,NA,101,1,1,NA,NA,0,NA,Mediatenor International
+MT.de.present,NA,102,1,1,NA,NA,0,NA,Mediatenor International
+MT.de.climate,NA,103,1,1,NA,NA,0,NA,Mediatenor International
+MT.budget,NA,104,1,1,NA,NA,0,NA,Mediatenor International
+MT.currency,NA,105,1,1,NA,NA,0,NA,Mediatenor International
+MT.labor,NA,106,1,1,NA,NA,0,NA,Mediatenor International
+MT.cycle,NA,107,1,1,NA,NA,0,NA,Mediatenor International
+MT.taxation,NA,108,1,1,NA,NA,0,NA,Mediatenor International
+MT.de.budget,NA,109,1,1,NA,NA,0,NA,Mediatenor International
+MT.de.labor,NA,110,1,1,NA,NA,0,NA,Mediatenor International
+MT.de.cycle,NA,111,1,1,NA,NA,0,NA,Mediatenor International
+MT.de.taxation,NA,112,1,1,NA,NA,0,NA,Mediatenor International

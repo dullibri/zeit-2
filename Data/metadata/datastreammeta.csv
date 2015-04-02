@@ -6,4 +6,3 @@ ALQ,1+unemployment (% civilian labour),87,NA,1,NA,NA,1,BDUN%TOTQ,datastream
 VAC,Vacancies,88,NA,NA,1,NA,1,BDUUCA80P,datastream
 CAPA,Capacity utilisation,89,1,1,NA,NA,0,BDIFDCENQ,datastream
 FAZ,FAZ indicator,91,NA,NA,1,NA,1,FAZINDX,datastream
-EW,Employed persons (work-place concept),86,NA,NA,1,NA,1,BDEMPTOTO,datastream

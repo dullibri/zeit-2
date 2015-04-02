@@ -1,0 +1,210 @@
+---
+title: "realtime experiment"
+author: "Dirk Ulbricht"
+date: "Friday, February 13, 2015"
+output: html_document
+---
+
+```{r}
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+DirCode='h:/Git/zeit-2'
+
+# sourcing necassary scripts for estimation and forecast (for a description see "olsbmalag.Rmd")
+auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')
+source(paste(auxcodedir,'/lag.exact.R',sep=''))
+source(paste(auxcodedir,'/diff.R',sep=''))
+source(paste(auxcodedir,'/chg.R',sep=''))
+source(paste(auxcodedir,'/bmafo.R',sep=''))
+source(paste(auxcodedir,'/olsbic3.R',sep=''))
+source(paste(auxcodedir,'/olsbic1setgetting2.R',sep=''))
+library("BMA")
+
+# setting some values
+horizon=3 # inflation is published with on month lag, but in the following, the variables
+# are only lagged.
+target='IP' # core inflation
+max.lag=12 # maximum lag length to be considered 
+max.obs=48 # maximum number of past observations to be considered (rolling estimation);
+# setting negative window turns that of (recursive estimation)
+# rolling window size will be: max.obs-max.lag-horizon, as lags need to be considered for
+# estimation. 
+
+# loading realtime data sets and unrevised data 
+load(paste(DirCode,'/data/realtime_sets_cutoffday_31.RData',sep=''))
+df.unrevised=read.csv(paste(DirCode,'/data/data.csv'
+                            ,sep='')
+                      ,sep=','
+                      ,na.strings='NA'
+                      ,row.names=1
+                      ,stringsAsFactors=FALSE
+                      )
+dat.col=(grep('ym',colnames(df.unrevised))+1):ncol(df.unrevised)
+row.names(df.unrevised)=df.unrevised[,'ym']
+df.unrevised=df.unrevised[,dat.col] 
+
+overview=read.csv(paste(DirCode,'/data/metadata.csv',sep=''),row.names=1)
+
+# replacing "." with "-" and getting vector of names
+names.nr=colnames(df.unrevised)
+names.nr[-grep('MT',names.nr)]=gsub('\\.','-',names.nr[-grep('MT',names.nr)])
+colnames(df.unrevised)=names.nr
+
+# getting overview of non-revised data
+overview.nr=overview[names.nr,]
+
+# Saving a complete version of unrevised data (below, some of them are lagged to take account of realtime publication lags) 
+df.unrevised.compl=df.unrevised # df.unrevised=df.unrevised.compl
+
+```
+Some of the variables that are not subject to data revisions are published with a publication lag nontheless.
+```{r}
+
+# getting vintage dates
+# first: changing vint.names to correspond to other date format
+vint.names=names(sets)
+vint.names=gsub('-31','',vint.names)
+tt=strsplit(vint.names,'-')
+tt=t(sapply(tt,function(x)x))
+for (i in 1:nrow(tt)){if (nchar(tt[i,2])==1){tt[i,2]=paste('0',tt[i,2],sep='')}}
+vint.names=paste(tt[,1],tt[,2],sep='-')
+names(sets)=vint.names
+
+# getting names of realtime variables and replace code by names in sets
+set1=sets[[1]]
+rt.code=colnames(set1)
+
+# all sets have the same codes in the same order?
+test=t(sapply(sets,function(x) colnames(x)))
+# matching codes and names
+overview.rt=overview[overview$code%in%rt.code,]
+# which names correspond to the codes 
+name.num=unlist(sapply(rt.code,function(x) which(x==overview.rt$code)))
+rt.names=row.names(overview.rt)[name.num]
+
+for (i in 1:length(sets)){colnames(sets[[i]])=rt.names}
+#making a copy
+sets.s=sets #sets=sets.s
+```
+
+Each forecast origin, the set of unrevised data is shortened so that it includes only that observations that had been available up to then.
+The set of realtime and unrevised data are combined.
+For each variable in the set, 1st and 2nd differences, month-on-month and year-on-year change rates are computed and added. The each of the sets is used to estimate the different models and to compute the 12 month-horizon forecasts.
+```{r}
+# loop -----------------------------------------------------------
+
+push.down=function(variable,set){
+        # pushes all variables to the forecast origin so that data with publication
+        # lag may be used nontheless for forecasting.
+        aux=set[,variable]
+        naux=length(aux)
+        values=aux[is.na(aux)==F]
+        nvalues=length(values)
+        aux2=rep(NA,naux)
+        aux2[(naux-nvalues+1):naux]=values
+        return(aux2)
+        }
+forecast.all=vector('list',length(sets))
+
+extract.ar=c('fc','horizon','nobs','msr','p1','names')
+extract=c('fc','horizon','nobs','msr','p1','p2','names')
+
+for (vint.num in 1:length(sets)){# vint.num=1
+        set.rt=sets[[vint.num]]
+        set.last.date=names(sets[vint.num])
+        set.lst.obs=grep(set.last.date,row.names(set.rt))
+        set.rt=set.rt[1:set.lst.obs,]
+        set.unrevised=df.unrevised[row.names(set.rt),]
+        set=cbind(set.rt,set.unrevised)
+        
+        # DEFLATING some data 
+        deflator=set$CPI/100
+        deflated.var=row.names(overview)[which(overview$deflated==1)]
+        nom.var=c('HWWA','HWWA-E','HWWA-EX','OIL')
+        set[,deflated.var]=set[,nom.var]*deflator
+        
+        # PUBLICATION LAG of unrevised data (no deflated data need to be lagged further)
+        variables.tlag=row.names(overview.nr)[overview.nr$lag!=0]
+        for (var.tlag in variables.tlag){
+                set[,var.tlag]=lag.exact(set[,var.tlag,drop=F]
+                                                  ,overview.nr[row.names(overview.nr)==var.tlag
+                                                               ,'lag'])
+                }
+        # DIFFERENCES
+        variables.d=row.names(overview)[!is.na(overview$L)]
+        variables.d.new.name=paste('D',variables.d,sep='')
+        set[,variables.d.new.name]=diff(set[,variables.d],1,1)
+        
+        # LOG DIFFERENCES        
+        variables.dln=row.names(overview)[!is.na(overview$D.ln)]
+        variables.dln.new.name=paste('Dln',variables.dln,sep='')
+        set[,variables.dln.new.name]=diff(log(set[,variables.dln]),1,1)
+        
+        # LOG 2.DIFFERENCES        
+        variables.ddln=row.names(overview)[!is.na(overview$D2ln)]
+        variables.ddln.new.name=paste('DDln',variables.ddln,sep='')
+        set[,variables.ddln.new.name]=diff(log(set[,variables.ddln]),2,1)
+        
+        # Rossi and Sekhposyan (2008) targets
+        y.raw=set[,target,drop=F]
+        col.target=which(colnames(set)==target)
+        set=set[,-col.target]
+        rm(col.target)
+        y=1200/horizon*log(y.raw/lag.exact(y.raw,horizon))
+        yx=1200*log(y.raw/lag.exact(y.raw,1))
+        colnames(yx)=paste(target,'x',sep='')
+        #         if (target=='PCPIX'){# Rossi and Sekhposyan (2008) inflation target
+        #                 y=y-yx
+        #                 }
+        
+        # DROP LEVEL data that is not needed
+        # AR-REGRESSORS: are set dln need to be taken out of the rest of variables.
+        # dependent: dln y with d being bridging the forecast horizon.
+        # horizon might change from vintage to vintage. need to check and adjust.
+        
+        
+        
+        # window of max.obs month back
+        if (max.obs>0){
+                y=y[(nrow(set)-max.obs+1):nrow(set),1,drop=F]
+                yx=yx[(nrow(set)-max.obs+1):nrow(set),1,drop=F]
+                set=set[(nrow(set)-max.obs+1):nrow(set),]
+                }
+        
+        # pushing down all variables        
+        variables=colnames(set)
+        dates=row.names(set)
+        
+        y[,1]=push.down(target,y)
+        yx[,1]=push.down(paste(target,'x',sep=''),yx)
+        
+        set=data.frame(sapply(variables,push.down,set))
+        row.names(set)=dates
+        
+        forecast=data.frame(matrix(NA,nrow=ncol(set)+1,length(extract)))
+        colnames(forecast)=extract
+        row.names(forecast)=c('ar',colnames(set))
+        
+        forecast['ar',extract.ar]=unlist(
+                olsbic3(y,yx,horizon,max.lag)[extract]
+                )
+        p1=forecast['ar','p1']       
+        for (i in 1:ncol(set)){# i=1
+                xx=cbind(yx,set[,i,drop=F])
+                resu=unlist(
+                        olsbic1setgetting2(y,xx,horizon,max.lag,p1=p1)[extract]
+                        )
+                if (length(resu)>0){
+                        forecast[colnames(set)[i],extract]=resu   
+                        }
+                
+                }# end model loop
+        forecast.all[[vint.num]]=forecast
+        
+        }#end vintage loop
+save(forecast.all,file=paste(DirCode,'/results/',target,'_h',horizon,'.RData',sep=''))
+```
+
+
+
+
+

@@ -1,0 +1,37 @@
+---
+title: "readme data collection issues"
+author: "Dirk Ulbricht"
+date: "Thursday, April 02, 2015"
+output: html_document
+---
+
+## files and structure
+
+The data for the real-time experiment are saved in 
+- data.csv (unrevised data), 
+- realtime_sets_cutoffday_31.RData (real-time data), 
+- and described in metadata.csv. 
+
+There are several data sources:
+
+- Bubarealtime database 
+- Buba database
+- OECD
+- ECB
+- Datastream
+- ifo database
+- European Commission (EC).
+- MTI (not described in the meta data yet)
+
+Information on the sources, the code for preparation and creating the metadata for the respective sources (R code with "selecting" in the name), and some additional information in readme.txt files is given in the respective Folders.
+
+Some details on Buba variables:
+
+- For Buba realtime data, bundesbank_keys.csv contains the keys to decipher the variables' names.
+- For Buba there is a file in the code to create a detailed complete list of all variables, however, searching for the variables on the website is more convenient.
+
+## important codes (H:\git\zeit-2\code\code for getting and preparing data)
+- Getting realtime data of the Bundesbank.R (downloads Bundesbank realtime data and creates labels for selection.)
+- making sets of bundesbank realtime data.R (different realtime data are formed to information sets at different points in time. The current specification is always at the last day of a month.)
+- collecting_merging_metadata.R (the metadata are first collected for each source separately and stored in metadata)
+- collecting_merging_data.R (the data are collected for each source separately and stored in finaldata)
