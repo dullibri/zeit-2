@@ -19,7 +19,7 @@ meta$used=1
 deflated=grep("deflatedvarmeta.csv",metaf)
 eval(parse(text=paste('defl=t',deflated,sep='')))
 defl=row.names(defl)
-meta[defl,'deflated']=1
+meta[c('HWWA','HWWA-E','HWWA-EX','OIL'),'deflated']=1
 
 missing=grep("missingvariablesmeta.csv",metaf)
 eval(parse(text=paste('miss=t',missing,sep='')))

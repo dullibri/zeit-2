@@ -1,5 +1,5 @@
 ,name,id,L,D,D.ln,D2ln,lag,code,Source
-HWWAR,"Hwwa index, real",30,1,1,NA,NA,NA,SWHWWAR$F,datastream
-HWWA-ER,"Hwwa index, energy real",32,1,1,NA,NA,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba
-HWWA-EXR,"Hwwa index, excl. energy real",34,1,1,NA,NA,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba
+HWWAR,"Hwwa index, real",30,NA,NA,1,1,NA,SWHWWAR$F,datastream
+HWWA-ER,"Hwwa index, energy real",32,NA,NA,1,1,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba
+HWWA-EXR,"Hwwa index, excl. energy real",34,NA,NA,1,1,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba
 OIL-R,"Oil prices (euros per barrel), real",36,NA,NA,1,1,NA,FM.M.U2.EUR.4F.CY.OILBRNI.HSTA,ECB

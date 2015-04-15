@@ -5,7 +5,8 @@ olsbic1setgetting2 <-function(y,df,horizon,max.lag,ic='bic',p1){
         # p2 of x2 is estimated using bic.  
         # y and df should data frames.
         # Returns: list with all central results (ols estimates, measures of fit, forecast)
-        
+        # df=xx
+        # ic='bic
         lag.exact<-function(df,lag.length){
                 # Returns a dataframe of the lags of df with lag.length
                 x.n=ncol(df)
@@ -104,7 +105,8 @@ olsbic1setgetting2 <-function(y,df,horizon,max.lag,ic='bic',p1){
         nobs=sum(xy.complete)
         x1=as.matrix(x1[xy.complete,])
         x2=as.matrix(x2[xy.complete,])
-        if (sum(colSums(x2)==0)>0|(sum(colSums(x2)==nrow(x2)))>0){return()}
+#         no binary indicators present.
+#         if (sum(colSums(x2)==0)>0|(sum(colSums(x2)==nrow(x2)))>0){return()}
         
         y=y[xy.complete,]
         
@@ -116,7 +118,15 @@ olsbic1setgetting2 <-function(y,df,horizon,max.lag,ic='bic',p1){
                 return(res)
         }
         sel=data.frame(1:max.lag)
+
         res=t(mapply(olsaux2,sel[,1]))
+        
+#         # test mapply
+#         res=list()
+#         for (ii in 1:nrow(sel)){
+#           res[[ii]]=olsaux2(ii)
+#         }
+        
         p2=which.min(res[,ic])
         result=res[p2,]
         result$p2=p2

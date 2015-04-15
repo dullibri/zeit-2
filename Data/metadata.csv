@@ -1,114 +1,114 @@
-,name,id,L,D,D.ln,D2ln,lag,code,Source,deflated,used
-IP-CONST,Industrial production excluding construction,-1,NA,NA,1,NA,1,M.DE.Y.I.IP1.AA020.C.I,Buba RTDB,0,1
-IP,Industrial production,0,NA,NA,1,NA,1,M.DE.Y.I.IP1.AA021.C.I,Buba RTDB,0,1
-IS-M,Money market rate (mth.avg.),1,1,1,NA,NA,0,"BBK01.SU0304,BBK01.SU0101",Buba,0,1
-IS-D,Discount rate/short term repo rate (mth.avg.),2,1,1,NA,NA,0,"BBK01.SU0112,BBK01.SU0114,BBK01.SU0115",Buba,0,1
-IS-3M,3m-money market rate (mth.avg.),3,1,1,NA,NA,0,"BBK01.SU0316,BBK01.SU0107,BBK01.SU0268",Buba,0,1
-IL-3,Yields on debt securities outstanding (mat.3-5 years),4,1,1,NA,NA,0,BBK01.WU9552,Buba,0,1
-IL-5,Yields on debt securities outstanding (mat.5-8 years),5,1,1,NA,NA,0,BBK01.WU9553,Buba,0,1
-IL-10,Long term government bond yield-9-10 years,6,1,1,NA,NA,0,BBK01.WX3950,Buba,0,1
-SPR-10Y-M,Term spread (10y - money market rate),7,1,NA,NA,NA,0,see constituent series,Buba,0,1
-SPR-10Y-D,Term spread (10y - discount rate),8,1,NA,NA,NA,0,see constituent series,Buba,0,1
-SPR-10Y-3M,Term spread (10y - 3 month-money market rate),9,1,NA,NA,NA,0,see constituent series,Buba,0,1
-SPR-1D-M,Term spread (discount rate - money market rate),10,1,NA,NA,NA,0,see constituent series,Buba,0,1
-SPR-C-G,Corporate bond-government bonds,11,1,NA,NA,NA,0,BBK01.WU0022,Buba,0,1
-SPR-B-A,NA,12,NA,NA,NA,NA,NA,no access to Merrill Lynch data,ML,0,0
-SPR-HY-A,NA,13,NA,NA,NA,NA,NA,no access to Merrill Lynch data,ML,0,0
-SPR-B-G,NA,14,NA,NA,NA,NA,NA,no access to Merrill Lynch data,Buba/ML,0,0
-SPR-BF-G,NA,15,NA,NA,NA,NA,NA,no access to Merrill Lynch data,Buba/ML,0,0
-SPR-HY-G,NA,16,NA,NA,NA,NA,NA,no access to Merrill Lynch data,Buba/ML,0,0
-SPR-A-G,NA,17,NA,NA,NA,NA,NA,no access to Merrill Lynch data,Buba/ML,0,0
-EX,Nominal effective exchange rate,18,NA,NA,1,NA,1,BBEE1.M.I7.AAA.XZE02A.A.AABAN.M00,Buba,0,1
-EXR,Real effective exchange rate,19,NA,NA,1,NA,1,BBEE1.M.I7.AAA.XZE02A.R.AACPE.M00,Buba,0,1
-DAX,DAX,20,NA,NA,1,NA,0,BBQFS.M.DE.CORP.PRICE_DAX._X.0000,Buba,0,1
-VOLA1,DAX vola new,21,1,1,NA,NA,0,BBQFS.M.DE.0000.VOL_IMP_DAX._X.0000,Buba,0,1
-VOLA2,DAX vola old,22,1,1,NA,NA,0,BBQFS.M.DE.0000.VOL_HIS_DAX._X.0000 ,Buba,0,1
-M1,NA,23,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechsel and scheufle 2012.,Buba,0,0
-M1R,NA,24,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechsel and scheufle 2012.,Buba,0,0
-M2,NA,25,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechsel and scheufle 2012.,Buba,0,0
-M2R,NA,26,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechsel and scheufle 2012.,Buba,0,0
-M3,NA,27,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechsel and scheufle 2012.,Buba,0,0
-M3R,NA,28,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechsel and scheufle 2012.,Buba,0,0
-HWWA,Hwwa index of world market prices of raw mats.,29,NA,NA,1,1,1,SWHWWAR$F,datastream,0,1
-HWWAR,"Hwwa index, real",30,1,1,NA,NA,NA,SWHWWAR$F,datastream,1,1
-HWWA-E,"Hwwa index ~,energy",31,NA,NA,1,1,1,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,0,1
-HWWA-ER,"Hwwa index, energy real",32,1,1,NA,NA,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,1,1
-HWWA-EX,"Hwwa index ~,excl. energy",33,NA,NA,1,1,1,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,0,1
-HWWA-EXR,"Hwwa index, excl. energy real",34,1,1,NA,NA,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,1,1
-OIL,Oil prices (euros per barrel),35,NA,NA,1,1,0,FM.M.U2.EUR.4F.CY.OILBRNI.HSTA,ECB,0,1
-OIL-R,"Oil prices (euros per barrel), real",36,NA,NA,1,1,NA,FM.M.U2.EUR.4F.CY.OILBRNI.HSTA,ECB,1,1
-IFO-WC,NA,37,NA,NA,NA,NA,NA,quarterly,ifo,0,0
-IFO-WEXP,NA,38,NA,NA,NA,NA,NA,quarterly,ifo,0,0
-IFO-C,Ifo index climate,39,1,1,NA,NA,0,NA,ifo,0,1
-IFO-EXP,Ifo expectations climate,40,1,1,NA,NA,0,NA,ifo,0,1
-IFOM-C,Ifo index manufacturing,41,1,1,NA,NA,0,NA,ifo,0,1
-IFOM-EXP,Ifo expectations manufacturing,42,1,1,NA,NA,0,NA,ifo,0,1
-IFOMI-C,Ifo index capital goods,43,1,1,NA,NA,0,NA,ifo,0,1
-IFOMI-EXP,Ifo expecations capital goods,44,1,1,NA,NA,0,NA,ifo,0,1
-IFOMV-C,Ifo index intermediate goods,45,1,1,NA,NA,0,NA,ifo,0,1
-IFOMV-EXP,Ifo expectations intermediate goods,46,1,1,NA,NA,0,NA,ifo,0,1
-IFOWH-C,Ifo index wholesale,47,1,1,NA,NA,0,NA,ifo,0,1
-IFOWH-EXP,Ifo expectations wholesale,48,1,1,NA,NA,0,NA,ifo,0,1
-GFK-EXP,GFK consumer climate survey - business cycle expectations,50,1,1,NA,NA,0,BDGFKCCIQ,datastream,0,1
-ZEW,ZEW economic sentiment,51,1,1,NA,NA,0,BDZEWECSR,datastream,0,1
-PMI,NA,52,NA,NA,NA,NA,NA,only available since 2005 and until 2013,datastream,0,0
-ECBS2,Assessment of order-book levels                               ,53,1,1,NA,NA,0,NA,EC,0,1
-ECBS3,Assessment of export order-book levels                        ,54,1,1,NA,NA,0,NA,EC,0,1
-ECBS4,Assessment of stocks of finished products                     ,55,1,1,NA,NA,0,NA,EC,0,1
-ECBS5,Production expectations for the months ahead                  ,56,1,1,NA,NA,0,NA,EC,0,1
-ECBS6,Selling price expectations for the months ahead               ,57,1,1,NA,NA,0,NA,EC,0,1
-ECBS7,Employment expectations for the months ahead                  ,58,1,1,NA,NA,0,NA,EC,0,1
-ESI-INDU,Industrial confidence indicator (40%),59,1,1,NA,NA,0,NA,EC,0,1
-ESI-SERV,Services confidence indicator (30%),60,1,1,NA,NA,0,NA,EC,0,1
-ESI-C,Consumer confidence indicator (20%),61,1,1,NA,NA,0,NA,EC,0,1
-ESI-TRADE,Retail trade confidence indicator (5%),62,1,1,NA,NA,0,NA,EC,0,1
-ESI-CTR,Construction confidence indicator (5%),63,1,1,NA,NA,0,NA,EC,0,1
-ESI,Economic sentiment indicator (average),64,1,1,NA,NA,0,NA,EC,0,1
-ECCS99,Confidence Indicator (Q2 + Q4 - Q7 + Q11) / 4                               ,65,1,1,NA,NA,0,NA,EC,0,1
-ECCS1,Financial situation over last 12 months,66,1,1,NA,NA,0,NA,EC,0,1
-ECCS2,Financial situation over next 12 months,67,1,1,NA,NA,0,NA,EC,0,1
-ECCS3,General economic situation over last 12 months,68,1,1,NA,NA,0,NA,EC,0,1
-ECCS4,General economic situation over next 12 months,69,1,1,NA,NA,0,NA,EC,0,1
-ECCS5,Price trends over last 12 months,70,1,1,NA,NA,0,NA,EC,0,1
-ECCS6,Price trends over next 12 months,71,1,1,NA,NA,0,NA,EC,0,1
-ECCS7,Unemployment expectations over next 12 months,72,1,1,NA,NA,0,NA,EC,0,1
-ECCS8,Major purchases at present,73,1,1,NA,NA,0,NA,EC,0,1
-ECCS9,Major purchases over next 12 months,74,1,1,NA,NA,0,NA,EC,0,1
-ECCS10,Savings at present,75,1,1,NA,NA,0,NA,EC,0,1
-ECCS11,Savings over next 12 months,76,1,1,NA,NA,0,NA,EC,0,1
-ECCS12,Statement on financial situation of household,77,1,1,NA,NA,0,NA,EC,0,1
-CPI,CPI,78,NA,NA,1,1,0,M.DE.Y.P.PC1.PC100.R.I,Buba RTDB,0,1
-CPI-EX,Core CPI,79,NA,NA,1,1,1,M.DE.S.P.PC1.PC150.R.I,Buba RTDB,0,1
-TARIF,Negotiated wage and salary level,80,NA,NA,1,1,1,M.DE.N.L.DNA.CA010.M.I,Buba RTDB,0,1
-PBIP,NA,81,NA,NA,NA,NA,NA,quarterly,Buba,0,0
-IP-VORL,Intermediate goods production,82,NA,NA,1,NA,1,M.DE.Y.I.IP1.ACM02.C.I,Buba RTDB,0,1
-ORD,Manufacturing orders,83,NA,NA,1,NA,1,M.DE.Y.I.IO1.ABA20.C.I,Buba RTDB,0,1
-ORD-C,Manufacturing orders - consumer goods,84,NA,NA,1,NA,1,M.DE.Y.I.IO1.ACM04.C.I,Buba RTDB,0,1
-ORD-I,Manufacturing orders - capital goods,85,NA,NA,1,NA,1,M.DE.Y.I.IO1.ACM03.C.I,Buba RTDB,0,1
-EW,Employed persons (work-place concept),86,NA,NA,1,NA,1,BDEMPTOTO,datastream,0,1
-ALQ,1+unemployment (% civilian labour),87,NA,1,NA,NA,1,BDUN%TOTQ,datastream,0,1
-VAC,Vacancies,88,NA,NA,1,NA,1,BDUUCA80P,datastream,0,1
-CAPA,Capacity utilisation,89,1,1,NA,NA,0,BDIFDCENQ,datastream,0,1
-WHOUR,Hours worked,90,1,1,NA,NA,1,M.DE.Y.L.BE2.AA031.H.A,Buba RTDB,0,1
-FAZ,FAZ indicator,91,NA,NA,1,NA,1,FAZINDX,datastream,0,1
-COM,NA,92,NA,NA,NA,NA,NA,no access to Commerzbank indicator,Com,0,0
-OECDL1,Composite leading indicator (amplitude restored),93,1,1,NA,NA,2,LOLITOAA,OECD,0,1
-OECDL2,Composite leading indicator (trend restored),94,NA,1,NA,NA,2,LOLITOTR_STSA,OECD,0,1
-OECDL3,Composite leading indicator (normalized),95,1,1,NA,NA,2,LOLITONO,OECD,0,1
-MT.all,all observations,96,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.future,all observations Germany,97,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.presence,all observations present,98,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.climate,all observations future,99,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.de,all observations climate,100,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.de.future,NA,101,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.de.present,NA,102,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.de.climate,NA,103,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.budget,NA,104,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.currency,NA,105,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.labor,NA,106,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.cycle,NA,107,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.taxation,NA,108,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.de.budget,NA,109,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.de.labor,NA,110,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.de.cycle,NA,111,1,1,NA,NA,0,NA,Mediatenor International,0,1
-MT.de.taxation,NA,112,1,1,NA,NA,0,NA,Mediatenor International,0,1
+"","name","id","L","D","D.ln","D2ln","lag","code","Source","deflated","used"
+"IP-CONST","Industrial production excluding construction",-1,NA,NA,1,NA,0,"M.DE.Y.I.IP1.AA020.C.I","Buba RTDB",0,1
+"IP","Industrial production",0,NA,NA,1,NA,0,"M.DE.Y.I.IP1.AA021.C.I","Buba RTDB",0,1
+"IS-M","Money market rate (mth.avg.)",1,1,1,NA,NA,0,"BBK01.SU0304,BBK01.SU0101","Buba",0,1
+"IS-D","Discount rate/short term repo rate (mth.avg.)",2,1,1,NA,NA,0,"BBK01.SU0112,BBK01.SU0114,BBK01.SU0115","Buba",0,1
+"IS-3M","3m-money market rate (mth.avg.)",3,1,1,NA,NA,0,"BBK01.SU0316,BBK01.SU0107,BBK01.SU0268","Buba",0,1
+"IL-3","Yields on debt securities outstanding (mat.3-5 years)",4,1,1,NA,NA,0,"BBK01.WU9552","Buba",0,1
+"IL-5","Yields on debt securities outstanding (mat.5-8 years)",5,1,1,NA,NA,0,"BBK01.WU9553","Buba",0,1
+"IL-10","Long term government bond yield-9-10 years",6,1,1,NA,NA,0,"BBK01.WX3950","Buba",0,1
+"SPR-10Y-M","Term spread (10y - money market rate)",7,1,NA,NA,NA,0,"see constituent series","Buba",0,1
+"SPR-10Y-D","Term spread (10y - discount rate)",8,1,NA,NA,NA,0,"see constituent series","Buba",0,1
+"SPR-10Y-3M","Term spread (10y - 3 month-money market rate)",9,1,NA,NA,NA,0,"see constituent series","Buba",0,1
+"SPR-1D-M","Term spread (discount rate - money market rate)",10,1,NA,NA,NA,0,"see constituent series","Buba",0,1
+"SPR-C-G","Corporate bond-government bonds",11,1,NA,NA,NA,0,"BBK01.WU0022","Buba",0,1
+"SPR-B-A","",12,NA,NA,NA,NA,NA,"no access to Merrill Lynch data","ML",0,0
+"SPR-HY-A","",13,NA,NA,NA,NA,NA,"no access to Merrill Lynch data","ML",0,0
+"SPR-B-G","",14,NA,NA,NA,NA,NA,"no access to Merrill Lynch data","Buba/ML",0,0
+"SPR-BF-G","",15,NA,NA,NA,NA,NA,"no access to Merrill Lynch data","Buba/ML",0,0
+"SPR-HY-G","",16,NA,NA,NA,NA,NA,"no access to Merrill Lynch data","Buba/ML",0,0
+"SPR-A-G","",17,NA,NA,NA,NA,NA,"no access to Merrill Lynch data","Buba/ML",0,0
+"EX","Nominal effective exchange rate",18,NA,NA,1,NA,1,"BBEE1.M.I7.AAA.XZE02A.A.AABAN.M00","Buba",0,1
+"EXR","Real effective exchange rate",19,NA,NA,1,NA,1,"BBEE1.M.I7.AAA.XZE02A.R.AACPE.M00","Buba",0,1
+"DAX","DAX",20,NA,NA,1,NA,0,"BBQFS.M.DE.CORP.PRICE_DAX._X.0000","Buba",0,1
+"VOLA1","DAX vola new",21,1,1,NA,NA,0,"BBQFS.M.DE.0000.VOL_IMP_DAX._X.0000","Buba",0,1
+"VOLA2","DAX vola old",22,1,1,NA,NA,0,"BBQFS.M.DE.0000.VOL_HIS_DAX._X.0000 ","Buba",0,1
+"M1","",23,NA,NA,NA,NA,NA,"no consistent data available. see original papar of drechsel and scheufle 2012.","Buba",0,0
+"M1R","",24,NA,NA,NA,NA,NA,"no consistent data available. see original papar of drechsel and scheufle 2012.","Buba",0,0
+"M2","",25,NA,NA,NA,NA,NA,"no consistent data available. see original papar of drechsel and scheufle 2012.","Buba",0,0
+"M2R","",26,NA,NA,NA,NA,NA,"no consistent data available. see original papar of drechsel and scheufle 2012.","Buba",0,0
+"M3","",27,NA,NA,NA,NA,NA,"no consistent data available. see original papar of drechsel and scheufle 2012.","Buba",0,0
+"M3R","",28,NA,NA,NA,NA,NA,"no consistent data available. see original papar of drechsel and scheufle 2012.","Buba",0,0
+"HWWA","Hwwa index of world market prices of raw mats.",29,NA,NA,1,1,1,"SWHWWAR$F","datastream",1,1
+"HWWAR","Hwwa index, real",30,NA,NA,1,1,NA,"SWHWWAR$F","datastream",0,1
+"HWWA-E","Hwwa index ~,energy",31,NA,NA,1,1,1,"BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A","Buba",1,1
+"HWWA-ER","Hwwa index, energy real",32,NA,NA,1,1,NA,"BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A","Buba",0,1
+"HWWA-EX","Hwwa index ~,excl. energy",33,NA,NA,1,1,1,"BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A","Buba",1,1
+"HWWA-EXR","Hwwa index, excl. energy real",34,NA,NA,1,1,NA,"BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A","Buba",0,1
+"OIL","Oil prices (euros per barrel)",35,NA,NA,1,1,0,"FM.M.U2.EUR.4F.CY.OILBRNI.HSTA","ECB",1,1
+"OIL-R","Oil prices (euros per barrel), real",36,NA,NA,1,1,NA,"FM.M.U2.EUR.4F.CY.OILBRNI.HSTA","ECB",0,1
+"IFO-WC","",37,NA,NA,NA,NA,NA,"quarterly","ifo",0,0
+"IFO-WEXP","",38,NA,NA,NA,NA,NA,"quarterly","ifo",0,0
+"IFO-C","Ifo index climate",39,1,1,NA,NA,0,NA,"ifo",0,1
+"IFO-EXP","Ifo expectations climate",40,1,1,NA,NA,0,NA,"ifo",0,1
+"IFOM-C","Ifo index manufacturing",41,1,1,NA,NA,0,NA,"ifo",0,1
+"IFOM-EXP","Ifo expectations manufacturing",42,1,1,NA,NA,0,NA,"ifo",0,1
+"IFOMI-C","Ifo index capital goods",43,1,1,NA,NA,0,NA,"ifo",0,1
+"IFOMI-EXP","Ifo expecations capital goods",44,1,1,NA,NA,0,NA,"ifo",0,1
+"IFOMV-C","Ifo index intermediate goods",45,1,1,NA,NA,0,NA,"ifo",0,1
+"IFOMV-EXP","Ifo expectations intermediate goods",46,1,1,NA,NA,0,NA,"ifo",0,1
+"IFOWH-C","Ifo index wholesale",47,1,1,NA,NA,0,NA,"ifo",0,1
+"IFOWH-EXP","Ifo expectations wholesale",48,1,1,NA,NA,0,NA,"ifo",0,1
+"GFK-EXP","GFK consumer climate survey - business cycle expectations",50,1,1,NA,NA,0,"BDGFKCCIQ","datastream",0,1
+"ZEW","ZEW economic sentiment",51,1,1,NA,NA,0,"BDZEWECSR","datastream",0,1
+"PMI","",52,NA,NA,NA,NA,NA,"only available since 2005 and until 2013","datastream",0,0
+"ECBS2","Assessment of order-book levels                               ",53,1,1,NA,NA,0,NA,"EC",0,1
+"ECBS3","Assessment of export order-book levels                        ",54,1,1,NA,NA,0,NA,"EC",0,1
+"ECBS4","Assessment of stocks of finished products                     ",55,1,1,NA,NA,0,NA,"EC",0,1
+"ECBS5","Production expectations for the months ahead                  ",56,1,1,NA,NA,0,NA,"EC",0,1
+"ECBS6","Selling price expectations for the months ahead               ",57,1,1,NA,NA,0,NA,"EC",0,1
+"ECBS7","Employment expectations for the months ahead                  ",58,1,1,NA,NA,0,NA,"EC",0,1
+"ESI-INDU","Industrial confidence indicator (40%)",59,1,1,NA,NA,0,NA,"EC",0,1
+"ESI-SERV","Services confidence indicator (30%)",60,1,1,NA,NA,0,NA,"EC",0,1
+"ESI-C","Consumer confidence indicator (20%)",61,1,1,NA,NA,0,NA,"EC",0,1
+"ESI-TRADE","Retail trade confidence indicator (5%)",62,1,1,NA,NA,0,NA,"EC",0,1
+"ESI-CTR","Construction confidence indicator (5%)",63,1,1,NA,NA,0,NA,"EC",0,1
+"ESI","Economic sentiment indicator (average)",64,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS99","Confidence Indicator (Q2 + Q4 - Q7 + Q11) / 4                               ",65,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS1","Financial situation over last 12 months",66,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS2","Financial situation over next 12 months",67,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS3","General economic situation over last 12 months",68,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS4","General economic situation over next 12 months",69,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS5","Price trends over last 12 months",70,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS6","Price trends over next 12 months",71,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS7","Unemployment expectations over next 12 months",72,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS8","Major purchases at present",73,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS9","Major purchases over next 12 months",74,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS10","Savings at present",75,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS11","Savings over next 12 months",76,1,1,NA,NA,0,NA,"EC",0,1
+"ECCS12","Statement on financial situation of household",77,1,1,NA,NA,0,NA,"EC",0,1
+"CPI","CPI",78,NA,NA,1,1,0,"M.DE.Y.P.PC1.PC100.R.I","Buba RTDB",0,1
+"CPI-EX","Core CPI",79,NA,NA,1,1,0,"M.DE.S.P.PC1.PC150.R.I","Buba RTDB",0,1
+"TARIF","Negotiated wage and salary level",80,NA,NA,1,1,0,"M.DE.N.L.DNA.CA010.M.I","Buba RTDB",0,1
+"PBIP","",81,NA,NA,NA,NA,NA,"quarterly","Buba",0,0
+"IP-VORL","Intermediate goods production",82,NA,NA,1,NA,0,"M.DE.Y.I.IP1.ACM02.C.I","Buba RTDB",0,1
+"ORD","Manufacturing orders",83,NA,NA,NA,NA,NA,"M.DE.Y.I.IO1.ABA20.C.I no vints starting 2005","Buba RTDB",0,0
+"ORD-C","Manufacturing orders - consumer goods",84,NA,NA,1,NA,0,"M.DE.Y.I.IO1.ACM04.C.I","Buba RTDB",0,1
+"ORD-I","Manufacturing orders - capital goods",85,NA,NA,1,NA,0,"M.DE.Y.I.IO1.ACM03.C.I","Buba RTDB",0,1
+"EW","Employed persons (work-place concept)",86,NA,NA,1,NA,0,"M.DE.S.L.BE1.CA010.P.A","Buba RTDB",0,1
+"ALQ","1+unemployment (% civilian labour)",87,NA,1,NA,NA,1,"BDUN%TOTQ","datastream",0,1
+"VAC","Vacancies",88,NA,NA,1,NA,1,"BDUUCA80P","datastream",0,1
+"CAPA","Capacity utilisation",89,1,1,NA,NA,0,"BDIFDCENQ","datastream",0,1
+"WHOUR","Hours worked",90,1,1,NA,NA,0,"M.DE.Y.L.BE2.AA031.H.A","Buba RTDB",0,1
+"FAZ","FAZ indicator",91,NA,NA,1,NA,1,"FAZINDX","datastream",0,1
+"COM","",92,NA,NA,NA,NA,NA,"no access to Commerzbank indicator","Com",0,0
+"OECDL1","Composite leading indicator (amplitude restored)",93,1,1,NA,NA,2,"LOLITOAA","OECD",0,1
+"OECDL2","Composite leading indicator (trend restored)",94,NA,1,NA,NA,2,"LOLITOTR_STSA","OECD",0,1
+"OECDL3","Composite leading indicator (normalized)",95,1,1,NA,NA,2,"LOLITONO","OECD",0,1
+"MT.all","all observations",96,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.future","all observations Germany",97,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.presence","all observations present",98,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.climate","all observations future",99,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.de","all observations climate",100,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.de.future",NA,101,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.de.present",NA,102,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.de.climate",NA,103,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.budget",NA,104,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.currency",NA,105,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.labor",NA,106,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.cycle",NA,107,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.taxation",NA,108,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.de.budget",NA,109,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.de.labor",NA,110,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.de.cycle",NA,111,1,1,NA,NA,0,NA,"Mediatenor International",0,1
+"MT.de.taxation",NA,112,1,1,NA,NA,0,NA,"Mediatenor International",0,1
