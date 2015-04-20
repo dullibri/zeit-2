@@ -20,12 +20,12 @@ source(paste(auxcodedir,'/olsbic1setgetting2.R',sep=''))
 
 
 # setting some values
-horizon=1 # inflation is published with on month lag, but in the following, the variables
+# horizon=1 # inflation is published with on month lag, but in the following, the variables
 # are only lagged.
 target='IP' # core inflation
 disregard='IP-CONST'# a variable that is a nearly perfect substitute for target.
 max.lag=12 # maximum lag length to be considered 
-max.obs=48 # maximum number of past observations to be considered (rolling estimation);
+max.obs=60 # maximum number of past observations to be considered (rolling estimation);
 # setting negative window turns that of (recursive estimation)
 # rolling window size will be: max.obs-max.lag-horizon, as lags need to be considered for
 # estimation. 

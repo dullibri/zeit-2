@@ -1,6 +1,6 @@
 DirCode='h:/Git/zeit-2'
 target='IP'
-h=1 # horizon
+h=8 # horizon
 plag=2 # publication lag
 library(stringr)
 library(MCS)
@@ -8,8 +8,8 @@ auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')
 source(paste(auxcodedir,'/lag.exact.R',sep=''))
 source(paste(DirCode,'/Code/Clark_West_Test/f_Newey_West_vector.r',sep='') )
 source(paste(DirCode,'/Code/Clark_West_Test/f_Clark_West_Test.r',sep='')) 
-
-
+source(paste(auxcodedir,'/olsself.R',sep=''))
+source(paste(DirCode,'/Code/giacomini rossi/FB_Wald_CI.r',sep='')) 
 # creating aggregation matrix
 firstyear=1990
 lastyear=2015
@@ -71,14 +71,14 @@ targetm=t(matrix(rep(target.df[,target],nrow(fc)),ncol=nrow(fc)))
 
 
 fe=fc-targetm
-
+sfe=fe^2
 # attaching dates to the errors
 tdates=data[data$eval,'ym']
 colnames(fe)=tdates
 
 # getting basic statistics
-result.f=function(fe){
-        sfe=fc^2
+result.f=function(sfe){
+        
         rk.period=apply(sfe,2,rank)
         result=data.frame(mse=rowMeans(sfe),
                           rank.mean=rowMeans(rk.period)
@@ -89,7 +89,7 @@ result.f=function(fe){
         return(result)
 }
 
-result=result.f(fe)
+result=result.f(sfe)
 
 # recession (only 9 months)
 recession=ecri[row.names(ecri)%in%tdates,1]
@@ -104,6 +104,13 @@ cH=h
 cw=lapply(2:nrow(fc),function(i) f_Clark_West_Test(vFE_small, fe[i,], vFcst_small, fc[i,], cH))
 result[2:nrow(fc),'cw.p']=unlist(sapply(cw,function(x)x[2]))
 
+
+plot(target.df[,'IP'],type='l')
+lines(fc[1,],col='green')
+
+plot(target.df[,'IP'],type='l')
+lines(fc['IFO.EXP',],col='green')
+
 # To do:
 # - all tests in old paper
 # - giacomini rossi
@@ -112,15 +119,22 @@ result[2:nrow(fc),'cw.p']=unlist(sapply(cw,function(x)x[2]))
 # giacomini rossi ---------------------------------------------------------
 ###### Dating of Forecast Breakdowns ######
 # Surprise loss
-SL.arx = sqerror.arx-msr.arx
+Neval = ncol(fc)
+Nmodels=nrow(fc)
+SL.arx = sfe-rowMeans(sfe)
 
 # Variances
-sqerror.arx.demeaned=sqerror.arx-rowMeans(sqerror.arx)%*%matrix(1,nrow=1,ncol=Neval)
-SLL.arx=cov(t(sqerror.arx.demeaned))
+sfe.demeaned=sfe-rowMeans(sfe)%*%matrix(1,nrow=1,ncol=Neval)
+SLL.arx=cov(t(sfe.demeaned))
 SLL.arx=diag(SLL.arx)
 
 # Parameters
-lambda=2/3*(max.obs/Neval)
+Nobs=sapply(forecast.all,function(x) x$nobs)
+Nobs.dev=max(as.numeric(apply(Nobs,1,max))-as.numeric(apply(Nobs,1,min)))
+if (Nobs.dev>2){stop('Nobs vary to much')}
+min.obs=as.numeric(apply(Nobs,1,min))
+lambdavec=min.obs*2/3
+# lambda=2/3*(max.obs/Neval)
 
 # HAC variance estimator of demeaned surprise losses
 bw=0#floor(Neval^(1/3))# rounded down
@@ -134,14 +148,14 @@ for (n in 1:Nmodels){
                 }
                 SLL = SLL+t(sqerror.demeaned)%*%sqerror.demeaned/Neval
         }
-        SLL.arx=apply(sqerror.arx.demeaned,1,hacest,Neval,bw)
+        SLL.arx=apply(sfe.demeaned,1,hacest,Neval,bw)
 }
 # Variance estimator out-of-sample losses
-sigma2 = lambda*SLL.arx
+sigma2 = lambdavec*SLL.arx
 
 # regression of SL on themselves
 pmax = 12
-source('olsself.R')
+
 surprise.BIC = matrix(NA,nrow=pmax,ncol=Nmodels)
 for (p in 1:pmax){
         surprise.res=apply(SL.arx,1,olsself,p)
@@ -161,7 +175,7 @@ surprise.fit=sapply(surprise.res,function(x) x$yfit)
 source('FB_Wald_CI.R')
 surprise.CI = list()
 for (n in 1:Nmodels){
-        trash = FB_Wald_CI(surprise.res[[n]]$Z,surprise.res[[n]]$res,surprise.res[[n]]$b,Neval,max.obs,sigma2[n],1,"rolling",bw,0.05)
+        trash = FB_Wald_CI(surprise.res[[n]]$Z,surprise.res[[n]]$res,surprise.res[[n]]$b,Neval,min.obs[n],sigma2[n],1,"rolling",bw,0.05)
         surprise.CI[[n]]=trash$SLfitCI
 }
 
