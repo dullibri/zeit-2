@@ -181,7 +181,7 @@ for (n in 1:Nmodels){
 
 # saving files ------------------------------------------------------------
 
-
+result.mt=result[grep('zeit',row.names(result)),]
 
 
 result.mt=result[grep('MT.',row.names(result)),]
