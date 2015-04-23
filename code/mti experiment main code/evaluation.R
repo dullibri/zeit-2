@@ -95,6 +95,7 @@ for (h in 1:12){
                                   rank.mean=rowMeans(rk.period)
                 )
                 result$rmse=result$mse^.5
+                result$theilsu=result$rmse/result['ar','rmse']
                 result$rank.rmse=round(rank(result$rmse),0)
                 result$rank.rank.mean=round(rank(result$rank.mean),0)  
                 return(result)
@@ -199,9 +200,20 @@ for (h in 1:12){
         resse[[h]]=result.mt
         write.csv(result.mt,paste(DirCode,'/results/results',target,'_',h,'_',maxobs,'.csv',sep=''))
 }
+mse.ind=seq(1,23,2)
+cw.p.ind=seq(2,24,2)
+tab=data.frame(matrix(NA,nrow=nrow(result.mt),ncol=24))
+row.names(tab)=row.names(result.mt)
+mser=sapply(resse,function(x) x[,c('theilsu')])
+tab[,mse.ind]=mser
 
-mser=sapply(resse,function(x) x[,c('rank.rmse')])
 cw.p=sapply(resse,function(x) x[,c('cw.p')])
-mser=cbind(mser,cw.p)
-row.names(mser)=row.names(result.mt)
-write.csv(mser,paste(DirCode,'/results/mse_rank_all_maxobs_',maxobs,'.csv',sep=''))
+cw.p2=cw.p
+cw.p[cw.p2>0.0549999999]=''
+cw.p[cw.p2<=0.0549999999]='**'
+cw.p[cw.p2<=0.0149999999]='***'
+tab[,cw.p.ind]=cw.p
+
+# mser=cbind(mser,cw.p)
+# row.names(mser)=
+write.csv(tab,paste(DirCode,'/results/mse_rank_all_maxobs_',maxobs,'.csv',sep=''))
