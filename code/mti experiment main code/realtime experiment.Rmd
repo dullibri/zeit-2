@@ -6,8 +6,8 @@ output: html_document
 ---
 
 ```{r}
-# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
-DirCode='h:/Git/zeit-2'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+# DirCode='h:/Git/zeit-2'
 
 # sourcing necassary scripts for estimation and forecast (for a description see "olsbmalag.Rmd")
 auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')
@@ -25,7 +25,7 @@ library('glmnet')
 target='IP' # core inflation
 disregard='IP.CONST'# a variable that is a nearly perfect substitute for target.
 max.lag=12 # maximum lag length to be considered 
-max.obs=60 # maximum number of past observations to be considered (rolling estimation);
+max.obs=54 # maximum number of past observations to be considered (rolling estimation);
 # setting negative window turns that of (recursive estimation)
 # rolling window size will be: max.obs-max.lag-horizon, as lags need to be considered for
 # estimation. 
