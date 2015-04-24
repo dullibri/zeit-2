@@ -19,9 +19,11 @@ source(paste(auxcodedir,'/olsbic3.R',sep=''))
 source(paste(auxcodedir,'/olsbic1setgetting2.R',sep=''))
 source(paste(auxcodedir,'/elanet.ind.R',sep=''))
 library('glmnet')
+library('elasticnet')
 # setting some values
 # horizon=1 # inflation is published with on month lag, but in the following, the variables
 # are only lagged.
+zeitraus=1 # disregard zeit and rword indicator
 target='IP' # core inflation
 disregard='IP.CONST'# a variable that is a nearly perfect substitute for target.
 max.lag=12 # maximum lag length to be considered 
@@ -42,8 +44,10 @@ df.unrevised=read.csv(paste(DirCode,'/data/data.csv'
 
 # dates as row.names, dates out of df
 dat.col=(grep('ym',colnames(df.unrevised))+1):ncol(df.unrevised)
+
 row.names(df.unrevised)=df.unrevised[,'ym']
 df.unrevised=df.unrevised[,dat.col] 
+rm(dat.col)
 zeit.ind=grep('zeit',colnames(df.unrevised))
 colnames(df.unrevised)=gsub('-','\\.',colnames(df.unrevised))
 
@@ -62,6 +66,13 @@ overview.nr=overview[names.nr,]
 
 # Saving a complete version of unrevised data (below, some of them are lagged to take account of realtime publication lags) 
 df.unrevised.compl=df.unrevised # df.unrevised=df.unrevised.compl
+
+if (zeitraus==1){
+        df.unrevised=df.unrevised[,-grep('zeit|rword',colnames(df.unrevised)),]
+        overview=overview[-grep('zeit|rword',row.names(overview)),]
+        overview.nr=overview.nr[-grep('zeit|rword',row.names(overview.nr)),]
+        names.nr=names.nr[-grep('zeit|rword',names.nr)]
+}
 
 ```
 Some of the variables that are not subject to data revisions are published with a publication lag nontheless.
@@ -223,27 +234,27 @@ for (horizon in 1:12){
                         set=set[(nrow(set)-cons.max+1):nrow(set),]
                         }
                 elanet[[vint.num]]=elanet.ind(set,y,yx,horizon,alpha=1)
-                
-                forecast=data.frame(matrix(NA,nrow=ncol(set)+1,length(extract)))
-                colnames(forecast)=extract
-                row.names(forecast)=c('ar',colnames(set))
-                
-                forecast['ar',extract.ar]=unlist(
-                        olsbic3(y,yx,horizon,max.lag)[extract]
-                        )
-                p1=forecast['ar','p1']       
-                
-                for (i in 1:ncol(set)){# i=1
-                        xx=cbind(yx,set[,i,drop=F])
-                        resu=unlist(
-                                olsbic1setgetting2(y,xx,horizon,max.lag,p1=p1)[extract]
-                                )
-                        if (length(resu)>0){
-                                forecast[colnames(set)[i],extract]=resu   
-                                }
-                        
-                        }# end model loop
-                forecast.all[[vint.num]]=forecast
+#                 
+#                 forecast=data.frame(matrix(NA,nrow=ncol(set)+1,length(extract)))
+#                 colnames(forecast)=extract
+#                 row.names(forecast)=c('ar',colnames(set))
+#                 
+#                 forecast['ar',extract.ar]=unlist(
+#                         olsbic3(y,yx,horizon,max.lag)[extract]
+#                         )
+#                 p1=forecast['ar','p1']       
+#                 
+#                 for (i in 1:ncol(set)){# i=1
+#                         xx=cbind(yx,set[,i,drop=F])
+#                         resu=unlist(
+#                                 olsbic1setgetting2(y,xx,horizon,max.lag,p1=p1)[extract]
+#                                 )
+#                         if (length(resu)>0){
+#                                 forecast[colnames(set)[i],extract]=resu   
+#                                 }
+#                         
+#                         }# end model loop
+#                 forecast.all[[vint.num]]=forecast
                 
                 }#end vintage loop
 
@@ -259,7 +270,7 @@ for (i in 1:length(elanet)){#i=1
 }
 write.csv(lassm,paste(DirCode,'/results/elanet_ranking',target,'_h',horizon,'.csv',sep=''))
 
-        save(forecast.all,file=paste(DirCode,'/results/',target,'_h',horizon,'_maxobs_',cons.max,'.RData',sep=''))
+#         save(forecast.all,file=paste(DirCode,'/results/',target,'_h',horizon,'.RData',sep=''))
 
         }
 ```

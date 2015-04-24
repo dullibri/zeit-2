@@ -8,7 +8,7 @@ for (i in 1:12){
         file=paste(DirCode,'/results/elanet_ranking',target,'_h',i,'.csv',sep='')
         raw[[i]]<- read.csv(file, header=T,stringsAsFactors=F,row.names=1)
 }
-sel=35
+sel=50
 for (i in 1:12){
         
         res.aux=data.frame(av.rk=rowSums(raw[[i]])/ncol(raw[[i]])
@@ -38,7 +38,7 @@ t=res.mt[,grep('nsel',colnames(res.mt))]
 # res.mt=result[mt.ind,]
 
 # special periods
-
+View(result[grep('MT.',row.names(result)),])
 t=raw[[11]]
 colnames(t)=vint.n
 t=t[grep('MT.',row.names(t)),]
