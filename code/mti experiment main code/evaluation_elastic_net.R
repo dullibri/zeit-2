@@ -1,11 +1,12 @@
 DirCode='h:/Git/zeit-2'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 target='IP'
 h=1 # horizon
 load(paste(DirCode,'/data/realtime_sets_cutoffday_31.RData',sep=''))
 vint.n=gsub('-31','',names(sets))
 raw=list()
 for (i in 1:12){
-        file=paste(DirCode,'/results/elanet_ranking',target,'_h',i,'.csv',sep='')
+        file=paste(DirCode,'/results/elanet_ranking',target,'_h',i, '.csv',sep='')
         raw[[i]]<- read.csv(file, header=T,stringsAsFactors=F,row.names=1)
 }
 sel=35
@@ -29,7 +30,7 @@ for (i in 1:12){
 }
 
 
-mt.ind=grep('MT.',row.names(result))
+mt.ind=grep('zeit.',row.names(result))
 res.mt=result[mt.ind,]
 t=res.mt[,grep('most.rk',colnames(res.mt))]
 t=res.mt[,grep('nsel',colnames(res.mt))]
