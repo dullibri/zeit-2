@@ -17,11 +17,11 @@
 
 
 # Setting directories for storing files -------------------------------------------------------
-# DirRawTexts="H:/Zeit" # text files are stored here
-DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
+DirRawTexts="H:/Zeit" # text files are stored here
+# DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
 
-# DirCode='H:/git/zeit-2' # main directory
-DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
+DirCode='H:/git/zeit-2' # main directory
+# DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------
@@ -49,7 +49,7 @@ listsubdirs=list.files(DirRawTexts)
 #  SentiWS: ------------------------------------------------------------------------
 #       getting the list of positive and negative words and their values -----------------------------------------------------------------
 #       valueword (lowercase) VALUEWORD (uppercase), created with valueword.R
-valueword=read.csv(paste(DirCode,'/valueword.csv',sep=''))
+valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
 
 # Texte eines Jahres laden -----------------------------------------------
 for (jj in 2014:2015){#jj=2015

@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html>
+<html class=" no-js" lang="en">
+    <head>
+        
+            <!-- prod DTM script -->
+            <script src="//assets.adobedtm.com/e0b918adcf7233db110ce33e1416a2e6448e08e6/satelliteLib-5c3c84854607a1fc3328b9b539472ebd81244f0b.js"></script>
+        
+        
+        
+        <meta name="robots" content="noarchive,NOODP" />
+        <meta name="description" content="JSTOR is a digital library of academic journals, books, and primary sources." />
+        <meta name="viewport" content="width=device-width" />
+        <meta charset="UTF-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwACUF9VGwoIUlJUAAA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"queueTime":0,"errorBeacon":"bam.nr-data.net","applicationTime":304,"agent":"js-agent.newrelic.com/nr-632.min.js","beacon":"bam.nr-data.net","transactionName":"MlAHYEpQC0dXV0ZRWAsaI0FWUhFdWVodWUURXAZYXWcMUUFhexZBDFASRwJCEVVUWFc=","licenseKey":"913fae2ed4","applicationID":"9863671"}</script>
+        
+    
+        <meta name="ST.publisher" content="Taylor &amp; Francis, Ltd." />
+    
+
+    
+        <meta name="ST.desc" content="ARCHIVE" />
+    
+
+    <meta name="ST.printIssn" content="01621459" />
+    <meta name="ST.onlineIssn" content="" />
+    <meta name="ST.PlatformAPIKey" content="83e2edc873d4" />
+ 
+        <link rel="apple-touch-icon" href="//www.jstor.org/articleview_20150413T1436/files/shared/images/apple-touch-icon.png" />
+        
+    <link rel="stylesheet" href="//www.jstor.org/articleview_20150413T1436/files/article-view/stylesheets/app.css" />
+
+        
+    <link rel="canonical" href="http://www.jstor.org/stable/2290993" />
+
+        <title>The Stationary Bootstrap on JSTOR</title>
+        <script src="//www.jstor.org/articleview_20150413T1436/files/shared/js/vendor/jquery-1-10-2.js"></script>
+    </head>
+    <body>
+        
+        
+        <div id="skipNav">
+            <a class="visuallyhidden" href="#content">Skip to Main Content</a>
+        </div>
+        
+        <nav id="nav-global" role="navigation">
+    <ul class=" inline-list menu menu-global">
+        <li class="name">
+            <a href="/" class="menu-heading" id="menu-global-home">JSTOR Home</a>
+        </li>
+        <li class="has-dropdown"><a href="/action/showAdvancedSearch" class="menu-heading" id="menu-global-search">Search</a>
+            <ul class="dropdown">
+                <li><a href="/action/showAdvancedSearch">Advanced Search</a></li>
+                <li><a href="/action/showArticleLocator">Citation Locator</a></li>
+            </ul>
+        </li>
+        <li class="has-dropdown"><a href="/action/showJournals" class="menu-heading" id="menu-global-browse">Browse</a>
+            <ul class="dropdown">
+                <li><a href="/action/showJournals">by Subject</a></li>
+                <li><a href="/action/showJournals?browseType=title">by Title</a></li>
+                <li><a href="/action/showJournals?browseType=publisherInstance">by Publisher</a></li>
+            </ul>
+        </li>
+        <li class="has-dropdown"><a href="/action/myJstorSettings" class="menu-heading" id="menu-global-myjstor">MyJSTOR</a>
+            <ul class="dropdown">
+                <li><a href="/action/myJstorSettings">Saved Citations</a></li>
+                <li><a href="/action/showAlertSettings?myJstor=true">Journal Alerts</a></li>
+                <li><a href="/action/doSavedSearch?myJstor=true&amp;action=savedSearch">Search Alerts</a></li>
+                <li><a href="/action/showShelf">Shelf</a></li>
+                <li><a href="/action/showSubscriptions">JPASS Downloads</a></li>
+                <li><a href="/action/showPurchases">Purchase History</a></li>
+                <li><a href="/action/showRegistrationUpdate?myJstor=true">My Profile</a></li>
+                
+                
+                
+            </ul>
+        </li>
+    </ul>
+    
+</nav>
+
+        
+        <div id="content" role="main" class="content row">
+            
+    
+        <div class="article-view small-12 columns brandingStripe">
+            <div class="row">
+                <div class="small-12 large-8 columns">
+                    
+    
+    <div class="row mtm">
+        
+        <div class="columns small-12 xlarge-6 xlarge-offset-6">
+            <form role="form" class="form-jstor basic-search-form row collapse" action="/action/doBasicSearch" method="GET">
+    
+    <div class="small-6 medium-8 large-7 columns">
+        
+        <input title="Search Box" name="Query" type="text" class="searchBox small" placeholder="" value="">
+    </div>
+    
+        <div class="small-4 medium-3 large-4 columns">
+            <div class="selectContainer">
+                <label class="visuallyhidden" for="QSFSearchFilter">Filter search by</label>
+                <select name="filter" id="QSFSearchFilter">
+                    
+                        <option value="iid:10.2307/i314312" selected="selected">In This Issue</option>
+                    
+                        <option value="jid:10.2307/j100549">In This Title</option>
+                    
+                        <option value="">All Content</option>
+                    
+                </select>
+            </div>
+        </div>
+    
+    <button type="submit" class="button tiny small-2 medium-1 columns">Search</button>
+    
+</form>
+
+        </div>
+    </div>
+
+                    
+                </div>
+                <div class="large-4 show-for-large-up columns prn">
+                    
+
+<ul id="nav-support" class=" menu menu-subcontent  inline-list">
+  
+    <li><a href="/"><img src="//www.jstor.org/articleview_20150413T1436/files/shared/images/jstor_logo.jpg" alt="JSTOR" /></a></li>
+    
+        <li><a href="/action/showLogin?redirectUri=%2Fstable%2F2290993">Login</a></li>
+    
+    <li><a href="http://about.jstor.org/support-training/help" target="_blank" title="This link opens in a new window">Help</a></li>
+    <li><a href="/action/showContactUSMain">Contact Us</a></li>
+    <li><a href="http://about.jstor.org/" target="_blank" title="This link opens in a new window">About</a></li>
+  
+</ul>
+
+    
+
+                </div>
+            </div>
+            <div class="article-view-info">
+            
+                <div class="row">
+                    <div class="small-12 large-8 columns">
+                    
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <ul class="breadcrumbs ">
+                                
+                                    <li class="breadcrumb-journal"><a href="/action/showPublication?journalCode=jamerstatasso">Journal of the American Statistical A...</a></li>
+                                    <li class="breadcrumb-issue">
+                                        <a href="/stable/i314312">Vol. 89, No. 428, Dec., 1994</a></li>
+                                    <li class="breadcrumb-article current">The Stationary Bo...</li>
+                                
+                                </ul>
+                            </div>
+                        </div>    
+                        <div class="row">
+                            <div class="small-12 xlarge-9 columns">
+                                
+
+
+<div class="row">
+    
+    <div class="small-12 medium-3 columns">
+        <a class="cover-url" href="/action/showPublication?journalCode=jamerstatasso"><img class="cover" src="http://www.jstor.org/literatum/publisher/jstor/journals/covergifs/jamerstatasso/cover.gif" alt="Journal of the American Statistical Association"></a>
+    </div>
+    
+    <div class="small-12 medium-9 columns ">
+        
+            
+                <h1 class="title">The Stationary Bootstrap</h1>
+            
+            
+                <div class="contrib">
+                    
+Dimitris N. Politis and Joseph P. Romano
+                </div>
+            
+        
+        
+            <div class="journal">
+                <cite>Journal of the American Statistical Association</cite>
+            </div>
+            <div class="src mbl">
+                Vol. 89, No. 428 (Dec., 1994), pp. 1303-1313
+            </div>
+            
+                <div class="publisher">
+                    Published by: <a href="http://www.jstor.org/action/showPublisher?publisherCode=taylorfrancis" class="publisher-link">Taylor & Francis, Ltd.</a> on behalf of the <a href="http://www.jstor.org/action/showPublisher?publisherCode=astata" class="publisher-link">American Statistical Association</a>
+                </div>
+             
+        
+        <div class="stable">
+            Stable URL: http://www.jstor.org/stable/2290993
+        </div>
+        <div class="count">
+            Page Count: 11
+        </div>
+    </div>
+</div>
+
+                            </div>
+                            <div class="small-12 xlarge-3 columns">
+                                
+
+
+
+    
+    
+
+
+<ul class="action-buttons">
+    
+<li class="download-pdf-button" data-tc-accepted="True">
+
+    <a href="/stable/pdf/2290993.pdf" target="_blank" class="button button-jstor pdfLink">Download PDF</a>
+
+</li>
+
+
+    <li class="citation-tools-button">
+        <a href="#" class="button button-jstor has-dropdown" data-dropdown="citation-tools-drop">
+            Citation Tools
+        </a>
+        <ul id="citation-tools-drop" data-doi="10.2307/2290993" data-title="The Stationary Bootstrap" data-dropdown-content class="f-dropdown content txtL">
+            <li class="save-citation">
+                <a href="/action/addFavoritePublication?jid=10.2307/2290993&redirectUri=/stable/2290993?saveCitation=true">
+                    Save Citation
+                </a>
+            </li>
+            <li class="export-citation">
+                <a href="/action/exportSingleCitation?singleCitation=true&doi=10.2307/2290993">
+                    Export Citation
+                </a>
+            </li>
+            <li class="track-citation">
+                <a href="/action/addCitationAlert?redirectUri=/stable/2290993?trackCitation=true&doi=10.2307/2290993">
+                    Track Citation
+                </a>
+            </li>
+            <li class="email-citation">
+                <a href="/action/emailCitations?userAction=list&from=true&singleCitation=true&doi=10.2307/2290993">
+                    Email Citation
+                </a>
+            </li>
+            
+                <li>
+                    
+
+
+
+
+    
+    <a class="ccc-logo" target="_blank" href="https://www.copyright.com/openurl.do?sid=pd_ITHAKA&servicename=all&WT.mc_id=tpd_ITHAKA19334192&issn=01621459&date=1994" title="This link opens in a new window">
+        Request Permissions
+    </a>
+
+                </li>
+            
+        </ul>
+    </li>
+        
+        <li class="journal_info_button">
+            <a href="#" class="button button-jstor has-dropdown" data-dropdown="journal_info_drop" aria-controls="journal_info_drop" aria-expanded="false">Journal Info</a>
+            
+<div id="journal_info_drop"  class="f-dropdown content medium txtL " data-dropdown-content aria-hidden="true" tabindex="-1" >
+    <a href="#" class="close close-overlay">&#9587;</a> 
+    <div class="journal lookslikeh2 drop-content-title">Journal of the American Statistical Association</div>
+
+    <div class="journal_description mtm"><strong>Description:</strong> The <cite>Journal of the American Statistical Association</cite> (JASA) has long been
+considered the premier journal of statistical science. Science Citation
+Index reported JASA was the most highly cited journal in the mathematical
+sciences in 1991-2001, with 16,457 citations, more than 50% more than the
+next most highly cited journals. Articles in JASA focus on statistical
+applications, theory, and methods in economic, social, physical,
+engineering, and health sciences and on new methods of statistical
+education.</div>
+    
+
+    <div class="coverage-period mtm"><strong>Coverage:</strong> 1922-2009 (Vol. 18, No. 137 - Vol. 104, No. 488)</div>
+
+
+    
+
+<div class="moving-wall mtm">
+    <dl class="accordion" data-accordion>
+        <dd class="accordion-navigation">
+            <strong>Moving Wall:</strong> 5 years <a href="#panel1">(What is the moving wall?)</a>
+            <div id="panel1" class="content mtm prl">
+                <dl>
+                    <dt class="hide">Moving Wall</dt>
+                    <dd class="alert-box secondary">
+                        <p>The "moving wall" represents the time period between the last issue
+                        available in JSTOR and the most recently published issue of a journal.
+                        Moving walls are generally represented in years. In rare instances, a
+                        publisher has elected to have a "zero" moving wall, so their current
+                        issues are available in JSTOR shortly after publication.<br>
+                        Note: In calculating the moving wall, the current year is not counted.<br>
+                        For example, if the current year is 2008 and a journal has a 5 year
+                        moving wall, articles from the year 2002 are available.</p>
+                        <dl>
+                            <dt><strong>Terms Related to the Moving Wall</strong></dt>
+                            <dd><strong>Fixed walls:</strong> Journals with no new volumes being added to the archive.</dd>
+                            <dd><strong>Absorbed:</strong> Journals that are combined with another title.</dd>
+                            <dd><strong>Complete:</strong> Journals that are no longer published or that have been
+                            combined with another title.</dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </div>
+            
+        </dd>
+    </dl>
+</div>
+
+
+
+    <div class="issn mtm"><strong>ISSN:</strong> 01621459</div>
+
+
+        
+    <div class="subjects mtm"><strong>Subjects:</strong> 
+            
+                <a href="/action/showJournals?discipline=6492891961">Science and Mathematics</a>,
+            
+                <a href="/action/showJournals?discipline=43693424">Statistics</a>
+            
+    </div>
+
+</div>               
+        </li>
+    
+</ul>
+
+<noscript>
+    <div class="clearfix" aria-hidden="true">
+        <div class="article-tools txtL pal">
+            <ul class="no-bullet mbn">
+                <li><strong>Article Tools</strong></li>
+                <li class="save-citation mvs"><a href="/action/addFavoritePublication?jid=10.2307/2290993&redirectUri=/stable/2290993?saveCitation=true">Save Citation</a></li>
+                <li class="export-citation mvs"><a href="/action/exportSingleCitation?singleCitation=true&doi=10.2307/2290993">Export Citation</a></li>
+                <li class="track-citation mvs"><a href="/action/addCitationAlert?redirectUri=/stable/2290993?trackCitation=true&doi=10.2307/2290993">Track Citation</a></li>
+                <li class="email-citation mvs"><a href="/action/emailCitations?userAction=list&from=true&singleCitation=true&doi=10.2307/2290993">Email Citation</a></li>
+                
+                <li class="mtl mvs">
+                    
+
+
+
+
+    
+    <a class="ccc-logo" target="_blank" href="https://www.copyright.com/openurl.do?sid=pd_ITHAKA&servicename=all&WT.mc_id=tpd_ITHAKA19334192&issn=01621459&date=1994" title="This link opens in a new window">
+        Request Permissions
+    </a>
+
+                </li>
+                <li class="mvs">
+                    <a href="/stable/2290993?item_view=journal_info" target="_blank">Journal Info</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</noscript>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="large-4 show-for-large-up columns">
+                        
+    <p id="provider-statement" class="smTxt">Your access to JSTOR provided by Deutsches Institut für Wirtschaftsforschung</p>
+
+
+                        <div class="ptm">
+                             <script type='text/javascript'>
+                                <!--//<![CDATA[
+                                var m3_u = (location.protocol=='https:' ?
+                                                'https://jatest.jstor.org/www/serve/ajs.php' :
+                                                'http://jatest.jstor.org/www/serve/ajs.php');
+
+                                if (!document.MAX_used){
+                                    document.MAX_used = ',';
+                                }
+
+                                document.write("<script type='text/javascript' src='" + m3_u);
+                                document.write("?zoneid=16");
+                                document.write("&amp;articleId=10.2307/2290993");
+                                document.write("&amp;urp=False");
+                                document.write("&amp;rfs=");
+                                document.write("&amp;publisherCode=taylorfrancis");
+                                document.write('&amp;cb=5753999652');
+
+                                if (document.MAX_used != ','){
+                                    document.write("&amp;exclude=" + document.MAX_used);
+                                }
+
+                                document.write(document.charset ?
+                                                        '&amp;charset='+document.charset :
+                                                        (document.characterSet ?
+                                                                '&amp;charset='+document.characterSet : ''));
+
+                                document.write("&amp;loc=" + escape(window.location));
+
+                                if (document.referrer) {
+                                    document.write("&amp;referer=" + escape(document.referrer));
+                                }
+
+                                if (document.context) {
+                                    document.write("&context=" + escape(document.context));
+                                }
+
+                                if (document.mmm_fo) {
+                                    document.write("&amp;mmm_fo=1");
+                                }
+
+                                document.write("'><\/script>");
+                                //]]>-->
+                            </script>
+                            <noscript>
+                                <a href="http://jatest.jstor.org/www/serve/ck.php?n=a680fa70&amp;cb=5753999652" target="_blank">
+                                    <img src="http://jatest.jstor.org/www/serve/avw-jstor.php?zoneid=16&amp;cb=5753999652&amp;n=a680fa70" border="0" alt=""/>
+                                </a>
+                            </noscript>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="article_view_content" class="article-view-content ptxl">
+                <div class="row collapse" style="max-width: 777px;">
+                    <div class="small-12 large-4 large-push-8 columns">
+                        <div id="issue-pager" class="ptm">
+                            
+                                
+                                    <a class="previous-item" href="/stable/2290992">&#171; Previous Item</a>
+                                
+                                &nbsp;|&nbsp;
+                                
+                                    <a class="next-item" href="/stable/2290994">Next Item &#187;</a>
+                                
+                            
+                        </div>
+                    </div>
+                    <div class="small-12 large-8 large-pull-4 columns">
+                        <dl class="tabs three-up" data-tab data-options="deep_linking:true; scroll_to_content: false">
+                            <dd class="active" id="page_scan_tab">
+                                <a role="tab" href="#page_scan_tab_contents">Article</a>
+                            </dd>
+                            <dd id="page_thumbnails_tab">
+                                <a role="tab" href="#page_thumbnails_tab_contents">Thumbnails</a>
+                            </dd>
+                            
+                            
+                                <dd id="references_tab">
+                                    
+                                    <a role="tab" href="#references_tab_contents" data-capn-logger='{"event_type":"view_summary", "added_dests":["COUNTER_LOGGER", "LEGACY_LOG"], "uuid":"632201ae-9805-4f1b-8c8f-4f7f7f558f4b", "lit_contractid":"4080", "lit_contentid":"1805080", "lit_entitlement_map":{"22688": [], "22687": [{"displayFormats": ["PDF High Res", "PDF with links", "PDF", "first page image", "HTML", "PDF Medium Res", "page images"], "license": "4080", "entitlement": "1805080", "licenseType": "Standard"}, {"displayFormats": ["PDF High Res", "PDF with links", "PDF", "first page image", "HTML", "PDF Medium Res", "page images"], "license": "1846696", "entitlement": "1805176", "licenseType": "Standard"}], "3737864": [], "5910216": [], "2": [], "62": [], "3": [], "67": []}, "entitlement_map":{"22688": [], "22687": [{"displayFormats": ["PDF High Res", "PDF with links", "PDF", "first page image", "HTML", "PDF Medium Res", "page images"], "license": "4080", "entitlement": "1805080", "licenseType": "Standard"}, {"displayFormats": ["PDF High Res", "PDF with links", "PDF", "first page image", "HTML", "PDF Medium Res", "page images"], "license": "1846696", "entitlement": "1805176", "licenseType": "Standard"}], "3737864": [], "5910216": [], "2": [], "62": [], "3": [], "67": []}, "lit_metadataid":"40586722", "lit_userid":"22687", "lit_sessionid":"21106607926423", "lit_subsessionid":"55304251073", "sessionid":"0", "doi":"10.2307/2290993", "item_doi":"10.2307/2290993", "content_id":"32a59ea1-164d-3469-8f79-e8540ef19dea", "item_id":"32a59ea1-164d-3469-8f79-e8540ef19dea", "uri":"/stable/2290993", "c3_success":"SUCCESS", "c3_uri":"stable/info/2290993"}'>References</a>
+                                    
+                                </dd>
+                            
+                        </dl>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns">
+                        <div class="tabs-content">
+                                                    
+                            <noscript>
+                                <div class="notify-error" aria-hidden="true">
+                                    You have javascript disabled.
+								</div>
+                                    
+                                        <p class="f15">To read this item, please use <a href="/stable/pdf/2290993.pdf">PDF</a></p>
+                                    
+                            </noscript>
+                            
+                            
+                                <div class="content active" role="tabpanel" id="page_scan_tab_contents" style="max-width: 777px;">
+                                    <div class="page-scan">
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="mbm">
+                <span class="page-scan-current-page">
+</span>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="page-scan-wrapper">
+        
+
+        
+<div class="previous-page">
+    <a href="#">
+        <span class="previous">Previous Page</span>
+        <span class="previous-bottom">Previous Page</span>
+    </a>
+</div>
+
+        <div class="page-center">
+            <div id="search-term-highlight-container" class="relative scan-image-wrapper loading" data-search-text="">
+                <img class="page-scan-container notResponsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-page="" data-last="11" alt="The Stationary Bootstrap "/>
+            </div>
+        </div>
+        
+<div class="next-page">
+    <a href="#">
+        <span class="next">Next Page</span>
+        <span class="next-bottom">Next Page</span>
+    </a>
+</div>
+
+        
+    </div>
+
+    
+            <div id="page1" data-doi="10.2307/2290993" data-page="1303" data-pagename="Viewing page 1303 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNTkudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE1OS54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page2" data-doi="10.2307/2290993" data-page="1304" data-pagename="Viewing page 1304 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjAudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2MC54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page3" data-doi="10.2307/2290993" data-page="1305" data-pagename="Viewing page 1305 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjEudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2MS54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page4" data-doi="10.2307/2290993" data-page="1306" data-pagename="Viewing page 1306 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjIudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2Mi54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page5" data-doi="10.2307/2290993" data-page="1307" data-pagename="Viewing page 1307 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjMudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2My54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page6" data-doi="10.2307/2290993" data-page="1308" data-pagename="Viewing page 1308 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjQudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2NC54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page7" data-doi="10.2307/2290993" data-page="1309" data-pagename="Viewing page 1309 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjUudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2NS54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page8" data-doi="10.2307/2290993" data-page="1310" data-pagename="Viewing page 1310 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjYudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2Ni54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page9" data-doi="10.2307/2290993" data-page="1311" data-pagename="Viewing page 1311 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjcudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2Ny54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page10" data-doi="10.2307/2290993" data-page="1312" data-pagename="Viewing page 1312 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjgudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2OC54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+            <div id="page11" data-doi="10.2307/2290993" data-page="1313" data-pagename="Viewing page 1313 of pages 1303-1313" data-s3="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3BhZ2VzL2R0Yy4xNjkudGlmLmdpZg" data-ocr="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9vY3JzLzE2OS54bWxfXy4uSlNUT1JfT0NSX0pTT04"></div>
+    
+</div>
+
+
+
+
+
+                                </div>
+                                <div class="content" role="tabpanel" id="page_thumbnails_tab_contents">
+                                    <div id="thumbnails" class="reading-length">
+    <h2>Page Thumbnails</h2>
+   
+    <div id="thumbs" class="mtl ">
+        <ul class="medium-block-grid-4 txtC pbs">
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=1">
+                        <img id="thumbnail_image_1"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNTkudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1303"/>
+                        <div>
+1303</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=2">
+                        <img id="thumbnail_image_2"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjAudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1304"/>
+                        <div>
+1304</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=3">
+                        <img id="thumbnail_image_3"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjEudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1305"/>
+                        <div>
+1305</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=4">
+                        <img id="thumbnail_image_4"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjIudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1306"/>
+                        <div>
+1306</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=5">
+                        <img id="thumbnail_image_5"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjMudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1307"/>
+                        <div>
+1307</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=6">
+                        <img id="thumbnail_image_6"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjQudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1308"/>
+                        <div>
+1308</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=7">
+                        <img id="thumbnail_image_7"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjUudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1309"/>
+                        <div>
+1309</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=8">
+                        <img id="thumbnail_image_8"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjYudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1310"/>
+                        <div>
+1310</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=9">
+                        <img id="thumbnail_image_9"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjcudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1311"/>
+                        <div>
+1311</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=10">
+                        <img id="thumbnail_image_10"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjgudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1312"/>
+                        <div>
+1312</div>
+                    </a>
+                </li>
+            
+                <li class="txtM">
+                    <a href="/stable/2290993?seq=11">
+                        <img id="thumbnail_image_11"
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             data-echo="czM6Ly9zZXF1b2lhLWNlZGFyL2NpZC1wcm9kLTEvMzJhNTllYTEvMTY0ZC8zNDY5LzhmNzkvZTg1NDBlZjE5ZGVhL2kzMTQzMTIvMjI5MDk5My9ncmFwaGljL3NtYWxsL2R0Yy4xNjkudGlmLmpwZw"
+                             alt="Thumbnail: Page 
+1313"/>
+                        <div>
+1313</div>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+    
+</div>
+                                </div>
+                            
+                            
+                            
+                                
+                                <div class="content" role="tabpanel" id="references_tab_contents">
+                                    <div id="references" class="reading-length">
+    
+    <div class="abstract" data-ajax="false">
+    <h2>Abstract</h2>
+    <div >
+    
+        <div class="abstract1">This article introduces a resampling procedure called the stationary bootstrap as a means of calculating standard errors of estimators and constructing confidence regions for parameters based on weakly dependent stationary observations. Previously, a technique based on resampling blocks of consecutive observations was introduced to construct confidence intervals for a parameter of the m-dimensional joint distribution of m consecutive observations, where m is fixed. This procedure has been generalized by constructing a "blocks of blocks" resampling scheme that yields asymptotically valid procedures even for a multivariate parameter of the whole (i.e., infinite-dimensional) joint distribution of the stationary sequence of observations. These methods share the construction of resampling blocks of observations to form a pseudo-time series, so that the statistic of interest may be recalculated based on the resampled data set. But in the context of applying this method to stationary data, it is natural to require the resampled pseudo-time series to be stationary (conditional on the original data) as well. Although the aforementioned procedures lack this property, the stationary procedure developed here is indeed stationary and possesses other desirable properties. The stationary procedure is based on resampling blocks of random length, where the length of each block has a geometric distribution. In this article, fundamental consistency and weak convergence properties of the stationary resampling scheme are developed.</div>
+    
+    </div>
+</div>
+
+    
+    
+</div>
+                                </div>
+                                
+                            
+                        </div>
+                    </div>
+                </div>
+                
+<div class="mbxl ">
+
+    <div class="copyright-statement">
+    <cite>Journal of the American Statistical Association</cite> © 1994 <a href="http://www.jstor.org/action/showPublisher?publisherCode=astata" class="publisher-link">American Statistical Association</a>
+</div>
+
+</div>
+            </div>
+        </div>
+    
+
+        </div>
+        
+        <footer class="row">
+    <div class="large-12 columns prn">
+        <ul class="inline-list menu menu-footer">
+            <li><a href="/">JSTOR Home</a></li>
+            <li><a href="http://about.jstor.org/" target="_blank" title="This link opens in a new window">About</a></li>
+            <li><a href="/action/showAdvancedSearch">Search</a></li>
+            <li><a href="/action/showJournals">Browse</a></li>
+            <li><a href="/page/info/about/policies/terms.jsp" target="_blank" title="This link opens in a new window">Terms and Conditions</a></li>
+            <li><a href="/page/info/about/policies/privacy.jsp" target="_blank" title="This link opens in a new window">Privacy Policy</a></li>
+            <li><a href="http://about.jstor.org/content/jstors-use-cookies" target="_blank" title="This link opens in a new window">Cookies</a></li>
+            <li><a href="/page/info/about/policies/accessibility.jsp" target="_blank" title="This link opens in a new window">Accessibility</a></li>
+            <li><a href="http://about.jstor.org/support-training/help" target="_blank" title="This link opens in a new window">Help</a></li>
+            <li><a href="/action/showContactUSMain">Contact us</a></li>
+        </ul>
+        <p>JSTOR is part of ITHAKA, a not-for-profit organization helping the academic community use digital technologies to preserve the scholarly record and to advance research and teaching in sustainable ways.<br />
+        &copy;2000-2015 ITHAKA. All Rights Reserved. JSTOR&reg;, the JSTOR logo, JPASS&reg;, and ITHAKA&reg; are registered trademarks of ITHAKA.</p>
+    </div>
+</footer>
+
+        
+        <!-- DTM Footer code -->
+        <script type="text/javascript">_satellite.pageBottom();</script>
+        
+        <div id="SCData" 
+    data-pagename="articleview"
+data-myjstorstatus="Logged Out"
+data-journal="Journal of the American Statistical Association"
+data-title="The Stationary Bootstrap"
+
+    
+        data-publisher="Taylor &amp; Francis, Ltd."
+    
+        data-publisher="American Statistical Association"
+    
+
+data-issue="No. 428"
+data-contenttype="journal"
+data-authenticationstatus="Institutional"
+data-authorizationstatus="Standard"
+data-institution="Deutsches Institut für Wirtschaftsforschung"
+data-event="Content View"
+data-events="ContentView"
+data-server="www.jstor.org"
+ class="hide"></div>
+
+        
+        
+        
+        
+            
+    <script type="text/javascript" src="//www.jstor.org/articleview_20150413T1436/files/article-view/article-view.js"></script>
+
+        
+        
+        
+    <script>
+    // COUNTER 4 tagging code
+    window.starData = {
+        'contentType': 'journal',
+        'journal': 'Journal of the American Statistical Association',
+        'article': 'The Stationary Bootstrap',
+        'institution_consortium_map': ['diw.de'],
+        'yop': '1994',
+        'doi': '10.2307/2290993',
+        'SEARCH_FED': 'True'
+    };
+</script>
+    
+            
+            <script>
+                var _$tarQ = _$tarQ || [];
+                    
+                (function (){ 
+                        var stars = document.createElement('script'),
+                            s = document.getElementsByTagName('script')[0];
+                        
+                        stars.async= true; 
+                        stars.type = 'text/javascript'; 
+                        stars.src =  "http://receiver.star.ith.semcs.net/star-aws.js" ; 
+                        
+                        s.parentNode.insertBefore(stars, s); 
+                    }
+                )();
+            </script>
+            
+        
+
+        <div class="hide" data-debug="False"></div>
+    </body>
+</html>

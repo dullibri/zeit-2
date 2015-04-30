@@ -1,0 +1,15 @@
+﻿anti,
+kein,
+keine,
+keinen,
+keinem,
+keiner,
+keinesfalls,
+keineswegs,
+nicht,
+nie,
+niemals,
+niente
+,nix
+,null,
+ohne,unmöglich

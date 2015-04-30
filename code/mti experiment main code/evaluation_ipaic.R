@@ -1,5 +1,5 @@
 DirCode='h:/Git/zeit-2'
-DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 target='IP'
 # target='CPI.EX'
 max.hor=15
@@ -7,13 +7,18 @@ rec=0
 plag=2 # publication lag
 library(stringr)
 library(glmulti)
-
+ni=4 # number of indicators in output
 
 
 auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')
 source(paste(auxcodedir,'/lag.exact.R',sep=''))
 source(paste(DirCode,'/Code/Clark_West_Test/f_Newey_West_vector.r',sep='') )
 source(paste(DirCode,'/Code/Clark_West_Test/f_Clark_West_Test.r',sep='')) 
+
+source(paste(DirCode,'/Code/white_test/f_White_Reality_Check.r',sep='') )
+# source(paste(DirCode,'/Code/white_test/Conduct_White_Test.r',sep='') )
+source(paste(DirCode,'/Code/f_Politis_Romano_Bootstrap.R',sep='') )
+
 source(paste(auxcodedir,'/olsself.R',sep=''))
 source(paste(DirCode,'/Code/giacomini rossi/FB_Wald_CI.r',sep='')) 
 # creating aggregation matrix
@@ -295,7 +300,7 @@ for (h in 1:max.hor){# h=1 #
         
         # write.csv(result.c,paste(DirCode,'/results/results_comb_',target,h,'.csv',sep=''))
 }
-ni=2 # number of indicators in output
+
 theil.ind=seq(1,(max.hor*ni)-1,ni)
 rank.ind=seq(2,(max.hor*ni),ni)
 R.ind=seq(3,(max.hor*ni),ni)
@@ -333,6 +338,7 @@ rank.mt=sapply(mt,function(x) x$rank.theilsu)
 cra=sapply(cr,function(x) x$rank.theilsu)
 row.names(cra)=row.names(result)
 cra.mt=cra[grep('MT.',row.names(cra)),]
+rank.rr.mt=sapply(mt,function(x) x$Rr)
 # MT=data.frame(matrix(NA,nrow=nrow(result.mt),ncol=max.hor*2))
 # 
 # MT[,theil.ind]=round(theil.mt,2)

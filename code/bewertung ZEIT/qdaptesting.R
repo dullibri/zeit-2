@@ -8,7 +8,9 @@ pos.w=valueword['wert'>0,'wert']
 neg=as.character(valueword[valueword$wert<0,'wort',drop=T])
 # neg=tolower(neg)
 neg.w=valueword[valueword$wert<0,'wert']
-pf=polarity_frame(pos,neg,pos.w,neg.w,env=F)
+pf=polarity_frame(pos,neg,pos.w,neg.w)
+
+# pf=polarity_frame(pos,neg,pos.w,neg.w,env=F)
 
 =======
 require('qdap')
@@ -66,7 +68,7 @@ neg=as.character(valueword[valueword$wert<0,'wort',drop=T])
 neg.w=valueword[valueword$wert<0,'wert']
 pf=sentiment_frame(pos,neg,pos.w,neg.w)
 # getting list of negative words
-negating=read.csv(paste(DirCode,'/data/sentistrength_de/NegatingWordListueberarbeitet.txt',sep=''),header=F)
+negating=read.csv(paste(DirCode,'/data/sentistrength_de/negators.csv',sep=''),header=F)
 negating=negating[!negating=='']
 negating=c(negating,c(''))
 # splittet den text in sätzte auf und fügt $tot hinzu zur paragraph zuordnung

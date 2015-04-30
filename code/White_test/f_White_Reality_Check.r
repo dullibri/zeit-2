@@ -73,12 +73,12 @@ mat = benchmark # mat = 0 benchmark is zero
 blockparam = 1 / blockparam
 
 # Actual Politis Romano bootstrap as described in Politis and Romano (1994)
-fstarroof =  f_Politis_Romano_Bootstrap(alternative, n, blockparam, display, flag, mat)
+delta =  f_Politis_Romano_Bootstrap(alternative, n, blockparam, display, flag, mat)
 
 froof = colMeans(f)
 Vl = max(sqrt(NRow)*froof)
 
-delta = fstarroof - repmat(froof, n, 1)
+# delta =  - repmat(froof, n, 1)
 Vlstar = rowMaxs(sqrt(NRow)*delta)
 
 #Vlstar = sort(Vlstar)
