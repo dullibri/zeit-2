@@ -1,5 +1,5 @@
-DirCode='h:/Git/zeit-2'
-# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+# DirCode='h:/Git/zeit-2'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 target='IP'
 # target='CPI.EX'
 max.hor=15
@@ -14,8 +14,8 @@ post=0 # nur post recession
 
 library(stringr)
 library(glmulti)
-library(pracma)
-library(MCS)
+# library(pracma)
+# library(MCS)
 source(paste(DirCode,'/code/hansen_2005_test/f_Hansen_2005_Test_statistic.R',sep=''))
 source(paste(DirCode,'/code/hansen_2005_test/f_Newey_West_bootstrapable.R',sep=''))
 
@@ -140,17 +140,17 @@ for (h in 1:max.hor){# h=14
         
         
         
-        alternative = as.matrix(tfe[, -grep('ar',colnames(tfe))])
-        benchmark=tfe[,'ar']
-        #         dim(benchmark) = c(nrow(tfe), 1)
-        nalt=ncol(alternative)
-        bbench=rep(benchmark,nalt)
-        dim(bbench)=c(nrow(tfe),ncol=nalt)
-        lossm=bbench^2-alternative^2
-        #         lossm=abs(bbench)-abs(alternative)
-        blockparam = 1/nrow(tfe) # Bootstrap block size
-        blockparam=0.9
-        nrep=1000
+        #         alternative = as.matrix(tfe[, -grep('ar',colnames(tfe))])
+        #         benchmark=tfe[,'ar']
+        #         #         dim(benchmark) = c(nrow(tfe), 1)
+        #         nalt=ncol(alternative)
+        #         bbench=rep(benchmark,nalt)
+        #         dim(bbench)=c(nrow(tfe),ncol=nalt)
+        #         lossm=bbench^2-alternative^2
+        #         #         lossm=abs(bbench)-abs(alternative)
+        #         blockparam = 1/nrow(tfe) # Bootstrap block size
+        #         blockparam=0.9
+        #         nrep=1000
         
         
         # lossm in einzelne zeitreihen in eine liste bringen
@@ -200,48 +200,48 @@ for (h in 1:max.hor){# h=14
         #         fela=lasso*fe
         
         # # get elasticnet selection
-        if (rec==1){
-                ela=read.csv(paste(DirCode,'/results/rec_elanet_ranking',target,'_h',h,'.csv',sep=''),row.names=1)
-                
-        }
-        if(rec==0&bicres==0){
-                ela=read.csv(paste(DirCode,'/results/elanet_rankingaic',target,'_h',h,'.csv',sep=''),row.names=1)
-                
-        }
-        if (rec==0&bicres==1){
-                ela=read.csv(paste(DirCode,'/results/elanet_ranking',target,'_h',h,'.csv',sep=''),row.names=1)
-                ela=ela[-grep('zeit|rword',row.names(ela)),]
-        }
+#         if (rec==1){
+#                 ela=read.csv(paste(DirCode,'/results/rec_elanet_ranking',target,'_h',h,'.csv',sep=''),row.names=1)
+#                 
+#         }
+#         if(rec==0&bicres==0){
+#                 ela=read.csv(paste(DirCode,'/results/elanet_rankingaic',target,'_h',h,'.csv',sep=''),row.names=1)
+#                 
+#         }
+#         if (rec==0&bicres==1){
+#                 ela=read.csv(paste(DirCode,'/results/elanet_ranking',target,'_h',h,'.csv',sep=''),row.names=1)
+#                 ela=ela[-grep('zeit|rword',row.names(ela)),]
+#         }
+#         
+#         
+#         row.names(ela)[grep(paste(target,'x',sep=''),row.names(ela))]='ar'
+#         
+#         if (post==1){
+#                 ela=ela[,post.fe.id]
+#         }else{
+#                 ela=ela[,1:nrow(target.df)]
+#         }
+#         
         
         
-        row.names(ela)[grep(paste(target,'x',sep=''),row.names(ela))]='ar'
-        
-        if (post==1){
-                ela=ela[,post.fe.id]
-        }else{
-                ela=ela[,1:nrow(target.df)]
-        }
-        
-        
-        
-        
-        ela20=ela<=20
-        fe20=fe*ela20
-        fe20[fe20==0]=NA
-        
-        
-        ela30=ela<=30
-        fe30=fe*ela30
-        fe30[fe30==0]=NA
-        
-        ela40=ela<=40
-        fe40=fe*ela40
-        fe40[fe40==0]=NA
-        
-        ela50=ela<=50
-        fe50=fe*ela50
-        fe50[fe50==0]=NA
-        
+#         
+#         ela20=ela<=20
+#         fe20=fe*ela20
+#         fe20[fe20==0]=NA
+#         
+#         
+#         ela30=ela<=30
+#         fe30=fe*ela30
+#         fe30[fe30==0]=NA
+#         
+#         ela40=ela<=40
+#         fe40=fe*ela40
+#         fe40[fe40==0]=NA
+#         
+#         ela50=ela<=50
+#         fe50=fe*ela50
+#         fe50[fe50==0]=NA
+#         
         # ela60=ela<=60
         # fe60=fe*ela60
         # fe60[fe60==0]=NA
@@ -250,13 +250,13 @@ for (h in 1:max.hor){# h=14
         # fe70=fe*ela70
         # fe70[fe70==0]=NA
         
-        ela128=ela<=128
-        fe128=fe*ela128
-        fe128[fe128==0]=NA
-        
-        ela154=ela<=154
-        fe154=fe*ela154
-        fe154[fe154==0]=NA
+#         ela128=ela<=128
+#         fe128=fe*ela128
+#         fe128[fe128==0]=NA
+#         
+#         ela154=ela<=154
+#         fe154=fe*ela154
+#         fe154[fe154==0]=NA
         
         # calculating combined forecast errors
         cfe=t(data.frame('median'=apply(fe,2,median)
@@ -279,7 +279,13 @@ for (h in 1:max.hor){# h=14
         fe=rbind(fe,cfe)
         
         sfe=fe^2
-        write.csv(t(sfe),paste(DirCode,'/results/fe_ip_rolling_aic/fe',h,'.csv',sep=''))
+        
+        # preparing data for matlab an writing to disk
+        sfe.exp=sfe
+        row.names(sfe.exp)=NULL
+        colnames(sfe.exp)=NULL
+        write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfe',h,'.csv',sep=''),
+                  , row.names=F,col.names=F,sep=',',qmethod='double')
         #         # attaching dates to the errors
         #         tdates=data[data$eval,'ym']
         #         colnames(fe)=tdates
@@ -311,9 +317,15 @@ for (h in 1:max.hor){# h=14
         if (post!=1){
                 recession=ecri[row.names(ecri)%in%tdates,1]
                 recession.ind=recession==0
-                fe.r=fe[,recession.ind]
-                result.r=result.f(fe.r)
+                sfe.r=sfe[,recession.ind]
+                result.r=result.f(sfe.r)
                 cr[[h]]=result.r
+                # preparing data for matlab an writing to disk
+                sfe.exp=sfe.r
+                row.names(sfe.exp)=NULL
+                colnames(sfe.exp)=NULL
+                write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfer',h,'.csv',sep=''),
+                          , row.names=F,col.names=F,sep=',')
         }
         # Clark West
         vFE_small=fe['ar',]
@@ -463,24 +475,28 @@ rank.rr.mt=sapply(mt,function(x) x$Rr)
 # colnames(MT)=paste(c('theilsu_h:','rank_h:'),rep(1:max.hor,each=ni),sep='')
 # 
 # 
-fres=list()
-for (h in 13:15){
-        inc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/',h,'/includedR.csv',sep=''),header=F)
-        exc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/',h,'/excludedR.csv',sep=''),header=F)
-        exin=rbind(exc,inc)
-        
-        inc.ind=rep(1,nrow(exin))
-        inc.ind[1:nrow(exc)]=0
-        pval=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/',h,'/pvalsR.csv',sep=''),header=F)
-        
-        mcs.h=data.frame(exin,pval,inc.ind)
-        result=rs[[h]]
-        result[,c('model.id','pval','inc')]=NA
-        result[mcs.h[,1],c('model.id','pval','inc')]=mcs.h  
-        fres[[h]]=result
-        
-}
-        
-fres=fres[[14]]
+
+
+# processing matlab mcs results -------------------------------------------
+
+# fres=list()
+# for (h in 13:15){
+#         inc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/',h,'/includedR.csv',sep=''),header=F)
+#         exc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/',h,'/excludedR.csv',sep=''),header=F)
+#         exin=rbind(exc,inc)
+#         
+#         inc.ind=rep(1,nrow(exin))
+#         inc.ind[1:nrow(exc)]=0
+#         pval=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/',h,'/pvalsR.csv',sep=''),header=F)
+#         
+#         mcs.h=data.frame(exin,pval,inc.ind)
+#         result=rs[[h]]
+#         result[,c('model.id','pval','inc')]=NA
+#         result[mcs.h[,1],c('model.id','pval','inc')]=mcs.h  
+#         fres[[h]]=result
+#         
+# }
+
+# fres=fres[[14]]
 
 
