@@ -1,0 +1,174 @@
+,group
+ar,ar
+WHOUR,financial
+IS.M,financial
+IS.D,financial
+IS.3M,financial
+IL.3,financial
+IL.5,financial
+IL.10,financial
+SPR.C.G,financial
+SPR.10Y.M,financial
+SPR.10Y.D,financial
+SPR.10Y.3M,financial
+SPR.1D.M,financial
+VOLA1,financial
+VOLA2,financial
+ZEW,financial
+GFK.EXP,financial
+CAPA,financial
+OECDL1,financial
+OECDL3,financial
+IFO.C,survey
+IFO.EXP,survey
+IFOM.C,survey
+IFOM.EXP,survey
+IFOMI.C,survey
+IFOMI.EXP,survey
+IFOMV.C,survey
+IFOMV.EXP,survey
+IFOWH.C,survey
+IFOWH.EXP,survey
+ESI.INDU,survey
+ESI.SERV,survey
+ESI.C,survey
+ESI.TRADE,survey
+ESI.CTR,survey
+ESI,survey
+ECBS2,survey
+ECBS3,survey
+ECBS4,survey
+ECBS5,survey
+ECBS6,survey
+ECBS7,survey
+ECCS99,survey
+ECCS1,survey
+ECCS2,survey
+ECCS3,survey
+ECCS4,survey
+ECCS5,survey
+ECCS6,survey
+ECCS7,survey
+ECCS8,survey
+ECCS9,survey
+ECCS10,survey
+ECCS11,survey
+ECCS12,survey
+MT.all,media
+MT.de,media
+MT.presence,media
+MT.future,media
+MT.climate,media
+MT.de.present,media
+MT.de.future,media
+MT.de.climate,media
+MT.currency,media
+MT.taxation,media
+MT.cycle,media
+MT.labor,media
+MT.budget,media
+MT.de.taxation,media
+MT.de.cycle,media
+MT.de.labor,media
+MT.de.budget,media
+DIS.M,financial
+DIS.D,financial
+DIS.3M,financial
+DIL.3,financial
+DIL.5,financial
+DIL.10,financial
+DVOLA1,financial
+DVOLA2,financial
+DIFO.C,financial
+DIFO.EXP,survey
+DIFOM.C,survey
+DIFOM.EXP,survey
+DIFOMI.C,survey
+DIFOMI.EXP,survey
+DIFOMV.C,survey
+DIFOMV.EXP,survey
+DIFOWH.C,survey
+DIFOWH.EXP,survey
+DGFK.EXP,survey
+DZEW,survey
+DECBS2,survey
+DECBS3,survey
+DECBS4,survey
+DECBS5,survey
+DECBS6,survey
+DECBS7,survey
+DESI.INDU,survey
+DESI.SERV,survey
+DESI.C,survey
+DESI.TRADE,survey
+DESI.CTR,survey
+DESI,survey
+DECCS99,survey
+DECCS1,survey
+DECCS2,survey
+DECCS3,survey
+DECCS4,survey
+DECCS5,survey
+DECCS6,survey
+DECCS7,survey
+DECCS8,survey
+DECCS9,survey
+DECCS10,survey
+DECCS11,survey
+DECCS12,survey
+DALQ,real economy
+DCAPA,real economy
+DWHOUR,real economy
+DOECDL1,composite indicators
+DOECDL2,composite indicators
+DOECDL3,composite indicators
+DMT.all,media
+DMT.future,media
+DMT.presence,media
+DMT.climate,media
+DMT.de,media
+DMT.de.future,media
+DMT.de.present,media
+DMT.de.climate,media
+DMT.budget,media
+DMT.currency,media
+DMT.labor,media
+DMT.cycle,media
+DMT.taxation,media
+DMT.de.budget,media
+DMT.de.labor,media
+DMT.de.cycle,media
+DMT.de.taxation,media
+DlnEX,financial
+DlnEXR,financial
+DlnDAX,financial
+DlnHWWA,survey
+DlnHWWAR,survey
+DlnHWWA.E,survey
+DlnHWWA.ER,survey
+DlnHWWA.EX,survey
+DlnHWWA.EXR,survey
+DlnOIL,financial
+DlnOILR,financial
+DlnCPI,prices and wages
+DlnCPI.EX,prices and wages
+DlnTARIF,prices and wages
+DlnIP.VORL,real economy
+DlnORD.C,real economy
+DlnORD.I,real economy
+DlnEW,real economy
+DlnVAC,real economy
+DlnFAZ,composite indicators
+DDlnHWWA,financial
+DDlnHWWAR,financial
+DDlnHWWA.E,financial
+DDlnHWWA.ER,financial
+DDlnHWWA.EX,financial
+DDlnHWWA.EXR,financial
+DDlnOIL,financial
+DDlnOILR,financial
+DDlnCPI,prices and wages
+DDlnCPI.EX,prices and wages
+DDlnTARIF,prices and wages
+median,combination
+mean,combination

@@ -1,0 +1,13 @@
+"","model","rmse","theilsu","rank.theilsu","in mcs","mcs.pvalue"
+"1","MT.de.present",60.92,0.88,93,0,0
+"2","MT.de.present",71.46,0.88,94,0,0
+"3","MT.present",73.85,0.86,89,0,0
+"4","MT.present",67.52,0.82,75,0,0
+"5","MT.de.present",49.14,0.72,47,0,0.09
+"6","MT.de.present",34.89,0.63,33,0,0
+"7","MT.de.present",21.8,0.71,24,0,0
+"8","MT.all",17.74,0.84,9,0,0.17
+"9","MT.de.future",15.66,0.83,5,1,0.86
+"10","MT.de.future",14.66,0.8,3,1,0.74
+"11","MT.de.climate",13.48,0.78,2,1,0.84
+"12","MT.de.future",13.22,0.78,2,1,0.84

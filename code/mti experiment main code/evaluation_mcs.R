@@ -11,7 +11,7 @@ bicres=0
 plag=2 # publication lag
 post=0 # nur post recession
 
-
+grouping=read.csv(paste(DirCode,'/data/grouping.csv',sep=''),row.names=1)
 library(stringr)
 library(glmulti)
 # library(pracma)
@@ -47,7 +47,7 @@ fbs=list() #forecastbreakdowns each period
 white.p=list()
 Hansen.pv=matrix(NA,nrow=max.hor,ncol=1)
 WT.pv=matrix(NA,nrow=max.hor,ncol=1)
-for (h in 1:max.hor){# h=14 
+for (h in 1:max.hor){# h=3 
         
         data=data.frame(m=rep(1:12,nyear)
                         ,month=rep(c(paste(0,1:9,sep=''),paste(10:12)),nyear)
@@ -60,6 +60,11 @@ for (h in 1:max.hor){# h=14
         row.names(ecri)=gsub('15/','',row.names(ecri))
         t1=t(matrix(unlist(strsplit(row.names(ecri),'/')),nrow=2))
         row.names(ecri)=apply(t1,1,function(x) paste(x[2],x[1],collapse='',sep='-'))
+        crisis.end1='2009-02'
+        crisis.1=which(row.names(ecri)==crisis.end1)
+        crisis.end2='2010-01'
+        crisis.2=which(row.names(ecri)==crisis.end2)
+        ecri[crisis.1:crisis.2,1]=0
         data[data$ym%in%row.names(ecri),'ecri']=ecri[,1]
         
         # transformation function
@@ -260,8 +265,8 @@ for (h in 1:max.hor){# h=14
         #         fe154[fe154==0]=NA
         
         # calculating combined forecast errors
-        cfe=t(data.frame('median'=apply(fe,2,median)
-                         ,'mean'=apply(fe,2,mean)
+        cfc=t(data.frame('median'=apply(fc,2,median)
+                         ,'mean'=apply(fc,2,mean)
                          #                          ,'medianlas'=apply(fela,2,median,na.rm=T)
                          #                          ,'meanlas'=apply(fela,2,mean,na.rm=T)
                          #                          ,'median20'=apply(fe20,2,median,na.rm=T)
@@ -277,12 +282,19 @@ for (h in 1:max.hor){# h=14
                          #                          ,'median154'=apply(fe154,2,median,na.rm=T)
                          #                          ,'mean154'=apply(fe154,2,mean,na.rm=T)
         ))
+        fc=rbind(fc,cfc)
+        
+        # calculating fe for combination schemes
+        target.mat=matrix(rep(target.df[,1],length(combrow)),nrow=nrow(cfc),byrow=T)
+        cfe=cfc-target.mat
         fe=rbind(fe,cfe)
         
+        # squared errors
         sfe=fe^2
         
         # preparing data for matlab an writing to disk
         sfe.exp=sfe
+        sfe.exp=sfe.exp[-grep('median|mean',row.names(sfe.exp)),]
         row.names(sfe.exp)=NULL
         colnames(sfe.exp)=NULL
         write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfe',h,'.csv',sep=''),
@@ -324,6 +336,7 @@ for (h in 1:max.hor){# h=14
                 cr[[h]]=result.r
                 # preparing data for matlab an writing to disk
                 sfe.exp=sfe.r
+                sfe.exp=sfe.exp[-grep('median|mean',row.names(sfe.exp)),]
                 row.names(sfe.exp)=NULL
                 colnames(sfe.exp)=NULL
                 write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfer',h,'.csv',sep=''),
@@ -348,15 +361,16 @@ for (h in 1:max.hor){# h=14
         # giacomini rossi ---------------------------------------------------------
         ###### Dating of Forecast Breakdowns ######
         # Surprise loss
+        meanmedian=grep('mean|median',row.names(sfe))
         Neval = ncol(fc)
-        Nmodels=nrow(fc)
+        Nmodels=nrow(fe[-meanmedian,])
         SL.arx = sfe-rowMeans(sfe)
         #         t=rowMeans(sfe)
-        meanmedian=grep('mean|median',row.names(SL.arx))
+        
         SL.arx=SL.arx[-meanmedian,]
         #         t=rowMeans(sfe)
         # Variances
-        sfe.demeaned=sfe-rowMeans(sfe)%*%matrix(1,nrow=1,ncol=Neval)
+        sfe.demeaned=sfe[-meanmedian,]-rowMeans(sfe[-meanmedian,])%*%matrix(1,nrow=1,ncol=Neval)
         SLL.arx=cov(t(sfe.demeaned))
         SLL.arx=diag(SLL.arx)
         
@@ -383,8 +397,6 @@ for (h in 1:max.hor){# h=14
                 SLL.arx=apply(sfe.demeaned,1,hacest,Neval,bw)
         }
         # Variance estimator out-of-sample losses
-        meanmedian=grep('mean|median',names(SLL.arx))
-        SLL.arx=SLL.arx[-meanmedian]
         sigma2 = lambdavec*SLL.arx
         
         # regression of SL on themselves
@@ -440,16 +452,11 @@ for (h in 1:max.hor){# h=14
 
 theil.ind=seq(1,(max.hor*ni)-1,ni)
 rank.ind=seq(2,(max.hor*ni),ni)
-R.ind=seq(3,(max.hor*ni),ni)
-Rr.ind=seq(4,(max.hor*ni),ni)
+
 # combination
 theil.cs=sapply(cs,function(x) x$theilsu)
 rank.cs=sapply(cs,function(x) x$rank.theilsu)
-
-R.cs=sapply(cs,function(x) x$R)
-Rr.cs=sapply(cs,function(x) x$Rr)
 CS=data.frame(matrix(NA,nrow=nrow(result.c),ncol=max.hor*ni))
-
 CS[,theil.ind]=round(theil.cs,2)
 CS[,rank.ind]=rank.cs
 if (ni==4){
@@ -458,7 +465,6 @@ if (ni==4){
         colnames(CS)=paste(c('theilsu_h:','rank_h:','R_h:','Rr_rank_h:'),rep(1:max.hor,each=ni),sep='')#
 }
 colnames(CS)=paste(c('theilsu_h:','rank_h:'),rep(1:max.hor,each=ni),sep='')#
-
 row.names(CS)=row.names(result.c)
 
 # best models
@@ -488,10 +494,11 @@ rank.rr.mt=sapply(mt,function(x) x$Rr)
 
 
 # processing matlab mcs results -------------------------------------------
+grouping=grouping[-grep('mean|median',row.names(grouping)),]
 
 fres=list()
-sfeorr='sfer'
-for (h in 1:15){
+sfeorr='sfe'
+for (h in 1:14){
         inc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/includeSQ',sfeorr,h,'.csv',sep=''),header=F)
         exc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/excludeSQ',sfeorr,h,'.csv',sep=''),header=F)
         exin=rbind(exc,inc)
@@ -501,19 +508,145 @@ for (h in 1:15){
         pval=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/pvalsSQ',sfeorr,h,'.csv',sep=''),header=F)
         
         mcs.h=data.frame(exin,pval,inc.ind)
-        result=rs[[h]]
+        if (sfeorr=='sfe'){
+                result=rs[[h]]  
+        }else{
+                result=cr[[h]]
+        }
+        
         result[,c('model.id','pval','inc')]=NA
         result[mcs.h[,1],c('model.id','pval','inc')]=mcs.h  
         fres[[h]]=result
         
 }
-tt=sapply(fres,function(x) sum(x[,'inc']))
-tt=sapply(fres,function(x) sum(x['MT.de.future','rank.theilsu']))
-tt=sapply(fres,function(x) sum(x['MT.de.future','pval']))
-tt=sapply(fres,function(x) sum(x['MT.de.future','inc']))
-tt=sapply(fres,function(x) x['MT.de.future','rank.theilsu'])
-tt=sapply(fres,function(x) row.names(x)[which.min(x[,'rank.theilsu'])])
+# mt models included
+MT.inc=sapply(fres,function(x) x[grep('MT',row.names(x)),'inc'])
 
+row.names(MT.inc)=row.names(result)[grep('MT',row.names(result))]
+MT.inc.sum=colSums(MT.inc)
+
+# all models inc
+fres=lapply(fres,function(x) x[-grep('mean|median',row.names(x)),])
+ALL.inc=data.frame(sapply(fres,function(x) x[,'inc']))
+row.names(ALL.inc)=row.names(result[-grep('mean|median',row.names(result)),])
+if (sfeorr=='sfe'){
+        incsfe=ALL.inc
+}else{
+        incsfer=ALL.inc
+}
+ALL.inc[,'grouping']=grouping
+ALL.inc[ALL.inc$grouping=='media','media']=1
+ALL.inc[ALL.inc$grouping!='media','media']=0
+t=aggregate(ALL.inc[,1:14],list(ALL.inc$'media'),sum)
+tall=aggregate(ALL.inc[,1:14],list(ALL.inc$'grouping'),sum)
+row.names(t)=c('other','media')
+row.names(tall)=tall[,1]
+tall=tall[,-c(1,2,3)]
+colnames(tall)=paste(1:12,sep='')
+t=t[,-1]
+t=as.matrix(t)
+t=t[,-c(1,2)]
+colnames(t)=paste(1:12,sep='')
+t=t/nrow(ALL.inc)*100
+if (sfeorr=='sfe'){
+        pdf(paste(DirCode,'/figs/mcs_share_media_all.pdf',sep=''))
+        barplot(t,legend=row.names(t)
+                ,ylim=c(0,60)
+                ,xlab='forecast horizon'
+                ,ylab='% of models included in MCS'
+        )  
+        dev.off()
+        write.csv(tall,paste(DirCode,'/results/mcs.all.csv',sep=''))
+        
+}
+if (sfeorr=='sfer'){
+        pdf(paste(DirCode,'/figs/mcs_share_media_recession.pdf',sep=''))
+        barplot(t,legend=row.names(t)
+                ,ylim=c(0,20)
+                ,xlab='forecast horizon'
+                ,ylab='% of models included in MCS'
+        ) 
+        dev.off()
+        write.csv(tall,paste(DirCode,'/results/mcs.recession.csv',sep=''))
+        
+}
+
+
+
+# stats for best models -------------------------------------
+fres.s=fres[3:14]
+
+# result=fres.s[[10]]
+best.m=function(result,h){
+        
+        result=result[sort(result$rank.theilsu,index.return=T)$ix,]
+        # result=result[-grep('mean|median',row.names(result)),]
+        result$rank.theilsu=sort(result$rank.theilsu,index.return=T)$ix
+        if (sfeorr=='sfe'){
+                colnames(result)=gsub('cw.p','cw.pvalue',colnames(result))
+                sel=c('rmse','theilsu','cw.pvalue','rank.theilsu','mcs.pvalue','in mcs') 
+                result$cw.pvalue=round(result$cw.pvalue,2)
+        }else{
+                sel=c('rmse','theilsu','rank.theilsu','mcs.pvalue','in mcs')
+        }
+        row.names(result)=gsub('presence','present',row.names(result))
+        result$mse=result$mse^.5
+        colnames(result)=gsub('mse','rmse',colnames(result))
+        colnames(result)=gsub('inc','in mcs',colnames(result))
+        rr=result
+        colnames(result)=gsub('^pval','mcs.pvalue',colnames(result))
+        
+        result=result[,sel]
+        t=result[grep('MT',row.names(result)),]
+        best=which.min(t$'rank.theilsu')
+        t=t[sort(t$rank.theilsu,index.return=T)$ix,]
+        t[,c('rmse','mcs.pvalue','theilsu')]=round(t[,c('rmse','mcs.pvalue','theilsu')],2)
+        
+#         t=head(t,1)
+        
+        
+        
+        t[,'horizon']=h
+        t=cbind(model=row.names(t),t)
+        if (sfeorr=='sfe'){
+                t=t[,c('model','rmse','theilsu','rank.theilsu','cw.pvalue','in mcs','mcs.pvalue')]
+                
+        }else{
+                t=t[,c('model','rmse','theilsu','rank.theilsu','in mcs','mcs.pvalue')]
+                    }
+        row.names(t)=NULL
+        
+        return(t)
+}
+tt=lapply(1:12,function(x) best.m(fres.s[[x]],x))
+
+
+
+for (h in 1:12){
+       if (h==1){
+               besth=tt[[h]]
+               besth$h=h
+               t=besth[1,]
+               tf=besth[besth$model=='MT.de.future',]
+               tc=besth[besth$model=='MT.de.climate',]
+               tp=besth[besth$model=='MT.present',]
+       }else{
+               besth=tt[[h]]
+               besth$h=h
+               t=rbind(t,besth[1,])
+               tf=rbind(tf,besth[besth$model=='MT.de.future',])
+               tc=rbind(tc,besth[besth$model=='MT.de.climate',])
+               tp=rbind(tp,besth[besth$model=='MT.present',])
+       } 
+       
+}
+favorite=rbind(tf,tc,tp)
+if (sfeorr=='sfe'){
+        write.csv(t,paste(DirCode,'/results/mtbestall.csv',sep=''))
+}else{
+        write.csv(t,paste(DirCode,'/results/mtbestrecession.csv',sep=''))
+        
+}
 
 
 # fres=fres[[14]]
@@ -523,35 +656,47 @@ fbprec=matrix(NA,nrow=nrow(fbphases),ncol=max.hor)
 row.names(fbprec)=row.names(sfe)[1:(nrow(sfe)-2)]
 fbpres=matrix(NA,nrow=4,ncol=max.hor)
 row.names(fbpres)=c('fbp percent best','percent of sign. better best','fbp MT.de.future','percent of sign. better MT')
-for (h in 1:max.hor){
+# collecting mcs values for comparison
+fbpmcsall=matrix(NA,nrow=3,ncol=max.hor)
+row.names(fbpmcsall)=c('Mean of models in MCS','MT.de.future','MT.de.climate')
+fbpmcsrec=matrix(NA,nrow=3,ncol=max.hor)
+row.names(fbpmcsrec)=c('Mean of models in MCS','MT.de.future','MT.de.climate')
+for (h in 1:14){#h=3
         t3=fbs[[h]]
         row.names(t3)=row.names(sfe)[1:(nrow(sfe)-2)]
+        # fbp for all periods
         fbpall[,h]=rowMeans(t3,na.rm=T)
-        data$ecri[data$ecri==0]
+        # get means of mcs models
+        fbpmcsall[1,h]=median(fbpall[incsfe[,h]==1,h])
+        # fbp for recession periods
         rdate=data$ym[which(data$ecri==0)]
         rcol=which(colnames(t3)%in%rdate)
         fbprec[,h]=rowMeans(t3[,rcol])
-        res=rs[[h]]
-        meanmedian=grep('mean|median',row.names(res))
-        reswm=res[-meanmedian,]
-        reswm[,'1']=0
-        reswm[reswm$rank.theilsu>res$rank.theilsu[meanmedian[1]],'1']=1
-        reswm[,'2']=0
-        reswm[reswm$rank.theilsu>res$rank.theilsu[meanmedian[2]],'2']=1
-        reswm[,'abzug']=rowSums(reswm[,c('1','2')])
-        reswm$rank.theilsu=reswm$rank.theilsu-reswm$'abzug'
-        reswm=reswm[,- c((ncol(reswm)-2):ncol(reswm))]
-        bestmodels=which(reswm$cw.p<=0.05)
-#         median(fbpall[bestmodels,h])
-fbpres['fbp percent best',h]=fbpall[reswm$rank.theilsu==1,h]
-fbpres['percent of sign. better best',h]=sum(fbpall[bestmodels,h]<fbpall[reswm$rank.theilsu==1,h])/(length(bestmodels)-1)
-
-fbpres['fbp MT.de.future',h]=fbpall['MT.de.future',h]
-fbpres['percent of sign. better MT',h]=sum(fbpall[bestmodels,h]<fbpall['MT.de.future',h])/(length(bestmodels)-1)
-
-
+        fbpmcsrec[1,h]=median(fbprec[incsfer[,h]==1,h])
+        
+        
+      
+        fbpres['fbp percent best',h]=fbpall[reswm$rank.theilsu==1,h]
+        fbpres['percent of sign. better best',h]=sum(fbpall[bestmodels,h]<fbpall[reswm$rank.theilsu==1,h])/(length(bestmodels)-1)
+        
+        fbpres['fbp MT.de.future',h]=fbpall['MT.de.future',h]
+        fbpres['percent of sign. better MT',h]=sum(fbpall[bestmodels,h]<fbpall['MT.de.future',h])/(length(bestmodels)-1)
+        
+        
         
 }
+
+# now best models
+
+fbpmcsall[2,]=fbpall['MT.de.future',]
+fbpmcsall[3,]=fbpall['MT.de.climate',]
+fbpmcsall=fbpmcsall[,3:14]
+colnames(fbpmcsall)=1:12
+
+fbpmcsrec[2,]=fbprec['MT.de.future',]
+fbpmcsrec[3,]=fbprec['MT.de.climate',]
+fbpmcsrec=fbpmcsrec[,3:14]
+colnames(fbpmcsrec)=1:12
 # recession compared to all
 plot(colMeans(fbprec)/colMeans(fbpall))
 # only for MT.future
