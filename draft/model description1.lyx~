@@ -1,0 +1,493 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+The data
+\end_layout
+
+\begin_layout Section
+Empirical set-up
+\end_layout
+
+\begin_layout Standard
+The basic empirical set-up for individual models is adapted from DS2010.
+ It explicitly addresses the ragged-edged problem.
+ However, we employ real-time data.
+ The latter is particularly important during recession periods as revisions
+ tend to be stronger in such situations.
+ ?Literaturzitat oder eigene kleine Auswertung.
+\end_layout
+
+\begin_layout Standard
+The estimation equation is given as: 
+\begin_inset Formula 
+\begin{equation}
+Y_{t+h}^{h}=\alpha+\sum_{i=l}^{p}\beta_{i}Y_{t-i}+\sum_{j=k}^{q}\gamma_{j}X_{t-j}+\epsilon_{t+h}^{h}\label{eq:individual models}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Y_{t+h}^{h}$
+\end_inset
+
+ is the annualized growth rate of industrial production over the next 
+\begin_inset Formula $h$
+\end_inset
+
+ month, 
+\begin_inset Formula $Y_{t+h}=1200/h\times\ln(IP_{t}/IP_{t-h})$
+\end_inset
+
+.
+ The growth rate of industrial production in levels, 
+\begin_inset Formula $IP_{t}$
+\end_inset
+
+, is defined as 
+\begin_inset Formula $Y_{t}=\Delta\ln IP_{t}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $X_{t}$
+\end_inset
+
+ is a candidate predictor, 
+\begin_inset Formula $\epsilon_{t+h}^{h}$
+\end_inset
+
+ is an error term and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $\beta$
+\end_inset
+
+, and 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ are regression coefficients.
+ The timely availability can be taken account of by 
+\begin_inset Formula $l$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ German industrial production is available only with a time lag of 
+\begin_inset Formula $l=3$
+\end_inset
+
+ month.
+ The publication lag of the candidate regressors differ from 
+\begin_inset Formula $k=0$
+\end_inset
+
+, mostly for financial and media data, up to 
+\begin_inset Formula $k=2$
+\end_inset
+
+ month.
+ The lag length is optimized using the Akaike information criterion.
+ First, 
+\begin_inset Formula $p$
+\end_inset
+
+ is estimated.
+ Then, holding 
+\begin_inset Formula $p$
+\end_inset
+
+ fixed, 
+\begin_inset Formula $q$
+\end_inset
+
+ is estimated.
+\end_layout
+
+\begin_layout Standard
+Forecasts for 1 to 12 month horizons are computed in a pseudo-out-of-sample
+ set-up:
+\end_layout
+
+\begin_layout Itemize
+The forecasts are based on the information set available to a forecaster
+ at the forecast origin, that is, the moment in time, the forecasts are
+ made.
+ 
+\end_layout
+
+\begin_layout Itemize
+The first forecast origin is 2005:12, the last one is 2014:11 for h=1, respectiv
+ely 2013:11 for h=12.
+\end_layout
+
+\begin_layout Itemize
+The estimations are based on a rolling window of 60 month.
+ Employing rolling windows increases adaptability to shocks see ??.
+ Furthermore, it is required for the Hansen test (?auch white).
+\end_layout
+
+\begin_layout Itemize
+Each forecast origin, the lag-length are optimized and the model is up-dated.
+\end_layout
+
+\begin_layout Itemize
+All real indicators are deflated using realtime CPI-data.
+ 
+\end_layout
+
+\begin_layout Section
+Forecast evaluation
+\end_layout
+
+\begin_layout Subsection
+MSFE and Theil's U
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\widehat{e}_{i,t+h}^{h}=Y_{t+h}^{h}-\widehat{Y}_{i,t+h|t}^{h}$
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+and 
+\begin_inset Formula $\widehat{e}_{0,t+h}^{h}=Y_{t+h}^{h}-\widehat{Y}_{0,t+h|t}^{h}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+be the forecast error of model 
+\begin_inset Formula $i$
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+respectively for the baseline autoregressive (AR) model that does not include
+ indicator variables
+\end_layout
+
+\end_inset
+
+ for forecast origin 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ The average performance of a model is measured using the mean squared forecast
+ error (MSFE) defined as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+MSFE_{i}=\frac{\Sigma_{t=T_{1}}^{T_{2}-h}(\widehat{e}_{i,t+h}^{h})^{2}}{T_{2}-h-T_{1}+1},
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ is the first and 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ the last forecast origin.
+ Due to taking squares the 
+\begin_inset Formula $MSFE_{i}$
+\end_inset
+
+ tends to overly emphasize differences between models, so that we will concentra
+te on the root mean squared forecast error, 
+\begin_inset Formula $RMSFE_{i}$
+\end_inset
+
+.
+ For pairwise comparisons we employ the Theil's U defined as
+\begin_inset Formula 
+\begin{equation}
+TU_{i}=\frac{RMSFE_{i}}{RMSFE_{0}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+indicating the relative Performance of model 
+\begin_inset Formula $i$
+\end_inset
+
+ with respect to the baseline model 
+\begin_inset Formula $i=0$
+\end_inset
+
+.
+ A value of 
+\begin_inset Formula $TU_{i}>1$
+\end_inset
+
+, 
+\begin_inset Formula $TU_{i}<1$
+\end_inset
+
+, and 
+\begin_inset Formula $TU_{i}$
+\end_inset
+
+=1 indicate that model 
+\begin_inset Formula $i$
+\end_inset
+
+ performs worse, better and as good as the baseline model, respectively.
+ The baseline model is the autoregressive (AR) model.
+ It is defined as in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:individual models"
+
+\end_inset
+
+, however, there is no indicator Variable included.
+\end_layout
+
+\begin_layout Subsection
+Tests
+\end_layout
+
+\begin_layout Subsubsection
+Pairwise Tests
+\end_layout
+
+\begin_layout Standard
+In order to establish if an indicator is useful for forecasting we compare
+ the indicator model to the baseline AR model.
+ However, the former nests the latter.
+ Under the null that the parsimonious model generates the data, the larger
+ model thus introduces noise into its forecasts by estimating parameters
+ whose population values are zero.
+ Therefore, the mean squared prediction error (MSFE) from the parsimonious
+ is expected to be smaller than that of the larger model.
+ Hence we employ the statistic proposed by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "clark2006using"
+
+\end_inset
+
+, it allows a general parametric specification for the parsimonious model.
+ In order to test the null hypothesis that the squared forecast errors of
+ the baseline model are significantly smaller than those of the larger model
+ 
+\begin_inset Formula $i$
+\end_inset
+
+, they augment the loss differences, 
+\begin_inset Formula $\widehat{d}_{i,t+h}=\widehat{e}_{0,t+h}^{h}{}^{2}-\widehat{e}_{i,t+h}^{h}{}^{2}$
+\end_inset
+
+ with the adjustment term 
+\begin_inset Formula $\widehat{a}_{i,t+h}=(\widehat{Y}_{0,t+h}^{h}-\widehat{Y}_{i,t+h|t}^{h})^{2}$
+\end_inset
+
+ giving:
+\begin_inset Formula 
+\begin{equation}
+\widehat{f}_{i,t+h}=\widehat{d}_{i,t+h}+\widehat{a}_{i,t+h}.\label{eq:cw series}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In turn, 
+\begin_inset Formula $\widehat{f}_{t+h}$
+\end_inset
+
+ is regressed on a constant.
+ If the resulting t-statistic for a zero coefficient exceeds 
+\begin_inset Formula $+1.282$
+\end_inset
+
+ for one sided ten percent level test or 
+\begin_inset Formula $+1.645$
+\end_inset
+
+ for a one sided five percent level test, the null is rejected.
+ For autocorrelated forecast errors they suggest an autocorrelation consistent
+ standard error.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Joint Tests
+\end_layout
+
+\begin_layout Standard
+When testing pairwise if indicator augmented models outperform the baseline
+ AR, dominance may be signaled merly by chance.
+ Thus, in order to test whether a particular forecasting procedure is outperform
+ed by alternative forecasts the reality check for data snooping 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "white2000reality"
+
+\end_inset
+
+ is applied.
+ It has been developed for comparing multiple forecasting models to a baseline
+ model simultaneously whith the null hypothesis that the baseline model
+ is not inferior to any of its rivals.
+ The null is given as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+H_{0}: & E(d_{i,t+h})\leq0 & \forall i=1,...,m.\label{eq:spa}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is rejected when at least one of the rivals yields significantly better
+ forecasts.
+ the expected loss differential can be consistently estimated using the
+ sample mean 
+\begin_inset Formula $\overline{d}_{i}$
+\end_inset
+
+.
+ White proposes the sample mean statistic
+\begin_inset Formula 
+\begin{equation}
+RC=\max_{k}P^{1/2}\overline{d}_{i}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As the limiting distribution is not unique under the null hypothesis, the
+ stationary bootstrap method of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "politis1994stationary"
+
+\end_inset
+
+ is employed.
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Subsection
+All periods
+\end_layout
+
+\begin_layout Subsection
+Recession
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "mti_ip"
+options "plainnat"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

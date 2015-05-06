@@ -1,5 +1,5 @@
-# DirCode='h:/Git/zeit-2'
-DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+DirCode='h:/Git/zeit-2'
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 target='IP'
 # target='CPI.EX'
 max.hor=15
@@ -18,7 +18,7 @@ library(glmulti)
 # library(MCS)
 source(paste(DirCode,'/code/hansen_2005_test/f_Hansen_2005_Test_statistic.R',sep=''))
 source(paste(DirCode,'/code/hansen_2005_test/f_Newey_West_bootstrapable.R',sep=''))
-
+source(paste(DirCode,'/Code/giacomini rossi/FB_Wald_CI.R',sep=''))
 ni=4 # number of indicators in output
 
 
@@ -43,6 +43,7 @@ cs=list()
 mt=list()
 rs=list()
 cr=list()
+fbs=list() #forecastbreakdowns each period
 white.p=list()
 Hansen.pv=matrix(NA,nrow=max.hor,ncol=1)
 WT.pv=matrix(NA,nrow=max.hor,ncol=1)
@@ -200,48 +201,48 @@ for (h in 1:max.hor){# h=14
         #         fela=lasso*fe
         
         # # get elasticnet selection
-#         if (rec==1){
-#                 ela=read.csv(paste(DirCode,'/results/rec_elanet_ranking',target,'_h',h,'.csv',sep=''),row.names=1)
-#                 
-#         }
-#         if(rec==0&bicres==0){
-#                 ela=read.csv(paste(DirCode,'/results/elanet_rankingaic',target,'_h',h,'.csv',sep=''),row.names=1)
-#                 
-#         }
-#         if (rec==0&bicres==1){
-#                 ela=read.csv(paste(DirCode,'/results/elanet_ranking',target,'_h',h,'.csv',sep=''),row.names=1)
-#                 ela=ela[-grep('zeit|rword',row.names(ela)),]
-#         }
-#         
-#         
-#         row.names(ela)[grep(paste(target,'x',sep=''),row.names(ela))]='ar'
-#         
-#         if (post==1){
-#                 ela=ela[,post.fe.id]
-#         }else{
-#                 ela=ela[,1:nrow(target.df)]
-#         }
-#         
+        #         if (rec==1){
+        #                 ela=read.csv(paste(DirCode,'/results/rec_elanet_ranking',target,'_h',h,'.csv',sep=''),row.names=1)
+        #                 
+        #         }
+        #         if(rec==0&bicres==0){
+        #                 ela=read.csv(paste(DirCode,'/results/elanet_rankingaic',target,'_h',h,'.csv',sep=''),row.names=1)
+        #                 
+        #         }
+        #         if (rec==0&bicres==1){
+        #                 ela=read.csv(paste(DirCode,'/results/elanet_ranking',target,'_h',h,'.csv',sep=''),row.names=1)
+        #                 ela=ela[-grep('zeit|rword',row.names(ela)),]
+        #         }
+        #         
+        #         
+        #         row.names(ela)[grep(paste(target,'x',sep=''),row.names(ela))]='ar'
+        #         
+        #         if (post==1){
+        #                 ela=ela[,post.fe.id]
+        #         }else{
+        #                 ela=ela[,1:nrow(target.df)]
+        #         }
+        #         
         
         
-#         
-#         ela20=ela<=20
-#         fe20=fe*ela20
-#         fe20[fe20==0]=NA
-#         
-#         
-#         ela30=ela<=30
-#         fe30=fe*ela30
-#         fe30[fe30==0]=NA
-#         
-#         ela40=ela<=40
-#         fe40=fe*ela40
-#         fe40[fe40==0]=NA
-#         
-#         ela50=ela<=50
-#         fe50=fe*ela50
-#         fe50[fe50==0]=NA
-#         
+        #         
+        #         ela20=ela<=20
+        #         fe20=fe*ela20
+        #         fe20[fe20==0]=NA
+        #         
+        #         
+        #         ela30=ela<=30
+        #         fe30=fe*ela30
+        #         fe30[fe30==0]=NA
+        #         
+        #         ela40=ela<=40
+        #         fe40=fe*ela40
+        #         fe40[fe40==0]=NA
+        #         
+        #         ela50=ela<=50
+        #         fe50=fe*ela50
+        #         fe50[fe50==0]=NA
+        #         
         # ela60=ela<=60
         # fe60=fe*ela60
         # fe60[fe60==0]=NA
@@ -250,13 +251,13 @@ for (h in 1:max.hor){# h=14
         # fe70=fe*ela70
         # fe70[fe70==0]=NA
         
-#         ela128=ela<=128
-#         fe128=fe*ela128
-#         fe128[fe128==0]=NA
-#         
-#         ela154=ela<=154
-#         fe154=fe*ela154
-#         fe154[fe154==0]=NA
+        #         ela128=ela<=128
+        #         fe128=fe*ela128
+        #         fe128[fe128==0]=NA
+        #         
+        #         ela154=ela<=154
+        #         fe154=fe*ela154
+        #         fe154[fe154==0]=NA
         
         # calculating combined forecast errors
         cfe=t(data.frame('median'=apply(fe,2,median)
@@ -285,7 +286,7 @@ for (h in 1:max.hor){# h=14
         row.names(sfe.exp)=NULL
         colnames(sfe.exp)=NULL
         write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfe',h,'.csv',sep=''),
-                  , row.names=F,col.names=F,sep=',',qmethod='double')
+                    , row.names=F,col.names=F,sep=',',qmethod='double')
         #         # attaching dates to the errors
         #         tdates=data[data$eval,'ym']
         #         colnames(fe)=tdates
@@ -316,6 +317,7 @@ for (h in 1:max.hor){# h=14
         
         if (post!=1){
                 recession=ecri[row.names(ecri)%in%tdates,1]
+                #                 t=row.names(ecri)[tt]
                 recession.ind=recession==0
                 sfe.r=sfe[,recession.ind]
                 result.r=result.f(sfe.r)
@@ -325,7 +327,7 @@ for (h in 1:max.hor){# h=14
                 row.names(sfe.exp)=NULL
                 colnames(sfe.exp)=NULL
                 write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfer',h,'.csv',sep=''),
-                          , row.names=F,col.names=F,sep=',')
+                            , row.names=F,col.names=F,sep=',')
         }
         # Clark West
         vFE_small=fe['ar',]
@@ -341,74 +343,82 @@ for (h in 1:max.hor){# h=14
         # plot(target.df[,'IP'],type='l')
         # lines(fc['IFO.EXP',],col='green')
         
-        # To do:
-        # - all tests in old paper
-        # - giacomini rossi
         
         
-        # # giacomini rossi ---------------------------------------------------------
-        # ###### Dating of Forecast Breakdowns ######
-        # # Surprise loss
-        # Neval = ncol(fc)
-        # Nmodels=nrow(fc)
-        # SL.arx = sfe-rowMeans(sfe)
-        # 
-        # # Variances
-        # sfe.demeaned=sfe-rowMeans(sfe)%*%matrix(1,nrow=1,ncol=Neval)
-        # SLL.arx=cov(t(sfe.demeaned))
-        # SLL.arx=diag(SLL.arx)
-        # 
-        # # Parameters
-        # Nobs=sapply(forecast.all,function(x) x$nobs)
-        # Nobs.dev=max(as.numeric(apply(Nobs,1,max))-as.numeric(apply(Nobs,1,min)))
-        # if (Nobs.dev>2){stop('Nobs vary to much')}
-        # min.obs=as.numeric(apply(Nobs,1,min))
-        # lambdavec=min.obs*2/3
-        # # lambda=2/3*(max.obs/Neval)
-        # 
-        # # HAC variance estimator of demeaned surprise losses
-        # bw=0#floor(Neval^(1/3))# rounded down
-        # SLL.arx = matrix(0,nrow=1,ncol=Nmodels)
-        # for (n in 1:Nmodels){
-        #         hacest<-function(sqerror.demeaned,Neval,bw){
-        #                 SLL = 0
-        #                 for (j in 1:bw){
-        #                         Gamma = t(sqerror.demeaned[(1+j):Neval])%*%sqerror.demeaned[1:(Neval-j)]/Neval
-        #                         SLL = SLL+2*(1-j/(bw+1))*Gamma
-        #                 }
-        #                 SLL = SLL+t(sqerror.demeaned)%*%sqerror.demeaned/Neval
-        #         }
-        #         SLL.arx=apply(sfe.demeaned,1,hacest,Neval,bw)
-        # }
-        # # Variance estimator out-of-sample losses
-        # sigma2 = lambdavec*SLL.arx
-        # 
-        # # regression of SL on themselves
-        # pmax = 12
-        # 
-        # surprise.BIC = matrix(NA,nrow=pmax,ncol=Nmodels)
-        # for (p in 1:pmax){
-        #         surprise.res=apply(SL.arx,1,olsself,p)
-        #         surprise.BIC[p,]=sapply(surprise.res,function(x) x$BIC)
-        # }
-        # surprise.pstar = apply(surprise.BIC, 2, which.min)
-        # for (n in 1:Nmodels){
-        #         surprise.res[[n]]=olsself(SL.arx[n,],surprise.pstar[n])
-        # }
-        # 
-        # surprise.coef=sapply(surprise.res,function(x) x$b)
-        # surprise.regressors=sapply(surprise.res,function(x) x$Z)
-        # surprise.resid=sapply(surprise.res,function(x) x$res)
-        # surprise.fit=sapply(surprise.res,function(x) x$yfit)
-        # 
-        # # Confidence Interval
-        # source('FB_Wald_CI.R')
-        # surprise.CI = list()
-        # for (n in 1:Nmodels){
-        #         trash = FB_Wald_CI(surprise.res[[n]]$Z,surprise.res[[n]]$res,surprise.res[[n]]$b,Neval,min.obs[n],sigma2[n],1,"rolling",bw,0.05)
-        #         surprise.CI[[n]]=trash$SLfitCI
-        # }
+        # giacomini rossi ---------------------------------------------------------
+        ###### Dating of Forecast Breakdowns ######
+        # Surprise loss
+        Neval = ncol(fc)
+        Nmodels=nrow(fc)
+        SL.arx = sfe-rowMeans(sfe)
+        #         t=rowMeans(sfe)
+        meanmedian=grep('mean|median',row.names(SL.arx))
+        SL.arx=SL.arx[-meanmedian,]
+        #         t=rowMeans(sfe)
+        # Variances
+        sfe.demeaned=sfe-rowMeans(sfe)%*%matrix(1,nrow=1,ncol=Neval)
+        SLL.arx=cov(t(sfe.demeaned))
+        SLL.arx=diag(SLL.arx)
         
+        # Parameters
+        Nobs=sapply(forecast.all,function(x) x$nobs)
+        Nobs.dev=max(as.numeric(apply(Nobs,1,max))-as.numeric(apply(Nobs,1,min)))
+        if (Nobs.dev>2){stop('Nobs vary to much')}
+        min.obs=as.numeric(apply(Nobs,1,min))
+        lambdavec=min.obs*2/3/Neval
+        # lambda=2/3*(max.obs/Neval)
+        
+        # HAC variance estimator of demeaned surprise losses
+        bw=0#floor(Neval^(1/3))# rounded down
+        SLL.arx = matrix(0,nrow=1,ncol=Nmodels)
+        for (n in 1:Nmodels){#n=1
+                hacest<-function(sqerror.demeaned,Neval,bw){
+                        SLL = 0
+                        for (j in 1:bw){
+                                Gamma = t(sqerror.demeaned[(1+j):Neval])%*%sqerror.demeaned[1:(Neval-j)]/Neval
+                                SLL = SLL+2*(1-j/(bw+1))*Gamma
+                        }
+                        SLL = SLL+t(sqerror.demeaned)%*%sqerror.demeaned/Neval
+                }
+                SLL.arx=apply(sfe.demeaned,1,hacest,Neval,bw)
+        }
+        # Variance estimator out-of-sample losses
+        meanmedian=grep('mean|median',names(SLL.arx))
+        SLL.arx=SLL.arx[-meanmedian]
+        sigma2 = lambdavec*SLL.arx
+        
+        # regression of SL on themselves
+        p.max = 12
+        
+        surprise.BIC = matrix(NA,nrow=p.max,ncol=Nmodels)
+        for (p in 1:p.max){
+                surprise.res=apply(SL.arx,1,olsself,p)
+                surprise.BIC[p,]=sapply(surprise.res,function(x) x$BIC)
+        }
+        surprise.pstar = apply(surprise.BIC, 2, which.min)
+        for (n in 1:Nmodels){
+                surprise.res[[n]]=olsself(SL.arx[n,],surprise.pstar[n])
+        }
+        
+        surprise.coef=sapply(surprise.res,function(x) x$b)
+        surprise.regressors=sapply(surprise.res,function(x) x$Z)
+        surprise.resid=sapply(surprise.res,function(x) x$res)
+        surprise.fit=sapply(surprise.res,function(x) x$yfit)
+        
+        # Confidence Interval
+        fbphases=matrix(NA,nrow=Nmodels,ncol=Neval)
+        surprise.CI = list()
+        for (n in 1:Nmodels){
+                trash = FB_Wald_CI(surprise.res[[n]]$Z,surprise.res[[n]]$res,surprise.res[[n]]$b,Neval,min.obs[n],sigma2[n],1,"rolling",bw,0.05)
+                surprise.CI[[n]]=trash$SLfitCI
+                aux.start=Neval-length(trash$SLfitCI)+1
+                fbphases[n,aux.start:Neval]=trash$SLfitCI>0
+        }
+        colnames(fbphases)=colnames(sfe)
+        fbs[[h]]=fbphases
+        n.breakdowns=colSums(fbphases,na.rm=T)
+        names(n.breakdowns)=colnames(fe)
+        write.csv(fbphases,paste(DirCode,'/results/fbphases/fbphase_',h,'.csv',sep=''))
         # saving files ------------------------------------------------------------
         
         # result.mt=result[grep('zeit',row.names(result)),]
@@ -479,24 +489,73 @@ rank.rr.mt=sapply(mt,function(x) x$Rr)
 
 # processing matlab mcs results -------------------------------------------
 
-# fres=list()
-# for (h in 13:15){
-#         inc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/',h,'/includedR.csv',sep=''),header=F)
-#         exc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/',h,'/excludedR.csv',sep=''),header=F)
-#         exin=rbind(exc,inc)
-#         
-#         inc.ind=rep(1,nrow(exin))
-#         inc.ind[1:nrow(exc)]=0
-#         pval=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/',h,'/pvalsR.csv',sep=''),header=F)
-#         
-#         mcs.h=data.frame(exin,pval,inc.ind)
-#         result=rs[[h]]
-#         result[,c('model.id','pval','inc')]=NA
-#         result[mcs.h[,1],c('model.id','pval','inc')]=mcs.h  
-#         fres[[h]]=result
-#         
-# }
+fres=list()
+sfeorr='sfer'
+for (h in 1:15){
+        inc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/includeSQ',sfeorr,h,'.csv',sep=''),header=F)
+        exc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/excludeSQ',sfeorr,h,'.csv',sep=''),header=F)
+        exin=rbind(exc,inc)
+        
+        inc.ind=rep(1,nrow(exin))
+        inc.ind[1:nrow(exc)]=0
+        pval=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/pvalsSQ',sfeorr,h,'.csv',sep=''),header=F)
+        
+        mcs.h=data.frame(exin,pval,inc.ind)
+        result=rs[[h]]
+        result[,c('model.id','pval','inc')]=NA
+        result[mcs.h[,1],c('model.id','pval','inc')]=mcs.h  
+        fres[[h]]=result
+        
+}
+tt=sapply(fres,function(x) sum(x[,'inc']))
+tt=sapply(fres,function(x) sum(x['MT.de.future','rank.theilsu']))
+tt=sapply(fres,function(x) sum(x['MT.de.future','pval']))
+tt=sapply(fres,function(x) sum(x['MT.de.future','inc']))
+tt=sapply(fres,function(x) x['MT.de.future','rank.theilsu'])
+tt=sapply(fres,function(x) row.names(x)[which.min(x[,'rank.theilsu'])])
+
+
 
 # fres=fres[[14]]
+fbpall=matrix(NA,nrow=nrow(fbphases),ncol=max.hor)
+row.names(fbpall)=row.names(sfe)[1:(nrow(sfe)-2)]
+fbprec=matrix(NA,nrow=nrow(fbphases),ncol=max.hor)
+row.names(fbprec)=row.names(sfe)[1:(nrow(sfe)-2)]
+fbpres=matrix(NA,nrow=4,ncol=max.hor)
+row.names(fbpres)=c('fbp percent best','percent of sign. better best','fbp MT.de.future','percent of sign. better MT')
+for (h in 1:max.hor){
+        t3=fbs[[h]]
+        row.names(t3)=row.names(sfe)[1:(nrow(sfe)-2)]
+        fbpall[,h]=rowMeans(t3,na.rm=T)
+        data$ecri[data$ecri==0]
+        rdate=data$ym[which(data$ecri==0)]
+        rcol=which(colnames(t3)%in%rdate)
+        fbprec[,h]=rowMeans(t3[,rcol])
+        res=rs[[h]]
+        meanmedian=grep('mean|median',row.names(res))
+        reswm=res[-meanmedian,]
+        reswm[,'1']=0
+        reswm[reswm$rank.theilsu>res$rank.theilsu[meanmedian[1]],'1']=1
+        reswm[,'2']=0
+        reswm[reswm$rank.theilsu>res$rank.theilsu[meanmedian[2]],'2']=1
+        reswm[,'abzug']=rowSums(reswm[,c('1','2')])
+        reswm$rank.theilsu=reswm$rank.theilsu-reswm$'abzug'
+        reswm=reswm[,- c((ncol(reswm)-2):ncol(reswm))]
+        bestmodels=which(reswm$cw.p<=0.05)
+#         median(fbpall[bestmodels,h])
+fbpres['fbp percent best',h]=fbpall[reswm$rank.theilsu==1,h]
+fbpres['percent of sign. better best',h]=sum(fbpall[bestmodels,h]<fbpall[reswm$rank.theilsu==1,h])/(length(bestmodels)-1)
+
+fbpres['fbp MT.de.future',h]=fbpall['MT.de.future',h]
+fbpres['percent of sign. better MT',h]=sum(fbpall[bestmodels,h]<fbpall['MT.de.future',h])/(length(bestmodels)-1)
 
 
+        
+}
+# recession compared to all
+plot(colMeans(fbprec)/colMeans(fbpall))
+# only for MT.future
+fbprec['MT.de.future',]/fbpall['MT.de.future',]
+ct=matrix(rep(fbpall['MT.de.future',],nrow(fbpall)),nrow=nrow(fbpall),byrow=T)
+t=fbpall>ct
+tt=colSums(t)/(nrow(fbpall)-1)

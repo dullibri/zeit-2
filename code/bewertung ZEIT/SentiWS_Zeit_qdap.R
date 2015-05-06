@@ -94,8 +94,13 @@ for (jj in 1990:2015){#jj=2015
                 Ergebnis=data.frame(matrix(NA,1,3))
                 colnames(Ergebnis)=c('id','value','nword')
                 
-                for (i in 1:Narticle_issue){# i=1
-                        text<-readLines(paste(sFolderTexte,svFile[i],sep=''), encoding="UTF-8")#, header=T,stringsAsFactors =F)
+                for (i in 1:Narticle_issue){# i=11
+#                         text<-readLines(paste(sFolderTexte,svFile[i],sep=''), ok=F,encoding="UTF-8")#, header=T,stringsAsFactors =F)
+                        text=read.csv(paste(sFolderTexte,svFile[i],sep=''),stringsAsFactors=F,header=F)
+                        if (nrow(text)>1){
+                                text=text[2,1]
+                        }
+               
                         tp=polarity(text,polarity.frame=pf,negators=negating)
                         sent=tp$all[c('polarity')]
                         
