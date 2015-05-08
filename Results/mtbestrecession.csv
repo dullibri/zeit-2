@@ -1,13 +1,13 @@
-"","model","rmse","theilsu","rank.theilsu","in mcs","mcs.pvalue"
-"1","MT.de.present",60.92,0.88,93,0,0
-"2","MT.de.present",71.46,0.88,94,0,0
-"3","MT.present",73.85,0.86,89,0,0
-"4","MT.present",67.52,0.82,75,0,0
-"5","MT.de.present",49.14,0.72,47,0,0.09
-"6","MT.de.present",34.89,0.63,33,0,0
-"7","MT.de.present",21.8,0.71,24,0,0
-"8","MT.all",17.74,0.84,9,0,0.17
-"9","MT.de.future",15.66,0.83,5,1,0.86
-"10","MT.de.future",14.66,0.8,3,1,0.74
-"11","MT.de.climate",13.48,0.78,2,1,0.84
-"12","MT.de.future",13.22,0.78,2,1,0.84
+"","model","rmse","theilsu","rank.theilsu","in mcs","mcs.pvalue","h"
+"1","MT.de.present",63.73,0.88,92,0,0,1
+"2","MT.de.present",74.88,0.88,94,0,0,2
+"3","MT.present",77.27,0.85,89,0,0,3
+"4","MT.present",70.76,0.82,71,0,0,4
+"5","MT.de.present",51.98,0.72,46,0,0,5
+"6","MT.de.present",37.96,0.63,35,0,0.02,6
+"7","MT.de.present",26.6,0.62,26,0,0,7
+"8","MT.present",19.94,0.77,12,0,0,8
+"9","MT.de.future",18.09,0.86,14,0,0,9
+"10","MT.de.future",15.9,0.82,3,1,0.78,10
+"11","MT.de.climate",14.08,0.77,2,1,0.77,11
+"12","MT.de.future",13.98,0.77,2,1,0.88,12

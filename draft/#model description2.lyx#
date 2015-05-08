@@ -560,8 +560,105 @@ multiple comparisons
 \shape default
  with control Hansen2011.
  To overcome this he proposes the model confidence set, MCS; which forms
- a set of best models based on one-by-one comparisons of all models.
- The MCS procedure is based on an equivalence test, 
+ a set of best models, 
+\begin_inset Formula $\mathcal{M}*$
+\end_inset
+
+, such that given the set of all forecasting models, 
+\begin_inset Formula $\mathcal{M}_{0}$
+\end_inset
+
+, the MCS identifies the set of all forecasting models that cannot be rejected
+ as statistically inferior at a certain level of confidence:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{M}*=\left\{ i\in\mathcal{M}_{0}:\, u_{i,j}\leq0\,\textrm{for}\,\textrm{all}\, j\in\mathcal{M}_{0}\right\} 
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $u_{i,j}=E(d_{i,j})$
+\end_inset
+
+ is the expected loss differential 
+\begin_inset Formula $d_{i,j}=L_{i,t}-L_{j,t}$
+\end_inset
+
+.
+ Here again, we choose the squared forecast error as loss.
+ based on one-by-one comparisons of all models.
+ The MCS is implemented using the following steps:
+\end_layout
+
+\begin_layout Enumerate
+Beginning with the full set, 
+\begin_inset Formula $\mathcal{M}_{0}$
+\end_inset
+
+, the null of equal predictive accuracy (EPA), 
+\begin_inset Formula $H_{0,\mathcal{M}}:\, u_{i,j}=0\,\forall i,j$
+\end_inset
+
+ is repeatedly tested.
+ 
+\end_layout
+
+\begin_layout Enumerate
+If the null is rejected one model is eliminated from 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The procedure is repeated until the null can not be rejected at signficance
+ level 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ The set 
+\begin_inset Formula $\mathcal{\widehat{M}}_{1-\alpha}^{\text{*}}$
+\end_inset
+
+ with the remaining models is defined as the MCS.
+\end_layout
+
+\begin_layout Standard
+To test the null, the t-statistic based on the relative loss of model 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $\overline{d}_{i,j}=n^{-1}\Sigma_{t=1}^{n}d_{ij,t}$
+\end_inset
+
+is used.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+t_{i\text{·}}=\frac{}{}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The MCS procedure is based on an equivalence test, 
 \begin_inset Formula $\delta_{\mathcal{M}}$
 \end_inset
 
@@ -932,11 +1029,7 @@ Results
 \begin_inset Float figure
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -958,10 +1051,58 @@ name "fig:Percentage-of-models"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+All periods
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:All-periods"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename H:/git/zeit-2/figs/mcs_share_media_all.pdf
+	scale 50
+	groupId mcsshares
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -971,7 +1112,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-All periods
+Recession
 \end_layout
 
 \end_inset
@@ -981,8 +1122,9 @@ All periods
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename H:/git/zeit-2/figs/mcs_share_media_all.pdf
+	filename H:/git/zeit-2/figs/mcs_share_media_recession.pdf
 	scale 50
+	groupId mcsshares
 
 \end_inset
 
@@ -990,6 +1132,115 @@ All periods
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Industrial production and AR forecast breakdowns
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Percentage-of-models-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Industrial production
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:All-periods-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename H:/git/zeit-2/figs/ip_crisis.pdf
+	scale 50
+	groupId mcsshares
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+AR forecast breakdowns
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename H:/git/zeit-2/figs/ar_fbp_9_12.pdf
+	scale 50
+	groupId mcsshares
+
+\end_inset
+
 
 \end_layout
 

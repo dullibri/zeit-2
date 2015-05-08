@@ -560,7 +560,22 @@ multiple comparisons
 \shape default
  with control Hansen2011.
  To overcome this he proposes the model confidence set, MCS; which forms
- a set of best models based on one-by-one comparisons of all models.
+ a set of best models, 
+\begin_inset Formula $\mathcal{M}*$
+\end_inset
+
+, such that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{M}*=\left\{ i\in\mathcal{M}_{0}:\, u_{i,j}\leq0\, for\, all\, j\in\mathcal{M}_{0}\right\} 
+\end{equation}
+
+\end_inset
+
+based on one-by-one comparisons of all models.
  The MCS procedure is based on an equivalence test, 
 \begin_inset Formula $\delta_{\mathcal{M}}$
 \end_inset
@@ -932,11 +947,7 @@ Results
 \begin_inset Float figure
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -958,6 +969,7 @@ name "fig:Percentage-of-models"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -1004,6 +1016,7 @@ name "fig:All-periods"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -1037,6 +1050,115 @@ Recession
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Industrial production and AR forecast breakdowns
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Percentage-of-models-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Industrial production
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:All-periods-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename H:/git/zeit-2/figs/ip_crisis.pdf
+	scale 50
+	groupId mcsshares
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+AR forecast breakdowns
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename H:/git/zeit-2/figs/ar_fbp_9_12.pdf
+	scale 50
+	groupId mcsshares
+
+\end_inset
+
 
 \end_layout
 

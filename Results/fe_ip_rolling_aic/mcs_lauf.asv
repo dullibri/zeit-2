@@ -1,10 +1,10 @@
-
+% 
 % for h=1:14
 %     h=num2str(h)
 %     sferh=strcat('sfe',h)
 %     befehl=strcat('sfmat=','csvread(''',sferh,'.csv'')')
 %     eval(befehl)
-%     [INCLUDEDR,PVALSR,EXCLUDEDR,INCLUDEDSQ,PVALSSQ,EXCLUDEDSQ] = mcs(sfmat,0.25,1000,6,'BLOCK')
+%     [INCLUDEDR,PVALSR,EXCLUDEDR,INCLUDEDSQ,PVALSSQ,EXCLUDEDSQ] = mcs(sfmat,0.25,1000,12,'BLOCK')
 %     befehl=strcat('csvwrite(''includeR',sferh,'.csv'',INCLUDEDR)')
 %     eval(befehl)
 %     befehl=strcat('csvwrite(''pvalsR',sferh,'.csv'',PVALSR)')
@@ -19,14 +19,13 @@
 %     befehl=strcat('csvwrite(''excludeSQ',sferh,'.csv'',EXCLUDEDSQ)')
 %     eval(befehl)
 % end
-%  
-    
-    for h=1:14
+ 
+for h=1:14
     h=num2str(h)
-    sferh=strcat('sfer',h)
+    sferh=strcat('sfe',h)
     befehl=strcat('sfmat=','csvread(''',sferh,'.csv'')')
     eval(befehl)
-    [INCLUDEDR,PVALSR,EXCLUDEDR,INCLUDEDSQ,PVALSSQ,EXCLUDEDSQ] = mcs(sfmat,0.25,1000,6,'BLOCK')
+    [INCLUDEDR,PVALSR,EXCLUDEDR,INCLUDEDSQ,PVALSSQ,EXCLUDEDSQ] = mcs(sfmat,0.25,1000,12,'BLOCK')
     befehl=strcat('csvwrite(''includeR',sferh,'.csv'',INCLUDEDR)')
     eval(befehl)
     befehl=strcat('csvwrite(''pvalsR',sferh,'.csv'',PVALSR)')
@@ -41,3 +40,5 @@
     befehl=strcat('csvwrite(''excludeSQ',sferh,'.csv'',EXCLUDEDSQ)')
     eval(befehl)
 end
+    
+    

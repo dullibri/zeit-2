@@ -60,9 +60,10 @@ for (h in 1:max.hor){# h=3
         row.names(ecri)=gsub('15/','',row.names(ecri))
         t1=t(matrix(unlist(strsplit(row.names(ecri),'/')),nrow=2))
         row.names(ecri)=apply(t1,1,function(x) paste(x[2],x[1],collapse='',sep='-'))
-        crisis.end1='2009-02'
+        ecri[,1]=1
+        crisis.end1='2008-12'
         crisis.1=which(row.names(ecri)==crisis.end1)
-        crisis.end2='2010-01'
+        crisis.end2='2010-06'
         crisis.2=which(row.names(ecri)==crisis.end2)
         ecri[crisis.1:crisis.2,1]=0
         data[data$ym%in%row.names(ecri),'ecri']=ecri[,1]
@@ -285,7 +286,7 @@ for (h in 1:max.hor){# h=3
         fc=rbind(fc,cfc)
         
         # calculating fe for combination schemes
-        target.mat=matrix(rep(target.df[,1],length(combrow)),nrow=nrow(cfc),byrow=T)
+        target.mat=matrix(rep(target.df[,1],nrow(cfc)),nrow=nrow(cfc),byrow=T)
         cfe=cfc-target.mat
         fe=rbind(fe,cfe)
         
@@ -420,7 +421,7 @@ for (h in 1:max.hor){# h=3
         # Confidence Interval
         fbphases=matrix(NA,nrow=Nmodels,ncol=Neval)
         surprise.CI = list()
-        for (n in 1:Nmodels){
+        for (n in 1:Nmodels){#n=1
                 trash = FB_Wald_CI(surprise.res[[n]]$Z,surprise.res[[n]]$res,surprise.res[[n]]$b,Neval,min.obs[n],sigma2[n],1,"rolling",bw,0.05)
                 surprise.CI[[n]]=trash$SLfitCI
                 aux.start=Neval-length(trash$SLfitCI)+1
@@ -453,19 +454,19 @@ for (h in 1:max.hor){# h=3
 theil.ind=seq(1,(max.hor*ni)-1,ni)
 rank.ind=seq(2,(max.hor*ni),ni)
 
-# combination
-theil.cs=sapply(cs,function(x) x$theilsu)
-rank.cs=sapply(cs,function(x) x$rank.theilsu)
-CS=data.frame(matrix(NA,nrow=nrow(result.c),ncol=max.hor*ni))
-CS[,theil.ind]=round(theil.cs,2)
-CS[,rank.ind]=rank.cs
-if (ni==4){
-        CS[,R.ind]=round(R.cs,2)
-        CS[,Rr.ind]=Rr.cs   
-        colnames(CS)=paste(c('theilsu_h:','rank_h:','R_h:','Rr_rank_h:'),rep(1:max.hor,each=ni),sep='')#
-}
-colnames(CS)=paste(c('theilsu_h:','rank_h:'),rep(1:max.hor,each=ni),sep='')#
-row.names(CS)=row.names(result.c)
+# # combination
+# theil.cs=sapply(cs,function(x) x$theilsu)
+# rank.cs=sapply(cs,function(x) x$rank.theilsu)
+# CS=data.frame(matrix(NA,nrow=nrow(result.c),ncol=max.hor*ni))
+# CS[,theil.ind]=round(theil.cs,2)
+# CS[,rank.ind]=rank.cs
+# if (ni==4){
+#         CS[,R.ind]=round(R.cs,2)
+#         CS[,Rr.ind]=Rr.cs   
+#         colnames(CS)=paste(c('theilsu_h:','rank_h:','R_h:','Rr_rank_h:'),rep(1:max.hor,each=ni),sep='')#
+# }
+# colnames(CS)=paste(c('theilsu_h:','rank_h:'),rep(1:max.hor,each=ni),sep='')#
+# row.names(CS)=row.names(result.c)
 
 # best models
 best=data.frame(matrix(NA,nrow=max.hor,ncol=ncol(result)))
@@ -497,7 +498,7 @@ rank.rr.mt=sapply(mt,function(x) x$Rr)
 grouping=grouping[-grep('mean|median',row.names(grouping)),]
 
 fres=list()
-sfeorr='sfe'
+sfeorr='sfer'
 for (h in 1:14){
         inc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/includeSQ',sfeorr,h,'.csv',sep=''),header=F)
         exc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/excludeSQ',sfeorr,h,'.csv',sep=''),header=F)
@@ -562,7 +563,7 @@ if (sfeorr=='sfe'){
 if (sfeorr=='sfer'){
         pdf(paste(DirCode,'/figs/mcs_share_media_recession.pdf',sep=''))
         barplot(t,legend=row.names(t)
-                ,ylim=c(0,20)
+                ,ylim=c(0,60)
                 ,xlab='forecast horizon'
                 ,ylab='% of models included in MCS'
         ) 

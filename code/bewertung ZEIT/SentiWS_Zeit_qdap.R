@@ -74,10 +74,10 @@ listsubdirs=list.files(DirRawTexts)
 valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 1990:2015){#jj=2015
+for (jj in 1991:2015){#jj={#:2015
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
-        for (k in 1:length(liste_jahr)){#k=1
+        for (k in 15:length(liste_jahr)){#k=1
                 sFolderTexte=paste(DirRawTexts,'/',liste_jahr[k],'/',sep='')
                 print(sFolderTexte)
                 # getting list and number of articles
@@ -97,10 +97,11 @@ for (jj in 1990:2015){#jj=2015
                 for (i in 1:Narticle_issue){# i=11
 #                         text<-readLines(paste(sFolderTexte,svFile[i],sep=''), ok=F,encoding="UTF-8")#, header=T,stringsAsFactors =F)
                         text=read.csv(paste(sFolderTexte,svFile[i],sep=''),stringsAsFactors=F,header=F)
-                        if (nrow(text)>1){
-                                text=text[2,1]
-                        }
-               
+#                         if (nrow(text)>1){
+#                                 text=text[2,1]
+#                         }
+                        chrtest=sapply(text,function(x) is.character(x))
+                        text=paste(text,collapse=' ',sep='')
                         tp=polarity(text,polarity.frame=pf,negators=negating)
                         sent=tp$all[c('polarity')]
                         
