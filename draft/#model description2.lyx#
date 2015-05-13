@@ -246,7 +246,7 @@ All real indicators are deflated using realtime CPI-data.
 \end_layout
 
 \begin_layout Itemize
-The first forecast origin is 2005:12, the last one is 2014:11 for h=1, respectiv
+The first forecast origin is 2005-12, the last one is 2014-11 for h=1, respectiv
 ely 2013:11 for h=12.
 \end_layout
 
@@ -425,6 +425,16 @@ DM=\frac{\overline{d_{i}}}{\widehat{V}(\overline{d_{i}})}
 
 \end_inset
 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ist das dann durch wurzel var?
+\end_layout
+
+\end_inset
+
  where 
 \begin_inset Formula $\overline{d}_{i}$
 \end_inset
@@ -502,7 +512,7 @@ White2000 has pointed out, that even when no exploitable forecasting relation
  exists, looking hard enough at a given set of data will often reveal one
  or more forecasting models that look good, but are in fact useless.
  Particulary, sequentially testing of a number of models two at a time invalidat
-es standard critical values might result in data snooping.
+es standard critical values and might result in data snooping.
  In much of economic time series analysis this is aggrevated by the fact
  that typically there is only a limited number of observations available.
  To overcome this problem White2000, proposes a reality check test, RC-test,
@@ -546,9 +556,9 @@ RC=\max_{k}P^{1/2}\overline{d}_{i}.
 
 This approach has subsequently been refined by Hansen2005.
  He shows that the test statistic proposed by White is very conservative
- if the set of rival models contains very poorly performing models.
- He proposes a refinement consisting of a studentized version of the WT-test
- that is known as the test for superior predictive ability (SPA).
+ if the set of rival models contains very poorly performing models and proposes
+ a refinement consisting of a studentized version of the WT-test that is
+ known as the test for superior predictive ability (SPA).
  
 \end_layout
 
@@ -558,9 +568,13 @@ However, selecting the benchmark independently of the data introduces the
 \shape italic
 multiple comparisons
 \shape default
- with control Hansen2011.
- To overcome this he proposes the model confidence set, MCS; which forms
- a set of best models, 
+ 
+\shape italic
+with control
+\shape default
+.
+ To overcome this Hansen 2011 proposes the model confidence set, MCS; which
+ forms a set of best models, 
 \begin_inset Formula $\mathcal{M}*$
 \end_inset
 
@@ -588,9 +602,16 @@ where
 \begin_inset Formula $d_{i,j}=L_{i,t}-L_{j,t}$
 \end_inset
 
-.
- Here again, we choose the squared forecast error as loss.
- based on one-by-one comparisons of all models.
+based on one-by-one comparisons of all models.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Here again, we choose the squared forecast error as loss.
+\end_layout
+
+\end_inset
+
  The MCS is implemented using the following steps:
 \end_layout
 
@@ -608,7 +629,7 @@ Beginning with the full set,
 \end_layout
 
 \begin_layout Enumerate
-If the null is rejected one model is eliminated from 
+If the null is rejected the worst performing model is eliminated from 
 \begin_inset Formula $\mathcal{M}$
 \end_inset
 
@@ -630,7 +651,14 @@ The procedure is repeated until the null can not be rejected at signficance
 \end_layout
 
 \begin_layout Standard
-To test the null, the t-statistic based on the relative loss of model 
+In the best of all cases, the MCS contains only one model.
+ However, if the data are uninformative, the MCS contains several models
+ or even all models contained in 
+\begin_inset Formula $\mathcal{M}_{0}$
+\end_inset
+
+.
+ The null ist tested based on the pairwise loss differential of model 
 \begin_inset Formula $i$
 \end_inset
 
@@ -642,14 +670,14 @@ To test the null, the t-statistic based on the relative loss of model
 \begin_inset Formula $\overline{d}_{i,j}=n^{-1}\Sigma_{t=1}^{n}d_{ij,t}$
 \end_inset
 
-is used.
- 
+.
+ The test statistic to test is defined as:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-t_{i\text{·}}=\frac{}{}
+T_{\max,\mathcal{M}}=\max t_{i\text{·}},
 \end{equation}
 
 \end_inset
@@ -658,7 +686,92 @@ t_{i\text{·}}=\frac{}{}
 \end_layout
 
 \begin_layout Standard
-The MCS procedure is based on an equivalence test, 
+where 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+t_{i\text{j}}=\sum_{i<j}\frac{\overline{d}_{i\text{·}}}{\sqrt{\widehat{V}(\overline{d}_{i·})}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula $\widehat{V}(\overline{d}_{ij})$
+\end_inset
+
+ is an estimate of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $V(\overline{d}_{ij})$
+\end_inset
+
+.
+ The distribution of 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $T_{\max,\mathcal{M}}$
+\end_inset
+
+ is nonstandard as it depends on nuisance parameters.
+ However, it can be estimated using bootstrap methods.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Hansen2011 propose an alternative test statisitics, 
+\begin_inset Formula $T_{R,\mathcal{M}}$
+\end_inset
+
+.
+ Here, we report the results for 
+\begin_inset Formula $T_{\max,\mathcal{M}}$
+\end_inset
+
+ statistic only as it yielded the most conservative results, that is, the
+ smallest confidence sets.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+statistic imposes that whether or not the null of no diference in model
+ performance is rejected depends only on the model that has the greatest
+ relative loss.
+ 
+\begin_inset Formula $e_{R,\mathcal{M}}=\arg\max_{i\in\mathcal{M}}\sup_{j\in\mathcal{M}}t_{ij}$
+\end_inset
+
+.The MCS procedure is based on an equivalence test, 
 \begin_inset Formula $\delta_{\mathcal{M}}$
 \end_inset
 
@@ -773,6 +886,11 @@ The MCS procedure is based on an equivalence test,
  Thirdly, the MCS acknowledges the limitations of the data, such that uninformat
 ive data yield a MCS with many models, whereas informative data yield a
  MCS with only a few models.
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Note
 status collapsed
 
@@ -906,6 +1024,16 @@ Hansen2011 propose
 
 \end_layout
 
+\begin_layout Standard
+As a usefule feature, the MCS procedure yields a p-value for all models
+ under consideration where a small p-value makes it unlikely for a model
+ to enter the set of superior models, 
+\begin_inset Formula $\mathcal{M}^{*}$
+\end_inset
+
+(for details, see Hansen2011).
+\end_layout
+
 \begin_layout Subsection
 Reliability/forecast stability
 \end_layout
@@ -915,7 +1043,7 @@ Reliability of models is crucial for forecasters.
  However, models become instable over time due to instabilities in the economy
  (see, e.g., Hendry 1999).
  Thus, forecasting performance depends on the success of the model at adapting
- to changes in the economy.
+ to changes.
  Rossi2009 introduce an approach to test whether the model’s future performance
  is consistent with what is expected on the basis of its past performance.
  They define a forecast breakdown as a situation in which the out-of-sample
@@ -973,8 +1101,7 @@ where
 \end_inset
 
  is the average in-sample loss computed over the in-sample window.
- They propose a test based on the idea that, if a forecast is reliable,
- this mean should be close to zero.
+ If a forecast is reliable, this mean should be close to zero.
  Thus, the null is defined as 
 \begin_inset Formula 
 \begin{eqnarray}
@@ -1026,6 +1153,91 @@ Results
 \end_layout
 
 \begin_layout Standard
+We analyze the whole set of out-of-sample predictions for each horizon.
+ Furthermore, we are interested in the models realiability during instable
+ times.
+ We define an instable period as a time when considerably more models than
+ usual suffer a forecast breakdown.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: ip, recession and forecast breakdwons"
+
+\end_inset
+
+ shows German industrial production for the period to be forecasted.
+ On top of the figure, the recession period as defined by the Economic Cycle
+ Research Institute (ECRI, empty circles) as well as the instable period
+ (filled circles) are shown.
+ The instable period marks those periods, where more than 20 percent of
+ all models across horizons suffer a forecast breakdown.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Industrial production, recession and forecast breakdowns
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: ip, recession and forecast breakdwons"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename H:/git/zeit-2/figs/ip_crisis_breakdowns.pdf
+	scale 50
+	groupId mcsshares
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Large changes of the endogenous happen merely at the end of the official
+ recession dates and many month thereafter.
+ At the beginning of the official start of the recession in 2008-05 industrial
+ production only drops by less than 5 percent.
+ It takes 6 more month till the end of the ECRI dating in 2009-1 that it
+ drops to about 80 percent of its precrisis level.
+ However, the trough is reached not till 2009-04.
+ Only in mid 2011 industrial production roughly gets back to its pre-crisis
+ level.
+ 
+\end_layout
+
+\begin_layout Standard
+Furthermore, most of the forecast breakdowns of single models happen when
+ periods at the end and long after the recession are targeted.
+ The instable period starts in 2008-12 and ends in 2010-06.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1055,7 +1267,7 @@ name "fig:Percentage-of-models"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -1088,10 +1300,6 @@ name "fig:All-periods"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1102,11 +1310,7 @@ name "fig:All-periods"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -1121,6 +1325,7 @@ Recession
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename H:/git/zeit-2/figs/mcs_share_media_recession.pdf
 	scale 50
@@ -1131,13 +1336,2927 @@ Recession
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Percentage-of-models"
+
+\end_inset
+
+ gives the percentage of media models of the total of all models in the
+ MCS.
+\begin_inset Foot
+status collapsed
+
 \begin_layout Plain Layout
+As suggested by Hansen2011 used one size for the block bootstrapping, 6
+ month, and checked that the results were insensitive to different specification
+s of the block size.
+ 
+\end_layout
+
+\end_inset
+
+ The upper panel, Panel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:All-periods"
+
+\end_inset
+
+, gives the results over the whole range of forecasts, where each forecast
+ horizon is depicted individually.
+ The differences of forecasts are relatively informative for all horizons
+ except the 8 and the 9 month horizon.
+ For all the other periods, more than 50 percent of the models are dropped
+ from the MCS.
+ For short horizon up to 5 month media models are not included in the MCS.
+ The lower panel, Panel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: ip, recession and forecast breakdwons"
+
+\end_inset
+
+, presents the results for the instable period only.
+ Here, the data are very informative leading to a considerable exclusion
+ of models from the MCS.
+ Media models only enter for horizons greater than 8 month.
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Best-media-models"
+
+\end_inset
+
+ presents the RMSE, the Theil's U, the rank according to Theil's U and the
+ MCS p-value of the best media models each horizon.
+ The upper Panel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Best-media-models all periods"
+
+\end_inset
+
+ shows the results for all periods.
+ Two models, MT.de.future and MT.de.climate stick out as particularly useful
+ for horizons from 10 to 12 months.
+ The former has the lowest Theil's U for 10 and 12 month horizons with values
+ of 0.83 and 0.77 respectively.
+ Furthermore, for both horizons it forms part of the 
+\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
+\end_inset
+
+ as the best model having an MCS p-value of 1.
+ And, it significantly outperforms the AR-model at the 1 percent level for
+ both horizons.
+ For the 11 month horizon MT.de.climate is the best model both with respect
+ to the Theil's U as well as the MCS p-value.
+ It significantly outperforms the AR at the 1 percent level, too.
+ 
+\end_layout
+
+\begin_layout Standard
+The lower Panel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Best-media-models crisis"
+
+\end_inset
+
+ shows that the results remain robust for the instable period.
+ MT.de.future has a Theil's U of 0.82 and 0.77 for the 10 and 12 month horizon
+ forecasts and significantly outperforms the AR-model.
+ However, it is slightly worse according to the rank attaining only the
+ third and second rank for the 10 and 11 month horizon.
+ And, while still forming part of 
+\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
+\end_inset
+
+ having high MCS p-values of 0.80 and 0.89 for the 10 and 12 month horizon
+ it is not the best model in the MCS.
+ MT.de.climate significantly outperforms the AR ranking second for the 11
+ month forecast horizon.
+ As with MT.de.future, it is not the best model in the 
+\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
+\end_inset
+
+ having a MCS p-value of 0.76.
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Best media models
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Best-media-models"
+
+\end_inset
+
 
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Best media models, all periods
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Best-media-models all periods"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+h:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+model
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+rmse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+theilsu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+rank.theilsu
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+mcs.pvalue
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+28.37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.91
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+93
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+32.73
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.89
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+94
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+33.78
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+31.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.84
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+23.27
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.74
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.13
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+17.50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.66
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+33
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.25*
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+13.33
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.68
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+27
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.24
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+10.53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.83*
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.40*
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.future
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+9.17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.85**
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.43*
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.future
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+8.43
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.83**
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1.00*
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.climate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+8.69
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.77**
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1.00*
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.future
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+8.46
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.77**
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+1.00*
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Best media models
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Best-media-models crisis"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+h:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+model
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rmse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+theilsu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rank.theilsu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mcs.pvalue
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MT.de.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+63.73
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+92
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MT.de.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+74.88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+94
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MT.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+77.27
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.85
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+89
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MT.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+70.76
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.82
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MT.de.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+51.98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.72
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+46
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MT.de.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37.96
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.63
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.02
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MT.de.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26.60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.62
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MT.present
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19.94
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.77
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.future
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+18.09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.86**
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.00
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.future
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+15.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.82**
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.80*
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.climate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+14.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.77**
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.76*
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.future
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+13.98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.77**
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.89*
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Note: * (**) for Theil's U denotes significant outperformance of the AR-model
+ to the 5 (1) percent level, whereas * for MCS p-values indicates, that
+ the respective model is in the 
+\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
+\end_inset
+
+.
+ 
 \end_layout
 
 \end_inset
@@ -1146,19 +4265,48 @@ Recession
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Percentage-of-forecast"
+
+\end_inset
+
+ shows the percentage of times MT.de.future and MT.de.climate have failed over
+ all periods and the instable period for horizons 10 to 12 in the first
+ two rows.
+ The third row shows the respective averages over all models.
+ A value of 0 implies that the model has never failed whereas a value of
+ 1 means that the model has always failed.
+ For all periods, the average of all models rises sligthly from h=10 to
+ h=12 from 0.19 to 0.21.
+ Both media models' percentage are roughly at the same level.
+ However, for the instable periods, they are markedly less reliable than
+ the average.
+ On average all models fail 56, 51, and 51 percent of times for horizons
+ 10, 11, and 12 respectively.
+ MT.de.future fails in about 75, 58, and 63 percent of times for horizons,
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Industrial production and AR forecast breakdowns
+Percentage of forecast breakdowns media models
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Percentage-of-models-1"
+name "tab:Percentage-of-forecast"
 
 \end_inset
 
@@ -1172,24 +4320,594 @@ name "fig:Percentage-of-models-1"
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="7">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Caption
+Models
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-Industrial production
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:All-periods-1"
+h=10
+\end_layout
 
 \end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
 
+\begin_layout Plain Layout
 
 \end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+h=11
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+h=12
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+all periods
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+instable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+all periods
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+instable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+all periods
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+instable
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.future
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.74
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.63
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+MT.de.climate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.23
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.68
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+mean all models
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.51
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0.51
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
@@ -1197,69 +4915,12 @@ name "fig:All-periods-1"
 \end_layout
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename H:/git/zeit-2/figs/ip_crisis.pdf
-	scale 50
-	groupId mcsshares
-
-\end_inset
-
 
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-AR forecast breakdowns
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename H:/git/zeit-2/figs/ar_fbp_9_12.pdf
-	scale 50
-	groupId mcsshares
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-All periods
-\end_layout
-
-\begin_layout Subsection
-Recession
 \end_layout
 
 \begin_layout Part*
@@ -1273,6 +4934,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -1289,8 +4951,10 @@ name "tab:Indicators-and-labels"
 \end_inset
 
 
+\size tiny
+
 \begin_inset Tabular
-<lyxtabular version="3" rows="101" columns="8">
+<lyxtabular version="3" rows="102" columns="8">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0">
 <column alignment="left" valignment="top" width="0">
@@ -1306,7 +4970,7 @@ name "tab:Indicators-and-labels"
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Block
 \end_layout
 
@@ -1317,7 +4981,7 @@ Block
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Name
 \end_layout
 
@@ -1328,7 +4992,7 @@ Name
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Label
 \end_layout
 
@@ -1339,7 +5003,7 @@ Label
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 L
 \end_layout
 
@@ -1350,7 +5014,7 @@ L
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 D
 \end_layout
 
@@ -1361,7 +5025,7 @@ D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Dln
 \end_layout
 
@@ -1372,7 +5036,7 @@ Dln
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 D2ln
 \end_layout
 
@@ -1383,7 +5047,7 @@ D2ln
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Lag
 \end_layout
 
@@ -1396,7 +5060,7 @@ Lag
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Dependent variable
 \end_layout
 
@@ -1481,7 +5145,7 @@ Dependent variable
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Industrial production
 \end_layout
 
@@ -1492,7 +5156,7 @@ Industrial production
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IP
 \end_layout
 
@@ -1503,7 +5167,7 @@ IP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1514,7 +5178,7 @@ IP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1525,7 +5189,7 @@ IP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1536,7 +5200,7 @@ IP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1547,8 +5211,84 @@ IP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+Financial 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1569,7 +5309,7 @@ IP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Money market rate (mth.avg.)
 \end_layout
 
@@ -1580,7 +5320,7 @@ Money market rate (mth.avg.)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IS-M
 \end_layout
 
@@ -1591,7 +5331,7 @@ IS-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1602,7 +5342,7 @@ IS-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1613,7 +5353,7 @@ IS-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1624,7 +5364,7 @@ IS-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1635,7 +5375,7 @@ IS-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -1657,7 +5397,7 @@ IS-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Discount rate/short term repo rate (mth.avg.)
 \end_layout
 
@@ -1668,7 +5408,7 @@ Discount rate/short term repo rate (mth.avg.)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IS-D
 \end_layout
 
@@ -1679,7 +5419,7 @@ IS-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1690,7 +5430,7 @@ IS-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1701,7 +5441,7 @@ IS-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1712,7 +5452,7 @@ IS-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1723,7 +5463,7 @@ IS-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -1745,7 +5485,7 @@ IS-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 3m-money market rate (mth.avg.)
 \end_layout
 
@@ -1756,7 +5496,7 @@ IS-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IS-3M
 \end_layout
 
@@ -1767,7 +5507,7 @@ IS-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1778,7 +5518,7 @@ IS-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1789,7 +5529,7 @@ IS-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1800,7 +5540,7 @@ IS-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1811,7 +5551,7 @@ IS-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -1833,7 +5573,7 @@ IS-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Yields on debt securities outstanding (mat.3-5 years)
 \end_layout
 
@@ -1844,7 +5584,7 @@ Yields on debt securities outstanding (mat.3-5 years)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IL-3
 \end_layout
 
@@ -1855,7 +5595,7 @@ IL-3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1866,7 +5606,7 @@ IL-3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1877,7 +5617,7 @@ IL-3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1888,7 +5628,7 @@ IL-3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1899,7 +5639,7 @@ IL-3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -1921,7 +5661,7 @@ IL-3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Yields on debt securities outstanding (mat.5-8 years)
 \end_layout
 
@@ -1932,7 +5672,7 @@ Yields on debt securities outstanding (mat.5-8 years)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IL-5
 \end_layout
 
@@ -1943,7 +5683,7 @@ IL-5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1954,7 +5694,7 @@ IL-5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -1965,7 +5705,7 @@ IL-5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1976,7 +5716,7 @@ IL-5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -1987,7 +5727,7 @@ IL-5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2009,7 +5749,7 @@ IL-5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Long term government bond yield-9-10 years
 \end_layout
 
@@ -2020,7 +5760,7 @@ Long term government bond yield-9-10 years
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IL-10
 \end_layout
 
@@ -2031,7 +5771,7 @@ IL-10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2042,7 +5782,7 @@ IL-10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2053,7 +5793,7 @@ IL-10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2064,7 +5804,7 @@ IL-10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2075,7 +5815,7 @@ IL-10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2097,7 +5837,7 @@ IL-10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Term spread (10y - money market rate)
 \end_layout
 
@@ -2108,7 +5848,7 @@ Term spread (10y - money market rate)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 SPR-10Y-M
 \end_layout
 
@@ -2119,7 +5859,7 @@ SPR-10Y-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2130,7 +5870,7 @@ SPR-10Y-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2141,7 +5881,7 @@ SPR-10Y-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2152,7 +5892,7 @@ SPR-10Y-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2163,7 +5903,7 @@ SPR-10Y-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2185,7 +5925,7 @@ SPR-10Y-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Term spread (10y - discount rate)
 \end_layout
 
@@ -2196,7 +5936,7 @@ Term spread (10y - discount rate)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 SPR-10Y-D
 \end_layout
 
@@ -2207,7 +5947,7 @@ SPR-10Y-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2218,7 +5958,7 @@ SPR-10Y-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2229,7 +5969,7 @@ SPR-10Y-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2240,7 +5980,7 @@ SPR-10Y-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2251,7 +5991,7 @@ SPR-10Y-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2273,7 +6013,7 @@ SPR-10Y-D
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Term spread (10y - 3 month-money market rate)
 \end_layout
 
@@ -2284,7 +6024,7 @@ Term spread (10y - 3 month-money market rate)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 SPR-10Y-3M
 \end_layout
 
@@ -2295,7 +6035,7 @@ SPR-10Y-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2306,7 +6046,7 @@ SPR-10Y-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2317,7 +6057,7 @@ SPR-10Y-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2328,7 +6068,7 @@ SPR-10Y-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2339,7 +6079,7 @@ SPR-10Y-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2361,7 +6101,7 @@ SPR-10Y-3M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Term spread (discount rate - money market rate)
 \end_layout
 
@@ -2372,7 +6112,7 @@ Term spread (discount rate - money market rate)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 SPR-1D-M
 \end_layout
 
@@ -2383,7 +6123,7 @@ SPR-1D-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2394,7 +6134,7 @@ SPR-1D-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2405,7 +6145,7 @@ SPR-1D-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2416,7 +6156,7 @@ SPR-1D-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2427,7 +6167,7 @@ SPR-1D-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2449,7 +6189,7 @@ SPR-1D-M
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Corporate bond-government bonds
 \end_layout
 
@@ -2460,7 +6200,7 @@ Corporate bond-government bonds
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 SPR-C-G
 \end_layout
 
@@ -2471,7 +6211,7 @@ SPR-C-G
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2482,7 +6222,7 @@ SPR-C-G
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2493,7 +6233,7 @@ SPR-C-G
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2504,7 +6244,7 @@ SPR-C-G
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2515,7 +6255,7 @@ SPR-C-G
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2537,7 +6277,7 @@ SPR-C-G
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Nomi-l effective exchange rate
 \end_layout
 
@@ -2548,7 +6288,7 @@ Nomi-l effective exchange rate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 EX
 \end_layout
 
@@ -2559,7 +6299,7 @@ EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2570,7 +6310,7 @@ EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2581,7 +6321,7 @@ EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2592,7 +6332,7 @@ EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2603,7 +6343,7 @@ EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2625,7 +6365,7 @@ EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Real effective exchange rate
 \end_layout
 
@@ -2636,7 +6376,7 @@ Real effective exchange rate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 EXR
 \end_layout
 
@@ -2647,7 +6387,7 @@ EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2658,7 +6398,7 @@ EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2669,7 +6409,7 @@ EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2680,7 +6420,7 @@ EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2691,7 +6431,7 @@ EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2713,7 +6453,7 @@ EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 DAX
 \end_layout
 
@@ -2724,7 +6464,7 @@ DAX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 DAX
 \end_layout
 
@@ -2735,7 +6475,7 @@ DAX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2746,7 +6486,7 @@ DAX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2757,7 +6497,7 @@ DAX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2768,7 +6508,7 @@ DAX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2779,7 +6519,7 @@ DAX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2801,7 +6541,7 @@ DAX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 DAX vola new
 \end_layout
 
@@ -2812,7 +6552,7 @@ DAX vola new
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 VOLA1
 \end_layout
 
@@ -2823,7 +6563,7 @@ VOLA1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2834,7 +6574,7 @@ VOLA1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2845,7 +6585,7 @@ VOLA1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2856,7 +6596,7 @@ VOLA1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2867,7 +6607,7 @@ VOLA1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2889,7 +6629,7 @@ VOLA1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 DAX vola old
 \end_layout
 
@@ -2900,7 +6640,7 @@ DAX vola old
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 VOLA2
 \end_layout
 
@@ -2911,7 +6651,7 @@ VOLA2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2922,7 +6662,7 @@ VOLA2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -2933,7 +6673,7 @@ VOLA2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2944,7 +6684,7 @@ VOLA2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -2955,7 +6695,7 @@ VOLA2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -2977,7 +6717,7 @@ VOLA2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Hwwa index of world market prices of raw mats.
 \end_layout
 
@@ -2988,7 +6728,7 @@ Hwwa index of world market prices of raw mats.
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 HWWA
 \end_layout
 
@@ -2999,7 +6739,7 @@ HWWA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3010,7 +6750,7 @@ HWWA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3021,7 +6761,7 @@ HWWA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3032,7 +6772,7 @@ HWWA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3043,7 +6783,7 @@ HWWA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3065,7 +6805,7 @@ HWWA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Hwwa index, real
 \end_layout
 
@@ -3076,7 +6816,7 @@ Hwwa index, real
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 HWWAR
 \end_layout
 
@@ -3087,7 +6827,7 @@ HWWAR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3098,7 +6838,7 @@ HWWAR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3109,7 +6849,7 @@ HWWAR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3120,7 +6860,7 @@ HWWAR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3131,7 +6871,7 @@ HWWAR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3153,7 +6893,7 @@ HWWAR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Hwwa index ~,energy
 \end_layout
 
@@ -3164,7 +6904,7 @@ Hwwa index ~,energy
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 HWWA-E
 \end_layout
 
@@ -3175,7 +6915,7 @@ HWWA-E
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3186,7 +6926,7 @@ HWWA-E
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3197,7 +6937,7 @@ HWWA-E
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3208,7 +6948,7 @@ HWWA-E
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3219,7 +6959,7 @@ HWWA-E
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3241,7 +6981,7 @@ HWWA-E
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Hwwa index, energy real
 \end_layout
 
@@ -3252,7 +6992,7 @@ Hwwa index, energy real
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 HWWA-ER
 \end_layout
 
@@ -3263,7 +7003,7 @@ HWWA-ER
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3274,7 +7014,7 @@ HWWA-ER
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3285,7 +7025,7 @@ HWWA-ER
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3296,7 +7036,7 @@ HWWA-ER
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3307,7 +7047,7 @@ HWWA-ER
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3329,7 +7069,7 @@ HWWA-ER
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Hwwa index ~,excl.
  energy
 \end_layout
@@ -3341,7 +7081,7 @@ Hwwa index ~,excl.
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 HWWA-EX
 \end_layout
 
@@ -3352,7 +7092,7 @@ HWWA-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3363,7 +7103,7 @@ HWWA-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3374,7 +7114,7 @@ HWWA-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3385,7 +7125,7 @@ HWWA-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3396,7 +7136,7 @@ HWWA-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3418,7 +7158,7 @@ HWWA-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Hwwa index, excl.
  energy real
 \end_layout
@@ -3430,7 +7170,7 @@ Hwwa index, excl.
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 HWWA-EXR
 \end_layout
 
@@ -3441,7 +7181,7 @@ HWWA-EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3452,7 +7192,7 @@ HWWA-EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3463,7 +7203,7 @@ HWWA-EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3474,7 +7214,7 @@ HWWA-EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3485,7 +7225,7 @@ HWWA-EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3507,7 +7247,7 @@ HWWA-EXR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Oil prices (euros per barrel)
 \end_layout
 
@@ -3518,7 +7258,7 @@ Oil prices (euros per barrel)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 OIL
 \end_layout
 
@@ -3529,7 +7269,7 @@ OIL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3540,7 +7280,7 @@ OIL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3551,7 +7291,7 @@ OIL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3562,7 +7302,7 @@ OIL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3573,7 +7313,7 @@ OIL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -3595,7 +7335,7 @@ OIL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Oil prices (euros per barrel), real
 \end_layout
 
@@ -3606,7 +7346,7 @@ Oil prices (euros per barrel), real
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 OILR
 \end_layout
 
@@ -3617,7 +7357,7 @@ OILR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3628,7 +7368,7 @@ OILR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3639,7 +7379,7 @@ OILR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3650,7 +7390,7 @@ OILR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3661,7 +7401,7 @@ OILR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3674,7 +7414,7 @@ OILR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Surveys
 \end_layout
 
@@ -3759,7 +7499,7 @@ Surveys
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo index climate
 \end_layout
 
@@ -3770,7 +7510,7 @@ Ifo index climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFO-C
 \end_layout
 
@@ -3781,7 +7521,7 @@ IFO-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3792,7 +7532,7 @@ IFO-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3803,7 +7543,7 @@ IFO-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3814,7 +7554,7 @@ IFO-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3825,7 +7565,7 @@ IFO-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -3847,7 +7587,7 @@ IFO-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo expectations climate
 \end_layout
 
@@ -3858,7 +7598,7 @@ Ifo expectations climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFO-EXP
 \end_layout
 
@@ -3869,7 +7609,7 @@ IFO-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3880,7 +7620,7 @@ IFO-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3891,7 +7631,7 @@ IFO-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3902,7 +7642,7 @@ IFO-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3913,7 +7653,7 @@ IFO-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -3935,7 +7675,7 @@ IFO-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo index manufacturing
 \end_layout
 
@@ -3946,7 +7686,7 @@ Ifo index manufacturing
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFOM-C
 \end_layout
 
@@ -3957,7 +7697,7 @@ IFOM-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3968,7 +7708,7 @@ IFOM-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -3979,7 +7719,7 @@ IFOM-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -3990,7 +7730,7 @@ IFOM-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4001,7 +7741,7 @@ IFOM-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4023,7 +7763,7 @@ IFOM-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo expectations manufacturing
 \end_layout
 
@@ -4034,7 +7774,7 @@ Ifo expectations manufacturing
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFOM-EXP
 \end_layout
 
@@ -4045,7 +7785,7 @@ IFOM-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4056,7 +7796,7 @@ IFOM-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4067,7 +7807,7 @@ IFOM-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4078,7 +7818,7 @@ IFOM-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4089,7 +7829,7 @@ IFOM-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4111,7 +7851,7 @@ IFOM-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo index capital goods
 \end_layout
 
@@ -4122,7 +7862,7 @@ Ifo index capital goods
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFOMI-C
 \end_layout
 
@@ -4133,7 +7873,7 @@ IFOMI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4144,7 +7884,7 @@ IFOMI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4155,7 +7895,7 @@ IFOMI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4166,7 +7906,7 @@ IFOMI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4177,7 +7917,7 @@ IFOMI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4199,7 +7939,7 @@ IFOMI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo expecations capital goods
 \end_layout
 
@@ -4210,7 +7950,7 @@ Ifo expecations capital goods
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFOMI-EXP
 \end_layout
 
@@ -4221,7 +7961,7 @@ IFOMI-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4232,7 +7972,7 @@ IFOMI-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4243,7 +7983,7 @@ IFOMI-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4254,7 +7994,7 @@ IFOMI-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4265,7 +8005,7 @@ IFOMI-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4287,7 +8027,7 @@ IFOMI-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo index intermediate goods
 \end_layout
 
@@ -4298,7 +8038,7 @@ Ifo index intermediate goods
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFOMV-C
 \end_layout
 
@@ -4309,7 +8049,7 @@ IFOMV-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4320,7 +8060,7 @@ IFOMV-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4331,7 +8071,7 @@ IFOMV-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4342,7 +8082,7 @@ IFOMV-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4353,7 +8093,7 @@ IFOMV-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4375,7 +8115,7 @@ IFOMV-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo expectations intermediate goods
 \end_layout
 
@@ -4386,7 +8126,7 @@ Ifo expectations intermediate goods
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFOMV-EXP
 \end_layout
 
@@ -4397,7 +8137,7 @@ IFOMV-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4408,7 +8148,7 @@ IFOMV-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4419,7 +8159,7 @@ IFOMV-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4430,7 +8170,7 @@ IFOMV-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4441,7 +8181,7 @@ IFOMV-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4463,7 +8203,7 @@ IFOMV-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo index wholesale
 \end_layout
 
@@ -4474,7 +8214,7 @@ Ifo index wholesale
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFOWH-C
 \end_layout
 
@@ -4485,7 +8225,7 @@ IFOWH-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4496,7 +8236,7 @@ IFOWH-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4507,7 +8247,7 @@ IFOWH-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4518,7 +8258,7 @@ IFOWH-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4529,7 +8269,7 @@ IFOWH-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4551,7 +8291,7 @@ IFOWH-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Ifo expectations wholesale
 \end_layout
 
@@ -4562,7 +8302,7 @@ Ifo expectations wholesale
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IFOWH-EXP
 \end_layout
 
@@ -4573,7 +8313,7 @@ IFOWH-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4584,7 +8324,7 @@ IFOWH-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4595,7 +8335,7 @@ IFOWH-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4606,7 +8346,7 @@ IFOWH-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4617,7 +8357,7 @@ IFOWH-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4639,7 +8379,7 @@ IFOWH-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 GFK consumer climate survey - business cycle expectations
 \end_layout
 
@@ -4650,7 +8390,7 @@ GFK consumer climate survey - business cycle expectations
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 GFK-EXP
 \end_layout
 
@@ -4661,7 +8401,7 @@ GFK-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4672,7 +8412,7 @@ GFK-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4683,7 +8423,7 @@ GFK-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4694,7 +8434,7 @@ GFK-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4705,7 +8445,7 @@ GFK-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4727,7 +8467,7 @@ GFK-EXP
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ZEW economic sentiment
 \end_layout
 
@@ -4738,7 +8478,7 @@ ZEW economic sentiment
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ZEW
 \end_layout
 
@@ -4749,7 +8489,7 @@ ZEW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4760,7 +8500,7 @@ ZEW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4771,7 +8511,7 @@ ZEW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4782,7 +8522,7 @@ ZEW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4793,7 +8533,7 @@ ZEW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4815,7 +8555,7 @@ ZEW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Assessment of order-book levels 
 \end_layout
 
@@ -4826,7 +8566,7 @@ Assessment of order-book levels
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECBS2
 \end_layout
 
@@ -4837,7 +8577,7 @@ ECBS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4848,7 +8588,7 @@ ECBS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4859,7 +8599,7 @@ ECBS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4870,7 +8610,7 @@ ECBS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4881,7 +8621,7 @@ ECBS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4903,7 +8643,7 @@ ECBS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Assessment of export order-book levels 
 \end_layout
 
@@ -4914,7 +8654,7 @@ Assessment of export order-book levels
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECBS3
 \end_layout
 
@@ -4925,7 +8665,7 @@ ECBS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4936,7 +8676,7 @@ ECBS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -4947,7 +8687,7 @@ ECBS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4958,7 +8698,7 @@ ECBS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -4969,7 +8709,7 @@ ECBS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -4991,7 +8731,7 @@ ECBS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Assessment of stocks of finished products 
 \end_layout
 
@@ -5002,7 +8742,7 @@ Assessment of stocks of finished products
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECBS4
 \end_layout
 
@@ -5013,7 +8753,7 @@ ECBS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5024,7 +8764,7 @@ ECBS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5035,7 +8775,7 @@ ECBS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5046,7 +8786,7 @@ ECBS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5057,7 +8797,7 @@ ECBS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5079,7 +8819,7 @@ ECBS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Production expectations for the months ahead 
 \end_layout
 
@@ -5090,7 +8830,7 @@ Production expectations for the months ahead
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECBS5
 \end_layout
 
@@ -5101,7 +8841,7 @@ ECBS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5112,7 +8852,7 @@ ECBS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5123,7 +8863,7 @@ ECBS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5134,7 +8874,7 @@ ECBS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5145,7 +8885,7 @@ ECBS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5167,7 +8907,7 @@ ECBS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Selling price expectations for the months ahead 
 \end_layout
 
@@ -5178,7 +8918,7 @@ Selling price expectations for the months ahead
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECBS6
 \end_layout
 
@@ -5189,7 +8929,7 @@ ECBS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5200,7 +8940,7 @@ ECBS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5211,7 +8951,7 @@ ECBS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5222,7 +8962,7 @@ ECBS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5233,7 +8973,7 @@ ECBS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5255,7 +8995,7 @@ ECBS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Employment expectations for the months ahead 
 \end_layout
 
@@ -5266,7 +9006,7 @@ Employment expectations for the months ahead
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECBS7
 \end_layout
 
@@ -5277,7 +9017,7 @@ ECBS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5288,7 +9028,7 @@ ECBS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5299,7 +9039,7 @@ ECBS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5310,7 +9050,7 @@ ECBS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5321,7 +9061,7 @@ ECBS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5343,7 +9083,7 @@ ECBS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Industrial confidence indicator (40%)
 \end_layout
 
@@ -5354,7 +9094,7 @@ Industrial confidence indicator (40%)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ESI-INDU
 \end_layout
 
@@ -5365,7 +9105,7 @@ ESI-INDU
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5376,7 +9116,7 @@ ESI-INDU
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5387,7 +9127,7 @@ ESI-INDU
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5398,7 +9138,7 @@ ESI-INDU
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5409,7 +9149,7 @@ ESI-INDU
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5431,7 +9171,7 @@ ESI-INDU
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Services confidence indicator (30%)
 \end_layout
 
@@ -5442,7 +9182,7 @@ Services confidence indicator (30%)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ESI-SERV
 \end_layout
 
@@ -5453,7 +9193,7 @@ ESI-SERV
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5464,7 +9204,7 @@ ESI-SERV
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5475,7 +9215,7 @@ ESI-SERV
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5486,7 +9226,7 @@ ESI-SERV
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5497,7 +9237,7 @@ ESI-SERV
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5519,7 +9259,7 @@ ESI-SERV
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Consumer confidence indicator (20%)
 \end_layout
 
@@ -5530,7 +9270,7 @@ Consumer confidence indicator (20%)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ESI-C
 \end_layout
 
@@ -5541,7 +9281,7 @@ ESI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5552,7 +9292,7 @@ ESI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5563,7 +9303,7 @@ ESI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5574,7 +9314,7 @@ ESI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5585,7 +9325,7 @@ ESI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5607,7 +9347,7 @@ ESI-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Retail trade confidence indicator (5%)
 \end_layout
 
@@ -5618,7 +9358,7 @@ Retail trade confidence indicator (5%)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ESI-TRADE
 \end_layout
 
@@ -5629,7 +9369,7 @@ ESI-TRADE
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5640,7 +9380,7 @@ ESI-TRADE
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5651,7 +9391,7 @@ ESI-TRADE
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5662,7 +9402,7 @@ ESI-TRADE
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5673,7 +9413,7 @@ ESI-TRADE
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5695,7 +9435,7 @@ ESI-TRADE
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Construction confidence indicator (5%)
 \end_layout
 
@@ -5706,7 +9446,7 @@ Construction confidence indicator (5%)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ESI-CTR
 \end_layout
 
@@ -5717,7 +9457,7 @@ ESI-CTR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5728,7 +9468,7 @@ ESI-CTR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5739,7 +9479,7 @@ ESI-CTR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5750,7 +9490,7 @@ ESI-CTR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5761,7 +9501,7 @@ ESI-CTR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5783,7 +9523,7 @@ ESI-CTR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Economic sentiment indicator (average)
 \end_layout
 
@@ -5794,7 +9534,7 @@ Economic sentiment indicator (average)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ESI
 \end_layout
 
@@ -5805,7 +9545,7 @@ ESI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5816,7 +9556,7 @@ ESI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5827,7 +9567,7 @@ ESI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5838,7 +9578,7 @@ ESI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5849,7 +9589,7 @@ ESI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5871,7 +9611,7 @@ ESI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Confidence Indicator (Q2 + Q4 - Q7 + Q11) / 4 
 \end_layout
 
@@ -5882,7 +9622,7 @@ Confidence Indicator (Q2 + Q4 - Q7 + Q11) / 4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS99
 \end_layout
 
@@ -5893,7 +9633,7 @@ ECCS99
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5904,7 +9644,7 @@ ECCS99
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5915,7 +9655,7 @@ ECCS99
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5926,7 +9666,7 @@ ECCS99
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -5937,7 +9677,7 @@ ECCS99
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -5959,7 +9699,7 @@ ECCS99
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Fi-ncial situation over last 12 months
 \end_layout
 
@@ -5970,7 +9710,7 @@ Fi-ncial situation over last 12 months
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS1
 \end_layout
 
@@ -5981,7 +9721,7 @@ ECCS1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -5992,7 +9732,7 @@ ECCS1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6003,7 +9743,7 @@ ECCS1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6014,7 +9754,7 @@ ECCS1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6025,7 +9765,7 @@ ECCS1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6047,7 +9787,7 @@ ECCS1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Fi-ncial situation over next 12 months
 \end_layout
 
@@ -6058,7 +9798,7 @@ Fi-ncial situation over next 12 months
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS2
 \end_layout
 
@@ -6069,7 +9809,7 @@ ECCS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6080,7 +9820,7 @@ ECCS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6091,7 +9831,7 @@ ECCS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6102,7 +9842,7 @@ ECCS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6113,7 +9853,7 @@ ECCS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6135,7 +9875,7 @@ ECCS2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 General economic situation over last 12 months
 \end_layout
 
@@ -6146,7 +9886,7 @@ General economic situation over last 12 months
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS3
 \end_layout
 
@@ -6157,7 +9897,7 @@ ECCS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6168,7 +9908,7 @@ ECCS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6179,7 +9919,7 @@ ECCS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6190,7 +9930,7 @@ ECCS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6201,7 +9941,7 @@ ECCS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6223,7 +9963,7 @@ ECCS3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 General economic situation over next 12 months
 \end_layout
 
@@ -6234,7 +9974,7 @@ General economic situation over next 12 months
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS4
 \end_layout
 
@@ -6245,7 +9985,7 @@ ECCS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6256,7 +9996,7 @@ ECCS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6267,7 +10007,7 @@ ECCS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6278,7 +10018,7 @@ ECCS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6289,7 +10029,7 @@ ECCS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6311,7 +10051,7 @@ ECCS4
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Price trends over last 12 months
 \end_layout
 
@@ -6322,7 +10062,7 @@ Price trends over last 12 months
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS5
 \end_layout
 
@@ -6333,7 +10073,7 @@ ECCS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6344,7 +10084,7 @@ ECCS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6355,7 +10095,7 @@ ECCS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6366,7 +10106,7 @@ ECCS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6377,7 +10117,7 @@ ECCS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6399,7 +10139,7 @@ ECCS5
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Price trends over next 12 months
 \end_layout
 
@@ -6410,7 +10150,7 @@ Price trends over next 12 months
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS6
 \end_layout
 
@@ -6421,7 +10161,7 @@ ECCS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6432,7 +10172,7 @@ ECCS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6443,7 +10183,7 @@ ECCS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6454,7 +10194,7 @@ ECCS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6465,7 +10205,7 @@ ECCS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6487,7 +10227,7 @@ ECCS6
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Unemployment expectations over next 12 months
 \end_layout
 
@@ -6498,7 +10238,7 @@ Unemployment expectations over next 12 months
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS7
 \end_layout
 
@@ -6509,7 +10249,7 @@ ECCS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6520,7 +10260,7 @@ ECCS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6531,7 +10271,7 @@ ECCS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6542,7 +10282,7 @@ ECCS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6553,7 +10293,7 @@ ECCS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6575,7 +10315,7 @@ ECCS7
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Major purchases at present
 \end_layout
 
@@ -6586,7 +10326,7 @@ Major purchases at present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS8
 \end_layout
 
@@ -6597,7 +10337,7 @@ ECCS8
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6608,7 +10348,7 @@ ECCS8
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6619,7 +10359,7 @@ ECCS8
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6630,7 +10370,7 @@ ECCS8
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6641,7 +10381,7 @@ ECCS8
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6663,7 +10403,7 @@ ECCS8
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Major purchases over next 12 months
 \end_layout
 
@@ -6674,7 +10414,7 @@ Major purchases over next 12 months
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS9
 \end_layout
 
@@ -6685,7 +10425,7 @@ ECCS9
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6696,7 +10436,7 @@ ECCS9
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6707,7 +10447,7 @@ ECCS9
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6718,7 +10458,7 @@ ECCS9
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6729,7 +10469,7 @@ ECCS9
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6751,7 +10491,7 @@ ECCS9
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Savings at present
 \end_layout
 
@@ -6762,7 +10502,7 @@ Savings at present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS10
 \end_layout
 
@@ -6773,7 +10513,7 @@ ECCS10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6784,7 +10524,7 @@ ECCS10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6795,7 +10535,7 @@ ECCS10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6806,7 +10546,7 @@ ECCS10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6817,7 +10557,7 @@ ECCS10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6839,7 +10579,7 @@ ECCS10
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Savings over next 12 months
 \end_layout
 
@@ -6850,7 +10590,7 @@ Savings over next 12 months
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS11
 \end_layout
 
@@ -6861,7 +10601,7 @@ ECCS11
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6872,7 +10612,7 @@ ECCS11
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6883,7 +10623,7 @@ ECCS11
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6894,7 +10634,7 @@ ECCS11
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6905,7 +10645,7 @@ ECCS11
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -6927,7 +10667,7 @@ ECCS11
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Statement on fi-ncial situation of household
 \end_layout
 
@@ -6938,7 +10678,7 @@ Statement on fi-ncial situation of household
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ECCS12
 \end_layout
 
@@ -6949,7 +10689,7 @@ ECCS12
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6960,7 +10700,7 @@ ECCS12
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -6971,7 +10711,7 @@ ECCS12
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6982,7 +10722,7 @@ ECCS12
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -6993,7 +10733,7 @@ ECCS12
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -7006,7 +10746,7 @@ ECCS12
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Prices and wages
 \end_layout
 
@@ -7091,7 +10831,7 @@ Prices and wages
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 CPI
 \end_layout
 
@@ -7102,7 +10842,7 @@ CPI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 CPI
 \end_layout
 
@@ -7113,7 +10853,7 @@ CPI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7124,7 +10864,7 @@ CPI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7135,7 +10875,7 @@ CPI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7146,7 +10886,7 @@ CPI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7157,7 +10897,7 @@ CPI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -7179,7 +10919,7 @@ CPI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Core CPI
 \end_layout
 
@@ -7190,7 +10930,7 @@ Core CPI
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 CPI-EX
 \end_layout
 
@@ -7201,7 +10941,7 @@ CPI-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7212,7 +10952,7 @@ CPI-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7223,7 +10963,7 @@ CPI-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7234,7 +10974,7 @@ CPI-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7245,7 +10985,7 @@ CPI-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -7267,7 +11007,7 @@ CPI-EX
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Negotiated wage and salary level
 \end_layout
 
@@ -7278,7 +11018,7 @@ Negotiated wage and salary level
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 TARIF
 \end_layout
 
@@ -7289,7 +11029,7 @@ TARIF
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7300,7 +11040,7 @@ TARIF
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7311,7 +11051,7 @@ TARIF
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7322,7 +11062,7 @@ TARIF
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7333,7 +11073,7 @@ TARIF
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -7346,7 +11086,7 @@ TARIF
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Real economy
 \end_layout
 
@@ -7431,7 +11171,7 @@ Real economy
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Intermediate goods production
 \end_layout
 
@@ -7442,7 +11182,7 @@ Intermediate goods production
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 IP-VORL
 \end_layout
 
@@ -7453,7 +11193,7 @@ IP-VORL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7464,7 +11204,7 @@ IP-VORL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7475,7 +11215,7 @@ IP-VORL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7486,7 +11226,7 @@ IP-VORL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7497,7 +11237,7 @@ IP-VORL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -7519,7 +11259,7 @@ IP-VORL
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Manufacturing orders - consumer goods
 \end_layout
 
@@ -7530,7 +11270,7 @@ Manufacturing orders - consumer goods
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ORD-C
 \end_layout
 
@@ -7541,7 +11281,7 @@ ORD-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7552,7 +11292,7 @@ ORD-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7563,7 +11303,7 @@ ORD-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7574,7 +11314,7 @@ ORD-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7585,7 +11325,7 @@ ORD-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -7607,7 +11347,7 @@ ORD-C
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Manufacturing orders - capital goods
 \end_layout
 
@@ -7618,7 +11358,7 @@ Manufacturing orders - capital goods
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ORD-I
 \end_layout
 
@@ -7629,7 +11369,7 @@ ORD-I
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7640,7 +11380,7 @@ ORD-I
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7651,7 +11391,7 @@ ORD-I
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7662,7 +11402,7 @@ ORD-I
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7673,7 +11413,7 @@ ORD-I
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -7695,7 +11435,7 @@ ORD-I
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Employed persons (work-place concept)
 \end_layout
 
@@ -7706,7 +11446,7 @@ Employed persons (work-place concept)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 EW
 \end_layout
 
@@ -7717,7 +11457,7 @@ EW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7728,7 +11468,7 @@ EW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7739,7 +11479,7 @@ EW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7750,7 +11490,7 @@ EW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7761,7 +11501,7 @@ EW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -7783,7 +11523,7 @@ EW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1+unemployment (% civilian labour)
 \end_layout
 
@@ -7794,7 +11534,7 @@ EW
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 ALQ
 \end_layout
 
@@ -7805,7 +11545,7 @@ ALQ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7816,7 +11556,7 @@ ALQ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7827,7 +11567,7 @@ ALQ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7838,7 +11578,7 @@ ALQ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7849,7 +11589,7 @@ ALQ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7871,7 +11611,7 @@ ALQ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Vacancies
 \end_layout
 
@@ -7882,7 +11622,7 @@ Vacancies
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 VAC
 \end_layout
 
@@ -7893,7 +11633,7 @@ VAC
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7904,7 +11644,7 @@ VAC
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7915,7 +11655,7 @@ VAC
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7926,7 +11666,7 @@ VAC
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -7937,7 +11677,7 @@ VAC
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7959,7 +11699,7 @@ VAC
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Capacity utilisation
 \end_layout
 
@@ -7970,7 +11710,7 @@ Capacity utilisation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 CAPA
 \end_layout
 
@@ -7981,7 +11721,7 @@ CAPA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -7992,7 +11732,7 @@ CAPA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8003,7 +11743,7 @@ CAPA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8014,7 +11754,7 @@ CAPA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8025,7 +11765,7 @@ CAPA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -8047,7 +11787,7 @@ CAPA
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Hours worked
 \end_layout
 
@@ -8058,7 +11798,7 @@ Hours worked
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 WHOUR
 \end_layout
 
@@ -8069,7 +11809,7 @@ WHOUR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8080,7 +11820,7 @@ WHOUR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8091,7 +11831,7 @@ WHOUR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8102,7 +11842,7 @@ WHOUR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8113,7 +11853,7 @@ WHOUR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -8126,7 +11866,7 @@ WHOUR
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Composite indicators
 \end_layout
 
@@ -8211,7 +11951,7 @@ Composite indicators
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 FAZ indicator
 \end_layout
 
@@ -8222,7 +11962,7 @@ FAZ indicator
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 FAZ
 \end_layout
 
@@ -8233,7 +11973,7 @@ FAZ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8244,7 +11984,7 @@ FAZ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8255,7 +11995,7 @@ FAZ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8266,7 +12006,7 @@ FAZ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8277,7 +12017,7 @@ FAZ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8299,7 +12039,7 @@ FAZ
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Composite leading indicator (amplitude restored)
 \end_layout
 
@@ -8310,7 +12050,7 @@ Composite leading indicator (amplitude restored)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 OECDL1
 \end_layout
 
@@ -8321,7 +12061,7 @@ OECDL1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8332,7 +12072,7 @@ OECDL1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8343,7 +12083,7 @@ OECDL1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8354,7 +12094,7 @@ OECDL1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8365,7 +12105,7 @@ OECDL1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 2
 \end_layout
 
@@ -8387,7 +12127,7 @@ OECDL1
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Composite leading indicator (trend restored)
 \end_layout
 
@@ -8398,7 +12138,7 @@ Composite leading indicator (trend restored)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 OECDL2
 \end_layout
 
@@ -8409,7 +12149,7 @@ OECDL2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8420,7 +12160,7 @@ OECDL2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8431,7 +12171,7 @@ OECDL2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8442,7 +12182,7 @@ OECDL2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8453,7 +12193,7 @@ OECDL2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 2
 \end_layout
 
@@ -8475,7 +12215,7 @@ OECDL2
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Composite leading indicator (normalized)
 \end_layout
 
@@ -8486,7 +12226,7 @@ Composite leading indicator (normalized)
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 OECDL3
 \end_layout
 
@@ -8497,7 +12237,7 @@ OECDL3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8508,7 +12248,7 @@ OECDL3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8519,7 +12259,7 @@ OECDL3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8530,7 +12270,7 @@ OECDL3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8541,7 +12281,7 @@ OECDL3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 2
 \end_layout
 
@@ -8554,7 +12294,7 @@ OECDL3
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 Media indicators
 \end_layout
 
@@ -8639,7 +12379,7 @@ Media indicators
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 all observations
 \end_layout
 
@@ -8650,7 +12390,7 @@ all observations
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.all
 \end_layout
 
@@ -8661,7 +12401,7 @@ MT.all
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8672,7 +12412,7 @@ MT.all
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8683,7 +12423,7 @@ MT.all
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8694,7 +12434,7 @@ MT.all
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8705,7 +12445,7 @@ MT.all
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -8727,7 +12467,7 @@ MT.all
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 all observations related to the future
 \end_layout
 
@@ -8738,7 +12478,7 @@ all observations related to the future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.future
 \end_layout
 
@@ -8749,7 +12489,7 @@ MT.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8760,7 +12500,7 @@ MT.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8771,7 +12511,7 @@ MT.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8782,7 +12522,7 @@ MT.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8793,7 +12533,7 @@ MT.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -8815,7 +12555,7 @@ MT.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 all observations related to the present
 \end_layout
 
@@ -8826,7 +12566,7 @@ all observations related to the present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.presence
 \end_layout
 
@@ -8837,7 +12577,7 @@ MT.presence
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8848,7 +12588,7 @@ MT.presence
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8859,7 +12599,7 @@ MT.presence
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8870,7 +12610,7 @@ MT.presence
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8881,7 +12621,7 @@ MT.presence
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -8903,7 +12643,7 @@ MT.presence
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 all observations related to the future and present
 \end_layout
 
@@ -8914,7 +12654,7 @@ all observations related to the future and present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.climate
 \end_layout
 
@@ -8925,7 +12665,7 @@ MT.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8936,7 +12676,7 @@ MT.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -8947,7 +12687,7 @@ MT.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8958,7 +12698,7 @@ MT.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -8969,7 +12709,7 @@ MT.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -8991,7 +12731,7 @@ MT.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 all observations related to Germany
 \end_layout
 
@@ -9002,7 +12742,7 @@ all observations related to Germany
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.de
 \end_layout
 
@@ -9013,7 +12753,7 @@ MT.de
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9024,7 +12764,7 @@ MT.de
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9035,7 +12775,7 @@ MT.de
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9046,7 +12786,7 @@ MT.de
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9057,7 +12797,7 @@ MT.de
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9079,7 +12819,7 @@ MT.de
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to Germany and the future
 \end_layout
 
@@ -9090,7 +12830,7 @@ All observations related to Germany and the future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.de.future
 \end_layout
 
@@ -9101,7 +12841,7 @@ MT.de.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9112,7 +12852,7 @@ MT.de.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9123,7 +12863,7 @@ MT.de.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9134,7 +12874,7 @@ MT.de.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9145,7 +12885,7 @@ MT.de.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9167,7 +12907,7 @@ MT.de.future
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to Germany and present
 \end_layout
 
@@ -9178,7 +12918,7 @@ All observations related to Germany and present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.de.present
 \end_layout
 
@@ -9189,7 +12929,7 @@ MT.de.present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9200,7 +12940,7 @@ MT.de.present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9211,7 +12951,7 @@ MT.de.present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9222,7 +12962,7 @@ MT.de.present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9233,7 +12973,7 @@ MT.de.present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9255,7 +12995,7 @@ MT.de.present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to Germany, and future and present
 \end_layout
 
@@ -9266,7 +13006,7 @@ All observations related to Germany, and future and present
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.de.climate
 \end_layout
 
@@ -9277,7 +13017,7 @@ MT.de.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9288,7 +13028,7 @@ MT.de.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9299,7 +13039,7 @@ MT.de.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9310,7 +13050,7 @@ MT.de.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9321,7 +13061,7 @@ MT.de.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9343,7 +13083,7 @@ MT.de.climate
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to government budget
 \end_layout
 
@@ -9354,7 +13094,7 @@ All observations related to government budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.budget
 \end_layout
 
@@ -9365,7 +13105,7 @@ MT.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9376,7 +13116,7 @@ MT.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9387,7 +13127,7 @@ MT.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9398,7 +13138,7 @@ MT.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9409,7 +13149,7 @@ MT.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9431,7 +13171,7 @@ MT.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to monetary issues
 \end_layout
 
@@ -9442,7 +13182,7 @@ All observations related to monetary issues
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.currency
 \end_layout
 
@@ -9453,7 +13193,7 @@ MT.currency
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9464,7 +13204,7 @@ MT.currency
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9475,7 +13215,7 @@ MT.currency
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9486,7 +13226,7 @@ MT.currency
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9497,7 +13237,7 @@ MT.currency
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9519,7 +13259,7 @@ MT.currency
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to the labor market
 \end_layout
 
@@ -9530,7 +13270,7 @@ All observations related to the labor market
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.labor
 \end_layout
 
@@ -9541,7 +13281,7 @@ MT.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9552,7 +13292,7 @@ MT.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9563,7 +13303,7 @@ MT.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9574,7 +13314,7 @@ MT.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9585,7 +13325,7 @@ MT.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9607,7 +13347,7 @@ MT.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to the business cycle
 \end_layout
 
@@ -9618,7 +13358,7 @@ All observations related to the business cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.cycle
 \end_layout
 
@@ -9629,7 +13369,7 @@ MT.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9640,7 +13380,7 @@ MT.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9651,7 +13391,7 @@ MT.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9662,7 +13402,7 @@ MT.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9673,7 +13413,7 @@ MT.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9695,7 +13435,7 @@ MT.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to taxation
 \end_layout
 
@@ -9706,7 +13446,7 @@ All observations related to taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.taxation
 \end_layout
 
@@ -9717,7 +13457,7 @@ MT.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9728,7 +13468,7 @@ MT.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9739,7 +13479,7 @@ MT.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9750,7 +13490,7 @@ MT.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9761,7 +13501,7 @@ MT.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9783,7 +13523,7 @@ MT.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to the German government budget
 \end_layout
 
@@ -9794,7 +13534,7 @@ All observations related to the German government budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.de.budget
 \end_layout
 
@@ -9805,7 +13545,7 @@ MT.de.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9816,7 +13556,7 @@ MT.de.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9827,7 +13567,7 @@ MT.de.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9838,7 +13578,7 @@ MT.de.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9849,7 +13589,7 @@ MT.de.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9871,7 +13611,7 @@ MT.de.budget
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to the German labor market
 \end_layout
 
@@ -9882,7 +13622,7 @@ All observations related to the German labor market
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.de.labor
 \end_layout
 
@@ -9893,7 +13633,7 @@ MT.de.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9904,7 +13644,7 @@ MT.de.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9915,7 +13655,7 @@ MT.de.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9926,7 +13666,7 @@ MT.de.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -9937,7 +13677,7 @@ MT.de.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -9959,7 +13699,7 @@ MT.de.labor
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to the German business cycle
 \end_layout
 
@@ -9970,7 +13710,7 @@ All observations related to the German business cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.de.cycle
 \end_layout
 
@@ -9981,7 +13721,7 @@ MT.de.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -9992,7 +13732,7 @@ MT.de.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -10003,7 +13743,7 @@ MT.de.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -10014,7 +13754,7 @@ MT.de.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -10025,7 +13765,7 @@ MT.de.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 
@@ -10047,7 +13787,7 @@ MT.de.cycle
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 All observations related to German taxation
 \end_layout
 
@@ -10058,7 +13798,7 @@ All observations related to German taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 MT.de.taxation
 \end_layout
 
@@ -10069,7 +13809,7 @@ MT.de.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -10080,7 +13820,7 @@ MT.de.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 1
 \end_layout
 
@@ -10091,7 +13831,7 @@ MT.de.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -10102,7 +13842,7 @@ MT.de.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 -
 \end_layout
 
@@ -10113,7 +13853,7 @@ MT.de.taxation
 
 \begin_layout Plain Layout
 
-\size scriptsize
+\size tiny
 0
 \end_layout
 

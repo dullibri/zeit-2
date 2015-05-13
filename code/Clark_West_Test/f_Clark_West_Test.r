@@ -9,7 +9,7 @@ cP = length(vFE_small) - cH + 1 # Number of degrees of freedom
 vCW = vFE_small^2 - vFE_big^2 + (vFcst_small - vFcst_big)^2 # Forecast differential with adjustment (last term)
 cCW_bar = mean(vCW); # Average forecast differential
 
-Bandwidth = round(1.5 * cH)
+Bandwidth = round(1.5 * cH)# mU=(vCW - cCW_bar) cLag=Bandwidth
 NW =  f_Newey_West_vector((vCW - cCW_bar), Bandwidth) # Newey-West variance of forecast differential
 cNWcw = NW[[1]]
 cStat = cCW_bar/(sqrt(cNWcw)/sqrt(cP)) # Clark-West test statistic

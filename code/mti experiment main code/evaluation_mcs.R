@@ -342,6 +342,19 @@ for (h in 1:max.hor){# h=3
                 colnames(sfe.exp)=NULL
                 write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfer',h,'.csv',sep=''),
                             , row.names=F,col.names=F,sep=',')
+                
+                # Clark West during recession ---------------------------------------------
+                vFE_small=fe['ar',recession.ind]
+                vFcst_small=fc['ar',recession.ind]
+                cH=h
+                fe.r=fe[,recession.ind,drop=F]
+                fc.r=fc[,recession.ind,drop=F]
+                cw.r=lapply(2:nrow(fc),function(i) f_Clark_West_Test(vFE_small, fe.r[i,], vFcst_small, fc.r[i,], cH/1.5))
+                #                 for (i in (2:nrow(fc))){ #vFE_big=fe.r[i,] vFcst_big=fc.r[i,]
+                #                         cw.r[[i]]=f_Clark_West_Test(vFE_small, fe.r[i,], vFcst_small, fc.r[i,], cH)
+                #                 }
+                result.r[2:nrow(fc),'cw.p']=unlist(sapply(cw.r,function(x)x[2]))
+                
         }
         # Clark West
         vFE_small=fe['ar',]
@@ -451,6 +464,8 @@ for (h in 1:max.hor){# h=3
 
 
 
+
+
 theil.ind=seq(1,(max.hor*ni)-1,ni)
 rank.ind=seq(2,(max.hor*ni),ni)
 
@@ -498,7 +513,7 @@ rank.rr.mt=sapply(mt,function(x) x$Rr)
 grouping=grouping[-grep('mean|median',row.names(grouping)),]
 
 fres=list()
-sfeorr='sfer'
+sfeorr='sfe'
 for (h in 1:14){
         inc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/includeSQ',sfeorr,h,'.csv',sep=''),header=F)
         exc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/excludeSQ',sfeorr,h,'.csv',sep=''),header=F)
@@ -552,7 +567,7 @@ t=t/nrow(ALL.inc)*100
 if (sfeorr=='sfe'){
         pdf(paste(DirCode,'/figs/mcs_share_media_all.pdf',sep=''))
         barplot(t,legend=row.names(t)
-                ,ylim=c(0,60)
+                ,ylim=c(0,80)
                 ,xlab='forecast horizon'
                 ,ylab='% of models included in MCS'
         )  
@@ -603,7 +618,7 @@ best.m=function(result,h){
         t=t[sort(t$rank.theilsu,index.return=T)$ix,]
         t[,c('rmse','mcs.pvalue','theilsu')]=round(t[,c('rmse','mcs.pvalue','theilsu')],2)
         
-#         t=head(t,1)
+        #         t=head(t,1)
         
         
         
@@ -613,8 +628,8 @@ best.m=function(result,h){
                 t=t[,c('model','rmse','theilsu','rank.theilsu','cw.pvalue','in mcs','mcs.pvalue')]
                 
         }else{
-                t=t[,c('model','rmse','theilsu','rank.theilsu','in mcs','mcs.pvalue')]
-                    }
+                t=t[,c('model','rmse','theilsu','rank.theilsu','cw.pvalue','in mcs','mcs.pvalue')]
+        }
         row.names(t)=NULL
         
         return(t)
@@ -624,22 +639,22 @@ tt=lapply(1:12,function(x) best.m(fres.s[[x]],x))
 
 
 for (h in 1:12){
-       if (h==1){
-               besth=tt[[h]]
-               besth$h=h
-               t=besth[1,]
-               tf=besth[besth$model=='MT.de.future',]
-               tc=besth[besth$model=='MT.de.climate',]
-               tp=besth[besth$model=='MT.present',]
-       }else{
-               besth=tt[[h]]
-               besth$h=h
-               t=rbind(t,besth[1,])
-               tf=rbind(tf,besth[besth$model=='MT.de.future',])
-               tc=rbind(tc,besth[besth$model=='MT.de.climate',])
-               tp=rbind(tp,besth[besth$model=='MT.present',])
-       } 
-       
+        if (h==1){
+                besth=tt[[h]]
+                besth$h=h
+                t=besth[1,]
+                tf=besth[besth$model=='MT.de.future',]
+                tc=besth[besth$model=='MT.de.climate',]
+                tp=besth[besth$model=='MT.present',]
+        }else{
+                besth=tt[[h]]
+                besth$h=h
+                t=rbind(t,besth[1,])
+                tf=rbind(tf,besth[besth$model=='MT.de.future',])
+                tc=rbind(tc,besth[besth$model=='MT.de.climate',])
+                tp=rbind(tp,besth[besth$model=='MT.present',])
+        } 
+        
 }
 favorite=rbind(tf,tc,tp)
 if (sfeorr=='sfe'){
@@ -650,58 +665,46 @@ if (sfeorr=='sfe'){
 }
 
 
+# fbp analysis ------------------------------------------------------------
+
 # fres=fres[[14]]
 fbpall=matrix(NA,nrow=nrow(fbphases),ncol=max.hor)
 row.names(fbpall)=row.names(sfe)[1:(nrow(sfe)-2)]
 fbprec=matrix(NA,nrow=nrow(fbphases),ncol=max.hor)
 row.names(fbprec)=row.names(sfe)[1:(nrow(sfe)-2)]
-fbpres=matrix(NA,nrow=4,ncol=max.hor)
-row.names(fbpres)=c('fbp percent best','percent of sign. better best','fbp MT.de.future','percent of sign. better MT')
-# collecting mcs values for comparison
-fbpmcsall=matrix(NA,nrow=3,ncol=max.hor)
-row.names(fbpmcsall)=c('Mean of models in MCS','MT.de.future','MT.de.climate')
-fbpmcsrec=matrix(NA,nrow=3,ncol=max.hor)
-row.names(fbpmcsrec)=c('Mean of models in MCS','MT.de.future','MT.de.climate')
-for (h in 1:14){#h=3
+
+fbp.sub.all=matrix(NA,nrow=3,ncol=max.hor)
+row.names(fbp.sub.all)=c('fbp MT.de.future','fbp MT.de.climate','mean')
+
+fbp.sub.rec=matrix(NA,nrow=3,ncol=max.hor)
+row.names(fbp.sub.rec)=c('fbp MT.de.future','fbp MT.de.climate','mean')
+
+for (h in 1:14){#h=4
         t3=fbs[[h]]
         row.names(t3)=row.names(sfe)[1:(nrow(sfe)-2)]
         # fbp for all periods
         fbpall[,h]=rowMeans(t3,na.rm=T)
-        # get means of mcs models
-        fbpmcsall[1,h]=median(fbpall[incsfe[,h]==1,h])
-        # fbp for recession periods
+
         rdate=data$ym[which(data$ecri==0)]
         rcol=which(colnames(t3)%in%rdate)
         fbprec[,h]=rowMeans(t3[,rcol])
-        fbpmcsrec[1,h]=median(fbprec[incsfer[,h]==1,h])
         
+        fbp.sub.rec['fbp MT.de.future',h]=fbprec['MT.de.future',h]
+        fbp.sub.rec['fbp MT.de.climate',h]=fbprec['MT.de.climate',h]
+        fbp.sub.rec['mean',h]=mean(fbprec[,h])#incsfer[,h]==1
         
-      
-        fbpres['fbp percent best',h]=fbpall[reswm$rank.theilsu==1,h]
-        fbpres['percent of sign. better best',h]=sum(fbpall[bestmodels,h]<fbpall[reswm$rank.theilsu==1,h])/(length(bestmodels)-1)
-        
-        fbpres['fbp MT.de.future',h]=fbpall['MT.de.future',h]
-        fbpres['percent of sign. better MT',h]=sum(fbpall[bestmodels,h]<fbpall['MT.de.future',h])/(length(bestmodels)-1)
-        
-        
+
+        fbp.sub.all['fbp MT.de.future',h]=fbpall['MT.de.future',h]
+        fbp.sub.all['fbp MT.de.climate',h]=fbpall['MT.de.climate',h]
+        fbp.sub.all['mean',h]=mean(fbpall[,h])#incsfe[,h]==1
+       
         
 }
+fbptab=matrix(NA,nrow=3,ncol=6)
+row.names(fbptab)=row.names(fbp.sub.all)
+fbptab[,c(1,3,5)]=fbp.sub.all[,12:14]
+fbptab[,c(2,4,6)]=fbp.sub.rec[,12:14]
+fbptab=round(fbptab,2)
 
-# now best models
+write.csv(fbptab,paste(DirCode,'/results/fbp.csv',sep=''))
 
-fbpmcsall[2,]=fbpall['MT.de.future',]
-fbpmcsall[3,]=fbpall['MT.de.climate',]
-fbpmcsall=fbpmcsall[,3:14]
-colnames(fbpmcsall)=1:12
-
-fbpmcsrec[2,]=fbprec['MT.de.future',]
-fbpmcsrec[3,]=fbprec['MT.de.climate',]
-fbpmcsrec=fbpmcsrec[,3:14]
-colnames(fbpmcsrec)=1:12
-# recession compared to all
-plot(colMeans(fbprec)/colMeans(fbpall))
-# only for MT.future
-fbprec['MT.de.future',]/fbpall['MT.de.future',]
-ct=matrix(rep(fbpall['MT.de.future',],nrow(fbpall)),nrow=nrow(fbpall),byrow=T)
-t=fbpall>ct
-tt=colSums(t)/(nrow(fbpall)-1)
