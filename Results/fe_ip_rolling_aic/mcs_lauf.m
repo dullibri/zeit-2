@@ -22,7 +22,7 @@
  
 for h=1:14
     h=num2str(h)
-    sferh=strcat('sfer',h)
+    sferh=strcat('sfe',h)
     befehl=strcat('sfmat=','csvread(''',sferh,'.csv'')')
     eval(befehl)
     [INCLUDEDR,PVALSR,EXCLUDEDR,INCLUDEDSQ,PVALSSQ,EXCLUDEDSQ] = mcs(sfmat,0.25,1000,12,'BLOCK')

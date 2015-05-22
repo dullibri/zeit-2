@@ -1,0 +1,124 @@
+%% LyX 2.0.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\begin{center}
+{\tiny{}}%
+\begin{tabular}{l|l|l|c|c|c|c|c|c}
+{\tiny{}Block} & {\tiny{}Name} & {\tiny{}Label} & {\tiny{}L} & {\tiny{}D} & {\tiny{}Dln} & {\tiny{}D2ln} & {\tiny{}Lag} & {\tiny{}Source}\tabularnewline
+{\tiny{}Dependent variable} &  &  &  &  &  &  &  & \tabularnewline
+ & {\tiny{}Industrial production} & {\tiny{}IP} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba RTDB}\tabularnewline
+{\tiny{}Financial } &  &  &  &  &  &  &  & \tabularnewline
+ & {\tiny{}Money market rate (mth.avg.)} & {\tiny{}IS-M} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Discount rate/short term repo rate (mth.avg.)} & {\tiny{}IS-D} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}3m-money market rate (mth.avg.)} & {\tiny{}IS-3M} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Yields on debt securities outstanding (mat.3-5 years)} & {\tiny{}IL-3} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Yields on debt securities outstanding (mat.5-8 years)} & {\tiny{}IL-5} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Long term government bond yield-9-10 years} & {\tiny{}IL-10} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Term spread (10y - money market rate)} & {\tiny{}SPR-10Y-M} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Term spread (10y - discount rate)} & {\tiny{}SPR-10Y-D} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Term spread (10y - 3 month-money market rate)} & {\tiny{}SPR-10Y-3M} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Term spread (discount rate - money market rate)} & {\tiny{}SPR-1D-M} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Corporate bond-government bonds} & {\tiny{}SPR-C-G} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Nomi-l effective exchange rate} & {\tiny{}EX} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}1} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Real effective exchange rate} & {\tiny{}EXR} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}1} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}DAX} & {\tiny{}DAX} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}DAX vola new} & {\tiny{}VOLA1} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}DAX vola old} & {\tiny{}VOLA2} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Hwwa index of world market prices of raw mats.} & {\tiny{}HWWA} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}1} & {\tiny{}datastream}\tabularnewline
+ & {\tiny{}Hwwa index, real} & {\tiny{}HWWAR} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}datastream}\tabularnewline
+ & {\tiny{}Hwwa index \textasciitilde{},energy} & {\tiny{}HWWA-E} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}1} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Hwwa index, energy real} & {\tiny{}HWWA-ER} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Hwwa index \textasciitilde{},excl. energy} & {\tiny{}HWWA-EX} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}1} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Hwwa index, excl. energy real} & {\tiny{}HWWA-EXR} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}Buba}\tabularnewline
+ & {\tiny{}Oil prices (euros per barrel)} & {\tiny{}OIL} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}0} & {\tiny{}ECB}\tabularnewline
+ & {\tiny{}Oil prices (euros per barrel), real} & {\tiny{}OILR} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}ECB}\tabularnewline
+{\tiny{}Surveys} &  &  &  &  &  &  &  & \tabularnewline
+ & {\tiny{}Ifo index climate} & {\tiny{}IFO-C} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}Ifo expectations climate} & {\tiny{}IFO-EXP} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}Ifo index manufacturing} & {\tiny{}IFOM-C} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}Ifo expectations manufacturing} & {\tiny{}IFOM-EXP} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}Ifo index capital goods} & {\tiny{}IFOMI-C} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}Ifo expecations capital goods} & {\tiny{}IFOMI-EXP} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}Ifo index intermediate goods} & {\tiny{}IFOMV-C} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}Ifo expectations intermediate goods} & {\tiny{}IFOMV-EXP} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}Ifo index wholesale} & {\tiny{}IFOWH-C} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}Ifo expectations wholesale} & {\tiny{}IFOWH-EXP} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}ifo}\tabularnewline
+ & {\tiny{}GFK consumer climate survey - business cycle expectations} & {\tiny{}GFK-EXP} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}datastream}\tabularnewline
+ & {\tiny{}ZEW economic sentiment} & {\tiny{}ZEW} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}datastream}\tabularnewline
+ & {\tiny{}Assessment of order-book levels } & {\tiny{}ECBS2} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Assessment of export order-book levels } & {\tiny{}ECBS3} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Assessment of stocks of finished products } & {\tiny{}ECBS4} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Production expectations for the months ahead } & {\tiny{}ECBS5} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Selling price expectations for the months ahead } & {\tiny{}ECBS6} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Employment expectations for the months ahead } & {\tiny{}ECBS7} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Industrial confidence indicator (40\%)} & {\tiny{}ESI-INDU} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Services confidence indicator (30\%)} & {\tiny{}ESI-SERV} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Consumer confidence indicator (20\%)} & {\tiny{}ESI-C} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Retail trade confidence indicator (5\%)} & {\tiny{}ESI-TRADE} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Construction confidence indicator (5\%)} & {\tiny{}ESI-CTR} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Economic sentiment indicator (average)} & {\tiny{}ESI} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Confidence Indicator (Q2 + Q4 - Q7 + Q11) / 4 } & {\tiny{}ECCS99} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Fi-ncial situation over last 12 months} & {\tiny{}ECCS1} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Fi-ncial situation over next 12 months} & {\tiny{}ECCS2} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}General economic situation over last 12 months} & {\tiny{}ECCS3} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}General economic situation over next 12 months} & {\tiny{}ECCS4} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Price trends over last 12 months} & {\tiny{}ECCS5} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Price trends over next 12 months} & {\tiny{}ECCS6} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Unemployment expectations over next 12 months} & {\tiny{}ECCS7} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Major purchases at present} & {\tiny{}ECCS8} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Major purchases over next 12 months} & {\tiny{}ECCS9} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Savings at present} & {\tiny{}ECCS10} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Savings over next 12 months} & {\tiny{}ECCS11} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+ & {\tiny{}Statement on fi-ncial situation of household} & {\tiny{}ECCS12} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}EC}\tabularnewline
+{\tiny{}Prices and wages} &  &  &  &  &  &  &  & \tabularnewline
+ & {\tiny{}CPI} & {\tiny{}CPI} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}0} & {\tiny{}Buba RTDB}\tabularnewline
+ & {\tiny{}Core CPI} & {\tiny{}CPI-EX} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}0} & {\tiny{}Buba RTDB}\tabularnewline
+ & {\tiny{}Negotiated wage and salary level} & {\tiny{}TARIF} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}1} & {\tiny{}0} & {\tiny{}Buba RTDB}\tabularnewline
+{\tiny{}Real economy} &  &  &  &  &  &  &  & \tabularnewline
+ & {\tiny{}Intermediate goods production} & {\tiny{}IP-VORL} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba RTDB}\tabularnewline
+ & {\tiny{}Manufacturing orders - consumer goods} & {\tiny{}ORD-C} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba RTDB}\tabularnewline
+ & {\tiny{}Manufacturing orders - capital goods} & {\tiny{}ORD-I} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba RTDB}\tabularnewline
+ & {\tiny{}Employed persons (work-place concept)} & {\tiny{}EW} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba RTDB}\tabularnewline
+ & {\tiny{}1+unemployment (\% civilian labour)} & {\tiny{}ALQ} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}datastream}\tabularnewline
+ & {\tiny{}Vacancies} & {\tiny{}VAC} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}1} & {\tiny{}datastream}\tabularnewline
+ & {\tiny{}Capacity utilisation} & {\tiny{}CAPA} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}datastream}\tabularnewline
+ & {\tiny{}Hours worked} & {\tiny{}WHOUR} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Buba RTDB}\tabularnewline
+{\tiny{}Composite indicators} &  &  &  &  &  &  &  & \tabularnewline
+ & {\tiny{}FAZ indicator} & {\tiny{}FAZ} & {\tiny{}-} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}1} & {\tiny{}datastream}\tabularnewline
+ & {\tiny{}Composite leading indicator (amplitude restored)} & {\tiny{}OECDL1} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}2} & {\tiny{}OECD}\tabularnewline
+ & {\tiny{}Composite leading indicator (trend restored)} & {\tiny{}OECDL2} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}2} & {\tiny{}OECD}\tabularnewline
+ & {\tiny{}Composite leading indicator (normalized)} & {\tiny{}OECDL3} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}2} & {\tiny{}OECD}\tabularnewline
+{\tiny{}Media indicators} &  &  &  &  &  &  &  & \tabularnewline
+ & {\tiny{}all observations} & {\tiny{}MT.all} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}all observations related to the future} & {\tiny{}MT.future} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}all observations related to the present} & {\tiny{}MT.presence} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}all observations related to the future and present} & {\tiny{}MT.climate} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}all observations related to Germany} & {\tiny{}MT.de} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to Germany and the future} & {\tiny{}MT.de.future} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to Germany and present} & {\tiny{}MT.de.present} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to Germany, and future and present} & {\tiny{}MT.de.climate} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to government budget} & {\tiny{}MT.budget} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to monetary issues} & {\tiny{}MT.currency} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to the labor market} & {\tiny{}MT.labor} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to the business cycle} & {\tiny{}MT.cycle} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to taxation} & {\tiny{}MT.taxation} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to the German government budget} & {\tiny{}MT.de.budget} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to the German labor market} & {\tiny{}MT.de.labor} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to the German business cycle} & {\tiny{}MT.de.cycle} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}All observations related to German taxation} & {\tiny{}MT.de.taxation} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+\end{tabular}
+\par\end{center}
+\end{document}

@@ -41,7 +41,7 @@ recend=grep('2009-01',ipdates)
 recind=1:ncol(arfb)*0
 recind[recstart:recend]=1
 
-lines(recind*(119-aa),type='p')
+lines(recind*(119-aa),type='p',bg='grey')
 abline(h=118-aa
        ,lty=6
        )
@@ -67,13 +67,13 @@ abline(h=116-aa
 #        )
 # abline(h=116)
 ticks=seq(1,ncol(arfb),5)
-
-axis(1, at=ticks, labels=ipdates[ticks]
+ipdotticks=gsub('-',':',ipdates)
+axis(1, at=ticks, labels=ipdotticks[ticks]
           ,las=2
 )
 axis(2,at=c(seq(85,110,5)),c(seq(85,110,5)))
 # abline(v=grep('2008-05',colnames(arfb.end)))
 # abline(v=grep('2009-01',colnames(arfb.end)))
 dev.off()
-par(par.s)
+# par(par.s)
 

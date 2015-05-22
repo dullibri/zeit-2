@@ -582,20 +582,20 @@ with control
 \begin_inset Formula $\mathcal{M}_{0}$
 \end_inset
 
-, the MCS identifies the set of all forecasting models that cannot be rejected
- as statistically inferior at a certain level of confidence:
+, the MCS identifies the set of models that cannot be rejected as statistically
+ inferior at a certain level of confidence:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\mathcal{M}*=\left\{ i\in\mathcal{M}_{0}:\, u_{i,j}\leq0\,\textrm{for}\,\textrm{all}\, j\in\mathcal{M}_{0}\right\} 
+\mathcal{M}*=\left\{ i\in\mathcal{M}_{0}:\,\mu_{i,j}\leq0\,\textrm{for}\,\textrm{all}\, j\in\mathcal{M}_{0}\right\} 
 \end{equation}
 
 \end_inset
 
 where 
-\begin_inset Formula $u_{i,j}=E(d_{i,j})$
+\begin_inset Formula $\mu_{ij}=E(d_{ij})$
 \end_inset
 
  is the expected loss differential 
@@ -621,11 +621,18 @@ Beginning with the full set,
 \end_inset
 
 , the null of equal predictive accuracy (EPA), 
-\begin_inset Formula $H_{0,\mathcal{M}}:\, u_{i,j}=0\,\forall i,j$
+\begin_inset Formula $H_{0,\mathcal{M}}:\,\mu_{i,j}=0\,\forall i,j$
 \end_inset
 
  is repeatedly tested.
  
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Beginning-with-the"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -658,88 +665,23 @@ In the best of all cases, the MCS contains only one model.
 \end_inset
 
 .
- The null ist tested based on the pairwise loss differential of model 
-\begin_inset Formula $i$
-\end_inset
+ 
+\end_layout
 
- and 
-\begin_inset Formula $j$
-\end_inset
+\begin_layout Standard
+In order to test the null in Step 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:Beginning-with-the"
 
-, 
-\begin_inset Formula $\overline{d}_{i,j}=n^{-1}\Sigma_{t=1}^{n}d_{ij,t}$
 \end_inset
 
 .
- The test statistic to test is defined as:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-T_{\max,\mathcal{M}}=\max t_{i\text{·}},
-\end{equation}
-
+ we apply the 
+\begin_inset Formula $T_{max,\mathcal{M}}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-where 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-t_{i\text{j}}=\sum_{i<j}\frac{\overline{d}_{i\text{·}}}{\sqrt{\widehat{V}(\overline{d}_{i·})}}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-and 
-\begin_inset Formula $\widehat{V}(\overline{d}_{ij})$
-\end_inset
-
- is an estimate of 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $V(\overline{d}_{ij})$
-\end_inset
-
-.
- The distribution of 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Formula $T_{\max,\mathcal{M}}$
-\end_inset
-
- is nonstandard as it depends on nuisance parameters.
- However, it can be estimated using bootstrap methods.
+ statistic.
 \begin_inset Foot
 status collapsed
 
@@ -759,67 +701,52 @@ Hansen2011 propose an alternative test statisitics,
 
 \end_inset
 
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-statistic imposes that whether or not the null of no diference in model
- performance is rejected depends only on the model that has the greatest
- relative loss.
- 
-\begin_inset Formula $e_{R,\mathcal{M}}=\arg\max_{i\in\mathcal{M}}\sup_{j\in\mathcal{M}}t_{ij}$
+ It is based on the relative loss statistic which is defined as the sample
+ loss of the 
+\begin_inset Formula $i$
 \end_inset
 
-.The MCS procedure is based on an equivalence test, 
-\begin_inset Formula $\delta_{\mathcal{M}}$
-\end_inset
-
-, and an elimination rule, 
-\begin_inset Formula $e_{\mathcal{M}}$
-\end_inset
-
-.
- The equivalence test is applied to the set 
-\begin_inset Formula $\mathcal{M}=\mathcal{M}_{0}$
-\end_inset
-
- of forecasting models.
- If 
-\begin_inset Formula $\delta_{\mathcal{M}}$
-\end_inset
-
- is rejected, there is evidence that the models in 
+th model relative to the average across models in 
 \begin_inset Formula $\mathcal{M}$
 \end_inset
 
- are not equally "good" and 
-\begin_inset Formula $e_{\mathcal{M}}$
+, 
+\begin_inset Formula $\overline{d}_{i\cdot}\equiv m^{-1}\Sigma_{t=1}^{m}d_{ij\cdot}$
 \end_inset
 
- is used to exclude a poorly performing model from 
+ where the models in 
 \begin_inset Formula $\mathcal{M}$
 \end_inset
 
-.
- This approach is repeated until 
-\begin_inset Formula $\delta_{\mathcal{M}}$
-\end_inset
-
- is "accepted" and the MCS is defined by the set of "surviving objects
-\begin_inset Quotes erd
+ are indexed by
+\begin_inset Formula $i=1,...,m$
 \end_inset
 
 .
- By using the same significance level, 
-\begin_inset Formula $\alpha$
+ Then, the 
+\begin_inset Formula $t$
 \end_inset
 
- , in all tests, the procedure guarantees that 
-\begin_inset Formula $P(\mathcal{M}^{*}\subset\mathcal{\widehat{M}}_{1-\alpha}^{*})\geq1-\alpha$
+-statistic test is defined as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+t_{i\text{\cdot}}=\frac{\overline{d}_{i\cdot}}{\sqrt{\widehat{V}(\overline{d}_{i\cdot})}}
+\end{equation}
+
 \end_inset
 
-; and in the case where 
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\widehat{V}(\overline{d}_{i\cdot})$
+\end_inset
+
+ is an estimate of 
 \family roman
 \series medium
 \shape up
@@ -832,10 +759,56 @@ statistic imposes that whether or not the null of no diference in model
 \noun off
 \color none
 
-\begin_inset Formula $\mathcal{M}^{*}$
+\begin_inset Formula $V(\overline{d}_{i\cdot})$
+\end_inset
+
+.
+ The null is 
+\begin_inset Formula $H_{i\cdot}:\mu_{i\cdot}=0$
+\end_inset
+
+, where 
+\begin_inset Formula $\mu_{i\cdot}=\textrm{E}(\bar{d}_{i\cdot})$
+\end_inset
+
+.
+ The authors show that the hypothesis 
+\begin_inset Formula $H_{0,\mathcal{M}}$
+\end_inset
+
+is equivalent with 
+\begin_inset Formula $\{H_{i\cdot}\textrm{for all }i\epsilon\mathcal{M}\}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\{\mu_{i\cdot}\leq0\textrm{ for all }i\epsilon\mathcal{M}\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{\max,\mathcal{M}}=\max_{i\epsilon\mathcal{M}}t_{i\text{·}},
+\end{equation}
+
 \end_inset
 
 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+The distribution of 
 \family default
 \series default
 \shape default
@@ -847,185 +820,13 @@ statistic imposes that whether or not the null of no diference in model
 \uwave default
 \noun default
 \color inherit
- consists of one object, 
-\begin_inset Formula $\lim_{n\rightarrow\infty}P(\mathcal{M}^{\text{*}}=\mathcal{\widehat{M}}_{1-\alpha}^{\text{*}})=1$
+
+\begin_inset Formula $T_{\max,\mathcal{M}}$
 \end_inset
 
-.
- The MCS has several advantages.
- First, in contrast to WT-test and SPA-test, it does not require the selection
- of a benchmark model.
- Thus, the MCS procedure can directly be used for model selection.
- Second, the MCS procedure also yields 
-\begin_inset Formula $p$
-\end_inset
-
--values for each of the model.
- For a given object, 
-\begin_inset Formula $i\in\mathcal{M}_{1-\alpha}^{*}$
-\end_inset
-
-, the MCS 
-\begin_inset Formula $p$
-\end_inset
-
--value is the threshold at which 
-\begin_inset Formula $i\in\mathcal{\widehat{M}}_{1-\alpha}^{*}$
-\end_inset
-
- if and only if 
-\begin_inset Formula $\hat{p_{i}}\geq\alpha$
-\end_inset
-
-.
- Thus, an object with a small MCS 
-\begin_inset Formula $p$
-\end_inset
-
--value makes it unlikely that it is one of the best alternatives.
- Thirdly, the MCS acknowledges the limitations of the data, such that uninformat
-ive data yield a MCS with many models, whereas informative data yield a
- MCS with only a few models.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Subsubsection
-Pairwise Tests
-\end_layout
-
-\begin_layout Plain Layout
-The most widely used starting point for testing for differences in forecast
- performance is the Diebold-Mariono test-statistic DM???.
- Though the test With the aim of analyzing whether the pairwise differences
- in forecast performance are statistically significant we employ the test
- proposed by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "clark2006using"
-
-\end_inset
-
-.
- However, the former nests the latter.
- Under the null that the parsimonious model generates the data, the larger
- model thus introduces noise into its forecasts by estimating parameters
- whose population values are zero.
- Therefore, the mean squared prediction error (MSFE) from the parsimonious
- model is expected to be smaller than that of the larger model.
- Hence we employ the statistic proposed by, it allows a general parametric
- specification for the parsimonious model.
- In order to test the null hypothesis that the squared forecast errors of
- the baseline model are significantly smaller than those of the larger model
- 
-\begin_inset Formula $i$
-\end_inset
-
-, they augment the loss differences, 
-\begin_inset Formula $\widehat{d}_{i,t+h}=\widehat{e}_{0,t+h}^{h}{}^{2}-\widehat{e}_{i,t+h}^{h}{}^{2}$
-\end_inset
-
- with the adjustment term 
-\begin_inset Formula $\widehat{a}_{i,t+h}=(\widehat{Y}_{0,t+h}^{h}-\widehat{Y}_{i,t+h|t}^{h})^{2}$
-\end_inset
-
- giving:
-\begin_inset Formula 
-\begin{equation}
-\widehat{f}_{i,t+h}=\widehat{d}_{i,t+h}+\widehat{a}_{i,t+h}.\label{eq:cw series}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-In turn, 
-\begin_inset Formula $\widehat{f}_{t+h}$
-\end_inset
-
- is regressed on a constant.
- If the resulting t-statistic for a zero coefficient exceeds 
-\begin_inset Formula $+1.282$
-\end_inset
-
- for one sided ten percent level test or 
-\begin_inset Formula $+1.645$
-\end_inset
-
- for a one sided five percent level test, the null is rejected.
- For autocorrelated forecast errors they suggest an autocorrelation consistent
- standard error.
- 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Subsubsection
-Joint Tests
-\end_layout
-
-\begin_layout Plain Layout
-When testing pairwise if indicator augmented models outperform the baseline
- AR, dominance may be signaled merly by chance.
- Thus, in order to test whether a particular forecasting procedure is outperform
-ed by alternative forecasts the reality check for data snooping 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "white2000reality"
-
-\end_inset
-
- is applied.
- It has been developed for comparing multiple forecasting models to a baseline
- model simultaneously whith the null hypothesis that the baseline model
- is not inferior to any of its rivals.
- The null is given as:
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{eqnarray}
-H_{0}: & E(d_{i,t+h})\leq0 & \forall i=1,...,m.\label{eq:spa}
-\end{eqnarray}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-As the limiting distribution is not unique under the null hypothesis, the
- stationary bootstrap method of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "politis1994stationary"
-
-\end_inset
-
- is employed.
-\end_layout
-
-\begin_layout Plain Layout
-Hansen2011 propose 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-As a usefule feature, the MCS procedure yields a p-value for all models
+ is nonstandard as it depends on nuisance parameters.
+ However, it can be estimated using bootstrap methods.
+ As a usefule feature, the MCS procedure yields a p-value for all models
  under consideration where a small p-value makes it unlikely for a model
  to enter the set of superior models, 
 \begin_inset Formula $\mathcal{M}^{*}$
@@ -1392,66 +1193,6 @@ reference "fig: ip, recession and forecast breakdwons"
 \end_layout
 
 \begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Best-media-models"
-
-\end_inset
-
- presents the RMSE, the Theil's U, the rank according to Theil's U and the
- MCS p-value of the best media models each horizon.
- The upper Panel 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Best-media-models all periods"
-
-\end_inset
-
- shows the results for all periods.
- Two models, MT.de.future and MT.de.climate stick out as particularly useful
- for horizons from 10 to 12 months.
- The former has the lowest Theil's U for 10 and 12 month horizons with values
- of 0.83 and 0.77 respectively.
- Furthermore, for both horizons it forms part of the 
-\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
-\end_inset
-
- as the best model having an MCS p-value of 1.
- And, it significantly outperforms the AR-model at the 1 percent level for
- both horizons.
- For the 11 month horizon MT.de.climate is the best model both with respect
- to the Theil's U as well as the MCS p-value.
- It significantly outperforms the AR at the 1 percent level, too.
- 
-\end_layout
-
-\begin_layout Standard
-The lower Panel 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Best-media-models crisis"
-
-\end_inset
-
- shows that the results remain robust for the instable period.
- MT.de.future has a Theil's U of 0.82 and 0.77 for the 10 and 12 month horizon
- forecasts and significantly outperforms the AR-model.
- However, it is slightly worse according to the rank attaining only the
- third and second rank for the 10 and 11 month horizon.
- And, while still forming part of 
-\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
-\end_inset
-
- having high MCS p-values of 0.80 and 0.89 for the 10 and 12 month horizon
- it is not the best model in the MCS.
- MT.de.climate significantly outperforms the AR ranking second for the 11
- month forecast horizon.
- As with MT.de.future, it is not the best model in the 
-\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
-\end_inset
-
- having a MCS p-value of 0.76.
 \begin_inset Float table
 wide false
 sideways false
@@ -4261,32 +4002,66 @@ Note: * (**) for Theil's U denotes significant outperformance of the AR-model
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Percentage-of-forecast"
+reference "tab:Best-media-models"
 
 \end_inset
 
- shows the percentage of times MT.de.future and MT.de.climate have failed over
- all periods and the instable period for horizons 10 to 12 in the first
- two rows.
- The third row shows the respective averages over all models.
- A value of 0 implies that the model has never failed whereas a value of
- 1 means that the model has always failed.
- For all periods, the average of all models rises sligthly from h=10 to
- h=12 from 0.19 to 0.21.
- Both media models' percentage are roughly at the same level.
- However, for the instable periods, they are markedly less reliable than
- the average.
- On average all models fail 56, 51, and 51 percent of times for horizons
- 10, 11, and 12 respectively.
- MT.de.future fails in about 75, 58, and 63 percent of times for horizons,
+ presents the RMSE, the Theil's U, the rank according to Theil's U and the
+ MCS p-value of the best media models each horizon.
+ The upper Panel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Best-media-models all periods"
+
+\end_inset
+
+ shows the results for all periods.
+ Two models, MT.de.future and MT.de.climate stick out as particularly useful
+ for horizons from 10 to 12 months.
+ The former has the lowest Theil's U for 10 and 12 month horizons with values
+ of 0.83 and 0.77 respectively.
+ Furthermore, for both horizons it forms part of the 
+\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
+\end_inset
+
+ as the best model having an MCS p-value of 1.
+ And, it significantly outperforms the AR-model at the 1 percent level for
+ both horizons.
+ For the 11 month horizon MT.de.climate is the best model both with respect
+ to the Theil's U as well as the MCS p-value.
+ It significantly outperforms the AR at the 1 percent level, too.
  
+\end_layout
+
+\begin_layout Standard
+The lower Panel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Best-media-models crisis"
+
+\end_inset
+
+ shows that the results remain robust for the instable period.
+ MT.de.future has a Theil's U of 0.82 and 0.77 for the 10 and 12 month horizon
+ forecasts and significantly outperforms the AR-model.
+ However, it is slightly worse according to the rank attaining only the
+ third and second rank for the 10 and 11 month horizon.
+ And, while still forming part of 
+\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
+\end_inset
+
+ having high MCS p-values of 0.80 and 0.89 for the 10 and 12 month horizon
+ it is not the best model in the MCS.
+ MT.de.climate significantly outperforms the AR ranking second for the 11
+ month forecast horizon.
+ As with MT.de.future, it is not the best model in the 
+\begin_inset Formula $\mathcal{M}_{75\%}^{*}$
+\end_inset
+
+ having a MCS p-value of 0.76.
 \end_layout
 
 \begin_layout Standard
@@ -4296,14 +4071,10 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Percentage of forecast breakdowns media models
+Percentage of forecast breakdowns
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Percentage-of-forecast"
@@ -4914,13 +4685,31 @@ mean all models
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
-\end_layout
+In the first two rows Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Percentage-of-forecast"
 
 \end_inset
 
-
+ shows the percentage of times MT.de.future and MT.de.climate have failed over
+ all periods and the instable period for horizons 10 to 12 .
+ The third row shows the respective averages over all models.
+ A value of 0 implies that the model has never failed whereas a value of
+ 1 means that the model has always failed.
+ For all periods, the average of all models rises sligthly from h=10 to
+ h=12 from 0.19 to 0.21.
+ Both media models' percentage are roughly at the same level.
+ However, for the instable periods, they are markedly less reliable than
+ the average.
+ On average all models fail 56, 51, and 51 percent of times for horizons
+ 10, 11, and 12 respectively.
+ MT.de.future fails in 74, 58, and 63 percent of times, whereas MT.de.climate
+ fails in 58, 58, and 68 percent of times for horizons 10, 11, and 12, respectiv
+ely.
+ 
 \end_layout
 
 \begin_layout Part*
