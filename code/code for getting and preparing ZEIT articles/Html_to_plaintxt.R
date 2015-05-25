@@ -9,6 +9,7 @@
 # Setting directory for storing files -------------------------------------------------------
 DirRawTexts="H:/Zeit"
 DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
+DirRawTexts="E:/Zeit"
 
 convert_html_to_text <- function(html) {
         # extracted from: convert_html_to_text <- function(html) {
@@ -36,10 +37,12 @@ gettext<-function(input){
         txt<-paste(txt_s,sep='',collapse='')
         txt<-gsub('\u0084|\u0093|\u0096',' ',txt)
              
-        txt<-gsub('»|,|\\.|:|<|>|\\n|"|[0-9]{1,20}|;|-|«|\\)|\\(|\\?|( (\t)* )',' ',txt)
+#         txt<-gsub('»|,|\\.|:|<|>|\\n|"|[0-9]{1,20}|;|-|«|\\)|\\(|\\?|( (\t)* )',' ',txt)
+        txt<-gsub('»|,|<|>|\\n|"|[0-9]{1,20}|;|-|«|\\)|\\(|( (\t)* )',' ',txt)
         
         txt<-gsub('( ){2,}',' ',txt)# superfluos spaces eliminated
-   
+        txt<-gsub('  \\.','.',txt)# superfluos spaces eliminated
+
         return(txt)
 }
 

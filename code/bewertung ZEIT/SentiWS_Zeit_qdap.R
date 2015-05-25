@@ -19,10 +19,11 @@
 # ZIEL: QDAP HIER EINZUFÜGEN
 # Setting directories for storing files -------------------------------------------------------
 DirRawTexts="H:/Zeit" # text files are stored here
+DirRawTexts="E:/Zeit" # text files are stored here
 # DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
-
+library('qdap')
 DirCode='H:/git/zeit-2' # main directory
-# DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
+DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------
@@ -47,7 +48,7 @@ sentiment<-function (text, valueword){
         return(list(valdf,nwords))
 }
 
-
+valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
 
 # preparing valueword for qdap --------------------------------------------
 
@@ -57,7 +58,7 @@ pos.w=valueword['wert'>0,'wert']
 neg=as.character(valueword[valueword$wert<0,'wort',drop=T])
 # neg=tolower(neg)
 neg.w=valueword[valueword$wert<0,'wert']
-pf=sentiment_frame(pos,neg,pos.w,neg.w)
+pf=polarity_frame(pos,neg,pos.w,neg.w)
 
 negating=read.csv(paste(DirCode,'/data/sentistrength_de/negators.csv',sep=''),header=F,stringsAsFactors=F)
 negating=unlist(negating)
@@ -71,10 +72,10 @@ listsubdirs=list.files(DirRawTexts)
 #  SentiWS: ------------------------------------------------------------------------
 #       getting the list of positive and negative words and their values -----------------------------------------------------------------
 #       valueword (lowercase) VALUEWORD (uppercase), created with valueword.R
-valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
+
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 1991:2015){#jj={#:2015
+for (jj in 2009:2015){#jj={#:2015
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
         for (k in 15:length(liste_jahr)){#k=1

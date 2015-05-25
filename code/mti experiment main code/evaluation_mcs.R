@@ -1,5 +1,5 @@
-DirCode='h:/Git/zeit-2'
-# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+# DirCode='h:/Git/zeit-2'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 target='IP'
 # target='CPI.EX'
 max.hor=15

@@ -9,6 +9,7 @@
 # Setting directory for storing files -------------------------------------------------------
 DirRawTexts="H:/Zeit"
 DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
+DirRawTexts="E:/Zeit"
 
 
 
@@ -32,7 +33,8 @@ for (subd in listsubdirs){
         mtext=ids[grep('-',ids)]
         
         mtext=strsplit(mtext,'-')
-        mtext=t(sapply(mtext,function(x){as.numeric(x[1:2])}))
+        mtext=t(sapply(mtext,function(x)x))
+#         mtext=t(sapply(mtext,function(x){as.numeric(x[1:2])}))
         if (!length(mtext)==0){
                 idsm=unique(mtext[,1])
                 idsm=sort(idsm)
