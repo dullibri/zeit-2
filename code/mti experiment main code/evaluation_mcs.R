@@ -334,7 +334,7 @@ for (h in 1:max.hor){# h=3
                 recession.ind=recession==0
                 sfe.r=sfe[,recession.ind]
                 result.r=result.f(sfe.r)
-                cr[[h]]=result.r
+                
                 # preparing data for matlab an writing to disk
                 sfe.exp=sfe.r
                 sfe.exp=sfe.exp[-grep('median|mean',row.names(sfe.exp)),]
@@ -354,7 +354,7 @@ for (h in 1:max.hor){# h=3
                 #                         cw.r[[i]]=f_Clark_West_Test(vFE_small, fe.r[i,], vFcst_small, fc.r[i,], cH)
                 #                 }
                 result.r[2:nrow(fc),'cw.p']=unlist(sapply(cw.r,function(x)x[2]))
-                
+                cr[[h]]=result.r
         }
         # Clark West
         vFE_small=fe['ar',]
@@ -514,6 +514,7 @@ grouping=grouping[-grep('mean|median',row.names(grouping)),]
 
 fres=list()
 sfeorr='sfe'
+# alternative 'sfer' for recession
 for (h in 1:14){
         inc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/includeSQ',sfeorr,h,'.csv',sep=''),header=F)
         exc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/excludeSQ',sfeorr,h,'.csv',sep=''),header=F)
@@ -637,6 +638,53 @@ best.m=function(result,h){
 tt=lapply(1:12,function(x) best.m(fres.s[[x]],x))
 
 
+# 3 best all models recesion and all  -------------------------------------
+
+best.3=function(result,h){
+        if ('mean'%in%row.names(result)){
+                result=result[-grep('mean|median',row.names(result)),]
+        }
+        
+        result=result[sort(result$rank.theilsu,index.return=T)$ix,]
+        # result=result[-grep('mean|median',row.names(result)),]
+        result$rank.theilsu=sort(result$rank.theilsu,index.return=T)$ix
+        colnames(result)=gsub('cw.p','cw.pvalue',colnames(result))
+        result$cw.pvalue=round(result$cw.pvalue,2)
+        
+        row.names(result)=gsub('presence','present',row.names(result))
+        result$mse=result$mse^.5
+        colnames(result)=gsub('mse','rmse',colnames(result))
+        colnames(result)=gsub('inc','in mcs',colnames(result))
+        rr=result
+        colnames(result)=gsub('^pval','mcs.pvalue',colnames(result))
+           
+        t=result[1:3,]
+        t[,c('rmse','mcs.pvalue','theilsu')]=round(t[,c('rmse','mcs.pvalue','theilsu')],2)
+        
+        #         t=head(t,1)
+        
+        
+        
+        t[,'horizon']=h
+        t=cbind(model=row.names(t),t)
+        if (sfeorr=='sfe'){
+                t=t[,c('model','rmse','theilsu','rank.theilsu','cw.pvalue','in mcs','mcs.pvalue')]
+                
+        }else{
+                t=t[,c('model','rmse','theilsu','rank.theilsu','cw.pvalue','in mcs','mcs.pvalue')]
+        }
+        row.names(t)=NULL
+        
+        return(t)
+}
+tt3=lapply(1:12,function(x) best.3(fres.s[[x]],x))
+result3=tt3[[1]]
+for (i in 2:12){
+        result3=rbind(result3,tt3[[i]])
+}
+write.csv(result3,paste(DirCode,'/results/best3 ',sfeorr,'.csv',sep=''))
+#  ------------------------------------------------------------------------
+
 
 for (h in 1:12){
         if (h==1){
@@ -684,7 +732,7 @@ for (h in 1:14){#h=4
         row.names(t3)=row.names(sfe)[1:(nrow(sfe)-2)]
         # fbp for all periods
         fbpall[,h]=rowMeans(t3,na.rm=T)
-
+        
         rdate=data$ym[which(data$ecri==0)]
         rcol=which(colnames(t3)%in%rdate)
         fbprec[,h]=rowMeans(t3[,rcol])
@@ -693,11 +741,11 @@ for (h in 1:14){#h=4
         fbp.sub.rec['fbp MT.de.climate',h]=fbprec['MT.de.climate',h]
         fbp.sub.rec['mean',h]=mean(fbprec[,h])#incsfer[,h]==1
         
-
+        
         fbp.sub.all['fbp MT.de.future',h]=fbpall['MT.de.future',h]
         fbp.sub.all['fbp MT.de.climate',h]=fbpall['MT.de.climate',h]
         fbp.sub.all['mean',h]=mean(fbpall[,h])#incsfe[,h]==1
-       
+        
         
 }
 fbptab=matrix(NA,nrow=3,ncol=6)
@@ -708,3 +756,16 @@ fbptab=round(fbptab,2)
 
 write.csv(fbptab,paste(DirCode,'/results/fbp.csv',sep=''))
 
+
+# desriptives -------------------------------------------------------------
+
+td=rbind(
+        apply(data.s[,2:18],2,mean)
+        ,apply(data.s[,2:18],2,sd)
+)
+td=t(td)
+colnames(td)=c('mean','standard deviation')
+row.names(td)=gsub('currency','monetary',row.names(td))
+row.names(td)=gsub('presence','present',row.names(td))
+td=round(td,2)
+write.csv(td,paste(DirCode,'/results/mtdescriptives.csv',sep=''))

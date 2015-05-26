@@ -589,7 +589,7 @@ with control
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\mathcal{M}*=\left\{ i\in\mathcal{M}_{0}:\,\mu_{i,j}\leq0\,\textrm{for}\,\textrm{all}\, j\in\mathcal{M}_{0}\right\} 
+\mathcal{M}*=\left\{ i\in\mathcal{M}_{0}:\,\mu_{ij}\leq0\,\textrm{for}\,\textrm{all}\, j\in\mathcal{M}_{0}\right\} 
 \end{equation}
 
 \end_inset
@@ -599,10 +599,10 @@ where
 \end_inset
 
  is the expected loss differential 
-\begin_inset Formula $d_{i,j}=L_{i,t}-L_{j,t}$
+\begin_inset Formula $d_{ij}=L_{it}-L_{jt}$
 \end_inset
 
-based on one-by-one comparisons of all models.
+ based on one-by-one comparisons of all models.
 \begin_inset Foot
 status collapsed
 
@@ -612,19 +612,51 @@ Here again, we choose the squared forecast error as loss.
 
 \end_inset
 
- The MCS is implemented using the following steps:
+ The MCS is implemented using the following steps, where initially
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+ is set
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $\mathcal{M}=\mathcal{M}_{0}$
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Enumerate
-Beginning with the full set, 
-\begin_inset Formula $\mathcal{M}_{0}$
+The null of equal predictive accuracy (EPA), 
+\begin_inset Formula $H_{0,\mathcal{M}}:\,\mu_{ij}\leq0\,\forall i,j$
 \end_inset
 
-, the null of equal predictive accuracy (EPA), 
-\begin_inset Formula $H_{0,\mathcal{M}}:\,\mu_{i,j}=0\,\forall i,j$
+ is tested at level 
+\begin_inset Formula $\alpha$
 \end_inset
 
- is repeatedly tested.
+.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -644,28 +676,12 @@ If the null is rejected the worst performing model is eliminated from
 \end_layout
 
 \begin_layout Enumerate
-The procedure is repeated until the null can not be rejected at signficance
- level 
-\begin_inset Formula $\alpha$
-\end_inset
-
-.
+The procedure is repeated until the null can not be rejected.
  The set 
 \begin_inset Formula $\mathcal{\widehat{M}}_{1-\alpha}^{\text{*}}$
 \end_inset
 
  with the remaining models is defined as the MCS.
-\end_layout
-
-\begin_layout Standard
-In the best of all cases, the MCS contains only one model.
- However, if the data are uninformative, the MCS contains several models
- or even all models contained in 
-\begin_inset Formula $\mathcal{M}_{0}$
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_layout Standard
@@ -676,7 +692,6 @@ reference "enu:Beginning-with-the"
 
 \end_inset
 
-.
  we apply the 
 \begin_inset Formula $T_{max,\mathcal{M}}$
 \end_inset
@@ -701,8 +716,35 @@ Hansen2011 propose an alternative test statisitics,
 
 \end_inset
 
- It is based on the relative loss statistic which is defined as the sample
- loss of the 
+ Let 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\overline{d}_{i\cdot}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+be the loss of the 
 \begin_inset Formula $i$
 \end_inset
 
@@ -714,7 +756,7 @@ th model relative to the average across models in
 \begin_inset Formula $\overline{d}_{i\cdot}\equiv m^{-1}\Sigma_{t=1}^{m}d_{ij\cdot}$
 \end_inset
 
- where the models in 
+, where the models in 
 \begin_inset Formula $\mathcal{M}$
 \end_inset
 
@@ -727,7 +769,7 @@ th model relative to the average across models in
 \begin_inset Formula $t$
 \end_inset
 
--statistic test is defined as:
+-statistic is defined as:
 \end_layout
 
 \begin_layout Standard
@@ -763,7 +805,35 @@ where
 \end_inset
 
 .
- The null is 
+ The 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $t$
+\end_inset
+
+-statistic can be associated with the
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ null 
 \begin_inset Formula $H_{i\cdot}:\mu_{i\cdot}=0$
 \end_inset
 
@@ -785,13 +855,17 @@ is equivalent with
 \end_inset
 
 .
- 
+ Thus, the null hypothesis 
+\begin_inset Formula $H_{0,\mathcal{M}}$
+\end_inset
+
+ can be tested using the statistic:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-T_{\max,\mathcal{M}}=\max_{i\epsilon\mathcal{M}}t_{i\text{·}},
+T_{\max,\mathcal{M}}=\max_{i\epsilon\mathcal{M}}t_{i\text{·}}.
 \end{equation}
 
 \end_inset
@@ -808,7 +882,7 @@ T_{\max,\mathcal{M}}=\max_{i\epsilon\mathcal{M}}t_{i\text{·}},
 \uwave off
 \noun off
 \color none
-The distribution of 
+The asymptotic distribution of 
 \family default
 \series default
 \shape default
@@ -826,6 +900,17 @@ The distribution of
 
  is nonstandard as it depends on nuisance parameters.
  However, it can be estimated using bootstrap methods.
+ 
+\end_layout
+
+\begin_layout Standard
+In the best of all cases, the MCS contains only one model.
+ However, if the data are uninformative, the MCS contains several models
+ or even all models contained in 
+\begin_inset Formula $\mathcal{M}_{0}$
+\end_inset
+
+.
  As a usefule feature, the MCS procedure yields a p-value for all models
  under consideration where a small p-value makes it unlikely for a model
  to enter the set of superior models, 
