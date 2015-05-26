@@ -19,11 +19,11 @@
 # ZIEL: QDAP HIER EINZUFÜGEN
 # Setting directories for storing files -------------------------------------------------------
 DirRawTexts="H:/Zeit" # text files are stored here
-DirRawTexts="E:/Zeit" # text files are stored here
+# DirRawTexts="E:/Zeit" # text files are stored here
 # DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
 library('qdap')
 DirCode='H:/git/zeit-2' # main directory
-DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
+# DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------

@@ -1,18 +1,18 @@
-"","mean","standard deviation"
-"MT.all",-29.89,16.04
-"MT.de",-20.85,19.07
-"MT.present",-35.14,16.96
-"MT.future",-20.13,18.91
-"MT.climate",71.58,16.26
-"MT.de.present",-24.92,22.27
-"MT.de.future",-14.41,18.94
-"MT.de.climate",79.57,18.62
-"MT.monetary",-26.77,34.24
-"MT.taxation",-26.33,15.17
-"MT.cycle",-22.37,35.43
-"MT.labor",-28.06,19.74
-"MT.budget",-42.83,26.92
-"MT.de.taxation",-26.67,15.61
-"MT.de.cycle",-1.57,47.91
-"MT.de.labor",-23.35,22
-"MT.de.budget",-29.07,33.48
+,mean,standard deviation
+MT.all,-29.89,16.04
+MT.de,-20.85,19.07
+MT.present,-35.14,16.96
+MT.future,-20.13,18.91
+MT.climate,71.58,16.26
+MT.monetary,-26.77,34.24
+MT.taxation,-26.33,15.17
+MT.cycle,-22.37,35.43
+MT.labor,-28.06,19.74
+MT.budget,-42.83,26.92
+MT.de.present,-24.92,22.27
+MT.de.future,-14.41,18.94
+MT.de.climate,79.57,18.62
+MT.de.taxation,-26.67,15.61
+MT.de.cycle,-1.57,47.91
+MT.de.labor,-23.35,22.00
+MT.de.budget,-29.07,33.48
