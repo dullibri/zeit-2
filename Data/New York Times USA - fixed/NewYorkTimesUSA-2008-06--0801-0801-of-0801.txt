@@ -1,0 +1,61 @@
+
+
+801 of 801 DOCUMENTS
+
+
+Copyright 2008 The New York Times Company 
+The New York Times
+
+PUB-DATE: June 30, 2008
+Late Edition - Final
+
+SECTION: Section C; Column 0; Business/Financial Desk; Pg. 1
+
+LENGTH: 995 words
+
+HEADLINE: Falling Prices Grip Major Stock Markets Around the World
+
+BYLINE: By CARTER DOUGHERTY; Charles Duhigg and Michael Grynbaum contributed reporting from New York.
+
+ BODY:
+FRANKFURT -- As the United States markets edge toward bear territory, losing nearly 20 percent of their value from last fall's peak, investors might wonder where they can turn for relief.
+ The gloomy answer: nowhere.
+ Many of the major markets in Europe and around the world have already entered a bear market. Germany and France are among the markets suffering the most, and once high-flying emerging markets in countries like China and India have collapsed even more drastically. 
+ Higher inflation, exploding energy costs, troubled credit markets and worries about an inflationary psychology, it turns out, are global concerns. And fixing these problems -- and bringing optimism back to stock markets worldwide -- is proving to be difficult for central bankers, who are trying to contain inflation without risking even slower growth. 
+ ''The recent downturn in equities is essentially about investors worrying that central banks are going to be tougher than anyone had expected,'' said Erik F. Nielsen, chief Europe economist at Goldman Sachs. 
+ The market numbers are uniformly grim.
+ In Europe's largest economy, Germany, the benchmark DAX index is off slightly more than 20 percent this year, and the CAC-40 in France is down almost 22 percent. The Euro Stoxx 50, a gauge for the 15-nation euro zone, has declined by about 24 percent. The nearly 15 percent decline in the FTSE 100 in Britain looks tame by comparison.
+ Emerging market indexes have fared even worse. The Hang Seng in Hong Kong has plunged nearly 21 percent, the Shanghai Composite has lost nearly half its value this year. The Bombay 500 in India lost about 38 percent.
+ The declines at major stock markets worldwide suggest that the same economic concerns are in play: rising inflation, which has been caused for the most part by record oil prices. Oil hit a new high of $140.21 a barrel on Friday.
+ And central banks around the world, including the United States, are indeed moving to head off resurgent inflation by raising interest rates. While such a move can contain inflation, it can also squelch growth. Indeed, the likelihood of higher interest rates has already been fueling the market sell-offs as investors around the world try to digest all manner of bad economic news. 
+ In Australia, inflation is running near its highest level in 16 years, and in March the central bank raised the benchmark lending rate to a 12-year high. The People's Bank, China's central bank, tightened credit again this month by raising banks' reserve requirements for a second time. China is struggling to control inflation without hurting its fast-growing economy; the same story is playing out in Indonesia and India. 
+ On Sunday, the world's top central bankers began a two-day meeting in Basel, Switzerland, where they were considering approaches to calm nerves about inflation while avoiding a shock to economic growth. The United States is near or in recession, while growth is fading in Europe.
+ On Thursday, the European Central Bank may take matters into its own hands. In all likelihood it will raise its benchmark interest rate by a quarter percentage point, to 4.25 percent, hoping to curb inflation of both food and energy prices. Prices in the 15-nation euro area rose by 3.7 percent in the year through May, nearly double the bank's informal goal of just below 2 percent.
+ The Federal Reserve appears poised to follow suit. Last week the central bank voted to hold the short-term federal funds rate steady at 2 percent, ending a series of rate cuts. But it also hinted strongly that worries about inflation might compel it to raise the rate later this year. The rate affects what consumers pay for mortgages, car loans and other credit. 
+ ''Europe tends to paint this in black and white,'' said Ethan S. Harris, chief United States economist at Lehman Brothers in New York. ''In the U.S., the balancing act is going on.''
+ The absence of a unified global strategy for calming inflation has not been lost on investors who are searching for an anchor of stability, and coming up short.
+ ''When you have central banks around the world doing different things -- following a different road map -- that can be problematic,'' said Quincy Krosby, chief investment strategist at The Hartford, a financial services firm.
+ Then there is the politics.
+ The European Central Bank's decision to get out in front is being debated in Europe, where growth is cooling under the pressure of oil prices, the strong euro, and fading demand in the United States. The bank's primary mandate is to keep inflation low, but that does not stop European politicians from worrying about growth.
+ Oil prices, while an enormous factor in the decision-making that will go on this week in Europe, are only part of the calculation. A more generalized inflation, feeding through to consumer prices and influencing demands for higher paychecks, also deprives businesses of the confidence that they had until recently about how to make decisions on building factories, hiring employees or developing products.
+ ''The longer inflation remains high, the more damaging it will be for longer-term economic growth prospects,'' Morgan Stanley wrote in a report about inflation creeping upwards worldwide. ''High inflation rates usually go hand-in-hand with a higher variability of inflation, which raises uncertainty and can thus reduce investment spending.''
+ Stock market volatility caused by inflation worries has also complicated the pressing task of recapitalizing banking systems, above all in the United States but also in Europe.
+ As equity markets crumble, much-needed recapitalizations ''become more and more difficult'' because investor appetite for new sales of shares declines, Mario Draghi, the Italian central bank chief, who heads global efforts to reform financial regulation, said last week. Efforts to overcome the credit squeeze, in other words, have become hostage to the economic slowdown that the squeeze helped create.
+
+LANGUAGE: ENGLISH
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: STOCK INDEXES (91%); ECONOMIC NEWS (90%); BANKING & FINANCE (90%); EMERGING MARKETS (90%); INFLATION (90%); STOCK EXCHANGES (90%); CENTRAL BANKS (89%); ECONOMIC GROWTH (78%); EURO ZONE (76%); ECONOMIC CONDITIONS (75%); OIL & GAS PRICES (75%); ECONOMIC POLICY (75%); MONETARY UNIONS (73%); BANKING IN CHINA (73%); TALKS & MEETINGS (71%); EURO (70%); INTEREST RATES (66%)
+
+COMPANY: GOLDMAN SACHS GROUP INC (90%); BANK OF NEW YORK MELLON CORP (85%); PEOPLE'S BANK OF ZANZIBAR (51%); PEOPLE'S BANK OF VIRGINIA BEACH (51%); PEOPLE'S BANK & TRUST CO (51%); PEOPLE'S BANK OF ELKTON INC (51%)
+
+TICKER: GS (NYSE) (90%); BK (NYSE) (85%)
+
+INDUSTRY: NAICS523930 INVESTMENT ADVICE (90%); NAICS523920 PORTFOLIO MANAGEMENT (90%); NAICS523110 INVESTMENT BANKING & SECURITIES DEALING (90%); SIC6289 SERVICES ALLIED WITH THE EXCHANGE OF SECURITIES OR COMMODITIES, NEC (90%); SIC6282 INVESTMENT ADVICE (90%); SIC6211 SECURITY BROKERS, DEALERS, & FLOTATION COMPANIES (90%); NAICS551111 OFFICES OF BANK HOLDING COMPANIES (85%); NAICS522110 COMMERCIAL BANKING (85%); SIC6712 OFFICES OF BANK HOLDING COMPANIES (85%); SIC6021 NATIONAL COMMERCIAL BANKS (51%); SIC6022 STATE COMMERCIAL BANKS (51%)
+
+GEOGRAPHIC: MUMBAI, INDIA (79%); BASEL, SWITZERLAND (74%); SHANGHAI, CHINA (57%) FRANKFURT AM MAIN, GERMANY (92%); EAST CHINA (57%) EUROPE (94%); FRANCE (93%); GERMANY (93%); CHINA (93%); INDIA (93%); UNITED STATES (93%); HONG KONG (79%); EUROPEAN UNION MEMBER STATES (79%); INDONESIA (79%); AUSTRALIA (79%); SWITZERLAND (74%)
+
+LOAD-DATE: June 27, 2010
+
+ 

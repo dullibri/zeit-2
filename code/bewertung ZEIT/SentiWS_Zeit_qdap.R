@@ -50,6 +50,36 @@ sentiment<-function (text, valueword){
 
 valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
 
+
+# extracting information from sentiment -----------------------------------
+sent2=sapply(sent2,function(x)x)
+extracts=function(sent2){
+        tab=sent2[[1]]
+        if (sum(tab$wert)==0){return(rep(-999,9))}
+        negind=tab$wert<0
+        posind=tab$wert>0
+        nneg=sum(tab$h[negind])
+        npos=sum(tab$h[posind])
+        negv=sum(tab$h[negind]*tab$wert[negind])
+        posv=sum(tab$h[posind]*tab$wert[posind])
+        # middle values desregarded -----------------------------------------------
+        
+        posextind=posind&tab$wert>0.1
+        if (sum(posextind)){posvext=sum(tab$wert[posextind])}else{posvext=0}
+        
+        negextind=negind&tab$wert<(0.1*-1)
+        if (sum(negextind)){negvext=sum(tab$wert[negextind])}else{negvext=0}
+        
+        valuext=posvext+negvext
+        
+        nwords=sent2[[2]]
+        value=posv+negv
+        res=data.frame(nneg,npos,negv,posv,nwords,value,posvext,negvext,valuext)
+        return(res)
+}
+
+
+
 # preparing valueword for qdap --------------------------------------------
 
 pos=as.character(valueword['wert'>0,'wort',drop=T])
@@ -58,7 +88,7 @@ pos.w=valueword['wert'>0,'wert']
 neg=as.character(valueword[valueword$wert<0,'wort',drop=T])
 # neg=tolower(neg)
 neg.w=valueword[valueword$wert<0,'wert']
-pf=polarity_frame(pos,neg,pos.w,neg.w)
+pf=sentiment_frame(pos,neg,pos.w,neg.w)
 
 negating=read.csv(paste(DirCode,'/data/sentistrength_de/negators.csv',sep=''),header=F,stringsAsFactors=F)
 negating=unlist(negating)
@@ -75,10 +105,10 @@ listsubdirs=list.files(DirRawTexts)
 
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 2009:2015){#jj={#:2015
+for (jj in 1990:2014){#jj={#:2015 jj=1990 jj=2014
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
-        for (k in 15:length(liste_jahr)){#k=1
+        for (k in 1:length(liste_jahr)){#k=50
                 sFolderTexte=paste(DirRawTexts,'/',liste_jahr[k],'/',sep='')
                 print(sFolderTexte)
                 # getting list and number of articles
@@ -92,31 +122,44 @@ for (jj in 2009:2015){#jj={#:2015
                 }
                 # initialize Results data.frame
                 
-                Ergebnis=data.frame(matrix(NA,1,3))
-                colnames(Ergebnis)=c('id','value','nword')
+                Ergebnis=data.frame(matrix(NA,1,12))
+                colnames(Ergebnis)=c('id','qdap_value','qdap_nword'  
+                                     ,'sent_nneg','sent_npos','sent_negv'
+                                     ,'sent_posv','sent_nwords','sent_val'
+                                     ,'posextind','negextind','valuext'
+                )
                 
-                for (i in 1:Narticle_issue){# i=11
-#                         text<-readLines(paste(sFolderTexte,svFile[i],sep=''), ok=F,encoding="UTF-8")#, header=T,stringsAsFactors =F)
-                        text=read.csv(paste(sFolderTexte,svFile[i],sep=''),stringsAsFactors=F,header=F)
-#                         if (nrow(text)>1){
-#                                 text=text[2,1]
-#                         }
-                        chrtest=sapply(text,function(x) is.character(x))
-                        text=paste(text,collapse=' ',sep='')
-                        tp=polarity(text,polarity.frame=pf,negators=negating)
-                        sent=tp$all[c('polarity')]
+                for (i in 1:Narticle_issue){# i=1
+#                                                 text<-readLines(paste(sFolderTexte,svFile[i],sep=''), ok=F,encoding="UTF-8")#, header=T,stringsAsFactors =F)
+                                                text=read.csv(paste(sFolderTexte,svFile[i],sep=''),stringsAsFactors=F,header=F)
+                                                #                         if (nrow(text)>1){
+                                                #                                 text=text[2,1]
+                                                #                         }
+                                                chrtest=sapply(text,function(x) is.character(x))
+                                                text=paste(text,collapse=' ',sep='')
+                                                tp=polarity(text,polarity.frame=pf,negators=negating)
+                                                sent=tp$all[c('polarity')]
+                                                
+                                                nwords<-tp$all[c('wc')]
+                                                # sentiment ---------------------------------------------------------------
+                                                sent2=sentiment(text,valueword)
+                                                sentres=extracts(sent2)
+                                                Ergebnis[i,1:3]=c(id=gsub('article-|\\.txt','',svFile[i])
+                                                               ,sent
+                                                               ,nword=nwords 
+                                                               
+                                                )
                         
-                        nwords<-tp$all[c('wc')]
-                                               
-                        Ergebnis[i,]=c(id=gsub('article-|\\.txt','',svFile[i])
-                                       ,sent
-                                       ,nword=nwords                                       
-                        )
+                                                Ergebnis[i,4:12]=unlist(sentres)
+                        
+#                                                 Ergebnis[i,'id']=gsub('article-|\\.txt','',svFile[i])
                         
                 }
-                write.csv(Ergebnis,paste(DirCode,'/data/zeit indikatoren/Ergebnis_qdap_negator_',jj,'_',k,'.csv',sep=''),row.names=F)
+                write.csv(Ergebnis,paste(DirCode,'/data/zeit indikatoren/Ergebnis_',liste_jahr[k],'.csv',sep=''),row.names=F)
         }
         
         rm(i) 
         
 }#Jahresschleife
+
+

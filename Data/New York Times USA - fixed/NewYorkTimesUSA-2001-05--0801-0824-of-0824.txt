@@ -1,0 +1,1436 @@
+
+
+801 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 30, 2001
+ Late Edition - Final 
+
+SECTION: Section C; Column 1; Business/Financial Desk; Pg. 11
+
+LENGTH: 669 words
+
+HEADLINE: THE MARKETS: STOCKS & BONDS; 
+Technology Shares Drop On Concern Over Earnings
+
+BYLINE:  By MICHAEL BRICK 
+
+ BODY:
+Shares of large technology companies retreated yesterday as investors began to doubt that corporate earnings growth would justify their recent enthusiasm.
+ The Nasdaq composite index fell 75.49 points, or 3.4 percent, to close at 2,175.54, and the Nasdaq 100 stock index, packed with the largest technology companies, dropped 87.21 points, or 4.5 percent, to 1,873.53. 
+ The technology selling weighed on the broad Standard & Poor's 500-stock index as well, which declined 9.96 points, or 0.8 percent, to 1,267.93.
+But the Dow Jones industrial average rose 33.77 points, or 0.3 percent, to 11,039.14, buoyed by gains in shares of pharmaceutical and heavy industrial companies. 
+Goldman, Sachs helped set the tone for technology stocks after it reduced its earnings estimates for Sun Microsystems and EMC, noting that the economy's pace might impede the businesses.
+Sun Microsystems fell $1.80, to $18.67. After the stock closed, Sun confirmed Wall Street's worries, projecting that it would earn 2 to 4 cents a share in its latest quarter, below analysts' consensus estimate of 6 cents a share; its shares fell to $17.51 in after-hours trading, according to Instinet.
+EMC, which said it would cut its work force by about 4 percent, or 1,100 jobs, fell $3.11, to $33.99.
+Investors heeded the comments from Goldman, sending shares of Cisco Systems down $1.59, to $20.46; AOL Time Warner lower by $2.53, to $51; and Oracle down 90 cents, to $15.61.
+Since April 4, just after the new quarter began and two weeks before the Federal Reserve jolted the markets with a surprise interest rate cut, the Nasdaq composite index has risen 32.8 percent. As money managers sifted through earnings reports during that time, they stayed focused on the Fed. Now, trading in federal funds futures indicates that investors expect only a quarter-point rate cut next month, if any.
+During the recent rally, the market has behaved like an "interest rate junkie," said James L. Luke, manager of the BB&T Large Company Growth Fund for BB&T Asset Management in Raleigh, N.C. "It can't hang its hat on earnings progression."
+Economic reports gave reason to believe the series of rate cuts is done or soon will be. The Conference Board reported that its consumer confidence index rebounded slightly in May, and the Commerce Department reported that personal income growth in April exceeded economists' expectations while personal spending growth matched forecasts. That kind of news might have unnerved investors little more than a month ago, but after five half-point interest rate cuts this year, the expectations for further cuts has receded.
+"The mood has shifted," said Alfred E. Goldman, chief market strategist for A. G. Edwards & Sons Inc. "What the market would like more than a rate cut right now would be some positive statement by a few high-tech executives." --------------------
+
+Treasury Prices Decline
+By Bloomberg News
+Treasury bond prices fell yesterday after a report showed that consumer confidence jumped in May.
+Rising consumer confidence "decreases the odds for a 25-basis-point rate cut in June, and will entice speculators" to bet that prices will fall more as they expect fewer rate cuts, said Sadakichi Robbins, a fixed-income strategist at Bank Julius Baer.
+The 10-year Treasury note fell 6/32 , to a price of 96 5/32 . The note's yield, which moves in the opposite direction from the price, rose to 5.52 percent from 5.49 percent on Friday.
+The price of the 30-year Treasury bond fell 3/32 , to 93 8/32 . The bond's yield rose to 5.86 percent from 5.85 percent on Friday.
+Results of yesterday's Treasury auction of 3-month and 6-month bills:
+
+(000 omitted in dollar figures)3-Mo. Bills6-Mo. BillsPrice99.08998.205High Rate3.60%3.55%Investment Rate3.68%3.66%Low Rate3.54%3.50%Median Rate3.59%3.53%Total applied for$28,103,858$26,887,519Accepted$16,494,858$13,848,634Noncompetitive$1,325,828$1,187,352
+
+Both issues are dated May 31, 2001. The three-month bills mature on Aug. 30, 2001, and the six-month bills mature on Nov. 29, 2001.
+
+GRAPHIC: Graph tracks the Dow Jones industrial average over the past year. (Sources: Associated Press; Bloomberg Financial Markets) Tables: "Hot & Cold" provides a look at stocks with large percentage gains and losses; "The Favorites" lists stocks held by largest number of accounts at Merrill Lynch. (Compiled from staff reports, The Associated Press, Bloomberg News, Bridge News, Dow Jones, Reuters) Graph: "Treasury Yield Curve" plots yields of selected Treasury securities. Short-term maturities are shown on a bond equivalent basis. Horizontal scale is a ratio scale. (Source: Bloomberg Financial Markets) 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: STOCK INDEXES (96%); COMPANY EARNINGS (91%); FINANCIAL RESULTS (90%); BOND MARKETS (90%); STOCK EXCHANGES (90%); BONDS (90%); ECONOMIC NEWS (89%); CONSUMER CONFIDENCE (89%); US FEDERAL GOVERNMENT (86%); INTEREST RATES (86%); ELECTRONIC COMMUNICATIONS NETWORKS (79%); BANKING & FINANCE (79%); SECURITIES TRADING (79%); INVESTMENT MANAGEMENT (78%); CONSUMER SPENDING (78%); EARNINGS PREANNOUNCEMENTS (78%); LABOR FORCE (78%); CONSUMER SPENDING & CREDIT (78%); PHARMACEUTICALS INDUSTRY (70%); COMMERCE DEPARTMENTS (68%); PERSONAL & FAMILY INCOME (50%) STOCKS AND BONDS; NASDAQ COMPOSITE INDEX; STANDARD & POOR'S 500-STOCK INDEX; DOW JONES INDUSTRIAL AVERAGE 
+
+COMPANY: GOLDMAN SACHS GROUP INC (90%); BB & T ASSET MANAGEMENT INC (81%); AOL INC (66%); WELLS FARGO ADVISORS LLC (60%); CISCO SYSTEMS INC (58%); ORACLE AMERICA INC (56%)
+
+TICKER: GS (NYSE) (90%); AOL (NYSE) (66%); CSCO (NASDAQ) (58%)
+
+INDUSTRY: NAICS523930 INVESTMENT ADVICE (90%); NAICS523920 PORTFOLIO MANAGEMENT (90%); NAICS523110 INVESTMENT BANKING & SECURITIES DEALING (90%); SIC6289 SERVICES ALLIED WITH THE EXCHANGE OF SECURITIES OR COMMODITIES, NEC (90%); SIC6282 INVESTMENT ADVICE (90%); SIC6211 SECURITY BROKERS, DEALERS, & FLOTATION COMPANIES (90%); SIC7379 COMPUTER RELATED SERVICES, NEC (66%); SIC7375 INFORMATION RETRIEVAL SERVICES (66%); NAICS523120 SECURITIES BROKERAGE (60%); NAICS334210 TELEPHONE APPARATUS MANUFACTURING (58%); SIC3661 TELEPHONE & TELEGRAPH APPARATUS (58%); NAICS541512 COMPUTER SYSTEMS DESIGN SERVICES (56%); NAICS511210 SOFTWARE PUBLISHERS (56%); NAICS334111 ELECTRONIC COMPUTER MANUFACTURING (56%); SIC7373 COMPUTER INTEGRATED SYSTEMS DESIGN (56%); SIC5045 COMPUTERS & COMPUTER PERIPHERAL EQUIPMENT & SOFTWARE (56%)
+
+PERSON: BRICK, MICHAEL 
+
+GEOGRAPHIC: RALEIGH, NC, USA (52%) NORTH CAROLINA, USA (76%) UNITED STATES (76%)
+
+LOAD-DATE: May 30, 2001 
+
+
+
+802 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 30, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 1; Foreign Desk; Pg. 3
+
+LENGTH: 799 words
+
+HEADLINE: Clash on Use of Embryos in Germany Stirs Echoes of Nazi Era 
+
+BYLINE:  By ROGER COHEN 
+
+DATELINE: BERLIN, May 29 
+
+ BODY:
+A sharp debate clouded by memories of the Third Reich has erupted in Germany over the ethics of research in biotechnology and particularly the use of embryos for genetic inquiry and diagnosis.
+ The discussion has pitted Chancellor Gerhard Schroder against President Johannes Rau, whose role is generally ceremonial but assumes significance in such ethical matters, where the presidency is expected to act as a sort of moral arbiter. 
+ Mr. Schroder, a pragmatic Social Democrat, has taken a generally laissez-faire view, arguing that gene technology produces new drugs, creates new jobs and presents new opportunities for Germany. About 20 percent of European biotechnology companies are in Germany and the sector is growing by 30 percent a year. 
+Rejecting the argument that human dignity would be compromised by allowing research on in vitro embryos, Mr. Schroder has said that human dignity is linked above all to "access to gainful employment" and that the economic possibilities of biotechnology are too vast to ignore.
+Such themes have been passionately debated in the United States and in many European countries of late. But they are particularly sensitive in Germany because of the extensive euthanasia program and other Nazi medical experiments aimed at fashioning an unblemished master Aryan race.
+Since he was elected in 1998, Mr. Schroder has aimed to remove or attenuate a number of taboos prevalent because of the Nazi past. He speaks freely of German power, interests and ambitions, both political and economic, in a way that was unthinkable even a decade ago.
+In extending this policy to the field of genetic research and engineering, he has evidently angered Mr. Rau, another Social Democrat.
+Using unusually vehement language for a German president, Mr. Rau said last week that "eugenics, euthanasia and selection are labels which are linked to bad memories in Germany." Appearing to rebuff the chancellor, he added, "Where human dignity is affected, economic arguments do not count."
+Much of the debate has centered on whether to allow genetic research on embryos -- currently banned under a 1990 law -- and what to do about the practice, permitted in some other European countries, of analyzing in vitro embryos for possible defects before implantation in the womb. The Bush administration has been antagonistic toward research on embryos because it intersects with moral questions about abortion. 
+The technique known as pre-implantation diagnosis is allowed in certain circumstances in Britain and France. But in Germany, up to now, "it has not been possible to diagnose in vitro embryos or to stop the implantation of a fertilized egg," said Dietmar Mieth, a professor of theological ethics.
+While saying that the law should remain unchanged "for now," Mr. Schroder has said research on embryos could be positive if it helped scientific progress and led to lives being saved. "Our moral responsibility is also to take care of our jobs and well being," the chancellor said.
+This week, former President Roman Herzog argued in the daily Die Welt that an absolute ban on research on stem cells from embryos -- which have the ability to develop into the body's different tissues -- would be excessive.
+"I am not prepared to explain to a child sick with cystic fibrosis, facing death and fighting for breath, the ethical grounds that hinder the science which could save him," Mr. Herzog said.
+But Mr. Rau argued that any experiments on embryos were treacherous. "Those who begin to instrumentalize human life, to differentiate between worthy of life and unworthy of life, are on a runaway train," he said.
+An opinion poll published today by Die Welt suggested that most Germans back Mr. Rau's position. Asked whether embryo research that creates jobs and prosperity was more important than the ethical questions surrounding it, 70 percent said ethical considerations should take priority.
+Prof. Mieth suggested that two factors had come together to stimulate the current impassioned discussions in Germany, which have included a number of often vehement television debates and a great deal of opining from doctors and priests.
+The first, he said, was the emergence of a class of ever more ambitious German parents determined to have children that would succeed in an increasingly competitive society.
+"Individual wishes are driving the possible emergence of eugenics, not the state, because people want children for whom they can be ambitious," he argued.
+The second factor, Prof. Mieth said, was the emergence of the medical and scientific possibilities that mean it is no longer fanciful to think in terms of the selection of certain characteristics for a child.
+"For Mr. Schroder, all these developments are a matter of management," Prof. Mieth added. "For Mr. Rau, they are a matter of ethics."
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: BIOTECHNOLOGY & GENETIC SCIENCE (92%); ETHICS (91%); PHARMACEUTICALS INDUSTRY (90%); GENETIC ENGINEERING (90%); BIOLOGY (90%); MEDICAL RESEARCH (90%); BIOETHICS (90%); GENES & CHROMOSOMES (89%); SCIENCE NEWS (89%); IN VITRO FERTILIZATION (89%); SCIENCE & TECHNOLOGY (89%); US PRESIDENTS (77%); EMPLOYMENT GROWTH (75%); JOB CREATION (75%); ABORTION (73%); BIOTECHNOLOGY INDUSTRY (73%); US FEDERAL GOVERNMENT (72%); JEWS & JUDAISM (60%); RELIGION (60%) REPRODUCTION (BIOLOGICAL); ETHICS; NAZI POLICIES TOWARD JEWS AND MINORITIES; GENETICS AND HEREDITY; DRUGS (PHARMACEUTICALS); TESTS AND TESTING; ARTIFICIAL INSEMINATION 
+
+PERSON: GERHARD SCHRODER (90%) COHEN, ROGER; SCHRODER, GERHARD (CHANCELLOR); RAU, JOHANNES (PRES) 
+
+GEOGRAPHIC: BERLIN, GERMANY (79%) GERMANY (95%); EUROPE (92%); UNITED STATES (92%); CENTRAL EUROPE (90%); FRANCE (79%) GERMANY
+
+LOAD-DATE: May 30, 2001 
+
+
+
+803 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 30, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 3; Foreign Desk; Pg. 4
+
+LENGTH: 323 words
+
+HEADLINE: Bush Plans to Prolong Trade Benefits for China 
+
+BYLINE:  By DAVID E. SANGER 
+
+DATELINE: LOS ANGELES, May 29 
+
+ BODY:
+President Bush said today that he would ask Congress to extend China's "normal" trade status with the United States for one more year. Such a stop-gap measure was made necessary because Beijing, having won such status from Congress last year as a step toward entry in the World Trade Organization, is delaying its application.
+ Mr. Bush's declaration was expected, and in recent days senior administration officials have said they hoped that Beijing would view the move as a sign that Mr. Bush wants good relations. "We need to counter some of the impressions of the past few months," one official said, referring to the standoff over an American spy plane and Mr. Bush's plans for a missile defense. 
+ During the plane incident, some members of congress suggested that the administration should punish Beijing by withholding normal trade status, which allows China to export its goods to the United States without large tariffs. But those threats died away as soon as the incident was over. Congress has always renewed China's trade privileges.
+Last year, it seemed as if the president's announcement today would be unnecessary. In the last major trade vote of Bill Clinton's presidency, Congress approved an accord that would make Beijing's trade status permanent, the only concession that the United States had to make in a broad trade agreement with China that should open its markets to foreign goods.
+But that legislation takes effect only when China enters the World Trade Organization. And that process has taken far longer than anyone expected.
+The reason may be simple: as soon as China becomes a member of the trade organization, the clock starts on its commitment to open its banking system and its lumbering state-owned industries to foreign competition. That is a particularly potent issue as China approaches selection of new party leaders, pitting economic reformers who embrace entry against those who fear worse unemployment.
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: US PRESIDENTS (90%); INTERNATIONAL TRADE (90%); LEGISLATIVE BODIES (79%); BUSINESS & PROFESSIONAL ASSOCIATIONS (78%); EXPORT TRADE (78%); US FEDERAL GOVERNMENT (78%); MOST FAVORED NATION STATUS (78%); LEGISLATION (78%); TRADE TREATIES & AGREEMENTS (77%); INTERNATIONAL ECONOMIC ORGANIZATIONS (76%); INTERNATIONAL TRADE LAW (76%); MILITARY AIRCRAFT (74%); POLITICS (74%); BANKING & FINANCE (73%); APPROVALS (72%); ESPIONAGE (69%); TAXES & TAXATION (69%); MISSILE SYSTEMS (69%); TREATIES & AGREEMENTS (65%); HUMAN RIGHTS (59%) INTERNATIONAL TRADE AND WORLD MARKET; CHINA-INTERNATIONAL RELATIONS-US; UNITED STATES INTERNATIONAL RELATIONS; FREEDOM AND HUMAN RIGHTS 
+
+ORGANIZATION: WORLD TRADE ORGANIZATION (58%)
+
+PERSON: GEORGE W BUSH (92%); BILL CLINTON (59%) BUSH, GEORGE W (PRES); SANGER, DAVID E 
+
+GEOGRAPHIC: BEIJING, CHINA (90%) NORTH CENTRAL CHINA (90%) CHINA (95%); UNITED STATES (95%) CHINA
+
+LOAD-DATE: May 30, 2001 
+
+
+
+804 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 30, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 3; National Desk; Pg. 1
+
+LENGTH: 1240 words
+
+HEADLINE: SHARP DIFFERENCES AS BUSH AND DAVIS DISCUSS BLACKOUTS 
+
+BYLINE:  By TODD S. PURDUM and DAVID E. SANGER 
+
+DATELINE: LOS ANGELES, May 29 
+
+ BODY:
+On his first visit to California since his election and the state's rolling blackouts, President Bush clashed sharply today with Gov. Gray Davis over the wisdom of capping the price of electricity.
+ After a 35-minute meeting with Mr. Bush, Mr. Davis said he intended to file a federal lawsuit and pursue other efforts to compel regulators to limit prices charged by energy suppliers. 
+ It was a day of sharp policy differences and high political theater involving the Republican president and the Democratic governor. Mr. Bush campaigned often here last year yet lost the state by 12 percentage points, or roughly 1 million votes, to Al Gore. Mr. Davis's own presumed presidential ambitions for 2004 have steadily decreased as his handling of the power crisis has lowered his approval ratings. 
+Mr. Davis emerged from the meeting to declare, "I'm going to pursue every recourse available to me" to force the Federal Energy Regulatory Commission to order rebates to consumers or a lowering of prices.
+But he expressed gratitude that Mr. Bush had agreed to look into the question of why Texas natural gas suppliers were charging for gas transported to California about three times what they were charging for gas transported to New York, and to review whether to re-impose tariffs, suspended two years ago, on such transmissions.
+In comments that seemed to avoid brushing off California's problems, Mr. Bush promised slightly more federal money to help poor families pay their energy bills, and he again pledged to speed federal reviews of plans to build generating plants. 
+At the Camp Pendleton Marine base and then at a luncheon of the World Affairs Council here, he said that this was a moment for solutions, not "blame-shifting" or politics.
+"We will not take any action that makes California's problems worse, and that's why I oppose price caps," Mr. Bush told a largely sympathetic audience at the luncheon at the Century Plaza Hotel, delivering his most emphatic version of his longstanding position. 
+As the audience applauded, Mr. Davis sat impassively on the dais.
+"Price caps do nothing to reduce demand and they do nothing to increase supply," Mr. Bush said. "This is not only my administration's position, this was the position of the prior administration."
+Partly because Mr. Bush had waited so long to visit the most populous state in the face of its severe energy problems, his talk with Mr. Davis took on the ballyhooed air of a superpower summit meeting, with seconds for each man hovering in hotel ballrooms and hallways like rival campaign troops, each side spinning for its man. Mr. Davis's aides did not expect to win much short-term help but hoped at least to make the case that the governor was pursuing every avenue.
+Mr. Bush instead emphasized longer-term solutions, including conservation, new energy technologies and speeded efforts to approve and build power plants. 
+During his speech, three women, including Medea Benjamin, the California Green Party's candidate for United States Senate last year, were led away by police officers and the Secret Service after chanting slogans like "Price caps now" and "Stop the greedy generators."
+At issue between Mr. Davis and Mr. Bush was the question of who should pay for the soaring energy prices here and the botched deregulation of the electricity market. Should it fall to the state's consumers, the generators or the utilities?
+To bolster his case and answer Mr. Bush's economic critique, Mr. Davis released a letter today in which 10 leading economists urge Mr. Bush to find a middle ground between fixed price caps and a truly free electricity market.
+"We are mindful of the potential dangers of applying a simple price cap," wrote the economists, led by Alfred Kahn, the architect of the deregulation of the country's airlines during the Carter administration.
+"But California's electricity markets are not characterized by effective competition," they continued, urging that the regulatory commission establish "cost of service prices" that would create a "just and reasonable rate standard." 
+Assuming that a reasonable profit margin was established, this form of flexible price controls would, they contended, assure that companies still had an incentive to sell power into the California market.
+"FERC's failure to act now will have dire consequences for the state of California and will set back, potentially fatally, the diffusion of competitive electricity markets across the country," the letter said.
+Some of the high-technology executives who met privately with Mr. Bush and Mr. Davis today also said they were interested in long-term solutions and did not rank price caps among them. Craig Barrett, chief executive of Intel Corporation, one of the state's largest employers and the maker of the chip that drives tens of millions of computers, said that in the meeting with the president, "I didn't hear the word price caps mentioned." He said they were "kind of an artificial cap that is not going to solve the problem."
+But Mr. Barrett underscored the problem facing the state if it did not convince investors, both foreign and domestic, that enough power would soon flow. Intel has already suspended further expansion of its chip-fabrication plants in California. Today Mr. Barrett said that "if California doesn't have reliable power in five years, it would not be on any possible expansion list" for new plants.
+Even some California Republicans have begun to fret quietly in recent weeks that Mr. Bush was being perceived as inattentive to the needs of such a big state, one whose Republican Party is desperately trying to rebuild from a series of electoral disasters that have left it with just a single statewide officeholder, Secretary of State Bill Jones.
+Mr. Jones has said he will challenge Mr. Davis next year, but Mr. Bush has implored the Republican mayor of Los Angeles, Richard J. Riordan, who is retiring next month and introduced Mr. Bush at the lunch, to seek the governorship.
+Mr. Davis and senior Bush aides characterized the meeting, which was requested by Mr. Davis and went 15 minutes longer than scheduled, as cordial and businesslike.
+Karl Rove, the president's chief political adviser, told reporters afterward that Mr. Bush was committed to stopping any illegal price-gouging by energy suppliers and bringing "price relief" by means other than price caps.
+But Mr. Davis, in remarks to reporters, called some form of price controls "the thing that really matters above all else," and said he and Mr. Bush remained far apart. He said the regulatory commission had already established that California's wholesale electricity market was dysfunctional. 
+Mr. Davis also said he would file a lawsuit in federal court if the commission did not soon grant his request for a review of its earlier order to limit prices only during power emergencies, and to revoke the authority of some generators to charge market-based rates.
+Mr. Davis said he told the president, "You understand I have to do everything in my power," and that Mr. Bush had agreed he would have a similar duty if he were governor. 
+The United States Court of Appeals for the Ninth Circuit, in San Francisco, declined today to order the regulatory commission to limit wholesale prices, as California's Democratic legislative leaders asked in a lawsuit last week, saying in a brief statement that the case did not warrant "intervention of this court." Mr. Davis had declined to join that lawsuit.
+
+GRAPHIC: Photo: President Bush with Gov. Gray Davis of California yesterday after a Los Angeles World Affairs Council meeting. They met privately later. (Associated Press)(pg. A18) 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: POWER FAILURES (91%); ELECTRICITY TRANSMISSION & DISTRIBUTION (90%); ENERGY & UTILITY TRADE (90%); UTILITIES INDUSTRY (90%); TALKS & MEETINGS (89%); GOVERNORS (89%); NATURAL GAS & ELECTRIC UTILITIES (89%); PRICE MANAGEMENT (89%); ENERGY & UTILITY POLICY (89%); US DEMOCRATIC PARTY (78%); PRESIDENTIAL ELECTIONS (78%); US STATE GOVERNMENT (78%); POLITICS (78%); US REPUBLICAN PARTY (78%); US FEDERAL GOVERNMENT (77%); ENERGY DEPARTMENTS (77%); HOTEL MEETING FACILITIES (77%); ENERGY REGULATION (77%); ELECTRIC POWER PLANTS (77%); NATURAL GAS PRODUCTS (77%); NATURAL GAS DISTRIBUTION (76%); ENERGY & UTILITY LAW (72%); ARMED FORCES (64%); SALES REBATES (57%); LITIGATION (57%); TARIFFS & DUTIES (51%) ELECTRIC LIGHT AND POWER; PRICES (FARES, FEES AND RATES); GAS (FUEL); BLACKOUTS AND BROWNOUTS (ELECTRICAL) 
+
+ORGANIZATION: FEDERAL ENERGY REGULATORY COMMISSION (56%)
+
+PERSON: GEORGE W BUSH (93%); AL GORE (58%) BUSH, GEORGE W (PRES); DAVIS, GRAY (GOV); PURDUM, TODD S; SANGER, DAVID E 
+
+GEOGRAPHIC: LOS ANGELES, CA, USA (90%) CALIFORNIA, USA (94%); TEXAS, USA (92%) UNITED STATES (94%) CALIFORNIA; TEXAS
+
+LOAD-DATE: May 30, 2001 
+
+
+
+805 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 30, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 5; National Desk; Pg. 16
+
+LENGTH: 277 words
+
+HEADLINE: E.P.A. Supports Rule to Reduce Haze in Parks 
+
+BYLINE:  AP 
+
+DATELINE: WASHINGTON, May 29 
+
+ BODY:
+The Bush administration will not challenge a proposal approved in the last days of the Clinton presidency to clean up hazy skies over national parks and wilderness areas, the administrator of the Environmental Protection Agency, Christie Whitman, said today.
+ "Part of the president's commitment to protecting national parks includes protecting the views that draw us to these parks year after year," Mrs. 
+Whitman said. 
+ The rule would cut sulfur dioxide, nitrogen oxide and particulate matter and directly improve the air in 156 national parks and wilderness areas, the agency said.
+The proposed rule requires states to impose pollution controls on hundreds of older power plants. It would require coal-fired utilities, industrial boilers, refineries and iron and steel plants built from 1962 to 1977 to be retrofitted with new pollution-control technology by 2013.
+Environmentalists said they worried that the Bush administration might still try to delay or weaken the plan before a final rule was issued.
+"The concern is that the White House or the Office of Management and Budget or the utility industry would push for a weakening of the more aggressive approach reflected in the Clinton proposal," said John Walke, director of clean air programs for the Natural Resources Defense Council.
+The proposal, amending part of the agency's 1999 regional haze rule, tells states which of the older industrial facilities that emit more than 250 tons of view-impairing pollutants annually must install "best available retrofit technology."
+But it also gives states flexibility to consider economic factors, energy impacts and the remaining useful life of the facility. 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: NATIONAL PARKS (92%); US PRESIDENTS (90%); ENVIRONMENTAL DEPARTMENTS (90%); AIR QUALITY REGULATION (90%); WILDERNESS (90%); AGENCY RULEMAKING (90%); ENVIRONMENT & NATURAL RESOURCES (90%); UTILITIES INDUSTRY (89%); US ENVIRONMENTAL LAW (78%); ENVIRONMENTAL & WILDLIFE ORGANIZATIONS (78%); NITROGEN OXIDES (77%); NATURAL RESOURCES (77%); ENVIRONMENTALISM (77%); AIR QUALITY (77%); PARTICULATE MATTER (76%); POWER PLANTS (74%); FOSSIL FUEL POWER PLANTS (74%); ELECTRIC POWER PLANTS (74%); NATURAL GAS & ELECTRIC UTILITIES (74%); PUBLIC FINANCE (73%); ENVIRONMENTAL TECHNOLOGY (72%); BUDGETS (71%); COAL FIRED PLANTS (71%) PARKS AND OTHER RECREATION AREAS; WILDERNESS AREAS; AIR POLLUTION 
+
+ORGANIZATION: US ENVIRONMENTAL PROTECTION AGENCY (84%); OFFICE OF MANAGEMENT & BUDGET (55%); NATURAL RESOURCES DEFENSE COUNCIL (55%) ENVIRONMENTAL PROTECTION AGENCY 
+
+PERSON: BILL CLINTON (88%) WHITMAN, CHRISTIE (ADMR); CLINTON, BILL; BUSH, GEORGE W (PRES) 
+
+GEOGRAPHIC: UNITED STATES (94%)
+
+LOAD-DATE: May 30, 2001 
+
+
+
+806 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 30, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 1; National Desk; Pg. 19
+
+LENGTH: 822 words
+
+HEADLINE: Senator Promises Investigation Into Gasoline Price Rise 
+
+BYLINE:  By ALISON MITCHELL 
+
+DATELINE: WASHINGTON, May 29 
+
+ BODY:
+In a swift display of how a Democratic-run Senate will alter the debate in the capital, one of the newly empowered Democrats announced today that he would open an investigation into the recent increase in gasoline prices.
+ The senator, Carl Levin, a Michigan Democrat who will become chairman of the Senate Permanent Subcommittee on Investigations next week, said in statement that "the oil companies need to explain why gas prices have increased so dramatically given that there's been no comparable increase in the per barrel cost of oil to them." 
+ Mr. Levin's move signaled an aggressive posture by Democrats on an important pocketbook issue and came as the Democrats stepped up their plans to assume control of a chamber of Congress for the first time in more than six years. The ability to run investigations is one of the many levers of power held by the majority party. 
+The Republicans were also newly aggressive today, with the Republican National Committee sending out a lengthy press release painting Senator Tom Daschle of South Dakota, the new majority leader, as a bitterly partisan politician determined to halt President Bush's agenda.
+Ending the possibility of a wide shuffle in positions, Senator Joseph R. Biden Jr., Democrat of Delaware, announced today that he had chosen to be chairman of the Senate Foreign Relations Committee instead of the Senate Judiciary Committee, to which his seniority entitled him. 
+Describing the debate over President Bush's call for a national missile defense shield the most significant national security issue confronting American policy makers, Mr. Biden said he would seek to broaden the debate over the strategy when he took over next week as chairman of the Foreign Relations Committee.
+Mr. Biden's decision left Senator Patrick J. Leahy of Vermont in the high-profile position of chairman of the Judiciary Committee, which will examine and vote on President Bush's judicial nominees.
+As power shifted, Democrats were not the only ones considered newly empowered. Senator John McCain, the maverick Arizona Republican who ran for president last year, was expected to have new influence.
+Mr. McCain has joined Democrats in sponsoring legislation on managed health care, on Medicare prescription drug benefits, on tightening up on gun sales at gun shows and on a measure to improve the electoral system. Such measures are expected to take on new life with Democrats setting the floor schedule.
+Just last week, President Bush reached out to Mr. McCain to meet for dinner, although the two decided to postpone the session to a less heated moment after Senator James M. Jeffords of Vermont changed to an independent from a Republican, tilting control of the Senate.
+Mr. McCain had also been in conversations with Democrats for weeks about whether he, too, might become an independent. Time Magazine reported that the talks started weeks ago in the office of Senator Edward M. Kennedy, Democrat of Massachusetts, who is cosponsoring a managed-care bill with Mr. McCain and with Senator John Edwards, Democrat of North Carolina.
+John Weaver, who had been Mr. McCain's political director, and Rick Davis, his former campaign manager, both insisted today that Mr. McCain, on a Congressional tour of Ireland, had no intention of leaving his party. And Kenneth M. Duberstein, a former chief of staff to Ronald Reagan who is close to Mr. McCain and to Mr. Bush, said the senator was "very much in the driver's seat" and could now have increased opportunities to help shape compromises in the Senate. 
+But another Republican close to Mr. McCain, who spoke on condition of anonymity, said it was hard to forecast what he might choose to do about his party registration in the future.
+Democrats and Republicans alike see gasoline prices as a potent political issue. Prices turned upward over the last week, rising 1.7 cents to just over $1.70 a gallon, the Energy Department reported.
+Mr. Levin recently asked the nonpartisan General Accounting Office to look into the effect of recent mergers and consolidations in the oil industry on gas prices and competition. He has also said the federal government should act assertively to fight "price gouging."
+The oil industry has argued that while crude oil production cuts by the Organization of Petroleum Exporting Countries have played a limited role, gasoline prices have largely been driven by a shortage of refineries in the nation, with no new refineries built since the 1970's.
+"You have demand up and you have supply down," said John C. Felmy, the chief economist for the American Petroleum Institute, calling this "a classic experience of upper price pressure."
+In two recent investigations, federal regulators have found no evidence of price-fixing.
+President Bush, who has been criticized by Democrats as too close to the oil industry, has opposed intervention in energy markets and proposed a plan intended to bolster domestic oil and gas production.
+
+GRAPHIC: Photo: Even though the Senate is in recess this week and control will change when it returns, James A. Whibley and a fellow elevator operator waited yesterday on the off chance that a senator would use their elevator. (Susana Raab for The New York Times) 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: POLITICAL PARTIES (92%); OIL & GAS PRICES (92%); US DEMOCRATIC PARTY (91%); PRICE INCREASES (91%); GASOLINE PRICES (91%); INVESTIGATIONS (90%); LEGISLATIVE BODIES (90%); US REPUBLICAN PARTY (90%); FOREIGN POLICY (89%); US PRESIDENTIAL CANDIDATES 2008 (87%); LEGISLATION (78%); PLATFORMS & ISSUES (78%); PUBLIC POLICY (78%); ELECTIONS (78%); TALKS & MEETINGS (77%); PRICE CHANGES (77%); US ELECTORAL COLLEGE (77%); PETROLEUM PRODUCTS (77%); MANAGED CARE ORGANIZATIONS (74%); GASOLINE MARKETS (72%); NATIONAL SECURITY (72%); OIL & GAS INDUSTRY (71%); MEDICARE (70%); FOREIGN RELATIONS (70%); HEALTH INSURANCE (65%); PHARMACY BENEFITS (65%); MISSILE SYSTEMS (64%); MISSILE DEFENSE SYSTEMS (64%); INTERNATIONAL RELATIONS (52%); PRESCRIPTION DRUGS (50%); PRESCRIPTION DRUG INSURANCE (50%) OIL (PETROLEUM) AND GASOLINE; PRICES (FARES, FEES AND RATES) 
+
+ORGANIZATION: REPUBLICAN NATIONAL COMMITTEE (56%)
+
+PERSON: CARL LEVIN (88%); GEORGE W BUSH (86%); JOHN MCCAIN (79%); JOE BIDEN (78%); TED KENNEDY (58%); PATRICK LEAHY (58%); TOM DASCHLE (58%) MITCHELL, ALISON; LEVIN, CARL (SEN) 
+
+GEOGRAPHIC: DELAWARE, USA (79%); ARIZONA, USA (79%) UNITED STATES (92%)
+
+LOAD-DATE: May 30, 2001 
+
+
+
+807 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section G; Column 1; Circuits; Pg. 9
+
+LENGTH: 1280 words
+
+HEADLINE: BASICS; 
+With Phone Headsets, It's So Easy to Gab Away
+
+BYLINE:  By SUSAN STELLIN 
+
+ BODY:
+TELEPHONE headsets, once the exclusive domain of switchboard operators and customer service representatives, have become standard gear in many offices, not to mention a necessity for the cell phone users who find them more comfortable or safer than trying to cradle tiny phones on their shoulders when they are driving. 
+ Many people who have become accustomed to the no-hands experience at work or in the car want the same freedom at home, so a variety of products are aimed at the home or home-office user who spends a lot of time on the phone. Such headsets are made by a handful of companies, including several of the major phone manufacturers and Plantronics, a company based in Santa Cruz, Calif., that specializes in headsets. 
+ Once you test-drive a headset, as I did, it is hard to go back to a regular cordless -- or even (gasp!) corded -- phone. Just be sure to purchase a headset from a store that accepts returns even if you have opened the box. What is comfortable to one person may not suit another, and there are variations in sound quality when headsets are connected to different phones. 
+For those looking to make the switch, some research is in order. Buying a headset for your phone is not as simple as buying a headset for your portable CD player. There is more to it than deciding if you want a stylish behind-the-head model or the ordinary over-the-head version. 
+A telephone purchased more than a year ago will probably not have a headset jack, so you will either have to upgrade your phone or buy a headset that comes with a converter that will work with an older corded phone. Buying a converter is the most economical option, but the quality of the service generally matches the price tag: low. 
+When I tested the Amplified Hands-Free Headset from Radio Shack ($49.99), I immediately ran into one of the drawbacks of the less expensive technology: the instructions sent me in search of a screwdriver (read: some assembly required) to open the battery cover (read: batteries not included).
+For the sake of thorough research, I found batteries and a screwdriver and spent another 10 minutes figuring out how to connect the various cables to my ancient corded phone. Then I made a few test calls. The sound quality is fine, but the converter takes up additional space on a crowded desk, and switching on the headset involves picking up the phone from its cradle, setting it on the desk and pushing a button on the converter before saying hello. 
+Plantronics also makes an amplifier for older phones. But the bottom line is that if you spend enough time on the phone to need a headset -- and I include myself in that category -- you ought to shell out for a model that has a jack.
+If your phone already has a jack (most new cordless models have one on the side of the handset) buying a headset is more a matter of style than anything else. Several large phone manufacturers make headsets for under $50 that will plug into these jacks. Other companies make more expensive models. The only technical choice you must make is whether to buy a headset that works with a 900-megahertz cordless phone or with the more powerful 2.4-gigahertz model, depending on what you have.
+Using a 900-megahertz cordless phone from General Electric, I tested the M175 headset from Plantronics ($64.95), which can be worn with a band over the head or with an earpiece that hooks over either ear. 
+Some people find the earpiece more comfortable, but I am not one of them. I tried all three earpieces included in the package but, unlike Goldilocks, did not find one that fit just right.
+After a quick conversion back to the headband style, which was quite comfortable, I found that the boom microphone on the M175 is less obtrusive than on other models. I also like the volume control and mute button on the cord, which makes it easy to tone down a loud caller or mute your own voice when sneezing or yelling at someone across the room. A switch near the jack adjusts the volume of your voice, which I found I had to do only once to find the setting that sounded best with my phone. Plantronics also sells headsets in either the over-the-head ($29.95) or over-the-ear style ($49.99), although cheaper prices can be found at Office Depot. 
+I also tested an over-the-head headset from Radio Shack (Model 43-1951 for $19.99). It is less versatile than the Plantronics headset -- it can be used only as a headband and does not have a volume control -- but the sound quality of the two sets is about the same. The Plantronics headset is more comfortable, though, and the Radio Shack model has a more obtrusive microphone with a foam cushion that can make you feel like a telemarketer or a rock star (depending on your point of view) as you shuffle about the house. 
+A similar headset from Panasonic is designed to work with any 2.4-gigahertz phone. With Panasonic's new GigaRange Elite Cordless Telephone ($349.95), the KX-TCA88 Lightweight 2.4-GHz Cordless Phone Headset ($24.95) can either be plugged into the base unit or into the phone itself. The phone is smaller than most cordless models, compact enough to clip to a belt, providing a hands-free conversation with the added advantage of being mobile. 
+Perhaps because of the improved radio frequency, this phone and headset provides the best sound quality. It did not pick up a radio broadcast that I sometimes hear on that phone line. It is also the easiest to answer. With the headset plugged into the base, phone calls can be answered by pressing a large button on the lower corner of the base. 
+But the Panasonic headset's five-foot cord had a tendency to get caught on things when I plugged it into the cordless phone and walked around. Other headsets I tested had a four-foot cord, which was less likely to wrap around a drawer handle or a knob on the stove. A more serious problem is that the transmitter died after a couple of weeks. I could hear callers but they could not hear me. 
+For anyone looking for a hands-free mobile phone, both Radio Shack and Plantronics make headsets with attached keypads. Radio Shack's model (43-1101 for $129.99) has a keypad that is slightly larger than a cigarette pack and can be clipped to a belt. 
+Although it was better than carrying around a ordinary cordless phone with a headset plugged in, the Radio Shack model is a bit heavy and would not stay clipped to my clothes. It is also white, which would quickly get dirty in my house, and the cord between the headset and keypad was stiffer than the other models I tested, so it got in the way more often. 
+I preferred the CT10 Cordless Headset Phone from Plantronics, which had a smaller, lighter keypad -- slightly bigger than a box of matches, though twice as thick. The CT10 ($129.95) has good sound quality and an unobtrusive microphone and will stay clipped to a belt, waistband or even a pants pocket. It works up to 150 feet from the base but because it is so small, it can be hard to dial the tiny keys on the keypad, especially in dim light. Brighter numbers on the gray keys would have helped. 
+I began using the Plantronics CT10 as my primary phone, and I found that I had more tolerance for long phone calls because it was so comfortable. That, of course, can translate into a higher phone bill. 
+A minor drawback with any headset is that it takes a little longer to answer the phone. A few extra seconds to put on a headset and press the talk button can make a difference when you are dashing in from outside. 
+And for household members or guests who balk at wearing a headset, it is generally a good idea to keep another phone plugged in somewhere. They also come in handy when you are running through the front door trying to catch a call.
+
+GRAPHIC: Photos RADIO SHACK HEADSET CORDLESS TELEPHONE, MODEL 43-1101PRICE -- $129.99FEATURES -- An all-in-one headset and cordless telephone, allowing hands-free calls. Slightly heavier and bulkier than similar models. RADIO SHACK AMPLIFIED HANDS-FREE HEADSETPRICE -- $49.99FEATURES -- An amplifier allows headsets to be used with older phones that do not have headset jacks. Sound quality is good, but the amplifier takes up desk space. PANASONIC LIGHTWEIGHT 2.4-GHz CORDLESS PHONE HEADSET, KX-TCA88PRICE -- $24.95FEATURES -- Works with any 2.4-GHz cordless phone equipped with a headset jack. Good sound quality, but test unit failed after two weeks. PLANTRONICS CT10 CORDLESS HEADSET TELEPHONEPRICE -- $129.95FEATURES -- All-in-one headset and cordless telephone, allowing hands-free, mobile calls. A lightweight keypad clips easily to a belt, pocket or waistband; good sound quality. PLANTRONICS M175 HEADSETPRICE -- $64.95FEATURES -- Works with most cordless or cellphones with a headset jack. Can be used as an over-the-ear or a headband headset. RADIO SHACK 43-1951PRICE -- $19.99FEATURES -- Works with most cordless or cell phoneswith a headset jack. A bare-bones headset with fewer features than more expensive models.
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: MOBILE & CELLULAR TELEPHONES (90%); RADIO TELEVISION & ELECTRONICS STORES (89%); CONSUMER ELECTRONICS MFG (79%); CONSUMER ELECTRONICS (79%); MOBILE & CELLULAR COMMUNICATIONS (79%); CUSTOMER SERVICE (78%); TELECOMMUNICATIONS EQUIPMENT (78%); TELECOMMUNICATIONS EQUIPMENT MFG (74%); TELEPHONE EQUIPMENT MFG (73%); CD & DVD DRIVES (65%) TELEPHONES AND TELECOMMUNICATIONS 
+
+COMPANY: PLANTRONICS INC (56%); RADIOSHACK CORP (53%)
+
+ORGANIZATION: RADIO SHACK; PANASONIC CO; PLANTRONICS INC 
+
+TICKER: PLT (NYSE) (56%); RSH (NYSE) (53%)
+
+INDUSTRY: NAICS334210 TELEPHONE APPARATUS MANUFACTURING (56%); SIC3661 TELEPHONE & TELEGRAPH APPARATUS (56%); NAICS443142 ELECTRONICS STORES (53%) SIC3661 TELEPHONE APPARATUS; 
+
+PERSON: STELLIN, SUSAN 
+
+GEOGRAPHIC: SAN FRANCISCO BAY AREA, CA, USA (56%) CALIFORNIA, USA (78%) UNITED STATES (78%)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+808 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section E; Column 3; The Arts/Cultural Desk; Pg. 1
+
+LENGTH: 1307 words
+
+HEADLINE: Critic's Notebook: Digestion as Art? In Vienna?; 
+Kunsthalle Quickly Gets Attention in New Museums Quarter
+
+BYLINE:  By MICHAEL KIMMELMAN 
+
+DATELINE: VIENNA 
+
+ BODY:
+First came Vanessa Beecroft, whose performances entailing nude and semi-nude women are the art world's current excuse for soft-core peeping. Next to arrive will be "Baroque Party," a lively, deceptively serious affair, which nevertheless includes a machine by Wim Delvoye simulating the digestive process that makes fake excrement.
+ By then, the Vienna Kunsthalle will surely have branded itself the most obstreperous tenant of this tradition-bound city's new Museums Quarter. Not that this is the goal, demurs its director, Gerald Matt, who much prefers to describe the intent of the place benignly as a "vitamin injection" for the city. 
+ Either way, this is a story about a feisty and exceptional young Kunsthalle, but also about the new economy of attention. Museums have traditionally trafficked in the economy of objects. But now, like everyone else, these institutions traffic in the economy of attention, an inevitable step in their evolution from respected repositories of prized objects to entertainment centers and contested social engines. 
+Museums are where we now gather to contemplate our collective values: where we fret about being shallow while perusing Jacqueline Kennedy's handbags, and assure ourselves of our basic gravity by tut-tutting that Giorgio Armani should not have been allowed to rent the Guggenheim while we still admire his evening gowns on the spiral ramp. Sometimes, they are where we look at art, too.
+In the process, museums compete for our divided interest and must persuade us of their relevance. They have become political entities. How can they not be political today?
+The Kunsthalle is a tidy case in point, navigating byzantine local cultural squabbles while attracting young crowds to cutting-edge art. Its home, the new Museums Quarter, is a joint federal-municipal project, officially opening at the end of June, though parts have opened while construction is going on and others won't be done until fall. Visitors (tens of thousands, including the ones for Ms. Beecroft) have been climbing over rubble and past cement mixers.
+The quarter used to be the imperial stables, across the street from the Kunsthistorisches, Vienna's Louvre. It is a block of buildings -- mostly by the Baroque architect Fischer von Erlach, part of it constructed in the mid-19th century in pseudo-Baroque style -- into the middle of which have been plunked two modernist boxes, one white, one gray. In Vienna, despite some venturesome recent architecture, this is still regarded as risque. The new buildings, which won't open until September, will house a national museum of modern art and the Leopold collection, known for its Klimts and Schieles, including the one that set off the custody battle in New York.
+The quarter, which cost around $160 million to complete, is a mix of federal and city institutions. The Vienna Festival is a city-run performing arts series, which opened last month with "The Peony Pavilion," the Chinese opera that arrived at Lincoln Center two years ago. The Kunsthalle, with which the festival shares what used to be the winter riding hall in the middle of the quarter, is city-financed as well, and privately run.
+It was started in 1992, the outgrowth of a temporary exhibition installed in disused rooms at the stables. Parts of that installation were recycled to make an enclosed shed nearby at the Karlsplatz, which became the Kunsthalle's base and, especially with the addition of a cafe, a hangout for young people in Vienna. Eventually, shows (of Matthew Barney, Cai Guo-Qiang, Robert Smithson and others) were also organized back at the stables before renovation began, giving the Kunsthalle two sites. Now the Karlsplatz is being redesigned for projects by young artists, while the Kunsthalle's main activities shift to the quarter. In a city with several surprisingly good contemporary art institutions (Secession and MAK are the two other obvious examples), the new Kunsthalle bids to become the most conspicuous and important, not to mention most boisterous, among them.
+The federal-municipal split is essential to the story, at least implicitly. The Austrian government is linked with the far-right Freedom Party; the recently elected Vienna government is Social Democratic. For a while Mr. Matt was mentioned as a candidate for councilor for cultural affairs in the new city administration.
+Now, as a federal project, the quarter has been touted from the start as a tourist and public relations boon: tone-deaf bureaucrats have even talked about it as a national theme park or supermarket for art.
+Mr. Matt and the Kunsthalle have seen things somewhat differently. As if to stress its independence, the Kunsthalle opened with Ms. Beecroft in February, months before the official opening of the quarter. Then a show by the British video artist Steve McQueen opened in May to coincide with the start of the Vienna Festival. "Baroque Party" opens June 12, still well before the official opening of the quarter on June 28 and 29. Administrators forbade the Kunsthalle to project images onto its facade by a group of German artists as part of "Baroque Party." The projectors would have had to be placed on federal property. Meanwhile, Mr. Matt invited the city's gay pride parade to march to the Kunsthalle on June 30, after the official opening, stressing that it would bring new audiences to the quarter. Needless to say, this has drawn attention to the place. 
+"We are a group of different institutions serving different needs," Mr. Matt said in an interview the other day. "I really believe in the Museums Quarter because it is based on autonomy, competition and pluralism. The quarter is ideal as a model for the new century if we sustain those principals."
+He added: "We have shown there is a big audience for an institution like ours showing new art even in a city like Vienna if you fight properly for contemporary art, which does not mean simply doing what's popular and easy but making what is hard and important popular."
+By way of example, he offered a glimpse of "Baroque Party" in the big new open barrel-vaulted gallery that has become the Kunsthalle's main exhibition hall, above a smaller space, still big, where Mr. McQueen's videos are now on view.
+"Baroque Party," taking as its nominal inspiration the renovated Baroque quarter, also suggests that art has reached a newly Baroque phase. This implies not fresh bombast or kitsch but an extravagance of thought, expressed both ecstatically and morbidly. Hence the Chapman brothers, in abundance here, with giant skulls and Goya-esque drawings. Also Mr. Delvoye's excremental contraption, which apart from its provocative function is meant to be conceptually linked to Baroque-era anatomical experiments and Cartesian metaphors of the body as machine.
+But, more interestingly, there are two American artists in the show who emerged a generation ago: Yvonne Rainer, the choreographer, underrated as a filmmaker, and Paul Thek, who died in 1988, at 54, likewise an original, still inadequately recognized. His work here, a virtual mini-retrospective, proves Mr. Matt's ultimate point that attracting attention does not preclude presenting difficult art seriously.
+The Baroque encompassed Rubens and Vermeer. Its common denominator was not ornamental opulence but corporeal weight: Lacan called it "the regulation of the soul through the viewing of the body." So we have Thek, whose works recreate human flesh and make other weird bodily metaphors. They bespeak a Roman Catholic upbringing with a distinctly Baroque overlay of religious eroticism. 
+It's all eloquently macabre. Mr. Delvoye's work may be what people hear about before the show opens, but Thek's art is what they should remember afterward -- which, among other things, suggests that an artist of undervalued stock can also profit from the new economy of attention.
+
+GRAPHIC: Photos: Wim Delvoye's "Cloaca," in the "Baroque Party" exhibition at the Kunsthalle, simulates the digestive process. (Margherita Spiluttini/Kunsthalle Wien Museum)(pg. E3); A front view of the Vienna Kunsthalle, in what used to be a winter riding hall. (Peter Kubelka/Kunsthalle, Vienna); "Baroque Party," at the Kunsthalle, has work by Paul Thek, foreground; the Chapmans, rear; and Yvonne Rainer, film. (Margherita Spiluttini/Kunsthalle, Vienna)(pg. E1) 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: MUSEUMS & GALLERIES (92%); VISUAL & PERFORMING ARTS (78%); FASHION DESIGNERS (70%); NEW ECONOMY (69%) ART 
+
+ORGANIZATION: VIENNA KUNSTHALLE (MUSEUM) 
+
+PERSON: GIORGIO ARMANI (50%) KIMMELMAN, MICHAEL 
+
+GEOGRAPHIC: VIENNA, AUSTRIA (92%) NEW YORK, USA (79%) AUSTRIA (92%); CENTRAL EUROPE (88%); UNITED STATES (79%)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+809 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 5; Foreign Desk; Pg. 8
+
+LENGTH: 664 words
+
+HEADLINE: British-U.S. Plan to Ease Curb On Iraq Seems Stalled for Now 
+
+BYLINE:  By BARBARA CROSSETTE 
+
+DATELINE: UNITED NATIONS, May 30 
+
+ BODY:
+A proposal by the United States and Britain to loosen restrictions on trade with Iraq while tightening controls against oil smuggling and illegal arms sales is meeting strong opposition in the Security Council and is unlikely to be adopted soon.
+ In fact, the United States has agreed to extend the current system by at least a month, while Russian and other experts examine a revised list of goods which Iraq may not import, a high-level American official told the news agency Reuters tonight. 
+ The decision to wait another month is a major setback for Secretary of State Colin L. Powell, who made revising the sanctions a top priority when he took office in January. The Anglo-American plan, which amounts to a rethinking of the "oil for food" program under which Iraq may sell oil to buy civilian goods for a population living under stringent economic sanctions, was also the first major proposal in the Council by the Bush administration. 
+American officials predicted two weeks ago, when Britain presented the plan, that it would be accepted by the Council before the next six-month renewal of the oil-for-food program, which is due by midnight Sunday.
+French, Chinese and Russian diplomats now say that deadline cannot be met because of problems caused by a lengthy list of items the United States wants to bar Iraq from buying without approval. They say banning purchases of some of the items, especially in telecommunications and other technologies, could hinder any revival of Iraq's economy.
+The French predict a delay of several months; Russia is seeking to put off a decision for six months. American officials reply that the outlines of the list were known for some time and that for countries accustomed to dealing with arms control, the list should be readily comprehensible.
+Talks yesterday and today in Budapest between Secretary Powell and his counterparts from Britain, France and Russia apparently did not narrow gaps among them. China, the fifth Council member with veto power, was briefed on the Budapest talks today, diplomats said. 
+Judging from comments from a range of diplomats, Washington may have caused new problems for itself in dealing with the Iraqi impasse by trying to rush a resolution through the Security Council against predictably strong opposition from Russia and China, and reservations from the French. 
+Once the debate opened, countries close to Iraq introduced other proposals that they may now try to attach to an extension of the current oil-sales program -- to Iraq's advantage. One would allow Iraq to recover its civilian aircraft from several nations where they were stranded when sanctions were imposed in 1990, after Iraq occupied Kuwait.
+Moreover, in discussing how to stop the illegal export of Iraqi oil and Iraq's imposition of illegal surcharges on controlled imports, council members are also being forced to acknowledge how lax enforcement of sanctions has been.
+If smuggling is to stop, Council members agree, neighboring countries whose purchases were tolerated -- Jordan, Syria and Turkey -- will have to be compensated if Iraq cuts off oil sales rather than legitimize them, as the new proposal would permit. In recent weeks the Iraqis have vowed to punish neighbors who cooperate with the Council.
+Iraq, which demands that all sanctions be lifted without conditions, has refused since December 1999 to cooperate with a new arms-inspection system, the only route now to a suspension and ultimately the end of the embargo. All five leading Security Council members say, at least for the record, that the requirement to reintroduce inspectors must remain in place.
+The Iraqis have dismissed American and British assertions that the new proposal on oil sales is intended to meet Iraq's accusations that trade curbs cause undue suffering to the people. The government has focused on the new proposal's intention to continue supervision of profits on oil sales, and other measures that Iraq regards as infringements of sovereignty. 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: EMBARGOES & SANCTIONS (91%); ARMS EMBARGOES (90%); SMUGGLING (90%); INTERNATIONAL RELATIONS (90%); UNITED NATIONS INSTITUTIONS (90%); IMPORT TRADE (89%); ILLEGAL WEAPONS (89%); ARMS TRADE (89%); MILITARY WEAPONS (89%); EXPORT TRADE (78%); US FEDERAL GOVERNMENT (78%); ARMS CONTROL & DISARMAMENT (78%); DIPLOMATIC SERVICES (77%); STATE DEPARTMENTS & FOREIGN SERVICES (77%); PETROLEUM PRODUCTS (73%); SALES & SELLING (73%); VETO (72%); ECONOMIC NEWS (71%); TRENDS (71%); FOOD CHARITIES (69%) EMBARGOES AND ECONOMIC SANCTIONS; UNITED STATES INTERNATIONAL RELATIONS; ECONOMIC CONDITIONS AND TRENDS; ARMS SALES ABROAD; OIL (PETROLEUM) AND GASOLINE 
+
+COMPANY: AL MUDON INTERNATIONAL REAL ESTATE CO KSCC (50%)
+
+ORGANIZATION: UNITED NATIONS SECURITY COUNCIL (84%); UNITED NATIONS (59%) UNITED NATIONS 
+
+TICKER: ALMUDON (KUW) (50%)
+
+INDUSTRY: NAICS531110 LESSORS OF RESIDENTIAL BUILDINGS & DWELLINGS (50%); SIC6513 OPERATORS OF APARTMENT BUILDINGS (50%)
+
+PERSON: CROSSETTE, BARBARA 
+
+GEOGRAPHIC: UNITED STATES (99%); IRAQ (96%); RUSSIAN FEDERATION (94%); CHINA (93%); FRANCE (91%); KUWAIT (79%); UNITED KINGDOM (79%); HUNGARY (79%); CENTRAL EUROPE (53%) IRAQ; GREAT BRITAIN; FRANCE; CHINA; RUSSIA
+
+LOAD-DATE: May 31, 2001 
+
+
+
+810 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section C; Column 6; Business/Financial Desk; Pg. 4
+
+LENGTH: 774 words
+
+HEADLINE: Study Details Income Gap Between Rich And the Poor 
+
+BYLINE:  By RICHARD W. STEVENSON 
+
+DATELINE: WASHINGTON, May 30 
+
+ BODY:
+The wealthiest households had income gains over the last two decades that far outstripped those of households at the other end of the spectrum, but the relative tax burden of people with the highest incomes also increased substantially, new government figures show.
+ In a comprehensive look at incomes and taxation, the Congressional Budget Office found that the share of pretax income going to the top 20 percent of households rose to 53.2 percent in 1997 from 45.9 percent in 1979. In that period, the share of income going to the bottom 60 percent fell to 26.9 percent from 32.2 percent. For the bottom 20 percent, the share of income fell to 4 percent in 1997 from 5.3 percent in 1979. 
+ During the 18 years covered by the study, pretax and after-tax income increased for all except the bottom 20 percent of households.
+Average pretax income among the top 1 percent increased 142 percent, to $1.02 million in 1997 from $420,200 in 1979. Among the top 20 percent of households, average pretax income rose 52.9 percent, to $167,500 from $109,500. 
+But pretax income for the lowest 20 percent of households declined 3.4 percent, to $11,400 in 1997 from $11,800 in 1979. All figures are adjusted for inflation.
+The budget office released its study last week, and its findings generally tracked other research into the gap between rich and poor. "The distribution of income among households grew substantially more unequal during the 1979-1997 period," the budget office said.
+An analysis of the budget office study released today by the Center on Budget and Policy Priorities, a liberal research group, reached a similar conclusion. The group said that "income gaps between rich and poor and between the rich and middle class widened in the 1980's and 1990's alike and reached their widest point on record in 1997."
+Income inequality is among the most politically charged of issues. Some economists, especially conservatives, say income distribution figures exaggerate the problem because they do not consider mobility -- that is, the fact that many people who have low incomes at one point in their lives earn substantially more and move up the income ladder.
+Conservatives also say that the real issue is not the distribution of income but whether people at all levels are better off.
+Confirming with statistics what common sense suggests, the study found that most people benefited from the generally strong economy of the last 20 years, with 80 percent of the nation's 103 million households enjoying income gains. 
+Average pretax income for all households rose to $62,400 in 1997 from $48,500 in 1979, an increase of 28.7 percent. For the middle 20 percent, income rose to $45,100 from $41,400, a gain of 8.9 percent. 
+As they have earned more, upper-income households have assumed a larger share of total federal tax liabilities. The top 20 percent of households paid 64.7 percent of taxes in 1997, up from 57.1 percent in 1979. 
+The top 1 percent of households -- about one million of them -- paid 23 percent of total federal taxes in 1997, up from 15.5 percent in 1979.
+The top 1 percent of households, representing 15.8 percent of pretax income, paid 32.9 percent of individual federal income taxes in 1997. In 1979, the top 1 percent, representing 9.3 percent of pretax income, paid 18.7 percent of income taxes.
+The poorest households benefited from changes in tax policy that reduced their tax bills and in many cases provided larger cash payments to working families through the earned-income tax credit. The share of tax payments of the bottom 20 percent of households declined to 1 percent in 1997 from 1.9 percent in 1979. 
+Partly because of the tax changes during the last decade, after-tax income among the poorest 20 percent of households rebounded somewhat in the 1990's after falling during much of the 1980's. After-tax income rose to $10,800 in the bottom 20 percent of households in 1997, from $10,400 in 1991. The figure was $10,900 in 1979.
+The share of total taxes fell for the middle 60 percent of households and the bottom 20 percent, in part because of the 1993 tax increase on upper-income people. The share of tax payments for the middle 20 percent of households declined to 10.7 percent from 12.9 percent.
+But the effective tax rates fell for all income groups over the 18 years covered by the study. The tax rate for the bottom 20 percent of households fell to 5.6 percent in 1997 from 8.1 percent in 1979, while the effective tax rate for the top 20 percent of households by income declined slightly, to 27.7 percent from 27.8 percent. For the top 1 percent, the effective tax rate fell to 33.3 percent from 37.3 percent.
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: HOUSEHOLD NUMBERS (90%); UPPER INCOME PERSONS (90%); TAXES & TAXATION (90%); WEALTHY PEOPLE (90%); BUDGETS (90%); INCOME DISTRIBUTION (90%); GOVERNMENT BUDGETS (90%); AFFLUENT MARKET (89%); PERSONAL & FAMILY INCOME (78%); MIDDLE INCOME PERSONS (78%); LOW INCOME PERSONS (78%); LIBERALISM (77%); RESEARCH REPORTS (77%); CONSERVATISM (77%); SOCIAL JUSTICE (69%) UNITED STATES ECONOMY; INCOME; TAXATION 
+
+ORGANIZATION: CONGRESSIONAL BUDGET OFFICE (84%) CONGRESSIONAL BUDGET OFFICE 
+
+PERSON: STEVENSON, RICHARD W 
+
+GEOGRAPHIC: UNITED STATES (92%)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+811 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section C; Column 3; Business/Financial Desk; Pg. 4
+
+LENGTH: 985 words
+
+HEADLINE: Shares of Alcatel Fall on Profit Warning 
+
+BYLINE:  By JOHN TAGLIABUE 
+
+DATELINE: PARIS, May 30 
+
+ BODY:
+In the wake of the collapsed merger negotiations between Alcatel and Lucent Technologies, Alcatel issued an unexpected and severe profit warning today, and investors punished the shares of Alcatel and its optical fiber subsidiary.
+ The market seemed to be responding to an announcement by Serge Tchuruk, Alcatel's chairman and chief executive, who had led the talks with Lucent. Mr. Tchuruk confirmed that Alcatel would lose about three billion euros, or $2.57 billion, in the second quarter because of a one-time charge of the same amount to cover the cost of reorganizing its cellular phone handset and business services operations. 
+ In a conference call today with analysts, Mr. Tchuruk also said that the company, based here, was negotiating to shed assets worth two billion euros, or $1.71 billion, a figure not taken into account in the profit warning. 
+The announcement startled analysts, some of whom questioned whether Mr. Tchuruk, 63, who has run Alcatel since 1995, sought the Lucent talks to mask trouble at his own company -- seen until now as a survivor of the havoc in the telecommunications equipment business. 
+Shares of Alcatel dropped almost 6 percent here before recovering slightly after the conference call. They finished down 1.59 euros, or more than 5 percent, at 29.26 euros. In New York, Alcatel's American depository receipts fell $2.42, to $24.99. Shares in Alcatel Optronics, the fiber optic affiliate, fell almost 10 percent, to 22.56 euros. Its A.D.R.'s lost $2.34, closing at $18.92. Lucent declined 18 cents, to $8.14.
+Mr. Tchuruk refused to discuss the talks with Lucent over what would have been a $22.8 billion deal. They collapsed late Tuesday after the two companies could not agree on how much control over Lucent that Alcatel would have.
+The talks grew out of negotiations for Alcatel to acquire Lucent's fiber optics business, which Lucent has tried to sell to help reduce debt. Mr. Tchuruk also refused to say if Alcatel would still be interested in bidding for Lucent's fiber optics business, implying that it would not. Alcatel, he said, was "not hungering for acquisitions" in the United States.
+"We do not feel that we have big holes in our portfolio," Mr. Tchuruk continued. "Today, the name of the game is increasing the business."
+He said Alcatel was accelerating efforts to shed noncore businesses and to focus on primary operations, which he listed as carrier networking, optical fibers and aerospace electronics.
+Alcatel, Mr. Tchuruk said, was taking the second-quarter charge to cover the cost of reorganizing unprofitable activities, like phone handsets and business services, and to cover losses from depreciating inventories and the company's involvement in an optical fiber network that had been planned across the Pacific. Alcatel helped provide financing for the project, by 360networks of Vancouver, British Columbia, subscribing to $700 million worth of bonds. The depressed state of the telecommunications market has forced 360networks to postpone the expansion of its network indefinitely.
+Jean-Pierre Halbron, Alcatel's chief financial officer, said that the write-down of inventories would amount to "a few hundred million dollars" in addition to proceeds from the sale of units.
+Susan Anthony, an analyst at Credit Lyonnais Securities, said the profit warning raised the question of whether Mr. Tchuruk engaged in the Lucent negotiations knowing the precarious state of Alcatel's business. 
+"Were these things coincidental," she said, "or was he seeing things deteriorating? If that was the case, it's clearly more of a concern."
+Until now, Alcatel had been seen as one of the telecommunications equipment providers least battered by the downturn in global markets, thanks to strong products and geographic breadth. Lucent, for instance, faces the task of finding cash to meet obligations to creditors for day-to-day operating expenses.
+Elie Cohen, an economics professor and research director at the National Center for Scientific Research here, said that Alcatel was clearly not in the same leaky boat as Lucent.
+The quest for Lucent, he said, dovetailed with Mr. Tchuruk's strategy of transforming Alcatel from a conglomerate into a pure telecommunications company and a major force in the United States, the world's biggest market. "The landscape is devastated," Mr. Cohen said, "but the hardest hit have been companies like Lucent and Ericsson, not Alcatel." Mr. Tchuruk, he said, "made a bet, and it was a considerable wager."
+Steven D. Levy, a Lehman Brothers analyst, underlined that Lucent executives had insisted they would not agree to a deal other than a merger of equals -- which Alcatel refused. But, he added, "I think Lucent might have bent a bit on that."
+Mr. Levy recalled Alcatel's last major American acquisition, in June 1998, paying $4.4 billion for DSC Communications of Dallas, a midsize maker of telecommunications equipment. Three months later, Mr. Tchuruk issued a profit warning that so surprised investors that Alcatel's shares lost a third of their value. "That's something bankers try to avoid," Mr. Levy remarked.
+In the conference call, Mr. Tchuruk sought to project an image of Alcatel's dusting itself off after the failed talks and accelerating its efforts to succeed without significant mergers or acquisitions. He was even willing to revise his recent forecasts of an important consolidation among phone equipment suppliers.
+"There will be some consolidation," Mr. Tchuruk said, adding, though, that "Alcatel does not need to consolidate to grow." The company will seize opportunities that come up, he said, but "we are not hunting for consolidation activity."
+Mr. Tchuruk remained optimistic about business in the United States, which he predicted would revive. "I would like to stress that our objective there is to be an even bigger player," he said. "That remains absolutely essential. And I will personally see to it."
+
+GRAPHIC: Photo: Serge Tchuruk, Alcatel's chairman, maintains that he is "not hungering" for U.S. acquisitions. (Agence France-Presse) Chart: "Connecting the World, Staying Home"Alcatel sells a variety of telecommunications products and services, but most of its sales are in Europe. BREAKDOWN OF ALCATEL'S SALES BY BUSINESS SEGMENT, IN 2000Network systems -- 37%Fiber optics, transmission -- 23%Cellular phones, software and other voice services -- 15%Satellites and related components -- 10%Cables and connectors -- 15% GEOGRAPHICALLY, IN 1999Europe -- 61%North America -- 18%Asia -- 8%Other -- 13% (Sources: Company reports; Punk, Ziegal & Co.)
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: COMPANY PROFITS (91%); PROFIT WARNINGS (90%); EURO (90%); TELECOMMUNICATIONS EQUIPMENT MFG (90%); FIBER OPTICS (90%); MOBILE & CELLULAR TELEPHONES (89%); MERGERS (89%); AMERICAN DEPOSITARY RECEIPTS (78%); TELECOMMUNICATIONS (78%); TELECOMMUNICATIONS EQUIPMENT (78%); DEPOSITORY SERVICES (78%); CONFERENCE CALLS (75%); BONDS (73%); COMPUTER SOFTWARE (60%); AVIONICS (60%); EXECUTIVES (57%) TELEPHONES AND TELECOMMUNICATIONS; FINANCES 
+
+COMPANY: ALCATEL-LUCENT SA (93%); 3S PHOTONICS SA (58%)
+
+ORGANIZATION: ALCATEL SA 
+
+TICKER: ALU (PAR) (93%); ALU (NYSE) (93%); ALU (BIT) (93%)
+
+INDUSTRY: NAICS334220 RADIO & TELEVISION BROADCASTING & WIRELESS COMMUNICATIONS EQUIPMENT MANUFACTURING (93%); NAICS334210 TELEPHONE APPARATUS MANUFACTURING (93%); SIC3663 RADIO & TELEVISION BROADCASTING & COMMUNICATIONS EQUIPMENT (93%); SIC3661 TELEPHONE & TELEGRAPH APPARATUS (93%); NAICS333314 OPTICAL INSTRUMENT & LENS MANUFACTURING (58%); SIC3357 DRAWING & INSULATING OF NONFERROUS WIRE (58%)
+
+PERSON: TCHURUK, SERGE; TAGLIABUE, JOHN 
+
+GEOGRAPHIC: VANCOUVER, BC, CANADA (64%); PARIS, FRANCE (59%) NEW YORK, USA (74%); BRITISH COLUMBIA, CANADA (69%) EUROPE (88%); UNITED STATES (79%); NORTH AMERICA (79%); CANADA (69%); FRANCE (59%)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+812 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 5; Business/Financial Desk; Pg. 1
+
+LENGTH: 1385 words
+
+HEADLINE: In California, Blackouts Spur A Search forHome Remedies 
+
+BYLINE:  By LAURA M. HOLSON 
+
+DATELINE: LOS ANGELES, May 30 
+
+ BODY:
+For Evans Keller, a turkey farmer in the Central Valley of California, the energy crisis has become a matter of life and death. 
+ For 17 years, he and his family have raised turkeys near Fresno, far from the dot-com companies of Silicon Valley and the "Baywatch" beaches most outsiders associate with the state. In his world, where daily summer temperatures soar above 100 degrees on dusty ranches, Mr. Keller is forced to use electric fans and fog-making machines to cool his one million turkeys -- or watch them roast in tin-roofed sheds. 
+ But with energy experts forecasting more than 260 hours of blackouts this summer and no relief in sight from regulators or politicians, Mr. Keller has taken matters into his own hands. In April, he bought eight small generators at Costco that he could hook up to tractors and use to keep the fans and misters running when the Pacific Gas and Electric Company cuts his power. 
+Since then he has regularly conducted drills on the 14 farms that supply him with turkeys -- 4 farms he owns and 10 run by independent contractors -- and has spent weeks winnowing the routine down to 40 minutes, barely enough time before the birds begin to wither under the searing sun.
+"Believe me, we're not proud," said Mr. Keller, who said he had appealed earlier this year, without success, to Pacific Gas and Electric for advance warnings of blackouts. "We'll do what we have to to protect our investment."
+The energy crisis here has come to this: from tourist attractions in sunny Southern California, to farmers who dominate the central region of the state, to technology concerns up north, businesses are coming up with novel ways to cope with what many fear will be an unpleasant summer.
+The concerns are understandable given the issues that many businesses face, including lost revenue and potential layoffs, as the state's power shortages continue. "The uncertainty is what kills you," Jerry Meek, utility operations manager at Roche Pharmaceuticals in Palo Alto, said.
+Trying to reduce that uncertainty, businesses are applying to the state's Public Utilities Commission for exemptions from having their power turned off this summer. (The deadline is Friday.) Last week, Gov. Gray Davis announced that the state would begin a three-tiered warning system for residences and businesses that are likely to be affected. The first warning will come two days before a blackout; the second, one day in advance; and the final warning, one hour before the lights go out.
+A more radical approach is being suggested by Mike Briggs, a Republican assemblyman from Fresno. He is asking the state to schedule potential blackout days as much as months in advance so business owners know when their turn is coming. "It is scary what this has come to," Mr. Briggs said. "But this gives people options."
+Farmers in the Central Valley, for instance, have to order water for their crops a day ahead. But if the power is off when the water shows up in an irrigation canal, he said, "they can't open the gates and the water flows right past them." One business owner told Mr. Briggs that he spent $30,000 one month to lease two generators that were never used. "He said it would have been nice to know ahead of time so he could rent the generators for a day," the assemblyman said.
+Of course critics worry that burglars will know when the lights go out, too. "Yes, there is the downside of more potential burglaries," Mr. Briggs said. "But maybe people are willing to make that trade-off."
+Even those business owners who say they are currently protected from power failures are making preparations -- just in case. The Legoland California amusement park in Carlsbad, near San Diego, has an arrangement with its utility, the San Diego Gas and Electric Company, to keep the lights on, said a spokeswoman, Courtney Simmons. Still, she added, the park is prepared in the event of a loss.
+The contingency plan consists of keeping open the 3 rides, of the 20 total, that are not powered by electricity, she said. Barbecues would be rolled out to cook food, and the park's boulevards would be flooded with performers, including singers, dancers, jugglers and musicians who will entertain until the power comes back on. "We are prepared for outages no matter what the cause this summer," she said.
+Many tourist attractions, including Disneyland in Anaheim, are already prepared because they upgraded their systems in 1999, fearing a Year 2000 disaster that would threaten the power grid. "A lot of these things were already tested and documented," said Ray Gomez, director of communications at Disneyland Resorts. "We are skilled at emergency evacuations. Energy is only one part of that."
+As part of its plan, Disneyland shored up its emergency operations center, holding employee drills to turn on emergency power. This summer, Disneyland will have employee volunteers who roam the park day and night, turning out lights and replacing incandescent bulbs with more energy-efficient ones. The park also works with the city of Anaheim, which supplies the park with power, to conserve 5 to 10 percent, minimizing the risk of blackouts at all.
+Oddly enough, Disneyland is reviving its Main Street Electrical Parade, a 29-year-old light show that had most recently been an attraction in Florida. Leslie Goodman, a senior vice president for strategic communications for Walt Disney Parks and Resorts, said the park had made sure that the parade did not use energy when Californians need it most. The lights in the parade are powered by battery, and are recharged during off-peak hours. But, she added, despite what was a difficult decision and a potential public relations nightmare, "the show goes on."
+While most businesses make an effort to conserve (if for no other reason than to save money as rates soar), some communities are giving corporations added incentives. The city of Palo Alto, for example, has agreed not to cut off power to Roche Pharmaceuticals as long as the company reduces energy consumption by 15 percent within 30 minutes of an announced Stage 3 alert, the state's most critical. Only once has Roche lost power, said Mr. Meek, the company's utility operations manager. And that, he added, was because of a mistake.
+Roche has a plan to ensure that a blackout does not happen. Once Mr. Meek gets an alert on his pager from a city representative (who can see how much is being saved because the company has a real-time meter for the 15-building campus), voice mail and e-mail messages are sent to more than 1,000 employees asking them to turn off nonessential lights. The air-conditioning is changed to raise the temperature in most areas to 78 degrees from a normal 72 degrees. Lighting in all offices is reduced, and some employees move from their dark cubicles to the window-walled cafeteria to work, he said.
+"The question is, do you treasure light or do you want your computer shut down?" Mr. Meek asked. If these measures do not reduce overall demand by 15 percent, Roche will switch on backup generators to power the laboratories. Why? If laboratory tools are not properly shut off before a loss of power, it takes days to recalibrate them, costing thousands of dollars and wasted time, Mr. Meek said. "My focus with the uncertainty is to do what we can to get around it," he said.
+One way that California businesses are seeking certainty is by appealing to the state's Public Utilities Commission for relief. One commissioner, Carl Wood, said in a recent interview that about half the customers who got electricity from the state's three largest utilities were exempt from blackouts because their services were considered essential, like fire stations or hospitals, or because they shared power with an essential source. No more than 60 percent of the state's customers can be exempted from blackouts.
+Recently, an exemption was granted for the Bay Area Rapid Transit District, which runs 95 miles of commuter train service in the San Francisco metropolitan area, Mr. Wood said. Pacific Bell Park, home of the San Francisco Giants, has asked for one, too; that request is being reviewed.
+"It can be extremely disruptive and expensive if there are lots of blackouts this summer," he said. "This is a big economic issue."
+Just imagine, he said, musing about how the summer could end: "Disneyland without rides?"
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: POWER FAILURES (90%); ELECTRIC POWER PLANTS (90%); ENERGY & UTILITY POLICY (90%); TURKEY PRODUCTION (90%); WEATHER (89%); NATURAL GAS & ELECTRIC UTILITIES (89%); UTILITIES INDUSTRY (89%); US STATE GOVERNMENT (78%); POULTRY (78%); US REPUBLICAN PARTY (78%); ENERGY & UTILITY SECTOR PERFORMANCE (78%); PUBLIC UTILITIES COMMISSIONS (78%); ELECTRIC POWER INDUSTRY (77%); ENERGY & UTILITY LAW (73%); LAYOFFS (72%); PHARMACEUTICALS INDUSTRY (68%); FREELANCE EMPLOYMENT (52%); DESTINATIONS & ATTRACTIONS (50%) ELECTRIC LIGHT AND POWER; BLACKOUTS AND BROWNOUTS (ELECTRICAL); SHORTAGES; FIRES AND FIREMEN; MEDICINE AND HEALTH; HOSPITALS; SECURITY AND WARNING SYSTEMS 
+
+COMPANY: PG&E CORP (85%); ROCHE HOLDING AG (63%)
+
+TICKER: PCG (SWX) (85%); PCG (NYSE) (85%); ROG (SWX) (63%)
+
+INDUSTRY: NAICS221111 HYDROELECTRIC POWER GENERATION (85%); SIC4931 ELECTRIC & OTHER SERVICES COMBINED (85%); NAICS325413 IN-VITRO DIAGNOSTIC SUBSTANCE MANUFACTURING (63%); NAICS325412 PHARMACEUTICAL PREPARATION MANUFACTURING (63%)
+
+PERSON: HOLSON, LAURA M; DAVIS, GRAY (GOV) 
+
+GEOGRAPHIC: FRESNO, CA, USA (93%); SAN FRANCISCO BAY AREA, CA, USA (92%); SILICON VALLEY, CA, USA (88%); LOS ANGELES, CA, USA (78%) CALIFORNIA, USA (94%) UNITED STATES (94%) CALIFORNIA
+
+LOAD-DATE: May 31, 2001 
+
+
+
+813 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 2; National Desk; Pg. 1
+
+LENGTH: 1533 words
+
+HEADLINE: Down East, the Lobster Hauls Are Up Big 
+
+BYLINE:  By CAREY GOLDBERG 
+
+DATELINE: VINALHAVEN, Me., May 24 
+
+ BODY:
+Never before in Maine's long memory has there been a lobster boom like this one.
+ Year after year lately, the state's lobster landings have risen to record heights, even as the levels of many fish stocks remain miserably low. The latest figures, issued this spring, put last year's catch at an unheard-of 56.7 million pounds, about 20 million pounds above the 100-year average and nearly triple the take of 15 years ago. 
+ "We keep saying, 'It can't go any higher than this,' and the next year, darned if it doesn't go up another million pounds," said Pat White, executive director of the Maine Lobstermen's Association. 
+Something is going very right, and nobody claims to know for sure what it is. 
+What is clear, though, is that these are exceptionally flush times for the Maine lobsterman, that crusty old rubber-booted, oilskin-suited icon of the state. More than ever, Maine's brooding, pine-pointed, rock-rounded coast is dotted by the bright confetti of orange and yellow and chartreuse lobster buoys, more than two million in all.
+Here on Vinalhaven Island, home to 1,200 year-round souls in the heart of lobster country, many a shiny new pickup truck plies the roads, and many a bright new workhorse boat plies the harbor. Island schoolchildren are likelier these days to sport the latest L. L. Bean fashions. And they can know that their lobstering parents are not only better-to-do but even a little hip: a new "Bachelor Lobstermen of Maine" calendar sold out within days last year.
+Virtually everyone, from biologists to old-time fishermen, expects the catches to drop again. But for now, Maine lobstermen are enjoying that rarest of modern maritime tales: a fisheries success story.
+"The lobster is perhaps one of the only species that's been intensively fished for 150 years and is doing better today than ever," said one lobster expert, Bob Steneck, a professor of marine sciences at the University of Maine.
+Which raises an urgent question: How to keep it that way? The answer from a veteran Vinalhaven lobsterman like Walter Day is simple: Just let us do what we've been doing, and otherwise let us alone.
+On a typical daily fishing trip one recent dawn, Mr. Day demonstrated. Of all the orange-and-green mottled tail-snapping beauties in his traps -- and their numbers are still small this early in the season -- only one in every 8 or 10 was kept by him.
+Most were "shorts," too small. Some were "eggers," females carrying masses of roe on their underbellies; these Mr. Day marked by cutting a small V-shaped notch in their tails, so other lobstermen would know they were breeding stock and by state law must be thrown back. Others already bore the V-notch.
+Oversize lobsters must be relinquished as well, because they are considered superstuds of the ocean that produce bumper crops of young.
+It might seem frustrating to throw so much back, but Mr. Day was unperturbed.
+"They'll grow up, and I'll catch them someday," he said of the shorts, "if I live long enough." 
+Or perhaps another Day will. Mr. Day's grandfather lobstered, and his father still does. His son is a lobsterman, his wife lobsters some, and his 5-year-old grandson already has a few traps of his own.
+Self-policing like Mr. Day's is the norm in Maine, and many believe it is an important cause of the current bounty. The V-notching, in particular, is technically voluntary in state waters, but virtually all the nearly 6,000 lobstermen in Maine do it, and it is catching on elsewhere as well.
+Tight lobstering communities like Vinalhaven also conserve the lobsters in other, social ways. They do not tolerate the kind of cheating often reported before the big lobster crash that hit early last century, when many lobstermen caught and kept illegal lobsters and even scraped the roe off females so they could sell eggers.
+Veteran lobstermen also have a convincing way of discouraging outsiders from lobstering in their territory, and require apprenticeships of locals. Some areas of the Maine coast are closed to new lobstermen altogether. State law limits lobstermen to 800 traps each, and summer Sundays are considered no-fishing days.
+Another oft-cited possible factor in today's lobster bounty is the complex dynamic of the ocean itself. It appears that over the last 20 years, "the entire western North Atlantic underwent some change in oceanography that influenced, probably, the delivery of the lobster larvae to their nursery habitat," Professor Steneck said. Possibly, some say, the warmer currents that have been observed are more hospitable to the larvae.
+Others postulate that the steep decline of predatory fish like cod has allowed more baby lobsters to survive. Still others point out that improvements in gear and technology make lobstermen more efficient. 
+Another theory, said Carl J. Wilson, the state's chief lobster biologist, is that lobsters may be thriving because they are effectively being farmed. With more baited traps than ever, many a young lobster can stop in to a trap for a snack, then leave through the vents designed to let undersize lobsters escape. 
+"There are a lot of theories out there," Mr. Wilson said, "and the reality is that we don't know what it is." The boom is "a scientific mystery," he said, and while each theory appears to have flaws, the answer may be a combination of all the theories together.
+Lobstering, he and others noted, naturally lends itself to careful conservation. Lobstermen can make individual decisions about each lobster and throw back each reject alive. Fish caught in great nets, on the other hand, are often brought up dead, so that throwing back any illegal catches does little good. Lobster traps do not damage the environment as dragging does, either.
+But for all the lobster fishery's pluses, pessimistic voices predominate among the scientists who study it. They see signs that the numbers of young are dropping. Lobster has officially been considered overfished for a couple of decades, and at some point the lobstermen may have to pay. All this alone is enough to worry state officials, even if Maine escapes the kind of vast die-off that decimated the Long Island lobster industry in 1999. (The cause is still unknown.)
+The prospect of a sharp drop in lobster landings is particularly worrisome because lobstering has absorbed many fishermen from other, faltering fisheries; even Linda Greenlaw, the swordfish boat captain depicted in "The Perfect Storm," has switched to lobstering. Further, many lobstermen have gone precariously into debt for new boats and equipment.
+"Lobster has provided an incredibly good safety net," said George D. Lapointe, the state's commissioner of marine resources. "Everybody asks, 'Can we keep a 60-million-pound fishery forever?' No."
+Maine is working with other Atlantic states to bolster lobster stocks, and the plan that emerges is expected to emphasize V-notching, limiting entry to new lobstermen and similar measures. Fishermen like Mr. Day say they worry that regulators will impose even stricter measures, like further limiting the number of traps each lobsterman can use, that would make an arduous living all the harder. Better, he said, to let the fishery follow an up-and-down cycle, and drive out the unfit or uncommitted.
+"I'm not one bit scared it if does crash," he said. "It will get a lot of people with a gold-rush mentality out, and the real fishermen will still be here with lobster to sell, and we'll all make a living like we always have."
+The living lately has been sweeter than usual, of course. Word floats around the docks of especially successful lobstermen who gross $250,000 a year, and take home plenty even after subtracting the usual 20 percent for a stern man to help out and thousands more for bait, fuel, taxes and gear.
+The prices the lobstermen command have not dropped as their output has grown. They are getting about $4.50 a pound right now, with lobster still seasonally scarce. The price could drop to $3 a pound in the midsummer peak season, but it never gets much lower, experts say: demand has been growing around the country and the world. Good economic times have helped, some say, along with efforts by Maine to promote its lobsters more broadly.
+For all the ringing cash registers, though, this is no dot-com boom. Vinalhaven lobstermen are not exactly buying BMW's, noted Norah Warren, manager of the lobster co-op that markets their catch.
+"They might have a new truck, they might have a new boat, their wives might have their kitchen redone, more people go on vacation," Ms. Warren said, "but there's not a lot of showing off about any of it." 
+The boom, she said, has allowed her and her lobsterman husband to begin contributing to their first 401(k) plan. 
+A lobsterman-in-his-blood like Mr. Day would fish no matter what, anyway.
+"You get your first pair of rubber boots when you're 4 or 5," he said, "and your mother's lucky if she can pry them off you to get you to bed."
+Still, the good catches have meant not only a new boat for him and his wife, Lois, who are both 50, but also ahouse of their own, the first in all their years together.
+"If it weren't for the boom, we probably wouldn't have gotten it as soon as we did," Mrs. Day said. "If you call 20 years 'soon.' "
+
+GRAPHIC: Photos: With Maine lobster catches at a record, lobster boats abound in the harbor in the town of Vinalhaven. (Ting-Li Wang/The New York Times)(pg. A1); Walter Day, a veteran Maine lobsterman, throws back plenty of lobsters because they are undersize. But plenty more make it to the Vinalhaven docks for handling by workers like Robert Arey. Indeed, Maine's total catch has routinely set records in recent years. (Photographs by Ting-Li Wang/The New York Times)(pg. A22) Map of Maine highlighting Vinalhaven. (pg. A22) Chart: "STATUS REPORT -- Maine Lobster"The lobster catch in Maine has tripled in the last 15 years. Graph tracks pounds of lobster, measured in millions, from 1950 to 2000.(Source: National Marine Fisheries Service)(pg. A22)
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: COMMERCIAL FISHERIES LANDINGS (90%); SHELLFISH FISHING (78%); CRUSTACEANS (78%); MARINE BIOLOGY (78%); SPORT FISHING (77%); FISHES (77%); OCEANOGRAPHY (77%); ISLANDS & REEFS (72%); FISHERIES (72%); BIOLOGY (68%); SCIENCE NEWS (68%); CHILDREN (66%); MOTOR VEHICLES (50%); COLLEGE & UNIVERSITY PROFESSORS (50%) FISH AND OTHER MARINE LIFE; FISHING, COMMERCIAL; LOBSTERS; RECORDS AND ACHIEVEMENTS 
+
+PERSON: GOLDBERG, CAREY 
+
+GEOGRAPHIC: MAINE, USA (95%) UNITED STATES (95%) MAINE
+
+LOAD-DATE: May 31, 2001 
+
+
+
+814 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section B; Column 1; Metropolitan Desk; Pg. 5
+
+LENGTH: 885 words
+
+HEADLINE: Candidates Duel on Taxes: Who Raises and Who Cuts? 
+
+BYLINE:  By DAVID M. HERSZENHORN 
+
+DATELINE: JERSEY CITY, May 30 
+
+ BODY:
+Former Representative Bob Franks took his attack on Mayor Bret D. Schundler's property tax record to Mr. Schundler's doorstep today, dispatching supporters to stage a noisy rally outside City Hall here.
+ But even as they chanted "Taxes are higher, Bret's a liar," Mr. Schundler released a new statewide radio ad in which a grandmotherly Jersey City woman praises him, saying that Mr. Franks "obviously does not know what the heck he's talking about." 
+ For weeks, the two candidates for the Republican nomination for governor have been waging a bitter fight over which of them is the true tax-cutter. Mr. Franks says Mr. Schundler raised property taxes during his tenure as mayor. Mr. Schundler says Mr. Franks voted to hike numerous taxes during his years as a state and federal legislator. Both sides use misleading statistics.
+Today, about 30 Franks supporters picketed within earshot of Mr. Schundler's offices, chanting "Bret, tell the truth," and carrying signs reading: "Please don't raise my taxes," and "Bret/Jim, what's the difference?" -- a reference to the Democratic candidate, James E. McGreevey.
+Their presence clearly irked Mr. Schundler. He sent a City Hall aide, Dominick Pandolfo, outside to summon reporters covering the rally to his second-floor office so that he could respond.
+This afternoon's rally at City Hall was led by Franks campaign workers, but among the demonstrators were longtime Jersey City residents like Marie Tauro, Yvonne Balcer and Mia Scanga, who said they believed Mr. Schundler had raised taxes. They brought copies of their tax assessments as proof. 
+Mrs. Balcer, a parochial school teacher, said that even as she had successfully fought to get the assessed value of her home lowered to $165,500 from $204,500, her taxes for the first half of this year had increased to $3,599 from $3,223.64 in 1994.
+The Franks campaign uses comparisons with 1994 tax rates because that year Jersey City had an unusually low rate because of a sale in tax liens that generated $25 million in revenue and allowed Mr. Schundler to grant residents a five-month tax "holiday."
+While Jersey City property taxes have risen since Mr. Schundler took office in 1992, they have increased by less than the rate of inflation. In his office, Mr. Schundler showed reporters a set of four bar graphs indicating how the city's aggregate tax levy had decreased during his tenure. 
+But critics seem unconcerned about the details. "He totally lies about his credentials," said Ms. Scanga, an executive recruiter and local gadfly who has clashed with Mr. Schundler on numerous issues. "Everything about Bret Schundler is a lie. Everything is mismanagement. Everything is patronage." 
+Not all of the demonstrators were Jersey City residents. Other Franks supporters in attendance included Angelo Valente, a Hoboken resident who is a former chairman of the Hudson County Republican Committee, and Jim Geron, a Republican from Guttenberg. 
+Mr. Franks, who has preferred not to do his own negative campaigning, skipped the event in Jersey City. Instead, he visited a public school in Medford, a town in Burlington County, where he talked about his support for charter schools and criticized the way New Jersey finances public education. 
+A 1998 court order stemming from a lawsuit, Abbott v. Burke, requires the state to direct additional funds to the poorest schools, but Mr. Franks complained that there was a lack of accountability.
+"Almost 40 percent of our state money goes to Abbott districts," he said. "It's time to begin investigating, hire outside auditors and find out what is really going on."
+Mr. Schundler, for his part, was in Trenton by midafternoon to accept the endorsements of a group of conservative State Assembly members. Among them were Michael Patrick Carroll of Morris County, E. Scott Garrett of Wantage, Guy R. Gregg of Washington Township, Guy F. Talarico of Oradell and Clare M. Farragher of Freehold.
+They praised him for, among other things, his support of giving the Legislature the power to overturn Supreme Court decisions, such as the landmark Mount Laurel ruling on affordable housing. They also said he would be a more formidable candidate against Mr. McGreevey in the fall.
+Mr. Carroll noted that Mr. Franks came within 3 percentage points of Senator Jon S. Corzine in the election last November. "We always seem to have a problem picking up those last couple of points," he said. "To do that, we have to appeal to the so-called Reagan Democrats. And Mayor Schundler has demonstrated he has the nondebatable ability to do precisely that."
+But a potentially more potent endorsement came from 76-year-old Grace Bowen, a lifelong resident of Jersey City, who recorded a radio advertisement on Mr. Schundler's behalf. It began running Monday on conservative talk shows across the state.
+In the ad, she defended Mr. Schundler and attacked Mr. Franks as a tax-increaser. The ad does not disclose, however, that Mrs. Bowen is serving her fourth term as a local Democratic committeewoman. 
+"I love him," she said of Mr. Schundler. "He's a very smart person. Anybody in Jersey City knows I'm a great admirer of Bret Schundler."
+Mrs. Bowen said she voted for Mr. Corzine in his Senate race against Mr. Franks last fall. "I didn't like him then," she said of Mr. Franks. "And I don't like him now." 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: TAXES & TAXATION (90%); PROPERTY TAX (90%); MAYORS (90%); CAMPAIGNS & ELECTIONS (90%); CITIES (90%); TAX INCREASES (78%); LEGISLATIVE BODIES (78%); POLITICAL CANDIDATES (78%); TAX ASSESSORS (78%); PRIMARY ELECTIONS (78%); TAX LAW (78%); ELECTIONS (78%); CITY LIFE (77%); GOVERNORS (75%); PLATFORMS & ISSUES (75%); US REPUBLICAN PARTY (75%); REAL ESTATE VALUATIONS (73%); BROADCAST ADVERTISING (71%); INFLATION (50%); ECONOMIC NEWS (50%) ELECTIONS; PRIMARIES; ELECTION ISSUES; TAXATION; PROPERTY TAXES; GOVERNORS (US) 
+
+PERSON: HERSZENHORN, DAVID M; SCHUNDLER, BRET D (MAYOR); FRANKS, BOB 
+
+GEOGRAPHIC: NEW JERSEY, USA (79%) UNITED STATES (79%) NEW JERSEY; JERSEY CITY (NJ)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+815 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 4; National Desk; Pg. 1
+
+LENGTH: 971 words
+
+HEADLINE: U.S. CRIME FIGURES WERE STABLE IN '00 AFTER 8-YEAR DROP 
+
+BYLINE:  By FOX BUTTERFIELD 
+
+ BODY:
+The number of serious crimes in the United States remained steady last year after an eight-year decline, the longest on record, the Federal Bureau of Investigation reported yesterday.
+ The F.B.I.'s Uniform Crime Report cited preliminary figures for 2000 showing that overall crime nationwide was virtually unchanged from 1999. By comparison, overall crime fell by 7 percent from 1998 to 1999, and had fallen by similarly large amounts consistently since 1992. 
+ Experts and law enforcement officials have long cautioned that crime cannot drop indefinitely, and some said that yesterday's report confirmed their belief that the trend had finally run its course. 
+"It seems that the crime drop is officially over," said James Alan Fox, a professor of criminal justice at Northeastern University in Boston who has been a consultant to the Justice Department on improving the analysis of crime data.
+"We have finally squeezed all the air out of the balloon," Professor Fox said, suggesting that the variety of law enforcement strategies that helped reduce the high levels of crime of the late 1980's and early 1990's may have achieved their maximum benefit.
+Other experts, pointing out that one year's data do not make a trend, emphasized the difficulty of basing predictions on the report, which is compiled from arrest figures supplied by 17,000 police agencies. Perhaps the most striking thing about it, they said, is that it shows no clear patterns.
+"The big question now is, Is this just a flattening out of crime, or is it turning upward?" said Alfred Blumstein, a criminologist at Carnegie Mellon University.
+Professor Blumstein said his own view was that "it is a flattening out, rather than a clear indicator of a new upward trend," because the F.B.I. data showed no sharp differences from one crime to another, and no patterns based on sizes of cities or geographic regions.
+In the past, a large increase or decrease in the most serious crime, homicide, or in crime in the biggest cities, has tended to predict significant changes in crime rates.
+But yesterday's report has no such leading indicators. The number of arrests for homicide declined by 1.1 percent compared with 1999, for example, but arrests for rape were up 0.7 percent. Similarly, arrests for burglary dropped 2.1 percent, but arrests for motor vehicle theft jumped 2.7 percent.
+The report measures the four violent crimes of homicide, rape, robbery and aggravated assault and the three property crimes of burglary, larceny and motor vehicle theft. Drug crimes are not counted.
+In big cities, those with populations of more than one million, crime fell over all by 0.5 percent, but in cities with populations of 100,000 to 250,000, it rose 0.5 percent. Suburban counties showed an increase in overall crime of 0.7 percent, but rural counties had a decrease of 0.8 percent.
+Geographically, the Northeast had a decline in crime of 2.5 percent, and the Midwest had a drop of 1.1 percent. The South had an increase of 1 percent, and the West had a gain of 1.1 percent.
+An earlier F.B.I. report found that as of 1999 the rate of major crimes had fallen to the level of the 1960's. Yesterday's report, because it is based on preliminary data, does not contain official figures for crime rates in 2000, but given the closeness of the arrest figures for 1999 and 2000, the rates will probably be very similar.
+Despite the absence of clear patterns, both Professor Blumstein and Professor Fox warned that crime rates could remain steady, or start climbing again, if law enforcement was unable to find effective new ways to build on its crime-fighting successes of the last decade.
+Some of the factors that contributed to the crime drop, the experts say, were smart new policing tactics, tougher prison sentences, new gun control laws and more involvement by neighborhood groups. The waning of the crack epidemic also played a role, experts say, as did the nation's prolonged economic expansion.
+Gil Kerlikowske, the police chief of Seattle, suggested that the police need to do a better job in getting local elected officials and neighborhood leaders involved in preventing crime, because "there is no magic police pill."
+"The police can't solve all crime by themselves," he said.
+Professor Blumstein suggested that one new strategy, now that the economy had sputtered, would be to focus more attention on preventing young people from becoming involved in crime, especially by finding jobs for them.
+In addition, he said, with more than 600,000 inmates scheduled to be released from federal and state prisons this year, more attention needs to be paid to preparing these prisoners for returning to society.
+"We've been so busy building prisons over the past two decades, we've abandoned rehabilitation," except in a few states, Professor Blumstein said.
+The advent of a popular new drug, like crack in the 1980's, could also send crime soaring again, he said.
+The trendless nature of crime last year was reflected in the variation in the number of homicides in many cities, with no discernible pattern. Some cities, which had enjoyed record low numbers of homicides, had an increase in 2000, like Boston, which had 39 homicides in 2000 compared with 31 in 1999, and San Diego, which jumped 57 murders in 2000 from 32 in 1999, a large increase in percentage terms. Los Angeles had the largest numerical gain, rising to 544 homicides in 2000 from 425 in 1999.
+Washington had a small decrease, falling to 232 homicides from 241 in 1999.
+Homicides in New York City, after a number of years of plummeting, increased last year, though only slightly, to 673 in 2000 from 664 in 1999, the report said. But homicides fell back this year, according to New York Police Department statistics -- as of May 27 there had been 246 homicides in the city, compared with 294 in the same period last year.
+
+GRAPHIC: Chart: "Break in a Trend"National crime figures were virtually unchanged in 2000 from the year before. Graph tracks crime figures from 1990 to 2000.(Source: F.B.I.)(pg. A1) Chart: "Crime Index"Percentage change from previous year, based on F.B.I. reports for the nation. 1995VIOLENT CRIME: -3.2PROPERTY CRIME: -0.6MURDER: -7.4RAPE: -4.6ROBBERY: -6.2ASSAULT: -1.3BURGLARY: -4.4THEFT: +1.5CAR THEFT: -4.3 1996VIOLENT CRIME: -6.1PROPERTY CRIME: -2.1MURDER: -9.1RAPE: -1.3ROBBERY: -7.7ASSAULT: -5.7BURGLARY: -3.4THEFT: -1.2CAR THEFT: -5.3 1997VIOLENT CRIME: -3.1PROPERTY CRIME: -2.1MURDER: -7.3RAPE: -0.1ROBBERY: -6.9ASSAULT: -1.3BURGLARY: -1.8THEFT: -2.0CAR THEFT: -2.9 1998VIOLENT CRIME: -6.2PROPERTY CRIME: -5.2MURDER: -6.8RAPE: -3.1ROBBERY: -10.3ASSAULT: -4.6BURGLARY: -5.2THEFT: -4.7CAR THEFT: -8.2 1999VIOLENT CRIME: -6.7PROPERTY CRIME: -6.8MURDER: -8.5RAPE: -4.3ROBBERY: -8.4ASSAULT: -6.2BURGLARY: -10.0THEFT: -5.7CAR THEFT: -7.7 2000*VIOLENT CRIME: +0.1PROPERTY CRIME: 0.0MURDER: -1.1RAPE: +0.7ROBBERY: -0.7ASSAULT: +0.4BURGLARY: -2.1THEFT: +0.1CAR THEFT: +2.7 *Preliminary data. (pg. A16) 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: CRIME RATES (95%); LAW ENFORCEMENT (93%); SPECIAL INVESTIGATIVE FORCES (91%); INVESTIGATIONS (90%); CRIMINAL OFFENSES (90%); CRIMINAL INVESTIGATIONS (90%); CRIME STATISTICS (90%); COLLEGE & UNIVERSITY PROFESSORS (90%); TRENDS (90%); HOMICIDE (89%); BURGLARY (89%); VIOLENT CRIME STATISTICS (89%); VIOLENT CRIME (89%); CITY LIFE (89%); JUSTICE DEPARTMENTS (78%); SEXUAL ASSAULT (78%); CRIMINAL LAW (78%); VEHICLE THEFT (78%); ASSAULT & BATTERY (78%); PROPERTY CRIMES (78%); CRIMINAL ASSAULT & BATTERY (78%); COUNTIES (75%); CONTROLLED SUBSTANCES CRIME (73%); POLICE FORCES (70%); VANDALISM (68%); ROBBERY (64%); SUBURBS (50%); RURAL COMMUNITIES (50%) CRIME AND CRIMINALS 
+
+ORGANIZATION: FEDERAL BUREAU OF INVESTIGATION (94%); NORTHEASTERN UNIVERSITY (56%); US DEPARTMENT OF JUSTICE (56%) FEDERAL BUREAU OF INVESTIGATION 
+
+PERSON: BUTTERFIELD, FOX; FOX, JAMES ALAN (PROF) 
+
+GEOGRAPHIC: BOSTON, MA, USA (79%) MASSACHUSETTS, USA (79%) UNITED STATES (92%)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+816 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section B; Column 3; Metropolitan Desk; Pg. 1
+
+LENGTH: 1353 words
+
+HEADLINE: Chasing Last Year's Shadow From a Coming Parade 
+
+BYLINE:  By MIREYA NAVARRO 
+
+ BODY:
+Organizers could not have asked for a more momentous National Puerto Rican Day Parade. It will open with an appearance by the first female governor of Puerto Rico, Sila M. Calderon, followed by Miss Universe, Denise M. Quinones, and the new World Boxing Association heavyweight champion, John Ruiz. A candidate with a shot at becoming New York's first Hispanic mayor, Fernando Ferrer, will also be there.
+ The concern over the Navy's bombing exercises on the island of Vieques is also expected to give marchers a heightened sense of solidarity. Puerto Ricans this year can even brag about the first native to be put on a path to sainthood -- Carlos M. Rodriguez, a layman who was beatified last April and who will have his own parade contingent. 
+ Yet less than two weeks before participants make their way up Fifth Avenue on June 10, about a quarter of the more than 100 sponsors of last year's parade have yet to renew their sponsorship -- which could cost the parade $150,000 for other activities. Media interest is higher than usual, but most of that interest is about security. 
+And organizers are still more focused on damage control from last year than promotion for an event that is, at heart, a celebration of heritage. The incongruity reflects the lasting effect of the sexual assaults on women in Central Park following the parade last year, an episode that embarrassed and infuriated participants and that prompted this year's surveillance of the parade by officers in helicopters and on rooftops. 
+Ralph Morales, the parade's vice president, has been busy cleaning up the public relations mess. "No doubt it has had a very negative impact," he said. "The question always comes up -- 'What happened last year?' "
+Because of last year's violence, Mr. Morales said, more private security officers and parade monitors will be deployed along the 42-block route this year. While Vieques is a volatile issue that has led to acts of civil disobedience against the Navy and the arrest of protesters, including the Rev. Al Sharpton and three Bronx political leaders who are still in jail, parade organizers said they were not concerned about any Vieques-related unrest during the parade. 
+Maria Roman, the parade's president, said that Vieques supporters will have their own parade contingent, as they did last year, and that this year all parade participants are being urged to wear a white ribbon in support of "peace for Vieques." 
+Police officials, who came under criticism for inaction during the Central Park attacks and disciplined a dozen officers, said they had added helicopters and rooftop observation posts to their security measures for this and other large events to more quickly detect any suspicious movement by groups of people. They said they had also combined the two command posts with jurisdiction over the parade route into one, to act more efficiently in case of trouble.
+Thomas Antenen, the Police Department's deputy commissioner for public information, said the parade was no more problematic than other large parades and that its organizers had worked "very well" with the police in the past.
+Parade officials have repeatedly stressed that last year's attacks happened after the parade ended -- although they involved some spectators. Nevertheless, the spectacle of roving groups of men dousing women with beer while ripping off their clothes and groping them tarnished the parade itself. Sixteen men pleaded guilty in the attacks and two others were convicted after trial, receiving sentences from community service to up to five years in prison.
+Parade organizers said that most of the sponsors who had backed out alluded to the slower economy. But one parade official said last year's incident kept away "possible" sponsors, and other organizers said it dissuaded at least one, Toys "R" Us, from participating again this year. A spokeswoman for the toymaker said no decision had yet been made.
+Longtime sponsors like Goya Foods, the Ford Motor Company and The Daily News have remained. "In spite of what happened, the majority of people that go to that parade behave themselves in a proper manner," said Rafael Toro, a spokesman for Goya, a sponsor since the parade's inception in 1958.
+And despite last year's violence, parade officials said they were confident that they would draw at least the usual crowd of about two million. 
+The parade has grown into one of New York City's largest public events, drawing participants from more than 30 states, spawning smaller parades in other American cities and uniting large numbers of Puerto Rican residents with compatriots who migrated to the United States. Longtime participants include the Asociacion de Arroyanos Ausentes, a group of compatriots from Arroyo, a tiny coastal town in southeastern Puerto Rico. The group invites a delegation of dozens of people, including the town's mayor,to march with them every year. "It's an occasion when people who have not seen each other in many years meet again," said Ramon Ortiz, the group's president.
+Over the years the parade, which is broadcast by NBC, has drawn ethnically diverse crowds and an ever-expanding roster of artists, athletes and other personalities -- this year's hot celebrity is singer Marc Anthony -- who underscore the coming of age of the Hispanic population in this country.
+"We don't have two million Puerto Ricans in the city of New York," said Carlos Velazquez, the parade's producer. "You'll see Dominican faces, Mexican faces, African-American faces."
+Over time, the parade has come under criticism for growing too commercial, adding more and more advertisers' floats. It once also came under the scrutiny of the state attorney general's office for questionable financial practices. A court order barred its top official, Ramon S. Velez, from leading the nonprofit parade organization for several years. (Parade officials reported net assets of $730,000 last year.) Among its other activities, the parade sponsors scholarships and a pageant. 
+And before last year's outbreak of violence, there had been other problems. In 1995, more than 130 people were arrested in Brooklyn for, according to the police, drinking, honking horns and other disorderly conduct after leaving the parade.
+But organizers call the Central Park attacks their worst crisis.
+Jimmy Ruiz, 17, a dancer in the parade last year, remembers reaching Midtown Manhattan from the Bronx in a subway car packed with parade revelers, and then proceeding to salsa-step his way up Fifth Avenue while screaming throngs cheered him on. But he said his elation vanished when he heard news of the attacks that night. "I was kind of devastated," said Mr. Ruiz, a second-generation New Yorker. "We took so much time to all get united for the parade and then people go and do something like that."
+Earlier this year, parade officials complained to NBC about an episode of the show "Law & Order" that depicted a rampage by a Hispanic mob on the day of a parade in which women were molested and one was killed. (In last year's attacks, no one died and not all of those indicted were Latinos.)
+The full extent of the fallout from last year's violence may not be known until the day of the parade, but Ms. Roman, the parade president, said she expected an even larger turnout than last year because many Puerto Ricans feel they should make a show of force after all the negative publicity.
+Many longtime participants, including public officials, will be back this year. Mayor Rudolph W. Giuliani is scheduled to march and also welcome visiting mayors and legislators from Puerto Rico at a reception at Gracie Mansion. Gov. George E. Pataki and many candidates for public office are also expected to participate.
+Jimmy Ruiz is planning to march again, and his mother, Valerie Ruiz, who has been recruited to the detail assigned to checking tickets at seating areas, said she anticipated the same thrill the parade had always produced. "It's just the best thing in the world to look up Fifth Avenue and see my people having a good time," she said. "It's very hard to explain how you feel. For me, it's the most beautiful day in New York."
+
+GRAPHIC: Photos: Ralph Morales, the vice president of the Puerto Rican Day parade, says he is frequently asked what happened last year. (Ozier Muhammad/The New York Times)(pg. B6); Spectators put their pride on display during last year's Puerto Rican Day parade. But because of violence after the march ended, there will be additional security this year. (Nicole Bengiveno/The New York Times)(pg. B1) 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: PARADES & MARCHES (91%); SPONSORSHIP (90%); SEX OFFENSES (86%); GOVERNORS (78%); BOXING (77%); POLICE FORCES (76%); CITY GOVERNMENT (76%); PROTESTS & DEMONSTRATIONS (75%); BOMBINGS (71%); SEXUAL ASSAULT (70%); ASSAULT & BATTERY (70%); ARRESTS (65%); HELICOPTERS (64%); CIVIL DISOBEDIENCE (61%) SEX CRIMES; PUERTO RICAN DAY; PARADES; SECURITY AND WARNING SYSTEMS; PUERTO RICANS 
+
+PERSON: AL SHARPTON (50%) NAVARRO, MIREYA 
+
+GEOGRAPHIC: NEW YORK, NY, USA (93%) NEW YORK, USA (93%) PUERTO RICO (95%); UNITED STATES (93%) NEW YORK CITY; CENTRAL PARK (NYC)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+817 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section B; Column 4; Metropolitan Desk; Pg. 6
+
+LENGTH: 101 words
+
+HEADLINE: Metro Briefing New York: Manhattan: Judge Strikes Down Higher Rent 
+
+BYLINE:  By Bruce Lambert (NYT) (Compiled by Anthony Ramirez) 
+
+ BODY:
+ A state judge struck down a higher rent for a Manhattan apartment that was no longer rent-controlled. 
+Both the landlord and tenant groups saw something to dispute in the judge's ruling and are appealing the decision. The case turned on an apartment vacated at 929 West End Avenue and the new tenants, who challenged the $1,050 rent. The State Division of Housing and Community Renewal set an even higher rent. Justice Leland DeGrasse of State Supreme Court, in a decision reported by The New York Law Journal, ruled that the landlord had to first prove entitlement to the increase. Bruce Lambert (NYT)
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: JUDGES (92%); RESIDENTIAL RENTAL PROPERTY (92%); RENTAL PROPERTY (92%); US STATE GOVERNMENT (90%); DECISIONS & RULINGS (90%); SETTLEMENTS & DECISIONS (90%); RENT CONTROL (90%); LEASE AGREEMENTS (90%); APPEALS (87%); LAW COURTS & TRIBUNALS (86%); SUPREME COURTS (86%); URBAN DEVELOPMENT (83%); ECONOMIC NEWS (83%) HOUSING; RENTING AND LEASING; RENT CONTROL AND STABILIZATION 
+
+PERSON: LAMBERT, BRUCE; DEGRASSE, LELAND (JUSTICE) 
+
+GEOGRAPHIC: NEW YORK, NY, USA (92%) NEW YORK, USA (94%) UNITED STATES (94%) NEW YORK CITY
+
+LOAD-DATE: May 31, 2001 
+
+
+
+818 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section C; Column 2; Business/Financial Desk; Pg. 1
+
+LENGTH: 1891 words
+
+HEADLINE: Competition Sprouts One-Stop Law Firms; 
+Diversification Means Higher Profits But Opens Door to Ethical Concerns
+
+BYLINE:  By CRYSTAL NIX HINES 
+
+ BODY:
+Need a private investigator? Try H & K Investigative Solutions. Want advice on how to win government subsidies for environmentally sound real estate projects? Turn to H & K Conservation Solutions. How about money management advice, a real estate feasibility study, evaluation of a merger or acquisition or documents translated into virtually any language in the world? H & K has business units to meet the need. 
+ All of these enterprises, and several others, are not the work of some crazy-quilt conglomerate, but of a single law firm, Holland & Knight, based in Tampa, Fla. 
+ "It was evident in the legal community four or five years ago that a multidisciplinary approach would be welcome by clients and was a cutting-edge issue," said Bill McBride, a managing partner at Holland & Knight. "That's turned out to be correct." 
+As competition among law firms has increased, associate salaries have skyrocketed and demand for "one stop" shopping has grown, a small but growing number of law firms are turning to nonlegal businesses as a way not only to serve their clients but also to lift the bottom line.
+These businesses are the latest evolution in a legal market that has transformed law firms from small collections of general practitioners to highly specialized and global megafirms scrambling to generate more and more sources of wealth.
+Firms engaged in such diversification have moved beyond the traditional fare of "government relations," or lobbying, to a much broader array of businesses that were once entirely independent -- everything from environmental consulting to human resources outsourcing, real estate title services to money management.
+But some experts worry that the profession has not fully faced up to the potential consequences of this trend.
+Advocates of this approach say that they can surmount any potential ethical concerns by ensuring that consultants and lawyers work on the same side of a transaction, and by carefully complying with rules that govern conflicts of interest and ethics.
+But others are unconvinced. Lawrence J. Fox, a partner at the Philadelphia-based law firm Drinker Biddle & Reath, who was active in the decision by American Bar Association to deny law firms the ability to share legal fees with nonlawyers in so-called multidisciplinary practices, said that ancillary businesses posed a number of concerns.
+If law firms provide nonlegal services, it weakens the assertion that nonlawyers should not provide legal services, he said, "which would be a very, very bad thing."
+There is a further risk, he added, that clients -- confused by the dual provision of services -- will not realize that the attorney-client privilege and conflict-of-interest rules applicable to legal work do not apply to the business ventures.
+Monroe H. Freedman, who teaches legal ethics at the Hofstra University School of Law in Hempstead, N.Y., agrees that problems may arise as the practice spreads.
+"There is always the risk," Mr. Freedman said, "that a court would find that a particular aspect of the work being done is not really legal work or not exclusively or sufficiently legal work, or that because nonlawyers are involved, the confidentiality privilege is lost."
+Mr. Fox points out that there is also the risk that lawyers will steer clients to their own business concerns, rather than fulfilling their obligation to lay out a range of options objectively. And economic incentives create the fear that firms with ancillary businesses may be less inclined to discourage clients from pursuing particular business transactions if the firm's own units stand to benefit from a deal.
+"The hallmark of a lawyer is to tell a client no," Mr. Fox said. "But the greater the number of sources of income, the greater the opportunity that services will not be delivered in the right way."
+Law firms are prohibited from having partnerships with nonlawyers to provide legal services. They can, however, pay salaried employees like secretaries, investigators, paralegals and others who assist in the provision of legal services.
+Law firms are also not barred from running wholly separate nonlegal businesses, even if they are related to the practice of law and even if the profits flow back to the law firms, as long as they comply with applicable rules of professional conduct requiring the preservation of client confidentiality, loyalty and avoidance of client confusion.
+Jay S. Zimmerman, managing partner of the Boston-based Bingham Dana, which has started three ancillary businesses in the last three years, acknowledged that some of his partners initially had concerns about forming the nonlegal ventures. It took more than two years, he said, to make everyone feel comfortable with starting a money management concern in a joint venture with Legg Mason, the Baltimore financial services company.
+"People had a knee-jerk reaction that a law firm and an investment group can't have a joint venture," Mr. Zimmerman said. "But we worked through the disciplinary rules and the law with respect to fiduciary responsibilities, and created a model that has worked."
+Bingham Dana also has a consulting firm that develops state-by-state strategies for companies in highly regulated industries, and a strategic advising company that helps small to midsize companies with mergers and acquisitions, joint ventures, business revamping and access to venture capital.
+Mr. Zimmerman said the impetus for the ventures was the success of the Big Five accounting firms, which had diversified from the single service of auditing into highly profitable, multifaceted business services conglomerates.
+The accounting firms "took their two main assets -- reputation and client base -- and leveraged them by looking at the needs and effectively cross-selling, creating a whole line of businesses which became very lucrative," Mr. Zimmerman said. Law firms, he added, "have the same assets," and can likewise provide "a combined, integrated approach."
+Yet, while the accounting firms have amassed huge profits through diversification, their model is not without problems. In recent years, most of the major accounting firms, starting with Arthur Andersen, have moved to split off their consulting businesses, because of disputes over allocating profits and providing client services.
+And like critics of ancillary law firm businesses, the Securities and Exchange Commission has expressed concern that auditors in a diversified company might not be truly independent from big clients that paid them more in consulting fees than they paid for their corporate auditing. Last year, the S.E.C. reached an agreement with four leading accounting firms on a new rule that would substantially reduce the amount of consulting work that the firms could do for their auditing clients.
+But leaders at a number of law firms remain undaunted. In the last 18 months in particular, the interest of major law firms in ancillary businesses has boomed, according to Joel F. Henning, senior vice president and general counsel of Hildebrandt International, a consulting firm that is advising about two dozen law firms engaged in nonlegal operations.
+To run their operations, law firms have hired a wide range of professionals. H & K Conservation Solutions, for instance, is headed by the former president of the Florida Audubon Society, William Clay Henderson. Don R. Zell, a former federal agent with the Justice Department's strike force and the Drug Enforcement Agency, leads the firm's investigative unit, which charges clients $90 to $170 an hour to do such things as look into suspected intellectual property infringements, examine sexual harassment claims, evaluate prospective merger partners and run undercover operations.
+For many firms, existing clients are a fertile source of business for the nonlegal operations. John L. Harrington, chief executive of the Boston Red Sox, is one of them. The baseball team has used Bingham Dana lawyers for over 70 years, he said, so when he decided to sell the Red Sox, he turned to the firm's newly created strategic advice unit to handle the deal.
+Another Bingham Dana client, Charles and Carolyn McCannon, signed up with the firm's money management concern after they sold their real estate investment company several years ago.
+"We always kept our money under the pillow," Mr. McCannon joked recently, "so it was quite a leap of faith to put it in the hands of somebody else. But we felt an immediate connection" with the president of Bingham Legg Advisers.
+Exactly how profitable additional business operations will be is unclear. "The economic success is all over the lot," Mr. Henning of Hildebrandt International said.
+Arnold & Porter, the Washington-based law firm, created a public affairs consulting unit, APCO Worldwide, in 1984 but spun it off in the early 1990's. James W. Jones, a former managing partner of Arnold & Porter who helped start APCO, said that while the unit enhanced the firm's services to its clients, "it is fair to say the law firm didn't make an awful lot of money from APCO." 
+But leaders at other firms maintain that profits will grow substantially over time, because of client demand and the ability to take percentages of deals and to use fixed fees, which they expect may be more profitable than the traditional practice of billing by the hour.
+Thomas H. Dyer, chief executive of Holland & Knight Consulting, which oversees the firm's nine wholly owned subsidiaries, said that since its formation two years ago, "we doubled our revenue over our first year, turned a profit on our operations, and are expecting to double our revenue again this year."
+Duane Morris, which is based in Philadelphia, has seven business concerns, which generated $7 million in revenue last year and a net profit of about $2.5 million, according to a managing partner, Sheldon M. Bonovitz. Out of a total revenue for the law firm of $160 million, that figure is small, he said, but "in three to five years, if we can have $20 million in revenue, and $8 million in law firm income, at some point it gets to be significant." 
+Perhaps one of the most successful is FirmLogic, a company started by Womble Carlyle Sandridge & Rice 15 years ago in Winston-Salem, N.C., to help law firms and corporations with document coding and review. It has since expanded to medical records and support for class-action settlements. Last year, it generated $23 million of the firm's $129 million, according to Hassel L. Parker, its chief executive, and will be "north of $30 million this year."
+But creating the right business is difficult, firm leaders and industry experts say, particularly for lawyers not used to running a business. 
+"There are an awful lot of firms where I advise against it," Mr. Henning said. "I can see the handwriting on the wall, the disaster, the culture and arrogance on the part of the lawyers, and the inability to understand management, what it means to invest in businesses, and take a long-term strategic view."
+And for some blue-chip law firms, ancillary businesses simply do not make sense.
+"You are not going to see the Cravaths and Wachtels of the world going into ancillary businesses," Mr. Henning said. "They have a good thing going with a huge potential client base of absolutely the most important bet-the-company transactions and cases."
+But, he added, there are "only a handful of Wachtels and Cravaths out there."
+
+GRAPHIC: Photos: Brochures from Holland & Knight, a law firm in Tampa, Fla., highlight consulting services in investigation, business strategy and conservation. (Jim Stem for The New York Times)(pg. C11); Thomas H. Dyer, above, is chief executive of Holland & Knight Consulting, which oversees nine subsidiaries of the law firm Holland & Knight in Tampa, Fla. Jay S. Zimmerman, left, is managing partner of the Boston law firm Bingham Dana, which has three ancillary businesses. (Jim Stem for The New York Times, top; Michael Quan for The New York Times, above)(pg. C1) 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: LEGAL SERVICES (92%); INVESTIGATION & SECURITY SERVICES (90%); ETHICS (90%); MAJOR US LAW FIRMS (90%); PUBLIC FINANCE (90%); INVESTIGATIONS (89%); CONSULTING SERVICES (89%); CONFLICTS OF INTEREST (89%); LAWYERS (89%); ENVIRONMENT & NATURAL RESOURCES (89%); GOVERNMENT GRANTS & SUBSIDIES (78%); LOBBYING (78%); REAL ESTATE DEVELOPMENT (78%); ENVIRONMENTAL INDUSTRY (78%); PERSONAL FINANCE (77%); MERGERS (77%); LEGAL ETHICS (75%); LAW SCHOOLS (75%); OUTSOURCING (73%); TRENDS (73%); HUMAN RESOURCES (72%); MERGERS & ACQUISITIONS (72%); PRIVILEGED COMMUNICATIONS (72%); BUSINESS & PROFESSIONAL ASSOCIATIONS (71%); LAW FIRM ASSOCIATE SALARIES (70%); ATTORNEY CLIENT PRIVILEGE (69%); PHYSICIANS & SURGEONS (67%); ENVIRONMENTAL ENGINEERING & CONSULTING (64%) LEGAL PROFESSION; CONSULTANTS; ETHICS; INDUSTRY PROFILES; DIVERSIFICATION OF BUSINESS 
+
+COMPANY: HOLLAND & KNIGHT LLP (91%); DRINKER BIDDLE & REATH LLP (84%)
+
+ORGANIZATION: HOLLAND & KNIGHT; BINGHAM DANA 
+
+INDUSTRY: NAICS541110 OFFICES OF LAWYERS (91%); SIC8111 LEGAL SERVICES (91%)
+
+PERSON: HINES, CRYSTAL NIX; DYER, THOMAS; ZIMMERMAN, JAY S 
+
+GEOGRAPHIC: TAMPA, FL, USA (90%) FLORIDA, USA (93%); NEW YORK, USA (79%); PENNSYLVANIA, USA (79%) UNITED STATES (93%)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+819 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+Correction Appended 
+ Late Edition - Final
+
+SECTION: Section C; Column 5; Business/Financial Desk; Pg. 12
+
+LENGTH: 694 words
+
+HEADLINE: THE MARKETS: Market Place; 
+BellSouth is expected to spend $25 million to buy an 11% stake in StarMedia.
+
+BYLINE:  By Simon Romero 
+
+ BODY:
+IS there life left in StarMedia Network Inc., the troubled Internet media company focused on Latin America? The BellSouth Corporation appears to think so.
+ BellSouth, which is based in Atlanta and has operations in 11 Latin American countries, is expected to announce today a deal that would make it one of StarMedia's largest shareholders. 
+ Under the agreement, BellSouth is expected to inject $25 million into StarMedia in exchange for an 11 percent stake.
+Primedia, a New York media company that has recently acquired several Internet companies, and J. P. Morgan Partners, an early investor in StarMedia before the company, based in New York, went public in 1999, are also part of the deal. Primedia will pay $5 million for a 5 percent stake, and J. P. Morgan will pay $11 million to raise its stake to 14 percent. 
+BellSouth considers the deal a way to increase use of its wireless Internet services among the region's cell-phone users, building on StarMedia's operations throughout Latin America, while Primedia hopes StarMedia will help it increase distribution of its Internet content among speakers of Spanish and Portuguese.
+"People who have access to a cell phone but not a computer are hungry for the mobile Internet," Roberto Peon, director of BellSouth's Latin American operations, said in an interview. "We think Latin America is the perfect testing ground for these services because computer ownership is so low."
+The transaction would provide a lifeline to StarMedia, whose stock has languished at around $2 in recent days, down more than 90 percent from a high of $70 in July 1999. Shares in StarMedia fell 12 cents yesterday, to $2.01. 
+The company eliminated 200 jobs, or a quarter of its work force, this month after reporting a loss of $31.2 million. 
+StarMedia's troubles became apparent last spring when the bottom fell out of the dot-com industry. Its business model, based on a dream of demolishing Latin America's cultural barriers through widespread Internet access, swiftly unraveled, and it became a takeover target.
+But Terra Networks S.A., the Spanish Internet company, failed to submit a widely anticipated bid for StarMedia. Grupo Televisa, Mexico's largest broadcasting company, was also reported to be considering the acquisition of a stake in StarMedia last fall, but a deal never materialized.
+These large media companies apparently hesitated when they perceived what computer users in Latin America, and especially in Brazil, the region's largest and most dynamic Internet market, had long suggested: StarMedia, a Wall Street creation capitalizing on the dot-com's need for some Latin American flavor, was considered an intriguing, if somewhat inconsequential, import.
+In Portuguese-speaking Brazil, where consumers usually scoff at the introduction of services developed initially by marketers for the rest of Spanish-speaking Latin America, StarMedia was never able to surpass Universo Online, the nation's dominant, homegrown Internet company.
+StarMedia's early assumption that it could profit if the Internet would dissolve cultural differences in the region -- making, say, Argentines interested in Chile -- was challenged. The cultural nuances that translate into political and economic barriers in Latin America still seem to matter even in the Information Age.
+That is not stopping BellSouth, which has aggressively invested in communications systems throughout the region for nearly a dozen years, from seeing potential in StarMedia's business. In the most recent quarter StarMedia's revenue climbed 59 percent from the same period a year earlier, to $16 million.
+StarMedia already has a partnership with Cingular Wireless, which is owned in part by BellSouth, to provide wireless Internet services in the United States to Latinos. 
+BellSouth and StarMedia seem undeterred by skepticism in the United States and Europe over the tepid development of the wireless Internet so far.
+In fact, their optimism almost eerily echoes the sentiment surrounding Internet start-ups when StarMedia went public a couple of years ago. 
+"The Internet will massify in Latin America wirelessly," said Fernando Espuelas, chief executive of StarMedia.
+
+CORRECTION-DATE: June 1, 2001
+
+ CORRECTION:
+The Market Place column in Business Day yesterday, about plans by the BellSouth Corporation and others to invest in StarMedia Network, the Internet media company that focuses on Latin America, misstated the amount that J. P. Morgan Chase plans to spend and the change in the stake it will hold. The amount is $3 million, not $11 million. After additional investments from other companies, J. P. Morgan Chase's stake will shrink, not increase, to 14 percent from 17.4 percent.
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: WIRELESS INTERNET ACCESS (90%); INTERNET & WWW (90%); MOBILE & CELLULAR COMMUNICATIONS (90%); COMPUTER NETWORKS (89%); ONLINE CONTENT & INFORMATION SERVICES (78%); MOBILE MEDIA (78%); TAKEOVERS (78%); WIRELESS INDUSTRY (78%); LANGUAGE & LANGUAGES (78%); IMPORT TRADE (77%); ACQUISITIONS (76%); LABOR FORCE (76%); SHAREHOLDERS (71%); INTERVIEWS (70%); MOBILE & CELLULAR TELEPHONES (67%); BROADCASTING INDUSTRY (58%) COMPUTERS AND THE INTERNET; MERGERS, ACQUISITIONS AND DIVESTITURES 
+
+COMPANY: AT&T SOUTHEAST (94%); CYCLELOGIC INC (91%); TERRA NETWORKS SA (81%); GRUPO TELEVISA SA (52%)
+
+ORGANIZATION: BELLSOUTH CORP; STARMEDIA NETWORK; PRIMEDIA INC; MORGAN, J P, CHASE & CO 
+
+TICKER: TV (NYSE) (52%); TLEVISA (BMV) (52%)
+
+INDUSTRY: NAICS517110 WIRED TELECOMMUNICATIONS CARRIERS (94%); NAICS517210 WIRELESS TELECOMMUNICATIONS CARRIERS (EXCEPT SATELLITE) (94%); SIC4813 TELEPHONE COMMUNICATIONS, EXCEPT RADIOTELEPHONE (94%); SIC4812 RADIOTELEPHONE COMMUNICATIONS (94%); SIC7375 INFORMATION RETRIEVAL SERVICES (91%); NAICS515210 CABLE & OTHER SUBSCRIPTION PROGRAMMING (52%); NAICS515120 TELEVISION BROADCASTING (52%); NAICS511120 PERIODICAL PUBLISHERS (52%); SIC4841 CABLE & OTHER PAY TELEVISION SERVICES (52%); SIC4833 TELEVISION BROADCASTING STATIONS (52%); SIC2721 PERIODICALS: PUBLISHING, OR PUBLISHING & PRINTING (52%) SIC7375 ON-LINE INFORMATION SERVICES; SIC4813 TELEPHONE COMMUNICATIONS EX. RADIO; 
+
+PERSON: ROMERO, SIMON 
+
+GEOGRAPHIC: NEW YORK, USA (88%) LATIN AMERICA (94%); BRAZIL (92%); UNITED STATES (88%); MEXICO (79%)
+
+TITLE: MARKET PLACE (TIMES COLUMN) 
+
+LOAD-DATE: May 31, 2001 
+
+
+
+820 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 2; Editorial Desk; Pg. 27
+
+LENGTH: 683 words
+
+HEADLINE: Bush's Mistake in California 
+
+BYLINE:  By Gray Davis; Gray Davis is the governor of California.
+
+DATELINE: SACRAMENTO 
+
+ BODY:
+I hope President Bush understands how perilous a course he is setting for both California and the national economy with his opposition to caps on the outrageously high wholesale price of electricity -- opposition he reiterated to me when we met Tuesday.
+ California is experiencing an energy shock like that perpetrated by the Organization of Petroleum Exporting Countries in the 1970's. That episode plunged the United States into deep recession and gave rise to a long period of stagflation -- rising prices in a no-growth economy. 
+ The size of the energy shock to California this year is likely to be in the range of $40 billion to $50 billion, according to Alan Blinder, the former vice chairman of the Federal Reserve Board. It is enough to threaten the still solid California economy with recession and to knock the nation's gross domestic product down by at least half a percent -- enough to counter the stimulative effects that the Bush tax cut is intended to have on the stumbling national economy. As the Fed chairman, Alan Greenspan, observed in late January, "It is scarcely credible that you can have a major economic problem in California which does not feed to the rest of the 49 states." 
+The president's energy policy sets long-term goals of self-sufficiency through increased power generation, energy efficiency and fuel supplies. These are many of the same solutions we in California are rapidly pursuing. But the short-run emergency in California stems as much from energy cost as from energy supply.
+Since I've been in office, we've cut approval times in half and licensed 15 major power plants. And we have put in place the nation's most comprehensive conservation program. Still, we are being squeezed to the breaking point by outrageous prices for the electricity we buy. This is why I called on the president for an energy policy that includes short-term caps on the price of wholesale power. Under the Federal Power Act of 1935, only the Federal Energy Regulatory Commission has the power to ensure a just and reasonable wholesale electricity market in California. This is not a matter of discretion for federal regulators; it is an obligation. The law requires the F.E.R.C. to ensure that rates are just and reasonable. California itself can do nothing about the unconscionable wholesale electricity prices that are often more than 700 percent higher than they were just a year ago. President Bush must direct the commission to exercise its authority under the law.
+In a letter Tuesday to the president, 10 economists warned, "F.E.R.C.'s failure to act now will have dire consequences for the State of California and will set back, potentially fatally, the diffusion of competitive electricity markets across the country."
+It is true that California's problems stem from a fundamentally flawed 1996 state electricity deregulation law. The utilities were required to sell off half of their fossil-fuel-fired power plants while they were barred from entering into contracts for a long-term supply of cheap electricity. The result is an unregulated sellers' market for electricity, susceptible to naked manipulation.
+The agency that runs California's power grid has identified $6 billion in overcharges by the generators. Prices are greatly inflated. The same electricity that cost Californians $7 billion in 1999 was $27 billion in 2000 and is projected to cost upwards of $50 billion in 2001. Much of this is fed by escalating wholesale natural gas prices that were 1,000 percent higher in Southern California in December 2000 than in December 1999. The F.E.R.C. has failed to curb these natural gas prices as well.
+The Bush administration still maintains that the energy policy it has proposed is all that can reasonably be done and says it opposes further federal intervention in the energy market, even if the problem threatens the nation's economy. The threat is real, and the Bush administration must adopt a more responsible energy policy, one that restrains energy price manipulation and creates a fair and competitive energy market across the West and the whole country.
+
+GRAPHIC: Drawing (Wes Bedrosian) 
+
+LANGUAGE: ENGLISH 
+
+DOCUMENT-TYPE: Op-Ed 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: ECONOMIC NEWS (90%); US PRESIDENTS (90%); US FEDERAL GOVERNMENT (90%); EDITORIALS & OPINIONS (90%); WHOLESALERS (90%); RECESSION (90%); ECONOMIC CONDITIONS (90%); ELECTRIC POWER PLANTS (90%); POWER FAILURES (89%); ELECTRICITY TRANSMISSION & DISTRIBUTION (89%); ENERGY DEPARTMENTS (89%); ENERGY REGULATION (89%); ENERGY & UTILITY TRADE (89%); ELECTRICITY MARKETS (89%); PUBLIC POLICY (89%); ENERGY & UTILITY POLICY (89%); ELECTRICITY WHOLESALERS (89%); UTILITIES INDUSTRY (89%); GROSS DOMESTIC PRODUCT (78%); POWER PLANTS (77%); ENERGY & UTILITY DEREGULATION (77%); PRICE INCREASES (77%); DEREGULATION (77%); ENERGY & UTILITY SECTOR PERFORMANCE (77%); EXPORT PRICES (77%); ENERGY EFFICIENCY & CONSERVATION (77%); ENERGY & UTILITY LAW (77%); ENERGY DEVELOPMENT PROGRAMS (77%); PRICE MANAGEMENT (77%); UTILITY RATES (77%); OIL & GAS INDUSTRY (77%); CARTELS (76%); TRENDS (76%); PETROLEUM PRODUCTS (72%); CENTRAL BANKS (69%); TAXES & TAXATION (69%); TAX LAW (67%); EXPORT TRADE (56%) ELECTRIC LIGHT AND POWER; PRICES (FARES, FEES AND RATES); WAGE AND PRICE CONTROLS; UNITED STATES ECONOMY; ECONOMIC CONDITIONS AND TRENDS; SHORTAGES; BLACKOUTS AND BROWNOUTS (ELECTRICAL); REGULATION AND DEREGULATION OF INDUSTRY 
+
+ORGANIZATION: ORGANIZATION OF THE PETROLEUM EXPORTING COUNTRIES (58%)
+
+PERSON: GEORGE W BUSH (92%); ALAN GREENSPAN (73%) DAVIS, GRAY (GOV); BUSH, GEORGE W (PRES) 
+
+GEOGRAPHIC: SACRAMENTO, CA, USA (79%) CALIFORNIA, USA (94%) UNITED STATES (94%) CALIFORNIA
+
+LOAD-DATE: May 31, 2001 
+
+
+
+821 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 1; Foreign Desk; Pg. 7
+
+LENGTH: 761 words
+
+HEADLINE: Last Chapter: Berlin to Pay Slave Workers Held by Nazis 
+
+BYLINE:  By ROGER COHEN 
+
+DATELINE: BERLIN, May 30 
+
+ BODY:
+After more than two years of often bitter negotiations, Parliament approved a motion today that opens the way for payment of $4.5 billion to laborers forced to work by the Nazis. 
+ The agreement, 56 years after the fall of the Third Reich, was greeted with great solemnity in Germany and hailed as the closing chapter of a difficult process of confrontation with the crimes of Hitler. 
+ The nation, now almost three generations distant from the Nazi era, has long yearned for some form of closure with the crimes that sullied the name of Germany. While at some level most Germans know that only time will bring this sense of a chapter closed, they greeted today's decision as momentous. 
+Chancellor Gerhard Schroder addressed Parliament before the vote and said: "I thank you that we have at last been able to bring to a good conclusion this last, big, still-open chapter of our historic responsibility." He said one word summed up his sentiments and those of his parliamentary colleagues: "Finally."
+Jewish organizations were central to the negotiations -- although only perhaps 10 percent of the expected beneficiaries are Jewish -- and they took a rather more guarded view.
+"We don't speak of justice, we speak of a measure of justice," said Gideon Taylor, executive vice president of the Jewish Claims Conference. "We don't speak of making whole, but of symbolic payments by companies that had never really acknowledged responsibility and are now doing so at last."
+Half the money is to be paid by more than 6,000 German companies. They include most of the big names, among them DaimlerChrysler, Bayer, Bertelsmann, Deutsche Bank, Hugo Boss, Mannesmann and Allianz. The other half is being paid by the government. Most recipients live in Eastern Europe. 
+It was a combination of lawsuits by survivors in the United States and the increasing importance of American business to most of the companies that prompted the negotiations, which ended last year in an agreement to establish a fund. But payments were further delayed by continuing litigation in the United States.
+Earlier this month, a New York court dismissed this litigation, opening the way for the Parliament to declare today that German companies had achieved "legal peace" in the United States. This parliamentary decision was a prerequisite for payments to begin.
+The vote declaring the existence of "legal peace" demonstrated an enduring ambiguity of the whole negotiation. On one level, it was about moral concerns, or was supposed to be; on another it was an entirely pragmatic attempt by German industry to safeguard its business interests in the United States.
+During the talks, this ambiguity provoked great rancor; even today, the conservative Frankfurter Allgemeine commented in a front-page editiorial that the talks had involved a "heady mix of blackmail, rainmaking, political miscalculation and myopia."
+Chancellor Schroder defended the approach of German industry, saying it was understandable that companies facing suits in the United States should want to ensure that they "not pay twice for the same historical fault" before contributing to the so-called Remembrance, Responsibility and Future Fund.
+But the word "blackmail" was often used in private by Germans, reflecting a broad sense that the country had already done a lot to try to compensate for its crimes and was being subjected to further humiliation by a new generation of sharp American lawyers. Germany has paid more than $60 billion in reparations since World War II. 
+The payments approved today -- ranging from about $7,000 each to people forced to work in slave labor camps or ghettos to about $2,000 to those forced to work in factories -- are expected to being next month in Poland and the Czech Republic, where organization of the disbursement is most advanced. In other countries, including Russia and Ukraine, payments may not begin until next year. In all, over one million survivors are expected to receive something.
+Mr. Taylor said payments to 10,000 Jewish slave and forced laborers in 25 countries would begin within 60 days. In all, payments are expected to be made to about 160,000 surviving Jewish laborers in 40 countries.
+Many of the Jewish beneficiaries have already received some form of compensation from Germany, while the non-Jews in Central and Eastern Europe have generally not.
+The cold war, the division of Germany and the long reluctance of many German companies to accept any need to pay people forced to labor in a war economy all contributed to the belated nature of the payments approved today. 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: JEWS & JUDAISM (90%); LEGISLATIVE BODIES (90%); LITIGATION (89%); TALKS & MEETINGS (89%); APPROVALS (78%); DELAYS & POSTPONEMENTS (78%); SLAVERY (78%); DECISIONS & RULINGS (75%); SETTLEMENTS & DECISIONS (75%); CONSERVATISM (72%) NAZI POLICIES TOWARD JEWS AND MINORITIES; SLAVE LABOR; SUITS AND LITIGATION 
+
+COMPANY: ALLIANZ SE (58%); DEUTSCHE BANK AG (53%)
+
+TICKER: ALV (FRA) (58%); ALV (BIT) (58%); DEUT (JSE) (53%); DBK (FRA) (53%); DBK (BIT) (53%); DBETN (JSE) (53%); DBA (ASX) (53%); DB (NYSE) (53%)
+
+INDUSTRY: NAICS523920 PORTFOLIO MANAGEMENT (58%); NAICS524126 DIRECT PROPERTY & CASUALTY INSURANCE CARRIERS (58%); NAICS524113 DIRECT LIFE INSURANCE CARRIERS (58%); NAICS523110 INVESTMENT BANKING & SECURITIES DEALING (53%); NAICS522110 COMMERCIAL BANKING (53%); SIC6282 INVESTMENT ADVICE (53%); SIC6211 SECURITY BROKERS, DEALERS, & FLOTATION COMPANIES (53%); SIC6081 BRANCHES & AGENCIES OF FOREIGN BANKS (53%)
+
+PERSON: GERHARD SCHRODER (56%) COHEN, ROGER 
+
+GEOGRAPHIC: BERLIN, GERMANY (93%) NEW YORK, USA (79%) GERMANY (96%); UNITED STATES (94%); EUROPE (79%); CENTRAL EUROPE (73%); EASTERN EUROPE (53%)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+822 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 1; National Desk; Pg. 14
+
+LENGTH: 482 words
+
+HEADLINE: Agriculture Nominee's Comments on Race Delay Hearings 
+
+BYLINE:  By ELIZABETH BECKER 
+
+DATELINE: WASHINGTON, May 30 
+
+ BODY:
+The Senate Agriculture Committee is putting off hearings for a top Agriculture Department nominee who has been criticized by several civil rights groups for saying that the success of three Iowa farming counties was based on their homogenous background.
+ The population of the counties -- Carroll, Lyon and Sioux -- is predominantly white and Christian. 
+ Senator Tom Harkin, the Iowa Democrat who will become chairman of the Agriculture Committee next week, said today that he had yet to support his fellow Iowan, Thomas Dorr, as under secretary of agriculture for rural development. 
+"I would need to carefully consider the entire record before I could make any decision," Mr. Harkin said.
+Until he makes that decision, the senator will not schedule confirmation hearings, a spokesman said.
+Mr. Dorr, 54, a family farmer from Marcus, Iowa, had been known as an early champion of advanced technology for farming. But in December 1999 he told an Iowa State University conference that three of the most successful "rural economic environments" in Iowa were "not particularly diverse."
+"At least not ethnically diverse," he said, according to a tape recording of the conference that was first made public this month in The Des Moines Register. "They're very diverse in their economic growth, but they're very focused, have been very nondiverse in their ethnic background and their religious background and there's something there that has enabled them to succeed and to succeed very well."
+The Congressional Black Caucus wrote Senator Harkin and Senator Richard G. Lugar, Republican of Indiana and the current chairman of the Agriculture Committee, saying they doubted Mr. Dorr's "ability to serve all American farmers in a way that is sensitive to their needs and struggles."
+The Black Farmers Association and the National Association for the Advancement of Colored People also registered their concerns.
+The Bush administration continues to give Mr. Dorr its full support, a White House spokesman, Scott Stanzel, said today.
+"Those comments were taken out of context and are an unfair representation of Mr. Dorr's views," Mr. Stanzel said. "We urge the senators to listen to Mr. Dorr during his confirmation hearing because any rush to judgment would shortchange the process and a fine nominee."
+Mr. Dorr declined to comment.
+A farmer since 1972, Mr. Dorr became an advocate of the importance of transforming family farms into far larger commercial, technologically advanced operations after graduating in business from Morningside College in Sioux City, Iowa. 
+Mr. Dorr's promotion of huge 225,000-acre farms has fed opposition from nonprofit organizations like the Environmental Working Group.
+"He may be the only farm policy expert in the country who is actively supporting more megafarms when thousands of family farms are going out of business," said Ken Cook, president of the research group. 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: AGRICULTURE DEPARTMENTS (90%); FARMERS & RANCHERS (90%); FAMILY FARMS (89%); LEGISLATIVE BODIES (89%); HUMAN RIGHTS ORGANIZATIONS (89%); CIVIL RIGHTS (78%); CAUCUSES (78%); POLITICS (78%); PUBLIC POLICY (78%); US REPUBLICAN PARTY (78%); US DEMOCRATIC PARTY (77%); ETHNIC GROUPS (77%); ECONOMIC DEVELOPMENT (75%); AGRICULTURE REGULATION & POLICY (73%); FACTORY FARMS (73%); RURAL DEVELOPMENT (73%); NONPROFIT ORGANIZATIONS (73%); RURAL COMMUNITIES (72%); ENVIRONMENTAL RESEARCH (72%); RELIGION (71%); RACE & RACISM (69%); US FEDERAL GOVERNMENT (69%); US PRESIDENTS (67%); ETHNICITY (67%); ECONOMIC CONDITIONS (67%); ECONOMIC GROWTH (67%); ENVIRONMENT & NATURAL RESOURCES (67%) APPOINTMENTS AND EXECUTIVE CHANGES; AGRICULTURE; RURAL AREAS; DISCRIMINATION 
+
+ORGANIZATION: IOWA STATE UNIVERSITY (56%) AGRICULTURE DEPARTMENT 
+
+PERSON: TOM HARKIN (79%); DICK LUGAR (58%) BECKER, ELIZABETH; DORR, THOMAS 
+
+GEOGRAPHIC: IOWA, USA (98%); INDIANA, USA (79%) UNITED STATES (98%)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+823 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section C; Column 1; Business/Financial Desk; Pg. 1
+
+LENGTH: 610 words
+
+HEADLINE: BUSINESS DIGEST 
+
+ BODY:
+Flight Attendants Reject Arbitration at American
+The union representing flight attendants at American Airlines rejected an offer of arbitration from federal mediators, assuring the start of a 30-day cooling off period after which its members will be legally free to strike.
+ But executives at American Airlines and industry analysts are predicting that a walkout is unlikely because President Bush has pledged to intervene to delay a strike at a major airline this year. Page C6. 
+
+Businesses Plan for Blackouts
+From tourist attractions to farmers to technology companies, California businesses are coming up with novel ways to cope with what many fear will be a summer of blackouts. A1.
+
+Latest Office Version to Be Unveiled
+Microsoft plans today to introduce a new version of its Office program that is the company's most Internet-connected product. Office XP, which will sell for $499 and be available in 15 countries, is the sixth version of the program, which was first introduced in 1991. Shares of Microsoft fell $1.15, to $69.19, on a day when may technology issues slumped. C6.
+
+Study Details Income Gap in U.S.
+The wealthiest households had income gains over the last two decades that far outstripped those of households at the other end of the spectrum, but the relative tax burden of people with the highest incomes also increased substantially, new government figures show. C4.
+
+Sell-Off Continues in Technology
+Stocks fell on concerns that the technology sector faces more profit pressures. The Nasdaq composite index dropped 91.04 points, or 4.2 percent, to 2,084.50. The Dow Jones industrial average lost 166.50 points, or 1.5 percent, to 10,872.64. The Standard & Poor's 500 fell 19.85 points, or 1.6 percent, to 1,248.08. C12.
+
+Stakes to Be Bought in StarMedia
+BellSouth is expected to announce a deal today under which it will pay $25 million for an 11 percent stake of StarMedia Network, the troubled Internet media company. Primedia will pay $5 million for a 5 percent stake, and J. P. Morgan Partners will pay $11 million to raise its stake to 14 percent. Market Place. C12.
+
+CNN Hires an Anchor From ABC
+CNN hired Aaron Brown, an anchor for ABC News, as the anchor of a new flagship nightly newscast as well as the anchor covering important, breaking events at any time. C11.
+
+Head of Gazprom Replaced by Putin
+President Vladimir V. Putin of Russia, left, has engineered the replacement of the head of Gazprom, the huge natural gas monopoly, with a close ally, Aleksei Miller, an economist. The appointment is a breakthrough for Mr. Putin's reforms. Gazprom has wielded tremendous power in the government and is one of the last major challenges to Mr. Putin's authority. World Business, Section W.
+
+Biggest Roche Cuts to Come in U.S.
+Roche Holding, the Swiss pharmaceutical giant, said that it would cut 3,000 jobs over the next two to three years, with the biggest losses to come at its United States headquarters in Nutley, N.J. World Business, Section W.
+
+New Rules to Be Set for Bath Seats
+The Consumer Product Safety Commission voted unanimously to begin drafting new safety standards for bath seats. C2.
+
+Europe Proposes Tobacco Ad Limits
+The European Commission proposed new restrictions on tobacco advertising, seven months after a court overturned a previous ban. World Business, Section W.
+
+Risks of Investing Social Security
+On the face of it, allowing workers to invest part of their Social Security contributions in stocks looks like a sensible thing: over the last 100 years, the stock market's average return has been about 7 percent a year. But there are plenty of reasons to be suspicious of that figure. Hal R. Varian: Economic Scene. C2.
+
+GRAPHIC: Photo Chart: "YESTERDAY"Dow industrials -- 10,872.64 down 166.50Nasdaq composite -- 2,084.50 down 91.0410-yr. Treasury yield -- 5.50% down 0.02The euro -- $0.8570 up 0.0013The dollar -- 120.32 yen up 0.25 Graph tracks Microsoft share price for last week.
+
+LANGUAGE: ENGLISH 
+
+DOCUMENT-TYPE: Summary 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: STOCK INDEXES (91%); AIRLINE EMPLOYEES (90%); ALTERNATIVE DISPUTE RESOLUTION (90%); AIRLINES (90%); NEWS BRIEFS (90%); TELEVISION INDUSTRY (89%); LABOR UNIONS (78%); US PRESIDENTS (76%); PHARMACEUTICALS INDUSTRY (72%); INDUSTRY ANALYSTS (72%); WEALTHY PEOPLE (72%); UPPER INCOME PERSONS (71%); INCOME DISTRIBUTION (71%); DESTINATIONS & ATTRACTIONS (70%); AFFLUENT MARKET (66%); TELEVISION NEWS SHOWS (65%); PHARMACEUTICAL PREPARATION MFG (60%); NATURAL GAS & ELECTRIC UTILITIES (60%); TAXES & TAXATION (53%); NATURAL GAS PRODUCTS (50%) NO INDEX TERMS FROM NYTIMES 
+
+COMPANY: AMERICAN AIRLINES INC (84%); OAO GAZPROM (64%); ROCHE HOLDING AG (60%); MICROSOFT CORP (56%); AT&T SOUTHEAST (53%)
+
+TICKER: OGZD (LSE) (64%); GAZP (RTS) (64%); ROG (SWX) (60%); MSFT (NASDAQ) (56%)
+
+INDUSTRY: SIC4512 AIR TRANSPORTATION, SCHEDULED (84%); NAICS486210 PIPELINE TRANSPORTATION OF NATURAL GAS (64%); NAICS221210 NATURAL GAS DISTRIBUTION (64%); NAICS213112 SUPPORT ACTIVITIES FOR OIL & GAS OPERATIONS (64%); NAICS211111 CRUDE PETROLEUM & NATURAL GAS EXTRACTION (64%); SIC4923 NATURAL GAS TRANSMISSION & DISTRIBUTION (64%); SIC1311 CRUDE PETROLEUM & NATURAL GAS (64%); NAICS325413 IN-VITRO DIAGNOSTIC SUBSTANCE MANUFACTURING (60%); NAICS325412 PHARMACEUTICAL PREPARATION MANUFACTURING (60%); NAICS511210 SOFTWARE PUBLISHERS (56%); SIC7372 PREPACKAGED SOFTWARE (56%); NAICS517210 WIRELESS TELECOMMUNICATIONS CARRIERS (EXCEPT SATELLITE) (53%); NAICS517110 WIRED TELECOMMUNICATIONS CARRIERS (53%); SIC4813 TELEPHONE COMMUNICATIONS, EXCEPT RADIOTELEPHONE (53%); SIC4812 RADIOTELEPHONE COMMUNICATIONS (53%)
+
+PERSON: VLADIMIR PUTIN (79%); GEORGE W BUSH (56%)
+
+GEOGRAPHIC: CALIFORNIA, USA (79%) UNITED STATES (94%); RUSSIAN FEDERATION (51%)
+
+LOAD-DATE: May 31, 2001 
+
+
+
+824 of 824 DOCUMENTS
+
+
+Copyright 2001 The New York Times Company 
+ The New York Times
+
+PUB-DATE: May 31, 2001
+ Late Edition - Final 
+
+SECTION: Section A; Column 1; National Desk; Pg. 24
+
+LENGTH: 957 words
+
+HEADLINE: White House Memo; 
+Accused of Moving Right, Bush Team Seeks to Secure Middle Ground
+
+BYLINE:  By FRANK BRUNI 
+
+DATELINE: WASHINGTON, May 30 
+
+ BODY:
+From the White House's aggrieved and somewhat befuddled perspective, President Bush and his aides have always approached Democrats with open arms and simply not gotten proper credit for it.
+ But after the defection by Senator James M. Jeffords of Vermont from the Republican Party and signs that many voters find Mr. Bush too conservative, the administration is aggressively seeking ways to hug Democrats tighter and, perhaps more to the point, make sure that the display of affection is vividly public. 
+ In the last several days, several Bush aides said, serious discussions have been held inside the White House about arranging a meeting or appearance next week with Senator Tom Daschle, the South Dakota Democrat who is in line to become the new Senate majority leader. The interest in such an encounter contradicts a White House coolness to the idea as recently as last weekend. 
+Administration officials are reviewing Mr. Bush's calendar of scheduled and prospective events in coming weeks for opportunities to place him beside more Democrats, and his planned speeches are being examined with an eye toward additions that sing Democrats' praises or beseech Democrats' favor.
+White House officials are also looking at the Bush agenda for issues with intrinsically bipartisan support or approaches by Mr. Bush that derive from, build on or overlap with Democratic ideas. More than ever, they want to underscore common ground.
+"This is part of what we've been doing all along," said one senior administration official, who confessed a degree of frustration and surprise that the administration's actions were seen in any other way. "But it's definitely taken on an added drama and importance."
+The official was referring not only to Mr. Jeffords's exodus, but also to the administration's need to prepare for life after the death of the Republicans' Senate majority and the imperative of bathing Mr. Bush in a more moderate light.
+Mr. Bush's aides flatly reject the idea that he has proven to be more conservative in office than he was on the campaign trail and that he has demonstrated more concern with the right than the center.
+They point to large numbers of Democrats who support most of Mr. Bush's education initiatives, which are now wending their way through Congress, and to Democratic support of aspects of Mr. Bush's religion-based initiatives and his approach to a patients' bill of rights.
+But they also said that the way Mr. Bush promoted certain regulations in his first 100 days, coupled with how the tax debate took center stage, might indeed have made him appear farther from the center than they insist he is.
+"Our biggest policy initiative, even though it was achieved in a bipartisan way, was a traditional Republican issue," one Bush adviser said, referring to the tax cut passed by the House and Senate last weekend. "Now we're going to have to emphasize some of those elements of our agenda that aren't."
+Topping that list, this adviser and others said, are health-related measures like a patients' bill of rights and certain Medicare changes.
+The administration also intends to keep having Mr. Bush promote his energy plan as environmentally sensitive. Today, he posed with giant sequoias in California; next week, he is to be in the Everglades in Florida.
+Environmentalists, though, find Mr. Bush's energy plan to be woefully inadequate. That underscores a potential problem with the administration's perception of the challenge it faces as essentially one of style. On some issues, it is Mr. Bush's bedrock positions -- no matter how he articulates or decorates them -- that put him in conflict with moderate Republicans and Democrats.
+Administration officials said Mr. Bush was not planning to change those positions, because they were matters of conviction, and some Republican strategists said that if he did change them, he might invite more trouble than he dispatched.
+"If he is going to be an effective president, he has to govern based on the principles he enunciated in the campaign," said Kenneth M. Duberstein, a former chief of staff to President Ronald Reagan who is close to the White House, "and while he has to show some rhetorical flexibility, he can't walk away from the basic tenets of his beliefs."
+"Not only is there a political price to pay if he did," Mr. Duberstein said, "but there also would be a reminder of his father's DNA -- which is, 'Read my lips, no new taxes.' And so just from a family genetics perspective, he has less flexibility and has to adhere to the principles."
+Thus, Mr. Bush's aides, who have long labored to ensure that the president speaks in a compassionate voice and appears in diverse settings, will redouble their efforts on that front, emphasizing his alliances with moderate Republicans and Democrats and his interest in building bridges to them.
+They are looking not just to meet with Mr. Daschle next week but also, possibly, to meet with other Democrats who would hold new leadership roles in the reconfigured Senate.
+As the administration plans what may be a series of ceremonial signings of the tax legislation both in and away from Washington, one aide said, its principal concern is to draw attention to the number of Democrats and moderate Republicans who voted for the bill. That concern may well dictate where Mr. Bush travels and with whom he links arms.
+It already dictated some of the language in Mr. Bush's remarks at the White House on Saturday, after passage of the legislation.
+According to one aide, Mr. Jeffords's exodus and all the commentary it spawned was a factor in Mr. Bush's declaration that "we listened to the voices of those in my party and in the Democratic Party who wanted additional help for those at the lowest end of the economic ladder." 
+
+LANGUAGE: ENGLISH 
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: POLITICAL PARTIES (91%); US DEMOCRATIC PARTY (90%); LEGISLATIVE BODIES (90%); POLITICS (90%); CONSERVATISM (90%); US REPUBLICAN PARTY (89%); PUBLIC POLICY (78%); CAMPAIGNS & ELECTIONS (78%); HEALTH CARE POLICY (73%); TAXES & TAXATION (67%); TAX LAW (64%) UNITED STATES POLITICS AND GOVERNMENT; CONSERVATISM (US POLITICS) 
+
+ORGANIZATION: CONGRESS (US) 
+
+PERSON: GEORGE W BUSH (91%); TOM DASCHLE (58%) BRUNI, FRANK; BUSH, GEORGE W (PRES); JEFFORDS, JAMES M (SEN) 
+
+GEOGRAPHIC: SOUTH DAKOTA, USA (79%) UNITED STATES (93%)
+
+LOAD-DATE: May 31, 2001 
+
+ 

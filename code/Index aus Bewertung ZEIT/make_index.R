@@ -19,10 +19,9 @@ DirCode='H:/git/zeit-2' # main directory
 setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------
-load("/register_update.RData",sep=''))
-load(paste(DirCode,"/register.RData",sep=''))
+load(paste(DirCode,"/data/zeit indikatoren/register.RData",sep=''))
 register.alt=register
-load(paste(DirCode,"/register_update.RData",sep=''))
+load(paste(DirCode,"/data/zeit indikatoren/register_update.RData",sep=''))
 register.neu=register
 register=rbind(register.alt[,c("link","title","year","issue")],register.neu[,c("link","title","year","issue")])
 
@@ -33,15 +32,15 @@ listsubdirs=list.files(DirRawTexts)
 
 
 # Marking economics sections' articles ------------------------------------------------------------------------
+load(paste(DirCode,"/data/zeit indikatoren/e_register.RData",sep=''))
 
-# load(paste(DirCode,"/e_register.RData",sep=''))
-# register$eco='n'
-# neco=nrow(e_register)
-# for (i in 1:neco){
-#         register[which(register$link==e_register$link[i]),'eco']='y'
-# }
-# 
-# eco=sapply(register$link,function(x) x%in%e_register$link)
+register$eco='n'
+neco=nrow(e_register)
+for (i in 1:neco){
+        register[which(register$link==e_register$link[i]),'eco']='y'
+}
+
+eco=sapply(register$link,function(x) x%in%e_register$link)
 
 
 # Getting "Ergebnis.csv" Files and integrate them into register -----------

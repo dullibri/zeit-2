@@ -1,0 +1,495 @@
+
+
+801 of 808 DOCUMENTS
+
+
+Copyright 2009 The New York Times Company 
+The New York Times
+
+PUB-DATE: June 30, 2009
+Late Edition - Final
+
+SECTION: Section B; Column 0; Business/Financial Desk; Pg. 1
+
+LENGTH: 954 words
+
+HEADLINE: Justices Rule That States Can Press Bank Cases
+
+BYLINE: By JOHN SCHWARTZ
+
+ BODY:
+The Supreme Court paved the way on Monday for states to enforce fair-lending laws and other consumer protection measures against the nation's biggest banks, striking down a rule that limited such powers to federal banking regulators.
+ The court concluded that rules issued by federal banking regulators under the National Bank Act -- a law passed in 1864 -- could not block, or pre-empt, efforts by the states to enforce their laws. 
+ The case began with letters sent in 2005 by the New York attorney general at the time, Eliot Spitzer, to several national banks, including Citigroup, JPMorgan Chase and Wells Fargo, inquiring about their lending practices to minority customers.
+ The letters referred to ''troubling'' disparities that suggested black and Hispanic borrowers had been charged disproportionately higher interest rates on mortgages compared with those for whites.
+ The letters asked for the information ''in lieu of subpoena'' but strongly suggested that subpoenas might follow if the requests were not fulfilled. 
+ A banking trade group and the Office of the Comptroller of the Currency brought suit to block Mr. Spitzer's request, contending that the National Bank Act and rules issued by the Bush administration in 2004 gave that kind of law enforcement authority to the comptroller and prohibited such efforts by the states. A federal district court ruled against the states, and the United States Court of Appeals for the Second Circuit affirmed the lower court's decision.
+ Writing for a 5-to-4 majority, Justice Antonin Scalia concluded that the attorney general had not been engaged in the broad ''visitorial powers'' reserved by the federal government, in which the government acts like a supervisor with free access to bank records on demand. The court, he wrote, has always understood that visitorial powers are ''quite separate'' from the power to enforce the law, and the attorney general was acting in the role of ''sovereign-as-law-enforcer'' in seeking the information.
+ Normally, Justice Scalia wrote, the court would defer to an agency's interpretation of the law when the terms in dispute are ambiguous. But in this case, which turned on such terms as ''visitorial powers,'' he stated that even though the term was ''somewhat ambiguous,'' the court could discern ''the outer limits'' of the term, ''even through the clouded lens of history.'' The meaning that could be wrestled from the phrase, Justice Scalia wrote, did not include restrictions on ''ordinary enforcement of the law'' by the states.
+ The decision brought together an unusual coalition. Justice Scalia, one of the court's most conservative members, was joined by the court's more liberal wing of John Paul Stevens, David H. Souter, Ruth Bader Ginsburg and Stephen G. Breyer.
+ A decision concurring in part and dissenting in part was written by Justice Clarence Thomas and was joined by Chief Justice John G. Roberts Jr. and Justices Anthony M. Kennedy and Samuel A. Alito Jr., a group that did not share Justice Scalia's view through the clouded lens of history. ''The statutory term 'visitorial powers' is susceptible to more than one meaning,'' Justice Thomas wrote, ''and the agency's construction is reasonable'' and thus should be deferred to.
+ In a statement, New York's current attorney general, Andrew M. Cuomo, called the decision ''a huge win for consumers across the nation.'' In a reference to the nation's economic crisis, Mr. Cuomo added, ''the court has recognized that fair lending and consumer protection -- the cornerstones of a sound economy -- require the cooperative efforts of both the states and the federal government.''
+ Seth Galanter, a lawyer in Washington who wrote a brief on behalf of former comptrollers, said that the worst case envisioned by federal regulators had not come to pass. While the decision does not block the attorneys general from enforcing state laws, he said, it does require judicial approval to gain access to records. ''Our concern was really the establishment of 50 state supervisory regimes, where states could come in and look at the books whenever they wanted to,'' he said. 
+ The federal regulators had argued that their informal approach worked quietly with banks to address issues like fair lending in a ''prophylactic way'' that protected consumers. 
+ John F. Cooney, a lawyer in Washington who specializes in bank regulation and a former deputy general counsel for litigation and regulatory affairs at the Office of Management and Budget, said that the decision upholds the theme of federalism that has run through several important cases of this just-ended Supreme Court term.
+ He added, however, that the banking decision would now require action by the legislative branch. ''People are going to go to Congress and say, 'You need to give us a functioning principle' to define the boundaries of state and federal law,'' he said. ''The ultimate court of appeal will be Congress.''
+ James E. Tierney, director of the national state attorneys general program at Columbia Law School, said that a line-drawing exercise by Congress was unlikely to put state enforcers on the sidelines again. 
+ In the absence of tough regulation of the banking industry by the federal government, he said, state attorneys general have stepped up to provide consumer protection and to fight discrimination. He called the case ''a stinging defeat for the large banks and federal regulators who have worked for years to stop states from enforcing state consumer protection and antidiscrimination laws.''
+ Senator Patrick J. Leahy, Democrat of Vermont, agreed, calling the decision ''a check against the former Bush administration's attempt to prohibit state law from protecting consumers.''
+
+GRAPHIC: PHOTOS: Justice Antonin Scalia, left, wrote the majority opinion against the banks' position. Justice Clarence Thomas wrote the dissent. (PHOTOGRAPHS BY J. SCOTT APPLEWHITE/ASSOCIATED PRESS
+ LARRY DOWNING/REUTERS) (pg.B6) 
+
+LANGUAGE: ENGLISH
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: BANKING & FINANCE REGULATION (92%); AGENCY RULEMAKING (90%); DECISIONS & RULINGS (90%); LAW COURTS & TRIBUNALS (90%); BANKING & FINANCE AGENCIES (90%); REGULATORY COMPLIANCE (90%); COMMERCIAL BANKING (90%); SUPREME COURTS (90%); BANKING & FINANCE (90%); CONSUMER PROTECTION (90%); SETTLEMENTS & DECISIONS (90%); LITIGATION (90%); FAIR LENDING (90%); CREDIT REGULATION (90%); BANKING LAW (90%); ATTORNEYS GENERAL (89%); US FEDERAL GOVERNMENT (89%); JUSTICE DEPARTMENTS (89%); LAW ENFORCEMENT (89%); GOVERNMENT CONTROLLERS & AUDITORS (78%); HISPANIC AMERICANS (78%); CONSUMER LAW (78%); APPELLATE DECISIONS (78%); SUBPOENAS (78%); LEGISLATION (78%); AFRICAN AMERICANS (78%); MORTGAGE BANKING & FINANCE (77%); BANKING & FINANCE ASSOCIATIONS (77%); APPEALS COURTS (73%); SUITS & CLAIMS (73%); INTEREST RATES (68%); ECONOMIC NEWS (68%); CONSERVATISM (68%); LIBERALISM (68%); MORTGAGE RATES (54%)
+
+COMPANY: JPMORGAN CHASE & CO (91%); CITIGROUP INC (90%); WELLS FARGO & CO (84%)
+
+ORGANIZATION: OFFICE OF THE COMPTROLLER OF THE CURRENCY (55%)
+
+TICKER: JPM (NYSE) (91%); JPM (LSE) (91%); 8634 (TSE) (91%); C (NYSE) (90%); C (BMV) (90%); 8710 (TSE) (90%); WFC (NYSE) (84%)
+
+INDUSTRY: NAICS551111 OFFICES OF BANK HOLDING COMPANIES (91%); NAICS523999 MISCELLANEOUS FINANCIAL INVESTMENT ACTIVITIES (91%); NAICS522110 COMMERCIAL BANKING (91%); SIC6022 STATE COMMERCIAL BANKS (91%); NAICS523120 SECURITIES BROKERAGE (90%); NAICS522210 CREDIT CARD ISSUING (90%); SIC6712 OFFICES OF BANK HOLDING COMPANIES (84%)
+
+PERSON: ANTONIN SCALIA (89%); ELIOT SPITZER (69%); JOHN PAUL STEVENS (58%); CLARENCE THOMAS (58%); DAVID SOUTER (58%); RUTH BADER GINSBURG (58%)
+
+GEOGRAPHIC: NEW YORK, USA (79%) UNITED STATES (92%)
+
+LOAD-DATE: June 30, 2009
+
+
+
+802 of 808 DOCUMENTS
+
+
+Copyright 2009 The New York Times Company 
+The New York Times
+
+PUB-DATE: June 30, 2009
+Late Edition - Final
+
+SECTION: Section B; Column 0; Business/Financial Desk; ADVERTISING; Pg. 3
+
+LENGTH: 876 words
+
+HEADLINE: Levi's Courts the Young With a Hopeful Call
+
+BYLINE: By STUART ELLIOTT
+
+ BODY:
+GENERATION Y. Generation O (for Obama). Millennials. Echo boomers. Call them what you will, the tens of millions of Americans in their teens and 20s compose a market as hard for advertisers to figure out as it is alluring and lucrative.
+ Along comes Levi Strauss & Company with a campaign for its flagship Levi's brand, hoping to appeal to those younger consumers with an ambitious call to arms: ''Go forth.'' 
+ The campaign, which begins Wednesday, will include commercials on television, online and in movie theaters; print advertisements; outdoor and transit signs and posters; social media sites like Facebook; event marketing; and a contest on a section of the brand's own Web site (levi.com/goforth).
+ The campaign is meant to buff the image of the Levi's brand as much as sell products like 501 button-fly jeans. The hope is that ''Go forth'' will resonate with young America today the same way that campaigns like ''501 blues'' and ''501 U.S.A.'' successfully appealed to a generation two decades ago.
+ The ''Go forth'' campaign is replete with Americana imagery, in keeping with research indicating that teenagers and 20-somethings are patriotic and optimistic about the United States. Those elements include the poetry of Walt Whitman, flags, paeans to the pioneering spirit, declarations of independence, salutes to hard work and, in the star-spangled tradition of Madison Avenue, copious amounts of nubile flesh.
+ The campaign is the first work for the Levi's brand from Wieden & Kennedy in Portland, Ore. In December, the agency became the brand's creative agency in the United States, where Levi Strauss spends about $80 million a year on advertising. The assignment had previously been handled by the New York office of Bartle Bogle Hegarty; other offices of Bartle Bogle continue to create campaigns for Levi's in markets like Europe.
+ The approach of the campaign demonstrates the growing interest among marketers in presenting their products to hard-pressed consumers as genuine enough to merit purchasing during a recession.
+ The goal is to deliver ''the authenticity, and the price, the customer wants,'' said Wally Olins, chairman of Saffron, a corporate image and brand consulting company.
+ ''A brand is worth what you pay for it,'' he added.
+ At Levi Strauss, based in San Francisco, Doug Sweeny, vice president for Levi's brand marketing, said the battle cry was to determine ''how do we connect this 150-year-old brand with what is happening in the youth culture today.''
+ The answer, Mr. Sweeny said, was to invoke the heritage of the brand, which dates to the California gold rush, by describing 501 jeans as ''the uniform of common sense,'' while celebrating the images and voices of contemporary youth.
+ The target audience for the campaign is young men ages 18 to 34, he added, with ''the sweet spot the 22-year-old guys getting their first jobs out of college'' -- or not getting those jobs, because of the economy.
+ ''They're realists; they understand the challenge,'' Mr. Sweeny said of young Americans now. ''They're optimistic about the future, they can project forward,'' he added. ''We found that really powerful and tried to evoke it in the campaign.''
+ For example, ads scheduled to run this week in newspapers -- alongside or near reprints of the Declaration of Independence for the Fourth of July -- will echo the style of help-wanted classifieds in seeking ''independent minds for a small writing project with long-term publishing possibilities.''
+ ''Must have talent for revolutionary thinking,'' the ads continue. ''Rabble-rousing experience a plus.''
+ On the Levi's Web site, young computer users will be asked to ''take up your pen, you general of the new revolution'' and contribute to ''the New Declaration of the United States of America.''
+ Print ads will show a young man, clad only in a pair of Levi's, running into the surf under the words ''Strike up for the new world.'' 
+ And the contest that is part of the campaign is called The New Americans: A Portrait of a Country. Consumers will be invited to upload ''Your words. Your pictures. Your stories of today's America.''
+ Wieden & Kennedy was selected for the assignment, Mr. Sweeny said, because of its ''track record for tapping into'' popular culture for brands aimed at younger consumers like Nike.
+ The campaign ought to ''put us back on the road to creating groundbreaking work,'' he added.
+ There is another tricky task that confronts the agency, described by Tyler Whisnand, creative director on the Levi's account, as having the campaign come across as confident without ''making ourselves sound too proud.''
+ The balancing act is achieved by grounding the ads in ''a utilitarian and humble place,'' Mr. Whisnand said, reflecting how the Levi's brand is ''not superexpensive jeans'' so it can address issues like ''reinstilling the American work ethic.''
+ That is seen in ads featuring phrases like ''Will work for better times,'' ''501. When there is work to be done'' and ''Tough as your spirit,'' as well as those saluting 501 jeans as ''the uniform of common sense.''
+ The first two commercials are from two young directors, M. Blash and Cary Fukunaga. The print and outdoor ads were shot by the young photographer Ryan McGinley. 
+
+GRAPHIC: PHOTOS: Ads in the ''Go forth'' campaign aim to lift the Levi's brand, particularly in the eyes of young men.
+ Phrases in the print ads suggest an aesthetic grounded in common sense during tough times. 
+
+LANGUAGE: ENGLISH
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: GENERATION Y (93%); YOUTH MARKET (90%); MARKETING & ADVERTISING (90%); ADOLESCENTS (90%); BRANDING (89%); MARKETING & ADVERTISING AGENCIES (89%); TEENS MARKET (89%); SOCIAL MEDIA (75%); GRAPHIC DESIGN SERVICES (75%); INTERNET SOCIAL NETWORKING (75%); TELEVISION ADVERTISING (72%); BRAND EQUITY (71%); EVENT MARKETING (71%); POETRY (65%)
+
+COMPANY: LEVI'S BRAND (94%); LEVI STRAUSS & CO (85%); FACEBOOK INC (57%)
+
+TICKER: FB (NASDAQ) (57%)
+
+INDUSTRY: NAICS448140 FAMILY CLOTHING STORES (94%); SIC5651 FAMILY CLOTHING STORES (94%); NAICS315220 MEN'S & BOYS' CUT & SEW APPAREL MANUFACTURING (85%); SIC2325 MEN'S & BOYS' SEPARATE TROUSERS & SLACKS (85%); NAICS519130 INTERNET PUBLISHING & BROADCASTING & WEB SEARCH PORTALS (57%)
+
+PERSON: BARACK OBAMA (73%)
+
+GEOGRAPHIC: PORTLAND, OR, USA (79%); SAN FRANCISCO, CA, USA (79%) CALIFORNIA, USA (92%); OREGON, USA (79%) UNITED STATES (95%)
+
+LOAD-DATE: June 30, 2009
+
+
+
+803 of 808 DOCUMENTS
+
+
+Copyright 2009 The New York Times Company 
+The New York Times
+
+PUB-DATE: June 30, 2009
+Late Edition - Final
+
+SECTION: Section A; Column 0; Foreign Desk; Pg. 8
+
+LENGTH: 935 words
+
+HEADLINE: As Iraq Stabilizes, China Eyes Its Oil Fields
+
+BYLINE: By KEITH BRADSHER
+
+DATELINE: HONG KONG 
+
+ BODY:
+As the world's second-largest and fastest-growing consumer of oil, China is showing increasing interest in oil fields in a country that has until very recently seemed to be firmly in the American sphere of influence for natural resources: Iraq.
+ Chinese oil companies are expected to bid for the rights to develop Iraq's oil fields in auctions that are set to start Tuesday, although Sinopec, the China National Petroleum Corporation and the China National Offshore Oil Corporation all declined to comment Monday about their bidding strategies. 
+ In another sign of China's interest in Iraqi oil fields, Sinopec, China's refining giant, offered $7.22 billion on Wednesday to buy Addax Petroleum, a Swiss-Canadian company with operations in the Kurdistan region of Iraq and in West Africa. If Addax's shareholders and Canadian regulators approve the deal, which Addax's board is recommending, it would be China's largest overseas energy acquisition.
+ And Sinopec's archrival, the China National Petroleum Corporation, or C.N.P.C., started drilling in spring in the Ahdab oil field in southeastern Iraq.
+ After six years of war, few Americans or Iraqis may have expected China to emerge as one of the winners in Iraqi oil. But signs of stability in Iraq this year, and a planned American military pullout from Iraqi cities on Tuesday, just happen to coincide with an aggressive Chinese push to buy or develop overseas oil fields.
+ The Chinese companies ''have been interested in Iraq,'' said David Zweig, a specialist in Chinese natural resource policies at the Hong Kong University of Science and Technology. ''They were interested in Iraq before the war, and now that things have improved somewhat there, it's on their agenda.''
+ China's leaders were surprised by the steep rise in commodity prices early last year, which exposed the vulnerability of their country's huge manufacturing sector to high raw material prices. When oil prices plunged in autumn, China began buying, importing and storing oil in huge quantities, helping to drive a partial rebound in world oil prices in spring. And China stepped up its hunt to acquire foreign oil.
+ Chinese officials, economists and advisers have been almost unanimous in recent weeks in saying that their country needed to invest more in natural resources, while also voicing concerns about the long-term creditworthiness of the United States and the buying power of the dollar. China has $2 trillion in foreign exchange reserves, mostly invested in dollar-denominated bonds, and has been looking for ways to diversify gradually into other assets like commodities, said a Chinese government adviser who spoke on the condition of anonymity because of the secrecy of Chinese reserve policies.
+ China's central bank, the People's Bank of China, called Friday for the development of an international currency other than the dollar that would be a safe repository of value, in the latest sign of China's search for other ways to invest its international reserves.
+ Philip Andrews-Speed, a specialist in China's oil industry at the University of Dundee in Scotland, said Iraq was clearly attractive for China and its oil industry.
+ ''All, or nearly all, oil companies who have the courage want to be in Iraq because of the large size of the proven resource base and the potential for new discoveries,'' he wrote in an e-mail message. ''So, in this respect, the Chinese are part of the herd.''
+ Chinese oil companies have been particularly interested in buying oil fields ever since crude oil prices plunged late last summer, because that dragged down the cost of oil fields as well, Mr. Andrews-Speed wrote. And with their experience in some of the most turbulent countries in Africa, Chinese oil companies may have the ability to cope with the unpredictability of Iraq.
+ ''They may be no more competent at managing these risks than other companies, but they do seem to be prepared to accept a higher level of risk,'' he wrote, citing China's willingness to do business in Sudan.
+ Driving China's interest is the country's voracious thirst for oil. As recently as the early 1990s, China was a net exporter of oil because of production mainly from aging oil fields in the northeastern corner of the country.
+ But China's oil consumption has soared since then, thanks to an economic boom and climbing car sales that have produced traffic jams in big cities. China surpassed the United States this year as the world's largest car market, partly because China has weathered the global economic downturn better than the United States; China's oil consumption reached 8 million barrels per day last year, up from 4.9 million in 2001, according to a statistical review from BP, the British oil company.
+ Oil production has grown much more slowly, as older oil fields have run dry. New fields, either offshore or in western China, have barely replaced them. China produced 3.8 million barrels per day of oil last year, up from 3.3 million barrels per day in 2001, which still left the country dependent on imports for more than half its oil.
+ Iraq has the world's third-largest proven reserves, after Saudi Arabia and Iran. Many geologists say that the true oil resources of Iraq are even greater than official statistics suggest, because Iraq's oil industry has suffered from decades of disruption and underinvestment. Many oil fields have not been fully explored as a result.
+ Addax has oil licenses in two oil fields in northern Iraq, the Taqtaq and Sangaw North fields, both near Kirkuk, and its drilling has already struck large quantities of oil repeatedly in the Taqtaq field.
+
+LANGUAGE: ENGLISH
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: OIL & GAS INDUSTRY (93%); PETROLEUM PRODUCTS (90%); TRANSPORTATION SUPPORT SERVICES (90%); OIL EXTRACTION (90%); NATURAL RESOURCES (89%); OIL & GAS PRICES (89%); CURRENCIES (83%); IMPORT TRADE (78%); CRUDE OIL & NATURAL GAS EXTRACTION (78%); PRICE INCREASES (78%); OIL & GAS EXTRACTION (78%); AUCTIONS (77%); SHAREHOLDERS (76%); BONDS (73%); APPROVALS (72%); BANKING IN CHINA (69%); CRUDE OIL MARKETS (67%); CENTRAL BANKS (63%); GOLD & FOREIGN EXCHANGE RESERVES (63%); MANUFACTURING OUTPUT (50%)
+
+COMPANY: CHINA PETROLEUM & CHEMICAL CORP (92%); CHINA NATIONAL PETROLEUM CORP (91%); PEOPLE'S BANK OF CHINA (85%); CHINA NATIONAL OFFSHORE OIL CORP (71%); CHINA PETROCHEMICAL CORP (58%)
+
+TICKER: SNP (NYSE) (92%); SNP (LSE) (92%); 0386 (HKSE) (92%)
+
+INDUSTRY: NAICS211111 CRUDE PETROLEUM & NATURAL GAS EXTRACTION (92%); NAICS324110 PETROLEUM REFINERIES (92%); SIC2911 PETROLEUM REFINERIES (92%); NAICS213112 SUPPORT ACTIVITIES FOR OIL & GAS OPERATIONS (91%); SIC1389 OIL & GAS FIELD SERVICES, NEC (91%); NAICS211112 NATURAL GAS LIQUID EXTRACTION (71%); NAICS551112 OFFICES OF OTHER HOLDING COMPANIES (58%); NAICS325110 PETROCHEMICAL MANUFACTURING (58%); SIC2869 INDUSTRIAL ORGANIC CHEMICALS, NEC (58%); SIC1311 CRUDE PETROLEUM & NATURAL GAS (58%)
+
+GEOGRAPHIC: CHINA (97%); IRAQ (95%); UNITED STATES (94%); HONG KONG (92%); NORTH AMERICA (79%); WESTERN AFRICA (79%); AFRICA (79%)
+
+LOAD-DATE: June 30, 2009
+
+
+
+804 of 808 DOCUMENTS
+
+
+Copyright 2009 The New York Times Company 
+The New York Times
+
+PUB-DATE: June 30, 2009
+Late Edition - Final
+
+SECTION: Section A; Column 0; Metropolitan Desk; Pg. 2
+
+LENGTH: 746 words
+
+HEADLINE: Inside the Times
+
+ BODY:
+International
+ RUSSIA BEGINS WAR GAMES 
+ Near Georgia Border
+ Russian military forces began large-scale war games in the Caucasus region, not far from the Georgian border, raising tensions between the countries less than a year after they went to war. PAGE A4
+ IRAN CERTIFIES VOTE 
+ Iran's powerful Guardian Council touched off scattered protests in Tehran when it formally certified the election of President Mahmoud Ahmadinejad to a second four-year term Monday night, saying there was no validity to charges of voting fraud. PAGE A4
+ RACIAL PROFILING IN FRANCE
+ The Paris police stop young Arab and black men for identity checks far more often than they stop young whites, according to a study to be published Tuesday, lending substance to widespread accusations of racial profiling. PAGE A6
+ Russian Accuses U.S. Agents A6 
+ China to Bid on Iraqi Oil Fields A6 
+ National
+ OBAMA DEFENDS POLICIES
+ On Gay Rights
+ President Obama defended his policies on gay rights, telling an audience of gays and lesbians that he remains committed to overturning the military's ''don't ask, don't tell'' rule and that he expects to be judged ''not by promises I've made, but by the promises that my administration keeps.'' PAGE A14
+ LOWERING LOAN PAYMENTS
+ The federal Education Department will begin offering a repayment plan that lets graduates reduce their loan payments based on their income. PAGE A14
+ New York
+ 3 MEN IN QUEENS
+ Die in Toxic Well
+ Three workers at a waste transfer station in Queens were overcome by toxic fumes and plunged to their deaths into the 18-foot-deep well they were trying to vacuum, fire officials said. PAGE A15
+ Business
+ BANKER SAYS HE TOOK 
+ Millions, Undetected
+ The case of Hernan E. Arbizu, whose banking career exploded when a Chase customer discovered that he took millions of dollars from his clients, offers a rare window into this well-shielded world, and raises questions about how carefully some of its largest institutions monitor their bankers. PAGE B1
+ NEW PLANE SAFETY STANDARDS
+ Starting this fall, all new airplanes will be required to have seats that will stay in place when subjected to stresses up to 16 times the force of gravity. And, in a safety measure borrowed from automobiles, some seats will be equipped with air bags. PAGE B1 
+ PORSCHE REJECTS DEAL
+ Porsche rebuffed Volkswagen's proposed purchase of 49 percent of the sports car maker as part of a merger, saying a sale of the unit would incur a financial penalty that rendered the deal impractical. PAGE B2
+ APPLE CHIEF RETURNS
+ Steven P. Jobs, Apple's co-founder and chief executive, officially returned to work after a five-month medical leave. But for some investors, the issues raised by Apple's secrecy about Mr. Jobs's health problems and liver transplant are likely to linger. PAGE B3
+ Sports
+ Making It Look Easy
+ Since '96
+ Mariano Rivera was once an inconsistent young pitching prospect. But at 39, he continues his long tenure as baseball's most dominant closer, and fellow Yankee Derek Jeter said he was the best player he has ever played with. PAGE B9
+ DONOVAN'S PROFILE RISES
+ Despite Sunday's aching 3-2 defeat the United States gained confidence that it can challenge the world's best teams, and in the case of No. 1-ranked Spain, sometimes beat them. And individually, Landon Donovan demonstrated that he, too, belongs among the international elite. PAGE B9
+ PRIVACY LAW IN QUESTION
+ Universities that deny requests for records about athletes may be interpreting too broadly a federal education law that protects the privacy of students' academic records, a federal official said. PAGE B11
+ Arts
+ A MEDITATION ON LOVE 
+ And Censorship In Iran
+ Michiko Kakutani writes that ''Censoring an Iranian Love Story'' by Shahriar Mandanipour is both a novel about two young Iranians engaged in a covert romance and a meditation on the interplay of life and art, reality and fiction. PAGE C1
+ A MATURING STAR OF JAZZ
+ Nate Chinen writes that the jazz singer Esperanza Spalding carried herself like a worldbeater during her performance at Central Park SummerStage on Sunday, and resistance was largely futile. PAGE C5
+ Science Times
+ CONSUMER HAPPINESS
+ At Any Price?
+ Two behavioral economists who wanted to study whether people really sought maximum economic utility, tested a question: Would diners choose different items from a menu if the prices of those items changed? John Tierney, Findings. PAGE D1
+ Op-ed
+ DAVID BROOKS PAGE A19
+ BOB HERBERT PAGE A19
+
+LANGUAGE: ENGLISH
+
+DOCUMENT-TYPE: Summary
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: POLICE MISCONDUCT (90%); CIVIL RIGHTS (90%); RACIAL PROFILING (90%); GAYS & LESBIANS (90%); ELECTION MONITORING (77%); EXECUTIVES (76%); US PRESIDENTS (76%); RACE & RACISM (75%); MEN (75%); LGBT RIGHTS (73%); ELECTION FRAUD (71%); WORKPLACE HEALTH & SAFETY (69%); FINES & PENALTIES (68%); VEHICLE AIRBAGS (65%); MOTOR VEHICLE SAFETY EQUIPMENT (65%); MOTOR VEHICLES (64%); AUTOMOBILE MFG (60%); STANDARDS & MEASUREMENTS (60%); AUTOMAKERS (60%); AUTOMOTIVE MFG (60%); TRANSPLANT SURGERY (50%); EDUCATION DEPARTMENTS (50%)
+
+COMPANY: APPLE INC (81%)
+
+ORGANIZATION: US DEPARTMENT OF EDUCATION (54%)
+
+TICKER: AAPL (NASDAQ) (81%)
+
+INDUSTRY: NAICS423430 COMPUTER & COMPUTER PERIPHERAL EQUIPMENT & SOFTWARE MERCHANT WHOLESALERS (81%); NAICS334112 COMPUTER STORAGE DEVICE MANUFACTURING (81%); NAICS334111 ELECTRONIC COMPUTER MANUFACTURING (81%); SIC5045 COMPUTERS & COMPUTER PERIPHERAL EQUIPMENT & SOFTWARE (81%); SIC3572 COMPUTER STORAGE DEVICES (81%); SIC3571 ELECTRONIC COMPUTERS (81%)
+
+PERSON: BARACK OBAMA (71%); STEVEN JOBS (60%); MAHMOUD AHMADINEJAD (57%)
+
+GEOGRAPHIC: TEHRAN, IRAN, ISLAMIC REPUBLIC OF (92%); PARIS, FRANCE (57%) NEW YORK, USA (79%) IRAN, ISLAMIC REPUBLIC OF (95%); RUSSIAN FEDERATION (94%); IRAN (92%); CAUCASIAN STATES (92%); GEORGIA (92%); FRANCE (79%); UNITED STATES (79%)
+
+LOAD-DATE: June 30, 2009
+
+
+
+805 of 808 DOCUMENTS
+
+
+Copyright 2009 The New York Times Company 
+The New York Times
+
+PUB-DATE: June 30, 2009
+Late Edition - Final
+
+SECTION: Section A; Column 0; Editorial Desk; EDITORIAL; Pg. 20
+
+LENGTH: 1949 words
+
+HEADLINE: The First Deadline
+
+ BODY:
+After six bloody, ruinously costly years, there is an end in sight to the American occupation of Iraq. Under an agreement with the Baghdad government, American combat troops are to leave Iraq's cities by Tuesday. President Obama has pledged that by Aug. 31, 2010 -- 14 months from now -- all combat troops will be out of Iraq and by the end of 2011 all American troops will be gone.
+ For a badly overstretched American military it will certainly be time to go. Repeated deployments have taken a huge toll on soldiers and their families. The Iraq war -- an unnecessary war -- has diverted critically needed resources away from Afghanistan, the real front in the war on terrorism. Many Iraqis are eager to see the Americans gone. Prime Minister Nuri Kamal al-Maliki has declared June 30 to be a day of ''feast and festivals.''
+ But there is an enormous amount to do -- and not a lot of time -- to help Iraqis prepare for the withdrawal and to reduce the chances the country will unravel as American troops leave. 
+ We once hoped that a clear timetable for an American withdrawal would finally persuade Iraq's leaders to make the political compromises that are the only way to hold their country together without an indefinite occupation. That has not happened. The Parliament has still not passed a law to divide Iraq's oil resources equitably. 
+ Indeed there are worrying signs that Iraqi politicians are doing the opposite -- looking for ways to shore up their communal interests in case the civil war reignites. Many of Iraq's neighbors are making the same calculations. Violence is down, but extremists are still trying to spark a new cycle of attacks and retaliation. In June, more than 300 Iraqis and 10 Americans were killed.
+ Mr. Obama was right to commit to a carefully paced and responsible withdrawal, and he was right to say that the United States cannot solve all of Iraq's problems before it leaves. But we are concerned that Iraq may not be getting all the attention it needs in Washington. 
+ The top American military commander in Iraq, Gen. Ray Odierno, is a strong leader, and Christopher Hill, the new American ambassador in Baghdad, is a talented diplomat. Still, Mr. Obama has a high-level adviser for Afghanistan and Pakistan, for Middle East peace negotiations, and for Iran, but there is no marquee name for Iraq to ensure that the president and the bureaucracy are fully engaged. 
+ We understand that for political reasons, in both countries, the United States cannot be seen to micro-manage events. But there are still many problems that need sustained and high-level American attention.
+ Iraqi Readiness Until a few weeks ago, American commanders were hoping that Iraq's government would invite them to keep combat troops in certain Baghdad neighborhoods and in the northern city of Mosul, where sectarian tensions are high and Al Qaeda in Mesopotamia is still active. It didn't, and Washington decided not to insist, given Iraqis' sensitivities.
+ Most analysts give the American military training program good marks. They differ on whether Iraq's army -- still plagued by corruption, discipline problems, equipment shortages and security breaches -- is ready to keep the peace in the cities. The police force and the interior ministry need even more work. 
+ A January report to Congress by the Pentagon said that as of last fall, 17 of the Iraq Army's 174 combat battalions were capable of conducting counterinsurgency operations without American support. All of Iraq's army is dependent on the American military for intelligence, logistics and air support.
+ For now American troops -- there are 130,000 in Iraq -- are not going far. Baghdad's sprawling Camp Victory has been designated as outside of the city limits, although it is just a 10-minute helicopter ride from the Green Zone. 
+ Before American troops can really go, Iraq's Army will need to develop enough of those missing capacities to be able to fight on its own. The United States is also going to have to help Iraq build an air force and a navy so it can defend its own borders -- an effort that will stretch far beyond the 2011 withdrawal deadline. 
+ Iraq is in a dangerous neighborhood, but it also has its own history of menacing its neighbors. Washington is going to have to decide how much firepower it is willing to sell Iraq, knowing that Baghdad can buy elsewhere. 
+ Sunni Anger Iraq is still awash in bitter resentments and the Sunni minority, which once dominated the country, is particularly resentful of the Shiite-dominated government. Areas with large Sunni populations are short-changed on services. Baghdad has not carried out a law allowing former members of the Baath Party to return to their positions or collect pensions.
+ We are particularly concerned about the Iraqi government's cavalier -- or worse -- treatment of the Awakening Councils. Those are the former Sunni insurgents who decided to switch sides, at Washington's urging. Members have complained about delays in being paid. The government has barely made a down payment on its commitment to find jobs for the group's 94,000 members in the security services, ministries or private sector. 
+ Baghdad blames dropping oil prices and a budget squeeze for the employment problems. But keeping these fighters, and their relatives and neighbors, on the government's side should be a top priority. Mr. Maliki has further alienated many Sunnis by ordering the arrest of several council leaders and a few high-profile Sunni politicians. Iraqi officials say the arrests are justified. United States officials need to impress on the prime minister the dangers he is courting.
+ Kurdish Ambition Speaking privately, many American officials say they are even more worried about rising tensions between Arabs and Kurds in northern Iraq. 
+ The disputes are over boundaries, oil and the power of Iraq's central government. The autonomous Kurdish regional government insists that it has a historical claim to towns and villages in three provinces just over the present regional border that were forcibly purged of Kurds and repopulated with Arabs by Saddam Hussein. Since 2003 -- often with Washington's blessing -- the Kurdish government has deployed its militia, the pesh merga, to some of these areas and spent millions of dollars on services in an attempt to assert its control. 
+ Fearing displacement or Kurdish domination, Sunni Arabs have turned to hard-line politicians or extremists, including Al Qaeda in Mesopotamia, to defend their interests. American troops have had to defuse confrontations between government forces and the pesh merga. Tensions are particularly high in Nineveh Province and its capital, Mosul. The Sunnis won the majority on the provincial council in January's election and immediately stripped the Kurdish bloc, which came in second, of all positions and patronage.
+ The most dangerous dispute, however, is over control of the oil-rich, multi-ethnic city of Kirkuk and the surrounding province. In April, the United Nations issued a report with several options for Kirkuk, including making it an autonomous region jointly run by Kurds, Arabs and Turkmens. Washington must press Baghdad and the Kurds to appoint responsible negotiators and urge them not to stake out extreme positions. If an agreement for Kirkuk cannot be reached, all three governments may have to consider outside administration, possibly United Nations-led, for some period. 
+ Refugees One of the war's great tragedies has been the forced flight of an estimated four million Iraqis -- more than one out of 10 -- from their homes. A small number, perhaps 100,000, have begun trickling back; a still smaller number have been permanently resettled abroad.
+ Millions live under extremely difficult conditions. Many are from the former Sunni elite. Others are Shiites whose mixed-population neighborhoods became Sunni during the upheavals of 2006-7. They all need the chance to return safely. Iraq needs their talents. Large numbers of refugees also put dangerous economic and political strains on Iraq's neighbors. 
+ Working out the politics and logistics of whether refugees return to their old homes (now occupied by others) or get new ones will require international aid and advice and enlightened leadership. While waiting for that to happen, millions of people need housing, food and education assistance. Syria and Jordan, which host the largest numbers of refugees, need continued international and American help. The United States needs to take in many more Iraqis, especially those who risked their lives to work with the Americans. 
+ Governing More than anything, Iraq needs competent, inclusive government. To win public loyalties, the government must do a much better job of providing basic services to all Iraqis. With improved security, there has been an encouraging leap in electricity production, although there are still too many interruptions and shortfalls. Clean water is in desperately short supply. 
+ American advisers have been working with Iraqi ministries, but United States officials say they are staggered by the lack of skilled managers and the pervasive corruption. Tackling those problems nationally and regionally must be a top priority. As American troops leave, the Pentagon must continue to provide security so civilian advisers can work throughout the country. 
+ Iraq's politicians also need to show a far greater willingness to address and resolve long-deferred political problems. In February, on the same day he outlined his withdrawal plans, Mr. Obama said '' a lot of the ultimate outcome'' in Iraq would depend on how difficult issues, including the oil law, are resolved. American officials now say that is unlikely to happen any time soon and they will be satisfied if legislators manage to pass a new election law in time for January's national elections. 
+ There are growing concerns that Prime Minister Maliki may be accumulating too much power, undercutting rivals and building a cadre of military and intelligence officers loyal only to him. Washington must make clear that it will not support any power grab and find ways to encourage other political leaders, while dissuading them from making their own power grabs. 
+ Neighbors A stable Iraq is in the clear interest of all of its neighbors. Unfortunately few have seen it that way. Iran and Syria have meddled constantly -- driving up the violence and backing off only when it looked as if the war could spin out of control and over Iraq's borders or the Americans might retaliate. Tehran would still like to control Iraq's Shiite-dominated government. 
+ Meanwhile, many of America's closest regional allies have withheld their support. Egypt's Sunni-led government has only recently named an ambassador to Baghdad. Saudi Arabia's Sunni royal family still has not. 
+ Washington must do a lot more to persuade these allies that their interests would be far better served by building strong diplomatic and economic ties with Iraq. That is the best way to counterbalance Tehran. And with closer ties come more influence and more opportunity to help defend the interests of Iraq's Sunni minority.
+ Relations with Tehran are particularly difficult right now, but at some point the Obama administration will have to renew its offer for dialogue. Iraq's stability will have to be part of those discussions. We assume those discussions are already under way with Damascus. 
+ The United States cannot fix Iraq. That is up to the Iraqis. But in the time left, this country has a responsibility and a strong strategic interest to do its best to help Iraq emerge from this disaster as a functioning, sovereign and reasonably democratic state. 
+
+GRAPHIC: DRAWING 
+
+LANGUAGE: ENGLISH
+
+DOCUMENT-TYPE: Editorial
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: WAR & CONFLICT (90%); ARMED FORCES (90%); EDITORIALS & OPINIONS (90%); IRAQ WAR (90%); PRIME MINISTERS (78%); HEADS OF STATE & GOVERNMENT (78%); US PRESIDENTS (77%); POLITICS (77%); TERRORISM (74%); PEACE PROCESS (73%); MILITARY DEPENDENTS (72%); LEGISLATION (65%); EMBASSIES & CONSULATES (64%)
+
+PERSON: NOURI AL-MALIKI (88%); BARACK OBAMA (77%); RAY ODIERNO (58%)
+
+GEOGRAPHIC: BAGHDAD, IRAQ (90%) UNITED STATES (99%); IRAQ (96%); AFGHANISTAN (92%); IRAN, ISLAMIC REPUBLIC OF (79%); MIDDLE EAST (79%); PAKISTAN (79%)
+
+LOAD-DATE: June 30, 2009
+
+
+
+806 of 808 DOCUMENTS
+
+
+Copyright 2009 The New York Times Company 
+The New York Times
+
+PUB-DATE: June 30, 2009
+Late Edition - Final
+
+SECTION: Section A; Column 0; Foreign Desk; Pg. 9
+
+LENGTH: 1041 words
+
+HEADLINE: Argentine Ex-President Quits as Party Chief After Defeat at Polls
+
+BYLINE: By ALEXEI BARRIONUEVO; Vinod Sreeharsha contributed reporting.
+
+DATELINE: BUENOS AIRES 
+
+ BODY:
+Nestor Kirchner, the former president of Argentina, resigned his post as leader of the Peronist Party on Monday, a day after he and his supporters suffered a crushing defeat in national congressional elections. 
+ The resignation was a stunning admission of defeat for a combative and often stubborn politician who is widely viewed to be deeply involved in running the government led by his wife, President Cristina Fernandez de Kirchner. 
+ Combined with their loss of both houses of Congress, Mr. Kirchner's defeat appears to have dashed any dreams the couple had of extending their political dynasty, and put Argentina's presidency up for grabs in the 2011 elections. 
+ Analysts said the election results on Sunday would restore some balance to Argentine politics and could increase the country's credibility with foreign investors. But they also leave Argentina facing continued uncertainty and potential political instability. The opposition remains fractured and the Kirchners will maintain control of Congress until December. 
+ Argentina is teetering on recession and will struggle next year to make payments on billions of dollars in foreign debt, economists said. ''There is this impending struggle for the Argentine government to make any of its payments and meet its populist promises, while at the same time ensuring the economy can grow,'' said Karen Hooper, a Latin American analyst for Stratfor, a Texas-based global intelligence company.
+ The election became a referendum on the couple's leadership. Mr. Kirchner ran for the lower house of Congress in a bid to resuscitate the flagging administration of his wife, who has struggled to muster more than a 30 percent approval rating in opinion polls since taking over in December 2007.
+ But Mr. Kirchner's gamble to run in Buenos Aires Province, the country's most populated, backfired when he narrowly lost a high-profile race against a millionaire businessman, Francisco de Narvaez, a congressman from a rival faction within the Kirchners' Peronist Party.
+ In the end, not only were the Kirchners swept in the major provinces of Buenos Aires, Cordoba, Santa Fe and Mendoza, but they even lost in Mr. Kirchner's home state, Santa Cruz. Nationally, they won just 29.6 percent of the vote, less than most analysts had predicted.
+ ''Nestor Kirchner just died politically,'' said Elisa Carrio, a longtime opposition leader who ran against Mrs. Kirchner for president in 2007.
+ Mr. Kirchner was replaced as party leader by Daniel Scioli, the governor of Buenos Aires. 
+ Mrs. Kirchner played down the loss in a rare news conference on Monday, saying it meant that she would have to compromise with other parties, a reality she said she was prepared to accept. She also rejected suggestions that she would resign, reminding reporters several times that the defeat was ''in Buenos Aires Province,'' and not necessarily throughout the country, a position seemingly at odds with the nationwide results. 
+ Nor did she plan to shake up her cabinet. Earlier in the day, Health Minister Graciela Ocana resigned over the government's swine flu policies. Mrs. Kirchner said she did not expect any further cabinet changes.
+ The president dismissed the idea that the government needed to reform the official statistics agency, which has been criticized by economists for more than two years for producing unreliable figures on inflation and other indicators.
+ The big winners on Sunday included Carlos Reutemann, the former governor of Santa Fe Province, who split off from the Kirchners to become a dissident Peronist; Julio Cobos, the vice president who defied Mrs. Kirchner by casting a deciding vote against her agricultural tax; and Mauricio Macri, the mayor of Buenos Aires. All three are now strong contenders for president in 2011, analysts said. 
+ The Kirchners' leadership style, which critics describe as authoritarian and erratic, has been blamed for severe capital flight from the country and a sharp decline in foreign investment. Those tendencies, even more than Mrs. Kirchner's controversial moves to nationalize Aerolineas Argentinas, and take over billions of dollars in private pension funds, turned voters against the couple, analysts said.
+ Mr. Kirchner steered the country out of its crushing economic crisis of 2001 at a time when his tough talk and stubbornness, like refusing to negotiate with bondholders over billions of dollars in debt, played well with Argentines, who were yearning for a strong leader. 
+ Mrs. Kirchner vowed to continue her husband's economic policies while looking to heal the rift with the opposition and open Argentina to foreign investment and a more prominent global role. But she soon became embroiled in a protracted battle with farmers over higher taxes on agricultural exports. The conflict ''revealed the government's inability to make an agreement,'' said Graciela Romer, a political analyst here. ''Her frustration in not being able to achieve her goals exaggerated her authoritarian personality traits.''
+ The farm crisis also appeared to have benefited opposition parties in Congress on Sunday. ''The people showed they want a Congress that debates more, that finds a way to reach consensus,'' Mr. Reutemann said.
+ The Kirchners also did poorly in what had been considered their base, the poorer areas ringing the city of Buenos Aires where Mr. Kirchner spent much of his time campaigning. In all but a few towns in the area, they failed to capture a majority. 
+ They tried to fill the void by forcing dozens of politicians, including Governor Scioli, to support their ticket as ''testimonial candidates,'' in effect window dressing for the Kirchners' slate. On Monday, Mr. Scioli became the first such candidate to announce he would not assume a spot in Congress despite having won a seat. Instead, he will remain governor, he said, to help strengthen the Peronist Party.
+ In an interview last Wednesday, Mr. Scioli said more state intervention in the economy may be needed. But he said making peace with farmers should be the government's first priority after the election.
+ ''We need to heal the scars we have with rural areas, through dialogue,'' he said, ''leaving behind the rhetoric and once and for all discussing the issue rationally.''
+
+GRAPHIC: PHOTO: The president of Argentina, Cristina Fernandez de Kirchner, during a news conference in Buenos Aires on Monday.(PHOTOGRAPH BY NATACHA PISARENKO/ASSOCIATED PRESS) 
+
+LANGUAGE: ENGLISH
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: LEGISLATIVE BODIES (90%); US FEDERAL ELECTIONS (90%); CAMPAIGNS & ELECTIONS (90%); ELECTIONS (90%); RESIGNATIONS (90%); POLITICS (89%); INDUSTRY ANALYSTS (89%); VOTERS & VOTING (78%); PUBLIC DEBT (77%); POLLS & SURVEYS (75%); BUSINESS FORECASTS (74%); RECESSION (74%); ECONOMIC NEWS (74%); REFERENDUMS (72%); EXTERNAL DEBT (69%); ECONOMIC GROWTH (69%); MULTINATIONAL CORPORATIONS (68%); FOREIGN INVESTMENT (68%); WEALTHY PEOPLE (67%); PRESS CONFERENCES (60%)
+
+PERSON: CRISTINA FERNANDEZ DE KIRCHNER (90%); NESTOR KIRCHNER (90%)
+
+GEOGRAPHIC: BUENOS AIRES, ARGENTINA (94%) TEXAS, USA (79%) ARGENTINA (96%); UNITED STATES (79%); LATIN AMERICA (79%)
+
+LOAD-DATE: June 30, 2009
+
+
+
+807 of 808 DOCUMENTS
+
+
+Copyright 2009 The New York Times Company 
+The New York Times
+
+PUB-DATE: June 30, 2009
+Late Edition - Final
+
+SECTION: Section B; Column 0; Business/Financial Desk; Pg. 3
+
+LENGTH: 386 words
+
+HEADLINE: Obama Toughens Rules for Some Lighting
+
+BYLINE: By KATE GALBRAITH
+
+ BODY:
+President Obama announced tougher energy efficiency requirements for certain types of fluorescent and incandescent lighting on Monday, the latest step in the administration's push to cut the country's energy use. 
+ The new rule , scheduled to take effect in 2012, will cut the amount of electricity used by affected lamps by 15 to 25 percent and save $1 billion to $4 billion a year for consumers, the White House said. 
+ ''Now I know light bulbs may not seem sexy,'' Mr. Obama said, ''but this simple action holds enormous promise because 7 percent of all the energy consumed in America is used to light our homes and our businesses.''
+ Of the two types of lighting covered by Monday's announcement, the most important is ''general service fluorescent lamps,'' which commonly take the form of tubular office lights (but do not include the squiggly compact fluorescents commonly found in home lamps). 
+ The other type of lighting covered by the new rule is incandescent reflector lamps; these cone-shaped fixtures can often be found in track lighting.
+ ''We believe this will be the biggest efficiency savings from any appliance standard ever,'' said Steven Nadel, executive director of the American Council for an Energy-Efficient Economy, an advocacy organization.
+ The Energy Department has not updated the efficiency requirements for these lighting types since they were established by Congress in 1992. The department was supposed to update the requirement in 1997, according to Mr. Nadel, but it fell well behind on this and other appliance standards. In 2006 a federal court settlement required the department to move expeditiously to clear its backlog.
+ A broader push is under way to make lighting more efficient, aided by improving technologies. A 2007 energy bill mandated stronger efficiency requirements for the pear-shaped incandescent bulbs commonly found in homes. New efficiency requirements for two more types of lighting, floor and table lamps and outdoor lighting fixtures, are under consideration in Congress.
+ Susan Bloom, a spokeswoman for Philips, a major lighting manufacturer, said that her team was still combing through the lengthy document, but strongly supported the Energy Department's efforts. ''We're all about helping to increase energy efficiency standards for lighting,'' she said.
+
+LANGUAGE: ENGLISH
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: AGENCY RULEMAKING (90%); ENERGY EFFICIENCY & CONSERVATION (90%); ENERGY DEVELOPMENT PROGRAMS (90%); ENERGY DEPARTMENTS (89%); ENERGY REGULATION (89%); US PRESIDENTS (79%); LIGHTING EQUIPMENT MFG (78%); EXECUTIVES (74%); NATURAL GAS & ELECTRIC UTILITIES (73%); SETTLEMENT & COMPROMISE (50%)
+
+PERSON: BARACK OBAMA (90%)
+
+GEOGRAPHIC: UNITED STATES (92%)
+
+LOAD-DATE: June 30, 2009
+
+
+
+808 of 808 DOCUMENTS
+
+
+Copyright 2009 The New York Times Company 
+The New York Times
+
+PUB-DATE: June 30, 2009
+Late Edition - Final
+
+SECTION: Section A; Column 0; Editorial Desk; OP-ED COLUMNIST; Pg. 21
+
+LENGTH: 821 words
+
+HEADLINE: Vince Lombardi Politics
+
+BYLINE: By DAVID BROOKS
+
+ BODY:
+Freud said we're forever changed by the traumas of our youth, and so it is with the Democrats and Clintoncare. Even as you watch the leading Democrats today in their moment of glory, you can still see wounds caused by the defeat of the Clinton health care initiative. You see the psychic reactions and the scars and the lessons they have taken away so that sort of debacle never happens again. 
+ The first lesson they have learned is that domestic policy making should never be dictated from the White House. The Clinton health initiative was hatched in the executive branch and unleashed on Congress. So the Obama administration is doing the opposite, handing Congress working control of every major piece of legislation. 
+ Congress wrote the stimulus package. Congress wrote the cap-and-trade bill. Congress is writing the health care bill. The House and Senate chairmen make more decisions on these issues than anybody on the other end of Pennsylvania Avenue. 
+ Second, Democrats learned never to go to war against the combined forces of corporate America. Today, whether it is on the stimulus, on health care or any other issue, the Obama administration and the Congressional leadership go out of their way to court corporate interests, to win corporate support and to at least divide corporate opposition.
+ Third, the Clintoncare collapse and the ensuing decade in the wilderness drove home the costs of failure. This has produced a Vince Lombardi attitude toward winning. There are limits, of course, but leaders in Congress and in the administration seem open to nearly any idea so long as it will lead to passing legislation. On health care, the administration would like a strong public plan, but it is evidently open to a weak one. It is on record against taxing health benefits, but it is clearly willing to tax them. It will do what it takes to pass a bill.
+ All of this has produced a ruthlessly pragmatic victory machine. Last week Democrats were able to pass a politically treacherous cap-and-trade bill out of the House. The Democratic leaders were able to let 44 members vote no and still bribe/bully/cajole enough of their colleagues to get a win. This was an impressive achievement, and a harbinger for health care and other battles to come. 
+ But the new approach comes with its own shortcomings. To understand them, we have to distinguish between two types of pragmatism. There is legislative pragmatism -- writing bills that can pass. Then there is policy pragmatism -- creating programs that work. These two pragmatisms are in tension, and in their current frame of mind, Democrats often put the former before the latter.
+ On the stimulus bill, the Democratic committee chairmen wrote a sprawling bill that incorporated the diverse wishes of hundreds of members and interest groups. But as they did so, the bill had less and less to do with stimulus. Only about 40 percent of the money in the bill was truly stimulative, and that money was not designed to be spent quickly. For example, according to the Congressional Budget Office, only 11 percent of the discretionary spending in the stimulus will be disbursed by the end of the fiscal year. The bill passed, but it is not doing much to create jobs this year and it will not do nearly as much as it could to create jobs in 2010.
+ On cap and trade, the House chairmen took a relatively clean though politically difficult idea -- auctioning off pollution permits -- and they transformed it into a morass of corporate giveaways that make the stimulus bill look parsimonious. Permits would now be given to well-connected companies. Utilities and agribusiness would be rolling in government-generated profits. Thousands of goodies were thrown into the 1,201-page bill to win votes. 
+ The bill passed the House, but would it actually reduce emissions? It's impossible to know. It contains so many complex market interventions that only a fantasist could confidently predict its effects. A few years ago the European Union passed a cap-and-trade system, but because it was so shot through with special interest caveats, emissions actually rose.
+ On health care, too, the complicated job of getting a bill that can pass is taking priority over the complicated task of creating a program that can work. Dozens of different ideas are being added, watered down or merged together in order to cobble together a majority. But will the logrolling produce a sustainable health system that controls costs and actually hangs together?
+ The great paradox of the age is that Barack Obama, the most riveting of recent presidents, is leading us into an era of Congressional dominance. And Congressional governance is a haven for special interest pleading and venal logrolling.
+ When the executive branch is dominant you often get coherent proposals that may not pass. When Congress is dominant, as now, you get politically viable mishmashes that don't necessarily make sense.
+
+LANGUAGE: ENGLISH
+
+DOCUMENT-TYPE: Op-Ed
+
+PUBLICATION-TYPE: Newspaper
+
+SUBJECT: HEALTH CARE POLICY (90%); US PRESIDENTS (90%); HEALTH CARE LAW (90%); US DEMOCRATIC PARTY (90%); EDITORIALS & OPINIONS (90%); POLITICAL PARTIES (89%); US ECONOMIC STIMULUS PLAN 2008-2009 (89%); LEGISLATION (89%); POLITICS (88%); PUBLIC POLICY (77%); WOUNDS & INJURIES (77%); LEGISLATIVE BODIES (75%)
+
+PERSON: BARACK OBAMA (73%)
+
+GEOGRAPHIC: UNITED STATES (79%)
+
+LOAD-DATE: June 30, 2009
+
+ 
