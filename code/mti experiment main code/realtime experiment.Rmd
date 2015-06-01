@@ -7,9 +7,9 @@ output: html_document
 
 ```{r}
 DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
-DirCode='h:/Git/zeit-2'
+# DirCode='h:/Git/zeit-2'
 
-# sourcing necassary scripts for estimation and forecast (for a description see "olsbmalag.Rmd")
+# sourcing necessary scripts for estimation and forecast (for a description see "olsbmalag.Rmd")
 auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')
 source(paste(auxcodedir,'/lag.exact.R',sep=''))
 source(paste(auxcodedir,'/diff.R',sep=''))
@@ -27,7 +27,7 @@ library('BMS')
 # are only lagged.
 zeitraus=0 # disregard zeit and rword indicator
 target='IP' # core inflation
-ic='bic' 
+ic='aic' 
 disregard='IP.CONST'# a variable that is a nearly perfect substitute for target.
 max.lag=12 # maximum lag length to be considered 
 max.obs=-1 # maximum number of past observations to be considered (rolling estimation);
@@ -284,14 +284,14 @@ for (horizon in 1:15){# horizon=1
                 
                 }
         if (max.obs<0){
-                write.csv(lassm,paste(DirCode,'/results/rec_elanet_ranking',target,'_h',horizon,'.csv',sep=''))
+                write.csv(lassm,paste(DirCode,'/results/rec_elanet_ranking',ic,target,'_h',horizon,'.csv',sep=''))
                 
-                save(forecast.all,file=paste(DirCode,'/results/rec_',target,'_h',horizon,'.RData',sep=''))
+                save(forecast.all,file=paste(DirCode,'/results/rec_',ic,target,'_h',horizon,'.RData',sep=''))
                 }
         if (max.obs>0){
-                write.csv(lassm,paste(DirCode,'/results/elanet_ranking',target,'_h',horizon,'.csv',sep=''))
+                write.csv(lassm,paste(DirCode,'/results/elanet_ranking',ic,target,'_h',horizon,'.csv',sep=''))
                 
-                save(forecast.all,file=paste(DirCode,'/results/',target,'_h',horizon,'.RData',sep=''))
+                save(forecast.all,file=paste(DirCode,'/results/',ic,target,'_h',horizon,'.RData',sep=''))
                 }
         
         
