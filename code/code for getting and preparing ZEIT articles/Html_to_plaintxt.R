@@ -7,13 +7,13 @@
 # load(paste(DirCode,"/register.RData",sep=''))
 
 # Setting directory for storing files -------------------------------------------------------
-DirRawTexts="H:/Zeit"
-<<<<<<< HEAD
+DirRawTexts="H:/Zeit2"
+
 # DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
-=======
-DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
-DirRawTexts="E:/Zeit"
->>>>>>> 8b5aca6d3864275bc6cbf49f6b8cf7b133bb0701
+
+# DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
+# DirRawTexts="E:/Zeit"
+
 
 convert_html_to_text <- function(html) {
         # extracted from: convert_html_to_text <- function(html) {
@@ -40,24 +40,25 @@ gettext<-function(input){
         
         txt<-paste(txt_s,sep='',collapse='')
         txt<-gsub('\u0084|\u0093|\u0096',' ',txt)
-<<<<<<< HEAD
+
         
         #         txt<-gsub('»|,|\\.|:|<|>|\\n|"|[0-9]{1,20}|;|-|«|\\)|\\(|\\?|( (\t)* )',' ',txt)
-        txt<-gsub('»|,|:|<|>|\\n|"|[0-9]{1,20}|;|-|«|\\)|\\(|( (\t)* )',' ',txt)
+        txt<-gsub('»|,|:|<|>|\\n|"|[0-9]{1,20}|-|«|\\)|\\(|( (\t)* )',' ',txt)
         txt<-gsub('\\t|\\\\',' ',txt)
         
         txt<-gsub('( ){2,}',' ',txt)# superfluos spaces eliminated
         txt<-gsub(' \\.','\\.',txt)# superfluos spaces eliminated
         
-=======
+
              
 #         txt<-gsub('»|,|\\.|:|<|>|\\n|"|[0-9]{1,20}|;|-|«|\\)|\\(|\\?|( (\t)* )',' ',txt)
         txt<-gsub('»|,|<|>|\\n|"|[0-9]{1,20}|;|-|«|\\)|\\(|( (\t)* )',' ',txt)
         
         txt<-gsub('( ){2,}',' ',txt)# superfluos spaces eliminated
         txt<-gsub('  \\.','.',txt)# superfluos spaces eliminated
+# t=data.frame(person='dirk',text=txt)
+# tt=sentSplit(t,'text')
 
->>>>>>> 8b5aca6d3864275bc6cbf49f6b8cf7b133bb0701
         return(txt)
 }
 
@@ -69,9 +70,12 @@ library(XML)
 #  Getting registery------------------------------------------------------------------------
 
 listsubdirs=list.files(DirRawTexts)
+nsubdirs=length(listsubdirs)
 
-for (subd in listsubdirs){
-        # subd="2008.49"       
+for (i in 155:nsubdirs){
+        subd=listsubdirs[i]
+        print(subd)
+        # subd="1990.1"       
         listfiles=list.files(paste(DirRawTexts,'/',subd,sep='')) 
         if (length(grep('article',listfiles))!=0){
                 listfiles=listfiles[-grep('article',listfiles)]       
@@ -82,7 +86,7 @@ for (subd in listsubdirs){
         if (length(grep('Ergebnis',listfiles))!=0){
                 listfiles=listfiles[-grep('Ergebnis',listfiles)]       
         }
-        for (file in listfiles){
+        for (file in listfiles){#file=listfiles[1]
                 write.csv(gettext(paste(DirRawTexts,'/',subd,'/',file,sep=''))
                           ,paste(DirRawTexts,'/',subd,'/','plaintxt-',file,sep=''),eol=''
                           ,row.names=F#,col.names=F

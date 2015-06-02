@@ -86,6 +86,7 @@ total <- merge(meta,bew,'id')
 
 sents=grep('sent',colnames(total))
 total[total==-999]=0
+write.csv(total,paste(DirCode,'/data/zeit indikatoren/zeit.article.and.eval.csv',sep=''))
 
 # getting indicator monthly averages --------------------------------------
 ind.n=c("qdap_value","qdap_nword","sent_nneg","sent_npos","sent_negv","sent_posv","sent_nwords","sent_val","posextind","negextind","valuext")

@@ -2,12 +2,12 @@
 # Beschreibung ------------------------------------------------------------
 
 # Setting directories for storing files -------------------------------------------------------
-# DirRawTexts="H:/Zeit" # text files are stored here
-DirRawTexts="E:/Zeit" # text files are stored here
+DirRawTexts="H:/Zeit" # text files are stored here
+# DirRawTexts="E:/Zeit" # text files are stored here
 # DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
 
-# DirCode='H:/git/zeit-2' # main directory
-DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
+DirCode='H:/git/zeit-2' # main directory
+# DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 # setwd(DirCode)
 
 # Load register created by 'Getting_register.R' ---------------------------
@@ -95,18 +95,19 @@ for (jj in 1990:2015){#jj=1990 jj=2014 jj=2005
 
 
 # aggregate separate files to one -----------------------------------------
-
-for (jj in 1990:2015){#jj=1990 jj=2014
+lc=list.files(paste(DirCode,'/data/zeit indikatoren',sep=''))
+lc=lc[grep('meta',lc)]
+lc=lc[-grep('meta_all',lc)]
+for (jj in 1:length(lc)){#jj=1990 jj=2014
         # list of subdirectories each year
-        liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
-        for (k in 1:length(liste_jahr)){#k=1
-                if (jj==1990&k==1){
-                        yi=gsub('\\.','_',liste_jahr[k])
-                        ER=read.csv(paste(DirCode,'/data/zeit indikatoren/meta_',yi,'.csv',sep=''))
+        
+                if (jj==1){
+                  
+                        ER=read.csv(paste(DirCode,'/data/zeit indikatoren/',lc[jj],sep=''))
                 }
                 else{
                         
-                        er=read.csv(paste(DirCode,'/data/zeit indikatoren/meta_',yi,'.csv',sep=''))
+                        er=read.csv(paste(DirCode,'/data/zeit indikatoren/',lc[jj],sep=''))
                         ER=rbind(ER,er)
                 }
         }

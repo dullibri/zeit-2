@@ -7,18 +7,21 @@
 # load(paste(DirCode,"/register.RData",sep=''))
 
 # Setting directory for storing files -------------------------------------------------------
-DirRawTexts="H:/Zeit"
-DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
-DirRawTexts="E:/Zeit"
+DirRawTexts="H:/Zeit2"
+# DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
+# DirRawTexts="E:/Zeit"
 
 
 
 # Getting subdirectories --------------------------------------------------
+
 listsubdirs=list.files(DirRawTexts)
+nsubdirs=length(listsubdirs)
 
-
-
-for (subd in listsubdirs){
+for (i in 1:nsubdirs){
+        subd=listsubdirs[i]
+        print(subd)
+        # subd='1990.1'
         # subd='2004.6'
         # List of documents in plaintext ------------------------------------------
         listfiles=dir(paste(DirRawTexts,'/',subd,sep=''))
@@ -56,12 +59,13 @@ for (subd in listsubdirs){
         
         # m-pager: aggregate and save them as articles -------------------------------------------------
         if (!length(mtext)==0){
-                for (i in 1:length(idsm)){
+                for (i in 1:length(idsm)){# i=1
                         nidsm=nrow(mtext[mtext[,1]==idsm[i],]) # number of pages
                         article=character(nidsm) 
-                        for (page in 1:nidsm){
+                        for (page in 1:nidsm){#page=1
                                 
                                 article[page]=readLines(paste(DirRawTexts,'/',subd,'/','plaintxt-',idsm[i],'-',page,'.txt',sep=''),encoding='UTF-8')
+                                article[page]=gsub('^x ','',article[page])
                         }
                         article=paste(article,sep="",collapse="")
 #                         if (nchar(as.character(register$title[idsm[i]]))<120){
