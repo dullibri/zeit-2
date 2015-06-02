@@ -1,11 +1,14 @@
 DirCode='H:/git/zeit-2' # main directory
-
+DirCode='c:/users/dirk/documents/github/zeit-2' # main directory
 
 
 meta=read.csv(paste(DirCode,'/data/zeit indikatoren/meta_all.csv',sep='')
               ,stringsAsFactors=F
 )
+# meta0=meta[grep('\\.0',meta$number),]
+# meta0$number=gsub('\\.0','\\.',meta0$number)
 
+meta$number=gsub('\\.0','\\.',meta$number)
 # meta=read.csv(paste(DirCode,'/data/zeit indikatoren/article_ergebnis.csv',sep='')
 #               ,stringsAsFactors=F
 # )
@@ -14,7 +17,7 @@ meta=read.csv(paste(DirCode,'/data/zeit indikatoren/meta_all.csv',sep='')
 
 colnames(meta)[grep('number',colnames(meta))]='id'
 
-t=meta$id[1]
+
 meta$issue=gsub('\\.[0-9]{1,8}$','',meta$id)
 # correcting some dates  --------------------------------------------------
 
@@ -81,7 +84,6 @@ meta=meta[-err,]
 meta$id=as.character(meta$id)
 meta$issue=as.character(meta$issue)
 
-meta$id=gsub('\\.0','\\.',meta$id)
 
         
 bew$id=as.character(bew$id)
@@ -129,7 +131,7 @@ total[tt]=0
 
 # concentrating on the economics section ----------------------------------
 
-total=total.s
+total.s=total
 
 total=total[total$eco,]
 # write.csv(total,paste(DirCode,'/data/zeit indikatoren/zeit.article.and.eval.csv',sep=''))

@@ -36,6 +36,13 @@ max.obs=-1 # maximum number of past observations to be considered (rolling estim
 # estimation. 
 start.2001.2=1 # data used starting in 2001:1 as media data are avaiable from here
 
+# getting list of already existing variables
+old.file=paste(DirCode,'/results/rec_',ic,target,'_h',5,'.RData',sep='')
+load(old.file)
+aux=forecast.all[[1]]
+old.names=row.names(aux)
+old.names=old.names[-grep('ar',old.names)]
+rm(forecast.all,aux)
 
 # loading realtime data sets and unrevised data 
 load(paste(DirCode,'/data/realtime_sets_cutoffday_31.RData',sep=''))
@@ -249,27 +256,27 @@ for (horizon in 1:15){# horizon=1
                         }
                 elanet[[vint.num]]=elanet.ind(set,y,yx,horizon,alpha=1)
                 
-                                
-                                forecast=data.frame(matrix(NA,nrow=ncol(set)+1,length(extract)))
-                                colnames(forecast)=extract
-                                row.names(forecast)=c('ar',colnames(set))
-                                
-                                forecast['ar',extract.ar]=unlist(
-                                        olsbic3(y,yx,horizon,max.lag,ic)[extract]
-                                        )
-                                p1=forecast['ar','p1']       
-                                
-                                for (i in 1:ncol(set)){# i=1
-                                        xx=cbind(yx,set[,i,drop=F])
-                                        resu=unlist(
-                                                olsbic1setgetting2(y,xx,horizon,max.lag,p1=p1,ic)[extract]
-                                                )
-                                        if (length(resu)>0){
-                                                forecast[colnames(set)[i],extract]=resu   
-                                                }
-                                        
-                                        }# end model loop
-                                forecast.all[[vint.num]]=forecast
+                
+                forecast=data.frame(matrix(NA,nrow=ncol(set)+1,length(extract)))
+                colnames(forecast)=extract
+                row.names(forecast)=c('ar',colnames(set))
+                
+                forecast['ar',extract.ar]=unlist(
+                        olsbic3(y,yx,horizon,max.lag,ic)[extract]
+                        )
+                p1=forecast['ar','p1']       
+                set=set[,!colnames(set)%in%old.names]
+                for (i in 1:ncol(set)){# i=1
+                        xx=cbind(yx,set[,i,drop=F])
+                        resu=unlist(
+                                olsbic1setgetting2(y,xx,horizon,max.lag,p1=p1,ic)[extract]
+                                )
+                        if (length(resu)>0){
+                                forecast[colnames(set)[i],extract]=resu   
+                                }
+                        
+                        }# end model loop
+                forecast.all[[vint.num]]=forecast
                 
                 }#end vintage loop
         
@@ -283,16 +290,10 @@ for (horizon in 1:15){# horizon=1
                 lassm[names(rlass),i]=rlass  
                 
                 }
-        if (max.obs<0){
-                write.csv(lassm,paste(DirCode,'/results/rec_elanet_ranking',ic,target,'_h',horizon,'.csv',sep=''))
-                
-                save(forecast.all,file=paste(DirCode,'/results/rec_',ic,target,'_h',horizon,'.RData',sep=''))
-                }
-        if (max.obs>0){
-                write.csv(lassm,paste(DirCode,'/results/elanet_ranking',ic,target,'_h',horizon,'.csv',sep=''))
-                
-                save(forecast.all,file=paste(DirCode,'/results/',ic,target,'_h',horizon,'.RData',sep=''))
-                }
+        
+        write.csv(lassm,paste(DirCode,'/results/rec_elanet_ranking',ic,target,'_h',horizon,'new.RData',sep=''))
+        
+        save(forecast.all,file=paste(DirCode,'/results/rec_',ic,target,'_h',horizon,'new.RData',sep=''))
         
         
         }
