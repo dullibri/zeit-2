@@ -254,7 +254,7 @@ for (horizon in 1:15){# horizon=1
                         yx=yx[(nrow(set)-max.obs+1):nrow(set),1,drop=F]
                         set=set[(nrow(set)-max.obs+1):nrow(set),]
                         }
-                elanet[[vint.num]]=elanet.ind(set,y,yx,horizon,alpha=1)
+#                 elanet[[vint.num]]=elanet.ind(set,y,yx,horizon,alpha=1)
                 
                 
                 forecast=data.frame(matrix(NA,nrow=ncol(set)+1,length(extract)))
@@ -267,6 +267,7 @@ for (horizon in 1:15){# horizon=1
                 p1=forecast['ar','p1']       
                 set=set[,!colnames(set)%in%old.names]
                 for (i in 1:ncol(set)){# i=1
+                        print(paste(vint.num,i,sep=':'))
                         xx=cbind(yx,set[,i,drop=F])
                         resu=unlist(
                                 olsbic1setgetting2(y,xx,horizon,max.lag,p1=p1,ic)[extract]
@@ -282,16 +283,16 @@ for (horizon in 1:15){# horizon=1
         
         lassm=matrix(NA,nrow=(ncol(set)+1),ncol=(length(sets)))
         row.names(lassm)=c(colnames(yx),colnames(set))
-        for (i in 1:length(elanet)){#i=1
-                rlass=rank(elanet[[i]],ties.method = c("first"))
-                
-                names(rlass)=gsub(paste('L',horizon,'$',sep=''),'',names(rlass))
-                row.names(lassm)[row.names(lassm)%in%names(rlass)]
-                lassm[names(rlass),i]=rlass  
-                
-                }
+#         for (i in 1:length(elanet)){#i=1
+#                 rlass=rank(elanet[[i]],ties.method = c("first"))
+#                 
+#                 names(rlass)=gsub(paste('L',horizon,'$',sep=''),'',names(rlass))
+#                 row.names(lassm)[row.names(lassm)%in%names(rlass)]
+#                 lassm[names(rlass),i]=rlass  
+#                 
+#                 }
         
-        write.csv(lassm,paste(DirCode,'/results/rec_elanet_ranking',ic,target,'_h',horizon,'new.RData',sep=''))
+#         write.csv(lassm,paste(DirCode,'/results/rec_elanet_ranking',ic,target,'_h',horizon,'new.RData',sep=''))
         
         save(forecast.all,file=paste(DirCode,'/results/rec_',ic,target,'_h',horizon,'new.RData',sep=''))
         
