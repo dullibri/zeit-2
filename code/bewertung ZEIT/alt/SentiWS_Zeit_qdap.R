@@ -22,6 +22,37 @@ DirRawTexts="H:/Zeit2" # text files are stored here
 # DirRawTexts="E:/Zeit" # text files are stored here
 # DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
 library('qdap')
+
+strip=function (x, char.keep = "~~", digit.remove = TRUE, apostrophe.remove = TRUE, 
+                lower.case = TRUE) 
+{
+        strp <- function(x, digit.remove, apostrophe.remove, char.keep, 
+                         lower.case) {
+                if (!is.null(char.keep)) {
+                        x2 <- Trim(gsub(paste0(".*?($|'|", paste(paste0("\\", 
+                                                                        char.keep), collapse = "|"), "|[^[:punct:]]).*?"), 
+                                        "\\1", as.character(x)))
+                }
+                else {
+                        x2 <- Trim(gsub(".*?($|'|[^[:punct:]]).*?", "\\1", 
+                                        as.character(x)))
+                }
+                if (lower.case) {
+                        x2 <- x2
+                }
+                if (apostrophe.remove) {
+                        x2 <- gsub("'", "", x2)
+                }
+                ifelse(digit.remove == TRUE, gsub("[[:digit:]]", "", 
+                                                  x2), x2)
+        }
+        x <- clean(x)
+        unlist(lapply(x, function(x) Trim(strp(x = x, digit.remove = digit.remove, 
+                                               apostrophe.remove = apostrophe.remove, char.keep = char.keep, 
+                                               lower.case = lower.case))))
+}
+assignInNamespace('strip',strip,'qdap')
+
 DirCode='H:/git/zeit-2' # main directory
 # DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 setwd(DirCode)
@@ -111,10 +142,10 @@ listsubdirs=list.files(DirRawTexts)
 
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 1990:2014){#jj={#:2015 jj=1990 jj=2014
+for (jj in 2000:2015){#jj={#:2015 jj=1990 jj=2006
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
-        for (k in 1:length(liste_jahr)){#k=1
+        for (k in 11:length(liste_jahr)){#k=10
                 sFolderTexte=paste(DirRawTexts,'/',liste_jahr[k],'/',sep='')
                 print(sFolderTexte)
                 # getting list and number of articles
@@ -145,21 +176,23 @@ for (jj in 1990:2014){#jj={#:2015 jj=1990 jj=2014
                         #                                       ,header=F
                         #                                       )
                         if(length(text)>1){text=text[2]}
-                        text=gsub('\\t{1,}','',text)
+                        text=gsub('\\t{1,}|/|\\||www\\.[a-zA-Z0-9]{1,40}\\.de|[0-9]{1,}','',text)
+                        text=gsub('\\s{2,}','',text)
+                        text=gsub('\\s{1,1}\\.','\\.',text)
+                                          
                         #                         if (nrow(text)>1){
                         #                                 text=text[2,1]
                         #                         }
                         #                         chrtest=sapply(text,function(x) is.character(x))
-                        text=paste(text,collapse=' ',sep='')
-                        title_index=regexec(paste('keywords content=([^<]*)\\>?',sep=''),text)
-                        #                                                 Ergebnis[i,'keywords']=regmatches(text,title_index)[[1]][2]
-                        #                                                 \t\\t
+                       
+                        
                         df=data.frame(person='dirk',text=text)
                         tt=sentSplit(df,'text')[,3]                        
                         #                         tp1=polarity(tt,polarity.frame=pf,negators=negating)
                         #                         sent1=sum(tp1$all[c('polarity')]*tp1$all[c('wc')]^.5)
                         tp2=polarity(tt,polarity.frame=pf,negators=negating,amplifiers=amplifiers,deamplifiers=deamplifiers)
-                        sent2=sum(tp2$all[c('polarity')]*tp2$all[c('wc')]^.5)
+                        
+                        sent2=sum(tp2$all[c('polarity')]*tp2$all[c('wc')]^.5,na.rm=T)
                         
                         nwords<-sum(tp2$all[c('wc')])
                         # sentiment ---------------------------------------------------------------

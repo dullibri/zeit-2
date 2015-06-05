@@ -1,14 +1,15 @@
 DirCode='h:/Git/zeit-2'
-DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
-target='IP'
-# target='CPI.EX'
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+# target='IP'
+target='CPI.EX'
 max.hor=15
 # wenn rec=1 und bicres=0 dann nur recursive, wenn rec=0 und bicres=1 dann mit aic
 # wenn rec=0 und bicres=1 dann bic variante
 # wenn post=1 nur post recession period
 rec=0 
+ic='aic'
 bicres=0
-plag=2 # publication lag
+plag=1 # publication lag
 post=0 # nur post recession
 
 grouping=read.csv(paste(DirCode,'/data/grouping.csv',sep=''),row.names=1)
@@ -99,24 +100,36 @@ for (h in 1:max.hor){# h=3
         target.df=data[data$eval,c(target,'set-target')]
         
         
-        # loading results
-        # res.file=paste('H:/git/zeit-2/Results/IP_h',h,'_maxobs_',60+h,'.RData',sep='')
         
-        
-        res.file=paste(DirCode,'/Results/rec_bic',target,'_h',h,'.RData',sep='')  
-        
-        
+        # loading old results
+        res.file=paste(DirCode,'/Results/rec_',ic,target,'_h',h,'.RData',sep='')  
         load(res.file)
+#         forecast.all.old=forecast.all
+#         
+#         # loading new results
+#         res.file=paste(DirCode,'/Results/rec_',ic,target,'_h',h,'new.RData',sep='')  
+#         load(res.file)
+#         forecast.new=forecast.all
+#         
+#         old.models=row.names(forecast.all.old[[1]])
+#         niter=length(forecast.all)
+#         for (i in 1:niter){
+#                 forecast.all[[i]][old.models,]=forecast.all.old[[i]]
+#         }
+        
         
         # forecasts
-        
+        weg=102:110
+for (i in weg){
+        forecast.all[[i]]=NULL
+}
         fc=sapply(forecast.all,function(x) as.numeric(x$fc))
         
         modn=row.names(forecast.all[[1]])
         # dropping vintages that can not be used
         fc=fc[,1:nrow(target.df)]
         row.names(fc)=modn
-        #         fc=fc[-grep('zeit|rword',row.names(fc)),]
+        # fc=fc[-grep('zeit|rword',row.names(fc)),]
         # dimensions OK? dim(fc)
         targetm=t(matrix(rep(target.df[,target],nrow(fc)),ncol=nrow(fc)))
         fe=fc-targetm
@@ -294,11 +307,11 @@ for (h in 1:max.hor){# h=3
         sfe.exp=sfe.exp[-grep('median|mean',row.names(sfe.exp)),]
         row.names(sfe.exp)=NULL
         colnames(sfe.exp)=NULL
-        write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfe',h,'.csv',sep=''),
-                    , row.names=F,col.names=F,sep=',',qmethod='double')
-        #         # attaching dates to the errors
-        #         tdates=data[data$eval,'ym']
-        #         colnames(fe)=tdates
+#         write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfe',h,'.csv',sep=''),
+#                     , row.names=F,col.names=F,sep=',',qmethod='double')
+#         #         # attaching dates to the errors
+#         #         tdates=data[data$eval,'ym']
+#         #         colnames(fe)=tdates
         
         # getting basic statistics
         result.f=function(sfe){
