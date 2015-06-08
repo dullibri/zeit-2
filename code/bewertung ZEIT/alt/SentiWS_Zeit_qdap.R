@@ -145,7 +145,7 @@ listsubdirs=list.files(DirRawTexts)
 for (jj in 2000:2015){#jj={#:2015 jj=1990 jj=2006
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
-        for (k in 11:length(liste_jahr)){#k=10
+        for (k in 1:length(liste_jahr)){#k=10
                 sFolderTexte=paste(DirRawTexts,'/',liste_jahr[k],'/',sep='')
                 print(sFolderTexte)
                 # getting list and number of articles
