@@ -18,13 +18,51 @@
 
 # ZIEL: QDAP HIER EINZUFÜGEN
 # Setting directories for storing files -------------------------------------------------------
-DirRawTexts="H:/Zeit" # text files are stored here
+DirRawTexts="H:/Zeit2" # text files are stored here
 # DirRawTexts="E:/Zeit" # text files are stored here
 # DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
-library('qdap')
+
+
+
+
 DirCode='H:/git/zeit-2' # main directory
 # DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 setwd(DirCode)
+
+
+# Modification of qdap to undo "tolower" ----------------------------------
+
+library('qdap')
+strip=function (x, char.keep = "~~", digit.remove = TRUE, apostrophe.remove = TRUE, 
+                lower.case = TRUE) 
+{
+        strp <- function(x, digit.remove, apostrophe.remove, char.keep, 
+                         lower.case) {
+                if (!is.null(char.keep)) {
+                        x2 <- Trim(gsub(paste0(".*?($|'|", paste(paste0("\\", 
+                                                                        char.keep), collapse = "|"), "|[^[:punct:]]).*?"), 
+                                        "\\1", as.character(x)))
+                }
+                else {
+                        x2 <- Trim(gsub(".*?($|'|[^[:punct:]]).*?", "\\1", 
+                                        as.character(x)))
+                }
+                if (lower.case) {
+                        x2 <- x2
+                }
+                if (apostrophe.remove) {
+                        x2 <- gsub("'", "", x2)
+                }
+                ifelse(digit.remove == TRUE, gsub("[[:digit:]]", "", 
+                                                  x2), x2)
+        }
+        x <- clean(x)
+        unlist(lapply(x, function(x) Trim(strp(x = x, digit.remove = digit.remove, 
+                                               apostrophe.remove = apostrophe.remove, char.keep = char.keep, 
+                                               lower.case = lower.case))))
+}
+assignInNamespace('strip',strip,'qdap')
+
 
 # Load register created by 'Getting_register.R' ---------------------------
 # load(paste(DirCode,"/register.RData",sep=''))
@@ -48,11 +86,11 @@ sentiment<-function (text, valueword){
         return(list(valdf,nwords))
 }
 
-valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
+
 
 
 # extracting information from sentiment -----------------------------------
-sent2=sapply(sent2,function(x)x)
+
 extracts=function(sent2){
         tab=sent2[[1]]
         if (sum(tab$wert)==0){return(rep(-999,9))}
@@ -81,7 +119,7 @@ extracts=function(sent2){
 
 
 # preparing valueword for qdap --------------------------------------------
-
+valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
 pos=as.character(valueword['wert'>0,'wort',drop=T])
 # pos=tolower(pos)
 pos.w=valueword['wert'>0,'wert']
@@ -90,11 +128,14 @@ neg=as.character(valueword[valueword$wert<0,'wort',drop=T])
 neg.w=valueword[valueword$wert<0,'wert']
 pf=sentiment_frame(pos,neg,pos.w,neg.w)
 
-negating=read.csv(paste(DirCode,'/data/sentistrength_de/negators.csv',sep=''),header=F,stringsAsFactors=F)
-negating=unlist(negating)
-# testing
-# tp=polarity(text,polarity.frame=pf,negators=negating)
-# tpa=tp$all[c('wc','polarity')]
+negating=read.csv(paste(DirCode,'/data/qdap/negators_ready.csv',sep=''),header=F,stringsAsFactors=F)[,2]
+negating=negating[-1]
+
+amplifiers=read.csv(paste(DirCode,'/data/qdap/amplifiers_ready.csv',sep=''),header=F,stringsAsFactors=F)[,2]
+amplifiers=amplifiers[-1]
+
+deamplifiers=read.csv(paste(DirCode,'/data/qdap/deamplifiers_ready.csv',sep=''),header=F,stringsAsFactors=F)[,2]
+deamplifiers=deamplifiers[-1]
 
 # Getting subdirectories --------------------------------------------------
 listsubdirs=list.files(DirRawTexts)
@@ -105,7 +146,7 @@ listsubdirs=list.files(DirRawTexts)
 
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 1990:2014){#jj={#:2015 jj=1990 jj=2014
+for (jj in 2000:2014){#jj={#:2015 jj=1990 jj=2014
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
         for (k in 1:length(liste_jahr)){#k=50
@@ -122,40 +163,56 @@ for (jj in 1990:2014){#jj={#:2015 jj=1990 jj=2014
                 }
                 # initialize Results data.frame
                 
-                Ergebnis=data.frame(matrix(NA,1,12))
-                colnames(Ergebnis)=c('id','qdap_value','qdap_nword'  
+                Ergebnis=data.frame(matrix(NA,1,13))
+                colnames(Ergebnis)=c('id','qdap_value','qdap_neg','qdap_nword'  
                                      ,'sent_nneg','sent_npos','sent_negv'
                                      ,'sent_posv','sent_nwords','sent_val'
                                      ,'posextind','negextind','valuext'
                 )
                 
                 for (i in 1:Narticle_issue){# i=1
-#                                                 text<-readLines(paste(sFolderTexte,svFile[i],sep=''), ok=F,encoding="UTF-8")#, header=T,stringsAsFactors =F)
-                                                text=read.csv(paste(sFolderTexte,svFile[i],sep=''),stringsAsFactors=F,header=F)
-                                                #                         if (nrow(text)>1){
-                                                #                                 text=text[2,1]
-                                                #                         }
-                                                chrtest=sapply(text,function(x) is.character(x))
-                                                text=paste(text,collapse=' ',sep='')
-                                                tp=polarity(text,polarity.frame=pf,negators=negating)
-                                                sent=tp$all[c('polarity')]
+                        
+                        text<-readLines(paste(sFolderTexte,svFile[i],sep=''), encoding="UTF-8")#, header=T,stringsAsFactors =F)
+                        #                         text=read.csv(paste(sFolderTexte,svFile[i],sep='')
+                        #                                       ,stringsAsFactors=F
+                        #                                       ,header=F
+                        #                                       )
+                        if(length(text)>1){text=text[2]}
+                        text=gsub('\\t{1,}|/|\\||www\\.[a-zA-Z0-9]{1,40}\\.de|[0-9]{1,}','',text)
+                        text=gsub('\\s{2,}','',text)
+                        text=gsub('\\s{1,1}\\.','\\.',text)
+                        
+                        df=data.frame(person='dirk',text=text)
+                        tt=sentSplit(df,'text')[,3]                        
+                        #                         tp1=polarity(tt,polarity.frame=pf,negators=negating)
+                        #                         sent1=sum(tp1$all[c('polarity')]*tp1$all[c('wc')]^.5)
+                        tp2=polarity(tt,polarity.frame=pf,negators=negating,amplifiers=amplifiers,deamplifiers=deamplifiers)
+                        
+                        sent=sum(tp2$all[c('polarity')]*tp2$all[c('wc')]^.5,na.rm=T)
+                        
+                        tp3=polarity(tt,polarity.frame=pf,negators=negating)
+                        sentneg=sum(tp3$all[c('polarity')]*tp2$all[c('wc')]^.5,na.rm=T)
+                        
+                        nwords<-sum(tp2$all[c('wc')])
+                        
                                                 
-                                                nwords<-tp$all[c('wc')]
-                                                # sentiment ---------------------------------------------------------------
-                                                sent2=sentiment(text,valueword)
-                                                sentres=extracts(sent2)
-                                                Ergebnis[i,1:3]=c(id=gsub('article-|\\.txt','',svFile[i])
-                                                               ,sent
-                                                               ,nword=nwords 
-                                                               
-                                                )
                         
-                                                Ergebnis[i,4:12]=unlist(sentres)
+                        # sentiment ---------------------------------------------------------------
+                        sent2=sentiment(text,valueword)
+                        sentres=extracts(sent2)
+                        Ergebnis[i,1:4]=c(id=gsub('article-|\\.txt','',svFile[i])
+                                          ,sent
+                                          ,sentneg
+                                          ,nword=nwords 
+                                          
+                        )
                         
-#                                                 Ergebnis[i,'id']=gsub('article-|\\.txt','',svFile[i])
+                        Ergebnis[i,5:13]=unlist(sentres)
+                        
+                        #                                                 Ergebnis[i,'id']=gsub('article-|\\.txt','',svFile[i])
                         
                 }
-                write.csv(Ergebnis,paste(DirCode,'/data/zeit indikatoren/Ergebnis_',liste_jahr[k],'.csv',sep=''),row.names=F)
+                write.csv(Ergebnis,paste(DirCode,'/data/zeit indikatoren/Ergebnis_neu',liste_jahr[k],'.csv',sep=''),row.names=F)
         }
         
         rm(i) 

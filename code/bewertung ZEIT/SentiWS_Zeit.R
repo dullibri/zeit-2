@@ -9,20 +9,60 @@
 
 
 # Letzte Modifikation -------------------------------------------------------------------
+# 2015-04-29, 16:40 qdap als alternative einführen. Ausgabeordner auf Resultate legen.
 # 2015-01-17, 17:00 komplet revidiert, tm package raus.
 # 2015-01-15, 20:45
 # 2014-12-01, 17:08
 # 2014-11-25, 17:14
 # 2014-06-20, 22:22
 
-
+# ZIEL: QDAP HIER EINZUFÜGEN
 # Setting directories for storing files -------------------------------------------------------
-DirRawTexts="H:/Zeit" # text files are stored here
+DirRawTexts="H:/Zeit2" # text files are stored here
+# DirRawTexts="E:/Zeit" # text files are stored here
 # DirRawTexts="C:/Users/Dirk/Documents/Zeit-Texte"
+
+
+
 
 DirCode='H:/git/zeit-2' # main directory
 # DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 setwd(DirCode)
+
+
+# Modification of qdap to undo "tolower" ----------------------------------
+
+library('qdap')
+strip=function (x, char.keep = "~~", digit.remove = TRUE, apostrophe.remove = TRUE, 
+                lower.case = TRUE) 
+{
+        strp <- function(x, digit.remove, apostrophe.remove, char.keep, 
+                         lower.case) {
+                if (!is.null(char.keep)) {
+                        x2 <- Trim(gsub(paste0(".*?($|'|", paste(paste0("\\", 
+                                                                        char.keep), collapse = "|"), "|[^[:punct:]]).*?"), 
+                                        "\\1", as.character(x)))
+                }
+                else {
+                        x2 <- Trim(gsub(".*?($|'|[^[:punct:]]).*?", "\\1", 
+                                        as.character(x)))
+                }
+                if (lower.case) {
+                        x2 <- x2
+                }
+                if (apostrophe.remove) {
+                        x2 <- gsub("'", "", x2)
+                }
+                ifelse(digit.remove == TRUE, gsub("[[:digit:]]", "", 
+                                                  x2), x2)
+        }
+        x <- clean(x)
+        unlist(lapply(x, function(x) Trim(strp(x = x, digit.remove = digit.remove, 
+                                               apostrophe.remove = apostrophe.remove, char.keep = char.keep, 
+                                               lower.case = lower.case))))
+}
+assignInNamespace('strip',strip,'qdap')
+
 
 # Load register created by 'Getting_register.R' ---------------------------
 # load(paste(DirCode,"/register.RData",sep=''))
@@ -35,7 +75,10 @@ sentiment<-function (text, valueword){
                 text = text[2]
         }
         text.split = sapply(strsplit(text, " "), function(x) x)
+        grep('\\.',text)
         ind = valueword[, 1] %in% text.split
+        #         ind.rev=text.split%in% valueword[, 1]
+        # ind.neg=text.split%in% negating
         valdf = valueword[ind, , drop = F]
         valdf$h = sapply(valueword[ind, 1], function(x) sum(text.split %in% 
                                                                     x))
@@ -43,19 +86,70 @@ sentiment<-function (text, valueword){
         return(list(valdf,nwords))
 }
 
+
+
+
+# extracting information from sentiment -----------------------------------
+
+extracts=function(sent2){
+        tab=sent2[[1]]
+        if (sum(tab$wert)==0){return(rep(-999,9))}
+        negind=tab$wert<0
+        posind=tab$wert>0
+        nneg=sum(tab$h[negind])
+        npos=sum(tab$h[posind])
+        negv=sum(tab$h[negind]*tab$wert[negind])
+        posv=sum(tab$h[posind]*tab$wert[posind])
+        # middle values desregarded -----------------------------------------------
+        
+        posextind=posind&tab$wert>0.1
+        if (sum(posextind)){posvext=sum(tab$wert[posextind])}else{posvext=0}
+        
+        negextind=negind&tab$wert<(0.1*-1)
+        if (sum(negextind)){negvext=sum(tab$wert[negextind])}else{negvext=0}
+        
+        valuext=posvext+negvext
+        
+        nwords=sent2[[2]]
+        value=posv+negv
+        res=data.frame(nneg,npos,negv,posv,nwords,value,posvext,negvext,valuext)
+        return(res)
+}
+
+
+
+# preparing valueword for qdap --------------------------------------------
+valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
+pos=as.character(valueword['wert'>0,'wort',drop=T])
+# pos=tolower(pos)
+pos.w=valueword['wert'>0,'wert']
+neg=as.character(valueword[valueword$wert<0,'wort',drop=T])
+# neg=tolower(neg)
+neg.w=valueword[valueword$wert<0,'wert']
+pf=sentiment_frame(pos,neg,pos.w,neg.w)
+
+negating=read.csv(paste(DirCode,'/data/qdap/negators_ready.csv',sep=''),header=F,stringsAsFactors=F)[,2]
+negating=negating[-1]
+
+amplifiers=read.csv(paste(DirCode,'/data/qdap/amplifiers_ready.csv',sep=''),header=F,stringsAsFactors=F)[,2]
+amplifiers=amplifiers[-1]
+
+deamplifiers=read.csv(paste(DirCode,'/data/qdap/deamplifiers_ready.csv',sep=''),header=F,stringsAsFactors=F)[,2]
+deamplifiers=deamplifiers[-1]
+
 # Getting subdirectories --------------------------------------------------
 listsubdirs=list.files(DirRawTexts)
 
 #  SentiWS: ------------------------------------------------------------------------
 #       getting the list of positive and negative words and their values -----------------------------------------------------------------
 #       valueword (lowercase) VALUEWORD (uppercase), created with valueword.R
-valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
+
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 2014:2015){#jj=2015
+for (jj in 2000:2014){#jj={#:2015 jj=1990 jj=2014
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
-        for (k in 1:length(liste_jahr)){#k=1
+        for (k in 1:length(liste_jahr)){#k=50
                 sFolderTexte=paste(DirRawTexts,'/',liste_jahr[k],'/',sep='')
                 print(sFolderTexte)
                 # getting list and number of articles
@@ -69,28 +163,60 @@ for (jj in 2014:2015){#jj=2015
                 }
                 # initialize Results data.frame
                 
-                Ergebnis=data.frame(matrix(NA,1,6))
-                colnames(Ergebnis)=c('id','npword','nnword','nword','pvalue','nvalue')
+                Ergebnis=data.frame(matrix(NA,1,13))
+                colnames(Ergebnis)=c('id','qdap_value','qdap_neg','qdap_nword'  
+                                     ,'sent_nneg','sent_npos','sent_negv'
+                                     ,'sent_posv','sent_nwords','sent_val'
+                                     ,'posextind','negextind','valuext'
+                )
                 
                 for (i in 1:Narticle_issue){# i=1
-                        text<-readLines(paste(sFolderTexte,svFile[i],sep=''), encoding="UTF-8")#, header=T,stringsAsFactors =F)
-                        sent<-sentiment(text,valueword)
-                        nwords<-sent[[2]]
-                        sent.df<-sent[[1]]
-                        pos.id=which(sent.df[,'wert']>0)
                         
-                        Ergebnis[i,]=c(id=gsub('article-|\\.txt','',svFile[i])
-                                ,npword=sum(sent.df[pos.id,'h'])
-                                ,nnword=sum(sent.df[-pos.id,'h'])
-                                ,nword=nwords
-                                ,pvalue=sum(sent.df[pos.id,'wert']*sent.df[pos.id,'h'])
-                                ,nvalue=sum(sent.df[-pos.id,'wert']*sent.df[-pos.id,'h'])
+                        text<-readLines(paste(sFolderTexte,svFile[i],sep=''), encoding="UTF-8")#, header=T,stringsAsFactors =F)
+                        #                         text=read.csv(paste(sFolderTexte,svFile[i],sep='')
+                        #                                       ,stringsAsFactors=F
+                        #                                       ,header=F
+                        #                                       )
+                        if(length(text)>1){text=text[2]}
+                        text=gsub('\\t{1,}|/|\\||www\\.[a-zA-Z0-9]{1,40}\\.de|[0-9]{1,}','',text)
+                        text=gsub('\\s{2,}','',text)
+                        text=gsub('\\s{1,1}\\.','\\.',text)
+                        
+                        df=data.frame(person='dirk',text=text)
+                        tt=sentSplit(df,'text')[,3]                        
+                        #                         tp1=polarity(tt,polarity.frame=pf,negators=negating)
+                        #                         sent1=sum(tp1$all[c('polarity')]*tp1$all[c('wc')]^.5)
+                        tp2=polarity(tt,polarity.frame=pf,negators=negating,amplifiers=amplifiers,deamplifiers=deamplifiers)
+                        
+                        sent=sum(tp2$all[c('polarity')]*tp2$all[c('wc')]^.5,na.rm=T)
+                        
+                        tp3=polarity(tt,polarity.frame=pf,negators=negating)
+                        sentneg=sum(tp3$all[c('polarity')]*tp2$all[c('wc')]^.5,na.rm=T)
+                        
+                        nwords<-sum(tp2$all[c('wc')])
+                        
+                                                
+                        
+                        # sentiment ---------------------------------------------------------------
+                        sent2=sentiment(text,valueword)
+                        sentres=extracts(sent2)
+                        Ergebnis[i,1:4]=c(id=gsub('article-|\\.txt','',svFile[i])
+                                          ,sent
+                                          ,sentneg
+                                          ,nword=nwords 
+                                          
                         )
                         
+                        Ergebnis[i,5:13]=unlist(sentres)
+                        
+                        #                                                 Ergebnis[i,'id']=gsub('article-|\\.txt','',svFile[i])
+                        
                 }
-                write.csv(Ergebnis,paste(sFolderTexte,'Ergebnis.csv',sep=''),row.names=F)
+                write.csv(Ergebnis,paste(DirCode,'/data/zeit indikatoren/Ergebnis_neu',liste_jahr[k],'.csv',sep=''),row.names=F)
         }
-                
-                rm(i) 
-                
+        
+        rm(i) 
+        
 }#Jahresschleife
+
+
