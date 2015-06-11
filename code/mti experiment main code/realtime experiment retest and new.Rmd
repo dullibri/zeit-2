@@ -281,12 +281,16 @@ for (horizon in 1:15){# horizon=1
                 forecast['ar',extract.ar]=unlist(
                         olsbic3(y,yx,horizon,max.lag,ic)[extract]
                         )
-                p1=forecast['ar','p1']      
+                p1=forecast['ar','p1']   
+                newnames=colnames(set)[!colnames(set)%in%old.names]
                 if (retest.on==F){
-                        set=set[,!colnames(set)%in%old.names]
+                        
+                        set=set[,newnames]
                         }else{
-                                set=set[,retest]
+                                estnames=c(newnames,retest)
+                                set=set[,estnames]
                         }
+                
                 for (i in 1:ncol(set)){# i=1
                         print(paste(vint.num,i,sep=':'))
                         xx=cbind(yx,set[,i,drop=F])
@@ -303,8 +307,8 @@ for (horizon in 1:15){# horizon=1
                 forecast[row.names(forecast.old),]=forecast.old
                 }else{
                         forecast.redone=forecast
-                        forecast=forecast.old
-                        forecast[row.names(forecast.redone),]=forecast.redone
+                        forecast[row.names(forecast.old),]=forecast.old
+                        forecast[estnames,]=forecast.redone[estnames,]
                 }
                 forecast.all[[vint.num]]=forecast
                 
