@@ -139,38 +139,32 @@ total=total[total$eco,]
 # getting indicator monthly averages --------------------------------------
 
 # RELATIVE VALUES PER WORD ------------------------------------------------
-total[,'qdap_value_rel']=total[,'qdap_value_ampl']/total[,'qdap_nword']
+# durchschnittliche wortwert
 
-indexrel=aggregate(total[,'qdap_value_rel'],list(as.factor(total$ym)),mean,na.rm=T)
-# indexrel[,paste(valsrel,'_25',sep='')]=aggregate(total[,valsrel],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.25),na.rm=T))[,2:8]
+indexrel=aggregate(total[,'qdap_value_ampl'],list(as.factor(total$ym)),sum,na.rm=T)
+ns=aggregate(total[,'qdap_nword'],list(as.factor(total$ym)),sum,na.rm=T)
+indexrel=data.frame(qdap_rel_val_total=indexrel[,2]/ns[,2])
+# Wortwerte je artikel
+total[,'qdap_value_rel']=total[,'qdap_value_ampl']/total[,'qdap_nword']
+indexrel[,paste('qdap_value_rel','_25',sep='')]=aggregate(total[,'qdap_value_rel'],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.25),na.rm=T))[,2]
+indexrel[,paste('qdap_value_rel','_mean',sep='')]=aggregate(total[,'qdap_value_rel'],list(as.factor(total$ym)),mean,na.rm=T)[,2]
+
 indexrel[,paste('qdap_value_rel','_50',sep='')]=aggregate(total[,'qdap_value_rel'],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.50),na.rm=T))[,2]
-# indexrel[,paste(valsrel,'_75',sep='')]=aggregate(total[,valsrel],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.25),na.rm=T))[,2:8]
+indexrel[,paste('qdap_value_rel','_75',sep='')]=aggregate(total[,'qdap_value_rel'],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.75),na.rm=T))[,2]
+
 indexrel[,paste('qdap_value_rel','_sd',sep='')]=aggregate(total[,'qdap_value_rel'],list(as.factor(total$ym)),sd,na.rm=T)[,2]
 
-tt=ts(indexrel[1:182,2:ncol(indexrel)],start=c(1999,1),freq=12)
+indexrel=indexrel[-nrow(indexrel),]
+tt=ts(indexrel[1:182,1:ncol(indexrel)],start=c(1999,12),freq=12)
 plot(tt)
 
 
-# AVERAGE VALUES OVER MONTH IN ALL ARTICLES -------------------------------
-
-sentvalstotal=paste(sentvals,'_total',sep='')
-valstotal=c('qdap_value_total',sentvalstotal)
-total[,sentvalstotal]=total[,sentvals]*total[,'sent_nwords']
-total[,'qdap_value_total']=total[,'qdap_value']*total[,'qdap_nword']
-indextotal=aggregate(total[,valstotal],list(as.factor(total$ym)),sum,na.rm=T)
-nwordsmth=aggregate(total[,c('qdap_nword','sent_nwords')],list(as.factor(total$ym)),sum)
-indextotal[,'qdap_value_total']=indextotal[,'qdap_value_total']/nwordsmth[,2]
-indextotal[,sentvalstotal]=indextotal[,sentvalstotal]/nwordsmth[,3]
-
-tt=ts(indextotal[,2:ncol(indextotal)],start=c(1989,12),freq=12)
-plot(tt[,grep('sent_negv_total',colnames(tt))])
-
-
-t=cbind(indexrel,indextotal)
 
 
 
 
-write.csv(t,paste(DirCode,'/data/zeit indikatoren/zeit.indexes.csv',sep=''))
+
+
+write.csv(t,paste(DirCode,'/data/zeit indikatoren/zeit.indexes.qdap.ampl.csv',sep=''))
 
 

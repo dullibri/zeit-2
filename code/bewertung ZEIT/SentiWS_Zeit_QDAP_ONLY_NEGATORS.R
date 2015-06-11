@@ -146,7 +146,7 @@ listsubdirs=list.files(DirRawTexts)
 
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 2000:2014){#jj={#:2015 jj=1990 jj=2014
+for (jj in 2006:2014){#jj={#:2015 jj=1990 jj=2014
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
         for (k in 1:length(liste_jahr)){#k=50
@@ -186,33 +186,33 @@ for (jj in 2000:2014){#jj={#:2015 jj=1990 jj=2014
                         tt=sentSplit(df,'text')[,3]                        
                         #                         tp1=polarity(tt,polarity.frame=pf,negators=negating)
                         #                         sent1=sum(tp1$all[c('polarity')]*tp1$all[c('wc')]^.5)
-                        tp2=polarity(tt,polarity.frame=pf,negators=negating,amplifiers=amplifiers,deamplifiers=deamplifiers)
-                        
-                        sent=sum(tp2$all[c('polarity')]*tp2$all[c('wc')]^.5,na.rm=T)
+                        #                         tp2=polarity(tt,polarity.frame=pf,negators=negating,amplifiers=amplifiers,deamplifiers=deamplifiers)
+                        #                         
+                        #                         sent=sum(tp2$all[c('polarity')]*tp2$all[c('wc')]^.5,na.rm=T)
                         
                         tp3=polarity(tt,polarity.frame=pf,negators=negating)
-                        sentneg=sum(tp3$all[c('polarity')]*tp2$all[c('wc')]^.5,na.rm=T)
+                        sentneg=sum(tp3$all[c('polarity')]*tp3$all[c('wc')]^.5,na.rm=T)
+                        nwords<-sum(tp3$all[c('wc')])
+#                         nwords<-sum(tp2$all[c('wc')])
                         
-                        nwords<-sum(tp2$all[c('wc')])
                         
-                                                
                         
                         # sentiment ---------------------------------------------------------------
-                        sent2=sentiment(text,valueword)
-                        sentres=extracts(sent2)
-                        Ergebnis[i,1:4]=c(id=gsub('article-|\\.txt','',svFile[i])
-                                          ,sent
+                        #                         sent2=sentiment(text,valueword)
+                        #                         sentres=extracts(sent2)
+                        Ergebnis[i,1:2]=c(id=gsub('article-|\\.txt','',svFile[i])
+                                          #                                           ,sent
                                           ,sentneg
-                                          ,nword=nwords 
-                                          
+                                          #                                           ,nword=nwords 
+                                          #                                           
                         )
-                        
-                        Ergebnis[i,5:13]=unlist(sentres)
-                        
+                        #                         Ergebnis[i,1]=sentneg
+                        #                         Ergebnis[i,5:13]=unlist(sentres)
+                        #                         
                         #                                                 Ergebnis[i,'id']=gsub('article-|\\.txt','',svFile[i])
                         
                 }
-                write.csv(Ergebnis,paste(DirCode,'/data/zeit indikatoren/Ergebnis_neu',liste_jahr[k],'.csv',sep=''),row.names=F)
+                write.csv(Ergebnis,paste(DirCode,'/data/zeit indikatoren/Ergebnis_only_negation',liste_jahr[k],'.csv',sep=''),row.names=F)
         }
         
         rm(i) 

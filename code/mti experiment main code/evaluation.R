@@ -1,7 +1,7 @@
 DirCode='h:/Git/zeit-2'
 # DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 # target='IP'
-target='CPI.EX'
+target='IP'
 max.hor=15
 # wenn rec=1 und bicres=0 dann nur recursive, wenn rec=0 und bicres=1 dann mit aic
 # wenn rec=0 und bicres=1 dann bic variante
@@ -9,7 +9,7 @@ max.hor=15
 rec=0 
 ic='aic'
 bicres=0
-plag=1 # publication lag
+plag=3 # publication lag
 post=0 # nur post recession
 
 grouping=read.csv(paste(DirCode,'/data/grouping.csv',sep=''),row.names=1)
@@ -76,14 +76,33 @@ for (h in 1:max.hor){# h=3
         
         # get last vintage (y.fin)
         load(paste(DirCode,'/data/realtime_sets_cutoffday_31.RData',sep=''))
+        df.unrevised=read.csv(paste(DirCode,'/data/data.csv'
+                                    ,sep='')
+                              ,sep=','
+                              ,na.strings='NA'
+                              ,row.names=1
+                              ,stringsAsFactors=FALSE
+        )
         set=sets[[length(sets)]]
         row.names(var.used)=gsub('-','\\.',row.names(var.used))
         y.fin.col=grep(var.used[target,'code'],colnames(set))
+        
+        # unrevised data
+        unrevised=sum(is.na(y.fin.col)==T)>0
+        if (unrevised==F){
         y.fin=set[,y.fin.col,drop=F]
+        }else{
+                y.fin=df.unrevised[,target,drop=F]
+                row.names(y.fin)=df.unrevised$ym
+        }
         colnames(y.fin)=target
         target.untr=paste(target,'untr',sep='-')
-        data[data$ym%in%row.names(y.fin),target.untr]=y.fin
-        
+        if (unrevised==F){
+                data[data$ym%in%row.names(y.fin),target.untr]=y.fin
+        }else{
+                y.fin=y.fin[row.names(y.fin)%in%data$ym,1,drop=F]
+                data[data$ym%in%row.names(y.fin),target.untr]=y.fin
+        }
         
         # transform the data accordingly
         data[,target]=target.t(data[,target.untr,drop=F],h)
@@ -104,37 +123,40 @@ for (h in 1:max.hor){# h=3
         # loading old results
         res.file=paste(DirCode,'/Results/rec_',ic,target,'_h',h,'.RData',sep='')  
         load(res.file)
-#         forecast.all.old=forecast.all
-#         
-#         # loading new results
-#         res.file=paste(DirCode,'/Results/rec_',ic,target,'_h',h,'new.RData',sep='')  
-#         load(res.file)
-#         forecast.new=forecast.all
-#         
-#         old.models=row.names(forecast.all.old[[1]])
-#         niter=length(forecast.all)
-#         for (i in 1:niter){
-#                 forecast.all[[i]][old.models,]=forecast.all.old[[i]]
-#         }
+        #         forecast.all.old=forecast.all
+        #         
+        #         # loading new results
+        #         res.file=paste(DirCode,'/Results/rec_',ic,target,'_h',h,'new.RData',sep='')  
+        #         load(res.file)
+        #         forecast.new=forecast.all
+        #         
+        #         old.models=row.names(forecast.all.old[[1]])
+        #         niter=length(forecast.all)
+        #         for (i in 1:niter){
+        #                 forecast.all[[i]][old.models,]=forecast.all.old[[i]]
+        #         }
         
         
         # forecasts
         weg=102:110
-for (i in weg){
-        forecast.all[[i]]=NULL
-}
+        for (i in weg){
+                forecast.all[[i]]=NULL
+        }
         fc=sapply(forecast.all,function(x) as.numeric(x$fc))
         
         modn=row.names(forecast.all[[1]])
         # dropping vintages that can not be used
-        fc=fc[,1:nrow(target.df)]
+        max.evaluable=nrow(target.df)
+        fc=fc[,1:min(c(max.evaluable,ncol(fc)))]
+        max.eval=min(c(max.evaluable,ncol(fc)))
         row.names(fc)=modn
         # fc=fc[-grep('zeit|rword',row.names(fc)),]
         # dimensions OK? dim(fc)
-        targetm=t(matrix(rep(target.df[,target],nrow(fc)),ncol=nrow(fc)))
+        targetm=t(matrix(rep(target.df[1:max.eval,target],nrow(fc)),ncol=nrow(fc)))
         fe=fc-targetm
         # attaching dates to the errors
         tdates=data[data$eval,'ym']
+        tdates=tdates[1:max.eval]
         colnames(fe)=tdates
         
         if (post==1){
@@ -295,7 +317,7 @@ for (i in weg){
         fc=rbind(fc,cfc)
         
         # calculating fe for combination schemes
-        target.mat=matrix(rep(target.df[,1],nrow(cfc)),nrow=nrow(cfc),byrow=T)
+        target.mat=matrix(rep(target.df[1:max.eval,1],nrow(cfc)),nrow=nrow(cfc),byrow=T)
         cfe=cfc-target.mat
         fe=rbind(fe,cfe)
         
@@ -307,11 +329,11 @@ for (i in weg){
         sfe.exp=sfe.exp[-grep('median|mean',row.names(sfe.exp)),]
         row.names(sfe.exp)=NULL
         colnames(sfe.exp)=NULL
-#         write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfe',h,'.csv',sep=''),
-#                     , row.names=F,col.names=F,sep=',',qmethod='double')
-#         #         # attaching dates to the errors
-#         #         tdates=data[data$eval,'ym']
-#         #         colnames(fe)=tdates
+        #         write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfe',h,'.csv',sep=''),
+        #                     , row.names=F,col.names=F,sep=',',qmethod='double')
+        #         #         # attaching dates to the errors
+        #         #         tdates=data[data$eval,'ym']
+        #         #         colnames(fe)=tdates
         
         # getting basic statistics
         result.f=function(sfe){
@@ -470,6 +492,20 @@ for (i in weg){
 }
 t=sapply(rs,function(x) x$rank.theilsu)
 row.names(t)=row.names(result)
+
+nowcast.needed=sum(plag>0)
+now.id=plag+1
+if (nowcast.needed>0){
+        range=((plag):(plag+12))
+        horout=0:12
+}else{range=now.id:(now.id+11)
+horout=1:12}
+t=t[,range]
+best.ind=apply(t,2,which.min)
+
+out=data.frame(horizon=horout,best=sapply(best.ind,function(x) row.names(t)[x]))
+write.csv(out,paste(res.file,'BEST.csv',sep=''))
+
 write.csv(t,paste(res.file,'Auswertung.csv',sep=''))
 
 

@@ -26,8 +26,8 @@ library('BMS')
 # horizon=1 # inflation is published with on month lag, but in the following, the variables
 # are only lagged.
 zeitraus=0 # disregard zeit and rword indicator
-target='CPI.EX' # core inflation
-ic='bic' 
+target='ALQ' # core inflation
+ic='aic' 
 disregard=''# a variable that is a nearly perfect substitute for target.
 max.lag=12 # maximum lag length to be considered 
 max.obs=-1 # maximum number of past observations to be considered (rolling estimation);
