@@ -99,9 +99,7 @@ if (zeitraus==1){
         names.nr=names.nr[-grep('zeit|rword',names.nr)]
         }
 
-```
-Some of the variables that are not subject to data revisions are published with a publication lag nontheless.
-```{r}
+
 
 # getting vintage dates
 # first: changing vint.names to correspond to other date format
@@ -126,12 +124,9 @@ rt.names=row.names(overview.rt)[name.num]
 for (i in 1:length(sets)){colnames(sets[[i]])=rt.names}
 #making a copy
 sets.s=sets #sets=sets.s
-```
 
-Each forecast origin, the set of unrevised data is shortened so that it includes only that observations that had been available up to then.
-The set of realtime and unrevised data are combined.
-For each variable in the set, 1st and 2nd differences, month-on-month and year-on-year change rates are computed and added. The each of the sets is used to estimate the different models and to compute the 12 month-horizon forecasts.
-```{r}
+
+
 # loop -----------------------------------------------------------
 
 push.down=function(variable,set){
@@ -164,6 +159,9 @@ if (nchar(disregard)!=0){
                         overview.nr=overview.nr[-row.disregard,]
                         }
         }
+```
+
+```{r}
 for (horizon in 1:15){# horizon=1
         old.file=paste(DirCode,'/results/rec_',ic,target,'_h',horizon,'.RData',sep='')
         load(old.file)

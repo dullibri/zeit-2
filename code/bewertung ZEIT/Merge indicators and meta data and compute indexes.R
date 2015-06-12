@@ -146,7 +146,7 @@ valsrel=c('qdap_value_rel',sentvalsrel)
 total[,sentvalsrel]=total[,sentvals]/total[,'sent_nwords']
 indexrel=aggregate(total[,valsrel],list(as.factor(total$ym)),mean,na.rm=T)
 # indexrel[,paste(valsrel,'_25',sep='')]=aggregate(total[,valsrel],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.25),na.rm=T))[,2:8]
-indexrel[,paste(valsrel,'_50',sep='')]=aggregate(total[,valsrel],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.25),na.rm=T))[,2:8]
+indexrel[,paste(valsrel,'_50',sep='')]=aggregate(total[,valsrel],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.5),na.rm=T))[,2:8]
 # indexrel[,paste(valsrel,'_75',sep='')]=aggregate(total[,valsrel],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.25),na.rm=T))[,2:8]
 indexrel[,paste(valsrel,'_sd',sep='')]=aggregate(total[,valsrel],list(as.factor(total$ym)),sd,na.rm=T)[,2:8]
 
@@ -156,17 +156,17 @@ plot(tt[,grep('valuext_rel',colnames(tt))])
 
 # AVERAGE VALUES OVER MONTH IN ALL ARTICLES -------------------------------
 
-sentvalstotal=paste(sentvals,'_total',sep='')
-valstotal=c('qdap_value_total',sentvalstotal)
-total[,sentvalstotal]=total[,sentvals]*total[,'sent_nwords']
-total[,'qdap_value_total']=total[,'qdap_value']*total[,'qdap_nword']
+
+valstotal=c('qdap_value',sentvals)
+
+
 indextotal=aggregate(total[,valstotal],list(as.factor(total$ym)),sum,na.rm=T)
 nwordsmth=aggregate(total[,c('qdap_nword','sent_nwords')],list(as.factor(total$ym)),sum)
-indextotal[,'qdap_value_total']=indextotal[,'qdap_value_total']/nwordsmth[,2]
-indextotal[,sentvalstotal]=indextotal[,sentvalstotal]/nwordsmth[,3]
+indextotal[,'qdap_value']=indextotal[,'qdap_value']/nwordsmth[,2]
+indextotal[,sentvals]=indextotal[,sentvals]/nwordsmth[,3]
 
 tt=ts(indextotal[,2:ncol(indextotal)],start=c(1989,12),freq=12)
-plot(tt[,grep('sent_negv_total',colnames(tt))])
+plot(tt)
 
 
 t=cbind(indexrel,indextotal)
