@@ -6,8 +6,8 @@ output: html_document
 ---
 
 ```{r}
-DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
-# DirCode='h:/Git/zeit-2'
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+DirCode='h:/Git/zeit-2'
 
 # sourcing necessary scripts for estimation and forecast (for a description see "olsbmalag.Rmd")
 auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')

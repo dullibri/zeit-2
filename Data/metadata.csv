@@ -194,3 +194,11 @@ qdap_value_rela_mean,NA,188,1,1,NA,NA,0,NA,own,0,1,media indicators
 qdap_value_rela_50,NA,186,1,1,NA,NA,0,NA,own,0,1,media indicators
 qdap_value_rela_75,NA,187,1,1,NA,NA,0,NA,own,0,1,media indicators
 qdap_value_rela_sd,NA,188,1,1,NA,NA,0,NA,own,0,1,media indicators
+qdap_value_rel_sum,NA,189,1,1,NA,NA,0,NA,own,0,1,media indicators
+qdap_negator_rel_val_total,NA,190,1,1,NA,NA,0,NA,own,0,1,media indicators
+qdap_negator_value_rel_25,NA,191,1,1,NA,NA,0,NA,own,0,1,media indicators
+qdap_negator_value_rel_mean,NA,192,1,1,NA,NA,0,NA,own,0,1,media indicators
+qdap_negator_value_rel_50,NA,193,1,1,NA,NA,0,NA,own,0,1,media indicators
+qdap_negator_value_rel_75,NA,194,1,1,NA,NA,0,NA,own,0,1,media indicators
+qdap_negator_value_rel_sd,NA,195,1,1,NA,NA,0,NA,own,0,1,media indicators
+qdap_negator_value_rel_sum,NA,196,1,1,NA,NA,0,NA,own,0,1,media indicators

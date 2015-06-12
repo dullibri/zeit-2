@@ -3,11 +3,11 @@
 DirCode='H:/git/zeit-2' # main directory
 # DirCode="C:/Users/Dirk/Documents/GitHub/zeit-2"
 Dirlist=dir(paste(DirCode,'/data/zeit indikatoren',sep=''))
-Dirlist=Dirlist[grep('Ergebnis_',Dirlist)]
+Dirlist=Dirlist[grep('Ergebnis_only_negation',Dirlist)]
 for (i in 1:length(Dirlist)){#i=1
         if(i==1){
                 Ergebnis=read.csv(paste(paste(DirCode,'/data/zeit indikatoren/',Dirlist[i],sep='')))
-                is=gsub('Ergebnis_|\\.csv','',Dirlist[i])
+                is=gsub('Ergebnis_only_negation|\\.csv','',Dirlist[i])
                 is=gsub('_','\\.',is,fixed=F)
                 
                 year=strsplit(is,'\\.')[[1]][1]
@@ -17,7 +17,7 @@ for (i in 1:length(Dirlist)){#i=1
         }
         if(i>1){
                 Erg=read.csv(paste(paste(DirCode,'/data/zeit indikatoren/',Dirlist[i],sep='')))
-                is=gsub('Ergebnis_|\\.csv','',Dirlist[i])
+                is=gsub('Ergebnis_only_negation|\\.csv','',Dirlist[i])
                 is=gsub('_','\\.',is,fixed=F)
                 year=strsplit(is,'\\.')[[1]][1]
                 issue=strsplit(is,'\\.')[[1]][2]
@@ -28,4 +28,4 @@ for (i in 1:length(Dirlist)){#i=1
                 
         }
 }
-write.csv(Ergebnis,paste(DirCode,'/data/zeit indikatoren/Zeitbewertungen.csv',sep=''))
+write.csv(Ergebnis,paste(DirCode,'/data/zeit indikatoren/Zeitbewertungen.qdap.negator.csv',sep=''))

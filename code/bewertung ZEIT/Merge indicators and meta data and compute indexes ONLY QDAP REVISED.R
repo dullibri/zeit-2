@@ -153,18 +153,12 @@ indexrel[,paste('qdap_value_rel','_50',sep='')]=aggregate(total[,'qdap_value_rel
 indexrel[,paste('qdap_value_rel','_75',sep='')]=aggregate(total[,'qdap_value_rel'],list(as.factor(total$ym)),function(x) quantile(x,probs=c(0.75),na.rm=T))[,2]
 
 indexrel[,paste('qdap_value_rel','_sd',sep='')]=aggregate(total[,'qdap_value_rel'],list(as.factor(total$ym)),sd,na.rm=T)[,2]
-
+indexrel[,paste('qdap_value_rel','_sum',sep='')]=aggregate(total[,'qdap_value_ampl'],list(as.factor(total$ym)),sum,na.rm=T)[,2]
 indexrel=indexrel[-nrow(indexrel),]
 tt=ts(indexrel[1:182,1:ncol(indexrel)],start=c(1999,12),freq=12)
 plot(tt)
 
 
-
-
-
-
-
-
-write.csv(t,paste(DirCode,'/data/zeit indikatoren/zeit.indexes.qdap.ampl.csv',sep=''))
+write.csv(indexrel,paste(DirCode,'/data/zeit indikatoren/zeit.indexes.qdap.ampl.csv',sep=''))
 
 
