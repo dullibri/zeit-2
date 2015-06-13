@@ -146,7 +146,7 @@ listsubdirs=list.files(DirRawTexts)
 
 
 # Texte eines Jahres laden -----------------------------------------------
-for (jj in 2006:2014){#jj={#:2015 jj=1990 jj=2014
+for (jj in 2015:2015){#jj={#:2015 jj=1990 jj=2014
         # list of subdirectories each year
         liste_jahr=listsubdirs[grep(as.character(jj),listsubdirs)]
         for (k in 1:length(liste_jahr)){#k=50
