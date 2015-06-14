@@ -1,10 +1,10 @@
 DirCode='h:/Git/zeit-2'
-# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 # target='IP'
 # plag=3
-# target='CPI.EX'
+target='CPI.EX'
 # plag=1 # publication lag
-target='EW'
+# target='EW'
 plag=0 # publication lag
 max.hor=12
 # wenn rec=1 und bicres=0 dann nur recursive, wenn rec=0 und bicres=1 dann mit aic
@@ -125,8 +125,8 @@ for (h in 1:max.hor){# h=3
         
         
         # loading old results
-#         res.file=paste(DirCode,'/Results/rec_',ic,target,'_h',h,'.RData',sep='')  
-#         load(res.file)
+        res.file=paste(DirCode,'/Results/rolling59',ic,target,'_h',h,'.RData',sep='')  
+        load(res.file)
         #         forecast.all.old=forecast.all
         #         
         #         # loading new results

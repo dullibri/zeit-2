@@ -1,5 +1,5 @@
 DirCode='h:/Git/zeit-2'
-
+DirCode='c:/users/dirk/documents/github/zeit-2'
 # sourcing necessary scripts for estimation and forecast (for a description see "olsbmalag.Rmd")
 auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')
 source(paste(auxcodedir,'/lag.exact.R',sep=''))
@@ -150,7 +150,7 @@ if (nchar(disregard)!=0){
     overview.nr=overview.nr[-row.disregard,]
   }
 }
-for (horizon in 9:12){# horizon=1
+for (horizon in 3:8){# horizon=1
 #   old.file=paste(DirCode,'/results/rec_',ic,target,'_h',horizon,'.RData',sep='')
 #   load(old.file)
 #   forecast.all.old=forecast.all
