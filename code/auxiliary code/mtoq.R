@@ -13,7 +13,7 @@ mtoq=function(mdat){
         mdat$yq=paste(mdat[,'y'],mdat$quarter,sep='-')
         qdat=data.frame(yq=unique(mdat$yq))
         nvar=ncol(mdat)-4
-        for (i in 1:nvar){
+        for (i in 1:nvar){#i=1
                 Nna=aggregate(is.na(mdat[,i]),list(as.factor(mdat$yq)),sum)[,2]==0
                 Nincomplete=aggregate(apply(mdat[,i,drop=F],1,is.numeric),list(as.factor(mdat$yq)),sum)[,2]==3
                 OK=(Nna+Nincomplete)==2
@@ -22,5 +22,6 @@ mtoq=function(mdat){
         }
         row.names(qdat)=qdat$yq
         qdat$yq=NULL
+        return(qdat)
         
 }

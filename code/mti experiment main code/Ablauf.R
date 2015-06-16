@@ -1,0 +1,5 @@
+setwd('h:/git/zeit-2/code/mti experiment main code/')
+source('ifo.R')
+source('esi.R')
+# source('DAX.R')
+# source('EX.R')

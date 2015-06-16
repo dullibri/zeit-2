@@ -150,7 +150,7 @@ if (nchar(disregard)!=0){
     overview.nr=overview.nr[-row.disregard,]
   }
 }
-for (horizon in 12:1){# horizon=1
+for (horizon in 9:1){# horizon=1
 #   old.file=paste(DirCode,'/results/rec_',ic,target,'_h',horizon,'.RData',sep='')
 #   load(old.file)
 #   forecast.all.old=forecast.all

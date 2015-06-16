@@ -1,10 +1,10 @@
 DirCode='h:/Git/zeit-2'
-DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 # target='IP'
 # plag=3
-target='CPI.EX'
+target='DAX'
 # plag=1 # publication lag
-# target='EW'
+# target='IP'
 plag=0 # publication lag
 max.hor=12
 # wenn rec=1 und bicres=0 dann nur recursive, wenn rec=0 und bicres=1 dann mit aic
@@ -494,8 +494,12 @@ for (h in 1:max.hor){# h=3
         
         # write.csv(result.c,paste(DirCode,'/results/results_comb_',target,h,'.csv',sep=''))
 }
-t=sapply(rs,function(x) x$rank.theilsu)
-row.names(t)=row.names(result)
+
+lout=read.csv(paste(DirCode,'/results/evaluation_leave_out.csv',sep=''),stringsAsFactors=F,header=F)
+lout=unlist(lout)
+lin=which(!row.names(tt)%in%lout)
+t=sapply(rs,function(x) x[lin,'rank.theilsu'])
+row.names(t)=row.names(result[lin,,drop=F])
 
 nowcast.needed=sum(plag>0)
 now.id=plag+1
@@ -505,6 +509,7 @@ if (nowcast.needed>0){
 }else{range=now.id:(now.id+11)
 horout=1:12}
 t=t[,range]
+t=t[-176,]
 best.ind=apply(t,2,which.min)
 
 out=data.frame(horizon=horout,best=sapply(best.ind,function(x) row.names(t)[x]))
