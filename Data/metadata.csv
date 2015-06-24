@@ -202,3 +202,12 @@ qdap_negator_value_rel_50,NA,193,1,1,NA,NA,0,NA,own,0,1,media indicators
 qdap_negator_value_rel_75,NA,194,1,1,NA,NA,0,NA,own,0,1,media indicators
 qdap_negator_value_rel_sd,NA,195,1,1,NA,NA,0,NA,own,0,1,media indicators
 qdap_negator_value_rel_sum,NA,196,1,1,NA,NA,0,NA,own,0,1,media indicators
+Notrend,NA,197,1,1,NA,NA,0,NA,Mediatenor International,0,1,media indicators
+Rising,NA,198,1,1,NA,NA,0,NA,Mediatenor International,0,1,media indicators
+Falling,NA,199,1,1,NA,NA,0,NA,Mediatenor International,0,1,media indicators
+Volume,NA,200,1,1,NA,NA,0,NA,Mediatenor International,0,1,media indicators
+Goodrising,NA,201,1,1,NA,NA,0,NA,Mediatenor International,0,1,media indicators
+Badrising,NA,202,1,1,NA,NA,0,NA,Mediatenor International,0,1,media indicators
+Otherrising,NA,203,1,1,NA,NA,0,NA,Mediatenor International,0,1,media indicators
+lamla_climate,NA,204,1,1,NA,NA,0,NA,Mediatenor International,0,1,media indicators
+lamla_climate_de,NA,205,1,1,NA,NA,0,NA,Mediatenor International,0,1,media indicators
