@@ -1,8 +1,8 @@
 DirCode='h:/Git/zeit-2'
-# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 # target='IP'
 # plag=3
-target='DAX'
+target='CPI.EX'
 # plag=1 # publication lag
 # target='IP'
 plag=0 # publication lag
@@ -29,6 +29,7 @@ ni=4 # number of indicators in output
 
 auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')
 source(paste(auxcodedir,'/lag.exact.R',sep=''))
+source(paste(auxcodedir,'/renumber.R',sep=''))
 source(paste(DirCode,'/Code/Clark_West_Test/f_Newey_West_vector.r',sep='') )
 source(paste(DirCode,'/Code/Clark_West_Test/f_Clark_West_Test.r',sep='')) 
 
@@ -333,7 +334,7 @@ for (h in 1:max.hor){# h=3
         sfe.exp=sfe.exp[-grep('median|mean',row.names(sfe.exp)),]
         row.names(sfe.exp)=NULL
         colnames(sfe.exp)=NULL
-        #         write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfe',h,'.csv',sep=''),
+        #         write.table(t(sfe.exp),paste(DirCode,'/results/fe_infl_rolling_aic/sfe',h,'.csv',sep=''),
         #                     , row.names=F,col.names=F,sep=',',qmethod='double')
         #         #         # attaching dates to the errors
         #         #         tdates=data[data$eval,'ym']
@@ -375,7 +376,7 @@ for (h in 1:max.hor){# h=3
                 sfe.exp=sfe.exp[-grep('median|mean',row.names(sfe.exp)),]
                 row.names(sfe.exp)=NULL
                 colnames(sfe.exp)=NULL
-                write.table(t(sfe.exp),paste(DirCode,'/results/fe_ip_rolling_aic/sfer',h,'.csv',sep=''),
+                write.table(t(sfe.exp),paste(DirCode,'/results/fe_infl_rolling_aic/sfer',h,'.csv',sep=''),
                             , row.names=F,col.names=F,sep=',')
                 
                 # Clark West during recession ---------------------------------------------
@@ -407,83 +408,83 @@ for (h in 1:max.hor){# h=3
         
         
         
-        #         # giacomini rossi ---------------------------------------------------------
-        #         ###### Dating of Forecast Breakdowns ######
-        #         # Surprise loss
-        #         meanmedian=grep('mean|median',row.names(sfe))
-        #         Neval = ncol(fc)
-        #         Nmodels=nrow(fe[-meanmedian,])
-        #         SL.arx = sfe-rowMeans(sfe)
-        #         #         t=rowMeans(sfe)
-        #         
-        #         SL.arx=SL.arx[-meanmedian,]
-        #         #         t=rowMeans(sfe)
-        #         # Variances
-        #         sfe.demeaned=sfe[-meanmedian,]-rowMeans(sfe[-meanmedian,])%*%matrix(1,nrow=1,ncol=Neval)
-        #         SLL.arx=cov(t(sfe.demeaned))
-        #         SLL.arx=diag(SLL.arx)
-        #         
-        #         # Parameters
-        #         Nobs=sapply(forecast.all,function(x) x$nobs)
-        #         Nobs.dev=max(as.numeric(apply(Nobs,1,max))-as.numeric(apply(Nobs,1,min)))
-        #         if (Nobs.dev>2){stop('Nobs vary to much')}
-        #         min.obs=as.numeric(apply(Nobs,1,min))
-        #         lambdavec=min.obs*2/3/Neval
-        #         # lambda=2/3*(max.obs/Neval)
-        #         
-        #         # HAC variance estimator of demeaned surprise losses
-        #         bw=0#floor(Neval^(1/3))# rounded down
-        #         SLL.arx = matrix(0,nrow=1,ncol=Nmodels)
-        #         for (n in 1:Nmodels){#n=1
-        #                 hacest<-function(sqerror.demeaned,Neval,bw){
-        #                         SLL = 0
-        #                         for (j in 1:bw){
-        #                                 Gamma = t(sqerror.demeaned[(1+j):Neval])%*%sqerror.demeaned[1:(Neval-j)]/Neval
-        #                                 SLL = SLL+2*(1-j/(bw+1))*Gamma
-        #                         }
-        #                         SLL = SLL+t(sqerror.demeaned)%*%sqerror.demeaned/Neval
-        #                 }
-        #                 SLL.arx=apply(sfe.demeaned,1,hacest,Neval,bw)
-        #         }
-        #         # Variance estimator out-of-sample losses
-        #         sigma2 = lambdavec*SLL.arx
-        #         
-        #         # regression of SL on themselves
-        #         p.max = 12
-        #         
-        #         surprise.BIC = matrix(NA,nrow=p.max,ncol=Nmodels)
-        #         for (p in 1:p.max){
-        #                 surprise.res=apply(SL.arx,1,olsself,p)
-        #                 surprise.BIC[p,]=sapply(surprise.res,function(x) x$BIC)
-        #         }
-        #         surprise.pstar = apply(surprise.BIC, 2, which.min)
-        #         for (n in 1:Nmodels){
-        #                 surprise.res[[n]]=olsself(SL.arx[n,],surprise.pstar[n])
-        #         }
-        #         
-        #         surprise.coef=sapply(surprise.res,function(x) x$b)
-        #         surprise.regressors=sapply(surprise.res,function(x) x$Z)
-        #         surprise.resid=sapply(surprise.res,function(x) x$res)
-        #         surprise.fit=sapply(surprise.res,function(x) x$yfit)
-        #         
-        #         # Confidence Interval
-        #         fbphases=matrix(NA,nrow=Nmodels,ncol=Neval)
-        #         surprise.CI = list()
-        #         for (n in 1:Nmodels){#n=1
-        #                 trash = FB_Wald_CI(surprise.res[[n]]$Z,surprise.res[[n]]$res,surprise.res[[n]]$b,Neval,min.obs[n],sigma2[n],1,"rolling",bw,0.05)
-        #                 surprise.CI[[n]]=trash$SLfitCI
-        #                 aux.start=Neval-length(trash$SLfitCI)+1
-        #                 fbphases[n,aux.start:Neval]=trash$SLfitCI>0
-        #         }
-        #         colnames(fbphases)=colnames(sfe)
-        #         fbs[[h]]=fbphases
-        #         n.breakdowns=colSums(fbphases,na.rm=T)
-        #         names(n.breakdowns)=colnames(fe)
-        #         write.csv(fbphases,paste(DirCode,'/results/fbphases/fbphase_',h,'.csv',sep=''))
-        #         # saving files ------------------------------------------------------------
-        #         
-        #         # result.mt=result[grep('zeit',row.names(result)),]
-        #         # View(result[grep('rword|zeit',row.names(result)),])
+                # giacomini rossi ---------------------------------------------------------
+                ###### Dating of Forecast Breakdowns ######
+                # Surprise loss
+                meanmedian=grep('^mean|^median',row.names(sfe))
+                Neval = ncol(fc)
+                Nmodels=nrow(fe[-meanmedian,])
+                SL.arx = sfe-rowMeans(sfe)
+                #         t=rowMeans(sfe)
+                
+                SL.arx=SL.arx[-meanmedian,]
+                #         t=rowMeans(sfe)
+                # Variances
+                sfe.demeaned=sfe[-meanmedian,]-rowMeans(sfe[-meanmedian,])%*%matrix(1,nrow=1,ncol=Neval)
+                SLL.arx=cov(t(sfe.demeaned))
+                SLL.arx=diag(SLL.arx)
+                
+                # Parameters
+                Nobs=sapply(forecast.all,function(x) x$nobs)
+                Nobs.dev=max(as.numeric(apply(Nobs,1,max))-as.numeric(apply(Nobs,1,min)))
+                if (Nobs.dev>2){stop('Nobs vary to much')}
+                min.obs=as.numeric(apply(Nobs,1,min))
+                lambdavec=min.obs*2/3/Neval
+                # lambda=2/3*(max.obs/Neval)
+                
+                # HAC variance estimator of demeaned surprise losses
+                bw=0#floor(Neval^(1/3))# rounded down
+                SLL.arx = matrix(0,nrow=1,ncol=Nmodels)
+                for (n in 1:Nmodels){#n=1
+                        hacest<-function(sqerror.demeaned,Neval,bw){
+                                SLL = 0
+                                for (j in 1:bw){
+                                        Gamma = t(sqerror.demeaned[(1+j):Neval])%*%sqerror.demeaned[1:(Neval-j)]/Neval
+                                        SLL = SLL+2*(1-j/(bw+1))*Gamma
+                                }
+                                SLL = SLL+t(sqerror.demeaned)%*%sqerror.demeaned/Neval
+                        }
+                        SLL.arx=apply(sfe.demeaned,1,hacest,Neval,bw)
+                }
+                # Variance estimator out-of-sample losses
+                sigma2 = lambdavec*SLL.arx
+                
+                # regression of SL on themselves
+                p.max = 12
+                
+                surprise.BIC = matrix(NA,nrow=p.max,ncol=Nmodels)
+                for (p in 1:p.max){
+                        surprise.res=apply(SL.arx,1,olsself,p)
+                        surprise.BIC[p,]=sapply(surprise.res,function(x) x$BIC)
+                }
+                surprise.pstar = apply(surprise.BIC, 2, which.min)
+                for (n in 1:Nmodels){
+                        surprise.res[[n]]=olsself(SL.arx[n,],surprise.pstar[n])
+                }
+                
+                surprise.coef=sapply(surprise.res,function(x) x$b)
+                surprise.regressors=sapply(surprise.res,function(x) x$Z)
+                surprise.resid=sapply(surprise.res,function(x) x$res)
+                surprise.fit=sapply(surprise.res,function(x) x$yfit)
+                
+                # Confidence Interval
+                fbphases=matrix(NA,nrow=Nmodels,ncol=Neval)
+                surprise.CI = list()
+                for (n in 1:Nmodels){#n=1
+                        trash = FB_Wald_CI(surprise.res[[n]]$Z,surprise.res[[n]]$res,surprise.res[[n]]$b,Neval,min.obs[n],sigma2[n],1,"rolling",bw,0.05)
+                        surprise.CI[[n]]=trash$SLfitCI
+                        aux.start=Neval-length(trash$SLfitCI)+1
+                        fbphases[n,aux.start:Neval]=trash$SLfitCI>0
+                }
+                colnames(fbphases)=colnames(sfe)
+                fbs[[h]]=fbphases
+                n.breakdowns=colSums(fbphases,na.rm=T)
+                names(n.breakdowns)=colnames(fe)
+                write.csv(fbphases,paste(DirCode,'/results/fbphases/fbphase_',h,'.csv',sep=''))
+                # saving files ------------------------------------------------------------
+                
+                # result.mt=result[grep('zeit',row.names(result)),]
+                # View(result[grep('rword|zeit',row.names(result)),])
         
         result.mt=result[grep('MT.',row.names(result)),]
         # write.csv(result.mt,paste(DirCode,'/results/results',target,h,'.csv',sep=''))
@@ -497,21 +498,29 @@ for (h in 1:max.hor){# h=3
 
 lout=read.csv(paste(DirCode,'/results/evaluation_leave_out.csv',sep=''),stringsAsFactors=F,header=F)
 lout=unlist(lout)
-lin=which(!row.names(tt)%in%lout)
+# write.csv(row.names(result),'out.csv')
+lin=which(!row.names(result)%in%lout)
 t=sapply(rs,function(x) x[lin,'rank.theilsu'])
-row.names(t)=row.names(result[lin,,drop=F])
+sel.mods=row.names(result)[lin]
+row.names(t)=sel.mods
+t=renumber(t)
 
-nowcast.needed=sum(plag>0)
-now.id=plag+1
-if (nowcast.needed>0){
-        range=((plag):(plag+12))
-        horout=0:12
-}else{range=now.id:(now.id+11)
-horout=1:12}
-t=t[,range]
-t=t[-176,]
+t10=t<=3
+t10in=rowSums(t10)>0
+tbest10=t[t10in,]
+# t=sapply(rs,function(x) x[,'rank.theilsu'])
+# row.names(t)=row.names(result)
+# nowcast.needed=sum(plag>0)
+# now.id=plag+1
+# if (nowcast.needed>0){
+#         range=((plag):(plag+12))
+#         horout=0:12
+# }else{range=now.id:(now.id+11)
+# horout=1:12}
+# t=t[,range]
+# t=t[-176,]
 best.ind=apply(t,2,which.min)
-
+horout=1:12
 out=data.frame(horizon=horout,best=sapply(best.ind,function(x) row.names(t)[x]))
 write.csv(out,paste(res.file,'BEST.csv',sep=''))
 
@@ -573,13 +582,13 @@ write.csv(t,paste(res.file,'Auswertung.csv',sep=''))
 # sfeorr='sfe'
 # # alternative 'sfer' for recession
 # for (h in 1:14){
-#         inc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/includeSQ',sfeorr,h,'.csv',sep=''),header=F)
-#         exc=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/excludeSQ',sfeorr,h,'.csv',sep=''),header=F)
+#         inc=read.csv(paste(DirCode,'/results/fe_infl_rolling_aic/includeSQ',sfeorr,h,'.csv',sep=''),header=F)
+#         exc=read.csv(paste(DirCode,'/results/fe_infl_rolling_aic/excludeSQ',sfeorr,h,'.csv',sep=''),header=F)
 #         exin=rbind(exc,inc)
 #         
 #         inc.ind=rep(1,nrow(exin))
 #         inc.ind[1:nrow(exc)]=0
-#         pval=read.csv(paste(DirCode,'/results/fe_ip_rolling_aic/pvalsSQ',sfeorr,h,'.csv',sep=''),header=F)
+#         pval=read.csv(paste(DirCode,'/results/fe_infl_rolling_aic/pvalsSQ',sfeorr,h,'.csv',sep=''),header=F)
 #         
 #         mcs.h=data.frame(exin,pval,inc.ind)
 #         if (sfeorr=='sfe'){
@@ -772,28 +781,29 @@ write.csv(t,paste(res.file,'Auswertung.csv',sep=''))
 # 
 # # fbp analysis ------------------------------------------------------------
 # 
-# # fres=fres[[14]]
-# fbpall=matrix(NA,nrow=nrow(fbphases),ncol=max.hor)
-# row.names(fbpall)=row.names(sfe)[1:(nrow(sfe)-2)]
-# fbprec=matrix(NA,nrow=nrow(fbphases),ncol=max.hor)
-# row.names(fbprec)=row.names(sfe)[1:(nrow(sfe)-2)]
-# 
+# fres=fres[[12]]
+fbpall=matrix(NA,nrow=length(sel.mods),ncol=max.hor)
+row.names(fbpall)=sel.mods
+fbprec=matrix(NA,nrow=nrow(fbphases),ncol=max.hor)
+row.names(fbprec)=sel.mods
+
 # fbp.sub.all=matrix(NA,nrow=3,ncol=max.hor)
 # row.names(fbp.sub.all)=c('fbp MT.de.future','fbp MT.de.climate','mean')
 # 
 # fbp.sub.rec=matrix(NA,nrow=3,ncol=max.hor)
 # row.names(fbp.sub.rec)=c('fbp MT.de.future','fbp MT.de.climate','mean')
-# 
-# for (h in 1:14){#h=4
-#         t3=fbs[[h]]
-#         row.names(t3)=row.names(sfe)[1:(nrow(sfe)-2)]
-#         # fbp for all periods
-#         fbpall[,h]=rowMeans(t3,na.rm=T)
-#         
-#         rdate=data$ym[which(data$ecri==0)]
-#         rcol=which(colnames(t3)%in%rdate)
-#         fbprec[,h]=rowMeans(t3[,rcol])
-#         
+
+for (h in 1:12){#h=12
+        t3=fbs[[h]]
+        row.names(t3)=row.names(result)[1:(nrow(result)-2)]
+        t3=t3[sel.mods,]
+        # fbp for all periods
+        fbpall[,h]=rowMeans(t3,na.rm=T)
+        
+        rdate=data$ym[which(data$ecri==0)]
+        rcol=which(colnames(t3)%in%rdate)
+        fbprec[,h]=rowMeans(t3[,rcol])
+        
 #         fbp.sub.rec['fbp MT.de.future',h]=fbprec['MT.de.future',h]
 #         fbp.sub.rec['fbp MT.de.climate',h]=fbprec['MT.de.climate',h]
 #         fbp.sub.rec['mean',h]=mean(fbprec[,h])#incsfer[,h]==1
@@ -802,14 +812,14 @@ write.csv(t,paste(res.file,'Auswertung.csv',sep=''))
 #         fbp.sub.all['fbp MT.de.future',h]=fbpall['MT.de.future',h]
 #         fbp.sub.all['fbp MT.de.climate',h]=fbpall['MT.de.climate',h]
 #         fbp.sub.all['mean',h]=mean(fbpall[,h])#incsfe[,h]==1
-#         
-#         
-# }
-# fbptab=matrix(NA,nrow=3,ncol=6)
-# row.names(fbptab)=row.names(fbp.sub.all)
-# fbptab[,c(1,3,5)]=fbp.sub.all[,12:14]
-# fbptab[,c(2,4,6)]=fbp.sub.rec[,12:14]
-# fbptab=round(fbptab,2)
+        
+        
+}
+fbptab=matrix(NA,nrow=3,ncol=6)
+row.names(fbptab)=row.names(fbp.sub.all)
+fbptab[,c(1,3,5)]=fbp.sub.all[,12:14]
+fbptab[,c(2,4,6)]=fbp.sub.rec[,12:14]
+fbptab=round(fbptab,2)
 # 
 # write.csv(fbptab,paste(DirCode,'/results/fbp.csv',sep=''))
 # 

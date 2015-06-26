@@ -22,6 +22,8 @@ ic='aic'
 disregard=''# a variable that is a nearly perfect substitute for target.
 max.lag=12 # maximum lag length to be considered 
 max.obs=59 # maximum number of past observations to be considered (rolling estimation);
+if (max.obs<0){meth='recursive'}else(meth=paste('rolling',max.obs,sep=''))
+
 # setting negative window turns that of (recursive estimation)
 # rolling window size will be: max.obs-max.lag-horizon, as lags need to be considered for
 # estimation. 
@@ -30,12 +32,13 @@ retest.on=TRUE
 
 
 # getting list of already existing variables
-# old.file=paste(DirCode,'/results/rec_',ic,target,'_h',5,'.RData',sep='')
-# load(old.file)
-# aux=forecast.all[[1]]
-# old.names=row.names(aux)
-# old.names=old.names[-grep('ar',old.names)]
-# rm(forecast.all)
+old.file=paste(DirCode,'/results/',meth,ic,target,'_h',1,'.RData',sep='')
+
+load(old.file)
+aux=forecast.all[[1]]
+old.names=row.names(aux)
+old.names=old.names[-grep('ar',old.names)]
+rm(forecast.all)
 
 # retest
 # retest.raw=unlist(read.csv(paste(DirCode,'/data/retest.csv',sep='')
@@ -150,10 +153,11 @@ if (nchar(disregard)!=0){
     overview.nr=overview.nr[-row.disregard,]
   }
 }
-for (horizon in 3:8){# horizon=1
-#   old.file=paste(DirCode,'/results/rec_',ic,target,'_h',horizon,'.RData',sep='')
-#   load(old.file)
-#   forecast.all.old=forecast.all
+for (horizon in 1:12){# horizon=1
+ 
+  old.file=paste(DirCode,'/results/',meth,ic,target,'_h',horizon,'.RData',sep='')
+  load(old.file)
+  forecast.all.old=forecast.all
   forecast.all=vector('list',length(sets))
   elanet=list()
   for (vint.num in 1:length(sets)){# vint.num=1
@@ -270,10 +274,10 @@ for (horizon in 3:8){# horizon=1
       olsbic3(y,yx,horizon_ext,max.lag,ic)[extract]
     )
     p1=forecast['ar','p1']   
-#     newnames=colnames(set)[!colnames(set)%in%old.names]
+    newnames=colnames(set)[!colnames(set)%in%old.names]
 #     if (retest.on==F){
 #       
-#       set=set[,newnames]
+      set=set[,newnames]
 #     }else{
 #       estnames=c(newnames,retest)
 #       set=set[,estnames]
@@ -290,9 +294,9 @@ for (horizon in 3:8){# horizon=1
       }
       
     }# end model loop
-#     forecast.old=forecast.all.old[[vint.num]]
+    forecast.old=forecast.all.old[[vint.num]]
 #     if (retest.on==F){
-#       forecast[row.names(forecast.old),]=forecast.old
+      forecast[row.names(forecast.old),]=forecast.old
 #     }else{
 #       forecast.redone=forecast
 #       forecast[row.names(forecast.old),]=forecast.old
@@ -314,7 +318,6 @@ for (horizon in 3:8){# horizon=1
   #                 }
   
   #         write.csv(lassm,paste(DirCode,'/results/rec_elanet_ranking',ic,target,'_h',horizon_ext,'new.RData',sep=''))
-  if (max.obs<0){meth='recursive'}else(meth=paste('rolling',max.obs,sep=''))
   save(forecast.all,file=paste(DirCode,'/results/',meth,ic,target,'_h',horizon,'.RData',sep=''))
   
   

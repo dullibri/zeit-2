@@ -11,13 +11,16 @@ target.t=function(y.raw,horizon){
 source(paste(DirCode,'/code/auxiliary code/lag.exact.R',sep=''))
 data=read.csv(paste(DirCode,'/data/data.csv',sep='')
               ,stringsAsFactors=F
-              ,row.names=1)
-lamla=read.csv(paste(DirCode,'/data/mediatenor/lamlalein.csv',sep='')
+              ,row.names=1
+              )
+lamla=read.csv(paste(DirCode,'/data/mediatenor/Mediatenor_Jan2001_Jan2015.csv',sep='')
                ,stringsAsFactors=F
                ,row.names=1)
 
-data=data[,grep('ym|MT.',colnames(data))]
+data=data[,grep('ym|qdap',colnames(data))]
 data=data[complete.cases(data),]
+lamla$ym=row.names(lamla)
+data=merge(data,lamla,by=c('ym','ym'))
 # getting last vintage cpi and cutting to mt-periods
 cpi=read.csv(paste(DirCode,'/data/bundesbankrealtime/M.DE.S.P.PC1.PC150.R.I.csv',sep='')
             ,stringsAsFactors=F

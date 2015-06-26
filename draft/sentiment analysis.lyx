@@ -1,0 +1,90 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection
+Automatic sentiment analysis
+\end_layout
+
+\begin_layout Standard
+We extract the sentiment of news articles using a lexicon based algorithm
+ in the line of Taboada (2011).
+ The software for the implementation is the qdap package (see Rinker, 2013)
+ in the open Software project R (see R Core Team, 2013).
+ Here, each word is compared to a lexicon of positive and negative words,
+ such as “bad”, “detrimental” and “dangerous” (negative), respectively “good”,
+ “beneficial” and “safe” (positive).
+ Each of the words in the dictionary are attributed a value between -1 (negative
+) and 1 (positive).
+ Then, the sentiment is given by the sum of values found.
+ The lexica in German language available are SentiWS (see Remus et al., 2010)
+ and Sentistrength (Thelwall et al.
+ 2010).
+ • Before the values are summed up, some refinement is implemented.
+ First, negativity is accounted for by inverting the value of a sentiment
+ word in the lexicon if it is preceded by a negator.
+ The negator “no” inverts the originally positive value of “good”.
+ Then, amplifiers like “very” and de-amplifiers like “less” are employed
+ to increase or decrease the respective values.
+ 
+\end_layout
+
+\end_body
+\end_document
