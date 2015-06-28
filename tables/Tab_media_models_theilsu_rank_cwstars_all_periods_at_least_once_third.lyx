@@ -1,0 +1,59 @@
+#LyX file created by tex2lyx 2.0.4
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref 0
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 0
+\use_mathdots 0
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+"","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36" "IL.5","0.979","**","PPP1PP","0.952","**","PPP2PP","0.937","**","PPP2PP","0.989","**","PPP3PP","1.127","**","PPP64PP","1.177","**","PPP73PP","1.151","**","PPP66PP","1.112","**","PPP60PP","1.085","**","PPP48PP","1.009","**","PPP18PP","1.102","*","PPP54PP","1.232","*","PPP97PP" "Zeit ","1.03"," ","PPP82PP","0.966","*","PPP5PP","0.939","*","PPP3PP","0.941","**","PPP2PP","0.992","**","PPP4PP","0.996","*","PPP5PP","0.974","**","PPP3PP","0.966","*","PPP2PP","0.988","*","PPP8PP","0.956","*","PPP6PP","0.943"," ","PPP3PP","0.911","*","PPP5PP" "Zeit simple","1.012"," ","PPP34PP","0.958","*","PPP3PP","0.907","**","PPP1PP","0.879","**","PPP1PP","0.929","*","PPP1PP","0.938","*","PPP1PP","0.909","*","PPP1PP","0.981","*","PPP7PP","0.981","*","PPP6PP","0.962","*","PPP8PP","0.947","*","PPP4PP","0.911","*","PPP6PP" "DIL.10","1.004"," ","PPP18PP","0.994","*","PPP13PP","1.004","*","PPP18PP","1.015","*","PPP10PP","1.023"," ","PPP12PP","1.004","*","PPP7PP","0.978","**","PPP4PP","0.94","*","PPP1PP","0.937","*","PPP1PP","0.966"," ","PPP9PP","1.026"," ","PPP17PP","1.001"," ","PPP18PP" "DALQ","1.018","*","PPP45PP","1.006","**","PPP21PP","1.018","*","PPP24PP","1.026","*","PPP19PP","1.012","*","PPP9PP","1.046","*","PPP16PP","1.042","*","PPP21PP","1","*","PPP10PP","0.951","**","PPP2PP","0.9","**","PPP1PP","0.859","**","PPP1PP","0.824","**","PPP1PP" "DWHOUR","1.097"," ","PPP184PP","1.078"," ","PPP107PP","1.088"," ","PPP84PP","1.081"," ","PPP54PP","1.012"," ","PPP8PP","0.985","*","PPP3PP","0.963","*","PPP2PP","0.977","*","PPP4PP","0.966","*","PPP3PP","0.952","*","PPP4PP","0.88","*","PPP2PP","0.854","*","PPP3PP" "DOtherrising","0.996","*","PPP7PP","0.948","**","PPP1PP","0.994","**","PPP8PP","1.025","**","PPP18PP","1.072","**","PPP30PP","1.16","*","PPP69PP","1.218"," ","PPP87PP","1.14"," ","PPP73PP","1.109"," ","PPP59PP","1.057"," ","PPP37PP","0.995"," ","PPP10PP","0.826","**","PPP2PP" 
+\end_layout
+
+\end_body
+\end_document

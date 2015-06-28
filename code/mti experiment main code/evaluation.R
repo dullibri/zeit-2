@@ -21,24 +21,24 @@ library(stringr)
 library(glmulti)
 # library(pracma)
 # library(MCS)
-source(paste(DirCode,'/code/hansen_2005_test/f_Hansen_2005_Test_statistic.R',sep=''))
-source(paste(DirCode,'/code/hansen_2005_test/f_Newey_West_bootstrapable.R',sep=''))
-source(paste(DirCode,'/Code/giacomini rossi/FB_Wald_CI.R',sep=''))
+source(paste(DirCode,'/code/tests/hansen_2005_test/f_Hansen_2005_Test_statistic.R',sep=''))
+source(paste(DirCode,'/code/tests/hansen_2005_test/f_Newey_West_bootstrapable.R',sep=''))
+source(paste(DirCode,'/Code/tests/giacomini rossi/FB_Wald_CI.R',sep=''))
 ni=4 # number of indicators in output
 
 
 auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')
 source(paste(auxcodedir,'/lag.exact.R',sep=''))
 source(paste(auxcodedir,'/renumber.R',sep=''))
-source(paste(DirCode,'/Code/Clark_West_Test/f_Newey_West_vector.r',sep='') )
-source(paste(DirCode,'/Code/Clark_West_Test/f_Clark_West_Test.r',sep='')) 
+source(paste(DirCode,'/Code/tests/Clark_West_Test/f_Newey_West_vector.r',sep='') )
+source(paste(DirCode,'/Code/tests/Clark_West_Test/f_Clark_West_Test.r',sep='')) 
 
-source(paste(DirCode,'/Code/white_test/f_White_Reality_Check.r',sep='') )
+source(paste(DirCode,'/Code/tests/white_test/f_White_Reality_Check.r',sep='') )
 # source(paste(DirCode,'/Code/white_test/Conduct_White_Test.r',sep='') )
-source(paste(DirCode,'/Code/white_test/f_Politis_Romano_Bootstrap.R',sep='') )
+source(paste(DirCode,'/Code/tests/white_test/f_Politis_Romano_Bootstrap.R',sep='') )
 
 source(paste(auxcodedir,'/olsself.R',sep=''))
-source(paste(DirCode,'/Code/giacomini rossi/FB_Wald_CI.r',sep='')) 
+source(paste(DirCode,'/Code/tests/giacomini rossi/FB_Wald_CI.r',sep='')) 
 # creating aggregation matrix
 firstyear=1990
 lastyear=2015
@@ -398,7 +398,7 @@ for (h in 1:max.hor){# h=3
         cH=h
         cw=lapply(2:nrow(fc),function(i) f_Clark_West_Test(vFE_small, fe[i,], vFcst_small, fc[i,], cH))
         result[2:nrow(fc),'cw.p']=unlist(sapply(cw,function(x)x[2]))
-        
+        result[2:nrow(fc),'cw.t']=unlist(sapply(cw,function(x)x[1]))
         # 
         # plot(target.df[,'IP'],type='l')
         # lines(fc[1,],col='green')
@@ -500,7 +500,36 @@ lout=read.csv(paste(DirCode,'/results/evaluation_leave_out.csv',sep=''),stringsA
 lout=unlist(lout)
 # write.csv(row.names(result),'out.csv')
 lin=which(!row.names(result)%in%lout)
-t=sapply(rs,function(x) x[lin,'rank.theilsu'])
+
+
+# media models ----------------------------------
+media.mods=read.csv(paste(DirCode,'/results/full list of variables of interest with new names.csv',sep=''))
+t.rtu=sapply(rs,function(x) x[lin,c('rank.theilsu')])
+t.rtu=renumber(t.rtu)
+t.min.once.3=rowSums(t.rtu<4)>1
+
+t.tu=sapply(rs,function(x) x[lin,c('theilsu')])
+t.cw=sapply(rs,function(x) x[lin,c('cw.p')])
+t.cw.t=sapply(rs,function(x) x[lin,c('cw.t')])
+t.cw.star_5perc.ind=(t.cw.t)>0&(t.cw<=0.05)
+t.cw.star_1perc.ind=(t.cw.t)>0&(t.cw<=0.01)
+t.cw.star=matrix(' ',nrow=nrow(t.cw),ncol=ncol(t.cw))
+t.cw.star[t.cw.star_5perc.ind]='*'
+t.cw.star[t.cw.star_1perc.ind]='**'
+t.tot=cbind(t.tu,t.cw,t.rtu)
+t.tot=t.tot/t.tot*-999
+tu.ind=seq(1,34,3)
+t.tot[,tu.ind]=round(t.tu,3)
+t.tot[,tu.ind+1]=t.cw.star
+t.tot[,tu.ind+2]=paste('C',t.rtu,')',sep='')
+row.names(t.tot)=row.names(result)[lin]
+old.m.names=c(as.character(media.mods[,1]),paste('D',media.mods[,1],sep=''))
+new.m.names=c(as.character(media.mods[,2]),paste('D',media.mods[,2],sep=''))
+row.names(t.tot)[which(row.names(t.tot)%in%old.m.names)]=new.m.names
+t.tot.min.once.3=t.tot[t.min.once.3,]
+write.csv(t.tot,paste(DirCode,'/tables/Tab_media_models_theilsu_rank_cwstars_all_periods.csv',sep=''))
+write.csv(t.tot.min.once.3,paste(DirCode,'/tables/Tab_media_models_theilsu_rank_cwstars_all_periods_at_least_once_third.csv',sep=''))
+write.csv(xtable(t.tot.min.once.3),paste(DirCode,'/tables/Tab_media_models_theilsu_rank_cwstars_all_periods_at_least_once_third',sep=''))
 sel.mods=row.names(result)[lin]
 row.names(t)=sel.mods
 t=renumber(t)
@@ -528,7 +557,7 @@ write.csv(t,paste(res.file,'Auswertung.csv',sep=''))
 
 
 
-
+t=sapply(rs,function(x) x[lin,'rank.theilsu'])
 
 # 
 # 

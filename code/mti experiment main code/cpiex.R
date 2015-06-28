@@ -37,7 +37,7 @@ old.file=paste(DirCode,'/results/',meth,ic,target,'_h',1,'.RData',sep='')
 load(old.file)
 aux=forecast.all[[1]]
 old.names=row.names(aux)
-old.names=old.names[-grep('ar',old.names)]
+old.names=old.names[-grep('^ar$',old.names)]
 rm(forecast.all)
 
 # retest

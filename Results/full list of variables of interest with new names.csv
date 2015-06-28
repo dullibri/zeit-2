@@ -1,0 +1,18 @@
+old,new
+qdap_value_rela_mean,Zeit 
+qdap_negator_value_rel_mean,Zeit simple
+Notrend,Notrend
+Rising,Rising
+Falling,Falling
+Volume,Volume
+Badrising,Badrising
+Otherrising,Otherrising
+MT.de,All
+MT.de.present,Present
+MT.de.future,Future
+MT_monetary,Monetary
+MT_inflation,Inflation
+MT.de.taxation,Taxation
+MT.de.cycle,Cycle
+MT.de.labor,Labor
+MT.de.budget,Budget
