@@ -1,5 +1,5 @@
 DirCode='h:/Git/zeit-2'
-DirCode='c:/users/dirk/documents/github/zeit-2'
+# DirCode='c:/users/dirk/documents/github/zeit-2'
 # sourcing necessary scripts for estimation and forecast (for a description see "olsbmalag.Rmd")
 auxcodedir=paste(DirCode,'/code/auxiliary code',sep='')
 source(paste(auxcodedir,'/lag.exact.R',sep=''))

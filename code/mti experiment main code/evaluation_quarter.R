@@ -58,13 +58,13 @@ fstf=apply(naset,2,function(x) min(which(x==T)))
 # the second, ... vintage:
 fstf[length(fstf)]=fstf[length(fstf)-1]+1
 
-aux=sapply(1:4,function(x) x:(length(fstf)-1))
-aux=sapply(aux,function(x) x[1:length(aux[[4]])])
+aux=sapply(1:max.hor,function(x) x:(length(fstf)-1))
+aux=sapply(aux,function(x) x[1:length(aux[[max.hor]])])
 fstf.h=apply(aux,2,function(x) fstf[x] )
 
 set=setsq[[length(setsq)]]
 y.raw=set[,target,drop=F]
-y.transformed=sapply(1:4,function(x) target.t(y.raw,x))
+y.transformed=sapply(1:max.hor,function(x) target.t(y.raw,x))
 y.transformed=sapply(y.transformed,function(x) x)
 
 y.h=apply(fstf.h,2,function(x) y.transformed[x,1])
@@ -79,7 +79,7 @@ fbs=list() #forecastbreakdowns each period
 white.p=list()
 Hansen.pv=matrix(NA,nrow=max.hor,ncol=1)
 WT.pv=matrix(NA,nrow=max.hor,ncol=1)
-for (h in 1:max.hor){# h=3 
+for (h in 1:max.hor){# h=5 
         
         # loading results
         res.file=paste(DirCode,'/Results/rolling25',ic,target,'_h',h,'.RData',sep='')  
@@ -236,23 +236,23 @@ for (h in 1:max.hor){# h=3
         # write.csv(result.c,paste(DirCode,'/results/results_comb_',target,h,'.csv',sep=''))
 }
 
-lout=read.csv(paste(DirCode,'/results/evaluation_leave_out.csv',sep=''),stringsAsFactors=F,header=F)
-lout=unlist(lout)
-lin=which(!row.names(tt)%in%lout)
-t=sapply(rs,function(x) x[lin,'rank.theilsu'])
-row.names(t)=row.names(result[lin,,drop=F])
+# lout=read.csv(paste(DirCode,'/results/evaluation_leave_out.csv',sep=''),stringsAsFactors=F,header=F)
+# lout=unlist(lout)
+# lin=which(!row.names(tt)%in%lout)
+t=sapply(rs,function(x) x[,'rank.theilsu'])
+row.names(t)=row.names(result)
 
 nowcast.needed=sum(plag>0)
 now.id=plag+1
-if (nowcast.needed>0){
-        range=((plag):(plag+12))
-        horout=0:12
-}else{range=now.id:(now.id+11)
-      horout=1:12}
-t=t[,range]
-t=t[-176,]
+# if (nowcast.needed>0){
+#         range=((plag):(plag+12))
+#         horout=0:12
+# }else{range=now.id:(now.id+11)
+#       horout=1:12}
+# t=t[,range]
+# t=t[-176,]
 best.ind=apply(t,2,which.min)
-
+horout=0:3
 out=data.frame(horizon=horout,best=sapply(best.ind,function(x) row.names(t)[x]))
 write.csv(out,paste(res.file,'BEST.csv',sep=''))
 

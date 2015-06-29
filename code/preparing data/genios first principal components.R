@@ -1,5 +1,5 @@
-DirCode='h:/Git/zeit-2'
-DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2/data/genios'
+DirCode='h:/Git/zeit-2/data/genios'
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2/data/genios'
 genios=read.csv(paste(DirCode,'/I_Word_Index_monthly_1991m1-2015m5.csv',sep=''))
 fstvar=grep('^IWord$',colnames(genios))
 lstvar=grep('^Stagflation$',colnames(genios))
@@ -15,8 +15,14 @@ plot(prc$sdev)
 fstprc=prc$x[,1]
 cor(genios[13:nrow(genios),'Inflation'],fstprc[13:nrow(genios)])
 
+
+
 fstprc.highly.correlated=prcomp(genios[,highly.correlated],scale=T)$x[,1]
 cor(genios[13:nrow(genios),'Inflation'],fstprc.highly.correlated[13:nrow(genios)])
 fstprc=cbind(fstprc,fstprc.highly.correlated)
 plot(fstprc)
+# 
+# 
+# ALL=genios[,grep('ALL',colnames(genios))]
+# ALLINFL=ALL[,grep('ALL_Genios_Inflation',colnames(ALL))]
 write.csv(fstprc,paste(DirCode,'/first_principal_component_genios_1991m1-2015m5.csv',sep=''))

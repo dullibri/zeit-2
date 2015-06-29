@@ -36,7 +36,7 @@ infl=infl[row.names(infl)%in%data$ym,,drop=F]
 inflstart=grep('2005-11',row.names(infl))
 inflend=grep('2015-01',row.names(infl))
 infldates=row.names(infl)[inflstart:inflend]
-ips=data[ipstart:ipend,'IP-untr']
+
 infls=infl[inflstart:inflend,1]
 maxinfls=range(infls)[2]
 # pdf(paste(DirCode,'/figs/infl_crisis_breakdowns.pdf',sep=''))
@@ -94,6 +94,6 @@ axis(1, at=ticks, labels=ipdotticks[ticks]
 axis(2,at=c(seq(85,110,5)),c(seq(85,110,5)))
 # abline(v=grep('2008-05',colnames(arfb.end)))
 # abline(v=grep('2009-01',colnames(arfb.end)))
-dev.off()
+# dev.off()
 # par(par.s)
 

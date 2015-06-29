@@ -1,5 +1,5 @@
 DirCode='h:/Git/zeit-2/data/mediatenor/'
-DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2/data/mediatenor/'
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2/data/mediatenor/'
 df=read.csv(paste(DirCode,'WiLage_lang_2001m01-2015m01_MTI.csv',sep=''))
 
 # preparing dates

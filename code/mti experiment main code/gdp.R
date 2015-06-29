@@ -162,7 +162,7 @@ nomonthlysets=names(setsq)%in%c("2005-05","2005-08","2005-11")
 setsq[nomonthlysets]=NULL
 
 
-for (horizon in 1:4){# horizon=1
+for (horizon in 5){# horizon=1
         #   old.file=paste(DirCode,'/results/rec_',ic,target,'_h',horizon,'.RData',sep='')
         #   load(old.file)
         #   forecast.all.old=forecast.all
