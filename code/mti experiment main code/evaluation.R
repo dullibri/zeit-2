@@ -2,6 +2,8 @@ DirCode='h:/Git/zeit-2'
 # DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 # target='IP'
 # plag=3
+# number of vintages from start that will be used
+max.evaluable=100
 target='CPI.EX'
 # plag=1 # publication lag
 # target='IP'
@@ -54,7 +56,7 @@ lastyear=2015
 nyear=lastyear-firstyear+1
 
 # disregarding some models
-res.file=paste(DirCode,'/Results/rolling59',ic,target,'_h',h,'.RData',sep='')  
+res.file=paste(DirCode,'/Results/rolling59',ic,target,'_h',1,'.RData',sep='')  
 load(res.file)
 mods.all=row.names(forecast.all[[1]])
 rm(forecast.all)
@@ -150,11 +152,14 @@ for (h in 1:max.hor){# h=3
         #         for (i in weg){
         #                 forecast.all[[i]]=NULL
         #         }
+        forecast.all=lapply(1:max.evaluable,function(x) forecast.all[[x]])
         fc=sapply(forecast.all,function(x) as.numeric(x$fc))
-        
+
         modn=row.names(forecast.all[[1]])
+        
         # dropping vintages that can not be used
-        max.evaluable=nrow(target.df)
+        # max.evaluable=nrow(target.df)
+        
         fc=fc[,1:min(c(max.evaluable,ncol(fc)))]
         max.eval=min(c(max.evaluable,ncol(fc)))
         row.names(fc)=modn
@@ -360,6 +365,7 @@ for (h in 1:max.hor){# h=3
 
 # media models ----------------------------------
 media.mods=read.csv(paste(DirCode,'/results/full list of variables of interest with new names.csv',sep=''))
+models.in.tables=read.csv(paste(DirCode,'/results/present in tables.csv',sep=''),header=F)
 t.rtu=sapply(rs,function(x) x[lin,c('rank.theilsu')])
 t.rtu=renumber(t.rtu)
 t.min.once.3=rowSums(t.rtu<4)>1
@@ -382,6 +388,8 @@ row.names(t.tot)=row.names(result)[lin]
 old.m.names=c(as.character(media.mods[,1]),paste('D',media.mods[,1],sep=''))
 new.m.names=c(as.character(media.mods[,2]),paste('D',media.mods[,2],sep=''))
 row.names(t.tot)[which(row.names(t.tot)%in%old.m.names)]=new.m.names
+table1=t.tot[models.in.tables,]
+
 t.tot.min.once.3=t.tot[t.min.once.3,]
 write.csv(t.tot,paste(DirCode,'/tables/Tab_media_models_theilsu_rank_cwstars_all_periods.csv',sep=''))
 write.csv(t.tot.min.once.3,paste(DirCode,'/tables/Tab_media_models_theilsu_rank_cwstars_all_periods_at_least_once_third.csv',sep=''))
@@ -434,6 +442,8 @@ for (h in 1:12){# h=1
         fres[[h]]=result
         
 }
+ttt=sapply(fres,function(x) x$inc)
+row.names(ttt)=row.names(result)
 # # mt models included
 # MT.inc=sapply(fres,function(x) x[grep('MT',row.names(x)),'inc'])
 # 

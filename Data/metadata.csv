@@ -29,14 +29,14 @@ M2,,25,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechs
 M2R,,26,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechsel and scheufle 2012.,Buba,0,0,financial
 M3,,27,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechsel and scheufle 2012.,Buba,0,0,financial
 M3R,,28,NA,NA,NA,NA,NA,no consistent data available. see original papar of drechsel and scheufle 2012.,Buba,0,0,financial
-HWWA,Hwwa index of world market prices of raw mats.,29,NA,NA,1,1,1,SWHWWAR$F,datastream,0,1,financial
-HWWAR,"Hwwa index, real",30,NA,NA,1,1,NA,SWHWWAR$F,datastream,1,1,financial
-HWWA-E,"Hwwa index ~,energy",31,NA,NA,1,1,1,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,0,1,financial
-HWWA-ER,"Hwwa index, energy real",32,NA,NA,1,1,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,1,1,financial
-HWWA-EX,"Hwwa index ~,excl. energy",33,NA,NA,1,1,1,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,0,1,financial
-HWWA-EXR,"Hwwa index, excl. energy real",34,NA,NA,1,1,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,1,1,financial
-OIL,Oil prices (euros per barrel),35,NA,NA,1,1,0,FM.M.U2.EUR.4F.CY.OILBRNI.HSTA,ECB,0,1,financial
-OILR,"Oil prices (euros per barrel), real",36,NA,NA,1,1,NA,FM.M.U2.EUR.4F.CY.OILBRNI.HSTA,ECB,1,1,financial
+HWWA,Hwwa index of world market prices of raw mats.,29,NA,NA,1,1,1,SWHWWAR$F,datastream,1,1,financial
+HWWAR,"Hwwa index, real",30,NA,NA,1,1,NA,SWHWWAR$F,datastream,0,1,financial
+HWWA-E,"Hwwa index ~,energy",31,NA,NA,1,1,1,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,1,1,financial
+HWWA-ER,"Hwwa index, energy real",32,NA,NA,1,1,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,0,1,financial
+HWWA-EX,"Hwwa index ~,excl. energy",33,NA,NA,1,1,1,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,1,1,financial
+HWWA-EXR,"Hwwa index, excl. energy real",34,NA,NA,1,1,NA,BBDG1.M.HWWI.N.EURO.ENERGY00.INDBEU.HE.A,Buba,0,1,financial
+OIL,Oil prices (euros per barrel),35,NA,NA,1,1,0,FM.M.U2.EUR.4F.CY.OILBRNI.HSTA,ECB,1,1,financial
+OILR,"Oil prices (euros per barrel), real",36,NA,NA,1,1,NA,FM.M.U2.EUR.4F.CY.OILBRNI.HSTA,ECB,0,1,financial
 IFO-WC,,37,NA,NA,NA,NA,NA,quarterly,ifo,0,0,surveys
 IFO-WEXP,,38,NA,NA,NA,NA,NA,quarterly,ifo,0,0,surveys
 IFO-C,Ifo index climate,39,1,1,NA,NA,0,NA,ifo,0,1,surveys
@@ -248,3 +248,7 @@ MT.de.taxation,NA,257,1,1,NA,NA,3,NA,Mediatenor International,0,1,media indicato
 MT.de.cycle,NA,258,1,1,NA,NA,4,NA,Mediatenor International,0,1,media indicators
 MT.de.labor,NA,259,1,1,NA,NA,5,NA,Mediatenor International,0,1,media indicators
 MT.de.budget,NA,260,1,1,NA,NA,6,NA,Mediatenor International,0,1,media indicators
+qdap_negator_value_rel_infl_mean,NA,261,1,1,NA,NA,6,NA,Mediatenor International,0,1,media indicators
+qdap_value_rel_infl_mean,NA,262,1,1,NA,NA,6,NA,Mediatenor International,0,1,media indicators
+And_Or,NA,263,1,1,NA,NA,6,NA,Mediatenor International,0,1,media indicators
+Inflation_only,NA,264,1,1,NA,NA,6,NA,Mediatenor International,0,1,media indicators
