@@ -1,5 +1,5 @@
-DirCode='h:/Git/zeit-2'
-# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+# DirCode='h:/Git/zeit-2'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 # target='IP'
 # plag=3
 # number of vintages from start that will be used
@@ -21,6 +21,7 @@ post=0 # nur post recession
 grouping=read.csv(paste(DirCode,'/data/grouping.csv',sep=''),row.names=1)
 library(stringr)
 library(glmulti)
+library(stargazer)
 # library(pracma)
 # library(MCS)
 source(paste(DirCode,'/code/tests/hansen_2005_test/f_Hansen_2005_Test_statistic.R',sep=''))
@@ -63,7 +64,7 @@ rm(forecast.all)
 lout=read.csv(paste(DirCode,'/results/evaluation_leave_out.csv',sep=''),stringsAsFactors=F,header=F)
 lout=unlist(lout)
 lin=which(!mods.all%in%lout)
-
+sel.mods=mods.all[lin]
 
 cs=list()
 mt=list()
@@ -154,7 +155,7 @@ for (h in 1:max.hor){# h=3
         #         }
         forecast.all=lapply(1:max.evaluable,function(x) forecast.all[[x]])
         fc=sapply(forecast.all,function(x) as.numeric(x$fc))
-
+        
         modn=row.names(forecast.all[[1]])
         
         # dropping vintages that can not be used
@@ -364,8 +365,10 @@ for (h in 1:max.hor){# h=3
 
 
 # media models ----------------------------------
-media.mods=read.csv(paste(DirCode,'/results/full list of variables of interest with new names.csv',sep=''))
-models.in.tables=read.csv(paste(DirCode,'/results/present in tables.csv',sep=''),header=F)
+media.mods=read.csv(paste(DirCode,'/results/full list of variables of interest with new names.csv',sep=''),stringsAsFactors=F)
+models.in.tables=read.csv(paste(DirCode,'/results/present in tables.csv',sep=''),header=F,stringsAsFactors=F)
+
+
 t.rtu=sapply(rs,function(x) x[lin,c('rank.theilsu')])
 t.rtu=renumber(t.rtu)
 t.min.once.3=rowSums(t.rtu<4)>1
@@ -385,9 +388,16 @@ t.tot[,tu.ind]=round(t.tu,3)
 t.tot[,tu.ind+1]=t.cw.star
 t.tot[,tu.ind+2]=paste('(',t.rtu,')',sep='')
 row.names(t.tot)=row.names(result)[lin]
-old.m.names=c(as.character(media.mods[,1]),paste('D',media.mods[,1],sep=''))
-new.m.names=c(as.character(media.mods[,2]),paste('D',media.mods[,2],sep=''))
-row.names(t.tot)[which(row.names(t.tot)%in%old.m.names)]=new.m.names
+row.names(t.tu)=row.names(result)[lin]
+# renaming some variables -------------------------------------------------
+
+old.names=c(media.mods[,1],paste('D',media.mods[,1],sep=''))
+new.names=c(media.mods[,2],paste('D',media.mods[,2],sep=''))
+old.id.tot=sapply(c(1:length(old.names)),function(x) which(row.names(t.tot)%in%old.names[x]))
+View(data.frame(old=row.names(t.tot[old.id.tot,]),new=new.names))
+row.names(t.tot)[old.id.tot]=new.names
+
+models.in.tables=gsub('Zeit $','Zeit',models.in.tables[,1])
 table1=t.tot[models.in.tables,]
 
 t.tot.min.once.3=t.tot[t.min.once.3,]
@@ -395,6 +405,18 @@ write.csv(t.tot,paste(DirCode,'/tables/Tab_media_models_theilsu_rank_cwstars_all
 write.csv(t.tot.min.once.3,paste(DirCode,'/tables/Tab_media_models_theilsu_rank_cwstars_all_periods_at_least_once_third.csv',sep=''))
 # write.csv(xtable(t.tot.min.once.3),paste(DirCode,'/tables/Tab_media_models_theilsu_rank_cwstars_all_periods_at_least_once_third',sep=''))
 sel.mods=row.names(result)[lin]
+
+
+# making descriptives tables for media data -------------------------------
+
+df.media=df.unrevised[,c('ym',media.mods[,1])]
+colnames(df.media)=c('ym',media.mods[,2])
+df.media=df.media[grep('2001-01',df.media$ym):grep('2014-04',df.media$ym),]
+df.media[,c('Monetary','Inflation')]=df.media[,c('Monetary','Inflation')]*100
+
+# making figures of media indeces -----------------------------------------
+
+# source(paste(DirCode,'/code/mti EXPERIMENT main code/media indicators figures.R',sep=''))
 
 # processing matlab mcs results -------------------------------------------
 Dlist=row.names(overview)[which(overview$D==1)]
@@ -408,8 +430,19 @@ tDln=data.frame(variable=paste('Dln',Dlnlist,sep=''),grouping=overview[Dlnlist,'
 tD2ln=data.frame(variable=paste('DDln',D2lnlist,sep=''),grouping=overview[D2lnlist,'group'],L=0,D=0,D.ln=0,D2ln=overview[D2lnlist,'D2ln'])
 grouping=rbind(tL,tD,tDln,tD2ln)
 rm(Dlist,Llist,Dlnlist,D2lnlist,tL,tD,tDln,tD2ln)
+grouping$variable=as.character(grouping$variable)
 grouping=grouping[grouping$variable%in%sel.mods,]
+# row.names(grouping)=grouping$variable
+
+
+old.id=sapply(c(1:length(old.names)),function(x) which(grouping$variable%in%old.names[x]))
+
+grouping$variable[old.id]=new.names
+
+
+
 sel.mods[!sel.mods%in%grouping$variable]
+
 
 
 fres=list()
@@ -426,7 +459,7 @@ for (h in 1:12){# h=1
         
         mcs.h=data.frame(exin,pval,inc.ind)
         sfe.exp=sfe[lin,]
-        sfe.exp=sfe.exp[-grep('median|mean',row.names(sfe.exp)),]
+        
         mods.sfe=row.names(sfe.exp)
         if (sfeorr=='sfe'){
                 result=rs[[h]] 
@@ -438,243 +471,34 @@ for (h in 1:12){# h=1
         
         result[,c('model.id','pval','inc')]=NA
         result[mcs.h[,1],c('model.id','pval','inc')]=mcs.h  
-        
+        row.names(result)[which(row.names(result)%in%old.names)]=new.names
         fres[[h]]=result
         
 }
-ttt=sapply(fres,function(x) x$inc)
+nmod=nrow(result)
+ttt=sapply(fres,function(x){
+        t1=x[2:nmod,c('theilsu')]
+        t1=format(round(t1, 2), nsmall = 2)
+        t1=as.character(t1)
+        t1[x[2:nmod,'cw.p']<=0.05]=paste(t1[x[2:nmod,'cw.p']<=0.05],'*',sep='')
+        t1[x[2:nmod,'cw.p']<=0.01]=paste(t1[x[2:nmod,'cw.p']<=0.01],'*',sep='')
+        t1=c('1.00',t1)
+        t1[x[,'inc']==1]=paste('DA',t1[x[,'inc']==1],'DB',sep='')
+        
+        #         t2=round(x[,c('pval')],2)
+        #         t2=as.character(t2)
+        #         t2[x[,'inc']==1]=paste(t2[x[,'inc']==1],'+',sep='')
+        #         t=data.frame(t1,t2)
+        
+        return(t1)
+}
+)
+# ttt=sapply(ttt,function(x)x)
 row.names(ttt)=row.names(result)
-# # mt models included
-# MT.inc=sapply(fres,function(x) x[grep('MT',row.names(x)),'inc'])
-# 
-# row.names(MT.inc)=row.names(result)[grep('MT',row.names(result))]
-# MT.inc.sum=colSums(MT.inc)
-# 
-# # all models inc
-# fres=lapply(fres,function(x) x[-grep('mean|median',row.names(x)),])
-# ALL.inc=data.frame(sapply(fres,function(x) x[,'inc']))
-# row.names(ALL.inc)=row.names(result[-grep('mean|median',row.names(result)),])
-# if (sfeorr=='sfe'){
-#         incsfe=ALL.inc
-# }else{
-#         incsfer=ALL.inc
-# }
-# ALL.inc[,'grouping']=grouping
-# ALL.inc[ALL.inc$grouping=='media','media']=1
-# ALL.inc[ALL.inc$grouping!='media','media']=0
-# t=aggregate(ALL.inc[,1:14],list(ALL.inc$'media'),sum)
-# tall=aggregate(ALL.inc[,1:14],list(ALL.inc$'grouping'),sum)
-# row.names(t)=c('other','media')
-# row.names(tall)=tall[,1]
-# tall=tall[,-c(1,2,3)]
-# colnames(tall)=paste(1:12,sep='')
-# t=t[,-1]
-# t=as.matrix(t)
-# t=t[,-c(1,2)]
-# colnames(t)=paste(1:12,sep='')
-# t=t/nrow(ALL.inc)*100
-# if (sfeorr=='sfe'){
-#         pdf(paste(DirCode,'/figs/mcs_share_media_all.pdf',sep=''))
-#         barplot(t,legend=row.names(t)
-#                 ,ylim=c(0,80)
-#                 ,xlab='forecast horizon'
-#                 ,ylab='% of models included in MCS'
-#         )  
-#         dev.off()
-#         write.csv(tall,paste(DirCode,'/results/mcs.all.csv',sep=''))
-#         
-# }
-# if (sfeorr=='sfer'){
-#         pdf(paste(DirCode,'/figs/mcs_share_media_recession.pdf',sep=''))
-#         barplot(t,legend=row.names(t)
-#                 ,ylim=c(0,60)
-#                 ,xlab='forecast horizon'
-#                 ,ylab='% of models included in MCS'
-#         ) 
-#         dev.off()
-#         write.csv(tall,paste(DirCode,'/results/mcs.recession.csv',sep=''))
-#         
-# }
-# 
-# 
-# 
-# # stats for best models -------------------------------------
-# fres.s=fres[3:14]
-# 
-# # result=fres.s[[10]]
-# best.m=function(result,h){
-#         
-#         result=result[sort(result$rank.theilsu,index.return=T)$ix,]
-#         # result=result[-grep('mean|median',row.names(result)),]
-#         result$rank.theilsu=sort(result$rank.theilsu,index.return=T)$ix
-#         if (sfeorr=='sfe'){
-#                 colnames(result)=gsub('cw.p','cw.pvalue',colnames(result))
-#                 sel=c('rmse','theilsu','cw.pvalue','rank.theilsu','mcs.pvalue','in mcs') 
-#                 result$cw.pvalue=round(result$cw.pvalue,2)
-#         }else{
-#                 sel=c('rmse','theilsu','rank.theilsu','mcs.pvalue','in mcs')
-#         }
-#         row.names(result)=gsub('presence','present',row.names(result))
-#         result$mse=result$mse^.5
-#         colnames(result)=gsub('mse','rmse',colnames(result))
-#         colnames(result)=gsub('inc','in mcs',colnames(result))
-#         rr=result
-#         colnames(result)=gsub('^pval','mcs.pvalue',colnames(result))
-#         
-#         result=result[,sel]
-#         t=result[grep('MT',row.names(result)),]
-#         best=which.min(t$'rank.theilsu')
-#         t=t[sort(t$rank.theilsu,index.return=T)$ix,]
-#         t[,c('rmse','mcs.pvalue','theilsu')]=round(t[,c('rmse','mcs.pvalue','theilsu')],2)
-#         
-#         #         t=head(t,1)
-#         
-#         
-#         
-#         t[,'horizon']=h
-#         t=cbind(model=row.names(t),t)
-#         if (sfeorr=='sfe'){
-#                 t=t[,c('model','rmse','theilsu','rank.theilsu','cw.pvalue','in mcs','mcs.pvalue')]
-#                 
-#         }else{
-#                 t=t[,c('model','rmse','theilsu','rank.theilsu','cw.pvalue','in mcs','mcs.pvalue')]
-#         }
-#         row.names(t)=NULL
-#         
-#         return(t)
-# }
-# tt=lapply(1:12,function(x) best.m(fres.s[[x]],x))
-# 
-# 
-# # 3 best all models recesion and all  -------------------------------------
-# 
-# best.3=function(result,h){
-#         if ('mean'%in%row.names(result)){
-#                 result=result[-grep('mean|median',row.names(result)),]
-#         }
-#         
-#         result=result[sort(result$rank.theilsu,index.return=T)$ix,]
-#         # result=result[-grep('mean|median',row.names(result)),]
-#         result$rank.theilsu=sort(result$rank.theilsu,index.return=T)$ix
-#         colnames(result)=gsub('cw.p','cw.pvalue',colnames(result))
-#         result$cw.pvalue=round(result$cw.pvalue,2)
-#         
-#         row.names(result)=gsub('presence','present',row.names(result))
-#         result$mse=result$mse^.5
-#         colnames(result)=gsub('mse','rmse',colnames(result))
-#         colnames(result)=gsub('inc','in mcs',colnames(result))
-#         rr=result
-#         colnames(result)=gsub('^pval','mcs.pvalue',colnames(result))
-#         
-#         t=result[1:3,]
-#         t[,c('rmse','mcs.pvalue','theilsu')]=round(t[,c('rmse','mcs.pvalue','theilsu')],2)
-#         
-#         #         t=head(t,1)
-#         
-#         
-#         
-#         t[,'horizon']=h
-#         t=cbind(model=row.names(t),t)
-#         if (sfeorr=='sfe'){
-#                 t=t[,c('model','rmse','theilsu','rank.theilsu','cw.pvalue','in mcs','mcs.pvalue')]
-#                 
-#         }else{
-#                 t=t[,c('model','rmse','theilsu','rank.theilsu','cw.pvalue','in mcs','mcs.pvalue')]
-#         }
-#         row.names(t)=NULL
-#         
-#         return(t)
-# }
-# tt3=lapply(1:12,function(x) best.3(fres.s[[x]],x))
-# result3=tt3[[1]]
-# for (i in 2:12){
-#         result3=rbind(result3,tt3[[i]])
-# }
-# write.csv(result3,paste(DirCode,'/results/best3 ',sfeorr,'.csv',sep=''))
-# #  ------------------------------------------------------------------------
-# 
-# 
-# for (h in 1:12){
-#         if (h==1){
-#                 besth=tt[[h]]
-#                 besth$h=h
-#                 t=besth[1,]
-#                 tf=besth[besth$model=='MT.de.future',]
-#                 tc=besth[besth$model=='MT.de.climate',]
-#                 tp=besth[besth$model=='MT.present',]
-#         }else{
-#                 besth=tt[[h]]
-#                 besth$h=h
-#                 t=rbind(t,besth[1,])
-#                 tf=rbind(tf,besth[besth$model=='MT.de.future',])
-#                 tc=rbind(tc,besth[besth$model=='MT.de.climate',])
-#                 tp=rbind(tp,besth[besth$model=='MT.present',])
-#         } 
-#         
-# }
-# favorite=rbind(tf,tc,tp)
-# if (sfeorr=='sfe'){
-#         write.csv(t,paste(DirCode,'/results/mtbestall.csv',sep=''))
-# }else{
-#         write.csv(t,paste(DirCode,'/results/mtbestrecession.csv',sep=''))
-#         
-# }
-# 
-# 
-# # fbp analysis ------------------------------------------------------------
-# 
-# fres=fres[[12]]
-# fbpall=matrix(NA,nrow=length(sel.mods),ncol=max.hor)
-# row.names(fbpall)=sel.mods
-# fbprec=matrix(NA,nrow=length(sel.mods),ncol=max.hor)
-# row.names(fbprec)=sel.mods
-# 
-# # fbp.sub.all=matrix(NA,nrow=3,ncol=max.hor)
-# # row.names(fbp.sub.all)=c('fbp MT.de.future','fbp MT.de.climate','mean')
-# # 
-# # fbp.sub.rec=matrix(NA,nrow=3,ncol=max.hor)
-# # row.names(fbp.sub.rec)=c('fbp MT.de.future','fbp MT.de.climate','mean')
-# 
-# for (h in 1:12){#h=12
-#         t3=fbs[[h]]
-#         row.names(t3)=row.names(result)[1:(nrow(result)-2)]
-#         t3=t3[sel.mods,]
-#         # fbp for all periods
-#         fbpall[,h]=rowMeans(t3,na.rm=T)
-#         
-#         rdate=data$ym[which(data$ecri==0)]
-#         rcol=which(colnames(t3)%in%rdate)
-#         fbprec[,h]=rowMeans(t3[,rcol])
-#         
-#         #         fbp.sub.rec['fbp MT.de.future',h]=fbprec['MT.de.future',h]
-#         #         fbp.sub.rec['fbp MT.de.climate',h]=fbprec['MT.de.climate',h]
-#         #         fbp.sub.rec['mean',h]=mean(fbprec[,h])#incsfer[,h]==1
-#         #         
-#         #         
-#         #         fbp.sub.all['fbp MT.de.future',h]=fbpall['MT.de.future',h]
-#         #         fbp.sub.all['fbp MT.de.climate',h]=fbpall['MT.de.climate',h]
-#         #         fbp.sub.all['mean',h]=mean(fbpall[,h])#incsfe[,h]==1
-#         
-#         
-# }
-# fbptab=matrix(NA,nrow=3,ncol=6)
-# row.names(fbptab)=row.names(fbp.sub.all)
-# fbptab[,c(1,3,5)]=fbp.sub.all[,12:14]
-# fbptab[,c(2,4,6)]=fbp.sub.rec[,12:14]
-# fbptab=round(fbptab,2)
-# # 
-# # write.csv(fbptab,paste(DirCode,'/results/fbp.csv',sep=''))
-# # 
-# # 
-# # # desriptives -------------------------------------------------------------
-# # 
-# # td=rbind(
-# #         apply(data.s[,2:18],2,mean)
-# #         ,apply(data.s[,2:18],2,sd)
-# # )
-# td=t(td)
-# colnames(td)=c('mean','standard deviation')
-# row.names(td)=gsub('currency','monetary',row.names(td))
-# row.names(td)=gsub('presence','present',row.names(td))
-# td=round(td,2)
-# write.csv(td,paste(DirCode,'/results/mtdescriptives.csv',sep=''))
+names.tab=c('ar',media.mods[,2])
+tab1=ttt[names.tab,]
+colnames(tab1)=paste('h',1:12,sep=':')
+out=stargazer(tab1,summary=F)
+out=gsub('DA','\\\\textbf{',out)
+out=gsub('DB','}',out)
+writeLines(out,paste(DirCode,'/tables/allperiods.tex',sep=''))

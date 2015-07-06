@@ -1,13 +1,14 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Draft_Inflation.aux
-The style file: chicago.bst
-Database file #1: i:/Personal_Folders/Employees/KX/A_MTI/Draft/MTI.bib
-Warning--I didn't find a database entry for "Ammann_et_al2011"
-Warning--page numbers missing in Bordino_et_al2011
-Warning--page numbers missing in european_commission_industrialization_2014
-Warning--page numbers missing in diebold1995comparing
-Warning--no number and no volume in orphanides2001monetary
-Warning--no number and no volume in robinzonov2009freedom
-Warning--no journal in simon1957models
-Warning--no number and no volume in simon1957models
-Warning--page numbers missing in simon1957models
-(There were 9 warnings)
+I couldn't open style file chicago.bst
+---line 95 of file Draft_Inflation.aux
+ : \bibstyle{chicago
+ :                  }
+I'm skipping whatever remains of this command
+I couldn't open database file i:/Personal_Folders/Employees/KX/A_MTI/Draft/MTI.bib
+---line 96 of file Draft_Inflation.aux
+ : \bibdata{i:/Personal_Folders/Employees/KX/A_MTI/Draft/MTI
+ :                                                          }
+I'm skipping whatever remains of this command
+I found no database files---while reading file Draft_Inflation.aux
+I found no style file---while reading file Draft_Inflation.aux
+(There were 4 error messages)

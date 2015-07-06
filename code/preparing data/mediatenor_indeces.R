@@ -1,5 +1,6 @@
-DirCode='h:/Git/zeit-2/data/mediatenor/'
-# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2/data/mediatenor/'
+# DirCode='h:/Git/zeit-2/data/mediatenor/'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2/data/mediatenor/'
+DirOut='C:/Users/Dirk/Documents/github/zeit-2/'
 df=read.csv(paste(DirCode,'WiLage_lang_2001m01-2015m01_MTI.csv',sep=''))
 
 # preparing dates
@@ -30,6 +31,8 @@ t=unique(df$Raumbezug)
 t=as.character(t[grep('eutsch',t)])
 df$de=df$Raumbezug%in%t
 
+
+# lamla lein indices ------------------------------------------------------
 df$Notrend=df$Thema=='Preisindices (z.B. Inflationsrate), allgemein'
 df$Rising=df$Thema=='Steigendes Inflation oder hohes Niveau'
 df$Falling=df$Thema=='Sinkende Inflation oder niedriges Niveau'
@@ -46,6 +49,13 @@ df.subsample=df[,c(lamla.names)]*df$de
 indeces.lamla=aggregate(df.subsample,list(df$ym),sum)
 dates=indeces.lamla$Group.1
 indeces.lamla$Group.1=NULL
+
+# export some descriptives (also only Germany related) ------------------------------------------------
+df.lamla=df[df$de==1,c('Volume','Notrend','Falling','Rising','Goodrising','Badrising','Otherrising')]
+df.lamla.exp=data.frame(Counts=colSums(df.lamla))
+df.lamla.exp$Percentage=df.lamla.exp[,1]/df.lamla.exp[1,1]*100
+writeLines(stargazer(df.lamla.exp,summary=F,title='Number of news items for each class'),paste(DirOut,'/tables/lamla.tex',sep=''))
+
 
 # creating functions to built ifo-like indeces and climate
 index=function(sel){
@@ -65,10 +75,18 @@ climate=function(sel){
 
 # selecting subindeces
 infl=df$Volume
-infl.de=df$Volume*df$de
-monetary=df$mon
-monetary.de=df$mon*df$de
+
 all.de=df$de
+present.de=df$de*df$pre
+future.de=df$de*df$fut
+monetary.de=df$mon*df$de
+tax.de=df$tax*df$de
+infl.de=df$Volume*df$de
+cyc.de=df$cyc*df$de
+lab.de=df$lab*df$de
+bud.de=df$bud*df$de
+
+monetary=df$mon
 all=all.de
 all[1:length(all)]=T
 infl.de.future=df$Volume*df$de*df$fut
@@ -77,34 +95,33 @@ lab.de.future=df$lab*df$de*df$fut
 cyc.de.future=df$cyc*df$de*df$fut
 bud.de.future=df$bud*df$de*df$fut
 quality.de=df$quality*df$de
+
+
+# Exporting some descriptives of ifo like Mediatenor indices --------------
+
+df.mti=df[df$de==1,c('pre','fut','Volume','mon','tax','lab','cyc','bud')]
+df.exp=data.frame(c(Total=nrow(df.mti),colSums(df.mti)))
+row.names(df.exp)=c('Total','Present','Future','Inflation','Monetary','Taxation','Labor','Cycle','Budget')
+df.exp[,2]=df.exp/df.exp['Total',1]*100
+colnames(df.exp)=c('Count','Percentage')
+writeLines(stargazer(df.exp,summary=F,title='Number of news items for each class'),paste(DirOut,'/tables/MTI number of news items.tex',sep=''))
+
 # applying the indeces
 indeces.new=data.frame(
-        #         MT_all=index(all)
-        MT_all_de=index(all.de)
-        #         ,MT_monetary=index(monetary)
-        ,MT_monetary_de=index(monetary.de)
-        #         ,MT_inflation=index(infl)
-        ,MT_inflation_de=index(infl.de)
-        
-        #         ,MT_all_climate=climate(all)
-        ,MT_all_de_climate=climate(all.de)
-        #         ,MT_monetary_climate=climate(monetary)
-        ,MT_monetary_de_climate=climate(monetary.de)
-        #         ,MT_inflation_climate=climate(infl)
-        ,MT_inflation_de_climate=climate(infl.de)
-        ,MT_quality_de=index(quality.de)
-        ,MT_quality_de_climate=climate(quality.de)
-#         ,MT_inflation_de_future=index(infl.de.future)
-#         ,MT_taxation_de_future=index(tax.de.future)
-#         ,MT_labor_de_future=index(lab.de.future)
-#         ,MT_cycle_de_future=index(cyc.de.future)
-#         ,MT_budget_de_future=index(bud.de.future)
-        
+        MTI_All=index(all.de)
+        ,MTI_Present=index(present.de)
+        ,MTI_Future=index(future.de)
+        ,MTI_Monetary=index(monetary.de)
+        ,MTI_Inflation=index(infl.de)
+        ,MTI_Taxation=index(tax.de)
+        ,MTI_Cycle=index(cyc.de)
+        ,MTI_Labor=index(lab.de)
+        ,MTI_Budget=index(bud.de)               
 )
 
 
 
-indeces=cbind(indeces.lamla,indeces.new)
+indeces=cbind(indeces.lamla,indeces.new*100)
 colnames(indeces)=gsub('_de','',colnames(indeces))
 row.names(indeces)=dates
 

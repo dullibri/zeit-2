@@ -1,6 +1,9 @@
 old,new
-qdap_value_rela_mean,Zeit 
+qdap_value_rela_mean,Zeit
 qdap_negator_value_rel_mean,Zeit simple
+qdap_value_rel_infl_mean,Zeit inflation
+qdap_negator_value_rel_infl_mean,Zeit inflation simple
+Inflation_only,Genios I-Word count
 Notrend,Notrend
 Rising,Rising
 Falling,Falling
