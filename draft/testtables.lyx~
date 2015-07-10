@@ -62,7 +62,7 @@
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "H:/git/zeit-2/tables/crisisperiods_formatiert.tex"
+filename "H:/git/zeit-2/tables/allperiods.tex"
 
 \end_inset
 
@@ -72,14 +72,10 @@ filename "H:/git/zeit-2/tables/crisisperiods_formatiert.tex"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "H:/git/zeit-2/tables/allperiods_formatiert.tex"
+filename "H:/git/zeit-2/tables/crisisperiods.tex"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
