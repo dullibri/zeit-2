@@ -68,22 +68,35 @@ We extract the sentiment of news articles using a lexicon based algorithm
  in the line of Taboada (2011).
  The software for the implementation is the qdap package (see Rinker, 2013)
  in the open Software project R (see R Core Team, 2013).
- Here, each word is compared to a lexicon of positive and negative words,
- such as “bad”, “detrimental” and “dangerous” (negative), respectively “good”,
+ Each word is compared to a lexicon of positive and negative words, such
+ as “bad”, “detrimental” and “dangerous” (negative), respectively “good”,
  “beneficial” and “safe” (positive).
- Each of the words in the dictionary are attributed a value between -1 (negative
-) and 1 (positive).
- Then, the sentiment is given by the sum of values found.
- The lexica in German language available are and Sentistrength (Thelwall
- et al.
- 2010).
- • Before the values are summed up, some refinement is implemented.
+ The sentiment values are based on the lexicon SentimentWortschatz, or SentiWS
+ for short (see Remus et al., 2010).
+ The latter is a publicly available German-language resource for sentiment
+ analysis.
+ It contains positive and negative sentiment bearing words weighted within
+ the interval of [1; 1] plus their part of speech tag, and if applicable,
+ their inflections.
+ The version employed here (SentiWS v1.8b) contains 1,650 negative and 1,818
+ positive words, which sum up to 16,406 positive and 16,328 negative word
+ forms, respectively.
+ It contains adjectives and adverbs as well as nouns and verbs.
+ 
+\end_layout
+
+\begin_layout Standard
+Before the values are summed up, valence shifters are accounted for.
  First, negativity is accounted for by inverting the value of a sentiment
  word in the lexicon if it is preceded by a negator.
- The negator “no” inverts the originally positive value of “good”.
+ For example, the negator “no” inverts the originally positive value of
+ “good”.
  Then, amplifiers like “very” and de-amplifiers like “less” are employed
  to increase or decrease the respective values.
- 
+ A context cluster of words is pulled from around this polarized word (
+ 4 words before and 2 words after) to be considered as valence shifters.
+ containing a comma before the polarized word will only consider words found
+ after the comma.
 \end_layout
 
 \begin_layout Standard
@@ -103,26 +116,59 @@ ArticleValue=\frac{\Sigma_{j}^{N}wordvalue_{j}\times n_{j}}{N},
 \end_layout
 
 \begin_layout Standard
-where wordvalue is the sentiment value attributed to a word based on the
- lexicon SentiWS (see Remus et al., 2010).
- SentimentWortschatz, or SentiWS for short, is a publicly available German-langu
-age resource for sentiment analysis.
- It contains positive and negative sentiment bearing words weighted within
- the interval of [1; 1] plus their part of speech tag, and if applicable,
- their inflections.
- The version employed here (SentiWS v1.8b) contains 1,650 negative and 1,818
- positive words, which sum up to 16,406 positive and 16,328 negative word
- forms, respectively.
- It contains adjectives and adverbs as well as nouns and verbs.
- 
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $wordvalue_{j}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is the sentiment value attributed to word 
+\begin_inset Formula $j=1,...,N$
+\end_inset
+
+, where 
+\begin_inset Formula $N$
+\end_inset
+
+ is the total number of words in the article.
+ All the words 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-Index
+\text{δ}=\frac{x_{i}^{T}}{\text{√}{n}}
 \end{equation}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{i}^{A}=\text{∑}{(w_{neg}\cdot x_{i}^{a})}$
 \end_inset
 
 

@@ -59,28 +59,31 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "H:/git/zeit-2/tables/crisisperiods_formatiert.tex"
-
-\end_inset
-
-
+\begin_layout Subsection
+Automatic sentiment analysis
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "H:/git/zeit-2/tables/allperiods_formatiert.tex"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
+We extract the sentiment of news articles using a lexicon based algorithm
+ in the line of Taboada (2011).
+ The software for the implementation is the qdap package (see Rinker, 2013)
+ in the open Software project R (see R Core Team, 2013).
+ Here, each word is compared to a lexicon of positive and negative words,
+ such as “bad”, “detrimental” and “dangerous” (negative), respectively “good”,
+ “beneficial” and “safe” (positive).
+ Each of the words in the dictionary are attributed a value between -1 (negative
+) and 1 (positive).
+ Then, the sentiment is given by the sum of values found.
+ The lexica in German language available are SentiWS (see Remus et al., 2010)
+ and Sentistrength (Thelwall et al.
+ 2010).
+ • Before the values are summed up, some refinement is implemented.
+ First, negativity is accounted for by inverting the value of a sentiment
+ word in the lexicon if it is preceded by a negator.
+ The negator “no” inverts the originally positive value of “good”.
+ Then, amplifiers like “very” and de-amplifiers like “less” are employed
+ to increase or decrease the respective values.
+ 
 \end_layout
 
 \end_body
