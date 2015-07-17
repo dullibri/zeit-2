@@ -24,6 +24,15 @@
   Publisher                = {Elsevier}
 }
 
+@Article{drager2014inflation,
+  Title                    = {Inflation perceptions and expectations in Sweden--Are media reports the missing link?},
+  Author                   = {Dr{\"a}ger, Lena},
+  Journal                  = {Oxford Bulletin of Economics and Statistics},
+  Year                     = {2014},
+
+  Publisher                = {Wiley Online Library}
+}
+
 @Article{hansen2005test,
   Title                    = {A test for superior predictive ability},
   Author                   = {Hansen, Peter Reinhard},
@@ -31,6 +40,32 @@
   Year                     = {2005},
   Number                   = {4},
   Volume                   = {23}
+}
+
+@Article{lamla2012role,
+  Title                    = {The Role of media for inflation forecast disagreement of households and professional forecasters},
+  Author                   = {Lamla, Michael J and Maag, Thomas},
+  Journal                  = {Journal of Money, Credit and Banking},
+  Year                     = {2012},
+  Number                   = {7},
+  Pages                    = {1325--1350},
+  Volume                   = {44},
+
+  Publisher                = {Wiley Online Library}
+}
+
+@TechReport{mankiw2001sticky,
+  Title                    = {Sticky information versus sticky prices: a proposal to replace the New Keynesian Phillips curve},
+  Author                   = {Mankiw, N Gregory and Reis, Ricardo},
+  Institution              = {National Bureau of Economic Research},
+  Year                     = {2001}
+}
+
+@TechReport{mankiw2003disagreement,
+  Title                    = {Disagreement about inflation expectations},
+  Author                   = {Mankiw, N Gregory and Reis, Ricardo and Wolfers, Justin},
+  Institution              = {National Bureau of Economic Research},
+  Year                     = {2003}
 }
 
 @Article{politis1994stationary,
@@ -43,6 +78,18 @@
   Volume                   = {89},
 
   Publisher                = {Taylor \& Francis Group}
+}
+
+@Article{taboada2011lexicon,
+  Title                    = {Lexicon-based methods for sentiment analysis},
+  Author                   = {Taboada, Maite and Brooke, Julian and Tofiloski, Milan and Voll, Kimberly and Stede, Manfred},
+  Journal                  = {Computational linguistics},
+  Year                     = {2011},
+  Number                   = {2},
+  Pages                    = {267--307},
+  Volume                   = {37},
+
+  Publisher                = {MIT Press}
 }
 
 @Article{white2000reality,
