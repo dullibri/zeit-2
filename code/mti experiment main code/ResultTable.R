@@ -62,6 +62,7 @@ ttt=sapply(fres,function(x){
 }
 )
 ttt=sapply(ttt,function(x)x)
+ttt=data.frame(ttt,stringsAsFactors=F)
 row.names(ttt)=row.names(result)
 names.tab=c('ar',media.mods[,2])
 tab1=ttt[names.tab,]
@@ -69,6 +70,9 @@ row.names(tab1)[1]='AR'
 # colnames(tab1)[seq(1,23,2)]=NA
 colnames(tab1)=paste('horizon',1:12,sep='=')
 tab1out=tab1[,c(1,3,6,12)]
+
+
+# best non-media models as a reference ------------------------------------
 
 allrank=sapply(fres,function(x)x$rank.theilsu)
 allrank=apply(allrank,2,rank)
@@ -140,3 +144,9 @@ out=gsub('DB','}',out)
 out=gsub('starstar','$^{**}$',out)
 out=gsub('star','$^{*}$',out)
 out=gsub('ccccc','lcccc',out)
+
+# number of models included in MCS ----------------------------------------
+Nmodels.in.mcs=data.frame(h=1:12,included=colSums(ttt==''),total=rep(nrow(ttt)),share=round(100*colSums(ttt=='')/nrow(ttt),1))
+row.names(Nmodels.in.mcs)=NULL
+Nmodels.in.mcs=Nmodels.in.mcs[c(1,3,6,12),]
+write.csv(Nmodels.in.mcs,paste(DirCode,'/tables/number of models in mcs ',sfeorr,'.csv',sep=''))

@@ -1,5 +1,5 @@
 DirCode='H:/git/zeit-2' # main directory
-# DirCode='c:/users/dirk/documents/github/zeit-2' # main directory
+DirCode='c:/users/dirk/documents/github/zeit-2' # main directory
 
 
 meta=read.csv(paste(DirCode,'/data/zeit indikatoren/meta_all.csv',sep='')

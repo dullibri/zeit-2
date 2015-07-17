@@ -60,30 +60,269 @@
 \begin_body
 
 \begin_layout Subsection
-Automatic sentiment analysis
+Automatic sentiment indexes
 \end_layout
 
 \begin_layout Standard
-We extract the sentiment of news articles using a lexicon based algorithm
+We downloaded 15,447 articles of the economics section of the weekly newspaper
+ 
+\shape italic
+Die Zeit
+\shape default
+ that have been published between 2000:1 and 2014:03 from its publically
+ available online archive.
+ Of these we identified 958 articles concerned with inflation, that is,
+ articles that contain 
+\begin_inset Quotes eld
+\end_inset
+
+Inflation
+\begin_inset Quotes erd
+\end_inset
+
+ or synoyms.
+ We extract the sentiment of news articles using a lexicon based algorithm
  in the line of Taboada (2011).
  The software for the implementation is the qdap package (see Rinker, 2013)
  in the open Software project R (see R Core Team, 2013).
- Here, each word is compared to a lexicon of positive and negative words,
- such as “bad”, “detrimental” and “dangerous” (negative), respectively “good”,
- “beneficial” and “safe” (positive).
- Each of the words in the dictionary are attributed a value between -1 (negative
-) and 1 (positive).
- Then, the sentiment is given by the sum of values found.
- The lexica in German language available are SentiWS (see Remus et al., 2010)
- and Sentistrength (Thelwall et al.
- 2010).
- • Before the values are summed up, some refinement is implemented.
- First, negativity is accounted for by inverting the value of a sentiment
- word in the lexicon if it is preceded by a negator.
- The negator “no” inverts the originally positive value of “good”.
- Then, amplifiers like “very” and de-amplifiers like “less” are employed
- to increase or decrease the respective values.
+ Each article is attributed a sentiment value, 
+\begin_inset Formula $ArticleValue$
+\end_inset
+
+, defined as: 
+\begin_inset Formula 
+\begin{equation}
+ArticleValue=\frac{\Sigma_{j}^{N}wordvalue_{j}\times n_{j}}{N},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $wordvalue_{j}$
+\end_inset
+
+ is the sentiment value attributed to word 
+\begin_inset Formula $j$
+\end_inset
+
+, where 
+\begin_inset Formula $j=1,...,N$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+ is the number of words of the respective article.
+ The value is based on the lexicon SentimentWortschatz (see Remus et al.,
+ 2010), or SentiWS for short.
+ It is a publicly available German-language resource for sentiment analysis.
+ It contains positive and negative sentiment bearing words weighted within
+ the interval of [-1; 1] plus their part of speech tag (adjective, adverbs,
+ nouns, and verbs), and if applicable, their inflections.
+ The version employed here (SentiWS v1.8b) contains 1,650 negative and 1,818
+ positive words, which, together with their inflections, sum up to 16,406
+ positive and 16,328 negative, respectively.
  
+\end_layout
+
+\begin_layout Standard
+In SentiWS there are words that have different parts of speach and can thus
+ have different word values, correspondingly.
+ However, tagging of parts of speach automatically is very time consuming
+ and still very inaccurate.
+ As an alternative, we make use of the fact that in German, nouns always
+ have upper-case letters which can be exploited to easily identify them
+ in a text.
+ In contrast to sentiment analysis for English we do not convert upper-case
+ letters to lower-cases letters.
+ Thus, this leads to small error, as lower-case at the beginnig of a sentence
+ will not be correctly identified.
+ However, this leaves only a small fraction of about 100 (lowercase) words
+ that can not be attributed a unique value.
+ Thus, are dropped from the lexicon prior to the analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+Then, the value found in the lexicon is refined in the following way.
+ If negators like 
+\begin_inset Quotes eld
+\end_inset
+
+nicht
+\begin_inset Quotes erd
+\end_inset
+
+ (no)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For example, 
+\begin_inset Quotes eld
+\end_inset
+
+no good
+\begin_inset Quotes erd
+\end_inset
+
+ is negative.
+\end_layout
+
+\end_inset
+
+ are found in the proximity (4 words before and 2 words after the word)
+ and if the number of negators is odd the polarity of a word is inverted.
+ 
+\end_layout
+
+\begin_layout Standard
+Two indexes are computed as the monthly averages of 
+\shape italic
+ArticleValue, Zeit, based on all articles, Zeit Inflation that is on the
+ articles concerned with inflation.
+ 
+\end_layout
+
+\begin_layout Standard
+Furthermore, using the online news archive Genios covering all major German
+ newspapers, we construct a simple word count index (Genios) of 
+\begin_inset Quotes eld
+\end_inset
+
+Inflation
+\begin_inset Quotes erd
+\end_inset
+
+ and its synonyms.
+ 
+\end_layout
+
+\begin_layout Subsection
+Human sentiment indexes
+\end_layout
+
+\begin_layout Standard
+Media Tenor International employs human analysts to rate news in TV and
+ print media (see Table ????) among others according to the time reference,
+ the polarity (positive, negative, neutral) and to categories.
+ Here, we use a total of 51,304 economic news items from 2000:01 to 2014:03
+ to compute the 15 indexes.
+ The first group of variables is based on all items (
+\shape italic
+All
+\shape default
+), items refering to the 
+\shape italic
+Present
+\shape default
+, and 
+\shape italic
+Future
+\shape default
+, items related the exchange rate, monetary policy, and interest rates (
+\shape italic
+Monetary
+\shape default
+), 
+\shape italic
+Inflation
+\shape default
+, 
+\shape italic
+Taxation
+\shape default
+, the business cycle (
+\shape italic
+Cycle
+\shape default
+), the labor market (
+\shape italic
+Labor
+\shape default
+), and the government budget (
+\shape italic
+Budget
+\shape default
+).
+ Those indexes are computed as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+B_{it}=\frac{A_{it}^{+}-A_{it}^{-}}{A_{it}^{+}+A_{it}^{-}+A_{it}^{0}}\times100,\label{eq:mti indexes}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $A_{it}$
+\end_inset
+
+ is the positive (+), negative (-) or neutral (0) rating of item 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ A second group of variables is the same as employed by Lamla ???? and is
+ based on subcategories of 
+\shape italic
+Inflation.
+ 
+\shape default
+As there are comparatively few items (1195) available, they are mere word
+ counts.
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Volume is the number of all items, 
+Falling, Rising, and Notrend comprise
+ the items refering to falling and rising inflation and to items, where
+ not trend is indicated, respectively.
+Goodrising, 
+Badrising, and 
+Otherrising
+ refer to items about rising inflation that have been rated positively,
+ negatively, and that are neutral.
+ Table ??? in the supplement presents descriptive statistics and Figure
+ ??? plots the indexes of all media indexes.
+\end_layout
+
+\begin_layout Subsection
+Non-media indicators
+\end_layout
+
+\begin_layout Standard
+As a reference, we include the comprehensive set of early indicators compiled
+ by Drechsel ???.
+ Here, as the major advantage of media data is that they are unrevised and
+ timely, we use a realtime version of the data.
+ This means, that we use the data only as they would have been available
+ at the moment in time forecasts are made.
+ For an overview of the variables see Table ??? in the supplement.
 \end_layout
 
 \end_body

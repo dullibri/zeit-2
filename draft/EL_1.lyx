@@ -1,0 +1,2333 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Economic agents do not always use all information available when forming
+ expectations.
+ Mankiw and Reis ??? formalize this assuming that it is too costly to gather
+ and process all information all the time.
+ Due to this rational inattention, expectations are sticky.
+ Additionally, Carrol states that economic agents do not process economic
+ data themselves but rather rely on the media to prepare the informaation,
+ as they lack the qualifications necessary for this task.
+ He presents microfoundations for Mankiw and Reis assuming that economic
+ agents only sporadically form their expectations based on the news.
+\end_layout
+
+\begin_layout Standard
+The rationality of inflation expectations of private consumers has been
+ tested by Carrol ??? and Lamla and Lein ???.
+ Comparing presumably rational expectations of professional forecasters,
+ it is demonstrated that the intensity of news coverage closes the gap between
+ expectation of experts and consumers while the tone of the news widens
+ the gap between the two.
+ 
+\end_layout
+
+\begin_layout Standard
+If economic agents form their information using news media employing the
+ latter for forecasting purposes is particularly appealing.
+ In the best of all cases, survey results can be anticipated.
+ News can be analyzed by humans following a code book to rate them according
+ to the content.
+ However, information in the media can be quantified employing automated
+ models, as well.
+ This presents an inexpensive and objective alternative.
+ A simple but very effective approach in this respect is the R-word index
+ counting the number of mentioning of the word 
+\begin_inset Quotes eld
+\end_inset
+
+recession
+\begin_inset Quotes erd
+\end_inset
+
+ in the Wall Street Journal and the New York Times (???).
+ Recently, more refined computer linguistic tools have been developed and
+ applied to economic issues (e.g., Lamla, 2014).
+ 
+\end_layout
+
+\begin_layout Standard
+Despite of its potential, outside financial markets, media data have been
+ employed for forecasting only few variables (Konstantin et.
+ al, 2014 or Lamla, 2014) and has, to the best of our knowledge, not been
+ employed to forecast inflation.
+ This paper wants to fill this gap contrasting the usefulness of media,
+ both automatic indicators and indicators produced by humans, to a comprehensive
+ set of alternative early indicators in a real-time forecast experiment
+ for prediciton German inflation.
+ 
+\end_layout
+
+\begin_layout Standard
+The paper is structured as follows.
+ The next section introduces the data and the empirical approach, Section
+ 3 presents the results, and the last section concludes.
+\end_layout
+
+\begin_layout Section
+The data and approach
+\end_layout
+
+\begin_layout Subsection
+Automatic sentiment indexes
+\end_layout
+
+\begin_layout Standard
+We downloaded 15,447 articles of the economics section of the weekly newspaper
+ 
+\shape italic
+Die Zeit
+\shape default
+ that have been published between 2000:1 and 2014:03 from its publically
+ available online archive.
+ Of these we identified 958 articles concerned with inflation, that is,
+ articles that contain 
+\begin_inset Quotes eld
+\end_inset
+
+Inflation
+\begin_inset Quotes erd
+\end_inset
+
+ or synoyms.
+ We extract the sentiment of news articles using a lexicon based algorithm
+ in the line of Taboada (2011).
+ The software for the implementation is the qdap package (see Rinker, 2013)
+ in the open Software project R (see R Core Team, 2013).
+ Each article is attributed a sentiment value, 
+\begin_inset Formula $ArticleValue$
+\end_inset
+
+, defined as: 
+\begin_inset Formula 
+\begin{equation}
+ArticleValue=\frac{\Sigma_{j}^{N}wordvalue_{j}\times n_{j}}{N},
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $wordvalue_{j}$
+\end_inset
+
+ is the sentiment value attributed to word 
+\begin_inset Formula $j$
+\end_inset
+
+, where 
+\begin_inset Formula $j=1,...,N$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+ is the number of words of the respective article.
+ The value is based on the lexicon SentimentWortschatz (see Remus et al.,
+ 2010), or SentiWS for short.
+ It is a publicly available German-language resource for sentiment analysis.
+ It contains positive and negative sentiment bearing words weighted within
+ the interval of [-1; 1] plus their part of speech tag (adjective, adverbs,
+ nouns, and verbs), and if applicable, their inflections.
+ The version employed here (SentiWS v1.8b) contains 1,650 negative and 1,818
+ positive words, which, together with their inflections, sum up to 16,406
+ positive and 16,328 negative, respectively.
+ 
+\end_layout
+
+\begin_layout Standard
+In SentiWS there are words that have different parts of speach and can thus
+ have different word values, correspondingly.
+ However, tagging of parts of speach automatically is very time consuming
+ and still very inaccurate.
+ As an alternative, we make use of the fact that in German, nouns always
+ have upper-case letters which can be exploited to easily identify them
+ in a text.
+ In contrast to sentiment analysis for English we do not convert upper-case
+ letters to lower-cases letters.
+ Thus, this leads to small error, as lower-case at the beginnig of a sentence
+ will not be correctly identified.
+ However, this leaves only a small fraction of about 100 (lowercase) words
+ that can not be attributed a unique value.
+ Thus, are dropped from the lexicon prior to the analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+Then, the value found in the lexicon is refined in the following way.
+ If negators like 
+\begin_inset Quotes eld
+\end_inset
+
+nicht
+\begin_inset Quotes erd
+\end_inset
+
+ (no)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For example, 
+\begin_inset Quotes eld
+\end_inset
+
+no good
+\begin_inset Quotes erd
+\end_inset
+
+ is negative.
+\end_layout
+
+\end_inset
+
+ are found in the proximity (4 words before and 2 words after the word)
+ and if the number of negators is odd the polarity of a word is inverted.
+ 
+\end_layout
+
+\begin_layout Standard
+Two indexes are computed as the monthly averages of 
+\shape italic
+ArticleValue, Zeit, based on all articles, Zeit Inflation that is on the
+ articles concerned with inflation.
+ 
+\end_layout
+
+\begin_layout Standard
+Furthermore, using the online news archive Genios covering all major German
+ newspapers, we construct a simple word count index (Genios) of 
+\begin_inset Quotes eld
+\end_inset
+
+Inflation
+\begin_inset Quotes erd
+\end_inset
+
+ and its synonyms.
+ 
+\end_layout
+
+\begin_layout Subsection
+Human sentiment indexes
+\end_layout
+
+\begin_layout Standard
+Media Tenor International employs human analysts to rate news in TV and
+ print media (see Table ????) among others according to the time reference,
+ the polarity (positive, negative, neutral) and to categories.
+ Here, we use a total of 51,304 economic news items from 2000:01 to 2014:03
+ to compute the 15 indexes.
+ The first group of these variables is based on all items (
+\shape italic
+All
+\shape default
+), items refering to the 
+\shape italic
+Present
+\shape default
+, and 
+\shape italic
+Future
+\shape default
+, items related the exchange rate, monetary policy, and interest rates (
+\shape italic
+Monetary
+\shape default
+), 
+\shape italic
+Inflation
+\shape default
+, 
+\shape italic
+Taxation
+\shape default
+, the business cycle (
+\shape italic
+Cycle
+\shape default
+), the labor market (
+\shape italic
+Labor
+\shape default
+), and the government budget (
+\shape italic
+Budget
+\shape default
+).
+ Those indexes are computed as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+B_{it}=\frac{A_{it}^{+}-A_{it}^{-}}{A_{it}^{+}+A_{it}^{-}+A_{it}^{0}}\times100,\label{eq:mti indexes}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $A_{it}$
+\end_inset
+
+ is the positive (+), negative (-) or neutral (0) rating of item 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ A second group of variables is the same as employed by Lamla ???? and is
+ based on subcategories of 
+\shape italic
+Inflation.
+ 
+\shape default
+As there are comparatively few items (1195) available, they are mere word
+ counts.
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Volume is the number of all items, 
+Falling, Rising, and Notrend comprise
+ the items refering to falling and rising inflation and to items, where
+ not trend is indicated, respectively.
+Goodrising, 
+Badrising, and 
+Otherrising
+ refer to items about rising inflation that have been rated positively,
+ negatively, and that are neutral.
+ Table ??? in the supplement presents descriptive statistics and Figure
+ ??? plots the indexes of all media indexes.
+\end_layout
+
+\begin_layout Subsection
+Non-media indicators
+\end_layout
+
+\begin_layout Standard
+As a reference, we include the comprehensive set of early indicators of
+ Drechsel ???.
+ Here, as the major advantage of media data is that they are unrevised and
+ timely, we use a realtime version of the data.
+ This means, that we use the data only as they would have been available
+ at the moment in time forecasts are made.
+ For an overview of all variables used see Table ??? in the supplement.
+\end_layout
+
+\begin_layout Section
+Real-time experiment and evaluation.
+\end_layout
+
+\begin_layout Standard
+We replicate the forecast experiment of Drechsel??.
+ In the first iteration, employing the data that would have been available
+ in 2005:12 we estimate the autoregressive model and 179 models that include
+ lagged variables of the endogenous and of one candidate variables each.
+ For each of the horizons forecasted (1, 3, 6, and 12 months) we compute
+ separate models.
+ In the next iteration, we use the information available in 2006:01, and
+ so on.
+ Each iteration, we only make use of the last 60 months (rolling window
+ approach).
+ 
+\end_layout
+
+\begin_layout Standard
+The forecast errors are computed using inflation data as of 2015:04.
+ For each model, the relative root mean squared forecast error (RMSFE) to
+ the AR model is computed.
+ In order to test the hypothesis of a candidate model performing equally
+ good or worse than the AR we employ the test proposed by Clark and West???
+ that is applicable here, were the candidate models nest the AR.
+ Finally, in order to make the comparison free of the choice of the benchmark,
+ we employ the model confidence set (Hansen2011???).
+ It identifies a set of models, that can not be rejected as statistically
+ inferior at certain confidence levels.
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:res-all"
+
+\end_inset
+
+ shows the results based on the forecasts for all periods from 2005:01 to
+ 2013:04 for 1, 3, 6, and 12 months horizons.
+ The number of models out of the total of 180 models that are included in
+ the MCS for each horizon is given in the second line.
+ The results for the media models are presented in the lower part of the
+ table.
+ It shows the relative RMSFE of the respective models and the AR-process
+ as a percentage of the latter, such that a value below (above) one implies
+ a model with a lower RMSFE than the AR-process.
+ Values smaller than one are printed in bold letters and two (one) stars
+ indicate that the hypothesis of equal forecast performance of the AR and
+ the respective model is rejected.
+ For ease of presentation, only the results of media models included in
+ the model confidence set are shown.
+ As a reference, the results for the best non-media models for each period
+ are shown in the upper part of the table.
+\end_layout
+
+\begin_layout Standard
+The data allow to exclude about 50 percent of the models from the model
+ confidence set for all periods.
+ For the 1 month horizon forecasts the Media Tenor International index based
+ on news items related to the business cycle (MTI cycle) ranks first having
+ a relative RMSFE to the AR of 0.96 and the null of equal predictive performance
+ is rejected at the 5 percent level.
+ For the 3 and 6 months horizon forecasts, the automatic sentiment indicator
+ based on all articles of the economic section in 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Die Zeit
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+ is the best model.
+ Its relative RMSFE implying an improvement of 11 and 6 percent respectively.
+ However, the null of equal predictive forecast accuracy is rejected at
+ the 5 percent level only in case of the 6 months horizon forecasts.
+ For the 12 months horizon forecasts, the best media model is again MTI
+ cycle, ranking second.
+ Its relative RMSFE of 0.83 is very close to the best non-media model, the
+ unemployment rate, and the null of equal forecast accuracy compared to
+ the AR model is rejected at the 5 percent level.
+\end_layout
+
+\begin_layout Standard
+The count indexes using Genios data and the those that use the subindexes
+ of the news items related to inflation are performing comparatively poorly
+ ranking 37nd at best (in the case of Genios for 6 months horizon forecasts).
+ The Mediatenor index based on all news items related to inflation ranks
+ second for one months horizon forecasts.
+ However, the null of equal forecast accuracy compared to the AR can not
+ be rejected at conventional levels.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement !htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Theil's U (and ranking) for all models included in MCS, all periods
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:res-all"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size scriptsize
+\begin_inset Tabular
+<lyxtabular version="3" rows="31" columns="5">
+<features tabularvalignment="middle">
+<column alignment="none" valignment="top" width="0" special="@{\extracolsep{5pt}}l">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+horizon
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+12 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Number of models in MCS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+77
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+92
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+68
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+\size scriptsize
+Best non-media models
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Survey on financial situation (DECCS1) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.98
+\begin_inset Formula $^{**}$
+\end_inset
+
+
+\series default
+ (3) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Yields on debt securities (IL.5) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.94
+\begin_inset Formula $^{**}$
+\end_inset
+
+
+\series default
+ (3) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Hours worked (DWHOUR) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.97
+\begin_inset Formula $^{*}$
+\end_inset
+
+
+\series default
+ (2) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Unemployment rate (DALQ) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.82
+\begin_inset Formula $^{**}$
+\end_inset
+
+
+\series default
+ (1) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+\size scriptsize
+Media models
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Zeit 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.00 (17) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.89
+\series default
+ (1) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.94
+\begin_inset Formula $^{*}$
+\end_inset
+
+
+\series default
+ (1) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.92
+\begin_inset Formula $^{**}$
+\end_inset
+
+
+\series default
+ (5) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Zeit inflation 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.29 (125) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+Genios I-Word count 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.09 (65) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.13 (37) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.30 (88) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Notrend 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.02 (55) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.08 (60) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.14 (39) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.13 (52) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Rising 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Falling 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.04 (75) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.11 (77) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.19 (67) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Volume 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Badrising 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.54 (118) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Otherrising 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.04 (84) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.23 (74) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI All 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.04 (81) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.31 (131) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.44 (106) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Present 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Future 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.03
+\begin_inset Formula $^{*}$
+\end_inset
+
+ (70) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.97
+\begin_inset Formula $^{**}$
+\end_inset
+
+
+\series default
+ (6) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.19 (54) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.06
+\begin_inset Formula $^{**}$
+\end_inset
+
+ (25) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Monetary 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.01
+\begin_inset Formula $^{**}$
+\end_inset
+
+ (28) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.97
+\begin_inset Formula $^{*}$
+\end_inset
+
+
+\series default
+ (5) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.22 (62) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.13 (51) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Inflation 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.97
+\series default
+ (2) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+1.00
+\series default
+ (11) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.07 (20) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.12 (49) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Taxation 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.02
+\begin_inset Formula $^{**}$
+\end_inset
+
+ (50) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.13
+\begin_inset Formula $^{**}$
+\end_inset
+
+ (82) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.20
+\begin_inset Formula $^{*}$
+\end_inset
+
+ (55) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.93
+\begin_inset Formula $^{*}$
+\end_inset
+
+
+\series default
+ (7) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Cycle 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.96
+\begin_inset Formula $^{*}$
+\end_inset
+
+
+\series default
+ (1) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.99
+\series default
+ (8) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.17 (50) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+0.83
+\begin_inset Formula $^{*}$
+\end_inset
+
+
+\series default
+ (2) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Labor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.03
+\begin_inset Formula $^{**}$
+\end_inset
+
+ (72) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.14
+\begin_inset Formula $^{*}$
+\end_inset
+
+ (89) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.31 (85) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.10
+\begin_inset Formula $^{**}$
+\end_inset
+
+ (39) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+MTI Budget 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.03 (57) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.16
+\begin_inset Formula $^{*}$
+\end_inset
+
+ (92) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+1.89 (143) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Conclusion
+\end_layout
+
+\begin_layout Standard
+This paper analyzes the usefulness of human based and automatic media indexes
+ for the prediction of German inflation and contrasts it to a comprehensive
+ set of early indicators.
+ It is demonstrated that news on the business cycle rated by humans and
+ automatic sentiment extracted from articles of the economic section of
+ a quality weekly newspaper turn out to be the best indicators.
+ 
+\end_layout
+
+\end_body
+\end_document

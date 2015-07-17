@@ -1,5 +1,5 @@
 DirCode='h:/Git/zeit-2'
-# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 # target='IP'
 # plag=3
 # number of vintages from start that will be used
