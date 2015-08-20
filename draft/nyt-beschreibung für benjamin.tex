@@ -1,0 +1,55 @@
+%% LyX 2.0.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[letterpaper,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{setspace}
+\usepackage[authoryear]{natbib}
+\doublespacing
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\special{papersize=\the\paperwidth,\the\paperheight}
+
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\section{Automatic sentiment indexes}
+
+We analyse articles of the economics section of the weekly newspaper
+\textit{The New York Times} obtained using $LexisNexis$, a research
+tool, that have been published between 1990:06 and 2013:08 from its
+publically available online archive. We extract the sentiment of news
+articles using a lexicon based algorithm provided by \citet{rinker})
+in the open Software project R (see \citealp{rlanguage}). 
+
+Each article is attributed a sentiment value, $ArticleValue$, defined
+as: 
+\begin{equation}
+ArticleValue=\frac{\Sigma_{j}^{N}wordvalue_{j}\times n_{j}}{N},
+\end{equation}
+
+
+where $wordvalue_{j}$ is the sentiment value attributed to word $j$,
+where $j=1,...,N$ and $N$ is the number of words of the respective
+article. The value is based on the lexicon provided by \citet{hu2004mining},
+a publicly available English-language resource for sentiment analysis.
+It contains 4776 negative and 2003 positive words. 
+
+The articles are evaluated sentence by sentence. Each positive word
+is counted as 1 and each negative word as -1. Then, the value found
+in the lexicon is refined in the following way. If negators like ``$not$''
+are found in the proximity (4 words before and 2 words after the word)
+and if the number of negators is odd the polarity of a word is inverted.
+Furthermore, if there are amplifiers like ``$very$'' or de-amplifiers
+``$little$'' are in the proximity, the value is increased respectively
+decreased. For a detailed description of the algorithm see \citet{rinker}.
+
+\bibliographystyle{plainnat}
+\bibliography{MTI,mti_ip}
+
+\end{document}

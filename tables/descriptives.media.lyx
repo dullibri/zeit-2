@@ -65,7 +65,7 @@
 placement !htbp
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -80,6 +80,7 @@ Descriptives: Media data
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset CommandInset label
 LatexCommand label
 
@@ -87,24 +88,14 @@ LatexCommand label
 
  
 \begin_inset Tabular
-<lyxtabular version="3" rows="24" columns="6">
+<lyxtabular version="3" rows="22" columns="5">
 <features tabularvalignment="middle">
 <column alignment="none" valignment="top" width="0" special="@{\extracolsep{5pt}}l">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
 <row>
-<cell alignment="none" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="none" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -152,15 +143,6 @@ LatexCommand label
 </cell>
 </row>
 <row>
-<cell alignment="none" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="none" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
@@ -213,15 +195,6 @@ LatexCommand label
 
 \begin_layout Plain Layout
 Statistic 
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="none" valignment="top" usebox="none" special="c">
-\begin_inset Text
-
-\begin_layout Plain Layout
-N
 \end_layout
 
 \end_inset
@@ -310,15 +283,6 @@ Max
 
 \end_inset
 </cell>
-<cell alignment="none" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="none" valignment="top" usebox="none">
@@ -326,80 +290,6 @@ Max
 
 \begin_layout Plain Layout
 Zeit 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $-$
-\end_inset
-
-0.003 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.001 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $-$
-\end_inset
-
-0.004 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $-$
-\end_inset
-
-0.001 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="none" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Zeit simple 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
 \end_layout
 
 \end_inset
@@ -455,78 +345,7 @@ Zeit simple
 \begin_inset Text
 
 \begin_layout Plain Layout
-Zeit inflation 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $-$
-\end_inset
-
-0.0004 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.0002 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $-$
-\end_inset
-
-0.001 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00004 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="none" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Zeit inflation simple 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
+Zeit inflation  
 \end_layout
 
 \end_inset
@@ -588,15 +407,6 @@ Genios I-Word count
 \begin_inset Text
 
 \begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 0.467 
 \end_layout
 
@@ -636,15 +446,6 @@ Genios I-Word count
 
 \begin_layout Plain Layout
 Notrend 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
 \end_layout
 
 \end_inset
@@ -700,15 +501,6 @@ Rising
 \begin_inset Text
 
 \begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 3.169 
 \end_layout
 
@@ -748,15 +540,6 @@ Rising
 
 \begin_layout Plain Layout
 Falling 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
 \end_layout
 
 \end_inset
@@ -812,15 +595,6 @@ Volume
 \begin_inset Text
 
 \begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 7.181 
 \end_layout
 
@@ -860,15 +634,6 @@ Volume
 
 \begin_layout Plain Layout
 Badrising 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
 \end_layout
 
 \end_inset
@@ -924,15 +689,6 @@ Otherrising
 \begin_inset Text
 
 \begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 0.831 
 \end_layout
 
@@ -972,15 +728,6 @@ Otherrising
 
 \begin_layout Plain Layout
 All 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
 \end_layout
 
 \end_inset
@@ -1042,15 +789,6 @@ Present
 \begin_inset Text
 
 \begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $-$
 \end_inset
 
@@ -1096,15 +834,6 @@ Present
 
 \begin_layout Plain Layout
 Future 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
 \end_layout
 
 \end_inset
@@ -1166,15 +895,6 @@ Monetary
 \begin_inset Text
 
 \begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $-$
 \end_inset
 
@@ -1220,15 +940,6 @@ Monetary
 
 \begin_layout Plain Layout
 Inflation 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
 \end_layout
 
 \end_inset
@@ -1290,15 +1001,6 @@ Taxation
 \begin_inset Text
 
 \begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $-$
 \end_inset
 
@@ -1344,15 +1046,6 @@ Taxation
 
 \begin_layout Plain Layout
 Cycle 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-160 
 \end_layout
 
 \end_inset
@@ -1414,15 +1107,6 @@ Labor
 \begin_inset Text
 
 \begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $-$
 \end_inset
 
@@ -1476,15 +1160,6 @@ Budget
 \begin_inset Text
 
 \begin_layout Plain Layout
-160 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $-$
 \end_inset
 
@@ -1528,37 +1203,6 @@ Budget
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-MTI categories
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

@@ -12,7 +12,7 @@ word_document: default
 
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
-DirCode='h://Git/zeit-2'
+DirCode='h:/Git/zeit-2'
 
 
 library('irr')
@@ -22,7 +22,7 @@ df=df[complete.cases(df),]
 # getting automated sentiment
 # load valueword (a vector of SentiWS words in the first column, values in the second, 
 # ambigous duplicates are eliminated, capitalizations are preserved)
-valueword=read.csv(paste(DirCode,'/valueword.csv',sep=''))
+valueword=read.csv(paste(DirCode,'/data/SentiWS_v1.8c/valueword.csv',sep=''))
 
 <<<<<<< HEAD
 valueword$wort=tolower(valueword$wort)
@@ -44,7 +44,7 @@ pfmaker=function(valueword){
         pos.w=valueword['wert'>0,'wert']
         neg=as.character(valueword[valueword$wert<0,'wort',drop=T])
         neg.w=valueword[valueword$wert<0,'wert']
-        pf=polarity_frame(pos,neg,pos.w,neg.w,env=F)  
+        pf=sentiment_frame(pos,neg,pos.w,neg.w)  
         }
 pf=pfmaker(valueword)
 =======
@@ -400,7 +400,7 @@ hist(valueword$wert,main='Histogram of word values\nSentiWS',xlab='value')
 ```{r are there any nearly neutral words that can be dropped?,cache=FALSE,eval=TRUE,echo=FALSE}
 
 
->>>>>>> 8e041f60150014cdea184b243283451685b834dd
+# >>>>>>> 8e041f60150014cdea184b243283451685b834dd
 # first getting the full range of values (ordered)
 testrange=valueword$wert[order(valueword$wert)]
 testrange=unique(testrange)

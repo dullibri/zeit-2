@@ -17,7 +17,7 @@ source(paste(auxcodedir,'/elanet.ind.R',sep=''))
 # setting some values
 # horizon=1 # inflation is published with on month lag, but in the following, the variables
 # are only lagged.
-zeitraus=0 # disregard zeit and rword indicator
+zeitraus=0 # disregard zeit and rwordvar.tlag, indicator
 target='CPI.EX' # core inflation
 ic='aic' 
 disregard=''# a variable that is a nearly perfect substitute for target.
@@ -190,6 +190,7 @@ for (horizon in 1:12){# horizon=2
                 # PUBLICATION LAG of unrevised data 
                 # (no deflated data need to be lagged further)
                 variables.tlag=row.names(overview.nr)[overview.nr$lag!=0]
+                variables.tlag=variables.tlag[is.na(variables.tlag)==F]
                 for (var.tlag in variables.tlag){
                         set[,var.tlag]=lag.exact(set[,var.tlag,drop=F]
                                                  ,overview.nr[row.names(overview.nr)==var.tlag
