@@ -1,7 +1,7 @@
 
 # this code serves as an input to "evaluation" and requires df.med --------
-# DirCode='h:/Git/zeit-2'
-DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
+DirCode='h:/Git/zeit-2'
+# DirCode='C:/Users/Dirk/Documents/GitHub/zeit-2'
 
 # transformation function
 target.t=function(y.raw,horizon){
@@ -59,9 +59,11 @@ par(las=2
 # par(mfrow=c(1,1))
 
 names.automatic=colnames(df.media)[2:6]
-
-pdf(paste(DirCode,'/figs/automatic.indicators.pdf',sep=''))
-par(mfrow=c(3,2))
+names.automatic=names.automatic[c(2,4,5)]
+names.automatic.displayed=names.automatic
+names.automatic.displayed=gsub('simple','',names.automatic.displayed)
+pdf(paste(DirCode,'/figs/automatic.indicators.only.simple.pdf',sep=''))
+par(mfrow=c(3,1))
 for (lauf in 1:length(names.automatic)){
         plot(df.media[,names.automatic[lauf]]
              , xaxt = 'n'
@@ -70,7 +72,7 @@ for (lauf in 1:length(names.automatic)){
              ,xlab=''
              ,type='l'
              #      ,xaxs = 'i'
-             ,main=names.automatic[lauf]
+             ,main=names.automatic.displayed[lauf]
              ,lty=1
         )
         par(new = TRUE)

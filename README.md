@@ -1,6 +1,11 @@
 zeit-2
 ======
 
+## code file structure:
+- tests: includes R-code for statistical tests, mostly for comparing forecast accuracy
+- 
+
+
 ## news analysis:
 - access newspaper articles of Die Zeit
 - clean them of html

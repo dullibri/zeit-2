@@ -48,7 +48,7 @@
 %\begin{threeparttable}
 %\begin{table}
 
-\begin{longtable}{p{1in}|p{2.5in}|p{1in}|p{.1in}|p{.1in}|p{.1in}|p{.15in}|p{.1in}|p{.5in}}[!H]
+\begin{longtable}{p{1.1in}|p{2.5in}|p{1in}|p{.1in}|p{.1in}|p{.1in}|p{.15in}|p{.1in}|p{.5in}}[!H]
 
 xxxxx & xxxxx & xxxxxxxxxxxxx \kill \caption{Data: definitions, transformations, and sources%
 \label{tab:indicators}}\\
@@ -148,25 +148,29 @@ xxxxx & xxxxx & xxxxxxxxxxxxx \kill \caption{Data: definitions, transformations,
  & {\tiny{}Composite leading indicator (amplitude restored)} & {\tiny{}OECDL1} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}2} & {\tiny{}OECD}\tabularnewline
  & {\tiny{}Composite leading indicator (trend restored)} & {\tiny{}OECDL2} & {\tiny{}-} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}2} & {\tiny{}OECD}\tabularnewline
  & {\tiny{}Composite leading indicator (normalized)} & {\tiny{}OECDL3} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}2} & {\tiny{}OECD}\tabularnewline
-{\tiny{}Media Tenor International indicators} &  &  &  &  &  &  &  & \tabularnewline
- & {\tiny{}Sentiment, based on all observations} & {\tiny{}All} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Sentiment, based on all observations related to the future} & {\tiny{}Future} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Sentiment, based on all observations related to the present} & {\tiny{}Present} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Sentiment, based on all observations related to monetary issues} & {\tiny{}Monetary} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline 
- & {\tiny{}Sentiment, based on all observations related to Inflation} & {\tiny{}Inflation} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Sentiment, based on all observations related to taxation} & {\tiny{}Taxation} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Sentiment, based on all observations related to the business cycle} & {\tiny{}Cycle} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Sentiment, based on all observations related to the labor market} & {\tiny{}Labor} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Sentiment, based on all observations related to government budget} & {\tiny{}Budget} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+{\tiny{}Automatic media indicators} &  &  &  &  &  &  &  & \tabularnewline
+ & {\tiny{}Sentiment, all articles} & {\tiny{}Zeit} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Zeit}\tabularnewline
+ & {\tiny{}Sentiment, inflation articles} & {\tiny{}Zeit inflation} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Zeit}\tabularnewline
+ & {\tiny{}Number of articles mentioning inflation} & {\tiny{}Genios I-word} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}Genios}\tabularnewline
+{\tiny{}Human media indicators} &  &  &  &  &  &  &  & \tabularnewline
+ & {\tiny{}Sentiment, all observations} & {\tiny{}All} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Sentiment, all observations related to the future} & {\tiny{}Future} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Sentiment, all observations related to the present} & {\tiny{}Present} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Sentiment, all observations related to monetary issues} & {\tiny{}Monetary} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline 
+ & {\tiny{}Sentiment, all observations related to Inflation} & {\tiny{}Inflation} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Sentiment, all observations related to taxation} & {\tiny{}Taxation} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Sentiment, all observations related to the business cycle} & {\tiny{}Cycle} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Sentiment, all observations related to the labor market} & {\tiny{}Labor} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Sentiment, all observations related to government budget} & {\tiny{}Budget} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
 
 
- & {\tiny{}Number of observations related to inflation} & {\tiny{}Volume} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Number of observations related to falling inflation} & {\tiny{}Falling} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Number of observations related to rising inflation} & {\tiny{}Rising} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Number of observations related to inflation without trend} & {\tiny{}Notrend} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Number of observations related to rising inflation, rated positive} & {\tiny{}Goodrising} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Number of observations related to rising inflation, rated negative} & {\tiny{}Badrising} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
- & {\tiny{}Number of observations related to rising inflation, rated neutral} & {\tiny{}Otherrising} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Number of observations, inflation} & {\tiny{}Volume} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Number of observations, falling inflation} & {\tiny{}Falling} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Number of observations, rising inflation} & {\tiny{}Rising} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Number of observations, inflation without trend} & {\tiny{}Notrend} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Number of observations, rising inflation, positive} & {\tiny{}Goodrising} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Number of observations, rising inflation, negative} & {\tiny{}Badrising} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
+ & {\tiny{}Number of observations, rising inflation, neutral} & {\tiny{}Otherrising} & {\tiny{}1} & {\tiny{}1} & {\tiny{}-} & {\tiny{}-} & {\tiny{}0} & {\tiny{}MTI}\tabularnewline
 \bottomrule
 
 \end{longtable}
